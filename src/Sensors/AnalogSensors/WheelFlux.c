@@ -1,8 +1,8 @@
 #include "../../../includes/WheelFlux.h"
 #include <stdio.h>
 
-void initWheelFlux(WheelFlux* wf, int channel, int hz, int muxChannel, float r, WHEEL_LOCATION w) {
-    initAnalogSensor(&wf->base, "WheelFlux", hz);
+void initWheelFlux(WheelFlux* wf, int hz, int channel, int muxChannel, float r, WHEEL_LOCATION w) {
+    initAnalogSensor(&wf->base, "WheelFlux", hz, channel);
     wf->flux = false;  // Default value indicating no flux detected
     wf->radius = r;
     wf->wheel_location = w;

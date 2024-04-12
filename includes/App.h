@@ -8,7 +8,7 @@ typedef struct {
     float position;
 } App;
 
-void initApp(App* app, int hz);
+void initApp(App* app, int hz, int channel);
 float getAppPosition(App* app);
 void updateApp(void* app);
 float transferFunctionApp(float rawVal);

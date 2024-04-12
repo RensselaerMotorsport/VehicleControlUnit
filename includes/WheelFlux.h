@@ -15,7 +15,7 @@ typedef struct {
     WHEEL_LOCATION wheel_location;
 } WheelFlux;
 
-void initWheelFlux(WheelFlux* wf, int channel, int hz, int muxChannel, float r, WHEEL_LOCATION w);
+void initWheelFlux(WheelFlux* wf, int hz, int channel, int muxChannel, float r, WHEEL_LOCATION w);
 float getWheelFlux(WheelFlux* wf);
 float getWheelRadius(WheelFlux* wf);
 WHEEL_LOCATION getWheelLocation(WheelFlux* wf);

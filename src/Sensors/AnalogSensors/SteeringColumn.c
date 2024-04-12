@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void initSteeringColumn(SteeringColumn* sc, int hz, int channel, float zeroOffset) {
-    initAnalogSensor(&sc->base, "SteeringColumn", hz);
+    initAnalogSensor(&sc->base, "SteeringColumn", hz, channel);
     sc->rotation_angle = -1;
     sc->zero_offset = zeroOffset;
     sc->base.base.update = updateSteeringColumn;

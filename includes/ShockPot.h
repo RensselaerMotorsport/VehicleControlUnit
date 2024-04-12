@@ -16,7 +16,7 @@ typedef struct {
     WHEEL_LOCATION wheel_location;
 } ShockPot;
 
-void initShockPot(ShockPot* shockPot, int hz, WHEEL_LOCATION location);
+void initShockPot(ShockPot* shockPot, int hz, int channel, WHEEL_LOCATION location);
 float getShockPotDistance(ShockPot* shockPot);
 void updateShockPot(void* shockPot);
 float transferFunctionShockPot(float rawVal);

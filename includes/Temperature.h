@@ -5,10 +5,10 @@
 
 typedef struct {
     AnalogSensor base;
-    double temp;
+    double degrees;
 } Temperature;
 
-void initTemperature(Temperature* temp, int hz);
+void initTemperature(Temperature* temp, int hz, int channel);
 double getTemperatureCelsius(Temperature* temp);
 double getTemperatureFahrenheit(Temperature* temp);
 double transferFunction(Temperature* temp, int rawValue);

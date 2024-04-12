@@ -1,8 +1,8 @@
 #include "../../../includes/App.h"
 #include <stdio.h>
 
-void initApp(App* app, int hz) {
-    initAnalogSensor(&app->base, "App", hz);
+void initApp(App* app, int hz, int channel) {
+    initAnalogSensor(&app->base, "App", hz, channel);
     app->position = 0;
     app->base.base.update = updateApp;
 }

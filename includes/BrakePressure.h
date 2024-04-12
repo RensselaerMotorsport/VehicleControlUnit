@@ -8,7 +8,7 @@ typedef struct {
     float pressure;
 } BrakePressure;
 
-void initBrakePressure(BrakePressure* bp, int hz);
+void initBrakePressure(BrakePressure* bp, int hz, int channel);
 float getBrakePressure(BrakePressure* bp);
 void updateBrakePressure(void* bp);
 float transferFunctionBrakePressure(float rawVal);

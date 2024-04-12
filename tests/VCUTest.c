@@ -12,9 +12,9 @@ int main() {
     Temperature temperatureSensor;
     ShockPot shockPotSensor;
 
-    initApp(&appSensor, 200);
-    initTemperature(&temperatureSensor, 10);
-    initShockPot(&shockPotSensor, 1000, FRONT_LEFT);
+    initApp(&appSensor, 200, 1);
+    initTemperature(&temperatureSensor, 10, 2);
+    initShockPot(&shockPotSensor, 1000, 3, FRONT_LEFT);
 
     sensorArray[0] = (Sensor*)&appSensor;
     sensorArray[1] = (Sensor*)&temperatureSensor;

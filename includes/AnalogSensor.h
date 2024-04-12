@@ -5,9 +5,11 @@
 
 typedef struct {
     Sensor base;
+    int channel;
 } AnalogSensor;
 
-void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz);
-// UDOUBLE getAnalogSensorData(AnalogSensor* sensor);
+void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel);
+
+int getAnalogSensorData(AnalogSensor* sensor);
 
 #endif
