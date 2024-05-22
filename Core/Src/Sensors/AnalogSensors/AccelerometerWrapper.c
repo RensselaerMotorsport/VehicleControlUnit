@@ -1,4 +1,4 @@
-#include "../../../includes/AccelerometerWrapper.h"
+#include "../../../Inc/Sensors/AnalogSensors/AccelerometerWrapper.h"
 
 void initAccelerometerWrapper(AccelerometerWrapper* wrapper, 
                               Accelerometer* ax, 

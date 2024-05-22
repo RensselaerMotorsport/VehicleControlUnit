@@ -1,4 +1,4 @@
-#include "../../../includes/SteeringColumn.h"
+#include "../../../Inc/Sensors/AnalogSensors/SteeringColumn.h"
 #include <stdio.h>
 
 void initSteeringColumn(SteeringColumn* sc, int hz, int channel, float zeroOffset) {

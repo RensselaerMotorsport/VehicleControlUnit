@@ -1,4 +1,4 @@
-#include "../../includes/DigitalSensor.h"
+#include "../../Inc/Sensors/DigitalSensor.h"
 #include <stdio.h>  // For printf
 
 void initDigitalSensor(DigitalSensor* sensor, const char* name, int hz, int port) {

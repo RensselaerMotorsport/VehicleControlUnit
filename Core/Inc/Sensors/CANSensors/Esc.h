@@ -1,7 +1,7 @@
 #ifndef RENNSSELAERMOTORSPORT_ESC_H
 #define RENNSSELAERMOTORSPORT_ESC_H
 
-#include "CANSensor.h"
+#include "../CANSensor.h"
 
 typedef struct {
     CANSensor base;

@@ -1,4 +1,4 @@
-#include "../../../includes/Accumulator.h"
+#include "../../../Inc/Sensors/CANSensors/Accumulator.h"
 
 void initAccumulator(Accumulator* acc, Bms* bms, Imd* imd) {
     if (acc != NULL) {

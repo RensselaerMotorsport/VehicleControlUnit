@@ -1,7 +1,7 @@
 #ifndef RENNSSELAERMOTORSPORT_BMS_H
 #define RENNSSELAERMOTORSPORT_BMS_H
 
-#include "CANSensor.h"
+#include "../CANSensor.h"
 #include "BmsData.h"
 
 typedef struct {

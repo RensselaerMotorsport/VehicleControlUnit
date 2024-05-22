@@ -199,5 +199,13 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /* USER CODE BEGIN 1 */
+volatile uint32_t timer_flag = 0;
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim->Instance == TIM1)
+    {
+        timer_flag++;
+    }
+}
 /* USER CODE END 1 */

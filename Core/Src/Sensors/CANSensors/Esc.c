@@ -1,4 +1,4 @@
-#include "../../../includes/Esc.h"
+#include "../../../Inc/Sensors/CANSensors/Esc.h"
 #include <stdio.h>  // For printf
 
 void initEsc(Esc* esc, int hz) {
@@ -37,6 +37,6 @@ float motorRevolutionsTransferFunctionEsc(int x) {
 
 char* toStringEsc(const Esc* esc) {
     static char str[100];
-    sprintf(str, "%f,%f", esc->temp, esc->motor_revolutions);
+    // sprintf(str, "%f,%f", esc->temp, esc->motor_revolutions);
     return str;
 }

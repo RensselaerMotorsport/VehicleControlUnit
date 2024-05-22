@@ -1,7 +1,7 @@
 #ifndef RENNSMOTORSPORT_ACCELEROMETER_H
 #define RENNSMOTORSPORT_ACCELEROMETER_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 
 typedef struct {
     AnalogSensor base;

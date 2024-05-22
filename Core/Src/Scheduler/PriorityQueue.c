@@ -1,4 +1,4 @@
-#include "../../includes/PriorityQueue.h"
+#include "../../Inc/Scheduler/PriorityQueue.h"
 
 void PQInit(PriorityQueue* pq) {
     pq->size = 0;

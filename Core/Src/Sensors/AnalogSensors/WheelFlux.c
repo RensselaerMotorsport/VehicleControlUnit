@@ -1,4 +1,4 @@
-#include "../../../includes/WheelFlux.h"
+#include "../../../Inc/Sensors/AnalogSensors/WheelFlux.h"
 #include <stdio.h>
 
 void initWheelFlux(WheelFlux* wf, int hz, int channel, int muxChannel, float r, WHEEL_LOCATION w) {

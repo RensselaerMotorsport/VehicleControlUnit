@@ -1,7 +1,7 @@
 #ifndef RENNSSELAERMOTORSPORT_WHEELFLUX_H
 #define RENNSSELAERMOTORSPORT_WHEELFLUX_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 #include <stdbool.h>
 
 typedef enum {

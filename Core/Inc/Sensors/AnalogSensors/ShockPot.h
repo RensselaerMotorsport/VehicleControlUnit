@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_SHOCKPOT_H
 #define RENSSELAERMOTORSPORT_SHOCKPOT_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 
 typedef enum {
     FRONT_LEFT,

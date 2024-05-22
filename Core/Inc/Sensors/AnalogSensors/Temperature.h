@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_TEMPERATURE_H
 #define RENSSELAERMOTORSPORT_TEMPERATURE_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 
 typedef struct {
     AnalogSensor base;

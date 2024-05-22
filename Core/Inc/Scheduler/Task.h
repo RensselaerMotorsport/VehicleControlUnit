@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_TASK_H
 #define RENSSELAERMOTORSPORT_TASK_H
 
-#include "Sensor.h"
+#include "../Sensors/Sensor.h"
 
 // TODO: Configure board to get high-resolution time
 typedef int highResTime;

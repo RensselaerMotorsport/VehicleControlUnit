@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_BRAKEPRESSURE_H
 #define RENSSELAERMOTORSPORT_BRAKEPRESSURE_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 
 typedef struct {
     AnalogSensor base;

@@ -1,4 +1,4 @@
-#include "../../../includes/WheelSpeed.h"
+#include "../../../Inc/Sensors/AnalogSensors/WheelSpeed.h"
 #include <stdio.h>
 
 void initWheelSpeed(WheelSpeed* ws, WheelFlux* flux) {

@@ -2,7 +2,7 @@
 #define RENSSELAERMOTORSPORT_SCHEDULER_H
 
 #include <stdbool.h>
-#include "Sensor.h"
+#include "../Sensors/Sensor.h"
 #include "Task.h"
 #include "PriorityQueue.h"
 

@@ -1,4 +1,4 @@
-#include "../../includes/CANSensor.h"
+#include "../../Inc/Sensors/CANSensor.h"
 #include <stdio.h>  // For printf
 
 void initCANSensor(CANSensor* sensor, const char* name, int hz) {

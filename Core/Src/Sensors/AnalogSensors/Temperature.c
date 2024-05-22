@@ -1,4 +1,4 @@
-#include "../../../includes/Temperature.h"
+#include "../../../Inc/Sensors/AnalogSensors/Temperature.h"
 
 void initTemperature(Temperature* temp, int hz, int channel) {
     initAnalogSensor(&temp->base, "Temperature", hz, channel);

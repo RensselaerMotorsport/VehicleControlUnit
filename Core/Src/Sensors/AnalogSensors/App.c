@@ -1,4 +1,4 @@
-#include "../../../includes/App.h"
+#include "../../../Inc/Sensors/AnalogSensors/App.h"
 #include <stdio.h>
 
 void initApp(App* app, int hz, int channel) {

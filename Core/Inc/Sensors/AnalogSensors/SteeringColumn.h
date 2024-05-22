@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_STEERINGCOLUMN_H
 #define RENSSELAERMOTORSPORT_STEERINGCOLUMN_H
 
-#include "AnalogSensor.h"
+#include "../AnalogSensor.h"
 
 typedef struct {
     AnalogSensor base;

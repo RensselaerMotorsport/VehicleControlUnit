@@ -2,7 +2,7 @@
 #define RENNSSELAERMOTORSPORT_IMD_H
 
 #include <stdbool.h>
-#include "CANSensor.h"
+#include "../CANSensor.h"
 
 typedef struct {
     CANSensor base;

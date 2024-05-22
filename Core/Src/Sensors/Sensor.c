@@ -1,4 +1,4 @@
-#include "Sensor.h"
+#include "../../Inc/Sensors/Sensor.h"
 #include <string.h>
 
 void initSensor(Sensor* sensor, const char* name, int hz) {

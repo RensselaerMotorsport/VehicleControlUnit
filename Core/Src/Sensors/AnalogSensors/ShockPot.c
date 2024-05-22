@@ -1,4 +1,4 @@
-#include "../../../includes/ShockPot.h"
+#include "../../../Inc/Sensors/AnalogSensors/ShockPot.h"
 #include <math.h>
 #include <stdio.h>
 

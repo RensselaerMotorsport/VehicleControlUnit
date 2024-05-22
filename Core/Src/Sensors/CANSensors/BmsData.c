@@ -1,4 +1,4 @@
-#include "../../../includes/BmsData.h"
+#include "../../../Inc/Sensors/CANSensors/BmsData.h"
 #include <stdio.h>  // For sprintf
 
 void initBmsData(BmsData* data, float ccl, float dcl, float t, float sc, 
@@ -19,16 +19,16 @@ void initBmsData(BmsData* data, float ccl, float dcl, float t, float sc,
 char* toStringBmsData(const BmsData* data) {
     static char str[256];
     if (data) {
-        sprintf(str, "%f,%f,%f,%f,%f,%f,%f,%f,%d",
-                data->chargeCurrentLimit,
-                data->dischargeCurrentLimit,
-                data->temperature,
-                data->stateOfCharge,
-                data->cellResistance,
-                data->packResistance,
-                data->cellVoltage,
-                data->packVoltage,
-                data->criticalFaults);
+        // sprintf(str, "%f,%f,%f,%f,%f,%f,%f,%f,%d",
+                // data->chargeCurrentLimit,
+                // data->dischargeCurrentLimit,
+                // data->temperature,
+                // data->stateOfCharge,
+                // data->cellResistance,
+                // data->packResistance,
+                // data->cellVoltage,
+                // data->packVoltage,
+                // data->criticalFaults);
     }
     return str;
 }
