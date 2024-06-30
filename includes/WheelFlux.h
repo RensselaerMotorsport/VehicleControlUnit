@@ -12,7 +12,7 @@ typedef enum {
 
 typedef struct {
     AnalogSensor base;
-    int radius;
+    float radius;
     WHEEL_LOCATION wheel_location;
     int numTeeth;
     int pulses;
@@ -26,6 +26,7 @@ float getWheelRadius(WheelFlux* wf);
 WHEEL_LOCATION getWheelLocation(WheelFlux* wf);
 int getPulseCount(WheelFlux* wf);
 double getTimeInterval(WheelFlux* wf);
+void setTimeInterval(WheelFlux* wf, double interval);
 void addPulse(WheelFlux* wf, int num);
 void resetPulseCount(WheelFlux* wf);
 void resetTimeInterval(WheelFlux* wd);

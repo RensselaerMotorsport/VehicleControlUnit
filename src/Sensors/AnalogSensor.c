@@ -1,4 +1,4 @@
-#include "AnalogSensor.h"
+#include "../../includes/AnalogSensor.h"
 #include <stdio.h>
 
 void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel) {

@@ -30,6 +30,11 @@ int getNumTeeth(WheelFlux* wf) {
     return wf->numTeeth;
 }
 
+/*
+ * Gets wheel radius in meters
+ *
+ * @return Radius of wheel in meters.
+ */
 float getWheelRadius(WheelFlux* wf) {
     return wf->radius;
 }
@@ -39,7 +44,7 @@ WHEEL_LOCATION getWheelLocation(WheelFlux* wf) {
 }
 
 // TODO: Find some way to update the pulse variable with the analog code.
-int getPulsesCount(WheelFlux* wf) {
+int getPulseCount(WheelFlux* wf) {
     return wf->pulses;
 }
 
@@ -48,6 +53,17 @@ double getTimeInterval(WheelFlux* wf) {
     double interval = measureInterval(wf->interval);
     wf->interval = getCurrentTime();
     return interval;
+}
+
+/*
+ * Set time interval.
+ * For testing and debugging.
+ *
+ * @param wf A pointer to the WheelFlux structure.
+ * @param interval Time interval to set.
+ */
+void setTimeInterval(WheelFlux* wf, double interval) {
+    wf->interval = interval;
 }
 
 // TODO: Perhaps replace with update functionality

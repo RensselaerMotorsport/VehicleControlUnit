@@ -51,12 +51,14 @@ float translateFluxToSpeed(WheelSpeed* ws) {
     
     int  numTeeth = getNumTeeth(flux);
     float radius = getWheelRadius(flux);
-    float pulses = getPulseCount(flux);
+    int pulses = getPulseCount(flux);
     double delta = getTimeInterval(flux);
 
     // Verify inputs
     if (numTeeth <= 0 || radius <= 0.0f || pulses <= 0 || delta <= 0.0) {
-        printf("Error: Invalid argument.\n");
+        printf("Error: Invalid argument. "
+               "NumTeeth = %d, Radius = %.2f, Pulses = %d, Time Delta = %.2f\n",
+               numTeeth, radius, pulses, delta);
         return 0.0f;
     }
 
@@ -64,7 +66,7 @@ float translateFluxToSpeed(WheelSpeed* ws) {
     float circumference = 2 * M_PI * radius;
     float distancePerPulse = circumference / numTeeth;
     float speedMetersPerSecond = (distancePerPulse * pulses) / delta;
-    int speed = convertMpsToMph(speedMetersPerSecond);
+    float speed = convertMpsToMph(speedMetersPerSecond);
 
     // Reset pulse count and elapsed time for the next measurement interval
     resetPulseCount(flux);
