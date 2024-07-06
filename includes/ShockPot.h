@@ -2,13 +2,7 @@
 #define RENSSELAERMOTORSPORT_SHOCKPOT_H
 
 #include "AnalogSensor.h"
-
-typedef enum {
-    FRONT_LEFT,
-    FRONT_RIGHT,
-    BACK_LEFT,
-    BACK_RIGHT
-} WHEEL_LOCATION;
+#include "WheelLocation.h"
 
 typedef struct {
     AnalogSensor base;

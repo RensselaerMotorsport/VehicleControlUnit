@@ -9,7 +9,7 @@ typedef struct {
     bool alive;
 } ESCIndicator;
 
-void initECSIndicator(ESCIndicator* esc);
+void initECSIndicator(ESCIndicator* esc, int hz, int port);
 void updateECSInicator(void* esc);
 bool getAlive(ESCIndicator* esc);
 

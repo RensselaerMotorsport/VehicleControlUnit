@@ -7,7 +7,7 @@
  * @pram hz Rate at which the sensor is called (in hz)
  * @pram port Location of sensor
  */
-void initWheelSpeed(ESCIndicator* esc, int hz, int port) {
+void initECSIndicator(ESCIndicator* esc, int hz, int port) {
     initDigitalSensor(&esc->base, "ESC Indicator", hz, port);
     esc->alive = true;
 }
