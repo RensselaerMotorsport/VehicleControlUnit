@@ -1,4 +1,5 @@
 #include "../../../includes/WheelSpeed.h"
+#include "../../../includes/TimeUtils.h"
 #include <stdio.h>
 #include <math.h>
 
@@ -7,18 +8,25 @@
 #endif
 
 /*
- * Initalation function for a wheel speed sensor.
+ * Initialization function for a wheel speed sensor.
  *
  * @param ws A pointer to the WheelSpeed structure.
- * @pram flux A pointer to the WheelFlux structure.
- * @pram hz Rate at which the sensor is called (in hz)
- * @pram port Location of sensor
+ * @pram hz Rate at which the sensor is called (in hz).
+ * @pram port Location of sensor.
+ * @pram radius Radius of wheel (in mm).
+ * @pram numTeeth Number of teeth on reluctor wheel.
+ * @pram location Location of sensor on car.
  */
-void initWheelSpeed(WheelSpeed* ws, WheelFlux* flux, int hz, int port) {
+void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth,
+                    WHEEL_LOCATION location) {
     initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
     ws->base.base.update = updateWheelSpeed;
-    ws->flux = flux;
+    ws->radius = radius;
+    ws->wheel_location = location;
+    ws->numTeeth = numTeeth;
+    ws->pulses = 0;
     ws->speed = 0.0f;
+    ws->interval = getCurrentTime();
 }
 
 // TODO: Perhaps add class for conversions.
@@ -35,24 +43,26 @@ float convertMpsToMph(float metersPerSecond) {
 }
 
 /**
- * Translates wheel flux data to speed in mph.
- * 
+ * Translates data to speed in mph.
+ *
  * @param ws A pointer to the WheelSpeed structure.
  * @return The speed in miles per hour.
  */
-float translateFluxToSpeed(WheelSpeed* ws) {
-    WheelFlux* flux = ws->flux;
-
-    if (ws == NULL || flux == NULL) {
-        // Error handling: No flux detected
-        printf("Error: No flux detected.\n");
-        return 0.0f;
+float calculateSpeed(WheelSpeed* ws) {
+    // Check if the pointer is null
+    if (ws == NULL) {
+        fprintf(stderr, "Error: Null pointer passed to calculateSpeed\n");
+        return -1; // Or handle the error as appropriate
     }
-    
-    int  numTeeth = getNumTeeth(flux);
-    float radius = getWheelRadius(flux);
-    int pulses = getPulseCount(flux);
-    double delta = getTimeInterval(flux);
+
+    int numTeeth = ws->numTeeth;
+    float radius = ws->radius;
+    int pulses = ws->pulses;
+    float delta = measureInterval(ws->interval);
+
+    // Reset pulse count and elapsed time for the next measurement interval
+    ws->interval = getCurrentTime();
+    ws->pulses = 0;
 
     // Verify inputs
     if (numTeeth <= 0 || radius <= 0.0f || pulses <= 0 || delta <= 0.0) {
@@ -68,10 +78,6 @@ float translateFluxToSpeed(WheelSpeed* ws) {
     float speedMetersPerSecond = (distancePerPulse * pulses) / delta;
     float speed = convertMpsToMph(speedMetersPerSecond);
 
-    // Reset pulse count and elapsed time for the next measurement interval
-    resetPulseCount(flux);
-    resetTimeInterval(flux);
-
     return speed;
 }
 
@@ -82,5 +88,28 @@ float translateFluxToSpeed(WheelSpeed* ws) {
  */
 void updateWheelSpeed(void* ws) {
     WheelSpeed* wsPtr = (WheelSpeed*)ws;
-    wsPtr->speed = translateFluxToSpeed(ws);
+    wsPtr->speed = calculateSpeed(ws);
+}
+
+
+/*
+ * Add pulses to sensor;
+ * For testing and debugging.
+ *
+ * @param ws A pointer to the WheelSpeed structure.
+ * @param num Number of pulses to add.
+ */
+void addPulse(WheelSpeed* ws, int num) {
+    ws->pulses += num;
+}
+
+/*
+ * Set time interval.
+ * For testing and debugging.
+ *
+ * @param ws A pointer to the WheelSpeed structure.
+ * @param interval Time interval to set.
+ */
+void setTimeInterval(WheelSpeed* ws, float interval) {
+    ws->interval = interval + getCurrentTime();
 }

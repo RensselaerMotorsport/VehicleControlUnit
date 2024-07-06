@@ -2,23 +2,20 @@
 #include <math.h>  // for fabs function
 #include "../includes/WheelSpeed.h"
 
-int testTransferFunction(float radius, int numTeeth, int pulseCount, 
-                         float timeInterval, float expectedSpeed, 
+int testTransferFunction(float radius, int numTeeth, int pulseCount,
+                         float timeInterval, float expectedSpeed,
                          const char* testName) {
-    WheelFlux wheelFlux;
     WheelSpeed wheelSpeed;
-
-    initWheelFlux(&wheelFlux, 0, 0, 0, radius, numTeeth, 0);
-    addPulse(&wheelFlux, pulseCount);
-    // Inverting time because get function relies on current time
-    setTimeInterval(&wheelFlux, -timeInterval);
-
     int wheelSpeedHz = 200;
-    initWheelSpeed(&wheelSpeed, &wheelFlux, wheelSpeedHz, 0);
+    initWheelSpeed(&wheelSpeed, wheelSpeedHz, 0, radius, numTeeth, 0);
 
-    float speed = translateFluxToSpeed(&wheelSpeed);
+    addPulse(&wheelSpeed, pulseCount);
+    // Inverting time because get function relies on current time
+    setTimeInterval(&wheelSpeed, -timeInterval);
+
+    float speed = calculateSpeed(&wheelSpeed);
     // NOTE: Speed may vary based on current time being output.
-    if (fabs(speed - expectedSpeed) <= 0.5) {
+    if (fabs(speed - expectedSpeed) <= 0.05) {
         printf("%s Passed: Speed: %.2f mph (Expected: %.2f mph)\n",
                testName, speed, expectedSpeed);
         return 0;
@@ -38,12 +35,12 @@ int main() {
     result += testTransferFunction(0.1f, 40, 25, 0.25f, 3.51f, "Low Speed Test 3");
 
     // Medium speed tests
-    result += testTransferFunction(0.127f, 48, 300, 0.5f, 22.31f, "Medium Speed Test 1"); 
+    result += testTransferFunction(0.127f, 48, 300, 0.5f, 22.31f, "Medium Speed Test 1");
     result += testTransferFunction(0.15f, 60, 300, 1.0f, 10.54f, "Medium Speed Test 2");
     result += testTransferFunction(0.1f, 40, 150, 0.25f, 21.08f, "Medium Speed Test 3");
 
-    // High speed tests (around 60 mph)
-    result += testTransferFunction(0.127f, 48, 1000, 0.5f, 74.37f, "High Speed Test 1"); 
+    // High speed tests
+    result += testTransferFunction(0.127f, 48, 1000, 0.5f, 74.37f, "High Speed Test 1");
     result += testTransferFunction(0.15f, 60, 1000, 1.0f, 35.14f, "High Speed Test 2");
     result += testTransferFunction(0.1f, 40, 500, 0.25f, 70.28f, "High Speed Test 3");
 
