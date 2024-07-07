@@ -1,7 +1,7 @@
 #ifndef RENNSSELAERMOTORSPORT_ACCUMULATOR_H
 #define RENNSSELAERMOTORSPORT_ACCUMULATOR_H
 
-#include "Bms.h"
+#include "BMS.h"
 #include "Imd.h"
 
 typedef enum {
