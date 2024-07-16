@@ -3,7 +3,7 @@
 
 void initBms(Bms* bms, int hz) {
     if (bms) {
-        initCANSensor(&bms->base, "Bms", hz);
+        initCANSensor(&bms->base, "Bms", hz, 0);
         // Assume initBmsData initializes with default or zero values
         initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);
         bms->base.base.update = updateBms;

@@ -2,7 +2,7 @@
 #include <stdio.h>  // For printf
 
 void initImd(Imd* imd, int hz) {
-    initCANSensor(&imd->base, "Imd", hz);
+    initCANSensor(&imd->base, "Imd", hz, 0);
     imd->imd_status = false;
     imd->running_flag = false;
     imd->base.base.update = updateImd;
