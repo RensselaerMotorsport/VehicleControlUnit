@@ -19,7 +19,7 @@ int testTorqueUpdate(float torque, float desiredTorque,
     float maxTorque = 100.0f;
     initTorqueControlActuator(&tc, 0, 0, maxTorque);
 
-    setTorque(&tc, torque);
+    setActualTorque(&tc, torque);
     setDesiredTorque(&tc, desiredTorque);
     updateTorqueControlActuator(&tc);
     TorqueStatus status = checkTorqueLimits(&tc);
