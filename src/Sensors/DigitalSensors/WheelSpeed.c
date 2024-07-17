@@ -20,7 +20,7 @@
 void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth,
                     WHEEL_LOCATION location) {
     initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
-    ws->base.base.update = updateWheelSpeed;
+    ws->base.sensor.updateable.update = updateWheelSpeed;
     ws->radius = radius;
     ws->wheel_location = location;
     ws->numTeeth = numTeeth;

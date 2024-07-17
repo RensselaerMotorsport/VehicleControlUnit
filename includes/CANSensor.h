@@ -4,11 +4,9 @@
 #include "Sensor.h"
 
 typedef struct {
-    Sensor base;
+    Sensor sensor;
 } CANSensor;
 
-void initCANSensor(CANSensor* sensor, const char* name, int hz);
-// Placeholder for data retrieval function
-// int getCANSensorData(CANSensor* sensor);
+void initCANSensor(CANSensor* cansensor, const char* name, int hz);
 
 #endif

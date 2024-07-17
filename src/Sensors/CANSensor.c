@@ -1,8 +1,8 @@
 #include "../../includes/CANSensor.h"
 #include <stdio.h>  // For printf
 
-void initCANSensor(CANSensor* sensor, const char* name, int hz) {
-    initSensor(&sensor->base, name, hz);
+void initCANSensor(CANSensor* cansensor, const char* name, int hz) {
+    initSensor(&cansensor->sensor, name, hz, CAN);
 }
 
 // Function to retrieve data from CAN sensor

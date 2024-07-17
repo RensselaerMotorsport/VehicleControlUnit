@@ -1,9 +1,9 @@
 #include "../../includes/DigitalSensor.h"
 #include <stdio.h>  // For printf
 
-void initDigitalSensor(DigitalSensor* sensor, const char* name, int hz, int port) {
-    initSensor(&sensor->base, name, hz);
-    sensor->port = port;
+void initDigitalSensor(DigitalSensor* digitalsensor, const char* name, int hz, int port) {
+    initSensor(&digitalsensor->sensor, name, hz, DIGITAL);
+    digitalsensor->port = port;
 }
 
 // You could add a function to get data from the digital sensor if needed:

@@ -6,7 +6,7 @@ void initShockPot(ShockPot* shockPot, int hz, int channel, WHEEL_LOCATION locati
     initAnalogSensor(&shockPot->base, "ShockPot", hz, channel);
     shockPot->distance = -1;
     shockPot->wheel_location = location;
-    shockPot->base.base.update = updateShockPot;
+    shockPot->base.sensor.updateable.update = updateShockPot;
 }
 
 float getShockPotDistance(ShockPot* shockPot) {
