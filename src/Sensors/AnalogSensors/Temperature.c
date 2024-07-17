@@ -2,11 +2,12 @@
 
 void initTemperature(Temperature* temp, int hz, int channel) {
     initAnalogSensor(&temp->base, "Temperature", hz, channel);
-    temp->base.base.update = updateTemperature;
+    temp->base.sensor.updateable.update = updateTemperature;
     temp->degrees = 0;
 }
 
 void updateTemperature(void* temp) {
+    printf("Implement Temperature::update\n");
     Temperature *myTemp = (Temperature *)temp;
     myTemp->degrees = transferFunction(temp, getAnalogSensorData(&myTemp->base));
 }

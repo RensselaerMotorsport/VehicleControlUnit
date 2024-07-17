@@ -6,7 +6,7 @@ void initEsc(Esc* esc, int hz) {
         initCANSensor(&esc->base, "Esc", hz);
         esc->temp = 0.0;
         esc->motor_revolutions = 0.0;
-        esc->base.base.update = updateEsc;
+        esc->base.sensor.updateable.update = updateEsc;
     }
 }
 

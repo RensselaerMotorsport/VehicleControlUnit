@@ -5,7 +5,7 @@ void initImd(Imd* imd, int hz) {
     initCANSensor(&imd->base, "Imd", hz);
     imd->imd_status = false;
     imd->running_flag = false;
-    imd->base.base.update = updateImd;
+    imd->base.sensor.updateable.update = updateImd;
 }
 
 bool getImdStatus(const Imd* imd) {

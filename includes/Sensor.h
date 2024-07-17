@@ -5,17 +5,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_SENSOR_NAME_LENGTH 25
+#include "Updateable.h"
+
+typedef enum {
+    ANALOG,
+    DIGITAL,
+    CAN
+} SensorType;
 
 typedef struct {
-    char sensorName[MAX_SENSOR_NAME_LENGTH];
-    int hz;
-    // TODO: Unsure if id is needed
-    void (*update)(void* self);
+    Updateable updateable;
+    SensorType type;
 } Sensor;
 
-void initSensor(Sensor* sensor, const char* name, int hz);
-void defaultUpdate(void* self);
-void writeDataToFileImplementation(const char* filename, void* self);
+void initSensor(Sensor* sensor, const char* name, int hz, SensorType type);
 
 #endif
