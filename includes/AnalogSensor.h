@@ -4,12 +4,12 @@
 #include "Sensor.h"
 
 typedef struct {
-    Sensor base;
+    Sensor sensor;
     int channel;
 } AnalogSensor;
 
-void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel);
+void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz, int channel);
 
-int getAnalogSensorData(AnalogSensor* sensor);
+int getAnalogSensorData(AnalogSensor* analogsensor);
 
 #endif

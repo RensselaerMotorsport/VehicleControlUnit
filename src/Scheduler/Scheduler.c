@@ -21,8 +21,8 @@ void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors) 
         Task task;
         Sensor* sensor = sensorArray[i];
         if (sensor != NULL) {
-            TaskInit(&task, sensor, sensor->hz);
-            int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + (1000 / sensor->hz);
+            TaskInit(&task, sensor, sensor->updateable.hz);
+            int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + (1000 / sensor->updateable.hz);
             PQPush(&scheduler->tasks, task, initialPriority);
         }
     }

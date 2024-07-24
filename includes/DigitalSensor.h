@@ -4,10 +4,10 @@
 #include "Sensor.h"
 
 typedef struct {
-    Sensor base;
+    Sensor sensor;
     int port;
 } DigitalSensor;
 
-void initDigitalSensor(DigitalSensor* sensor, const char* name, int hz, int port);
+void initDigitalSensor(DigitalSensor* digitalsensor, const char* name, int hz, int port);
 
 #endif

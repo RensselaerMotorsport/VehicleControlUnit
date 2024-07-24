@@ -4,7 +4,7 @@
 void initApp(App* app, int hz, int channel) {
     initAnalogSensor(&app->base, "App", hz, channel);
     app->position = 0;
-    app->base.base.update = updateApp;
+    app->base.sensor.updateable.update = updateApp;
 }
 
 float getAppPosition(App* app) {

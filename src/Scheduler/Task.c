@@ -7,7 +7,7 @@ void TaskInit(Task* task, Sensor* sensor, int hz) {
 }
 
 void TaskExecute(Task* task) {
-    if (task->sensor && task->sensor->update) {
-        task->sensor->update(task->sensor);
+    if (task->sensor && task->sensor->updateable.update) {
+        UPDATE(task->sensor);
     }
 }

@@ -10,7 +10,7 @@ static const float kHighOutputSaturation = 4.65; // Output saturation for oversu
 void initBrakePressure(BrakePressure* bp, int hz, int channel) {
     initAnalogSensor(&bp->base, "BrakePressure", hz, channel);
     bp->pressure = -1;
-    bp->base.base.update = updateBrakePressure;
+    bp->base.sensor.updateable.update = updateBrakePressure;
 }
 
 float getBrakePressure(BrakePressure* bp) {

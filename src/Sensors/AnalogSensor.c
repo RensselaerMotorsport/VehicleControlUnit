@@ -1,9 +1,9 @@
 #include "../../includes/AnalogSensor.h"
 #include <stdio.h>
 
-void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel) {
-    initSensor(&sensor->base, name, hz);
-    sensor->channel = channel;
+void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz, int channel) {
+    initSensor(&analogsensor->sensor, name, hz, ANALOG);
+    analogsensor->channel = channel;
 }
 
 // TODO: Make a function to retrieve data
