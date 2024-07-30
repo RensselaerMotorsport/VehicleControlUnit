@@ -1,0 +1,113 @@
+\doxysection{Inc/\+Sensors/\+Sensor.h File Reference}
+\hypertarget{Sensor_8h}{}\label{Sensor_8h}\index{Inc/Sensors/Sensor.h@{Inc/Sensors/Sensor.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Utils/\+Updateable.\+h"{}}\newline
+Include dependency graph for Sensor.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{Sensor_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sensor_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSensor}{Sensor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}} \{ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}{ANALOG}}
+, \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}{DIGITAL}}
+, \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c}{CAN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}{init\+Sensor}} (\mbox{\hyperlink{structSensor}{Sensor}} \texorpdfstring{$\ast$}{*}sensor, const char \texorpdfstring{$\ast$}{*}name, int hz, \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Sensor_8h_a213c434cb928c4ca22513e2302632435}\index{Sensor.h@{Sensor.h}!SensorType@{SensorType}}
+\index{SensorType@{SensorType}!Sensor.h@{Sensor.h}}
+\doxysubsubsection{\texorpdfstring{SensorType}{SensorType}}
+{\footnotesize\ttfamily \label{Sensor_8h_a213c434cb928c4ca22513e2302632435} 
+enum \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ANALOG@{ANALOG}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!ANALOG@{ANALOG}}}\Hypertarget{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}\label{Sensor_8h_a213c434cb928c4ca22513e2302632435} 
+ANALOG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGITAL@{DIGITAL}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!DIGITAL@{DIGITAL}}}\Hypertarget{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}\label{Sensor_8h_a213c434cb928c4ca22513e2302632435} 
+DIGITAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN@{CAN}!Sensor.h@{Sensor.h}}\index{Sensor.h@{Sensor.h}!CAN@{CAN}}}\Hypertarget{Sensor_8h_a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c}\label{Sensor_8h_a213c434cb928c4ca22513e2302632435} 
+CAN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Sensor_8h_source_l00010}{10}} of file \mbox{\hyperlink{Sensor_8h_source}{Sensor.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}{ANALOG}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}{DIGITAL}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c}{CAN}}}
+\DoxyCodeLine{00014\ \}\ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{SensorType}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}\index{Sensor.h@{Sensor.h}!initSensor@{initSensor}}
+\index{initSensor@{initSensor}!Sensor.h@{Sensor.h}}
+\doxysubsubsection{\texorpdfstring{initSensor()}{initSensor()}}
+{\footnotesize\ttfamily \label{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663} 
+void init\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSensor}{Sensor}} \texorpdfstring{$\ast$}{*}}]{sensor}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sensor_8c_source_l00005}{5}} of file \mbox{\hyperlink{Sensor_8c_source}{Sensor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{Updateable_8h_aaad6c964e32bb05093b5e551856837b4}{initUpdateable}}(\&sensor-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}},\ name,\ hz);}
+\DoxyCodeLine{00007\ \ \ \ \ sensor-\/>\mbox{\hyperlink{structSensor_a59be498582043f581a78851506f8e322}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663_icgraph}
+\end{center}
+\end{figure}

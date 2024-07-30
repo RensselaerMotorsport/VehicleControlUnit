@@ -1,0 +1,45 @@
+\doxysection{Inc/\+Sensors/\+Analog\+Sensors/\+Accelerometer\+Wrapper.h File Reference}
+\hypertarget{AccelerometerWrapper_8h}{}\label{AccelerometerWrapper_8h}\index{Inc/Sensors/AnalogSensors/AccelerometerWrapper.h@{Inc/Sensors/AnalogSensors/AccelerometerWrapper.h}}
+{\ttfamily \#include "{}Accelerometer.\+h"{}}\newline
+Include dependency graph for Accelerometer\+Wrapper.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{AccelerometerWrapper_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{AccelerometerWrapper_8h_a1161a61585b3fd04aba13571cb0dbcc4}{init\+Accelerometer\+Wrapper}} (\mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} \texorpdfstring{$\ast$}{*}wrapper, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}ax, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}ay, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}az)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AccelerometerWrapper_8h_a1161a61585b3fd04aba13571cb0dbcc4}\index{AccelerometerWrapper.h@{AccelerometerWrapper.h}!initAccelerometerWrapper@{initAccelerometerWrapper}}
+\index{initAccelerometerWrapper@{initAccelerometerWrapper}!AccelerometerWrapper.h@{AccelerometerWrapper.h}}
+\doxysubsubsection{\texorpdfstring{initAccelerometerWrapper()}{initAccelerometerWrapper()}}
+{\footnotesize\ttfamily \label{AccelerometerWrapper_8h_a1161a61585b3fd04aba13571cb0dbcc4} 
+void init\+Accelerometer\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} \texorpdfstring{$\ast$}{*}}]{wrapper}{, }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}}]{ax}{, }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}}]{ay}{, }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} \texorpdfstring{$\ast$}{*}}]{az}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AccelerometerWrapper_8c_source_l00003}{3}} of file \mbox{\hyperlink{AccelerometerWrapper_8c_source}{Accelerometer\+Wrapper.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordflow}{if}\ (wrapper\ !=\ NULL\ \&\&\ ax\ !=\ NULL\ \&\&\ ay\ !=\ NULL\ \&\&\ az\ !=\ NULL)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a72932ac485f0c6d7b5210571b6b7a372}{x}}\ =\ *ax;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a3fe226fd288e01d6c7c65fc706c87e42}{y}}\ =\ *ay;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a2949ba901a31815ae99994aeefb5ecaa}{z}}\ =\ *az;}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}

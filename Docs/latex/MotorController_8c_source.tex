@@ -1,0 +1,28 @@
+\doxysection{Motor\+Controller.\+c}
+\hypertarget{MotorController_8c_source}{}\label{MotorController_8c_source}\index{Src/Sensors/CANSensors/MotorController.c@{Src/Sensors/CANSensors/MotorController.c}}
+\mbox{\hyperlink{MotorController_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../../includes/MotorController.h"{}}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00003}\mbox{\hyperlink{MotorController_8h_a2cd228c513cc182b48edb193ce92d4c9}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{MotorController_8c_a2cd228c513cc182b48edb193ce92d4c9}{initMotorController}}(\mbox{\hyperlink{structMotorController}{MotorController}}*\ mc,\ \mbox{\hyperlink{structEsc}{Esc}}*\ esc,\ \mbox{\hyperlink{structApp}{App}}*\ app)\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (mc\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00005}00005\ \ \ \ \ \ \ \ \ mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}}\ =\ esc;}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00006}00006\ \ \ \ \ \ \ \ \ mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}}\ =\ app;}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00007}00007\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00010}\mbox{\hyperlink{MotorController_8h_a5e58b938d347017c6e51634f7faa08f9}{00010}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{MotorController_8c_a5e58b938d347017c6e51634f7faa08f9}{getPedalPosition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMotorController}{MotorController}}*\ mc)\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (mc\ \&\&\ mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}})\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{App_8h_a01be170ac09e9dd35ba3f18c537ae409}{getAppPosition}}(mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}});\ \ \textcolor{comment}{//\ Assuming\ getAppPosition\ is\ implemented\ in\ App.c}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;\ \ \textcolor{comment}{//\ Return\ default\ value\ if\ no\ app}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00017}\mbox{\hyperlink{MotorController_8h_a2e791e4a0189d52d0e2cb54ce4451b86}{00017}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{MotorController_8c_a2e791e4a0189d52d0e2cb54ce4451b86}{getMotorTemp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMotorController}{MotorController}}*\ mc)\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (mc\ \&\&\ mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}})\ \{}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5}{getEscTemp}}(mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}});\ \ \textcolor{comment}{//\ Assuming\ getEscTemp\ is\ implemented\ in\ Esc.c}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;\ \ \textcolor{comment}{//\ Return\ default\ value\ if\ no\ esc}}
+\DoxyCodeLine{\Hypertarget{MotorController_8c_source_l00022}00022\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,16 @@
+<map id="Accumulator" name="Accumulator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="29,360,123,386"/>
+<area shape="rect" id="Node000002" href="$structBms.html" title=" " alt="" coords="88,271,136,297"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,312,83,361,78,359,99,310"/>
+<area shape="rect" id="Node000003" href="$structCANSensor.html" title=" " alt="" coords="5,183,96,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="70,220,106,269,101,273,66,223"/>
+<area shape="rect" id="Node000007" href="$structImd.html" title=" " alt="" coords="21,271,64,297"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="47,224,46,233,45,271,39,271,41,232,42,223"/>
+<area shape="rect" id="Node000004" href="$structSensor.html" title=" " alt="" coords="19,94,82,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="53,135,53,182,48,182,48,135"/>
+<area shape="rect" id="Node000005" href="$structUpdateable.html" title=" " alt="" coords="7,5,94,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="53,47,53,94,48,94,48,47"/>
+<area shape="rect" id="Node000006" href="$structBmsData.html" title=" " alt="" coords="128,183,203,208"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="154,223,138,249,122,273,118,270,134,246,149,220"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="50,311,57,335,70,358,65,361,52,337,45,313"/>
+</map>

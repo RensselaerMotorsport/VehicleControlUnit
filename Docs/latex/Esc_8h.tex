@@ -1,0 +1,161 @@
+\doxysection{Inc/\+Sensors/\+CANSensors/\+Esc.h File Reference}
+\hypertarget{Esc_8h}{}\label{Esc_8h}\index{Inc/Sensors/CANSensors/Esc.h@{Inc/Sensors/CANSensors/Esc.h}}
+{\ttfamily \#include "{}CANSensor.\+h"{}}\newline
+Include dependency graph for Esc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{Esc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{Esc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structEsc}{Esc}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Esc_8h_a88716097de898ba50d9866c5639e8c52}{init\+Esc}} (\mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}esc, int hz)
+\item 
+float \mbox{\hyperlink{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5}{get\+Esc\+Temp}} (const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}esc)
+\item 
+float \mbox{\hyperlink{Esc_8h_a3f3b40db38f7ae61b52114ae8c25a05d}{get\+Esc\+Motor\+Revolutions}} (const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}esc)
+\item 
+void \mbox{\hyperlink{Esc_8h_a2341be410f98db76ae4ff696ce496cce}{update\+Esc}} (void \texorpdfstring{$\ast$}{*}esc)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{Esc_8h_af4d9012e45c4291a50a3738c198178bf}{to\+String\+Esc}} (const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}esc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Esc_8h_a3f3b40db38f7ae61b52114ae8c25a05d}\index{Esc.h@{Esc.h}!getEscMotorRevolutions@{getEscMotorRevolutions}}
+\index{getEscMotorRevolutions@{getEscMotorRevolutions}!Esc.h@{Esc.h}}
+\doxysubsubsection{\texorpdfstring{getEscMotorRevolutions()}{getEscMotorRevolutions()}}
+{\footnotesize\ttfamily \label{Esc_8h_a3f3b40db38f7ae61b52114ae8c25a05d} 
+float get\+Esc\+Motor\+Revolutions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}}]{esc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Esc_8c_source_l00017}{17}} of file \mbox{\hyperlink{Esc_8c_source}{Esc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ esc-\/>\mbox{\hyperlink{structEsc_a53f6f026be346b4972082111f32604ef}{motor\_revolutions}};}
+\DoxyCodeLine{00019\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5}\index{Esc.h@{Esc.h}!getEscTemp@{getEscTemp}}
+\index{getEscTemp@{getEscTemp}!Esc.h@{Esc.h}}
+\doxysubsubsection{\texorpdfstring{getEscTemp()}{getEscTemp()}}
+{\footnotesize\ttfamily \label{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5} 
+float get\+Esc\+Temp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}}]{esc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Esc_8c_source_l00013}{13}} of file \mbox{\hyperlink{Esc_8c_source}{Esc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ esc-\/>\mbox{\hyperlink{structEsc_a4b81f1d8720191542be8cef2e2ef05c4}{temp}};}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Esc_8h_a88716097de898ba50d9866c5639e8c52}\index{Esc.h@{Esc.h}!initEsc@{initEsc}}
+\index{initEsc@{initEsc}!Esc.h@{Esc.h}}
+\doxysubsubsection{\texorpdfstring{initEsc()}{initEsc()}}
+{\footnotesize\ttfamily \label{Esc_8h_a88716097de898ba50d9866c5639e8c52} 
+void init\+Esc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}}]{esc}{, }\item[{int}]{hz}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Esc_8c_source_l00004}{4}} of file \mbox{\hyperlink{Esc_8c_source}{Esc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (esc\ !=\ NULL)\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{CANSensor_8h_adb095f8cdd8d22a9b8f54c8c792a6ede}{initCANSensor}}(\&esc-\/>\mbox{\hyperlink{structEsc_ac364076c8cfdfb5fb90efbedfbdca3c1}{base}},\ \textcolor{stringliteral}{"{}Esc"{}},\ hz);}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ esc-\/>\mbox{\hyperlink{structEsc_a4b81f1d8720191542be8cef2e2ef05c4}{temp}}\ =\ 0.0;}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ esc-\/>\mbox{\hyperlink{structEsc_a53f6f026be346b4972082111f32604ef}{motor\_revolutions}}\ =\ 0.0;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ esc-\/>\mbox{\hyperlink{structEsc_ac364076c8cfdfb5fb90efbedfbdca3c1}{base}}.\mbox{\hyperlink{structCANSensor_ab11fe7898bbab5b103fa014eaa9c1fad}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{Esc_8c_a2341be410f98db76ae4ff696ce496cce}{updateEsc}};}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Esc_8h_a88716097de898ba50d9866c5639e8c52_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Esc_8h_af4d9012e45c4291a50a3738c198178bf}\index{Esc.h@{Esc.h}!toStringEsc@{toStringEsc}}
+\index{toStringEsc@{toStringEsc}!Esc.h@{Esc.h}}
+\doxysubsubsection{\texorpdfstring{toStringEsc()}{toStringEsc()}}
+{\footnotesize\ttfamily \label{Esc_8h_af4d9012e45c4291a50a3738c198178bf} 
+char \texorpdfstring{$\ast$}{*} to\+String\+Esc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structEsc}{Esc}} \texorpdfstring{$\ast$}{*}}]{esc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Esc_8c_source_l00038}{38}} of file \mbox{\hyperlink{Esc_8c_source}{Esc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ str[100];}
+\DoxyCodeLine{00040\ \ \ \ \ sprintf(str,\ \textcolor{stringliteral}{"{}\%f,\%f"{}},\ esc-\/>\mbox{\hyperlink{structEsc_a4b81f1d8720191542be8cef2e2ef05c4}{temp}},\ esc-\/>\mbox{\hyperlink{structEsc_a53f6f026be346b4972082111f32604ef}{motor\_revolutions}});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Esc_8h_a2341be410f98db76ae4ff696ce496cce}\index{Esc.h@{Esc.h}!updateEsc@{updateEsc}}
+\index{updateEsc@{updateEsc}!Esc.h@{Esc.h}}
+\doxysubsubsection{\texorpdfstring{updateEsc()}{updateEsc()}}
+{\footnotesize\ttfamily \label{Esc_8h_a2341be410f98db76ae4ff696ce496cce} 
+void update\+Esc (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{esc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Esc_8c_source_l00021}{21}} of file \mbox{\hyperlink{Esc_8c_source}{Esc.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structEsc}{Esc}}*\ myEsc\ =\ (\mbox{\hyperlink{structEsc}{Esc}}*)\ esc;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ int\ data\ =\ myEsc-\/>base.getData();\ \ //\ Simplified\ assumption\ of\ data\ retrieval}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ myEsc-\/>temp\ =\ tempTransferFunctionEsc(data);}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ myEsc-\/>motor\_revolutions\ =\ motorRevolutionsTransferFunctionEsc(data);}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ printf("{}ESC\ Temp:\ \%f,\ Motor\ Revolutions:\ \%f\(\backslash\)n"{},\ myEsc-\/>temp,\ myEsc-\/>motor\_revolutions);}}
+\DoxyCodeLine{00027\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Implement\ updateEsc\ logic\(\backslash\)n"{}});}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{Esc_8h_a2341be410f98db76ae4ff696ce496cce_icgraph}
+\end{center}
+\end{figure}

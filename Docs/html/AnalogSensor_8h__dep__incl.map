@@ -1,0 +1,19 @@
+<map id="Inc/Sensors/AnalogSensor.h" name="Inc/Sensors/AnalogSensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="524,5,710,31"/>
+<area shape="rect" id="Node000002" href="$Accelerometer_8h.html" title=" " alt="" coords="5,79,189,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,36,201,82,189,84,188,78,201,76,510,31"/>
+<area shape="rect" id="Node000004" href="$App_8h.html" title=" " alt="" coords="213,79,397,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="555,38,384,81,382,76,554,33"/>
+<area shape="rect" id="Node000006" href="$BrakePressure_8h.html" title=" " alt="" coords="421,79,605,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="591,43,540,81,537,76,587,38"/>
+<area shape="rect" id="Node000007" href="$ShockPot_8h.html" title=" " alt="" coords="629,79,813,120"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="647,38,697,76,694,81,643,43"/>
+<area shape="rect" id="Node000008" href="$SteeringColumn_8h.html" title=" " alt="" coords="837,79,1021,120"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="680,33,852,76,850,81,679,38"/>
+<area shape="rect" id="Node000009" href="$Temperature_8h.html" title=" " alt="" coords="1045,79,1229,120"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="724,31,1033,76,1046,78,1045,84,1033,82,724,36"/>
+<area shape="rect" id="Node000003" href="$AccelerometerWrapper_8h.html" title=" " alt="" coords="5,168,189,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,135,100,167,94,167,94,135"/>
+<area shape="rect" id="Node000005" href="$MotorController_8h.html" title=" " alt="" coords="219,168,391,208"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="308,135,308,167,302,167,302,135"/>
+</map>

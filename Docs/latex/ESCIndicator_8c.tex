@@ -1,0 +1,64 @@
+\doxysection{Src/\+Sensors/\+Digital\+Sensors/\+ESCIndicator.c File Reference}
+\hypertarget{ESCIndicator_8c}{}\label{ESCIndicator_8c}\index{Src/Sensors/DigitalSensors/ESCIndicator.c@{Src/Sensors/DigitalSensors/ESCIndicator.c}}
+{\ttfamily \#include "{}../../../includes/\+ESCIndicator.\+h"{}}\newline
+Include dependency graph for ESCIndicator.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{ESCIndicator_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ESCIndicator_8c_a23268d6d75292be2165c72d48183abe8}{init\+ECSIndicator}} (\mbox{\hyperlink{structESCIndicator}{ESCIndicator}} \texorpdfstring{$\ast$}{*}esc, int hz, int port)
+\item 
+bool \mbox{\hyperlink{ESCIndicator_8c_a03d85d5128931d56c98402e353376194}{get\+Alive}} (\mbox{\hyperlink{structESCIndicator}{ESCIndicator}} \texorpdfstring{$\ast$}{*}esc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ESCIndicator_8c_a03d85d5128931d56c98402e353376194}\index{ESCIndicator.c@{ESCIndicator.c}!getAlive@{getAlive}}
+\index{getAlive@{getAlive}!ESCIndicator.c@{ESCIndicator.c}}
+\doxysubsubsection{\texorpdfstring{getAlive()}{getAlive()}}
+{\footnotesize\ttfamily \label{ESCIndicator_8c_a03d85d5128931d56c98402e353376194} 
+bool get\+Alive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structESCIndicator}{ESCIndicator}} \texorpdfstring{$\ast$}{*}}]{esc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ESCIndicator_8c_source_l00021}{21}} of file \mbox{\hyperlink{ESCIndicator_8c_source}{ESCIndicator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ esc-\/>\mbox{\hyperlink{structESCIndicator_a7fc213afcd83832390198bba4be9f3a7}{alive}};}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\Hypertarget{ESCIndicator_8c_a23268d6d75292be2165c72d48183abe8}\index{ESCIndicator.c@{ESCIndicator.c}!initECSIndicator@{initECSIndicator}}
+\index{initECSIndicator@{initECSIndicator}!ESCIndicator.c@{ESCIndicator.c}}
+\doxysubsubsection{\texorpdfstring{initECSIndicator()}{initECSIndicator()}}
+{\footnotesize\ttfamily \label{ESCIndicator_8c_a23268d6d75292be2165c72d48183abe8} 
+void init\+ECSIndicator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structESCIndicator}{ESCIndicator}} \texorpdfstring{$\ast$}{*}}]{esc}{, }\item[{int}]{hz}{, }\item[{int}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ESCIndicator_8c_source_l00010}{10}} of file \mbox{\hyperlink{ESCIndicator_8c_source}{ESCIndicator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{DigitalSensor_8h_a2bf0b31c332d3808de755eb6bf35b3c5}{initDigitalSensor}}(\&esc-\/>\mbox{\hyperlink{structESCIndicator_afacbbe8d971838282b13f4f153bea71d}{base}},\ \textcolor{stringliteral}{"{}ESC\ Indicator"{}},\ hz,\ port);}
+\DoxyCodeLine{00012\ \ \ \ \ esc-\/>\mbox{\hyperlink{structESCIndicator_a7fc213afcd83832390198bba4be9f3a7}{alive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ESCIndicator_8c_a23268d6d75292be2165c72d48183abe8_cgraph}
+\end{center}
+\end{figure}

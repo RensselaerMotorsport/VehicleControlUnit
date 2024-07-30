@@ -1,0 +1,150 @@
+\doxysection{Inc/\+Systems/\+Monitor\+System.h File Reference}
+\hypertarget{MonitorSystem_8h}{}\label{MonitorSystem_8h}\index{Inc/Systems/MonitorSystem.h@{Inc/Systems/MonitorSystem.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}System.\+h"{}}\newline
+Include dependency graph for Monitor\+System.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MonitorSystem_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MonitorSystem_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMonitorSystem}{Monitor\+System}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}} \{ \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72af873a859fc5d8e1f48ad69cdcb56b1b2}{m\+\_\+\+TORQUE}}
+, \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72addb0b9199c0d1673d59c9e7991e61cb9}{m\+\_\+\+TRACTION}}
+, \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72a644e23a46be0461f14f906510e3bd8aa}{m\+\_\+\+ACCUMULATOR}}
+ \}
+\item 
+enum \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}} \{ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}
+, \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a506bbed95e61bba1f604868dfa1975da}{SYSTEM\+\_\+\+ADJUST}}
+, \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a78f08cc8638a7c47f53c93c5344fa86b}{SYSTEM\+\_\+\+DISABLE}}
+, \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f}{VEHICLE\+\_\+\+SHUTDOWN}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MonitorSystem_8h_a83cb9acbc4ccdf96dd0d76cd92c0fedc}{init\+Monitor\+System}} (\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} \texorpdfstring{$\ast$}{*}monitor, const char \texorpdfstring{$\ast$}{*}name, int hz, \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}}, \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}} fault)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}\index{MonitorSystem.h@{MonitorSystem.h}!FaultType@{FaultType}}
+\index{FaultType@{FaultType}!MonitorSystem.h@{MonitorSystem.h}}
+\doxysubsubsection{\texorpdfstring{FaultType}{FaultType}}
+{\footnotesize\ttfamily \label{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398} 
+enum \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!NONE@{NONE}}}\Hypertarget{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398ac157bdf0b85a40d2619cbc8bc1ae5fe2}\label{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_ADJUST@{SYSTEM\_ADJUST}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!SYSTEM\_ADJUST@{SYSTEM\_ADJUST}}}\Hypertarget{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a506bbed95e61bba1f604868dfa1975da}\label{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398} 
+SYSTEM\+\_\+\+ADJUST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYSTEM\_DISABLE@{SYSTEM\_DISABLE}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!SYSTEM\_DISABLE@{SYSTEM\_DISABLE}}}\Hypertarget{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a78f08cc8638a7c47f53c93c5344fa86b}\label{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398} 
+SYSTEM\+\_\+\+DISABLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VEHICLE\_SHUTDOWN@{VEHICLE\_SHUTDOWN}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!VEHICLE\_SHUTDOWN@{VEHICLE\_SHUTDOWN}}}\Hypertarget{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f}\label{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398} 
+VEHICLE\+\_\+\+SHUTDOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{MonitorSystem_8h_source_l00016}{16}} of file \mbox{\hyperlink{MonitorSystem_8h_source}{Monitor\+System.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}},\ \textcolor{comment}{//\ If\ a\ fault\ is\ detected,\ do\ nothing}}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a506bbed95e61bba1f604868dfa1975da}{SYSTEM\_ADJUST}},\ \textcolor{comment}{//\ If\ a\ fault\ is\ detected,\ adjust\ the\ system}}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a78f08cc8638a7c47f53c93c5344fa86b}{SYSTEM\_DISABLE}},\ \textcolor{comment}{//\ If\ a\ fault\ is\ detected,\ disable\ the\ system,\ and\ adjust\ the\ vehicle}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f}{VEHICLE\_SHUTDOWN}}\ \textcolor{comment}{//\ If\ a\ fault\ is\ detected,\ shut\ down\ the\ vehicle}}
+\DoxyCodeLine{00021\ \}\ \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{FaultType}};}
+
+\end{DoxyCode}
+\Hypertarget{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}\index{MonitorSystem.h@{MonitorSystem.h}!MonitorType@{MonitorType}}
+\index{MonitorType@{MonitorType}!MonitorSystem.h@{MonitorSystem.h}}
+\doxysubsubsection{\texorpdfstring{MonitorType}{MonitorType}}
+{\footnotesize\ttfamily \label{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72} 
+enum \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{m\_TORQUE@{m\_TORQUE}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!m\_TORQUE@{m\_TORQUE}}}\Hypertarget{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72af873a859fc5d8e1f48ad69cdcb56b1b2}\label{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72} 
+m\+\_\+\+TORQUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{m\_TRACTION@{m\_TRACTION}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!m\_TRACTION@{m\_TRACTION}}}\Hypertarget{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72addb0b9199c0d1673d59c9e7991e61cb9}\label{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72} 
+m\+\_\+\+TRACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{m\_ACCUMULATOR@{m\_ACCUMULATOR}!MonitorSystem.h@{MonitorSystem.h}}\index{MonitorSystem.h@{MonitorSystem.h}!m\_ACCUMULATOR@{m\_ACCUMULATOR}}}\Hypertarget{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72a644e23a46be0461f14f906510e3bd8aa}\label{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72} 
+m\+\_\+\+ACCUMULATOR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{MonitorSystem_8h_source_l00010}{10}} of file \mbox{\hyperlink{MonitorSystem_8h_source}{Monitor\+System.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72af873a859fc5d8e1f48ad69cdcb56b1b2}{m\_TORQUE}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72addb0b9199c0d1673d59c9e7991e61cb9}{m\_TRACTION}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72a644e23a46be0461f14f906510e3bd8aa}{m\_ACCUMULATOR}}}
+\DoxyCodeLine{00014\ \}\ \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{MonitorType}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MonitorSystem_8h_a83cb9acbc4ccdf96dd0d76cd92c0fedc}\index{MonitorSystem.h@{MonitorSystem.h}!initMonitorSystem@{initMonitorSystem}}
+\index{initMonitorSystem@{initMonitorSystem}!MonitorSystem.h@{MonitorSystem.h}}
+\doxysubsubsection{\texorpdfstring{initMonitorSystem()}{initMonitorSystem()}}
+{\footnotesize\ttfamily \label{MonitorSystem_8h_a83cb9acbc4ccdf96dd0d76cd92c0fedc} 
+void init\+Monitor\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} \texorpdfstring{$\ast$}{*}}]{monitor}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{\mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}}}]{type}{, }\item[{\mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}}}]{fault}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MonitorSystem_8c_source_l00003}{3}} of file \mbox{\hyperlink{MonitorSystem_8c_source}{Monitor\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&monitor-\/>\mbox{\hyperlink{structMonitorSystem_ae797855340e1004bb2eaaf8447376597}{system}},\ name,\ hz,\ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}});}
+\DoxyCodeLine{00006\ \ \ \ \ monitor-\/>\mbox{\hyperlink{structMonitorSystem_a1c96960465270bcc95c0932902ed2be7}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00007\ \ \ \ \ monitor-\/>\mbox{\hyperlink{structMonitorSystem_a7a134da3e979bc47c26b4318b599a648}{fault}}\ =\ fault;}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MonitorSystem_8h_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph}
+\end{center}
+\end{figure}

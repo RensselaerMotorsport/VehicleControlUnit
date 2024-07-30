@@ -1,0 +1,11 @@
+<map id="Src/Sensors/DigitalSensors/WheelSpeed.c" name="Src/Sensors/DigitalSensors/WheelSpeed.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="279,5,460,46"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,192,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="302,49,156,92,154,87,301,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="215,94,385,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="354,48,322,84,318,80,350,45"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="409,94,468,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="388,45,420,80,416,84,384,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="492,94,553,120"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="409,44,487,84,485,89,406,49"/>
+</map>

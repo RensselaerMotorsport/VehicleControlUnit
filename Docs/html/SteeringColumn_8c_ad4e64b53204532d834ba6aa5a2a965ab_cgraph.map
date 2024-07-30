@@ -1,0 +1,21 @@
+<map id="initSteeringColumn" name="initSteeringColumn">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,109,136,135"/>
+<area shape="rect" id="Node000002" href="$AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180" title="Initializes an analog sensor." alt="" coords="200,83,320,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,110,184,103,185,109,136,116"/>
+<area shape="rect" id="Node000009" href="$SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title=" " alt="" coords="184,133,336,159"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="136,128,168,132,168,137,136,133"/>
+<area shape="rect" id="Node000003" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="426,80,505,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="320,92,410,91,410,96,320,97"/>
+<area shape="rect" id="Node000004" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="595,80,700,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="506,90,580,90,580,96,506,96"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="748,5,851,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="673,77,746,40,755,36,757,40,749,45,676,82"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="750,55,849,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="700,81,734,76,734,81,701,87"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="750,104,849,130"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="701,98,735,104,734,109,700,104"/>
+<area shape="rect" id="Node000008" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="748,153,851,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="676,104,749,140,757,144,755,149,746,145,674,109"/>
+<area shape="rect" id="Node000010" href="$SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e" title=" " alt="" coords="384,130,547,171"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="336,145,368,146,368,151,336,150"/>
+</map>

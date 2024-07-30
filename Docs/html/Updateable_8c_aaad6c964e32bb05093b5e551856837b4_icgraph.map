@@ -1,0 +1,45 @@
+<map id="initUpdateable" name="initUpdateable">
+<area shape="rect" id="Node000001" title=" " alt="" coords="499,499,604,524"/>
+<area shape="rect" id="Node000002" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="371,413,450,439"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="514,492,432,442,434,437,517,488"/>
+<area shape="rect" id="Node000017" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="369,548,451,574"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="499,533,450,550,448,545,497,528"/>
+<area shape="rect" id="Node000003" href="$AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180" title="Initializes an analog sensor." alt="" coords="193,153,312,179"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,401,259,180,264,178,396,399"/>
+<area shape="rect" id="Node000010" href="$CANSensor_8c.html#adb095f8cdd8d22a9b8f54c8c792a6ede" title=" " alt="" coords="199,376,306,402"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="355,416,306,404,307,399,356,411"/>
+<area shape="rect" id="Node000014" href="$DigitalSensor_8c.html#a2bf0b31c332d3808de755eb6bf35b3c5" title=" " alt="" coords="195,449,310,475"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="356,441,311,452,309,446,355,436"/>
+<area shape="rect" id="Node000004" href="$Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title=" " alt="" coords="9,5,132,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,142,190,93,163,67,134,44,114,34,117,29,137,40,167,63,194,89,235,139"/>
+<area shape="rect" id="Node000005" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title=" " alt="" coords="40,55,101,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="219,146,180,120,134,94,101,80,103,75,137,89,182,115,222,142"/>
+<area shape="rect" id="Node000006" href="$BrakePressure_8c.html#a6cc0bf29d38b4637cb6a0a36f0196a81" title=" " alt="" coords="8,104,133,130"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="187,151,120,133,121,128,188,146"/>
+<area shape="rect" id="Node000007" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title=" " alt="" coords="23,153,118,179"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="177,169,119,169,119,164,177,164"/>
+<area shape="rect" id="Node000008" href="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title=" " alt="" coords="5,203,136,228"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="188,186,121,205,120,199,187,181"/>
+<area shape="rect" id="Node000009" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title=" " alt="" coords="15,252,126,278"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="222,191,182,217,137,243,113,254,110,249,134,238,180,213,219,186"/>
+<area shape="rect" id="Node000011" href="$BMS_8c.html#afeeadcad4acba40f2d7197368054b051" title=" " alt="" coords="38,301,103,327"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="207,372,135,341,103,328,105,323,137,336,209,367"/>
+<area shape="rect" id="Node000012" href="$Esc_8c.html#a88716097de898ba50d9866c5639e8c52" title=" " alt="" coords="40,351,101,376"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="183,382,101,370,101,365,184,377"/>
+<area shape="rect" id="Node000013" href="$Imd_8c.html#a4920d20ec1d5bea9a18548398159754b" title=" " alt="" coords="40,400,101,426"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="184,401,101,412,101,406,183,395"/>
+<area shape="rect" id="Node000015" href="$ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="13,449,128,475"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="179,465,128,465,128,460,179,460"/>
+<area shape="rect" id="Node000016" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title=" " alt="" coords="15,499,126,524"/>
+<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="188,482,121,501,120,495,187,477"/>
+<area shape="rect" id="Node000018" href="$CommsSystem_8c.html#ab24ecccdbc3c3a34bf1204ccf35c45a6" title=" " alt="" coords="189,499,316,524"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="354,546,295,527,297,522,355,541"/>
+<area shape="rect" id="Node000019" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title=" " alt="" coords="184,548,321,574"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="353,564,321,564,321,558,353,558"/>
+<area shape="rect" id="Node000021" href="$ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="188,597,317,623"/>
+<area shape="poly" id="edge20_Node000017_Node000021" title=" " alt="" coords="355,581,297,599,295,594,354,576"/>
+<area shape="rect" id="Node000022" href="$MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc" title=" " alt="" coords="190,647,315,672"/>
+<area shape="poly" id="edge21_Node000017_Node000022" title=" " alt="" coords="387,587,358,613,322,638,300,649,297,644,320,633,354,609,384,583"/>
+<area shape="rect" id="Node000020" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title=" " alt="" coords="11,548,130,574"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="168,564,130,564,130,558,168,558"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="initECSIndicator" name="initECSIndicator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,120,106"/>
+<area shape="rect" id="Node000002" href="$DigitalSensor_8c.html#a2bf0b31c332d3808de755eb6bf35b3c5" title=" " alt="" coords="168,80,283,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,90,152,90,152,96,120,96"/>
+<area shape="rect" id="Node000003" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="331,80,410,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,90,315,90,315,96,283,96"/>
+<area shape="rect" id="Node000004" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="458,80,563,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="411,90,443,90,443,96,411,96"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="611,5,714,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="536,77,609,40,618,36,620,40,612,45,539,82"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="613,55,712,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="563,81,597,76,597,81,564,87"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="613,104,712,130"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="564,98,598,104,597,109,563,104"/>
+<area shape="rect" id="Node000008" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="611,153,714,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="539,104,612,140,620,144,618,149,609,145,537,109"/>
+</map>

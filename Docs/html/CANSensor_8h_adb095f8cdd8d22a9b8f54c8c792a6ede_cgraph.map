@@ -1,0 +1,15 @@
+<map id="initCANSensor" name="initCANSensor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,113,106"/>
+<area shape="rect" id="Node000002" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="161,80,240,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,90,145,90,145,96,113,96"/>
+<area shape="rect" id="Node000003" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="288,80,392,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,90,272,90,272,96,241,96"/>
+<area shape="rect" id="Node000004" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="440,5,544,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="366,77,439,40,448,36,450,40,442,45,368,82"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="442,55,542,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="392,81,426,76,427,81,393,87"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="443,104,541,130"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="393,98,428,104,427,109,392,104"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="441,153,543,179"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="369,104,442,140,450,144,448,149,439,145,367,109"/>
+</map>

@@ -1,0 +1,213 @@
+\doxysection{Inc/\+Sensors/\+Digital\+Sensors/\+Wheel\+Speed.h File Reference}
+\hypertarget{WheelSpeed_8h}{}\label{WheelSpeed_8h}\index{Inc/Sensors/DigitalSensors/WheelSpeed.h@{Inc/Sensors/DigitalSensors/WheelSpeed.h}}
+{\ttfamily \#include "{}Digital\+Sensor.\+h"{}}\newline
+{\ttfamily \#include "{}Wheel\+Location.\+h"{}}\newline
+Include dependency graph for Wheel\+Speed.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{WheelSpeed_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{WheelSpeed_8h_ac49732714bcdc5c6bb1c4f94ddf497b3}{init\+Wheel\+Speed}} (\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}ws, int hz, int port, float radius, int num\+Teeth, \mbox{\hyperlink{WheelLocation_8h_a6bcc31f28038e411321704f9947331d7}{WHEEL\+\_\+\+LOCATION}} location)
+\item 
+float \mbox{\hyperlink{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9}{calculate\+Speed}} (\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}ws)
+\item 
+void \mbox{\hyperlink{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a}{update\+Wheel\+Speed}} (void \texorpdfstring{$\ast$}{*}ws)
+\item 
+void \mbox{\hyperlink{WheelSpeed_8h_a8a44c706d5c92c453cfbd4e7be159c36}{set\+Time\+Interval}} (\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}ws, float interval)
+\item 
+void \mbox{\hyperlink{WheelSpeed_8h_a27cf8300dac12d235a50cf77b9f9aaac}{add\+Pulse}} (\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}wf, int num)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{WheelSpeed_8h_a27cf8300dac12d235a50cf77b9f9aaac}\index{WheelSpeed.h@{WheelSpeed.h}!addPulse@{addPulse}}
+\index{addPulse@{addPulse}!WheelSpeed.h@{WheelSpeed.h}}
+\doxysubsubsection{\texorpdfstring{addPulse()}{addPulse()}}
+{\footnotesize\ttfamily \label{WheelSpeed_8h_a27cf8300dac12d235a50cf77b9f9aaac} 
+void add\+Pulse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}}]{wf}{, }\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{WheelSpeed_8c_source_l00102}{102}} of file \mbox{\hyperlink{WheelSpeed_8c_source}{Wheel\+Speed.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ ws-\/>pulses\ +=\ num;}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+\Hypertarget{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9}\index{WheelSpeed.h@{WheelSpeed.h}!calculateSpeed@{calculateSpeed}}
+\index{calculateSpeed@{calculateSpeed}!WheelSpeed.h@{WheelSpeed.h}}
+\doxysubsubsection{\texorpdfstring{calculateSpeed()}{calculateSpeed()}}
+{\footnotesize\ttfamily \label{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9} 
+float calculate\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}}]{ws}{}\end{DoxyParamCaption})}
+
+Translates data to speed in mph.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ws} & A pointer to the \doxylink{structWheelSpeed}{Wheel\+Speed} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The speed in miles per hour. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{WheelSpeed_8c_source_l00051}{51}} of file \mbox{\hyperlink{WheelSpeed_8c_source}{Wheel\+Speed.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ pointer\ is\ null}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (ws\ ==\ NULL)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Error:\ Null\ pointer\ passed\ to\ calculateSpeed\(\backslash\)n"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;\ \textcolor{comment}{//\ Or\ handle\ the\ error\ as\ appropriate}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ numTeeth\ =\ ws-\/>\mbox{\hyperlink{structWheelSpeed_acca8266f1bc14244ade0afb42cf5a1d5}{numTeeth}};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ ws-\/>\mbox{\hyperlink{structWheelSpeed_aa54a56855e20fb6bdc11ae0db9b0e5aa}{radius}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ pulses\ =\ ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ delta\ =\ \mbox{\hyperlink{TimeUtils_8h_ab811d2f5aa3466ef464b7e2a8ff6c31d}{measureInterval}}(ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ Reset\ pulse\ count\ and\ elapsed\ time\ for\ the\ next\ measurement\ interval}}
+\DoxyCodeLine{00064\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}}\ =\ \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{00065\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}}\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Verify\ inputs}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (numTeeth\ <=\ 0\ ||\ radius\ <=\ 0.0f\ ||\ pulses\ <=\ 0\ ||\ delta\ <=\ 0.0)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error:\ Invalid\ argument.\ "{}}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NumTeeth\ =\ \%d,\ Radius\ =\ \%.2f,\ Pulses\ =\ \%d,\ Time\ Delta\ =\ \%.2f\(\backslash\)n"{}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numTeeth,\ radius,\ pulses,\ delta);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0f;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Calculations}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ circumference\ =\ 2\ *\ \mbox{\hyperlink{WheelSpeed_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}}\ *\ radius;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{float}\ distancePerPulse\ =\ circumference\ /\ numTeeth;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{float}\ speedMetersPerSecond\ =\ (distancePerPulse\ *\ pulses)\ /\ delta;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \mbox{\hyperlink{WheelSpeed_8c_afc7e7aa256276c3574cb19108257cfc8}{convertMpsToMph}}(speedMetersPerSecond);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ speed;}
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{WheelSpeed_8h_ac49732714bcdc5c6bb1c4f94ddf497b3}\index{WheelSpeed.h@{WheelSpeed.h}!initWheelSpeed@{initWheelSpeed}}
+\index{initWheelSpeed@{initWheelSpeed}!WheelSpeed.h@{WheelSpeed.h}}
+\doxysubsubsection{\texorpdfstring{initWheelSpeed()}{initWheelSpeed()}}
+{\footnotesize\ttfamily \label{WheelSpeed_8h_ac49732714bcdc5c6bb1c4f94ddf497b3} 
+void init\+Wheel\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}}]{ws}{, }\item[{int}]{hz}{, }\item[{int}]{port}{, }\item[{float}]{radius}{, }\item[{int}]{num\+Teeth}{, }\item[{\mbox{\hyperlink{WheelLocation_8h_a6bcc31f28038e411321704f9947331d7}{WHEEL\+\_\+\+LOCATION}}}]{location}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{WheelSpeed_8c_source_l00020}{20}} of file \mbox{\hyperlink{WheelSpeed_8c_source}{Wheel\+Speed.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{DigitalSensor_8h_a2bf0b31c332d3808de755eb6bf35b3c5}{initDigitalSensor}}(\&ws-\/>\mbox{\hyperlink{structWheelSpeed_ac9ad06f7e5816697f4bfea770b9722b2}{base}},\ \textcolor{stringliteral}{"{}Wheel\ Speed"{}},\ hz,\ port);}
+\DoxyCodeLine{00023\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_ac9ad06f7e5816697f4bfea770b9722b2}{base}}.\mbox{\hyperlink{structDigitalSensor_aa5cfba5a7ccb124822fa1d8a2aac9ece}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{WheelSpeed_8c_a92ea112da554d5de8a6b9204fa30381a}{updateWheelSpeed}};}
+\DoxyCodeLine{00024\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_aa54a56855e20fb6bdc11ae0db9b0e5aa}{radius}}\ =\ radius;}
+\DoxyCodeLine{00025\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a1fd60e20c5451a8c92a570b56a28cfb6}{wheel\_location}}\ =\ location;}
+\DoxyCodeLine{00026\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_acca8266f1bc14244ade0afb42cf5a1d5}{numTeeth}}\ =\ numTeeth;}
+\DoxyCodeLine{00027\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a6d8b62cdae99f0980adf213fe71558e1}{speed}}\ =\ 0.0f;}
+\DoxyCodeLine{00029\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}}\ =\ \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WheelSpeed_8h_ac49732714bcdc5c6bb1c4f94ddf497b3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{WheelSpeed_8h_a8a44c706d5c92c453cfbd4e7be159c36}\index{WheelSpeed.h@{WheelSpeed.h}!setTimeInterval@{setTimeInterval}}
+\index{setTimeInterval@{setTimeInterval}!WheelSpeed.h@{WheelSpeed.h}}
+\doxysubsubsection{\texorpdfstring{setTimeInterval()}{setTimeInterval()}}
+{\footnotesize\ttfamily \label{WheelSpeed_8h_a8a44c706d5c92c453cfbd4e7be159c36} 
+void set\+Time\+Interval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWheelSpeed}{Wheel\+Speed}} \texorpdfstring{$\ast$}{*}}]{ws}{, }\item[{float}]{interval}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{WheelSpeed_8c_source_l00113}{113}} of file \mbox{\hyperlink{WheelSpeed_8c_source}{Wheel\+Speed.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}}\ =\ interval\ +\ \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{00115\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{WheelSpeed_8h_a8a44c706d5c92c453cfbd4e7be159c36_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a}\index{WheelSpeed.h@{WheelSpeed.h}!updateWheelSpeed@{updateWheelSpeed}}
+\index{updateWheelSpeed@{updateWheelSpeed}!WheelSpeed.h@{WheelSpeed.h}}
+\doxysubsubsection{\texorpdfstring{updateWheelSpeed()}{updateWheelSpeed()}}
+{\footnotesize\ttfamily \label{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a} 
+void update\+Wheel\+Speed (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ws}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{WheelSpeed_8c_source_l00089}{89}} of file \mbox{\hyperlink{WheelSpeed_8c_source}{Wheel\+Speed.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}*\ wsPtr\ =\ (\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}*)ws;}
+\DoxyCodeLine{00091\ \ \ \ \ wsPtr-\/>\mbox{\hyperlink{structWheelSpeed_a6d8b62cdae99f0980adf213fe71558e1}{speed}}\ =\ \mbox{\hyperlink{WheelSpeed_8c_a9b06a45c350af910e0b84912802616b9}{calculateSpeed}}(ws);}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a_icgraph}
+\end{center}
+\end{figure}

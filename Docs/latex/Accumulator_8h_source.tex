@@ -1,0 +1,29 @@
+\doxysection{Accumulator.\+h}
+\hypertarget{Accumulator_8h_source}{}\label{Accumulator_8h_source}\index{Inc/Sensors/CANSensors/Accumulator.h@{Inc/Sensors/CANSensors/Accumulator.h}}
+\mbox{\hyperlink{Accumulator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ RENNSSELAERMOTORSPORT\_ACCUMULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ RENNSSELAERMOTORSPORT\_ACCUMULATOR\_H}}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{BMS_8h}{BMS.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Imd_8h}{Imd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00007}\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{00007}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00008}\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}{00008}}\ \ \ \ \ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}{charge}},}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00009}\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}{00009}}\ \ \ \ \ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}{discharge}},}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}}}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00011}\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{00011}}\ \}\ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\_STATE}};}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00013}\mbox{\hyperlink{structAccumulator}{00013}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00014}\mbox{\hyperlink{structAccumulator_a64be8db7baf904f8601da375f9ec74f3}{00014}}\ \ \ \ \ \mbox{\hyperlink{structBms}{Bms}}*\ \mbox{\hyperlink{structAccumulator_a64be8db7baf904f8601da375f9ec74f3}{bms}};}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00015}\mbox{\hyperlink{structAccumulator_a8f847d1bf23a3478cdd9ec677c5ef8a0}{00015}}\ \ \ \ \ \mbox{\hyperlink{structImd}{Imd}}*\ \mbox{\hyperlink{structAccumulator_a8f847d1bf23a3478cdd9ec677c5ef8a0}{imd}};}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00016}\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{00016}}\ \ \ \ \ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\_STATE}}\ \mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}};}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00017}00017\ \}\ \mbox{\hyperlink{structAccumulator}{Accumulator}};}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00019}00019\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Accumulator_8h_a387a1557fc10ca77054bd7f29474d339}{initAccumulator}}(\mbox{\hyperlink{structAccumulator}{Accumulator}}*\ acc,\ \mbox{\hyperlink{structBms}{Bms}}*\ bms,\ \mbox{\hyperlink{structImd}{Imd}}*\ imd);}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00020}00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Accumulator_8h_afc14b1d520dd59dba56c4f88d13c4355}{setAccumulatorState}}(\mbox{\hyperlink{structAccumulator}{Accumulator}}*\ acc,\ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\_STATE}}\ state);}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00021}00021\ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\_STATE}}\ \mbox{\hyperlink{Accumulator_8h_ae9de75ea57ab4c842107da853d6cafcd}{getAccumulatorState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structAccumulator}{Accumulator}}*\ acc);}
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Accumulator_8h_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

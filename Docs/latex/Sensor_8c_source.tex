@@ -1,0 +1,14 @@
+\doxysection{Sensor.\+c}
+\hypertarget{Sensor_8c_source}{}\label{Sensor_8c_source}\index{Src/Sensors/Sensor.c@{Src/Sensors/Sensor.c}}
+\mbox{\hyperlink{Sensor_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../includes/Sensor.h"{}}}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../includes/Updateable.h"{}}}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00005}\mbox{\hyperlink{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Sensor_8c_afa23c62d6ac2176a3ab170f42bce0663}{initSensor}}(\mbox{\hyperlink{structSensor}{Sensor}}*\ sensor,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ hz,\ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{SensorType}}\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})\ \{}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{Updateable_8h_aaad6c964e32bb05093b5e551856837b4}{initUpdateable}}(\&sensor-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}},\ name,\ hz);}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00007}00007\ \ \ \ \ sensor-\/>\mbox{\hyperlink{structSensor_a59be498582043f581a78851506f8e322}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{\Hypertarget{Sensor_8c_source_l00008}00008\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,23 @@
+<map id="initTorqueControl" name="initTorqueControl">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,129,125,155"/>
+<area shape="rect" id="Node000002" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title=" " alt="" coords="175,80,312,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,126,179,108,180,113,115,131"/>
+<area shape="rect" id="Node000009" href="$TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title=" " alt="" coords="178,129,309,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="125,140,162,140,162,145,125,145"/>
+<area shape="rect" id="Node000010" href="$TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title=" " alt="" coords="173,179,314,204"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="115,153,180,171,179,177,114,158"/>
+<area shape="rect" id="Node000003" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="387,80,469,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,90,371,90,371,96,312,96"/>
+<area shape="rect" id="Node000004" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="542,80,647,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,90,527,90,527,96,470,96"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="695,5,798,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="620,77,693,40,702,36,704,40,696,45,623,82"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="697,55,796,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="647,81,681,76,681,81,648,87"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="697,104,796,130"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="648,98,682,104,681,109,647,104"/>
+<area shape="rect" id="Node000008" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="695,153,798,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="623,104,696,140,704,144,702,149,693,145,621,109"/>
+<area shape="rect" id="Node000011" href="$TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title=" " alt="" coords="362,179,494,204"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="315,189,346,189,346,194,315,194"/>
+</map>

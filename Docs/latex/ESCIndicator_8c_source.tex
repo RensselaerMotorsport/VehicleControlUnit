@@ -1,0 +1,29 @@
+\doxysection{ESCIndicator.\+c}
+\hypertarget{ESCIndicator_8c_source}{}\label{ESCIndicator_8c_source}\index{Src/Sensors/DigitalSensors/ESCIndicator.c@{Src/Sensors/DigitalSensors/ESCIndicator.c}}
+\mbox{\hyperlink{ESCIndicator_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../../includes/ESCIndicator.h"{}}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00003}00003\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00004}00004\ \textcolor{comment}{\ *\ Initialization\ function\ for\ a\ Electronic\ stability\ control\ indicator\ sensor.}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00005}00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00006}00006\ \textcolor{comment}{\ *\ @param\ esc\ A\ pointer\ to\ the\ ESCIndicator\ structure.}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00007}00007\ \textcolor{comment}{\ *\ @pram\ hz\ Rate\ at\ which\ the\ sensor\ is\ called\ (in\ hz)}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00008}00008\ \textcolor{comment}{\ *\ @pram\ port\ Location\ of\ sensor}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00009}00009\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00010}\mbox{\hyperlink{ESCIndicator_8h_a23268d6d75292be2165c72d48183abe8}{00010}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ESCIndicator_8c_a23268d6d75292be2165c72d48183abe8}{initECSIndicator}}(\mbox{\hyperlink{structESCIndicator}{ESCIndicator}}*\ esc,\ \textcolor{keywordtype}{int}\ hz,\ \textcolor{keywordtype}{int}\ port)\ \{}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{DigitalSensor_8h_a2bf0b31c332d3808de755eb6bf35b3c5}{initDigitalSensor}}(\&esc-\/>\mbox{\hyperlink{structESCIndicator_afacbbe8d971838282b13f4f153bea71d}{base}},\ \textcolor{stringliteral}{"{}ESC\ Indicator"{}},\ hz,\ port);}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00012}00012\ \ \ \ \ esc-\/>\mbox{\hyperlink{structESCIndicator_a7fc213afcd83832390198bba4be9f3a7}{alive}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00015}00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00016}00016\ \textcolor{comment}{\ *\ Getter\ for\ alive\ var}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00018}00018\ \textcolor{comment}{\ *\ @param\ esc\ A\ pointer\ to\ the\ ESCIndicator\ structure.}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00019}00019\ \textcolor{comment}{\ *\ @return\ If\ the\ sensor\ is\ alive\ (on)}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00020}00020\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00021}\mbox{\hyperlink{ESCIndicator_8h_a03d85d5128931d56c98402e353376194}{00021}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{ESCIndicator_8c_a03d85d5128931d56c98402e353376194}{getAlive}}(\mbox{\hyperlink{structESCIndicator}{ESCIndicator}}*\ esc)\ \{}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ esc-\/>\mbox{\hyperlink{structESCIndicator_a7fc213afcd83832390198bba4be9f3a7}{alive}};}
+\DoxyCodeLine{\Hypertarget{ESCIndicator_8c_source_l00023}00023\ \}}
+
+\end{DoxyCode}

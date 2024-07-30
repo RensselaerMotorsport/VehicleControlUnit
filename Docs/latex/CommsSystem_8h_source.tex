@@ -1,0 +1,37 @@
+\doxysection{Comms\+System.\+h}
+\hypertarget{CommsSystem_8h_source}{}\label{CommsSystem_8h_source}\index{Inc/Systems/CommsSystem.h@{Inc/Systems/CommsSystem.h}}
+\mbox{\hyperlink{CommsSystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ RENSSELAERMOTORSPORT\_COMMS\_SYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ RENSSELAERMOTORSPORT\_COMMS\_SYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{System_8h}{System.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00010}\mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3}{00010}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00011}\mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3a1ecfa0998855a0963b5d298332dbd22c}{00011}}\ \ \ \ \ \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3a1ecfa0998855a0963b5d298332dbd22c}{CAN}},}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3a8f0fce6ed9d0370f45ef72a7b469937c}{ETHERNET}}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00013}\mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3a8f0fce6ed9d0370f45ef72a7b469937c}{00013}}\ \}\ \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3}{CommsType}};}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00015}\mbox{\hyperlink{structCommsSystem}{00015}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00016}\mbox{\hyperlink{structCommsSystem_a7f91fd957fb42d3cf4ca7cddde8d15ae}{00016}}\ \ \ \ \ \mbox{\hyperlink{structSystem}{System}}\ \mbox{\hyperlink{structCommsSystem_a7f91fd957fb42d3cf4ca7cddde8d15ae}{system}};}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00017}\mbox{\hyperlink{structCommsSystem_a037c7c48c7833d2018536e35a74fa696}{00017}}\ \ \ \ \ \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3}{CommsType}}\ \mbox{\hyperlink{structCommsSystem_a037c7c48c7833d2018536e35a74fa696}{type}};}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00018}\mbox{\hyperlink{structCommsSystem_a041ccb955b25c56444e570f354b87b78}{00018}}\ \ \ \ \ int\ (*check\_heartbeat)(\textcolor{keywordtype}{void}*\ self);}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00019}00019\ \}\ \mbox{\hyperlink{structCommsSystem}{CommsSystem}};}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00021}00021\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00022}00022\ \textcolor{comment}{\ *\ @brief\ Initializes\ the\ Comms\ System\ with\ initial\ settings.}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00023}00023\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00024}00024\ \textcolor{comment}{\ *\ @param\ comms\ A\ pointer\ to\ the\ CommsSystem\ structure.}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00025}00025\ \textcolor{comment}{\ *\ @param\ name\ The\ name\ of\ the\ comms\ system.}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00026}00026\ \textcolor{comment}{\ *\ @param\ hz\ Rate\ at\ which\ the\ comms\ system\ is\ called\ (in\ hz).}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00027}00027\ \textcolor{comment}{\ *\ @param\ type\ The\ type\ of\ comms\ system\ (per\ CommsType).}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00028}00028\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00029}00029\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{CommsSystem_8h_ab24ecccdbc3c3a34bf1204ccf35c45a6}{initCommsSystem}}(\mbox{\hyperlink{structCommsSystem}{CommsSystem}}*\ comms,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ hz,\ \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3}{CommsType}}\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}});}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8h_source_l00031}00031\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENSSELAERMOTORSPORT\_COMMS\_SYSTEM\_H}}
+
+\end{DoxyCode}

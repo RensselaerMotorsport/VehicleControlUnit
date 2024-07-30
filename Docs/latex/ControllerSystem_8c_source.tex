@@ -1,0 +1,41 @@
+\doxysection{Controller\+System.\+c}
+\hypertarget{ControllerSystem_8c_source}{}\label{ControllerSystem_8c_source}\index{Src/Systems/ControllerSystem.c@{Src/Systems/ControllerSystem.c}}
+\mbox{\hyperlink{ControllerSystem_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ControllerSystem_8h}{../../Inc/Systems/ControllerSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Common_8h}{../../Inc/Utils/Common.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00004}\mbox{\hyperlink{ControllerSystem_8h_aa76143ff1ff31aa97bbb002a71d55ea5}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ControllerSystem_8c_aa76143ff1ff31aa97bbb002a71d55ea5}{initControllerSystem}}(\mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*\ controller,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}\ hz,}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{ControllerType}}\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00006}00006\ \ \ \ \ \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&controller-\/>\mbox{\hyperlink{structControllerSystem_ac1698fbd11febb34001280cfc1326303}{system}},\ name,\ hz,\ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c}{CONTROLLER}});}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00007}00007\ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_a94a64d7b344640e6e3bf95b200daa77e}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00008}00008\ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00009}00009\ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_a05a77259f65e51a38ba5f1d79d1aa5e5}{safety}}\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00012}\mbox{\hyperlink{ControllerSystem_8h_a7efab79eba5395c9bb296b315ca1a82e}{00012}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ControllerSystem_8c_a7efab79eba5395c9bb296b315ca1a82e}{defaultAddMonitor}}(\textcolor{keywordtype}{void}*\ self,\ \mbox{\hyperlink{structMonitorSystem}{MonitorSystem}}*\ monitor)\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*\ controller\ =\ (\mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*)self;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{if}\ (controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}\ >=\ \mbox{\hyperlink{ControllerSystem_8h_a0cd5fd43543b0e231650b1eaabc30dd2}{MAX\_MONITORS}})\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Cannot\ add\ more\ monitors\ to\ the\ controller\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00018}00018\ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}++]\ =\ monitor;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00022}\mbox{\hyperlink{ControllerSystem_8h_a16efff017dbfc89b20f8e1dded717bfe}{00022}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{ControllerSystem_8c_a16efff017dbfc89b20f8e1dded717bfe}{defaultRemoveMonitor}}(\textcolor{keywordtype}{void}*\ self,\ \mbox{\hyperlink{structMonitorSystem}{MonitorSystem}}*\ monitor)\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*\ controller\ =\ (\mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*)self;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}};\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[i]\ ==\ monitor)\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ i;\ j\ <\ controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}\ -\/\ 1;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[j]\ =\ controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[j\ +\ 1];}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00033}00033\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Monitor\ not\ found\ in\ the\ controller\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{\Hypertarget{ControllerSystem_8c_source_l00035}00035\ \}}
+
+\end{DoxyCode}

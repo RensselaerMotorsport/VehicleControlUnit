@@ -1,0 +1,83 @@
+\doxysection{Src/\+Sensors/\+CANSensors/\+Accumulator.c File Reference}
+\hypertarget{Accumulator_8c}{}\label{Accumulator_8c}\index{Src/Sensors/CANSensors/Accumulator.c@{Src/Sensors/CANSensors/Accumulator.c}}
+{\ttfamily \#include "{}../../../includes/\+Accumulator.\+h"{}}\newline
+Include dependency graph for Accumulator.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{Accumulator_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Accumulator_8c_a387a1557fc10ca77054bd7f29474d339}{init\+Accumulator}} (\mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}acc, \mbox{\hyperlink{structBms}{Bms}} \texorpdfstring{$\ast$}{*}bms, \mbox{\hyperlink{structImd}{Imd}} \texorpdfstring{$\ast$}{*}imd)
+\item 
+void \mbox{\hyperlink{Accumulator_8c_afc14b1d520dd59dba56c4f88d13c4355}{set\+Accumulator\+State}} (\mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}acc, \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} state)
+\item 
+\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} \mbox{\hyperlink{Accumulator_8c_ae9de75ea57ab4c842107da853d6cafcd}{get\+Accumulator\+State}} (const \mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}acc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Accumulator_8c_ae9de75ea57ab4c842107da853d6cafcd}\index{Accumulator.c@{Accumulator.c}!getAccumulatorState@{getAccumulatorState}}
+\index{getAccumulatorState@{getAccumulatorState}!Accumulator.c@{Accumulator.c}}
+\doxysubsubsection{\texorpdfstring{getAccumulatorState()}{getAccumulatorState()}}
+{\footnotesize\ttfamily \label{Accumulator_8c_ae9de75ea57ab4c842107da853d6cafcd} 
+\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} get\+Accumulator\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}}]{acc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00017}{17}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (acc\ !=\ NULL)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}};\ \ \textcolor{comment}{//\ Default\ if\ not\ initialized}}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Accumulator_8c_a387a1557fc10ca77054bd7f29474d339}\index{Accumulator.c@{Accumulator.c}!initAccumulator@{initAccumulator}}
+\index{initAccumulator@{initAccumulator}!Accumulator.c@{Accumulator.c}}
+\doxysubsubsection{\texorpdfstring{initAccumulator()}{initAccumulator()}}
+{\footnotesize\ttfamily \label{Accumulator_8c_a387a1557fc10ca77054bd7f29474d339} 
+void init\+Accumulator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}}]{acc}{, }\item[{\mbox{\hyperlink{structBms}{Bms}} \texorpdfstring{$\ast$}{*}}]{bms}{, }\item[{\mbox{\hyperlink{structImd}{Imd}} \texorpdfstring{$\ast$}{*}}]{imd}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00003}{3}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (acc\ !=\ NULL)\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ acc-\/>\mbox{\hyperlink{structAccumulator_a64be8db7baf904f8601da375f9ec74f3}{bms}}\ =\ bms;}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ acc-\/>\mbox{\hyperlink{structAccumulator_a8f847d1bf23a3478cdd9ec677c5ef8a0}{imd}}\ =\ imd;}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}}\ =\ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}};\ \ \textcolor{comment}{//\ Default\ state}}
+\DoxyCodeLine{00008\ \ \ \ \ \}}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+\Hypertarget{Accumulator_8c_afc14b1d520dd59dba56c4f88d13c4355}\index{Accumulator.c@{Accumulator.c}!setAccumulatorState@{setAccumulatorState}}
+\index{setAccumulatorState@{setAccumulatorState}!Accumulator.c@{Accumulator.c}}
+\doxysubsubsection{\texorpdfstring{setAccumulatorState()}{setAccumulatorState()}}
+{\footnotesize\ttfamily \label{Accumulator_8c_afc14b1d520dd59dba56c4f88d13c4355} 
+void set\+Accumulator\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccumulator}{Accumulator}} \texorpdfstring{$\ast$}{*}}]{acc}{, }\item[{\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00011}{11}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (acc\ !=\ NULL)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}}\ =\ state;}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\doxysection{Inc/\+Systems/\+System.h File Reference}
+\hypertarget{System_8h}{}\label{System_8h}\index{Inc/Systems/System.h@{Inc/Systems/System.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Utils/\+Updateable.\+h"{}}\newline
+Include dependency graph for System.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{System_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{System_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSystem}{System}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539b}{System\+Type}} \{ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5}{COMMS}}
+, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5}{EXTERNAL}}
+, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}}
+, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c}{CONTROLLER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{init\+System}} (\mbox{\hyperlink{structSystem}{System}} \texorpdfstring{$\ast$}{*}system, const char \texorpdfstring{$\ast$}{*}name, int hz, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539b}{System\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})
+\begin{DoxyCompactList}\small\item\em Initializes a \doxylink{structSystem}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{System_8h_a922f019f64e4183a18638787f6ba539b}\index{System.h@{System.h}!SystemType@{SystemType}}
+\index{SystemType@{SystemType}!System.h@{System.h}}
+\doxysubsubsection{\texorpdfstring{SystemType}{SystemType}}
+{\footnotesize\ttfamily \label{System_8h_a922f019f64e4183a18638787f6ba539b} 
+enum \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539b}{System\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMMS@{COMMS}!System.h@{System.h}}\index{System.h@{System.h}!COMMS@{COMMS}}}\Hypertarget{System_8h_a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5}\label{System_8h_a922f019f64e4183a18638787f6ba539b} 
+COMMS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXTERNAL@{EXTERNAL}!System.h@{System.h}}\index{System.h@{System.h}!EXTERNAL@{EXTERNAL}}}\Hypertarget{System_8h_a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5}\label{System_8h_a922f019f64e4183a18638787f6ba539b} 
+EXTERNAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONITOR@{MONITOR}!System.h@{System.h}}\index{System.h@{System.h}!MONITOR@{MONITOR}}}\Hypertarget{System_8h_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7}\label{System_8h_a922f019f64e4183a18638787f6ba539b} 
+MONITOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLER@{CONTROLLER}!System.h@{System.h}}\index{System.h@{System.h}!CONTROLLER@{CONTROLLER}}}\Hypertarget{System_8h_a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c}\label{System_8h_a922f019f64e4183a18638787f6ba539b} 
+CONTROLLER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{System_8h_source_l00010}{10}} of file \mbox{\hyperlink{System_8h_source}{System.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5}{COMMS}},\ \textcolor{comment}{//\ CAN,\ Ethernet,\ etc}}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5}{EXTERNAL}},\ \textcolor{comment}{//\ ESC,\ BMS,\ etc}}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}},\ \textcolor{comment}{//\ Torque\ Police,\ Traction\ Control,\ etc}}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c}{CONTROLLER}}\ \textcolor{comment}{//\ Torque\ Control,\ etc}}
+\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539b}{SystemType}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{System_8h_a2c23656f84d9e596c05e362da5a70085}\index{System.h@{System.h}!initSystem@{initSystem}}
+\index{initSystem@{initSystem}!System.h@{System.h}}
+\doxysubsubsection{\texorpdfstring{initSystem()}{initSystem()}}
+{\footnotesize\ttfamily \label{System_8h_a2c23656f84d9e596c05e362da5a70085} 
+void init\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSystem}{System}} \texorpdfstring{$\ast$}{*}}]{system}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{\mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539b}{System\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a \doxylink{structSystem}{System} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em system} & Pointer to the \doxylink{structSystem}{System} to initialize. \\
+\hline
+{\em name} & Name of the system. \\
+\hline
+{\em hz} & Frequency in Hertz. \\
+\hline
+{\em type} & Type of the system. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{System_8c_source_l00003}{3}} of file \mbox{\hyperlink{System_8c_source}{System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \mbox{\hyperlink{Updateable_8h_aaad6c964e32bb05093b5e551856837b4}{initUpdateable}}(\&system-\/>\mbox{\hyperlink{structSystem_a1cf99d7e5e26307dd291ebf635c41328}{updateable}},\ name,\ hz);}
+\DoxyCodeLine{00005\ \ \ \ \ system-\/>\mbox{\hyperlink{structSystem_a8af8c899fae408055d4a7927dfcfe68a}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00006\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{System_8h_a2c23656f84d9e596c05e362da5a70085_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{System_8h_a2c23656f84d9e596c05e362da5a70085_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,138 @@
+\doxysection{Inc/\+Sensors/\+Analog\+Sensors/\+Steering\+Column.h File Reference}
+\hypertarget{SteeringColumn_8h}{}\label{SteeringColumn_8h}\index{Inc/Sensors/AnalogSensors/SteeringColumn.h@{Inc/Sensors/AnalogSensors/SteeringColumn.h}}
+{\ttfamily \#include "{}Analog\+Sensor.\+h"{}}\newline
+Include dependency graph for Steering\+Column.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{SteeringColumn_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}{init\+Steering\+Column}} (\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} \texorpdfstring{$\ast$}{*}sc, int hz, int channel, float zero\+Offset)
+\item 
+float \mbox{\hyperlink{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}{get\+Steering\+Column\+Rotation\+Angle}} (\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} \texorpdfstring{$\ast$}{*}sc)
+\item 
+void \mbox{\hyperlink{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}{update\+Steering\+Column}} (void \texorpdfstring{$\ast$}{*}sc)
+\item 
+float \mbox{\hyperlink{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}{transfer\+Function\+Steering\+Column}} (float raw\+Val)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}\index{SteeringColumn.h@{SteeringColumn.h}!getSteeringColumnRotationAngle@{getSteeringColumnRotationAngle}}
+\index{getSteeringColumnRotationAngle@{getSteeringColumnRotationAngle}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{getSteeringColumnRotationAngle()}{getSteeringColumnRotationAngle()}}
+{\footnotesize\ttfamily \label{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6} 
+float get\+Steering\+Column\+Rotation\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} \texorpdfstring{$\ast$}{*}}]{sc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00011}{11}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{return}\ sc-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}};}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+\Hypertarget{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}\index{SteeringColumn.h@{SteeringColumn.h}!initSteeringColumn@{initSteeringColumn}}
+\index{initSteeringColumn@{initSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{initSteeringColumn()}{initSteeringColumn()}}
+{\footnotesize\ttfamily \label{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab} 
+void init\+Steering\+Column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} \texorpdfstring{$\ast$}{*}}]{sc}{, }\item[{int}]{hz}{, }\item[{int}]{channel}{, }\item[{float}]{zero\+Offset}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00004}{4}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&sc-\/>\mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{base}},\ \textcolor{stringliteral}{"{}SteeringColumn"{}},\ hz,\ channel);}
+\DoxyCodeLine{00006\ \ \ \ \ sc-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}}\ =\ -\/1;}
+\DoxyCodeLine{00007\ \ \ \ \ sc-\/>\mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{zero\_offset}}\ =\ zeroOffset;}
+\DoxyCodeLine{00008\ \ \ \ \ sc-\/>\mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{SteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18}{updateSteeringColumn}};}
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}\index{SteeringColumn.h@{SteeringColumn.h}!transferFunctionSteeringColumn@{transferFunctionSteeringColumn}}
+\index{transferFunctionSteeringColumn@{transferFunctionSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{transferFunctionSteeringColumn()}{transferFunctionSteeringColumn()}}
+{\footnotesize\ttfamily \label{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e} 
+float transfer\+Function\+Steering\+Column (\begin{DoxyParamCaption}\item[{float}]{raw\+Val}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00022}{22}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Placeholder\ for\ actual\ transfer\ function}}
+\DoxyCodeLine{00024\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Implement\ SteeringColumn::transfer\_function\(\backslash\)n"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ rawVal;\ \textcolor{comment}{//\ Modify\ to\ apply\ actual\ transfer\ function}}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}\index{SteeringColumn.h@{SteeringColumn.h}!updateSteeringColumn@{updateSteeringColumn}}
+\index{updateSteeringColumn@{updateSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{updateSteeringColumn()}{updateSteeringColumn()}}
+{\footnotesize\ttfamily \label{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18} 
+void update\+Steering\+Column (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{sc}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00015}{15}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{structSteeringColumn}{SteeringColumn}}\ *steeringColumn\ =\ (\mbox{\hyperlink{structSteeringColumn}{SteeringColumn}}\ *)sc;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ rawData\ =\ 0.0f;\ \textcolor{comment}{//\ This\ should\ come\ from\ sensor\ read\ function\ or\ simulation}}
+\DoxyCodeLine{00018\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Implement\ SteeringColumn\ Update.\(\backslash\)n"{}});}
+\DoxyCodeLine{00019\ \ \ \ \ steeringColumn-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}}\ =\ \mbox{\hyperlink{SteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e}{transferFunctionSteeringColumn}}(rawData\ +\ steeringColumn-\/>\mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{zero\_offset}});}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18_icgraph}
+\end{center}
+\end{figure}

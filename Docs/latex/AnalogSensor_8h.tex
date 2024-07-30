@@ -1,0 +1,122 @@
+\doxysection{Inc/\+Sensors/\+Analog\+Sensor.h File Reference}
+\hypertarget{AnalogSensor_8h}{}\label{AnalogSensor_8h}\index{Inc/Sensors/AnalogSensor.h@{Inc/Sensors/AnalogSensor.h}}
+{\ttfamily \#include "{}Sensor.\+h"{}}\newline
+Include dependency graph for Analog\+Sensor.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{AnalogSensor_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AnalogSensor_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAnalogSensor}{Analog\+Sensor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{init\+Analog\+Sensor}} (\mbox{\hyperlink{structAnalogSensor}{Analog\+Sensor}} \texorpdfstring{$\ast$}{*}analogsensor, const char \texorpdfstring{$\ast$}{*}name, int hz, int channel)
+\begin{DoxyCompactList}\small\item\em Initializes an analog sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{AnalogSensor_8h_a829c74ee01b6bda6038015b22c0644ad}{get\+Analog\+Sensor\+Data}} (\mbox{\hyperlink{structAnalogSensor}{Analog\+Sensor}} \texorpdfstring{$\ast$}{*}analogsensor)
+\begin{DoxyCompactList}\small\item\em Retrieves data from the analog sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{AnalogSensor_8h_a829c74ee01b6bda6038015b22c0644ad}\index{AnalogSensor.h@{AnalogSensor.h}!getAnalogSensorData@{getAnalogSensorData}}
+\index{getAnalogSensorData@{getAnalogSensorData}!AnalogSensor.h@{AnalogSensor.h}}
+\doxysubsubsection{\texorpdfstring{getAnalogSensorData()}{getAnalogSensorData()}}
+{\footnotesize\ttfamily \label{AnalogSensor_8h_a829c74ee01b6bda6038015b22c0644ad} 
+int get\+Analog\+Sensor\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAnalogSensor}{Analog\+Sensor}} \texorpdfstring{$\ast$}{*}}]{analogsensor}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves data from the analog sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em analog\+Sensor} & Pointer to the analog sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Data from the analog sensor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{AnalogSensor_8c_source_l00010}{10}} of file \mbox{\hyperlink{AnalogSensor_8c_source}{Analog\+Sensor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Placeholder\ for\ sensor\ data\ retrieval\ logic}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ Would\ normally\ interface\ with\ hardware\ here}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ Default\ return}}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AnalogSensor_8h_a829c74ee01b6bda6038015b22c0644ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}\index{AnalogSensor.h@{AnalogSensor.h}!initAnalogSensor@{initAnalogSensor}}
+\index{initAnalogSensor@{initAnalogSensor}!AnalogSensor.h@{AnalogSensor.h}}
+\doxysubsubsection{\texorpdfstring{initAnalogSensor()}{initAnalogSensor()}}
+{\footnotesize\ttfamily \label{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180} 
+void init\+Analog\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAnalogSensor}{Analog\+Sensor}} \texorpdfstring{$\ast$}{*}}]{analogsensor}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{int}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Initializes an analog sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em analog\+Sensor} & Pointer to the analog sensor to initialize. \\
+\hline
+{\em name} & Name of the sensor. \\
+\hline
+{\em hz} & Sampling frequency in Hertz. \\
+\hline
+{\em channel} & Analog channel number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{AnalogSensor_8c_source_l00004}{4}} of file \mbox{\hyperlink{AnalogSensor_8c_source}{Analog\+Sensor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}{initSensor}}(\&analogsensor-\/>\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}},\ name,\ hz,\ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}{ANALOG}});}
+\DoxyCodeLine{00006\ \ \ \ \ analogsensor-\/>\mbox{\hyperlink{structAnalogSensor_a01ed701a4a02f637c35124e2982b0954}{channel}}\ =\ channel;}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180_icgraph}
+\end{center}
+\end{figure}

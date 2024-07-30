@@ -1,0 +1,69 @@
+\doxysection{Scheduler.\+c}
+\hypertarget{Scheduler_8c_source}{}\label{Scheduler_8c_source}\index{Src/Scheduler/Scheduler.c@{Src/Scheduler/Scheduler.c}}
+\mbox{\hyperlink{Scheduler_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../includes/Scheduler.h"{}}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00002}00002\ \textcolor{comment}{//\ TODO:\ Configure\ Clock\ on\ board}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00004}00004\ \textcolor{comment}{//\ FIXME:\ Figure\ this\ mess\ out}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00005}00005\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <windows.h>}\ \ \textcolor{comment}{//\ For\ Sleep()\ on\ Windows}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00007}00007\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <unistd.h>}\ \ \ \textcolor{comment}{//\ For\ usleep()\ on\ Unix/Linux}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00009}00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00011}\mbox{\hyperlink{Scheduler_8h_adf18e0985dd8f66c0a65156d46718c5a}{00011}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Scheduler_8c_adf18e0985dd8f66c0a65156d46718c5a}{SchedulerInit}}(\mbox{\hyperlink{structScheduler}{Scheduler}}*\ scheduler,\ \mbox{\hyperlink{structSensor}{Sensor}}*\ sensorArray[],\ \textcolor{keywordtype}{int}\ numSensors)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (numSensors\ >\ \mbox{\hyperlink{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}{MAX\_SENSORS}})\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Warning:\ Number\ of\ sensors\ exceeds\ MAX\_SENSORS.\ Some\ sensors\ will\ not\ be\ scheduled.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ numSensors\ =\ \mbox{\hyperlink{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}{MAX\_SENSORS}};\ \ \textcolor{comment}{//\ Limit\ the\ number\ of\ sensors\ to\ MAX\_SENSORS}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{PriorityQueue_8h_af5ad572e37189c56cf0816638dd85d97}{PQInit}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00018}00018\ \ \ \ \ scheduler-\/>\mbox{\hyperlink{structScheduler_a8a0b0619fdfbda3338fc4964999b3ffd}{running}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numSensors;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structTask}{Task}}\ task;}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSensor}{Sensor}}*\ sensor\ =\ sensorArray[i];}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sensor\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Task_8h_ada95c849b23900ccbebc6a389f6dba19}{TaskInit}}(\&task,\ sensor,\ sensor-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a4a1e49fba540bce56a175e3e1083f1a5}{hz}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ initialPriority\ =\ clock()\ /\ (CLOCKS\_PER\_SEC\ /\ 1000)\ +\ (1000\ /\ sensor-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a4a1e49fba540bce56a175e3e1083f1a5}{hz}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{PriorityQueue_8h_ae841bdf0664368f8d4484b0e5dbd33d7}{PQPush}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}},\ task,\ initialPriority);}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00031}\mbox{\hyperlink{Scheduler_8h_ab8065221debac476c547533f73504c20}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Scheduler_8c_ab8065221debac476c547533f73504c20}{SchedulerRun}}(\mbox{\hyperlink{structScheduler}{Scheduler}}*\ scheduler)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00032}00032\ \ \ \ \ scheduler-\/>\mbox{\hyperlink{structScheduler_a8a0b0619fdfbda3338fc4964999b3ffd}{running}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{structTask}{Task}}\ currentTask;}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ sleepTime\ =\ 1000\ /\ \mbox{\hyperlink{Scheduler_8h_a7d29c4b367c3554d638e5b0d977e8b41}{MAX\_HZ}};\ \textcolor{comment}{//\ Because\ Windows}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (scheduler-\/>\mbox{\hyperlink{structScheduler_a8a0b0619fdfbda3338fc4964999b3ffd}{running}})\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentTime\ =\ clock()\ /\ (CLOCKS\_PER\_SEC\ /\ 1000);}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ executed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{PriorityQueue_8h_a3db90f839aff3e0e896ca237483bb926}{PQIsEmpty}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}})\ \&\&\ \mbox{\hyperlink{PriorityQueue_8h_a176542d630434d645be4ce5c3e7d5189}{PQPeek}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}},\ \&currentTask)\ \&\&\ currentTask.\mbox{\hyperlink{structTask_aecd0764bd9e73850d02ea0d633fe4ed1}{nextExecTime}}\ <=\ currentTime)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{PriorityQueue_8h_accf2d5c29ecdd09ea36ac2d7dbb7556f}{PQPop}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}},\ \&currentTask))\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Task_8h_af74a92b4c3acbd7beebe1c7e404f6b99}{TaskExecute}}(\&currentTask);\ \textcolor{comment}{//\ TODO:\ May\ have\ to\ reavulate\ how\ this\ works}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Re-\/schedule\ task\ by\ updating\ its\ next\ execution\ time}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentTask.\mbox{\hyperlink{structTask_aecd0764bd9e73850d02ea0d633fe4ed1}{nextExecTime}}\ =\ currentTime\ +\ (1000\ /\ currentTask.\mbox{\hyperlink{structTask_a299d1cdf8501da3b0fb21f9e49a245d6}{hz}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{PriorityQueue_8h_ae841bdf0664368f8d4484b0e5dbd33d7}{PQPush}}(\&scheduler-\/>\mbox{\hyperlink{structScheduler_a1327381025bb2063f14564ba5cb748c6}{tasks}},\ currentTask,\ currentTask.\mbox{\hyperlink{structTask_aecd0764bd9e73850d02ea0d633fe4ed1}{nextExecTime}});\ \ \textcolor{comment}{//\ Reinsert\ task\ with\ new\ priority}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ executed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!executed)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sleep\ to\ avoid\ busy-\/waiting}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Sleep(sleepTime);}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ usleep(\mbox{\hyperlink{Scheduler_8h_a7d29c4b367c3554d638e5b0d977e8b41}{MAX\_HZ}});}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00061}\mbox{\hyperlink{Scheduler_8h_ab6d888e50b0c00ef172f5e4dc325220e}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Scheduler_8c_ab6d888e50b0c00ef172f5e4dc325220e}{SchedulerStop}}(\mbox{\hyperlink{structScheduler}{Scheduler}}*\ scheduler)\ \{}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00062}00062\ \ \ \ \ scheduler-\/>\mbox{\hyperlink{structScheduler_a8a0b0619fdfbda3338fc4964999b3ffd}{running}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Scheduler_8c_source_l00063}00063\ \}}
+
+\end{DoxyCode}

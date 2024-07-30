@@ -1,0 +1,133 @@
+\doxysection{Inc/\+Sensors/\+CANSensors/\+BMS.h File Reference}
+\hypertarget{BMS_8h}{}\label{BMS_8h}\index{Inc/Sensors/CANSensors/BMS.h@{Inc/Sensors/CANSensors/BMS.h}}
+{\ttfamily \#include "{}CANSensor.\+h"{}}\newline
+{\ttfamily \#include "{}Bms\+Data.\+h"{}}\newline
+Include dependency graph for BMS.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{BMS_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{BMS_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBms}{Bms}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{BMS_8h_afeeadcad4acba40f2d7197368054b051}{init\+Bms}} (\mbox{\hyperlink{structBms}{Bms}} \texorpdfstring{$\ast$}{*}bms, int hz)
+\item 
+void \mbox{\hyperlink{BMS_8h_a7cf1064f4bd9766093c805955762221a}{update\+Bms}} (void \texorpdfstring{$\ast$}{*}bms)
+\item 
+\mbox{\hyperlink{structBmsData}{Bms\+Data}} \mbox{\hyperlink{BMS_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}{transfer\+Function\+Bms}} (float \texorpdfstring{$\ast$}{*}rawdata)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{BMS_8h_afeeadcad4acba40f2d7197368054b051}\index{BMS.h@{BMS.h}!initBms@{initBms}}
+\index{initBms@{initBms}!BMS.h@{BMS.h}}
+\doxysubsubsection{\texorpdfstring{initBms()}{initBms()}}
+{\footnotesize\ttfamily \label{BMS_8h_afeeadcad4acba40f2d7197368054b051} 
+void init\+Bms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBms}{Bms}} \texorpdfstring{$\ast$}{*}}]{bms}{, }\item[{int}]{hz}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BMS_8c_source_l00004}{4}} of file \mbox{\hyperlink{BMS_8c_source}{BMS.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (bms)\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{CANSensor_8h_adb095f8cdd8d22a9b8f54c8c792a6ede}{initCANSensor}}(\&bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}},\ \textcolor{stringliteral}{"{}Bms"{}},\ hz);}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assume\ initBmsData\ initializes\ with\ default\ or\ zero\ values}}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{BmsData_8h_a43576e28029033465d224d05a0258ead}{initBmsData}}(\&bms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}},\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}}.\mbox{\hyperlink{structCANSensor_ab11fe7898bbab5b103fa014eaa9c1fad}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{BMS_8c_a7cf1064f4bd9766093c805955762221a}{updateBms}};}
+\DoxyCodeLine{00010\ \ \ \ \ \}}
+\DoxyCodeLine{00011\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BMS_8h_afeeadcad4acba40f2d7197368054b051_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{BMS_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}\index{BMS.h@{BMS.h}!transferFunctionBms@{transferFunctionBms}}
+\index{transferFunctionBms@{transferFunctionBms}!BMS.h@{BMS.h}}
+\doxysubsubsection{\texorpdfstring{transferFunctionBms()}{transferFunctionBms()}}
+{\footnotesize\ttfamily \label{BMS_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1} 
+\mbox{\hyperlink{structBmsData}{Bms\+Data}} transfer\+Function\+Bms (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{rawdata}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BMS_8c_source_l00022}{22}} of file \mbox{\hyperlink{BMS_8c_source}{BMS.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Convert\ raw\ float\ array\ to\ BmsData\ struct}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Assuming\ the\ array\ order\ matches\ BmsData\ constructor\ parameters}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structBmsData}{BmsData}})\{rawData[0],\ rawData[1],\ rawData[2],\ rawData[3],}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rawData[4],\ rawData[5],\ rawData[6],\ rawData[7],\ rawData[8]\};}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BMS_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{BMS_8h_a7cf1064f4bd9766093c805955762221a}\index{BMS.h@{BMS.h}!updateBms@{updateBms}}
+\index{updateBms@{updateBms}!BMS.h@{BMS.h}}
+\doxysubsubsection{\texorpdfstring{updateBms()}{updateBms()}}
+{\footnotesize\ttfamily \label{BMS_8h_a7cf1064f4bd9766093c805955762221a} 
+void update\+Bms (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{bms}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{BMS_8c_source_l00013}{13}} of file \mbox{\hyperlink{BMS_8c_source}{BMS.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{structBms}{Bms}}*\ myBms\ =\ (\mbox{\hyperlink{structBms}{Bms}}*)\ bms;}
+\DoxyCodeLine{00015\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Updating\ BMS\(\backslash\)n"{}});}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Example:\ Fetch\ raw\ data\ somehow,\ here\ simplified\ as\ static\ data}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ rawData[]\ =\ \{1.0,\ 1.0,\ 25.0,\ 50.0,\ 0.1,\ 0.1,\ 3.7,\ 48.0,\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00018\ \ \ \ \ myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}\ =\ \mbox{\hyperlink{BMS_8c_a620d8c276477a59b82aeed5a804ca2e5}{transferFunctionBms}}(rawData);}
+\DoxyCodeLine{00019\ \ \ \ \ printf(\textcolor{stringliteral}{"{}BMS\ Data:\ \%s\(\backslash\)n"{}},\ \mbox{\hyperlink{BmsData_8h_af16280268efae856ebc869b7774a8564}{toStringBmsData}}(\&myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}));}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{BMS_8h_a7cf1064f4bd9766093c805955762221a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{BMS_8h_a7cf1064f4bd9766093c805955762221a_icgraph}
+\end{center}
+\end{figure}

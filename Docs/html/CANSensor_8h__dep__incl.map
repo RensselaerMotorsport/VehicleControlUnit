@@ -1,0 +1,14 @@
+<map id="Inc/Sensors/CANSensor.h" name="Inc/Sensors/CANSensor.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="200,5,374,31"/>
+<area shape="rect" id="Node000002" href="$BMS_8h.html" title=" " alt="" coords="5,79,177,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,40,141,81,139,76,242,35"/>
+<area shape="rect" id="Node000004" href="$Esc_8h.html" title=" " alt="" coords="397,79,569,120"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="332,35,435,76,433,81,330,40"/>
+<area shape="rect" id="Node000006" href="$Imd_8h.html" title=" " alt="" coords="201,79,373,120"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="290,46,290,79,284,79,284,46"/>
+<area shape="rect" id="Node000003" href="$Accumulator_8h.html" title=" " alt="" coords="104,168,275,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,128,169,165,166,169,123,132"/>
+<area shape="rect" id="Node000005" href="$MotorController_8h.html" title=" " alt="" coords="397,168,569,208"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,135,486,167,480,167,480,135"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="256,132,213,169,210,165,252,128"/>
+</map>

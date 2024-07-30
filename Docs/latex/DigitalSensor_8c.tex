@@ -1,0 +1,54 @@
+\doxysection{Src/\+Sensors/\+Digital\+Sensor.c File Reference}
+\hypertarget{DigitalSensor_8c}{}\label{DigitalSensor_8c}\index{Src/Sensors/DigitalSensor.c@{Src/Sensors/DigitalSensor.c}}
+{\ttfamily \#include "{}../../includes/\+Digital\+Sensor.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Digital\+Sensor.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{DigitalSensor_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{DigitalSensor_8c_a2bf0b31c332d3808de755eb6bf35b3c5}{init\+Digital\+Sensor}} (\mbox{\hyperlink{structDigitalSensor}{Digital\+Sensor}} \texorpdfstring{$\ast$}{*}digitalsensor, const char \texorpdfstring{$\ast$}{*}name, int hz, int port)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{DigitalSensor_8c_a2bf0b31c332d3808de755eb6bf35b3c5}\index{DigitalSensor.c@{DigitalSensor.c}!initDigitalSensor@{initDigitalSensor}}
+\index{initDigitalSensor@{initDigitalSensor}!DigitalSensor.c@{DigitalSensor.c}}
+\doxysubsubsection{\texorpdfstring{initDigitalSensor()}{initDigitalSensor()}}
+{\footnotesize\ttfamily \label{DigitalSensor_8c_a2bf0b31c332d3808de755eb6bf35b3c5} 
+void init\+Digital\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structDigitalSensor}{Digital\+Sensor}} \texorpdfstring{$\ast$}{*}}]{digitalsensor}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{int}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{DigitalSensor_8c_source_l00004}{4}} of file \mbox{\hyperlink{DigitalSensor_8c_source}{Digital\+Sensor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}{initSensor}}(\&digitalsensor-\/>\mbox{\hyperlink{structDigitalSensor_aa5cfba5a7ccb124822fa1d8a2aac9ece}{sensor}},\ name,\ hz,\ \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}{DIGITAL}});}
+\DoxyCodeLine{00006\ \ \ \ \ digitalsensor-\/>\mbox{\hyperlink{structDigitalSensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}}\ =\ port;}
+\DoxyCodeLine{00007\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{DigitalSensor_8c_a2bf0b31c332d3808de755eb6bf35b3c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{DigitalSensor_8c_a2bf0b31c332d3808de755eb6bf35b3c5_icgraph}
+\end{center}
+\end{figure}

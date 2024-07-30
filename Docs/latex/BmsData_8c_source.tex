@@ -1,0 +1,40 @@
+\doxysection{Bms\+Data.\+c}
+\hypertarget{BmsData_8c_source}{}\label{BmsData_8c_source}\index{Src/Sensors/CANSensors/BmsData.c@{Src/Sensors/CANSensors/BmsData.c}}
+\mbox{\hyperlink{BmsData_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../../includes/BmsData.h"{}}}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ \textcolor{comment}{//\ For\ sprintf}}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00004}\mbox{\hyperlink{BmsData_8h_a43576e28029033465d224d05a0258ead}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BmsData_8c_a43576e28029033465d224d05a0258ead}{initBmsData}}(\mbox{\hyperlink{structBmsData}{BmsData}}*\ data,\ \textcolor{keywordtype}{float}\ ccl,\ \textcolor{keywordtype}{float}\ dcl,\ \textcolor{keywordtype}{float}\ t,\ \textcolor{keywordtype}{float}\ sc,\ }
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cr,\ \textcolor{keywordtype}{float}\ pr,\ \textcolor{keywordtype}{float}\ cv,\ \textcolor{keywordtype}{float}\ pv,\ \textcolor{keywordtype}{bool}\ cf)\ \{}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (data)\ \{}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00007}00007\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_ace569b00c7b4d65838cb3042ab9c4bba}{chargeCurrentLimit}}\ =\ ccl;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00008}00008\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a1c57c75ec397321243c87ff1f5fa335e}{dischargeCurrentLimit}}\ =\ dcl;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00009}00009\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aa9978cb8391cdd4e6d377b31fb4a54ee}{temperature}}\ =\ t;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00010}00010\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a575da8fff6e899b686ee1d7c7b1b3786}{stateOfCharge}}\ =\ sc;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a01a979411885a5df6f5632cd183afb99}{cellResistance}}\ =\ cr;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00012}00012\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aead366f969f5ca9b39f7c714fcc0f6f9}{packResistance}}\ =\ pr;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00013}00013\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a1d992a09fc20396ca1ec6b4f06e1473b}{cellVoltage}}\ =\ cv;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00014}00014\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aab6f61682e5657eab94d711dac2949c3}{packVoltage}}\ =\ pv;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00015}00015\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_ae2b9514f841b9c81537b6480c7d2253a}{criticalFaults}}\ =\ cf;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00019}\mbox{\hyperlink{BmsData_8h_af16280268efae856ebc869b7774a8564}{00019}}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{BmsData_8c_af16280268efae856ebc869b7774a8564}{toStringBmsData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structBmsData}{BmsData}}*\ data)\ \{}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ str[256];}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (data)\ \{}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ sprintf(str,\ \textcolor{stringliteral}{"{}\%f,\%f,\%f,\%f,\%f,\%f,\%f,\%f,\%d"{}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_ace569b00c7b4d65838cb3042ab9c4bba}{chargeCurrentLimit}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a1c57c75ec397321243c87ff1f5fa335e}{dischargeCurrentLimit}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aa9978cb8391cdd4e6d377b31fb4a54ee}{temperature}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a575da8fff6e899b686ee1d7c7b1b3786}{stateOfCharge}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a01a979411885a5df6f5632cd183afb99}{cellResistance}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aead366f969f5ca9b39f7c714fcc0f6f9}{packResistance}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_a1d992a09fc20396ca1ec6b4f06e1473b}{cellVoltage}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_aab6f61682e5657eab94d711dac2949c3}{packVoltage}},}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structBmsData_ae2b9514f841b9c81537b6480c7d2253a}{criticalFaults}});}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{BmsData_8c_source_l00034}00034\ \}}
+
+\end{DoxyCode}

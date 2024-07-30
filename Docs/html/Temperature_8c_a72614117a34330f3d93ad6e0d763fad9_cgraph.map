@@ -1,0 +1,23 @@
+<map id="initTemperature" name="initTemperature">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,105,117,131"/>
+<area shape="rect" id="Node000002" href="$AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180" title="Initializes an analog sensor." alt="" coords="172,80,291,106"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,107,156,101,157,107,118,113"/>
+<area shape="rect" id="Node000009" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title=" " alt="" coords="165,129,298,155"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="118,123,150,128,149,133,117,129"/>
+<area shape="rect" id="Node000003" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="380,80,459,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="291,90,365,90,365,96,291,96"/>
+<area shape="rect" id="Node000004" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="541,80,646,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="460,90,526,90,526,96,460,96"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="694,5,797,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="619,77,692,40,701,36,703,40,695,45,622,82"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="696,55,795,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="646,81,680,76,680,81,647,87"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="696,104,795,130"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="647,98,681,104,680,109,646,104"/>
+<area shape="rect" id="Node000008" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="694,153,797,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="622,104,695,140,703,144,701,149,692,145,620,109"/>
+<area shape="rect" id="Node000010" href="$AnalogSensor_8c.html#a0582917ac27a10396b74a185c5b23f33" title="Retrieves data from the analog sensor." alt="" coords="346,129,493,155"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="299,140,331,140,331,145,299,145"/>
+<area shape="rect" id="Node000011" href="$Temperature_8c.html#af902ee3403a7a07e9f38240b3f0cb284" title=" " alt="" coords="362,179,477,204"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="284,153,354,172,352,177,283,158"/>
+</map>

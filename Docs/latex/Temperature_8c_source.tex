@@ -1,0 +1,31 @@
+\doxysection{Temperature.\+c}
+\hypertarget{Temperature_8c_source}{}\label{Temperature_8c_source}\index{Src/Sensors/AnalogSensors/Temperature.c@{Src/Sensors/AnalogSensors/Temperature.c}}
+\mbox{\hyperlink{Temperature_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../../includes/Temperature.h"{}}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00003}\mbox{\hyperlink{Temperature_8h_a72614117a34330f3d93ad6e0d763fad9}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Temperature_8c_a72614117a34330f3d93ad6e0d763fad9}{initTemperature}}(\mbox{\hyperlink{structTemperature}{Temperature}}*\ temp,\ \textcolor{keywordtype}{int}\ hz,\ \textcolor{keywordtype}{int}\ channel)\ \{}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00004}00004\ \ \ \ \ \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&temp-\/>\mbox{\hyperlink{structTemperature_ad259538b8b3e0a45ec405cf3f6aec091}{base}},\ \textcolor{stringliteral}{"{}Temperature"{}},\ hz,\ channel);}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00005}00005\ \ \ \ \ temp-\/>\mbox{\hyperlink{structTemperature_ad259538b8b3e0a45ec405cf3f6aec091}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}{updateTemperature}};}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00006}00006\ \ \ \ \ temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00009}\mbox{\hyperlink{Temperature_8h_ae415305492dd93722bfec35a26e4f4b6}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}{updateTemperature}}(\textcolor{keywordtype}{void}*\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00010}00010\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Implement\ Temperature::update\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{structTemperature}{Temperature}}\ *myTemp\ =\ (\mbox{\hyperlink{structTemperature}{Temperature}}\ *)temp;}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00012}00012\ \ \ \ \ myTemp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}}\ =\ \mbox{\hyperlink{Temperature_8c_af902ee3403a7a07e9f38240b3f0cb284}{transferFunction}}(temp,\ \mbox{\hyperlink{AnalogSensor_8h_a829c74ee01b6bda6038015b22c0644ad}{getAnalogSensorData}}(\&myTemp-\/>\mbox{\hyperlink{structTemperature_ad259538b8b3e0a45ec405cf3f6aec091}{base}}));}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00015}\mbox{\hyperlink{Temperature_8h_ac1a90061e499a10136a5c74f96a998cc}{00015}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Temperature_8c_ac1a90061e499a10136a5c74f96a998cc}{getTemperatureCelsius}}(\mbox{\hyperlink{structTemperature}{Temperature}}*\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{return}\ temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}};}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00019}\mbox{\hyperlink{Temperature_8h_a1def015ce3a6f0ecbbce4e58e0d0e796}{00019}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Temperature_8c_a1def015ce3a6f0ecbbce4e58e0d0e796}{getTemperatureFahrenheit}}(\mbox{\hyperlink{structTemperature}{Temperature}}*\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}}\ *\ 9.0\ /\ 5.0\ +\ 32;}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00023}\mbox{\hyperlink{Temperature_8h_a3fa5d8aac6a30b6c1a8b713d7bd17ee7}{00023}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{Temperature_8c_af902ee3403a7a07e9f38240b3f0cb284}{transferFunction}}(\mbox{\hyperlink{structTemperature}{Temperature}}*\ t,\ \textcolor{keywordtype}{int}\ rawVal)\ \{}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.0;\ \textcolor{comment}{//\ TODO:\ Implement}}
+\DoxyCodeLine{\Hypertarget{Temperature_8c_source_l00025}00025\ \}}
+
+\end{DoxyCode}

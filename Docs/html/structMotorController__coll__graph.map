@@ -1,0 +1,16 @@
+<map id="MotorController" name="MotorController">
+<area shape="rect" id="Node000001" title=" " alt="" coords="68,360,177,386"/>
+<area shape="rect" id="Node000002" href="$structEsc.html" title=" " alt="" coords="68,271,111,297"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,311,102,335,116,358,111,361,97,337,90,313"/>
+<area shape="rect" id="Node000003" href="$structCANSensor.html" title=" " alt="" coords="5,183,96,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,222,86,270,81,272,60,224"/>
+<area shape="rect" id="Node000004" href="$structSensor.html" title=" " alt="" coords="78,94,140,120"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,134,61,184,56,181,90,131"/>
+<area shape="rect" id="Node000007" href="$structAnalogSensor.html" title=" " alt="" coords="119,183,222,208"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="129,131,164,181,160,184,124,134"/>
+<area shape="rect" id="Node000005" href="$structUpdateable.html" title=" " alt="" coords="66,5,153,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="112,47,112,94,107,94,107,47"/>
+<area shape="rect" id="Node000006" href="$structApp.html" title=" " alt="" coords="142,271,186,297"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="154,312,131,361,126,358,149,310"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="171,224,167,271,162,271,166,223"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="updateWheelSpeed" name="updateWheelSpeed">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,139,82"/>
+<area shape="rect" id="Node000002" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title=" " alt="" coords="187,56,297,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,66,171,66,171,72,139,72"/>
+<area shape="rect" id="Node000003" href="$WheelSpeed_8c.html#afc7e7aa256276c3574cb19108257cfc8" title=" " alt="" coords="345,5,474,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,53,349,33,351,39,288,58"/>
+<area shape="rect" id="Node000004" href="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca" title="Retrieves the current time in seconds." alt="" coords="522,81,633,107"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,70,507,86,507,92,297,76"/>
+<area shape="rect" id="Node000005" href="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d" title="Measures the time interval since the last recorded time." alt="" coords="353,107,467,132"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="288,80,351,99,349,104,286,85"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="467,108,506,102,507,107,468,113"/>
+</map>

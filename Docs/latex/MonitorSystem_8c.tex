@@ -1,0 +1,46 @@
+\doxysection{Src/\+Systems/\+Monitor\+System.c File Reference}
+\hypertarget{MonitorSystem_8c}{}\label{MonitorSystem_8c}\index{Src/Systems/MonitorSystem.c@{Src/Systems/MonitorSystem.c}}
+{\ttfamily \#include "{}../../\+Inc/\+Systems/\+Monitor\+System.\+h"{}}\newline
+Include dependency graph for Monitor\+System.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MonitorSystem_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc}{init\+Monitor\+System}} (\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} \texorpdfstring{$\ast$}{*}monitor, const char \texorpdfstring{$\ast$}{*}name, int hz, \mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}}, \mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}} fault)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc}\index{MonitorSystem.c@{MonitorSystem.c}!initMonitorSystem@{initMonitorSystem}}
+\index{initMonitorSystem@{initMonitorSystem}!MonitorSystem.c@{MonitorSystem.c}}
+\doxysubsubsection{\texorpdfstring{initMonitorSystem()}{initMonitorSystem()}}
+{\footnotesize\ttfamily \label{MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc} 
+void init\+Monitor\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} \texorpdfstring{$\ast$}{*}}]{monitor}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{int}]{hz}{, }\item[{\mbox{\hyperlink{MonitorSystem_8h_ac69ce5a28782fdc01f7ba5c236cd5f72}{Monitor\+Type}}}]{type}{, }\item[{\mbox{\hyperlink{MonitorSystem_8h_af689ff2b014590ff3dac04c7279f0398}{Fault\+Type}}}]{fault}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MonitorSystem_8c_source_l00003}{3}} of file \mbox{\hyperlink{MonitorSystem_8c_source}{Monitor\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&monitor-\/>\mbox{\hyperlink{structMonitorSystem_ae797855340e1004bb2eaaf8447376597}{system}},\ name,\ hz,\ \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7}{MONITOR}});}
+\DoxyCodeLine{00006\ \ \ \ \ monitor-\/>\mbox{\hyperlink{structMonitorSystem_a1c96960465270bcc95c0932902ed2be7}{type}}\ =\ \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00007\ \ \ \ \ monitor-\/>\mbox{\hyperlink{structMonitorSystem_a7a134da3e979bc47c26b4318b599a648}{fault}}\ =\ fault;}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph}
+\end{center}
+\end{figure}

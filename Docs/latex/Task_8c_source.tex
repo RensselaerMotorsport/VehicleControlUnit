@@ -1,0 +1,19 @@
+\doxysection{Task.\+c}
+\hypertarget{Task_8c_source}{}\label{Task_8c_source}\index{Src/Scheduler/Task.c@{Src/Scheduler/Task.c}}
+\mbox{\hyperlink{Task_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../includes/Task.h"{}}}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00003}\mbox{\hyperlink{Task_8h_ada95c849b23900ccbebc6a389f6dba19}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Task_8c_ada95c849b23900ccbebc6a389f6dba19}{TaskInit}}(\mbox{\hyperlink{structTask}{Task}}*\ task,\ \mbox{\hyperlink{structSensor}{Sensor}}*\ sensor,\ \textcolor{keywordtype}{int}\ hz)\ \{}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00004}00004\ \ \ \ \ task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}}\ =\ sensor;}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00005}00005\ \ \ \ \ task-\/>\mbox{\hyperlink{structTask_a299d1cdf8501da3b0fb21f9e49a245d6}{hz}}\ =\ hz;}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00006}00006\ \ \ \ \ task-\/>\mbox{\hyperlink{structTask_aecd0764bd9e73850d02ea0d633fe4ed1}{nextExecTime}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00009}\mbox{\hyperlink{Task_8h_af74a92b4c3acbd7beebe1c7e404f6b99}{00009}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Task_8c_af74a92b4c3acbd7beebe1c7e404f6b99}{TaskExecute}}(\mbox{\hyperlink{structTask}{Task}}*\ task)\ \{}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}}\ \&\&\ task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}}-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}})\ \{}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Updateable_8h_a74ea2f39378a41597820f5243678b379}{UPDATE}}(task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}});}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Task_8c_source_l00013}00013\ \}}
+
+\end{DoxyCode}
