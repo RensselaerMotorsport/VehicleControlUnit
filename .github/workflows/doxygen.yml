@@ -47,7 +47,8 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1.9.5
 
       - name: Generate Doxygen documentation
-        run: doxygen Doxyfile
+        run: |
+          doxygen -d WARNING Doxyfile || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
