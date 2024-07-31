@@ -29,6 +29,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Update and install doxygen if it isn't there already
+      - name: Update package lists
+        run: sudo apt-get update
+
+      - name: Install Doxygen if not installed
+        run: |
+          if ! command -v doxygen &> /dev/null
+          then
+              echo "Doxygen not found. Installing..."
+              sudo apt-get install -y doxygen graphviz
+          else
+              echo "Doxygen is already installed."
+          fi
+          
       - name: Set up Doxygen
         uses: mattnotmitt/doxygen-action@v1.9.5
 
