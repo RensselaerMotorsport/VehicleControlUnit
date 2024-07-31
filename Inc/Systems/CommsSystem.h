@@ -18,7 +18,7 @@ typedef struct {
     int (*check_heartbeat)(void* self);
 } CommsSystem;
 
-/*
+/**
  * @brief Initializes the Comms System with initial settings.
  *
  * @param comms A pointer to the CommsSystem structure.

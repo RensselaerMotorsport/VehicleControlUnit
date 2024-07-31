@@ -4,11 +4,11 @@ CC = gcc
 CFLAGS = -g -O0 -IIncludes -pthread -lm
 
 # Base source and test directories
-SRC_DIR = src
-TEST_DIR = tests
+SRC_DIR = Src
+TEST_DIR = Tests
 
 # Object files directory
-OBJ_DIR = obj
+OBJ_DIR = Obj
 
 # Recursively find all C sources in SRC_DIR
 SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c')

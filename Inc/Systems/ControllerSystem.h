@@ -24,7 +24,7 @@ typedef struct {
     int (*removeMonitor)(void* self, MonitorSystem* monitor); // Remove a monitor from the controller
 } ControllerSystem;
 
-/*
+/**
  * @brief Initializes the Controller System with initial settings.
  *
  * @param controller A pointer to the ControllerSystem structure.
@@ -35,7 +35,7 @@ typedef struct {
 void initControllerSystem(ControllerSystem* controller, const char* name, int hz,
                           ControllerType type);
 
-/*
+/**
  * @brief Adds a monitor to the controller.
  *
  * @param self A pointer to the ControllerSystem structure.
@@ -44,7 +44,7 @@ void initControllerSystem(ControllerSystem* controller, const char* name, int hz
 */
 int defaultAddMonitor(void* self, MonitorSystem* monitor);
 
-/*
+/**
  * @brief Removes a monitor from the controller.
  *
  * @param self A pointer to the ControllerSystem structure.

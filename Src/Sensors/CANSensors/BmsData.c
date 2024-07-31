@@ -1,7 +1,8 @@
-#include "../../../includes/BmsData.h"
+#include "../../../Inc/Sensors/CANSensors/BmsData.h"
+
 #include <stdio.h>  // For sprintf
 
-void initBmsData(BmsData* data, float ccl, float dcl, float t, float sc, 
+void initBmsData(BmsData* data, float ccl, float dcl, float t, float sc,
                  float cr, float pr, float cv, float pv, bool cf) {
     if (data) {
         data->chargeCurrentLimit = ccl;

@@ -1,4 +1,5 @@
-#include "../../../includes/App.h"
+#include "../../../Inc/Sensors/AnalogSensors/App.h"
+
 #include <stdio.h>
 
 void initApp(App* app, int hz, int channel) {
@@ -23,7 +24,8 @@ float transferFunctionApp(float rawVal) {
     if (rawVal < 0.5) {
         printf("App::transfer_function rawValue is too low\n");
         return -1;
-    } else if (rawVal > 4.5) {
+    }
+    else if (rawVal > 4.5) {
         printf("App::transfer_function rawValue is too high\n");
         return -1;
     }

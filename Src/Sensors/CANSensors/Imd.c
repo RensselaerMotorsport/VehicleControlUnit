@@ -1,4 +1,5 @@
-#include "../../../includes/Imd.h"
+#include "../../../Inc/Sensors/CANSensors/Imd.h"
+
 #include <stdio.h>  // For printf
 
 void initImd(Imd* imd, int hz) {

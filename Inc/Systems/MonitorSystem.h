@@ -26,7 +26,7 @@ typedef struct {
     FaultType fault;
 } MonitorSystem;
 
-/*
+/**
  * @brief Initializes the Monitor System with initial settings.
  *
  * @param monitor A pointer to the MonitorSystem structure.

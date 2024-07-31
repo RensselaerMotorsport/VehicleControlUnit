@@ -17,14 +17,7 @@ typedef struct {
  * @param hz Sampling frequency in Hertz.
  * @param channel Analog channel number.
  */
-void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz, int channel);
+void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz,
+                      int channel);
 
-/**
- * @brief Retrieves data from the analog sensor.
- *
- * @param analogSensor Pointer to the analog sensor.
- * @return int Data from the analog sensor.
- */
-int getAnalogSensorData(AnalogSensor* analogsensor);
-
-#endif
+#endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H

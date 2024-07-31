@@ -1,5 +1,6 @@
 #include "../../Inc/Utils/Updateable.h"
 #include "../../Inc/Utils/Common.h"
+
 #include <string.h>
 
 void initUpdateable(Updateable* updateable, const char* name, int hz) {
@@ -38,11 +39,6 @@ int writeDataToFileImplementation(const char* filename, void* self) {
     }
 
     printf("Writing data to file %s\n", filename);
-
-    // TODO: Implement this function
-    // for (size_t i = 0; i < sensor->logger.count; i++) {
-    //     fprintf(file, "%d,%f\n", sensor->logger.data[i].time, sensor->logger.data[i].value);
-    // }
 
     fclose(file);
     return FAILURE;

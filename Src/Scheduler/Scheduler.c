@@ -1,13 +1,15 @@
-#include "../../includes/Scheduler.h"
+#include "../../Inc/Scheduler/Scheduler.h"
 // TODO: Configure Clock on board
 #include <time.h>
-// FIXME: Figure this mess out
+
 #ifdef _WIN32
 #include <windows.h>  // For Sleep() on Windows
-#else
-#include <unistd.h>   // For usleep() on Unix/Linux
 #endif
 
+/**
+ * Initializes the priority queue and schedules tasks based on the given sensors
+ * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
+ */
 void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors) {
     if (numSensors > MAX_SENSORS) {
         printf("Warning: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
@@ -20,14 +22,21 @@ void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors) 
     for (int i = 0; i < numSensors; i++) {
         Task task;
         Sensor* sensor = sensorArray[i];
-        if (sensor != NULL) {
-            TaskInit(&task, sensor, sensor->updateable.hz);
-            int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + (1000 / sensor->updateable.hz);
-            PQPush(&scheduler->tasks, task, initialPriority);
+        if (sensor == NULL) {
+            continue;
         }
+        TaskInit(&task, sensor, sensor->updateable.hz);
+        int hz = 1000 / sensor->updateable.hz;
+        int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
+        PQPush(&scheduler->tasks, task, initialPriority);
     }
 }
 
+/**
+ * Runs the scheduler, repeatedly executing tasks based on their scheduled
+ * execution times. Uses Sleep or usleep to avoid busy-waiting if no tasks are
+ * ready to execute.
+ */
 void SchedulerRun(Scheduler* scheduler) {
     scheduler->running = true;
     Task currentTask;
@@ -36,13 +45,16 @@ void SchedulerRun(Scheduler* scheduler) {
     while (scheduler->running) {
         int currentTime = clock() / (CLOCKS_PER_SEC / 1000);
         bool executed = false;
-        
-        while (!PQIsEmpty(&scheduler->tasks) && PQPeek(&scheduler->tasks, &currentTask) && currentTask.nextExecTime <= currentTime) {
+
+        while (!PQIsEmpty(&scheduler->tasks) &&
+                PQPeek(&scheduler->tasks, &currentTask) &&
+                currentTask.nextExecTime <= currentTime) {
             if (PQPop(&scheduler->tasks, &currentTask)) {
-                TaskExecute(&currentTask); // TODO: May have to reavulate how this works
+                TaskExecute(&currentTask);
                 // Re-schedule task by updating its next execution time
                 currentTask.nextExecTime = currentTime + (1000 / currentTask.hz);
-                PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);  // Reinsert task with new priority
+                // Reinsert task with new priority
+                PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);
                 executed = true;
             }
         }
@@ -52,7 +64,10 @@ void SchedulerRun(Scheduler* scheduler) {
             #ifdef _WIN32
             Sleep(sleepTime);
             #else
-            usleep(MAX_HZ);
+            struct timespec req, rem;
+            req.tv_sec = sleepTime / 1000;
+            req.tv_nsec = (sleepTime % 1000) * 1000000L;
+            nanosleep(&req, &rem);
             #endif
         }
     }

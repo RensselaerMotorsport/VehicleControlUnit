@@ -1,4 +1,5 @@
-#include "../../../includes/ShockPot.h"
+#include "../../../Inc/Sensors/AnalogSensors/ShockPot.h"
+
 #include <math.h>
 #include <stdio.h>
 
@@ -24,7 +25,8 @@ float transferFunctionShockPot(float rawVal) {
     if (rawVal < 15) {
         printf("ShockPot::transfer_function rawValue is too low\n");
         return -1;
-    } else if (rawVal > 135) {
+    }
+    else if (rawVal > 135) {
         printf("ShockPot::transfer_function rawValue is too high\n");
         return -1;
     }
