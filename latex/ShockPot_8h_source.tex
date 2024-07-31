@@ -1,0 +1,27 @@
+\hypertarget{ShockPot_8h_source}{}\doxysection{Shock\+Pot.\+h}
+\label{ShockPot_8h_source}\index{Inc/Sensors/AnalogSensors/ShockPot.h@{Inc/Sensors/AnalogSensors/ShockPot.h}}
+\mbox{\hyperlink{ShockPot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RENSSELAERMOTORSPORT\_SHOCKPOT\_H}}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RENSSELAERMOTORSPORT\_SHOCKPOT\_H}}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../AnalogSensor.h"{}}}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00005}00005 \textcolor{preprocessor}{\#include "{}../../Utils/WheelLocation.h"{}}}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00007}\mbox{\hyperlink{structShockPot}{00007}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00008}\mbox{\hyperlink{structShockPot_a0c6d07e4eea86e69b1c7271bd7f25bc8}{00008}}     \mbox{\hyperlink{structAnalogSensor}{AnalogSensor}} \mbox{\hyperlink{structShockPot_a0c6d07e4eea86e69b1c7271bd7f25bc8}{base}};}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00009}\mbox{\hyperlink{structShockPot_a079b18a47e84ad7c81d87b7ac4ff25d4}{00009}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structShockPot_a079b18a47e84ad7c81d87b7ac4ff25d4}{distance}};}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00010}\mbox{\hyperlink{structShockPot_a0c6e539566ecf732ee4a76a0fa9dcb1e}{00010}}     \mbox{\hyperlink{WheelLocation_8h_a6bcc31f28038e411321704f9947331d7}{WHEEL\_LOCATION}} \mbox{\hyperlink{structShockPot_a0c6e539566ecf732ee4a76a0fa9dcb1e}{wheel\_location}};}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00011}00011 \} \mbox{\hyperlink{structShockPot}{ShockPot}};}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00022}00022 \textcolor{keywordtype}{void} \mbox{\hyperlink{ShockPot_8h_aa504d587a6cb42be1f4aed7bbea6c1a4}{initShockPot}}(\mbox{\hyperlink{structShockPot}{ShockPot}}* shockPot, \textcolor{keywordtype}{int} hz, \textcolor{keywordtype}{int} channel, \mbox{\hyperlink{WheelLocation_8h_a6bcc31f28038e411321704f9947331d7}{WHEEL\_LOCATION}} location);}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00030}00030 \textcolor{keywordtype}{float} \mbox{\hyperlink{ShockPot_8h_aa5b81313778db6afe3f90c0d0ae939d0}{getShockPotDistance}}(\mbox{\hyperlink{structShockPot}{ShockPot}}* shockPot);}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00037}00037 \textcolor{keywordtype}{void} \mbox{\hyperlink{ShockPot_8h_af941d438b9f8d2a04f40ec183c34a970}{updateShockPot}}(\textcolor{keywordtype}{void}* shockPot);}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00045}00045 \textcolor{keywordtype}{float} \mbox{\hyperlink{ShockPot_8h_afb25ee0b1b77e61690f7ff0c700754ab}{transferFunctionShockPot}}(\textcolor{keywordtype}{float} rawVal);}
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{ShockPot_8h_source_l00047}00047 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RENSSELAERMOTORSPORT\_SHOCKPOT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,131 @@
+\hypertarget{Bms_8h}{}\doxysection{Inc/\+Sensors/\+CANSensors/\+Bms.h File Reference}
+\label{Bms_8h}\index{Inc/Sensors/CANSensors/Bms.h@{Inc/Sensors/CANSensors/Bms.h}}
+{\ttfamily \#include \char`\"{}../\+CANSensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Bms\+Data.\+h\char`\"{}}\newline
+Include dependency graph for Bms.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBms}{Bms}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Bms_8h_afeeadcad4acba40f2d7197368054b051}{init\+Bms}} (\mbox{\hyperlink{structBms}{Bms}} $\ast$bms, int hz)
+\begin{DoxyCompactList}\small\item\em Initializes the BMS with the given frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Bms_8h_a7cf1064f4bd9766093c805955762221a}{update\+Bms}} (void $\ast$bms)
+\begin{DoxyCompactList}\small\item\em Updates the BMS data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structBmsData}{Bms\+Data}} \mbox{\hyperlink{Bms_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}{transfer\+Function\+Bms}} (float $\ast$rawdata)
+\begin{DoxyCompactList}\small\item\em Transfers raw BMS data to a \mbox{\hyperlink{structBmsData}{Bms\+Data}} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Bms_8h_afeeadcad4acba40f2d7197368054b051}\label{Bms_8h_afeeadcad4acba40f2d7197368054b051}} 
+\index{Bms.h@{Bms.h}!initBms@{initBms}}
+\index{initBms@{initBms}!Bms.h@{Bms.h}}
+\doxysubsubsection{\texorpdfstring{initBms()}{initBms()}}
+{\footnotesize\ttfamily void init\+Bms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBms}{Bms}} $\ast$}]{bms,  }\item[{int}]{hz }\end{DoxyParamCaption})}
+
+
+
+Initializes the BMS with the given frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bms} & Pointer to the \mbox{\hyperlink{structBms}{Bms}} structure to initialize. \\
+\hline
+{\em hz} & The frequency in Hertz at which the BMS operates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Bms_8c_source_l00005}{5}} of file \mbox{\hyperlink{Bms_8c_source}{Bms.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                \{}
+\DoxyCodeLine{00006     \textcolor{keywordflow}{if} (!bms) \{}
+\DoxyCodeLine{00007         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00008     \}}
+\DoxyCodeLine{00009 }
+\DoxyCodeLine{00010     \mbox{\hyperlink{CANSensor_8h_a0331142dd6c26bd37590734c174cb274}{initCANSensor}}(\&bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}}, \textcolor{stringliteral}{"{}Bms"{}}, hz);}
+\DoxyCodeLine{00011     \textcolor{comment}{// Assume initBmsData initializes with default or zero values}}
+\DoxyCodeLine{00012     \mbox{\hyperlink{BmsData_8h_a43576e28029033465d224d05a0258ead}{initBmsData}}(\&bms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}, 0, 0, 0, 0, 0, 0, 0, 0, \textcolor{keyword}{false});}
+\DoxyCodeLine{00013     bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}}.\mbox{\hyperlink{structCANSensor_ab11fe7898bbab5b103fa014eaa9c1fad}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{Bms_8c_a7cf1064f4bd9766093c805955762221a}{updateBms}};}
+\DoxyCodeLine{00014 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{Bms_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}\label{Bms_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}} 
+\index{Bms.h@{Bms.h}!transferFunctionBms@{transferFunctionBms}}
+\index{transferFunctionBms@{transferFunctionBms}!Bms.h@{Bms.h}}
+\doxysubsubsection{\texorpdfstring{transferFunctionBms()}{transferFunctionBms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structBmsData}{Bms\+Data}} transfer\+Function\+Bms (\begin{DoxyParamCaption}\item[{float $\ast$}]{rawdata }\end{DoxyParamCaption})}
+
+
+
+Transfers raw BMS data to a \mbox{\hyperlink{structBmsData}{Bms\+Data}} structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Data} & Pointer to the array of raw data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted \mbox{\hyperlink{structBmsData}{Bms\+Data}} structure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Bms_8c_source_l00025}{25}} of file \mbox{\hyperlink{Bms_8c_source}{Bms.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                                             \{}
+\DoxyCodeLine{00026     \textcolor{comment}{// Convert raw float array to BmsData struct}}
+\DoxyCodeLine{00027     \textcolor{comment}{// Assuming the array order matches BmsData constructor parameters}}
+\DoxyCodeLine{00028     \textcolor{keywordflow}{return} (\mbox{\hyperlink{structBmsData}{BmsData}})\{rawData[0], rawData[1], rawData[2], rawData[3],}
+\DoxyCodeLine{00029                      rawData[4], rawData[5], rawData[6], rawData[7], rawData[8]\};}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{Bms_8h_a7cf1064f4bd9766093c805955762221a}\label{Bms_8h_a7cf1064f4bd9766093c805955762221a}} 
+\index{Bms.h@{Bms.h}!updateBms@{updateBms}}
+\index{updateBms@{updateBms}!Bms.h@{Bms.h}}
+\doxysubsubsection{\texorpdfstring{updateBms()}{updateBms()}}
+{\footnotesize\ttfamily void update\+Bms (\begin{DoxyParamCaption}\item[{void $\ast$}]{bms }\end{DoxyParamCaption})}
+
+
+
+Updates the BMS data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bms} & Pointer to the \mbox{\hyperlink{structBms}{Bms}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Bms_8c_source_l00016}{16}} of file \mbox{\hyperlink{Bms_8c_source}{Bms.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016                           \{}
+\DoxyCodeLine{00017     \mbox{\hyperlink{structBms}{Bms}}* myBms = (\mbox{\hyperlink{structBms}{Bms}}*) bms;}
+\DoxyCodeLine{00018     printf(\textcolor{stringliteral}{"{}Updating BMS\(\backslash\)n"{}});}
+\DoxyCodeLine{00019     \textcolor{comment}{// Example: Fetch raw data somehow, here simplified as static data}}
+\DoxyCodeLine{00020     \textcolor{keywordtype}{float} rawData[] = \{1.0, 1.0, 25.0, 50.0, 0.1, 0.1, 3.7, 48.0, \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00021     myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}} = \mbox{\hyperlink{Bms_8c_a620d8c276477a59b82aeed5a804ca2e5}{transferFunctionBms}}(rawData);}
+\DoxyCodeLine{00022     printf(\textcolor{stringliteral}{"{}BMS Data: \%s\(\backslash\)n"{}}, \mbox{\hyperlink{BmsData_8h_af16280268efae856ebc869b7774a8564}{toStringBmsData}}(\&myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}));}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5

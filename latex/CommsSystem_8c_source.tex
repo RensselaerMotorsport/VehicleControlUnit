@@ -1,0 +1,13 @@
+\hypertarget{CommsSystem_8c_source}{}\doxysection{Comms\+System.\+c}
+\label{CommsSystem_8c_source}\index{Src/Systems/CommsSystem.c@{Src/Systems/CommsSystem.c}}
+\mbox{\hyperlink{CommsSystem_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../Inc/Systems/CommsSystem.h"{}}}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00003}\mbox{\hyperlink{CommsSystem_8h_ab24ecccdbc3c3a34bf1204ccf35c45a6}{00003}} \textcolor{keywordtype}{void} \mbox{\hyperlink{CommsSystem_8c_ab24ecccdbc3c3a34bf1204ccf35c45a6}{initCommsSystem}}(\mbox{\hyperlink{structCommsSystem}{CommsSystem}}* comms, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} hz, \mbox{\hyperlink{CommsSystem_8h_aa47ccaaca64ec7d83344a262ea4ebba3}{CommsType}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}}) \{}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00004}00004     \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&comms-\/>\mbox{\hyperlink{structCommsSystem_a7f91fd957fb42d3cf4ca7cddde8d15ae}{system}}, name, hz, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5}{COMMS}});}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00005}00005     comms-\/>\mbox{\hyperlink{structCommsSystem_a037c7c48c7833d2018536e35a74fa696}{type}} = \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00006}00006     comms-\/>\mbox{\hyperlink{structCommsSystem_a041ccb955b25c56444e570f354b87b78}{check\_heartbeat}} = NULL;}
+\DoxyCodeLine{\Hypertarget{CommsSystem_8c_source_l00007}00007 \}}
+
+\end{DoxyCode}

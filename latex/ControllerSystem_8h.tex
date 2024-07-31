@@ -1,0 +1,196 @@
+\hypertarget{ControllerSystem_8h}{}\doxysection{Inc/\+Systems/\+Controller\+System.h File Reference}
+\label{ControllerSystem_8h}\index{Inc/Systems/ControllerSystem.h@{Inc/Systems/ControllerSystem.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}System.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Monitor\+System.\+h\char`\"{}}\newline
+Include dependency graph for Controller\+System.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structControllerSystem}{Controller\+System}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ControllerSystem_8h_a0cd5fd43543b0e231650b1eaabc30dd2}{MAX\+\_\+\+MONITORS}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{Controller\+Type}} \{ \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9a4acddf6dee63f001a45b4dc09e75851f}{c\+\_\+\+TORQUE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ControllerSystem_8h_aa76143ff1ff31aa97bbb002a71d55ea5}{init\+Controller\+System}} (\mbox{\hyperlink{structControllerSystem}{Controller\+System}} $\ast$controller, const char $\ast$name, int hz, \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{Controller\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})
+\begin{DoxyCompactList}\small\item\em Initializes the Controller \mbox{\hyperlink{structSystem}{System}} with initial settings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ControllerSystem_8h_a7efab79eba5395c9bb296b315ca1a82e}{default\+Add\+Monitor}} (void $\ast$self, \mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} $\ast$monitor)
+\begin{DoxyCompactList}\small\item\em Adds a monitor to the controller. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ControllerSystem_8h_a16efff017dbfc89b20f8e1dded717bfe}{default\+Remove\+Monitor}} (void $\ast$self, \mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} $\ast$monitor)
+\begin{DoxyCompactList}\small\item\em Removes a monitor from the controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ControllerSystem_8h_a0cd5fd43543b0e231650b1eaabc30dd2}\label{ControllerSystem_8h_a0cd5fd43543b0e231650b1eaabc30dd2}} 
+\index{ControllerSystem.h@{ControllerSystem.h}!MAX\_MONITORS@{MAX\_MONITORS}}
+\index{MAX\_MONITORS@{MAX\_MONITORS}!ControllerSystem.h@{ControllerSystem.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MONITORS}{MAX\_MONITORS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MONITORS~10}
+
+
+
+Definition at line \mbox{\hyperlink{ControllerSystem_8h_source_l00011}{11}} of file \mbox{\hyperlink{ControllerSystem_8h_source}{Controller\+System.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}\label{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}} 
+\index{ControllerSystem.h@{ControllerSystem.h}!ControllerType@{ControllerType}}
+\index{ControllerType@{ControllerType}!ControllerSystem.h@{ControllerSystem.h}}
+\doxysubsubsection{\texorpdfstring{ControllerType}{ControllerType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{Controller\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{c\_TORQUE@{c\_TORQUE}!ControllerSystem.h@{ControllerSystem.h}}\index{ControllerSystem.h@{ControllerSystem.h}!c\_TORQUE@{c\_TORQUE}}}\mbox{\Hypertarget{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9a4acddf6dee63f001a45b4dc09e75851f}\label{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9a4acddf6dee63f001a45b4dc09e75851f}} 
+c\+\_\+\+TORQUE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{ControllerSystem_8h_source_l00013}{13}} of file \mbox{\hyperlink{ControllerSystem_8h_source}{Controller\+System.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013              \{}
+\DoxyCodeLine{00014     \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9a4acddf6dee63f001a45b4dc09e75851f}{c\_TORQUE}}}
+\DoxyCodeLine{00015 \} \mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{ControllerType}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ControllerSystem_8h_a7efab79eba5395c9bb296b315ca1a82e}\label{ControllerSystem_8h_a7efab79eba5395c9bb296b315ca1a82e}} 
+\index{ControllerSystem.h@{ControllerSystem.h}!defaultAddMonitor@{defaultAddMonitor}}
+\index{defaultAddMonitor@{defaultAddMonitor}!ControllerSystem.h@{ControllerSystem.h}}
+\doxysubsubsection{\texorpdfstring{defaultAddMonitor()}{defaultAddMonitor()}}
+{\footnotesize\ttfamily int default\+Add\+Monitor (\begin{DoxyParamCaption}\item[{void $\ast$}]{self,  }\item[{\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} $\ast$}]{monitor }\end{DoxyParamCaption})}
+
+
+
+Adds a monitor to the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & A pointer to the \mbox{\hyperlink{structControllerSystem}{Controller\+System}} structure. \\
+\hline
+{\em monitor} & A pointer to the \mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} structure to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SUCCESS if the monitor was added, FAILURE otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ControllerSystem_8c_source_l00012}{12}} of file \mbox{\hyperlink{ControllerSystem_8c_source}{Controller\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012                                                           \{}
+\DoxyCodeLine{00013     \mbox{\hyperlink{structControllerSystem}{ControllerSystem}}* controller = (\mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*)self;}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{if} (controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}} >= \mbox{\hyperlink{ControllerSystem_8h_a0cd5fd43543b0e231650b1eaabc30dd2}{MAX\_MONITORS}}) \{}
+\DoxyCodeLine{00015         printf(\textcolor{stringliteral}{"{}Cannot add more monitors to the controller\(\backslash\)n"{}});}
+\DoxyCodeLine{00016         \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{00017     \}}
+\DoxyCodeLine{00018     controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}++] = monitor;}
+\DoxyCodeLine{00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ControllerSystem_8h_a16efff017dbfc89b20f8e1dded717bfe}\label{ControllerSystem_8h_a16efff017dbfc89b20f8e1dded717bfe}} 
+\index{ControllerSystem.h@{ControllerSystem.h}!defaultRemoveMonitor@{defaultRemoveMonitor}}
+\index{defaultRemoveMonitor@{defaultRemoveMonitor}!ControllerSystem.h@{ControllerSystem.h}}
+\doxysubsubsection{\texorpdfstring{defaultRemoveMonitor()}{defaultRemoveMonitor()}}
+{\footnotesize\ttfamily int default\+Remove\+Monitor (\begin{DoxyParamCaption}\item[{void $\ast$}]{self,  }\item[{\mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} $\ast$}]{monitor }\end{DoxyParamCaption})}
+
+
+
+Removes a monitor from the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & A pointer to the \mbox{\hyperlink{structControllerSystem}{Controller\+System}} structure. \\
+\hline
+{\em monitor} & A pointer to the \mbox{\hyperlink{structMonitorSystem}{Monitor\+System}} structure to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SUCCESS if the monitor was removed, FAILURE otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{ControllerSystem_8c_source_l00022}{22}} of file \mbox{\hyperlink{ControllerSystem_8c_source}{Controller\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                                              \{}
+\DoxyCodeLine{00023     \mbox{\hyperlink{structControllerSystem}{ControllerSystem}}* controller = (\mbox{\hyperlink{structControllerSystem}{ControllerSystem}}*)self;}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}; i++) \{}
+\DoxyCodeLine{00025         \textcolor{keywordflow}{if} (controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[i] == monitor) \{}
+\DoxyCodeLine{00026             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = i; j < controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}} -\/ 1; j++) \{}
+\DoxyCodeLine{00027                 controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[j] = controller-\/>\mbox{\hyperlink{structControllerSystem_a0164e78f6e48416560ca7d40e90e8f1d}{monitors}}[j + 1];}
+\DoxyCodeLine{00028             \}}
+\DoxyCodeLine{00029             controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}}-\/-\/;}
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     printf(\textcolor{stringliteral}{"{}Monitor not found in the controller\(\backslash\)n"{}});}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ControllerSystem_8h_aa76143ff1ff31aa97bbb002a71d55ea5}\label{ControllerSystem_8h_aa76143ff1ff31aa97bbb002a71d55ea5}} 
+\index{ControllerSystem.h@{ControllerSystem.h}!initControllerSystem@{initControllerSystem}}
+\index{initControllerSystem@{initControllerSystem}!ControllerSystem.h@{ControllerSystem.h}}
+\doxysubsubsection{\texorpdfstring{initControllerSystem()}{initControllerSystem()}}
+{\footnotesize\ttfamily void init\+Controller\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structControllerSystem}{Controller\+System}} $\ast$}]{controller,  }\item[{const char $\ast$}]{name,  }\item[{int}]{hz,  }\item[{\mbox{\hyperlink{ControllerSystem_8h_a81059b4122c9dd4608d347eb117ae8c9}{Controller\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Initializes the Controller \mbox{\hyperlink{structSystem}{System}} with initial settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & A pointer to the \mbox{\hyperlink{structControllerSystem}{Controller\+System}} structure. \\
+\hline
+{\em name} & The name of the controller. \\
+\hline
+{\em hz} & Rate at which the controller is called (in hz). \\
+\hline
+{\em type} & The type of controller (per Controller\+Type). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ControllerSystem_8c_source_l00004}{4}} of file \mbox{\hyperlink{ControllerSystem_8c_source}{Controller\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                                \{}
+\DoxyCodeLine{00006     \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&controller-\/>\mbox{\hyperlink{structControllerSystem_ac1698fbd11febb34001280cfc1326303}{system}}, name, hz, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c}{CONTROLLER}});}
+\DoxyCodeLine{00007     controller-\/>\mbox{\hyperlink{structControllerSystem_a94a64d7b344640e6e3bf95b200daa77e}{type}} = \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00008     controller-\/>\mbox{\hyperlink{structControllerSystem_ae8e42023f45ffbf8d41916c8c4c77575}{num\_monitors}} = 0;}
+\DoxyCodeLine{00009     controller-\/>\mbox{\hyperlink{structControllerSystem_a05a77259f65e51a38ba5f1d79d1aa5e5}{safety}} = NULL;}
+\DoxyCodeLine{00010 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3

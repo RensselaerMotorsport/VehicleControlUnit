@@ -1,0 +1,11 @@
+digraph "updateImd"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="updateImd",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updates the IMD data."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="initImd",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Imd_8c.html#a4920d20ec1d5bea9a18548398159754b",tooltip="Initializes the IMD with the given frequency."];
+}

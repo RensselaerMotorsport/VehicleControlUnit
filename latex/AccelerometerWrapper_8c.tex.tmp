@@ -1,0 +1,49 @@
+\hypertarget{AccelerometerWrapper_8c}{}\doxysection{Src/\+Sensors/\+Analog\+Sensors/\+Accelerometer\+Wrapper.c File Reference}
+\label{AccelerometerWrapper_8c}\index{Src/Sensors/AnalogSensors/AccelerometerWrapper.c@{Src/Sensors/AnalogSensors/AccelerometerWrapper.c}}
+{\ttfamily \#include \char`\"{}../../../\+Inc/\+Sensors/\+Analog\+Sensors/\+Accelerometer\+Wrapper.\+h\char`\"{}}\newline
+Include dependency graph for Accelerometer\+Wrapper.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{AccelerometerWrapper_8c_a1161a61585b3fd04aba13571cb0dbcc4}{init\+Accelerometer\+Wrapper}} (\mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} $\ast$wrapper, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$ax, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$ay, \mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$az)
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} with the given accelerometers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{AccelerometerWrapper_8c_a1161a61585b3fd04aba13571cb0dbcc4}\label{AccelerometerWrapper_8c_a1161a61585b3fd04aba13571cb0dbcc4}} 
+\index{AccelerometerWrapper.c@{AccelerometerWrapper.c}!initAccelerometerWrapper@{initAccelerometerWrapper}}
+\index{initAccelerometerWrapper@{initAccelerometerWrapper}!AccelerometerWrapper.c@{AccelerometerWrapper.c}}
+\doxysubsubsection{\texorpdfstring{initAccelerometerWrapper()}{initAccelerometerWrapper()}}
+{\footnotesize\ttfamily void init\+Accelerometer\+Wrapper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} $\ast$}]{wrapper,  }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$}]{ax,  }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$}]{ay,  }\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$}]{az }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} with the given accelerometers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wrapper} & Pointer to the \mbox{\hyperlink{structAccelerometerWrapper}{Accelerometer\+Wrapper}} structure to initialize. \\
+\hline
+{\em ax} & Pointer to the x-\/axis \mbox{\hyperlink{structAccelerometer}{Accelerometer}}. \\
+\hline
+{\em ay} & Pointer to the y-\/axis \mbox{\hyperlink{structAccelerometer}{Accelerometer}}. \\
+\hline
+{\em az} & Pointer to the z-\/axis \mbox{\hyperlink{structAccelerometer}{Accelerometer}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{AccelerometerWrapper_8c_source_l00003}{3}} of file \mbox{\hyperlink{AccelerometerWrapper_8c_source}{Accelerometer\+Wrapper.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006                                                  \{}
+\DoxyCodeLine{00007     \textcolor{keywordflow}{if} (wrapper != NULL \&\& ax != NULL \&\& ay != NULL \&\& az != NULL) \{}
+\DoxyCodeLine{00008         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a72932ac485f0c6d7b5210571b6b7a372}{x}} = *ax;}
+\DoxyCodeLine{00009         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a3fe226fd288e01d6c7c65fc706c87e42}{y}} = *ay;}
+\DoxyCodeLine{00010         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a2949ba901a31815ae99994aeefb5ecaa}{z}} = *az;}
+\DoxyCodeLine{00011     \}}
+\DoxyCodeLine{00012 \}}
+
+\end{DoxyCode}

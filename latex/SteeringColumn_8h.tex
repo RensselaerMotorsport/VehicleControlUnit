@@ -1,0 +1,159 @@
+\hypertarget{SteeringColumn_8h}{}\doxysection{Inc/\+Sensors/\+Analog\+Sensors/\+Steering\+Column.h File Reference}
+\label{SteeringColumn_8h}\index{Inc/Sensors/AnalogSensors/SteeringColumn.h@{Inc/Sensors/AnalogSensors/SteeringColumn.h}}
+{\ttfamily \#include \char`\"{}../\+Analog\+Sensor.\+h\char`\"{}}\newline
+Include dependency graph for Steering\+Column.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}{init\+Steering\+Column}} (\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} $\ast$sc, int hz, int channel, float zero\+Offset)
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} sensor with the given frequency, channel, and zero offset. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}{get\+Steering\+Column\+Rotation\+Angle}} (\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Gets the current rotation angle of the steering column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}{update\+Steering\+Column}} (void $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}{transfer\+Function\+Steering\+Column}} (float raw\+Val)
+\begin{DoxyCompactList}\small\item\em Converts raw steering column data to a meaningful rotation angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}\label{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}} 
+\index{SteeringColumn.h@{SteeringColumn.h}!getSteeringColumnRotationAngle@{getSteeringColumnRotationAngle}}
+\index{getSteeringColumnRotationAngle@{getSteeringColumnRotationAngle}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{getSteeringColumnRotationAngle()}{getSteeringColumnRotationAngle()}}
+{\footnotesize\ttfamily float get\+Steering\+Column\+Rotation\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} $\ast$}]{sc }\end{DoxyParamCaption})}
+
+
+
+Gets the current rotation angle of the steering column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Pointer to the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current rotation angle of the steering column. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00012}{12}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012                                                          \{}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{return} sc-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}};}
+\DoxyCodeLine{00014 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}\label{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}} 
+\index{SteeringColumn.h@{SteeringColumn.h}!initSteeringColumn@{initSteeringColumn}}
+\index{initSteeringColumn@{initSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{initSteeringColumn()}{initSteeringColumn()}}
+{\footnotesize\ttfamily void init\+Steering\+Column (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} $\ast$}]{sc,  }\item[{int}]{hz,  }\item[{int}]{channel,  }\item[{float}]{zero\+Offset }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} sensor with the given frequency, channel, and zero offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Pointer to the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} structure to initialize. \\
+\hline
+{\em hz} & The frequency in Hertz at which the sensor operates. \\
+\hline
+{\em channel} & The analog channel the sensor is connected to. \\
+\hline
+{\em zero\+Offset} & The zero offset value for the steering column. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00005}{5}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                                                                    \{}
+\DoxyCodeLine{00006     \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&sc-\/>\mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{base}}, \textcolor{stringliteral}{"{}SteeringColumn"{}}, hz, channel);}
+\DoxyCodeLine{00007     sc-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}} = -\/1;}
+\DoxyCodeLine{00008     sc-\/>\mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{zero\_offset}} = zeroOffset;}
+\DoxyCodeLine{00009     sc-\/>\mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{SteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18}{updateSteeringColumn}};}
+\DoxyCodeLine{00010 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}\label{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}} 
+\index{SteeringColumn.h@{SteeringColumn.h}!transferFunctionSteeringColumn@{transferFunctionSteeringColumn}}
+\index{transferFunctionSteeringColumn@{transferFunctionSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{transferFunctionSteeringColumn()}{transferFunctionSteeringColumn()}}
+{\footnotesize\ttfamily float transfer\+Function\+Steering\+Column (\begin{DoxyParamCaption}\item[{float}]{raw\+Val }\end{DoxyParamCaption})}
+
+
+
+Converts raw steering column data to a meaningful rotation angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Val} & The raw data from the steering column sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted rotation angle. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00024}{24}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                                    \{}
+\DoxyCodeLine{00025     \textcolor{comment}{// Placeholder for actual transfer function}}
+\DoxyCodeLine{00026     printf(\textcolor{stringliteral}{"{}Implement SteeringColumn::transfer\_function\(\backslash\)n"{}});}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} rawVal;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}\label{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}} 
+\index{SteeringColumn.h@{SteeringColumn.h}!updateSteeringColumn@{updateSteeringColumn}}
+\index{updateSteeringColumn@{updateSteeringColumn}!SteeringColumn.h@{SteeringColumn.h}}
+\doxysubsubsection{\texorpdfstring{updateSteeringColumn()}{updateSteeringColumn()}}
+{\footnotesize\ttfamily void update\+Steering\+Column (\begin{DoxyParamCaption}\item[{void $\ast$}]{sc }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & Pointer to the \mbox{\hyperlink{structSteeringColumn}{Steering\+Column}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{SteeringColumn_8c_source_l00016}{16}} of file \mbox{\hyperlink{SteeringColumn_8c_source}{Steering\+Column.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016                                     \{}
+\DoxyCodeLine{00017     \mbox{\hyperlink{structSteeringColumn}{SteeringColumn}} *steeringColumn = (\mbox{\hyperlink{structSteeringColumn}{SteeringColumn}} *)sc;}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{float} rawData = 0.0f; \textcolor{comment}{// This should come from sensor read function or simulation}}
+\DoxyCodeLine{00019     printf(\textcolor{stringliteral}{"{}Implement SteeringColumn Update.\(\backslash\)n"{}});}
+\DoxyCodeLine{00020     steeringColumn-\/>\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}}}
+\DoxyCodeLine{00021         = \mbox{\hyperlink{SteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e}{transferFunctionSteeringColumn}}(rawData + steeringColumn-\/>\mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{zero\_offset}});}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5

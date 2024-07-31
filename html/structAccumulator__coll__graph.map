@@ -1,0 +1,9 @@
+<map id="Accumulator" name="Accumulator">
+<area shape="rect" id="node1" title=" " alt="" coords="29,357,123,383"/>
+<area shape="rect" id="node2" href="$structBms.html" title=" " alt="" coords="87,269,137,295"/>
+<area shape="rect" id="node3" href="$structCANSensor.html" title=" " alt="" coords="5,181,96,207"/>
+<area shape="rect" id="node7" href="$structImd.html" title=" " alt="" coords="19,269,63,295"/>
+<area shape="rect" id="node4" href="$structSensor.html" title=" " alt="" coords="19,93,82,119"/>
+<area shape="rect" id="node5" href="$structUpdateable.html" title=" " alt="" coords="7,5,95,31"/>
+<area shape="rect" id="node6" href="$structBmsData.html" title=" " alt="" coords="129,181,205,207"/>
+</map>

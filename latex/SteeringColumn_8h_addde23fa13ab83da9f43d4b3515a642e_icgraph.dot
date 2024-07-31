@@ -1,0 +1,13 @@
+digraph "transferFunctionSteeringColumn"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="transferFunctionSteering\lColumn",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Converts raw steering column data to a meaningful rotation angle."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="updateSteeringColumn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18",tooltip="Updates the SteeringColumn data."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="initSteeringColumn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab",tooltip="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset."];
+}

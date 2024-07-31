@@ -1,0 +1,17 @@
+\hypertarget{TimeUtils_8c_source}{}\doxysection{Time\+Utils.\+c}
+\label{TimeUtils_8c_source}\index{Src/Utils/TimeUtils.c@{Src/Utils/TimeUtils.c}}
+\mbox{\hyperlink{TimeUtils_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../Inc/Utils/TimeUtils.h"{}}}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00003}\mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{00003}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TimeUtils_8c_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}() \{}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00004}00004     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{double})clock() / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00005}00005 \}}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00007}\mbox{\hyperlink{TimeUtils_8h_ab811d2f5aa3466ef464b7e2a8ff6c31d}{00007}} \textcolor{keywordtype}{double} \mbox{\hyperlink{TimeUtils_8c_ab811d2f5aa3466ef464b7e2a8ff6c31d}{measureInterval}}(\textcolor{keywordtype}{double} lastIntervalTime) \{}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00008}00008     \textcolor{keywordtype}{double} currentTime = \mbox{\hyperlink{TimeUtils_8c_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00009}00009     \textcolor{keywordtype}{double} interval = currentTime -\/ lastIntervalTime;}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00010}00010     \textcolor{keywordflow}{return} interval;}
+\DoxyCodeLine{\Hypertarget{TimeUtils_8c_source_l00011}00011 \}}
+
+\end{DoxyCode}

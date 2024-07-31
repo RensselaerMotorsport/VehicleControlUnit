@@ -1,0 +1,28 @@
+\hypertarget{Sensor_8h_source}{}\doxysection{Sensor.\+h}
+\label{Sensor_8h_source}\index{Inc/Sensors/Sensor.h@{Inc/Sensors/Sensor.h}}
+\mbox{\hyperlink{Sensor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RENSSELAERMOTORSPORT\_SENSOR\_H}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RENSSELAERMOTORSPORT\_SENSOR\_H}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00007}00007 \textcolor{preprocessor}{\#include "{}../Utils/Updateable.h"{}}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00009}\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{00009}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00010}\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}{00010}}     \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6}{ANALOG}},}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00011}\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}{00011}}     \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a}{DIGITAL}},}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00012}00012     \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c}{CAN}}}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00013}\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c}{00013}} \} \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{SensorType}};}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00015}\mbox{\hyperlink{structSensor}{00015}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00016}\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{00016}}     \mbox{\hyperlink{structUpdateable}{Updateable}} \mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}};}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00017}\mbox{\hyperlink{structSensor_a59be498582043f581a78851506f8e322}{00017}}     \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{SensorType}} \mbox{\hyperlink{structSensor_a59be498582043f581a78851506f8e322}{type}};}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00018}00018 \} \mbox{\hyperlink{structSensor}{Sensor}};}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00028}00028 \textcolor{keywordtype}{void} \mbox{\hyperlink{Sensor_8h_afa23c62d6ac2176a3ab170f42bce0663}{initSensor}}(\mbox{\hyperlink{structSensor}{Sensor}}* sensor, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} hz, \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{SensorType}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}});}
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{Sensor_8h_source_l00030}00030 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RENSSELAERMOTORSPORT\_SENSOR\_H}}
+
+\end{DoxyCode}

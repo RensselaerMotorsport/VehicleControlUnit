@@ -1,0 +1,5 @@
+<map id="checkTorqueLimits" name="checkTorqueLimits">
+<area shape="rect" id="node1" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="364,5,497,31"/>
+<area shape="rect" id="node2" href="$TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="173,5,316,31"/>
+<area shape="rect" id="node3" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="5,5,125,31"/>
+</map>

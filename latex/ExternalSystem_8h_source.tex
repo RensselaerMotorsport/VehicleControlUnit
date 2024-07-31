@@ -1,0 +1,33 @@
+\hypertarget{ExternalSystem_8h_source}{}\doxysection{External\+System.\+h}
+\label{ExternalSystem_8h_source}\index{Inc/Systems/ExternalSystem.h@{Inc/Systems/ExternalSystem.h}}
+\mbox{\hyperlink{ExternalSystem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RENSSELAERMOTORSPORT\_EXTERNAL\_SYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RENSSELAERMOTORSPORT\_EXTERNAL\_SYSTEM\_H}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{System_8h}{System.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{CommsSystem_8h}{CommsSystem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00011}\mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{00011}} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00012}\mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475caca1b897aad8f93e76df69c23bc732f2e}{00012}}     \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475caca1b897aad8f93e76df69c23bc732f2e}{BMS}},}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00013}\mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475caf5297152557c7da396243000ca240e89}{00013}}     \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475caf5297152557c7da396243000ca240e89}{ESC}},}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00014}00014     \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303}{IMD}}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00015}\mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303}{00015}} \} \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{ExternalType}};}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00017}\mbox{\hyperlink{structExternalSystem}{00017}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00018}\mbox{\hyperlink{structExternalSystem_a16243b93617529ee4b29b6f8bb023abd}{00018}}     \mbox{\hyperlink{structSystem}{System}} \mbox{\hyperlink{structExternalSystem_a16243b93617529ee4b29b6f8bb023abd}{system}};}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00019}\mbox{\hyperlink{structExternalSystem_a7a843a804115ddcc975825ec24353daa}{00019}}     \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{ExternalType}} \mbox{\hyperlink{structExternalSystem_a7a843a804115ddcc975825ec24353daa}{type}};}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00020}\mbox{\hyperlink{structExternalSystem_ae26f40c87edc5ebffe847ebb30de077a}{00020}}     \mbox{\hyperlink{structCommsSystem}{CommsSystem}}* \mbox{\hyperlink{structExternalSystem_ae26f40c87edc5ebffe847ebb30de077a}{comms}}; \textcolor{comment}{//What comms are we using to communicate with the external system? CAN, Ethernet, etc.}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00021}\mbox{\hyperlink{structExternalSystem_af0e762ad56062e3f5ff1ff57bdc68954}{00021}}     int (*check\_heartbeat)(\textcolor{keywordtype}{void}* self); \textcolor{comment}{// Check if the controller is still alive}}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00022}00022 \} \mbox{\hyperlink{structExternalSystem}{ExternalSystem}};}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00032}00032 \textcolor{keywordtype}{void} \mbox{\hyperlink{ExternalSystem_8h_a4e4f320bb768dfd6c0ba22cbafc14fed}{initExternalSystem}}(\mbox{\hyperlink{structExternalSystem}{ExternalSystem}}* external, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* name, \textcolor{keywordtype}{int} hz,}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00033}00033                         \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{ExternalType}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}});}
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{ExternalSystem_8h_source_l00035}00035 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RENSSELAERMOTORSPORT\_EXTERNAL\_SYSTEM\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,18 @@
+\hypertarget{AccelerometerWrapper_8c_source}{}\doxysection{Accelerometer\+Wrapper.\+c}
+\label{AccelerometerWrapper_8c_source}\index{Src/Sensors/AnalogSensors/AccelerometerWrapper.c@{Src/Sensors/AnalogSensors/AccelerometerWrapper.c}}
+\mbox{\hyperlink{AccelerometerWrapper_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../../Inc/Sensors/AnalogSensors/AccelerometerWrapper.h"{}}}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00003}\mbox{\hyperlink{AccelerometerWrapper_8h_a1161a61585b3fd04aba13571cb0dbcc4}{00003}} \textcolor{keywordtype}{void} \mbox{\hyperlink{AccelerometerWrapper_8c_a1161a61585b3fd04aba13571cb0dbcc4}{initAccelerometerWrapper}}(\mbox{\hyperlink{structAccelerometerWrapper}{AccelerometerWrapper}}* wrapper,}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00004}00004                               \mbox{\hyperlink{structAccelerometer}{Accelerometer}}* ax,}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00005}00005                               \mbox{\hyperlink{structAccelerometer}{Accelerometer}}* ay,}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00006}00006                               \mbox{\hyperlink{structAccelerometer}{Accelerometer}}* az) \{}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00007}00007     \textcolor{keywordflow}{if} (wrapper != NULL \&\& ax != NULL \&\& ay != NULL \&\& az != NULL) \{}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00008}00008         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a72932ac485f0c6d7b5210571b6b7a372}{x}} = *ax;}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00009}00009         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a3fe226fd288e01d6c7c65fc706c87e42}{y}} = *ay;}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00010}00010         wrapper-\/>\mbox{\hyperlink{structAccelerometerWrapper_a2949ba901a31815ae99994aeefb5ecaa}{z}} = *az;}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{AccelerometerWrapper_8c_source_l00012}00012 \}}
+
+\end{DoxyCode}

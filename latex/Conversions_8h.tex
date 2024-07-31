@@ -1,0 +1,41 @@
+\hypertarget{Conversions_8h}{}\doxysection{Inc/\+Utils/\+Conversions.h File Reference}
+\label{Conversions_8h}\index{Inc/Utils/Conversions.h@{Inc/Utils/Conversions.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{Conversions_8h_afc7e7aa256276c3574cb19108257cfc8}{convert\+Mps\+To\+Mph}} (float meters\+Per\+Second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Conversions_8h_afc7e7aa256276c3574cb19108257cfc8}\label{Conversions_8h_afc7e7aa256276c3574cb19108257cfc8}} 
+\index{Conversions.h@{Conversions.h}!convertMpsToMph@{convertMpsToMph}}
+\index{convertMpsToMph@{convertMpsToMph}!Conversions.h@{Conversions.h}}
+\doxysubsubsection{\texorpdfstring{convertMpsToMph()}{convertMpsToMph()}}
+{\footnotesize\ttfamily float convert\+Mps\+To\+Mph (\begin{DoxyParamCaption}\item[{float}]{meters\+Per\+Second }\end{DoxyParamCaption})}
+
+Converts from meters per second to miles per hour
+
+
+\begin{DoxyParams}{Parameters}
+{\em meters\+Per\+Second} & The speed to convert in meters per second. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The speed in miles per hour. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Conversions_8c_source_l00005}{5}} of file \mbox{\hyperlink{Conversions_8c_source}{Conversions.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                              \{}
+\DoxyCodeLine{00006     \textcolor{keywordflow}{return} metersPerSecond * \mbox{\hyperlink{Conversions_8c_ad8b6d7c5a8c110a8001bc4c0423ead04}{MPS\_TO\_MPH}};}
+\DoxyCodeLine{00007 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1

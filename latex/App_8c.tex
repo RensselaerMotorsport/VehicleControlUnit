@@ -1,0 +1,158 @@
+\hypertarget{App_8c}{}\doxysection{Src/\+Sensors/\+Analog\+Sensors/\+App.c File Reference}
+\label{App_8c}\index{Src/Sensors/AnalogSensors/App.c@{Src/Sensors/AnalogSensors/App.c}}
+{\ttfamily \#include \char`\"{}../../../\+Inc/\+Sensors/\+Analog\+Sensors/\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for App.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{App_8c_a70256ff87716960d0b2a216d48fd94ce}{init\+App}} (\mbox{\hyperlink{structApp}{App}} $\ast$app, int hz, int channel)
+\begin{DoxyCompactList}\small\item\em Initializes the APP with the given frequency and channel. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{App_8c_a01be170ac09e9dd35ba3f18c537ae409}{get\+App\+Position}} (\mbox{\hyperlink{structApp}{App}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em Gets the current position of the APP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{App_8c_af9c13c4c47f46fc56e488d635c0a4a73}{update\+App}} (void $\ast$app)
+\begin{DoxyCompactList}\small\item\em Updates the APP data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{App_8c_ac6a91028bac466dcd71f79aa06aa65ba}{transfer\+Function\+App}} (float raw\+Val)
+\begin{DoxyCompactList}\small\item\em Converts raw APP data to a meaningful position value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{App_8c_a01be170ac09e9dd35ba3f18c537ae409}\label{App_8c_a01be170ac09e9dd35ba3f18c537ae409}} 
+\index{App.c@{App.c}!getAppPosition@{getAppPosition}}
+\index{getAppPosition@{getAppPosition}!App.c@{App.c}}
+\doxysubsubsection{\texorpdfstring{getAppPosition()}{getAppPosition()}}
+{\footnotesize\ttfamily float get\+App\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structApp}{App}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+Gets the current position of the APP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & Pointer to the \mbox{\hyperlink{structApp}{App}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current position of the APP. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{App_8c_source_l00011}{11}} of file \mbox{\hyperlink{App_8c_source}{App.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                \{}
+\DoxyCodeLine{00012     \textcolor{keywordflow}{return} app-\/>\mbox{\hyperlink{structApp_aa40356fafb878b49d6a3bcb36e8a6fd1}{position}};}
+\DoxyCodeLine{00013 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{App_8c_a70256ff87716960d0b2a216d48fd94ce}\label{App_8c_a70256ff87716960d0b2a216d48fd94ce}} 
+\index{App.c@{App.c}!initApp@{initApp}}
+\index{initApp@{initApp}!App.c@{App.c}}
+\doxysubsubsection{\texorpdfstring{initApp()}{initApp()}}
+{\footnotesize\ttfamily void init\+App (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structApp}{App}} $\ast$}]{app,  }\item[{int}]{hz,  }\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Initializes the APP with the given frequency and channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & Pointer to the \mbox{\hyperlink{structApp}{App}} structure to initialize. \\
+\hline
+{\em hz} & The frequency in Hertz at which the APP operates. \\
+\hline
+{\em channel} & The analog channel the APP is connected to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{App_8c_source_l00005}{5}} of file \mbox{\hyperlink{App_8c_source}{App.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                             \{}
+\DoxyCodeLine{00006     \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&app-\/>\mbox{\hyperlink{structApp_a9fb97d389e14405e540e7eb232fa38fa}{base}}, \textcolor{stringliteral}{"{}App"{}}, hz, channel);}
+\DoxyCodeLine{00007     app-\/>\mbox{\hyperlink{structApp_aa40356fafb878b49d6a3bcb36e8a6fd1}{position}} = 0;}
+\DoxyCodeLine{00008     app-\/>\mbox{\hyperlink{structApp_a9fb97d389e14405e540e7eb232fa38fa}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{App_8c_af9c13c4c47f46fc56e488d635c0a4a73}{updateApp}};}
+\DoxyCodeLine{00009 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{App_8c_ac6a91028bac466dcd71f79aa06aa65ba}\label{App_8c_ac6a91028bac466dcd71f79aa06aa65ba}} 
+\index{App.c@{App.c}!transferFunctionApp@{transferFunctionApp}}
+\index{transferFunctionApp@{transferFunctionApp}!App.c@{App.c}}
+\doxysubsubsection{\texorpdfstring{transferFunctionApp()}{transferFunctionApp()}}
+{\footnotesize\ttfamily float transfer\+Function\+App (\begin{DoxyParamCaption}\item[{float}]{raw\+Val }\end{DoxyParamCaption})}
+
+
+
+Converts raw APP data to a meaningful position value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Val} & The raw data from the APP. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted APP position value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{App_8c_source_l00022}{22}} of file \mbox{\hyperlink{App_8c_source}{App.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                         \{}
+\DoxyCodeLine{00023     \textcolor{comment}{// This is a +-\/45 degree sensor}}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{if} (rawVal < 0.5) \{}
+\DoxyCodeLine{00025         printf(\textcolor{stringliteral}{"{}App::transfer\_function rawValue is too low\(\backslash\)n"{}});}
+\DoxyCodeLine{00026         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00027     \}}
+\DoxyCodeLine{00028     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rawVal > 4.5) \{}
+\DoxyCodeLine{00029         printf(\textcolor{stringliteral}{"{}App::transfer\_function rawValue is too high\(\backslash\)n"{}});}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{00031     \}}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{return} (22.5 * rawVal) -\/ 56.25;}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{App_8c_af9c13c4c47f46fc56e488d635c0a4a73}\label{App_8c_af9c13c4c47f46fc56e488d635c0a4a73}} 
+\index{App.c@{App.c}!updateApp@{updateApp}}
+\index{updateApp@{updateApp}!App.c@{App.c}}
+\doxysubsubsection{\texorpdfstring{updateApp()}{updateApp()}}
+{\footnotesize\ttfamily void update\+App (\begin{DoxyParamCaption}\item[{void $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+Updates the APP data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & Pointer to the \mbox{\hyperlink{structApp}{App}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{App_8c_source_l00015}{15}} of file \mbox{\hyperlink{App_8c_source}{App.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                           \{}
+\DoxyCodeLine{00016     \mbox{\hyperlink{structApp}{App}} *myApp = (\mbox{\hyperlink{structApp}{App}} *)app;}
+\DoxyCodeLine{00017     printf(\textcolor{stringliteral}{"{}Implement App::update\(\backslash\)n"{}});}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{float} rawData = 0.0f;}
+\DoxyCodeLine{00019     myApp-\/>\mbox{\hyperlink{structApp_aa40356fafb878b49d6a3bcb36e8a6fd1}{position}} = \mbox{\hyperlink{App_8c_ac6a91028bac466dcd71f79aa06aa65ba}{transferFunctionApp}}(rawData);}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5

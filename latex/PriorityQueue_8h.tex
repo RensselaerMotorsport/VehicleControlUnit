@@ -1,0 +1,257 @@
+\hypertarget{PriorityQueue_8h}{}\doxysection{Inc/\+Scheduler/\+Priority\+Queue.h File Reference}
+\label{PriorityQueue_8h}\index{Inc/Scheduler/PriorityQueue.h@{Inc/Scheduler/PriorityQueue.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Task.\+h\char`\"{}}\newline
+Include dependency graph for Priority\+Queue.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPQNode}{PQNode}}
+\item 
+struct \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}{MAX\+\_\+\+SENSORS}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PriorityQueue_8h_af5ad572e37189c56cf0816638dd85d97}{PQInit}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq)
+\begin{DoxyCompactList}\small\item\em Initializes the priority queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PriorityQueue_8h_ae841bdf0664368f8d4484b0e5dbd33d7}{PQPush}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq, \mbox{\hyperlink{structTask}{Task}} task, int priority)
+\begin{DoxyCompactList}\small\item\em Pushes a task with a given priority onto the priority queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PriorityQueue_8h_accf2d5c29ecdd09ea36ac2d7dbb7556f}{PQPop}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq, \mbox{\hyperlink{structTask}{Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em Pops the highest priority task from the priority queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PriorityQueue_8h_a176542d630434d645be4ce5c3e7d5189}{PQPeek}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq, \mbox{\hyperlink{structTask}{Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em Peeks at the highest priority task in the priority queue without removing it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PriorityQueue_8h_a3db90f839aff3e0e896ca237483bb926}{PQIs\+Empty}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq)
+\begin{DoxyCompactList}\small\item\em Checks if the priority queue is empty. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PriorityQueue_8h_aca9cc7f25c9cc6fd37c05dbb5b81e727}{PQIs\+Full}} (\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$pq)
+\begin{DoxyCompactList}\small\item\em Checks if the priority queue is full. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}\label{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!MAX\_SENSORS@{MAX\_SENSORS}}
+\index{MAX\_SENSORS@{MAX\_SENSORS}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SENSORS}{MAX\_SENSORS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SENSORS~10}
+
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8h_source_l00008}{8}} of file \mbox{\hyperlink{PriorityQueue_8h_source}{Priority\+Queue.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PriorityQueue_8h_af5ad572e37189c56cf0816638dd85d97}\label{PriorityQueue_8h_af5ad572e37189c56cf0816638dd85d97}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQInit@{PQInit}}
+\index{PQInit@{PQInit}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQInit()}{PQInit()}}
+{\footnotesize\ttfamily void PQInit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq }\end{DoxyParamCaption})}
+
+
+
+Initializes the priority queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure to initialize. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00003}{3}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003                                \{}
+\DoxyCodeLine{00004     pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}} = 0;}
+\DoxyCodeLine{00005 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{PriorityQueue_8h_a3db90f839aff3e0e896ca237483bb926}\label{PriorityQueue_8h_a3db90f839aff3e0e896ca237483bb926}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQIsEmpty@{PQIsEmpty}}
+\index{PQIsEmpty@{PQIsEmpty}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQIsEmpty()}{PQIsEmpty()}}
+{\footnotesize\ttfamily bool PQIs\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq }\end{DoxyParamCaption})}
+
+
+
+Checks if the priority queue is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00062}{62}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062                                   \{}
+\DoxyCodeLine{00063     \textcolor{keywordflow}{return} pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}} == 0;}
+\DoxyCodeLine{00064 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{PriorityQueue_8h_aca9cc7f25c9cc6fd37c05dbb5b81e727}\label{PriorityQueue_8h_aca9cc7f25c9cc6fd37c05dbb5b81e727}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQIsFull@{PQIsFull}}
+\index{PQIsFull@{PQIsFull}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQIsFull()}{PQIsFull()}}
+{\footnotesize\ttfamily bool PQIs\+Full (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq }\end{DoxyParamCaption})}
+
+
+
+Checks if the priority queue is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the queue is full, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00066}{66}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066                                  \{}
+\DoxyCodeLine{00067     \textcolor{keywordflow}{return} pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}} == \mbox{\hyperlink{PriorityQueue_8h_aa3d1fc2927eec213e6b5f9e854c392d2}{MAX\_SENSORS}};}
+\DoxyCodeLine{00068 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{PriorityQueue_8h_a176542d630434d645be4ce5c3e7d5189}\label{PriorityQueue_8h_a176542d630434d645be4ce5c3e7d5189}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQPeek@{PQPeek}}
+\index{PQPeek@{PQPeek}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQPeek()}{PQPeek()}}
+{\footnotesize\ttfamily bool PQPeek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq,  }\item[{\mbox{\hyperlink{structTask}{Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+Peeks at the highest priority task in the priority queue without removing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure. \\
+\hline
+{\em task} & Pointer to the \mbox{\hyperlink{structTask}{Task}} structure to store the peeked task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a task was successfully peeked, false if the queue is empty. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00056}{56}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                                            \{}
+\DoxyCodeLine{00057     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PriorityQueue_8c_a3db90f839aff3e0e896ca237483bb926}{PQIsEmpty}}(pq)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00058     *task = pq-\/>\mbox{\hyperlink{structPriorityQueue_a13ec118777beebfc35d2824d38ea37ab}{nodes}}[1].\mbox{\hyperlink{structPQNode_afb8e6fef5281db058f600ccc33ca41d0}{task}};}
+\DoxyCodeLine{00059     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00060 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{PriorityQueue_8h_accf2d5c29ecdd09ea36ac2d7dbb7556f}\label{PriorityQueue_8h_accf2d5c29ecdd09ea36ac2d7dbb7556f}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQPop@{PQPop}}
+\index{PQPop@{PQPop}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQPop()}{PQPop()}}
+{\footnotesize\ttfamily bool PQPop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq,  }\item[{\mbox{\hyperlink{structTask}{Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+Pops the highest priority task from the priority queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure. \\
+\hline
+{\em task} & Pointer to the \mbox{\hyperlink{structTask}{Task}} structure to store the popped task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a task was successfully popped, false if the queue is empty. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00048}{48}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048                                           \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PriorityQueue_8c_a3db90f839aff3e0e896ca237483bb926}{PQIsEmpty}}(pq)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00050     *task = pq-\/>\mbox{\hyperlink{structPriorityQueue_a13ec118777beebfc35d2824d38ea37ab}{nodes}}[1].\mbox{\hyperlink{structPQNode_afb8e6fef5281db058f600ccc33ca41d0}{task}};}
+\DoxyCodeLine{00051     pq-\/>\mbox{\hyperlink{structPriorityQueue_a13ec118777beebfc35d2824d38ea37ab}{nodes}}[1] = pq-\/>\mbox{\hyperlink{structPriorityQueue_a13ec118777beebfc35d2824d38ea37ab}{nodes}}[pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}}-\/-\/];}
+\DoxyCodeLine{00052     \mbox{\hyperlink{PriorityQueue_8c_a6656021f82dc5fc0e47981fad7fda2bd}{heapifyDown}}(pq, 1);}
+\DoxyCodeLine{00053     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{PriorityQueue_8h_ae841bdf0664368f8d4484b0e5dbd33d7}\label{PriorityQueue_8h_ae841bdf0664368f8d4484b0e5dbd33d7}} 
+\index{PriorityQueue.h@{PriorityQueue.h}!PQPush@{PQPush}}
+\index{PQPush@{PQPush}!PriorityQueue.h@{PriorityQueue.h}}
+\doxysubsubsection{\texorpdfstring{PQPush()}{PQPush()}}
+{\footnotesize\ttfamily bool PQPush (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} $\ast$}]{pq,  }\item[{\mbox{\hyperlink{structTask}{Task}}}]{task,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Pushes a task with a given priority onto the priority queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pq} & Pointer to the \mbox{\hyperlink{structPriorityQueue}{Priority\+Queue}} structure. \\
+\hline
+{\em task} & The task to push onto the queue. \\
+\hline
+{\em priority} & The priority of the task. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the task was successfully pushed, false if the queue is full. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{PriorityQueue_8c_source_l00041}{41}} of file \mbox{\hyperlink{PriorityQueue_8c_source}{Priority\+Queue.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041                                                         \{}
+\DoxyCodeLine{00042     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PriorityQueue_8c_aca9cc7f25c9cc6fd37c05dbb5b81e727}{PQIsFull}}(pq)) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00043     pq-\/>\mbox{\hyperlink{structPriorityQueue_a13ec118777beebfc35d2824d38ea37ab}{nodes}}[++pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}}] = (\mbox{\hyperlink{structPQNode}{PQNode}})\{priority, task\};}
+\DoxyCodeLine{00044     \mbox{\hyperlink{PriorityQueue_8c_ab7631090c485201b8c6f7773b0575e3f}{heapifyUp}}(pq, pq-\/>\mbox{\hyperlink{structPriorityQueue_a943508386d5eededbce218e16ab06a8a}{size}});}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00046 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10

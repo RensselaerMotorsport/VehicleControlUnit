@@ -1,0 +1,179 @@
+\hypertarget{Accelerometer_8c}{}\doxysection{Src/\+Sensors/\+Analog\+Sensors/\+Accelerometer.c File Reference}
+\label{Accelerometer_8c}\index{Src/Sensors/AnalogSensors/Accelerometer.c@{Src/Sensors/AnalogSensors/Accelerometer.c}}
+{\ttfamily \#include \char`\"{}../../../\+Inc/\+Sensors/\+Analog\+Sensors/\+Accelerometer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Accelerometer.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Accelerometer_8c_acf82e4569532339a0a1eb666e1398d4b}{init\+Accelerometer}} (\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$accel, int channel, int hz, int mux\+Channel)
+\begin{DoxyCompactList}\small\item\em Initializes the accelerometer with the given channel, frequency, and multiplexer channel. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{Accelerometer_8c_ab32cd9744c20aa28a6c8473fd9d998e3}{get\+Accelerometer\+Value}} (\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$accel)
+\begin{DoxyCompactList}\small\item\em Gets the current value of the accelerometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Accelerometer_8c_a39e3f69d0febf56c49895e332453a965}{update\+Accelerometer}} (void $\ast$accel)
+\begin{DoxyCompactList}\small\item\em Updates the accelerometer data. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{Accelerometer_8c_a1f6be4d9ef1b0564e7462ee74523b4c6}{transfer\+Function\+Accelerometer}} (float raw\+Val)
+\begin{DoxyCompactList}\small\item\em Converts raw accelerometer data to a meaningful value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{Accelerometer_8c_abc418deb46694521c816d5edc379f485}{k\+Offset\+Volts}} = 2.\+5
+\item 
+const float \mbox{\hyperlink{Accelerometer_8c_ae1a61c0eff9a46dc9410145ab636c18b}{k\+Volts\+PerG}} = 0.\+440
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Accelerometer_8c_ab32cd9744c20aa28a6c8473fd9d998e3}\label{Accelerometer_8c_ab32cd9744c20aa28a6c8473fd9d998e3}} 
+\index{Accelerometer.c@{Accelerometer.c}!getAccelerometerValue@{getAccelerometerValue}}
+\index{getAccelerometerValue@{getAccelerometerValue}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{getAccelerometerValue()}{getAccelerometerValue()}}
+{\footnotesize\ttfamily float get\+Accelerometer\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$}]{accel }\end{DoxyParamCaption})}
+
+
+
+Gets the current value of the accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em accel} & Pointer to the \mbox{\hyperlink{structAccelerometer}{Accelerometer}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current accelerometer value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00014}{14}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014                                                   \{}
+\DoxyCodeLine{00015     \textcolor{keywordflow}{return} accel-\/>\mbox{\hyperlink{structAccelerometer_a136ea00a3d678536b16de34c215205ef}{value}};}
+\DoxyCodeLine{00016 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Accelerometer_8c_acf82e4569532339a0a1eb666e1398d4b}\label{Accelerometer_8c_acf82e4569532339a0a1eb666e1398d4b}} 
+\index{Accelerometer.c@{Accelerometer.c}!initAccelerometer@{initAccelerometer}}
+\index{initAccelerometer@{initAccelerometer}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{initAccelerometer()}{initAccelerometer()}}
+{\footnotesize\ttfamily void init\+Accelerometer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccelerometer}{Accelerometer}} $\ast$}]{accel,  }\item[{int}]{channel,  }\item[{int}]{hz,  }\item[{int}]{mux\+Channel }\end{DoxyParamCaption})}
+
+
+
+Initializes the accelerometer with the given channel, frequency, and multiplexer channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em accel} & Pointer to the \mbox{\hyperlink{structAccelerometer}{Accelerometer}} structure to initialize. \\
+\hline
+{\em channel} & The analog channel the accelerometer is connected to. \\
+\hline
+{\em hz} & The frequency in Hertz at which the accelerometer operates. \\
+\hline
+{\em mux\+Channel} & The multiplexer channel for the accelerometer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00008}{8}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008                                                                                   \{}
+\DoxyCodeLine{00009     \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&accel-\/>\mbox{\hyperlink{structAccelerometer_a3368f755b8f5b407942925923e8b17e3}{base}}, \textcolor{stringliteral}{"{}Accelerometer"{}}, hz, channel);}
+\DoxyCodeLine{00010     accel-\/>\mbox{\hyperlink{structAccelerometer_a136ea00a3d678536b16de34c215205ef}{value}} = -\/1;}
+\DoxyCodeLine{00011     accel-\/>\mbox{\hyperlink{structAccelerometer_a3368f755b8f5b407942925923e8b17e3}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{Accelerometer_8c_a39e3f69d0febf56c49895e332453a965}{updateAccelerometer}};}
+\DoxyCodeLine{00012 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{Accelerometer_8c_a1f6be4d9ef1b0564e7462ee74523b4c6}\label{Accelerometer_8c_a1f6be4d9ef1b0564e7462ee74523b4c6}} 
+\index{Accelerometer.c@{Accelerometer.c}!transferFunctionAccelerometer@{transferFunctionAccelerometer}}
+\index{transferFunctionAccelerometer@{transferFunctionAccelerometer}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{transferFunctionAccelerometer()}{transferFunctionAccelerometer()}}
+{\footnotesize\ttfamily float transfer\+Function\+Accelerometer (\begin{DoxyParamCaption}\item[{float}]{raw\+Val }\end{DoxyParamCaption})}
+
+
+
+Converts raw accelerometer data to a meaningful value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+Val} & The raw data from the accelerometer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted accelerometer value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00025}{25}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                                                   \{}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} (rawVal -\/ \mbox{\hyperlink{Accelerometer_8c_abc418deb46694521c816d5edc379f485}{kOffsetVolts}}) / \mbox{\hyperlink{Accelerometer_8c_ae1a61c0eff9a46dc9410145ab636c18b}{kVoltsPerG}};}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{Accelerometer_8c_a39e3f69d0febf56c49895e332453a965}\label{Accelerometer_8c_a39e3f69d0febf56c49895e332453a965}} 
+\index{Accelerometer.c@{Accelerometer.c}!updateAccelerometer@{updateAccelerometer}}
+\index{updateAccelerometer@{updateAccelerometer}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{updateAccelerometer()}{updateAccelerometer()}}
+{\footnotesize\ttfamily void update\+Accelerometer (\begin{DoxyParamCaption}\item[{void $\ast$}]{accel }\end{DoxyParamCaption})}
+
+
+
+Updates the accelerometer data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em accel} & Pointer to the \mbox{\hyperlink{structAccelerometer}{Accelerometer}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00018}{18}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018                                       \{}
+\DoxyCodeLine{00019     \mbox{\hyperlink{structAccelerometer}{Accelerometer}} *myAccel = (\mbox{\hyperlink{structAccelerometer}{Accelerometer}} *)accel;}
+\DoxyCodeLine{00020     \textcolor{keywordtype}{float} rawData = 0.0f; \textcolor{comment}{// Placeholder for sensor reading}}
+\DoxyCodeLine{00021     printf(\textcolor{stringliteral}{"{}Updating Accelerometer\(\backslash\)n"{}});}
+\DoxyCodeLine{00022     myAccel-\/>\mbox{\hyperlink{structAccelerometer_a136ea00a3d678536b16de34c215205ef}{value}} = \mbox{\hyperlink{Accelerometer_8c_a1f6be4d9ef1b0564e7462ee74523b4c6}{transferFunctionAccelerometer}}(rawData);}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Accelerometer_8c_abc418deb46694521c816d5edc379f485}\label{Accelerometer_8c_abc418deb46694521c816d5edc379f485}} 
+\index{Accelerometer.c@{Accelerometer.c}!kOffsetVolts@{kOffsetVolts}}
+\index{kOffsetVolts@{kOffsetVolts}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{kOffsetVolts}{kOffsetVolts}}
+{\footnotesize\ttfamily const float k\+Offset\+Volts = 2.\+5}
+
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00005}{5}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+
+\mbox{\Hypertarget{Accelerometer_8c_ae1a61c0eff9a46dc9410145ab636c18b}\label{Accelerometer_8c_ae1a61c0eff9a46dc9410145ab636c18b}} 
+\index{Accelerometer.c@{Accelerometer.c}!kVoltsPerG@{kVoltsPerG}}
+\index{kVoltsPerG@{kVoltsPerG}!Accelerometer.c@{Accelerometer.c}}
+\doxysubsubsection{\texorpdfstring{kVoltsPerG}{kVoltsPerG}}
+{\footnotesize\ttfamily const float k\+Volts\+PerG = 0.\+440}
+
+
+
+Definition at line \mbox{\hyperlink{Accelerometer_8c_source_l00006}{6}} of file \mbox{\hyperlink{Accelerometer_8c_source}{Accelerometer.\+c}}.
+

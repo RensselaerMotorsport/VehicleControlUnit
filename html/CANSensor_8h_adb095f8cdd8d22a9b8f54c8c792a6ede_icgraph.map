@@ -1,0 +1,9 @@
+<map id="initCANSensor" name="initCANSensor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="119,55,226,80"/>
+<area shape="rect" id="Node000002" href="$BMS_8c.html#afeeadcad4acba40f2d7197368054b051" title=" " alt="" coords="5,5,71,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,51,70,33,72,28,122,46"/>
+<area shape="rect" id="Node000003" href="$Esc_8c.html#a88716097de898ba50d9866c5639e8c52" title=" " alt="" coords="8,55,68,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,70,69,70,69,65,103,65"/>
+<area shape="rect" id="Node000004" href="$Imd_8c.html#a4920d20ec1d5bea9a18548398159754b" title=" " alt="" coords="8,104,68,130"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,89,70,108,68,103,120,84"/>
+</map>

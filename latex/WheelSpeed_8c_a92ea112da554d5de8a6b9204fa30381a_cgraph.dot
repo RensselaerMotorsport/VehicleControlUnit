@@ -1,0 +1,18 @@
+digraph "updateWheelSpeed"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="updateWheelSpeed",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updated the speed var in this sensor."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="calculateSpeed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9",tooltip="Translates data to speed in mph."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="convertMpsToMph",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Conversions_8c.html#afc7e7aa256276c3574cb19108257cfc8",tooltip=" "];
+  Node2 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="getCurrentTime",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca",tooltip="Retrieves the current time in seconds."];
+  Node2 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="measureInterval",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d",tooltip="Measures the time interval since the last recorded time."];
+  Node5 -> Node4 [color="steelblue1",style="solid"];
+}

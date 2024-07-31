@@ -1,0 +1,9 @@
+<map id="initCANSensor" name="initCANSensor">
+<area shape="rect" id="node1" title="Initializes a CAN sensor with the given parameters." alt="" coords="5,80,113,105"/>
+<area shape="rect" id="node2" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="161,80,241,105"/>
+<area shape="rect" id="node3" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="289,80,395,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="443,5,547,31"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="445,55,545,80"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="445,104,544,129"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="443,153,546,179"/>
+</map>

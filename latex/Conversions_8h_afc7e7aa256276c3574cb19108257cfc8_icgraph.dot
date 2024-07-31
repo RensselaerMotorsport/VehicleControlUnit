@@ -1,0 +1,15 @@
+digraph "convertMpsToMph"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="convertMpsToMph",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="calculateSpeed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9",tooltip="Translates data to speed in mph."];
+  Node2 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="updateWheelSpeed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a",tooltip="Updated the speed var in this sensor."];
+  Node3 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="initWheelSpeed",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3",tooltip="Initialization function for a wheel speed sensor."];
+}

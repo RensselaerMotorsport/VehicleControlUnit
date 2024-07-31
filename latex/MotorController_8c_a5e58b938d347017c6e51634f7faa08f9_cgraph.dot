@@ -1,0 +1,11 @@
+digraph "getPedalPosition"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="getPedalPosition",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gets the pedal position from the MotorController."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="getAppPosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$App_8c.html#a01be170ac09e9dd35ba3f18c537ae409",tooltip="Gets the current position of the APP."];
+}

@@ -1,0 +1,79 @@
+\hypertarget{Task_8c}{}\doxysection{Src/\+Scheduler/\+Task.c File Reference}
+\label{Task_8c}\index{Src/Scheduler/Task.c@{Src/Scheduler/Task.c}}
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Scheduler/\+Task.\+h\char`\"{}}\newline
+Include dependency graph for Task.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Task_8c_ada95c849b23900ccbebc6a389f6dba19}{Task\+Init}} (\mbox{\hyperlink{structTask}{Task}} $\ast$task, \mbox{\hyperlink{structSensor}{Sensor}} $\ast$sensor, int hz)
+\begin{DoxyCompactList}\small\item\em Initializes a task with the given sensor and update frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Task_8c_af74a92b4c3acbd7beebe1c7e404f6b99}{Task\+Execute}} (\mbox{\hyperlink{structTask}{Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em Executes the task by calling the sensor\textquotesingle{}s update function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Task_8c_af74a92b4c3acbd7beebe1c7e404f6b99}\label{Task_8c_af74a92b4c3acbd7beebe1c7e404f6b99}} 
+\index{Task.c@{Task.c}!TaskExecute@{TaskExecute}}
+\index{TaskExecute@{TaskExecute}!Task.c@{Task.c}}
+\doxysubsubsection{\texorpdfstring{TaskExecute()}{TaskExecute()}}
+{\footnotesize\ttfamily void Task\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTask}{Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+Executes the task by calling the sensor\textquotesingle{}s update function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & Pointer to the \mbox{\hyperlink{structTask}{Task}} structure to execute.\\
+\hline
+\end{DoxyParams}
+This function executes the task by invoking the update function of the associated sensor, if it exists. 
+
+Definition at line \mbox{\hyperlink{Task_8c_source_l00009}{9}} of file \mbox{\hyperlink{Task_8c_source}{Task.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009                              \{}
+\DoxyCodeLine{00010     \textcolor{keywordflow}{if} (task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}} \&\& task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}}-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}) \{}
+\DoxyCodeLine{00011         \mbox{\hyperlink{Updateable_8h_a74ea2f39378a41597820f5243678b379}{UPDATE}}(task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}});}
+\DoxyCodeLine{00012     \}}
+\DoxyCodeLine{00013 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{Task_8c_ada95c849b23900ccbebc6a389f6dba19}\label{Task_8c_ada95c849b23900ccbebc6a389f6dba19}} 
+\index{Task.c@{Task.c}!TaskInit@{TaskInit}}
+\index{TaskInit@{TaskInit}!Task.c@{Task.c}}
+\doxysubsubsection{\texorpdfstring{TaskInit()}{TaskInit()}}
+{\footnotesize\ttfamily void Task\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTask}{Task}} $\ast$}]{task,  }\item[{\mbox{\hyperlink{structSensor}{Sensor}} $\ast$}]{sensor,  }\item[{int}]{hz }\end{DoxyParamCaption})}
+
+
+
+Initializes a task with the given sensor and update frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & Pointer to the \mbox{\hyperlink{structTask}{Task}} structure to initialize. \\
+\hline
+{\em sensor} & Pointer to the \mbox{\hyperlink{structSensor}{Sensor}} structure associated with the task. \\
+\hline
+{\em hz} & The update frequency in Hertz.\\
+\hline
+\end{DoxyParams}
+This function sets up a task by assigning the specified sensor and update frequency. It also initializes the next execution time to zero. 
+
+Definition at line \mbox{\hyperlink{Task_8c_source_l00003}{3}} of file \mbox{\hyperlink{Task_8c_source}{Task.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003                                                   \{}
+\DoxyCodeLine{00004     task-\/>\mbox{\hyperlink{structTask_a0ac3b91d65c21bd9851b3db09cbd5d5d}{sensor}} = sensor;}
+\DoxyCodeLine{00005     task-\/>\mbox{\hyperlink{structTask_a299d1cdf8501da3b0fb21f9e49a245d6}{hz}} = hz;}
+\DoxyCodeLine{00006     task-\/>\mbox{\hyperlink{structTask_aecd0764bd9e73850d02ea0d633fe4ed1}{nextExecTime}} = 0;}
+\DoxyCodeLine{00007 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2

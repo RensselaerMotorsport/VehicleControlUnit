@@ -1,0 +1,13 @@
+digraph "updateBms"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="updateBms",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updates the BMS data."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="toStringBmsData",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$BmsData_8c.html#af16280268efae856ebc869b7774a8564",tooltip="Converts the BmsData structure to a string."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="transferFunctionBms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Bms_8c.html#a620d8c276477a59b82aeed5a804ca2e5",tooltip="Transfers raw BMS data to a BmsData structure."];
+}

@@ -1,0 +1,27 @@
+digraph "initAccelerometer"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="initAccelerometer",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initializes the accelerometer with the given channel, frequency, and multiplexer channel."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="initAnalogSensor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180",tooltip="Initializes an analog sensor."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="initSensor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663",tooltip="Initializes a sensor with the given parameters."];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="initUpdateable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="defaultDisable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658",tooltip="Default disable function for Updateable objects."];
+  Node4 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="defaultEnable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8",tooltip="Default enable function for Updateable objects."];
+  Node4 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="defaultStatus",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23",tooltip="Default status function for Updateable objects."];
+  Node4 -> Node8 [color="steelblue1",style="solid"];
+  Node8 [label="defaultUpdate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e",tooltip="Default update function for Updateable objects."];
+  Node1 -> Node9 [color="steelblue1",style="solid"];
+  Node9 [label="updateAccelerometer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Accelerometer_8c.html#a39e3f69d0febf56c49895e332453a965",tooltip="Updates the accelerometer data."];
+  Node9 -> Node10 [color="steelblue1",style="solid"];
+  Node10 [label="transferFunctionAccelerometer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Accelerometer_8c.html#a1f6be4d9ef1b0564e7462ee74523b4c6",tooltip="Converts raw accelerometer data to a meaningful value."];
+}

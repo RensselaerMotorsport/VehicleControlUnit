@@ -1,0 +1,48 @@
+\hypertarget{ExternalSystem_8c}{}\doxysection{Src/\+Systems/\+External\+System.c File Reference}
+\label{ExternalSystem_8c}\index{Src/Systems/ExternalSystem.c@{Src/Systems/ExternalSystem.c}}
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Systems/\+External\+System.\+h\char`\"{}}\newline
+Include dependency graph for External\+System.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ExternalSystem_8c_a4e4f320bb768dfd6c0ba22cbafc14fed}{init\+External\+System}} (\mbox{\hyperlink{structExternalSystem}{External\+System}} $\ast$external, const char $\ast$name, int hz, \mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{External\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ExternalSystem_8c_a4e4f320bb768dfd6c0ba22cbafc14fed}\label{ExternalSystem_8c_a4e4f320bb768dfd6c0ba22cbafc14fed}} 
+\index{ExternalSystem.c@{ExternalSystem.c}!initExternalSystem@{initExternalSystem}}
+\index{initExternalSystem@{initExternalSystem}!ExternalSystem.c@{ExternalSystem.c}}
+\doxysubsubsection{\texorpdfstring{initExternalSystem()}{initExternalSystem()}}
+{\footnotesize\ttfamily void init\+External\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structExternalSystem}{External\+System}} $\ast$}]{external,  }\item[{const char $\ast$}]{name,  }\item[{int}]{hz,  }\item[{\mbox{\hyperlink{ExternalSystem_8h_aa3ca4a11130df4f4b95894cff017475c}{External\+Type}}}]{type }\end{DoxyParamCaption})}
+
+Initializes the External \mbox{\hyperlink{structSystem}{System}} with initial settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em external} & A pointer to the \mbox{\hyperlink{structExternalSystem}{External\+System}} structure. \\
+\hline
+{\em name} & The name of the external system. \\
+\hline
+{\em hz} & Rate at which the external system is called (in hz). \\
+\hline
+{\em type} & The type of external system (per External\+Type). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ExternalSystem_8c_source_l00003}{3}} of file \mbox{\hyperlink{ExternalSystem_8c_source}{External\+System.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004                                            \{}
+\DoxyCodeLine{00005     \mbox{\hyperlink{System_8h_a2c23656f84d9e596c05e362da5a70085}{initSystem}}(\&external-\/>\mbox{\hyperlink{structExternalSystem_a16243b93617529ee4b29b6f8bb023abd}{system}}, name, hz, \mbox{\hyperlink{System_8h_a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5}{EXTERNAL}});}
+\DoxyCodeLine{00006     external-\/>\mbox{\hyperlink{structExternalSystem_a7a843a804115ddcc975825ec24353daa}{type}} = \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00007     external-\/>\mbox{\hyperlink{structExternalSystem_ae26f40c87edc5ebffe847ebb30de077a}{comms}} = NULL;}
+\DoxyCodeLine{00008     external-\/>\mbox{\hyperlink{structExternalSystem_af0e762ad56062e3f5ff1ff57bdc68954}{check\_heartbeat}} = NULL;}
+\DoxyCodeLine{00009 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1

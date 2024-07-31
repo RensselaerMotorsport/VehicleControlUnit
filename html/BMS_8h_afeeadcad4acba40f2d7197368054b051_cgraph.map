@@ -1,0 +1,25 @@
+<map id="initBms" name="initBms">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,71,106"/>
+<area shape="rect" id="Node000002" href="$BmsData_8c.html#a43576e28029033465d224d05a0258ead" title=" " alt="" coords="126,31,219,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,78,120,60,122,65,72,83"/>
+<area shape="rect" id="Node000003" href="$CANSensor_8c.html#adb095f8cdd8d22a9b8f54c8c792a6ede" title=" " alt="" coords="119,80,226,106"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="71,90,103,90,103,96,71,96"/>
+<area shape="rect" id="Node000010" href="$BMS_8c.html#a7cf1064f4bd9766093c805955762221a" title=" " alt="" coords="129,129,216,155"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="72,102,122,121,120,126,70,107"/>
+<area shape="rect" id="Node000004" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title=" " alt="" coords="306,80,385,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="227,90,290,90,290,96,227,96"/>
+<area shape="rect" id="Node000005" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="464,80,569,106"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="385,90,449,90,449,96,385,96"/>
+<area shape="rect" id="Node000006" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="617,5,720,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="542,77,615,40,624,36,626,40,618,45,545,82"/>
+<area shape="rect" id="Node000007" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="619,55,718,80"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="569,81,603,76,603,81,570,87"/>
+<area shape="rect" id="Node000008" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="619,104,718,130"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="570,98,604,104,603,109,569,104"/>
+<area shape="rect" id="Node000009" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="617,153,720,179"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="545,104,618,140,626,144,624,149,615,145,543,109"/>
+<area shape="rect" id="Node000011" href="$BmsData_8c.html#af16280268efae856ebc869b7774a8564" title=" " alt="" coords="285,129,405,155"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="217,140,270,140,270,145,217,145"/>
+<area shape="rect" id="Node000012" href="$BMS_8c.html#a620d8c276477a59b82aeed5a804ca2e5" title=" " alt="" coords="274,179,416,204"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="217,152,283,171,282,176,216,157"/>
+</map>

@@ -1,0 +1,243 @@
+\hypertarget{Imd_8c}{}\doxysection{Src/\+Sensors/\+CANSensors/\+Imd.c File Reference}
+\label{Imd_8c}\index{Src/Sensors/CANSensors/Imd.c@{Src/Sensors/CANSensors/Imd.c}}
+{\ttfamily \#include \char`\"{}../../../\+Inc/\+Sensors/\+CANSensors/\+Imd.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for Imd.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Imd_8c_a4920d20ec1d5bea9a18548398159754b}{init\+Imd}} (\mbox{\hyperlink{structImd}{Imd}} $\ast$imd, int hz)
+\begin{DoxyCompactList}\small\item\em Initializes the IMD with the given frequency. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Imd_8c_ac5dc40ad2a08fcabf020d2c0f6eab066}{get\+Imd\+Status}} (const \mbox{\hyperlink{structImd}{Imd}} $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Gets the status of the IMD. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Imd_8c_afc572c20bc0d600594b5c39aca62fc31}{get\+Running\+Flag}} (const \mbox{\hyperlink{structImd}{Imd}} $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Gets the running flag of the IMD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Imd_8c_a124cfed9f6cc61b2684dd7a1d7f7b098}{reset\+Running\+Flag}} (\mbox{\hyperlink{structImd}{Imd}} $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Resets the running flag of the IMD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Imd_8c_ab6bf775487f1befa1c6d927ff6cea630}{update\+Imd}} (void $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Updates the IMD data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Imd_8c_a971df80f87cde155caee83ebb06fcc7f}{imd\+Status\+Transfer\+Function}} (float x)
+\item 
+bool \mbox{\hyperlink{Imd_8c_acfcfbd308965537c3d89348194661370}{running\+Flag\+Transfer\+Function}} (float x)
+\item 
+char $\ast$ \mbox{\hyperlink{Imd_8c_a42260f65943f16375dd44f2d935953fd}{to\+String\+Imd}} (const \mbox{\hyperlink{structImd}{Imd}} $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Converts the \mbox{\hyperlink{structImd}{Imd}} structure to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Imd_8c_ac5dc40ad2a08fcabf020d2c0f6eab066}\label{Imd_8c_ac5dc40ad2a08fcabf020d2c0f6eab066}} 
+\index{Imd.c@{Imd.c}!getImdStatus@{getImdStatus}}
+\index{getImdStatus@{getImdStatus}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{getImdStatus()}{getImdStatus()}}
+{\footnotesize\ttfamily bool get\+Imd\+Status (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Gets the status of the IMD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The status of the IMD. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00012}{12}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012                                   \{}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{return} imd-\/>\mbox{\hyperlink{structImd_adb05cc33b154d172a58d1783a8e7ab44}{imd\_status}};}
+\DoxyCodeLine{00014 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_afc572c20bc0d600594b5c39aca62fc31}\label{Imd_8c_afc572c20bc0d600594b5c39aca62fc31}} 
+\index{Imd.c@{Imd.c}!getRunningFlag@{getRunningFlag}}
+\index{getRunningFlag@{getRunningFlag}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{getRunningFlag()}{getRunningFlag()}}
+{\footnotesize\ttfamily bool get\+Running\+Flag (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Gets the running flag of the IMD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The running flag of the IMD. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00016}{16}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016                                     \{}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{return} imd-\/>\mbox{\hyperlink{structImd_a8da0cb22700aa213c6dae1b124f9e0c3}{running\_flag}};}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_a971df80f87cde155caee83ebb06fcc7f}\label{Imd_8c_a971df80f87cde155caee83ebb06fcc7f}} 
+\index{Imd.c@{Imd.c}!imdStatusTransferFunction@{imdStatusTransferFunction}}
+\index{imdStatusTransferFunction@{imdStatusTransferFunction}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{imdStatusTransferFunction()}{imdStatusTransferFunction()}}
+{\footnotesize\ttfamily bool imd\+Status\+Transfer\+Function (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00033}{33}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033                                         \{}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} x > 0.5; \textcolor{comment}{// TODO: Implement}}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_a4920d20ec1d5bea9a18548398159754b}\label{Imd_8c_a4920d20ec1d5bea9a18548398159754b}} 
+\index{Imd.c@{Imd.c}!initImd@{initImd}}
+\index{initImd@{initImd}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{initImd()}{initImd()}}
+{\footnotesize\ttfamily void init\+Imd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd,  }\item[{int}]{hz }\end{DoxyParamCaption})}
+
+
+
+Initializes the IMD with the given frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to initialize. \\
+\hline
+{\em hz} & The frequency in Hertz at which the IMD operates. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00005}{5}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005                                \{}
+\DoxyCodeLine{00006     \mbox{\hyperlink{CANSensor_8h_a0331142dd6c26bd37590734c174cb274}{initCANSensor}}(\&imd-\/>\mbox{\hyperlink{structImd_aa688c95642b73fd7c885c14e5e12e406}{base}}, \textcolor{stringliteral}{"{}Imd"{}}, hz);}
+\DoxyCodeLine{00007     imd-\/>\mbox{\hyperlink{structImd_adb05cc33b154d172a58d1783a8e7ab44}{imd\_status}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00008     imd-\/>\mbox{\hyperlink{structImd_a8da0cb22700aa213c6dae1b124f9e0c3}{running\_flag}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00009     imd-\/>\mbox{\hyperlink{structImd_aa688c95642b73fd7c885c14e5e12e406}{base}}.\mbox{\hyperlink{structCANSensor_ab11fe7898bbab5b103fa014eaa9c1fad}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{Imd_8c_ab6bf775487f1befa1c6d927ff6cea630}{updateImd}};}
+\DoxyCodeLine{00010 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{Imd_8c_a124cfed9f6cc61b2684dd7a1d7f7b098}\label{Imd_8c_a124cfed9f6cc61b2684dd7a1d7f7b098}} 
+\index{Imd.c@{Imd.c}!resetRunningFlag@{resetRunningFlag}}
+\index{resetRunningFlag@{resetRunningFlag}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{resetRunningFlag()}{resetRunningFlag()}}
+{\footnotesize\ttfamily void reset\+Running\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Resets the running flag of the IMD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00020}{20}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020                                 \{}
+\DoxyCodeLine{00021     imd-\/>\mbox{\hyperlink{structImd_a8da0cb22700aa213c6dae1b124f9e0c3}{running\_flag}} = \textcolor{keyword}{true};  \textcolor{comment}{// Assuming reset means setting to true}}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_acfcfbd308965537c3d89348194661370}\label{Imd_8c_acfcfbd308965537c3d89348194661370}} 
+\index{Imd.c@{Imd.c}!runningFlagTransferFunction@{runningFlagTransferFunction}}
+\index{runningFlagTransferFunction@{runningFlagTransferFunction}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{runningFlagTransferFunction()}{runningFlagTransferFunction()}}
+{\footnotesize\ttfamily bool running\+Flag\+Transfer\+Function (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00037}{37}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037                                           \{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{return} x > 0.5; \textcolor{comment}{// TODO: Implement}}
+\DoxyCodeLine{00039 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_a42260f65943f16375dd44f2d935953fd}\label{Imd_8c_a42260f65943f16375dd44f2d935953fd}} 
+\index{Imd.c@{Imd.c}!toStringImd@{toStringImd}}
+\index{toStringImd@{toStringImd}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{toStringImd()}{toStringImd()}}
+{\footnotesize\ttfamily char $\ast$ to\+String\+Imd (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Converts the \mbox{\hyperlink{structImd}{Imd}} structure to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the string representation of the \mbox{\hyperlink{structImd}{Imd}} structure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00041}{41}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041                                   \{}
+\DoxyCodeLine{00042     \textcolor{keyword}{static} \textcolor{keywordtype}{char} str[32];}
+\DoxyCodeLine{00043     sprintf(str, \textcolor{stringliteral}{"{}\%d,\%d"{}}, imd-\/>\mbox{\hyperlink{structImd_adb05cc33b154d172a58d1783a8e7ab44}{imd\_status}}, imd-\/>\mbox{\hyperlink{structImd_a8da0cb22700aa213c6dae1b124f9e0c3}{running\_flag}});}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} str;}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Imd_8c_ab6bf775487f1befa1c6d927ff6cea630}\label{Imd_8c_ab6bf775487f1befa1c6d927ff6cea630}} 
+\index{Imd.c@{Imd.c}!updateImd@{updateImd}}
+\index{updateImd@{updateImd}!Imd.c@{Imd.c}}
+\doxysubsubsection{\texorpdfstring{updateImd()}{updateImd()}}
+{\footnotesize\ttfamily void update\+Imd (\begin{DoxyParamCaption}\item[{void $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Updates the IMD data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Imd_8c_source_l00024}{24}} of file \mbox{\hyperlink{Imd_8c_source}{Imd.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                           \{}
+\DoxyCodeLine{00025     \mbox{\hyperlink{structImd}{Imd}}* myImd = (\mbox{\hyperlink{structImd}{Imd}}*) imd;}
+\DoxyCodeLine{00026     \textcolor{comment}{// float var = myImd-\/>base.getData();}}
+\DoxyCodeLine{00027     \textcolor{comment}{// myImd-\/>imd\_status = imdStatusTransferFunction(var);}}
+\DoxyCodeLine{00028     \textcolor{comment}{// myImd-\/>running\_flag = runningFlagTransferFunction(var);}}
+\DoxyCodeLine{00029     \textcolor{comment}{// printf("{}IMD Status: \%d, Running Flag: \%d\(\backslash\)n"{}, myImd-\/>imd\_status, myImd-\/>running\_flag);}}
+\DoxyCodeLine{00030     printf(\textcolor{stringliteral}{"{}Implement updateImd\(\backslash\)n"{}});}
+\DoxyCodeLine{00031 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2

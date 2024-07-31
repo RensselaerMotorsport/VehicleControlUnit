@@ -1,0 +1,25 @@
+<map id="defaultEnable" name="defaultEnable">
+<area shape="rect" id="node1" title="Default enable function for Updateable objects." alt="" coords="655,499,755,524"/>
+<area shape="rect" id="node2" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="501,499,607,524"/>
+<area shape="rect" id="node3" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="372,413,452,439"/>
+<area shape="rect" id="node18" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="371,548,453,573"/>
+<area shape="rect" id="node4" href="$AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180" title="Initializes an analog sensor." alt="" coords="193,153,313,179"/>
+<area shape="rect" id="node11" href="$CANSensor_8c.html#a0331142dd6c26bd37590734c174cb274" title="Initializes a CAN sensor with the given parameters." alt="" coords="199,376,307,401"/>
+<area shape="rect" id="node15" href="$DigitalSensor_8c.html#a485376e49d8618b1709c567de17663e6" title="Initializes a digital sensor with the given parameters." alt="" coords="195,449,311,475"/>
+<area shape="rect" id="node5" href="$Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title="Initializes the accelerometer with the given channel, frequency, and multiplexer channel." alt="" coords="9,5,132,31"/>
+<area shape="rect" id="node6" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="39,55,102,80"/>
+<area shape="rect" id="node7" href="$BrakePressure_8c.html#a6cc0bf29d38b4637cb6a0a36f0196a81" title="Initializes the BrakePressure sensor with the given frequency and channel." alt="" coords="8,104,133,129"/>
+<area shape="rect" id="node8" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="23,153,119,179"/>
+<area shape="rect" id="node9" href="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,203,136,228"/>
+<area shape="rect" id="node10" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="15,252,127,277"/>
+<area shape="rect" id="node12" href="$Bms_8c.html#afeeadcad4acba40f2d7197368054b051" title="Initializes the BMS with the given frequency." alt="" coords="37,301,104,327"/>
+<area shape="rect" id="node13" href="$Esc_8c.html#a88716097de898ba50d9866c5639e8c52" title="Initializes the ESC with the given frequency." alt="" coords="40,351,101,376"/>
+<area shape="rect" id="node14" href="$Imd_8c.html#a4920d20ec1d5bea9a18548398159754b" title="Initializes the IMD with the given frequency." alt="" coords="40,400,101,425"/>
+<area shape="rect" id="node16" href="$ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="13,449,128,475"/>
+<area shape="rect" id="node17" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="15,499,127,524"/>
+<area shape="rect" id="node19" href="$CommsSystem_8c.html#ab24ecccdbc3c3a34bf1204ccf35c45a6" title="Initializes the Comms System with initial settings." alt="" coords="189,499,317,524"/>
+<area shape="rect" id="node20" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="184,548,323,573"/>
+<area shape="rect" id="node22" href="$ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="189,597,318,623"/>
+<area shape="rect" id="node23" href="$MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc" title="Initializes the Monitor System with initial settings." alt="" coords="190,647,317,672"/>
+<area shape="rect" id="node21" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="11,548,131,573"/>
+</map>

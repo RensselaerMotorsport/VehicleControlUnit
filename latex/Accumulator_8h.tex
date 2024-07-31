@@ -1,0 +1,165 @@
+\hypertarget{Accumulator_8h}{}\doxysection{Inc/\+Sensors/\+CANSensors/\+Accumulator.h File Reference}
+\label{Accumulator_8h}\index{Inc/Sensors/CANSensors/Accumulator.h@{Inc/Sensors/CANSensors/Accumulator.h}}
+{\ttfamily \#include \char`\"{}Bms.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Imd.\+h\char`\"{}}\newline
+Include dependency graph for Accumulator.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAccumulator}{Accumulator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} \{ \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}{charge}}
+, \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}{discharge}}
+, \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Accumulator_8h_a387a1557fc10ca77054bd7f29474d339}{init\+Accumulator}} (\mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$acc, \mbox{\hyperlink{structBms}{Bms}} $\ast$bms, \mbox{\hyperlink{structImd}{Imd}} $\ast$imd)
+\begin{DoxyCompactList}\small\item\em Initializes the accumulator with the given BMS and IMD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Accumulator_8h_afc14b1d520dd59dba56c4f88d13c4355}{set\+Accumulator\+State}} (\mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$acc, \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the accumulator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} \mbox{\hyperlink{Accumulator_8h_ae9de75ea57ab4c842107da853d6cafcd}{get\+Accumulator\+State}} (const \mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$acc)
+\begin{DoxyCompactList}\small\item\em Gets the current state of the accumulator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}\label{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}} 
+\index{Accumulator.h@{Accumulator.h}!CHARGE\_STATE@{CHARGE\_STATE}}
+\index{CHARGE\_STATE@{CHARGE\_STATE}!Accumulator.h@{Accumulator.h}}
+\doxysubsubsection{\texorpdfstring{CHARGE\_STATE}{CHARGE\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{charge@{charge}!Accumulator.h@{Accumulator.h}}\index{Accumulator.h@{Accumulator.h}!charge@{charge}}}\mbox{\Hypertarget{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}\label{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}} 
+charge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{discharge@{discharge}!Accumulator.h@{Accumulator.h}}\index{Accumulator.h@{Accumulator.h}!discharge@{discharge}}}\mbox{\Hypertarget{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}\label{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}} 
+discharge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{standby@{standby}!Accumulator.h@{Accumulator.h}}\index{Accumulator.h@{Accumulator.h}!standby@{standby}}}\mbox{\Hypertarget{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}\label{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}} 
+standby&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8h_source_l00007}{7}} of file \mbox{\hyperlink{Accumulator_8h_source}{Accumulator.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007              \{}
+\DoxyCodeLine{00008     \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b}{charge}},}
+\DoxyCodeLine{00009     \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a46c14d1417beb705c5534b8f06dbdd7d}{discharge}},}
+\DoxyCodeLine{00010     \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}}}
+\DoxyCodeLine{00011 \} \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\_STATE}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Accumulator_8h_ae9de75ea57ab4c842107da853d6cafcd}\label{Accumulator_8h_ae9de75ea57ab4c842107da853d6cafcd}} 
+\index{Accumulator.h@{Accumulator.h}!getAccumulatorState@{getAccumulatorState}}
+\index{getAccumulatorState@{getAccumulatorState}!Accumulator.h@{Accumulator.h}}
+\doxysubsubsection{\texorpdfstring{getAccumulatorState()}{getAccumulatorState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}} get\+Accumulator\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$}]{acc }\end{DoxyParamCaption})}
+
+
+
+Gets the current state of the accumulator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acc} & Pointer to the \mbox{\hyperlink{structAccumulator}{Accumulator}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current charge state of the accumulator, or standby if not initialized. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00017}{17}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017                                                          \{}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{if} (acc != NULL) \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{return} acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}};}
+\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{return} \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}};  \textcolor{comment}{// Default if not initialized}}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Accumulator_8h_a387a1557fc10ca77054bd7f29474d339}\label{Accumulator_8h_a387a1557fc10ca77054bd7f29474d339}} 
+\index{Accumulator.h@{Accumulator.h}!initAccumulator@{initAccumulator}}
+\index{initAccumulator@{initAccumulator}!Accumulator.h@{Accumulator.h}}
+\doxysubsubsection{\texorpdfstring{initAccumulator()}{initAccumulator()}}
+{\footnotesize\ttfamily void init\+Accumulator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$}]{acc,  }\item[{\mbox{\hyperlink{structBms}{Bms}} $\ast$}]{bms,  }\item[{\mbox{\hyperlink{structImd}{Imd}} $\ast$}]{imd }\end{DoxyParamCaption})}
+
+
+
+Initializes the accumulator with the given BMS and IMD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acc} & Pointer to the \mbox{\hyperlink{structAccumulator}{Accumulator}} structure to initialize. \\
+\hline
+{\em bms} & Pointer to the \mbox{\hyperlink{structBms}{Bms}} structure. \\
+\hline
+{\em imd} & Pointer to the \mbox{\hyperlink{structImd}{Imd}} structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00003}{3}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003                                                            \{}
+\DoxyCodeLine{00004     \textcolor{keywordflow}{if} (acc != NULL) \{}
+\DoxyCodeLine{00005         acc-\/>\mbox{\hyperlink{structAccumulator_a64be8db7baf904f8601da375f9ec74f3}{bms}} = bms;}
+\DoxyCodeLine{00006         acc-\/>\mbox{\hyperlink{structAccumulator_a8f847d1bf23a3478cdd9ec677c5ef8a0}{imd}} = imd;}
+\DoxyCodeLine{00007         acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}} = \mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418a20a54eed1009dd5401b880bb904a313f}{standby}};  \textcolor{comment}{// Default state}}
+\DoxyCodeLine{00008     \}}
+\DoxyCodeLine{00009 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Accumulator_8h_afc14b1d520dd59dba56c4f88d13c4355}\label{Accumulator_8h_afc14b1d520dd59dba56c4f88d13c4355}} 
+\index{Accumulator.h@{Accumulator.h}!setAccumulatorState@{setAccumulatorState}}
+\index{setAccumulatorState@{setAccumulatorState}!Accumulator.h@{Accumulator.h}}
+\doxysubsubsection{\texorpdfstring{setAccumulatorState()}{setAccumulatorState()}}
+{\footnotesize\ttfamily void set\+Accumulator\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAccumulator}{Accumulator}} $\ast$}]{acc,  }\item[{\mbox{\hyperlink{Accumulator_8h_adbd50c66fa8bc8452e613e16313fa418}{CHARGE\+\_\+\+STATE}}}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the accumulator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acc} & Pointer to the \mbox{\hyperlink{structAccumulator}{Accumulator}} structure to update. \\
+\hline
+{\em state} & The desired charge state to set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Accumulator_8c_source_l00011}{11}} of file \mbox{\hyperlink{Accumulator_8c_source}{Accumulator.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                                                \{}
+\DoxyCodeLine{00012     \textcolor{keywordflow}{if} (acc != NULL) \{}
+\DoxyCodeLine{00013         acc-\/>\mbox{\hyperlink{structAccumulator_a8572e411ac7285c41660b91c268bb2fe}{state}} = state;}
+\DoxyCodeLine{00014     \}}
+\DoxyCodeLine{00015 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,33 @@
+\doxysection{BMS.\+c}
+\hypertarget{BMS_8c_source}{}\label{BMS_8c_source}\index{Src/Sensors/CANSensors/BMS.c@{Src/Sensors/CANSensors/BMS.c}}
+\mbox{\hyperlink{BMS_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../../includes/BMS.h"{}}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ \textcolor{comment}{//\ For\ printf}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00004}\mbox{\hyperlink{BMS_8h_afeeadcad4acba40f2d7197368054b051}{00004}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BMS_8c_afeeadcad4acba40f2d7197368054b051}{initBms}}(\mbox{\hyperlink{structBms}{Bms}}*\ bms,\ \textcolor{keywordtype}{int}\ hz)\ \{}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (bms)\ \{}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00006}00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{CANSensor_8h_adb095f8cdd8d22a9b8f54c8c792a6ede}{initCANSensor}}(\&bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}},\ \textcolor{stringliteral}{"{}Bms"{}},\ hz);}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assume\ initBmsData\ initializes\ with\ default\ or\ zero\ values}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{BmsData_8h_a43576e28029033465d224d05a0258ead}{initBmsData}}(\&bms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}},\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00009}00009\ \ \ \ \ \ \ \ \ bms-\/>\mbox{\hyperlink{structBms_a6a339190b3ce2c2d97bc898f0a0d2c37}{base}}.\mbox{\hyperlink{structCANSensor_ab11fe7898bbab5b103fa014eaa9c1fad}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}}\ =\ \mbox{\hyperlink{BMS_8c_a7cf1064f4bd9766093c805955762221a}{updateBms}};}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00011}00011\ \}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00013}\mbox{\hyperlink{BMS_8h_a7cf1064f4bd9766093c805955762221a}{00013}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{BMS_8c_a7cf1064f4bd9766093c805955762221a}{updateBms}}(\textcolor{keywordtype}{void}*\ bms)\ \{}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{structBms}{Bms}}*\ myBms\ =\ (\mbox{\hyperlink{structBms}{Bms}}*)\ bms;}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00015}00015\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Updating\ BMS\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ Example:\ Fetch\ raw\ data\ somehow,\ here\ simplified\ as\ static\ data}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{float}\ rawData[]\ =\ \{1.0,\ 1.0,\ 25.0,\ 50.0,\ 0.1,\ 0.1,\ 3.7,\ 48.0,\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00018}00018\ \ \ \ \ myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}\ =\ \mbox{\hyperlink{BMS_8c_a620d8c276477a59b82aeed5a804ca2e5}{transferFunctionBms}}(rawData);}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00019}00019\ \ \ \ \ printf(\textcolor{stringliteral}{"{}BMS\ Data:\ \%s\(\backslash\)n"{}},\ \mbox{\hyperlink{BmsData_8h_af16280268efae856ebc869b7774a8564}{toStringBmsData}}(\&myBms-\/>\mbox{\hyperlink{structBms_aa080ffda753eec6a70be1f8075f3e2a7}{data}}));}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00022}\mbox{\hyperlink{BMS_8h_ac21e9ae4c1a37f4aea3deb4dadb0e9e1}{00022}}\ \mbox{\hyperlink{structBmsData}{BmsData}}\ \mbox{\hyperlink{BMS_8c_a620d8c276477a59b82aeed5a804ca2e5}{transferFunctionBms}}(\textcolor{keywordtype}{float}*\ rawData)\ \{}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\ Convert\ raw\ float\ array\ to\ BmsData\ struct}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Assuming\ the\ array\ order\ matches\ BmsData\ constructor\ parameters}}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structBmsData}{BmsData}})\{rawData[0],\ rawData[1],\ rawData[2],\ rawData[3],}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rawData[4],\ rawData[5],\ rawData[6],\ rawData[7],\ rawData[8]\};}
+\DoxyCodeLine{\Hypertarget{BMS_8c_source_l00027}00027\ \}}
+
+\end{DoxyCode}

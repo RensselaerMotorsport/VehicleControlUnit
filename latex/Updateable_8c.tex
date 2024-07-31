@@ -1,0 +1,215 @@
+\hypertarget{Updateable_8c}{}\doxysection{Src/\+Utils/\+Updateable.c File Reference}
+\label{Updateable_8c}\index{Src/Utils/Updateable.c@{Src/Utils/Updateable.c}}
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Utils/\+Updateable.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Utils/\+Common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for Updateable.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Updateable_8c_aaad6c964e32bb05093b5e551856837b4}{init\+Updateable}} (\mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$updateable, const char $\ast$name, int hz)
+\item 
+void \mbox{\hyperlink{Updateable_8c_a6cf9090337753427d50057ee2984ec3e}{default\+Update}} (void $\ast$self)
+\begin{DoxyCompactList}\small\item\em Default update function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Updateable_8c_a943588fcfca4806e1db6bd9cd2399d23}{default\+Status}} (struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Default status function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Updateable_8c_a1a19c1371c1aec5ea56ba51f17f25ca8}{default\+Enable}} (struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Default enable function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Updateable_8c_a1c9a6406589ec57eb31ce5f718926658}{default\+Disable}} (struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Default disable function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Updateable_8c_a55a1d9264c2493f28d006a3d22c53b44}{write\+Data\+To\+File\+Implementation}} (const char $\ast$filename, void $\ast$self)
+\begin{DoxyCompactList}\small\item\em Write data to a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Updateable_8c_a1c9a6406589ec57eb31ce5f718926658}\label{Updateable_8c_a1c9a6406589ec57eb31ce5f718926658}} 
+\index{Updateable.c@{Updateable.c}!defaultDisable@{defaultDisable}}
+\index{defaultDisable@{defaultDisable}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{defaultDisable()}{defaultDisable()}}
+{\footnotesize\ttfamily int default\+Disable (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Default disable function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & Pointer to the \mbox{\hyperlink{structUpdateable}{Updateable}} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Status after disabling the \mbox{\hyperlink{structUpdateable}{Updateable}} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00029}{29}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029                                             \{}
+\DoxyCodeLine{00030     self-\/>\mbox{\hyperlink{structUpdateable_a2454f255fedd2c6bd24e8e2d3ecbcffb}{enabled}} = \mbox{\hyperlink{Updateable_8h_abd5c8ab57c190a6522ccdbf0ed7577da}{DISABLED}};}
+\DoxyCodeLine{00031     \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{00032 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{Updateable_8c_a1a19c1371c1aec5ea56ba51f17f25ca8}\label{Updateable_8c_a1a19c1371c1aec5ea56ba51f17f25ca8}} 
+\index{Updateable.c@{Updateable.c}!defaultEnable@{defaultEnable}}
+\index{defaultEnable@{defaultEnable}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{defaultEnable()}{defaultEnable()}}
+{\footnotesize\ttfamily int default\+Enable (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Default enable function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & Pointer to the \mbox{\hyperlink{structUpdateable}{Updateable}} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Status after enabling the \mbox{\hyperlink{structUpdateable}{Updateable}} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00024}{24}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                            \{}
+\DoxyCodeLine{00025     self-\/>\mbox{\hyperlink{structUpdateable_a2454f255fedd2c6bd24e8e2d3ecbcffb}{enabled}} = \mbox{\hyperlink{Updateable_8h_a73c228f87e038e8295ee8ea8eceaa5ac}{ENABLED}};}
+\DoxyCodeLine{00026     \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}};}
+\DoxyCodeLine{00027 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{Updateable_8c_a943588fcfca4806e1db6bd9cd2399d23}\label{Updateable_8c_a943588fcfca4806e1db6bd9cd2399d23}} 
+\index{Updateable.c@{Updateable.c}!defaultStatus@{defaultStatus}}
+\index{defaultStatus@{defaultStatus}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{defaultStatus()}{defaultStatus()}}
+{\footnotesize\ttfamily int default\+Status (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Default status function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & Pointer to the \mbox{\hyperlink{structUpdateable}{Updateable}} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Status of the \mbox{\hyperlink{structUpdateable}{Updateable}} object. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00020}{20}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020                                            \{}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{return} self-\/>\mbox{\hyperlink{structUpdateable_a2454f255fedd2c6bd24e8e2d3ecbcffb}{enabled}};}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{Updateable_8c_a6cf9090337753427d50057ee2984ec3e}\label{Updateable_8c_a6cf9090337753427d50057ee2984ec3e}} 
+\index{Updateable.c@{Updateable.c}!defaultUpdate@{defaultUpdate}}
+\index{defaultUpdate@{defaultUpdate}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{defaultUpdate()}{defaultUpdate()}}
+{\footnotesize\ttfamily void default\+Update (\begin{DoxyParamCaption}\item[{void $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Default update function for \mbox{\hyperlink{structUpdateable}{Updateable}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & Pointer to the object to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00016}{16}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016                                \{}
+\DoxyCodeLine{00017     printf(\textcolor{stringliteral}{"{}Warning: Calling default Sensor Update Function.\(\backslash\)n"{}});}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{Updateable_8c_aaad6c964e32bb05093b5e551856837b4}\label{Updateable_8c_aaad6c964e32bb05093b5e551856837b4}} 
+\index{Updateable.c@{Updateable.c}!initUpdateable@{initUpdateable}}
+\index{initUpdateable@{initUpdateable}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{initUpdateable()}{initUpdateable()}}
+{\footnotesize\ttfamily void init\+Updateable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structUpdateable}{Updateable}} $\ast$}]{updateable,  }\item[{const char $\ast$}]{name,  }\item[{int}]{hz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00006}{6}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006                                                                       \{}
+\DoxyCodeLine{00007     strncpy(updateable-\/>\mbox{\hyperlink{structUpdateable_ab1a238912893afab4f86abaebdc20b12}{name}}, name, \mbox{\hyperlink{Updateable_8h_a0c397a708cec89c74029582574516b30}{MAX\_NAME\_LENGTH}});}
+\DoxyCodeLine{00008     updateable-\/>\mbox{\hyperlink{structUpdateable_a4a1e49fba540bce56a175e3e1083f1a5}{hz}} = hz;}
+\DoxyCodeLine{00009     updateable-\/>\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{Updateable_8c_a6cf9090337753427d50057ee2984ec3e}{defaultUpdate}};}
+\DoxyCodeLine{00010     updateable-\/>\mbox{\hyperlink{structUpdateable_a25bd359a3940157d2a7acf7a2c2520c1}{status}} = \mbox{\hyperlink{Updateable_8c_a943588fcfca4806e1db6bd9cd2399d23}{defaultStatus}};}
+\DoxyCodeLine{00011     updateable-\/>\mbox{\hyperlink{structUpdateable_ad2432fdf907612a6df86ad1b08fe9bee}{enable}} = \mbox{\hyperlink{Updateable_8c_a1a19c1371c1aec5ea56ba51f17f25ca8}{defaultEnable}};}
+\DoxyCodeLine{00012     updateable-\/>\mbox{\hyperlink{structUpdateable_a1b908d26895c97cac701198ed083b522}{disable}} = \mbox{\hyperlink{Updateable_8c_a1c9a6406589ec57eb31ce5f718926658}{defaultDisable}};}
+\DoxyCodeLine{00013     updateable-\/>\mbox{\hyperlink{structUpdateable_a2454f255fedd2c6bd24e8e2d3ecbcffb}{enabled}} = \mbox{\hyperlink{Updateable_8h_abd5c8ab57c190a6522ccdbf0ed7577da}{DISABLED}};}
+\DoxyCodeLine{00014 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{Updateable_8c_a55a1d9264c2493f28d006a3d22c53b44}\label{Updateable_8c_a55a1d9264c2493f28d006a3d22c53b44}} 
+\index{Updateable.c@{Updateable.c}!writeDataToFileImplementation@{writeDataToFileImplementation}}
+\index{writeDataToFileImplementation@{writeDataToFileImplementation}!Updateable.c@{Updateable.c}}
+\doxysubsubsection{\texorpdfstring{writeDataToFileImplementation()}{writeDataToFileImplementation()}}
+{\footnotesize\ttfamily int write\+Data\+To\+File\+Implementation (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{void $\ast$}]{self }\end{DoxyParamCaption})}
+
+
+
+Write data to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to write to. \\
+\hline
+{\em self} & Pointer to the object whose data is to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SUCCESS if the data was written, FAILURE otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Updateable_8c_source_l00034}{34}} of file \mbox{\hyperlink{Updateable_8c_source}{Updateable.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034                                                                     \{}
+\DoxyCodeLine{00035     FILE* file = fopen(filename, \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00036     \textcolor{keywordflow}{if} (!file) \{}
+\DoxyCodeLine{00037         perror(\textcolor{stringliteral}{"{}Failed to open file"{}});}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{00039     \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041     printf(\textcolor{stringliteral}{"{}Writing data to file \%s\(\backslash\)n"{}}, filename);}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     fclose(file);}
+\DoxyCodeLine{00044     \textcolor{keywordflow}{return} \mbox{\hyperlink{Common_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}};}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}

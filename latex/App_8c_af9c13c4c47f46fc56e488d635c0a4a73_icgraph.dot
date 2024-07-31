@@ -1,0 +1,11 @@
+digraph "updateApp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="updateApp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updates the APP data."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="initApp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce",tooltip="Initializes the APP with the given frequency and channel."];
+}

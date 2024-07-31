@@ -1,0 +1,126 @@
+\hypertarget{MotorController_8h}{}\doxysection{Inc/\+Sensors/\+CANSensors/\+Motor\+Controller.h File Reference}
+\label{MotorController_8h}\index{Inc/Sensors/CANSensors/MotorController.h@{Inc/Sensors/CANSensors/MotorController.h}}
+{\ttfamily \#include \char`\"{}Esc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Analog\+Sensors/\+App.\+h\char`\"{}}\newline
+Include dependency graph for Motor\+Controller.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMotorController}{Motor\+Controller}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{MotorController_8h_a2cd228c513cc182b48edb193ce92d4c9}{init\+Motor\+Controller}} (\mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$mc, \mbox{\hyperlink{structEsc}{Esc}} $\ast$esc, \mbox{\hyperlink{structApp}{App}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{structMotorController}{Motor\+Controller}} with the given ESC and APP. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{MotorController_8h_a5e58b938d347017c6e51634f7faa08f9}{get\+Pedal\+Position}} (const \mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$mc)
+\begin{DoxyCompactList}\small\item\em Gets the pedal position from the \mbox{\hyperlink{structMotorController}{Motor\+Controller}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{MotorController_8h_a2e791e4a0189d52d0e2cb54ce4451b86}{get\+Motor\+Temp}} (const \mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$mc)
+\begin{DoxyCompactList}\small\item\em Gets the motor temperature from the \mbox{\hyperlink{structMotorController}{Motor\+Controller}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{MotorController_8h_a2e791e4a0189d52d0e2cb54ce4451b86}\label{MotorController_8h_a2e791e4a0189d52d0e2cb54ce4451b86}} 
+\index{MotorController.h@{MotorController.h}!getMotorTemp@{getMotorTemp}}
+\index{getMotorTemp@{getMotorTemp}!MotorController.h@{MotorController.h}}
+\doxysubsubsection{\texorpdfstring{getMotorTemp()}{getMotorTemp()}}
+{\footnotesize\ttfamily float get\+Motor\+Temp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$}]{mc }\end{DoxyParamCaption})}
+
+
+
+Gets the motor temperature from the \mbox{\hyperlink{structMotorController}{Motor\+Controller}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mc} & Pointer to the \mbox{\hyperlink{structMotorController}{Motor\+Controller}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The motor temperature, or 0.\+0 if no ESC is available. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{MotorController_8c_source_l00017}{17}} of file \mbox{\hyperlink{MotorController_8c_source}{Motor\+Controller.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017                                               \{}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{if} (mc \&\& mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}}) \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{return} \mbox{\hyperlink{Esc_8h_ab22e08670025a52ba2a27b404f22b2a5}{getEscTemp}}(mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}});}
+\DoxyCodeLine{00020     \}}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{return} 0.0;  \textcolor{comment}{// Return default value if no esc}}
+\DoxyCodeLine{00022 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{MotorController_8h_a5e58b938d347017c6e51634f7faa08f9}\label{MotorController_8h_a5e58b938d347017c6e51634f7faa08f9}} 
+\index{MotorController.h@{MotorController.h}!getPedalPosition@{getPedalPosition}}
+\index{getPedalPosition@{getPedalPosition}!MotorController.h@{MotorController.h}}
+\doxysubsubsection{\texorpdfstring{getPedalPosition()}{getPedalPosition()}}
+{\footnotesize\ttfamily float get\+Pedal\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$}]{mc }\end{DoxyParamCaption})}
+
+
+
+Gets the pedal position from the \mbox{\hyperlink{structMotorController}{Motor\+Controller}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mc} & Pointer to the \mbox{\hyperlink{structMotorController}{Motor\+Controller}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The pedal position, or 0.\+0 if no APP is available. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{MotorController_8c_source_l00010}{10}} of file \mbox{\hyperlink{MotorController_8c_source}{Motor\+Controller.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010                                                   \{}
+\DoxyCodeLine{00011     \textcolor{keywordflow}{if} (mc \&\& mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}}) \{}
+\DoxyCodeLine{00012         \textcolor{keywordflow}{return} \mbox{\hyperlink{App_8h_a01be170ac09e9dd35ba3f18c537ae409}{getAppPosition}}(mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}});}
+\DoxyCodeLine{00013     \}}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{return} 0.0;  \textcolor{comment}{// Return default value if no app}}
+\DoxyCodeLine{00015 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{MotorController_8h_a2cd228c513cc182b48edb193ce92d4c9}\label{MotorController_8h_a2cd228c513cc182b48edb193ce92d4c9}} 
+\index{MotorController.h@{MotorController.h}!initMotorController@{initMotorController}}
+\index{initMotorController@{initMotorController}!MotorController.h@{MotorController.h}}
+\doxysubsubsection{\texorpdfstring{initMotorController()}{initMotorController()}}
+{\footnotesize\ttfamily void init\+Motor\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMotorController}{Motor\+Controller}} $\ast$}]{mc,  }\item[{\mbox{\hyperlink{structEsc}{Esc}} $\ast$}]{esc,  }\item[{\mbox{\hyperlink{structApp}{App}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{structMotorController}{Motor\+Controller}} with the given ESC and APP. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mc} & Pointer to the \mbox{\hyperlink{structMotorController}{Motor\+Controller}} structure to initialize. \\
+\hline
+{\em esc} & Pointer to the \mbox{\hyperlink{structEsc}{Esc}} structure. \\
+\hline
+{\em app} & Pointer to the \mbox{\hyperlink{structApp}{App}} structure. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MotorController_8c_source_l00003}{3}} of file \mbox{\hyperlink{MotorController_8c_source}{Motor\+Controller.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003                                                                   \{}
+\DoxyCodeLine{00004     \textcolor{keywordflow}{if} (mc != NULL) \{}
+\DoxyCodeLine{00005         mc-\/>\mbox{\hyperlink{structMotorController_a4e89ba1d62122f1c8f7d107436d99df4}{esc}} = esc;}
+\DoxyCodeLine{00006         mc-\/>\mbox{\hyperlink{structMotorController_ad87c44857c1dd5b818b9a243800faba2}{app}} = app;}
+\DoxyCodeLine{00007     \}}
+\DoxyCodeLine{00008 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,21 @@
+digraph "initCommsSystem"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="initCommsSystem",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initializes the Comms System with initial settings."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="initSystem",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$System_8c.html#a2c23656f84d9e596c05e362da5a70085",tooltip="Initializes a System object."];
+  Node2 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="initUpdateable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4",tooltip=" "];
+  Node3 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="defaultDisable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658",tooltip="Default disable function for Updateable objects."];
+  Node3 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="defaultEnable",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8",tooltip="Default enable function for Updateable objects."];
+  Node3 -> Node6 [color="steelblue1",style="solid"];
+  Node6 [label="defaultStatus",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23",tooltip="Default status function for Updateable objects."];
+  Node3 -> Node7 [color="steelblue1",style="solid"];
+  Node7 [label="defaultUpdate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e",tooltip="Default update function for Updateable objects."];
+}

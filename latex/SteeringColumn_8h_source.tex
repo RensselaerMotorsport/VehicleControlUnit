@@ -1,0 +1,26 @@
+\hypertarget{SteeringColumn_8h_source}{}\doxysection{Steering\+Column.\+h}
+\label{SteeringColumn_8h_source}\index{Inc/Sensors/AnalogSensors/SteeringColumn.h@{Inc/Sensors/AnalogSensors/SteeringColumn.h}}
+\mbox{\hyperlink{SteeringColumn_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RENSSELAERMOTORSPORT\_STEERINGCOLUMN\_H}}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RENSSELAERMOTORSPORT\_STEERINGCOLUMN\_H}}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00004}00004 \textcolor{preprocessor}{\#include "{}../AnalogSensor.h"{}}}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00006}\mbox{\hyperlink{structSteeringColumn}{00006}} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00007}\mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{00007}}     \mbox{\hyperlink{structAnalogSensor}{AnalogSensor}} \mbox{\hyperlink{structSteeringColumn_ae45ecdecde2067ea466cd57006b24afc}{base}};}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00008}\mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{00008}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structSteeringColumn_a0dd1e7baa84b2910114b55428a199f61}{rotation\_angle}};}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00009}\mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{00009}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structSteeringColumn_a6054bb7b70dcb20f7d4b28e81029cba6}{zero\_offset}};}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00010}00010 \} \mbox{\hyperlink{structSteeringColumn}{SteeringColumn}};}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00021}00021 \textcolor{keywordtype}{void} \mbox{\hyperlink{SteeringColumn_8h_ad4e64b53204532d834ba6aa5a2a965ab}{initSteeringColumn}}(\mbox{\hyperlink{structSteeringColumn}{SteeringColumn}}* sc, \textcolor{keywordtype}{int} hz, \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{float} zeroOffset);}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00029}00029 \textcolor{keywordtype}{float} \mbox{\hyperlink{SteeringColumn_8h_a518c07c928cc8076ef03eb08d2bcbca6}{getSteeringColumnRotationAngle}}(\mbox{\hyperlink{structSteeringColumn}{SteeringColumn}}* sc);}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00036}00036 \textcolor{keywordtype}{void} \mbox{\hyperlink{SteeringColumn_8h_ae0c46d7082d6dbe42eaf17ec2d0f4a18}{updateSteeringColumn}}(\textcolor{keywordtype}{void}* sc);}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00044}00044 \textcolor{keywordtype}{float} \mbox{\hyperlink{SteeringColumn_8h_addde23fa13ab83da9f43d4b3515a642e}{transferFunctionSteeringColumn}}(\textcolor{keywordtype}{float} rawVal);}
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{SteeringColumn_8h_source_l00046}00046 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RENSSELAERMOTORSPORT\_STEERINGCOLUMN\_H}}
+
+\end{DoxyCode}

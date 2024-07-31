@@ -1,0 +1,51 @@
+\hypertarget{Sensor_8c}{}\doxysection{Src/\+Sensors/\+Sensor.c File Reference}
+\label{Sensor_8c}\index{Src/Sensors/Sensor.c@{Src/Sensors/Sensor.c}}
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Sensors/\+Sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Inc/\+Utils/\+Updateable.\+h\char`\"{}}\newline
+Include dependency graph for Sensor.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Sensor_8c_afa23c62d6ac2176a3ab170f42bce0663}{init\+Sensor}} (\mbox{\hyperlink{structSensor}{Sensor}} $\ast$sensor, const char $\ast$name, int hz, \mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}} \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}})
+\begin{DoxyCompactList}\small\item\em Initializes a sensor with the given parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Sensor_8c_afa23c62d6ac2176a3ab170f42bce0663}\label{Sensor_8c_afa23c62d6ac2176a3ab170f42bce0663}} 
+\index{Sensor.c@{Sensor.c}!initSensor@{initSensor}}
+\index{initSensor@{initSensor}!Sensor.c@{Sensor.c}}
+\doxysubsubsection{\texorpdfstring{initSensor()}{initSensor()}}
+{\footnotesize\ttfamily void init\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSensor}{Sensor}} $\ast$}]{sensor,  }\item[{const char $\ast$}]{name,  }\item[{int}]{hz,  }\item[{\mbox{\hyperlink{Sensor_8h_a213c434cb928c4ca22513e2302632435}{Sensor\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Initializes a sensor with the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Pointer to the \mbox{\hyperlink{structSensor}{Sensor}} structure to initialize. \\
+\hline
+{\em name} & Pointer to a string containing the name of the sensor. \\
+\hline
+{\em hz} & The frequency in Hertz at which the sensor operates. \\
+\hline
+{\em type} & The type of the sensor as defined by the Sensor\+Type enum. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Sensor_8c_source_l00004}{4}} of file \mbox{\hyperlink{Sensor_8c_source}{Sensor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004                                                                            \{}
+\DoxyCodeLine{00005     \mbox{\hyperlink{Updateable_8h_aaad6c964e32bb05093b5e551856837b4}{initUpdateable}}(\&sensor-\/>\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}, name, hz);}
+\DoxyCodeLine{00006     sensor-\/>\mbox{\hyperlink{structSensor_a59be498582043f581a78851506f8e322}{type}} = \mbox{\hyperlink{Updateable_8h_a7aead736a07eaf25623ad7bfa1f0ee2d}{type}};}
+\DoxyCodeLine{00007 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2

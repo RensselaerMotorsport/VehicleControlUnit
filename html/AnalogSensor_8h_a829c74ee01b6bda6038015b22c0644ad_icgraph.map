@@ -1,0 +1,7 @@
+<map id="getAnalogSensorData" name="getAnalogSensorData">
+<area shape="rect" id="Node000001" title="Retrieves data from the analog sensor." alt="" coords="346,5,493,31"/>
+<area shape="rect" id="Node000002" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title=" " alt="" coords="165,5,298,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="330,21,299,21,299,16,330,16"/>
+<area shape="rect" id="Node000003" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title=" " alt="" coords="5,5,117,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,21,117,21,117,16,149,16"/>
+</map>

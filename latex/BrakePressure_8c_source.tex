@@ -1,0 +1,46 @@
+\hypertarget{BrakePressure_8c_source}{}\doxysection{Brake\+Pressure.\+c}
+\label{BrakePressure_8c_source}\index{Src/Sensors/AnalogSensors/BrakePressure.c@{Src/Sensors/AnalogSensors/BrakePressure.c}}
+\mbox{\hyperlink{BrakePressure_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../../Inc/Sensors/AnalogSensors/BrakePressure.h"{}}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00003}00003 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00005}00005 \textcolor{comment}{// Constants for brake pressure calculations}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00006}\mbox{\hyperlink{BrakePressure_8c_adb9891cd73145352f30b6c5bd94c5fc8}{00006}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_adb9891cd73145352f30b6c5bd94c5fc8}{kOffsetVoltage}} = 0.201; \textcolor{comment}{// Volts}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00007}\mbox{\hyperlink{BrakePressure_8c_a6c01e45d67bc25d9e5bba6ad0b9b6874}{00007}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_a6c01e45d67bc25d9e5bba6ad0b9b6874}{kVoltsPerPSIA}} = 0.03738;}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00008}\mbox{\hyperlink{BrakePressure_8c_a4253ed8b2bff6c9e4c13bb2cd0904770}{00008}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_a4253ed8b2bff6c9e4c13bb2cd0904770}{kLowOutputSaturation}} = 0.35;  \textcolor{comment}{// Output saturation for undersupplied sensor}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00009}\mbox{\hyperlink{BrakePressure_8c_a478b3233c95f0587486864479c57a2f4}{00009}} \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_a478b3233c95f0587486864479c57a2f4}{kHighOutputSaturation}} = 4.65; \textcolor{comment}{// Output saturation for oversupplied sensor}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00011}\mbox{\hyperlink{BrakePressure_8h_a6cc0bf29d38b4637cb6a0a36f0196a81}{00011}} \textcolor{keywordtype}{void} \mbox{\hyperlink{BrakePressure_8c_a6cc0bf29d38b4637cb6a0a36f0196a81}{initBrakePressure}}(\mbox{\hyperlink{structBrakePressure}{BrakePressure}}* bp, \textcolor{keywordtype}{int} hz, \textcolor{keywordtype}{int} channel) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00012}00012     \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&bp-\/>\mbox{\hyperlink{structBrakePressure_aac8fb95a12d9277da1c7cbaac448678a}{base}}, \textcolor{stringliteral}{"{}BrakePressure"{}}, hz, channel);}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00013}00013     bp-\/>\mbox{\hyperlink{structBrakePressure_ac6a0f05f4e76d085cbebe9acebae75be}{pressure}} = -\/1;}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00014}00014     bp-\/>\mbox{\hyperlink{structBrakePressure_aac8fb95a12d9277da1c7cbaac448678a}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{BrakePressure_8c_a900d41fab896ec94686ed339f7ddd48b}{updateBrakePressure}};}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00017}\mbox{\hyperlink{BrakePressure_8h_a60fc11e2ec7062cde216bb02ec3bcb2f}{00017}} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_a60fc11e2ec7062cde216bb02ec3bcb2f}{getBrakePressure}}(\mbox{\hyperlink{structBrakePressure}{BrakePressure}}* bp) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00018}00018     \textcolor{keywordflow}{return} bp-\/>\mbox{\hyperlink{structBrakePressure_ac6a0f05f4e76d085cbebe9acebae75be}{pressure}};}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00021}\mbox{\hyperlink{BrakePressure_8h_a900d41fab896ec94686ed339f7ddd48b}{00021}} \textcolor{keywordtype}{void} \mbox{\hyperlink{BrakePressure_8c_a900d41fab896ec94686ed339f7ddd48b}{updateBrakePressure}}(\textcolor{keywordtype}{void}* bp) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00022}00022     \mbox{\hyperlink{structBrakePressure}{BrakePressure}} *brakePressure = (\mbox{\hyperlink{structBrakePressure}{BrakePressure}} *)bp;}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00023}00023     \textcolor{keywordtype}{float} rawData = 0.0f; \textcolor{comment}{// This should come from sensor read function or simulation}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00024}00024     printf(\textcolor{stringliteral}{"{}Implement BrakePressure Update\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00025}00025     brakePressure-\/>\mbox{\hyperlink{structBrakePressure_ac6a0f05f4e76d085cbebe9acebae75be}{pressure}} = \mbox{\hyperlink{BrakePressure_8c_a263953f8a1c52229189a61a9af3670c9}{transferFunctionBrakePressure}}(rawData);}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00028}\mbox{\hyperlink{BrakePressure_8h_a263953f8a1c52229189a61a9af3670c9}{00028}} \textcolor{keywordtype}{float} \mbox{\hyperlink{BrakePressure_8c_a263953f8a1c52229189a61a9af3670c9}{transferFunctionBrakePressure}}(\textcolor{keywordtype}{float} rawVal) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00029}00029     \textcolor{keywordflow}{if} (rawVal < \mbox{\hyperlink{BrakePressure_8c_a4253ed8b2bff6c9e4c13bb2cd0904770}{kLowOutputSaturation}}) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00030}00030         printf(\textcolor{stringliteral}{"{}BrakePressure::transfer\_function rawVal is too low\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00031}00031         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00033}00033     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rawVal > \mbox{\hyperlink{BrakePressure_8c_a478b3233c95f0587486864479c57a2f4}{kHighOutputSaturation}}) \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00034}00034         printf(\textcolor{stringliteral}{"{}BrakePressure::transfer\_function rawVal is too high\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00035}00035         \textcolor{keywordflow}{return} 115;}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00037}00037     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00038}00038         \textcolor{keywordflow}{return} ((rawVal -\/ \mbox{\hyperlink{BrakePressure_8c_adb9891cd73145352f30b6c5bd94c5fc8}{kOffsetVoltage}}) / \mbox{\hyperlink{BrakePressure_8c_a6c01e45d67bc25d9e5bba6ad0b9b6874}{kVoltsPerPSIA}});}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{BrakePressure_8c_source_l00040}00040 \}}
+
+\end{DoxyCode}

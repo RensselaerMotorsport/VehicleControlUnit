@@ -1,0 +1,11 @@
+digraph "TaskInit"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="TaskInit",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Initializes a task with the given sensor and update frequency."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="SchedulerInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Scheduler_8c.html#adf18e0985dd8f66c0a65156d46718c5a",tooltip="Initializes the scheduler with the given sensors."];
+}

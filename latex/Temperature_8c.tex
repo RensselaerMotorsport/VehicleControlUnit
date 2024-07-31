@@ -1,0 +1,178 @@
+\hypertarget{Temperature_8c}{}\doxysection{Src/\+Sensors/\+Analog\+Sensors/\+Temperature.c File Reference}
+\label{Temperature_8c}\index{Src/Sensors/AnalogSensors/Temperature.c@{Src/Sensors/AnalogSensors/Temperature.c}}
+{\ttfamily \#include \char`\"{}../../../\+Inc/\+Sensors/\+Analog\+Sensors/\+Temperature.\+h\char`\"{}}\newline
+Include dependency graph for Temperature.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Temperature_8c_a72614117a34330f3d93ad6e0d763fad9}{init\+Temperature}} (\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$temp, int hz, int channel)
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{structTemperature}{Temperature}} sensor with the given frequency and channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}{update\+Temperature}} (void $\ast$temp)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{structTemperature}{Temperature}} data. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{Temperature_8c_ac1a90061e499a10136a5c74f96a998cc}{get\+Temperature\+Celsius}} (\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$temp)
+\begin{DoxyCompactList}\small\item\em Gets the current temperature in Celsius. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{Temperature_8c_a1def015ce3a6f0ecbbce4e58e0d0e796}{get\+Temperature\+Fahrenheit}} (\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$temp)
+\begin{DoxyCompactList}\small\item\em Gets the current temperature in Fahrenheit. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{Temperature_8c_abadc58fa84298a2d39aed3e1be4b20c1}{transfer\+Function}} (\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$temp, int raw\+Val)
+\begin{DoxyCompactList}\small\item\em Converts raw temperature data to a meaningful temperature value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Temperature_8c_ac1a90061e499a10136a5c74f96a998cc}\label{Temperature_8c_ac1a90061e499a10136a5c74f96a998cc}} 
+\index{Temperature.c@{Temperature.c}!getTemperatureCelsius@{getTemperatureCelsius}}
+\index{getTemperatureCelsius@{getTemperatureCelsius}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{getTemperatureCelsius()}{getTemperatureCelsius()}}
+{\footnotesize\ttfamily double get\+Temperature\+Celsius (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$}]{temp }\end{DoxyParamCaption})}
+
+
+
+Gets the current temperature in Celsius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Pointer to the \mbox{\hyperlink{structTemperature}{Temperature}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current temperature in Celsius. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8c_source_l00015}{15}} of file \mbox{\hyperlink{Temperature_8c_source}{Temperature.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                                                 \{}
+\DoxyCodeLine{00016     \textcolor{keywordflow}{return} temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}};}
+\DoxyCodeLine{00017 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Temperature_8c_a1def015ce3a6f0ecbbce4e58e0d0e796}\label{Temperature_8c_a1def015ce3a6f0ecbbce4e58e0d0e796}} 
+\index{Temperature.c@{Temperature.c}!getTemperatureFahrenheit@{getTemperatureFahrenheit}}
+\index{getTemperatureFahrenheit@{getTemperatureFahrenheit}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{getTemperatureFahrenheit()}{getTemperatureFahrenheit()}}
+{\footnotesize\ttfamily double get\+Temperature\+Fahrenheit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$}]{temp }\end{DoxyParamCaption})}
+
+
+
+Gets the current temperature in Fahrenheit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Pointer to the \mbox{\hyperlink{structTemperature}{Temperature}} structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current temperature in Fahrenheit. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8c_source_l00019}{19}} of file \mbox{\hyperlink{Temperature_8c_source}{Temperature.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019                                                    \{}
+\DoxyCodeLine{00020     \textcolor{keywordflow}{return} temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}} * 9.0 / 5.0 + 32;}
+\DoxyCodeLine{00021 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Temperature_8c_a72614117a34330f3d93ad6e0d763fad9}\label{Temperature_8c_a72614117a34330f3d93ad6e0d763fad9}} 
+\index{Temperature.c@{Temperature.c}!initTemperature@{initTemperature}}
+\index{initTemperature@{initTemperature}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{initTemperature()}{initTemperature()}}
+{\footnotesize\ttfamily void init\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$}]{temp,  }\item[{int}]{hz,  }\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{structTemperature}{Temperature}} sensor with the given frequency and channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Pointer to the \mbox{\hyperlink{structTemperature}{Temperature}} structure to initialize. \\
+\hline
+{\em hz} & The frequency in Hertz at which the sensor operates. \\
+\hline
+{\em channel} & The analog channel the sensor is connected to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8c_source_l00003}{3}} of file \mbox{\hyperlink{Temperature_8c_source}{Temperature.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003                                                              \{}
+\DoxyCodeLine{00004     \mbox{\hyperlink{AnalogSensor_8h_a1f4d14f551bd2aeab536372c13bb3180}{initAnalogSensor}}(\&temp-\/>\mbox{\hyperlink{structTemperature_ad259538b8b3e0a45ec405cf3f6aec091}{base}}, \textcolor{stringliteral}{"{}Temperature"{}}, hz, channel);}
+\DoxyCodeLine{00005     temp-\/>\mbox{\hyperlink{structTemperature_ad259538b8b3e0a45ec405cf3f6aec091}{base}}.\mbox{\hyperlink{structAnalogSensor_ae5a490b3ae096b5c882bb1f3f23fdbcb}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}{updateTemperature}};}
+\DoxyCodeLine{00006     temp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}} = 0;}
+\DoxyCodeLine{00007 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{Temperature_8c_abadc58fa84298a2d39aed3e1be4b20c1}\label{Temperature_8c_abadc58fa84298a2d39aed3e1be4b20c1}} 
+\index{Temperature.c@{Temperature.c}!transferFunction@{transferFunction}}
+\index{transferFunction@{transferFunction}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{transferFunction()}{transferFunction()}}
+{\footnotesize\ttfamily double transfer\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTemperature}{Temperature}} $\ast$}]{temp,  }\item[{int}]{raw\+Value }\end{DoxyParamCaption})}
+
+
+
+Converts raw temperature data to a meaningful temperature value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Pointer to the \mbox{\hyperlink{structTemperature}{Temperature}} structure. \\
+\hline
+{\em raw\+Val} & The raw data from the temperature sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted temperature value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8c_source_l00023}{23}} of file \mbox{\hyperlink{Temperature_8c_source}{Temperature.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023                                                        \{}
+\DoxyCodeLine{00024     \textcolor{keywordflow}{return} 0.0;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}\label{Temperature_8c_ae415305492dd93722bfec35a26e4f4b6}} 
+\index{Temperature.c@{Temperature.c}!updateTemperature@{updateTemperature}}
+\index{updateTemperature@{updateTemperature}!Temperature.c@{Temperature.c}}
+\doxysubsubsection{\texorpdfstring{updateTemperature()}{updateTemperature()}}
+{\footnotesize\ttfamily void update\+Temperature (\begin{DoxyParamCaption}\item[{void $\ast$}]{temp }\end{DoxyParamCaption})}
+
+
+
+Updates the \mbox{\hyperlink{structTemperature}{Temperature}} data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & Pointer to the \mbox{\hyperlink{structTemperature}{Temperature}} structure to update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Temperature_8c_source_l00009}{9}} of file \mbox{\hyperlink{Temperature_8c_source}{Temperature.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009                                    \{}
+\DoxyCodeLine{00010     printf(\textcolor{stringliteral}{"{}Implement Temperature::update\(\backslash\)n"{}});}
+\DoxyCodeLine{00011     \mbox{\hyperlink{structTemperature}{Temperature}} *myTemp = (\mbox{\hyperlink{structTemperature}{Temperature}} *)temp;}
+\DoxyCodeLine{00012     myTemp-\/>\mbox{\hyperlink{structTemperature_a5267092fbb40289e5ae8f49bb2fc7fcd}{degrees}} = \mbox{\hyperlink{Temperature_8c_abadc58fa84298a2d39aed3e1be4b20c1}{transferFunction}}(temp, 0);}
+\DoxyCodeLine{00013 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4

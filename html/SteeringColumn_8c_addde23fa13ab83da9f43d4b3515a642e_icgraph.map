@@ -1,0 +1,5 @@
+<map id="transferFunctionSteeringColumn" name="transferFunctionSteeringColumn">
+<area shape="rect" id="node1" title="Converts raw steering column data to a meaningful rotation angle." alt="" coords="385,5,549,45"/>
+<area shape="rect" id="node2" href="$SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title="Updates the SteeringColumn data." alt="" coords="184,13,337,38"/>
+<area shape="rect" id="node3" href="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,13,136,38"/>
+</map>

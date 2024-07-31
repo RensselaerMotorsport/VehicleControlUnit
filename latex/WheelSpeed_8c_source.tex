@@ -1,0 +1,74 @@
+\hypertarget{WheelSpeed_8c_source}{}\doxysection{Wheel\+Speed.\+c}
+\label{WheelSpeed_8c_source}\index{Src/Sensors/DigitalSensors/WheelSpeed.c@{Src/Sensors/DigitalSensors/WheelSpeed.c}}
+\mbox{\hyperlink{WheelSpeed_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../../../Inc/Sensors/DigitalSensors/WheelSpeed.h"{}}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../../Inc/Utils/Conversions.h"{}}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../../../Inc/Utils/TimeUtils.h"{}}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00005}00005 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00006}00006 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00008}00008 \textcolor{preprocessor}{\#ifndef M\_PI}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00009}\mbox{\hyperlink{WheelSpeed_8c_ae71449b1cc6e6250b91f539153a7a0d3}{00009}} \textcolor{preprocessor}{\#define M\_PI 3.14159265358979323846}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00010}00010 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00012}\mbox{\hyperlink{WheelSpeed_8h_ac49732714bcdc5c6bb1c4f94ddf497b3}{00012}} \textcolor{keywordtype}{void} \mbox{\hyperlink{WheelSpeed_8c_ac49732714bcdc5c6bb1c4f94ddf497b3}{initWheelSpeed}}(\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}* ws, \textcolor{keywordtype}{int} hz, \textcolor{keywordtype}{int} port, \textcolor{keywordtype}{float} radius, \textcolor{keywordtype}{int} numTeeth,}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00013}00013                     \mbox{\hyperlink{WheelLocation_8h_a6bcc31f28038e411321704f9947331d7}{WHEEL\_LOCATION}} location) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00014}00014     \mbox{\hyperlink{DigitalSensor_8h_a2bf0b31c332d3808de755eb6bf35b3c5}{initDigitalSensor}}(\&ws-\/>\mbox{\hyperlink{structWheelSpeed_ac9ad06f7e5816697f4bfea770b9722b2}{base}}, \textcolor{stringliteral}{"{}Wheel Speed"{}}, hz, port);}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00015}00015     ws-\/>\mbox{\hyperlink{structWheelSpeed_ac9ad06f7e5816697f4bfea770b9722b2}{base}}.\mbox{\hyperlink{structDigitalSensor_aa5cfba5a7ccb124822fa1d8a2aac9ece}{sensor}}.\mbox{\hyperlink{structSensor_a7e6cf7138f6d350fd2bf0a76fba7a2ad}{updateable}}.\mbox{\hyperlink{structUpdateable_a16ae43b8576f63634cc825a7294c7a78}{update}} = \mbox{\hyperlink{WheelSpeed_8c_a92ea112da554d5de8a6b9204fa30381a}{updateWheelSpeed}};}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00016}00016     ws-\/>\mbox{\hyperlink{structWheelSpeed_aa54a56855e20fb6bdc11ae0db9b0e5aa}{radius}} = radius;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00017}00017     ws-\/>\mbox{\hyperlink{structWheelSpeed_a1fd60e20c5451a8c92a570b56a28cfb6}{wheel\_location}} = location;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00018}00018     ws-\/>\mbox{\hyperlink{structWheelSpeed_acca8266f1bc14244ade0afb42cf5a1d5}{numTeeth}} = numTeeth;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00019}00019     ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}} = 0;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00020}00020     ws-\/>\mbox{\hyperlink{structWheelSpeed_a6d8b62cdae99f0980adf213fe71558e1}{speed}} = 0.0f;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00021}00021     ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}} = \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00022}00022 \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00024}\mbox{\hyperlink{WheelSpeed_8h_a9b06a45c350af910e0b84912802616b9}{00024}} \textcolor{keywordtype}{float} \mbox{\hyperlink{WheelSpeed_8c_a9b06a45c350af910e0b84912802616b9}{calculateSpeed}}(\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}* ws) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00025}00025     \textcolor{comment}{// Check if the pointer is null}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00026}00026     \textcolor{keywordflow}{if} (ws == NULL) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00027}00027         fprintf(stderr, \textcolor{stringliteral}{"{}Error: Null pointer passed to calculateSpeed\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00028}00028         \textcolor{keywordflow}{return} -\/1; \textcolor{comment}{// Or handle the error as appropriate}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00031}00031     \textcolor{keywordtype}{int} numTeeth = ws-\/>\mbox{\hyperlink{structWheelSpeed_acca8266f1bc14244ade0afb42cf5a1d5}{numTeeth}};}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00032}00032     \textcolor{keywordtype}{float} radius = ws-\/>\mbox{\hyperlink{structWheelSpeed_aa54a56855e20fb6bdc11ae0db9b0e5aa}{radius}};}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00033}00033     \textcolor{keywordtype}{int} pulses = ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}};}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00034}00034     \textcolor{keywordtype}{float} delta = \mbox{\hyperlink{TimeUtils_8h_ab811d2f5aa3466ef464b7e2a8ff6c31d}{measureInterval}}(ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}});}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00036}00036     \textcolor{comment}{// Reset pulse count and elapsed time for the next measurement interval}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00037}00037     ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}} = \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00038}00038     ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}} = 0;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00040}00040     \textcolor{comment}{// Verify inputs}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00041}00041     \textcolor{keywordflow}{if} (numTeeth <= 0 || radius <= 0.0f || pulses <= 0 || delta <= 0.0) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00042}00042         printf(\textcolor{stringliteral}{"{}Error: Invalid argument. "{}}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00043}00043                \textcolor{stringliteral}{"{}NumTeeth = \%d, Radius = \%.2f, Pulses = \%d, Time Delta = \%.2f\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00044}00044                numTeeth, radius, pulses, delta);}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00045}00045         \textcolor{keywordflow}{return} 0.0f;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00048}00048     \textcolor{comment}{// Calculations}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00049}00049     \textcolor{keywordtype}{float} circumference = 2 * \mbox{\hyperlink{WheelSpeed_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}} * radius;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00050}00050     \textcolor{keywordtype}{float} distancePerPulse = circumference / numTeeth;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00051}00051     \textcolor{keywordtype}{float} speedMetersPerSecond = (distancePerPulse * pulses) / delta;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00052}00052     \textcolor{keywordtype}{float} speed = \mbox{\hyperlink{Conversions_8h_afc7e7aa256276c3574cb19108257cfc8}{convertMpsToMph}}(speedMetersPerSecond);}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00054}00054     \textcolor{keywordflow}{return} speed;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00057}\mbox{\hyperlink{WheelSpeed_8h_a92ea112da554d5de8a6b9204fa30381a}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{WheelSpeed_8c_a92ea112da554d5de8a6b9204fa30381a}{updateWheelSpeed}}(\textcolor{keywordtype}{void}* ws) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00058}00058     \mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}* wsPtr = (\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}*)ws;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00059}00059     wsPtr-\/>\mbox{\hyperlink{structWheelSpeed_a6d8b62cdae99f0980adf213fe71558e1}{speed}} = \mbox{\hyperlink{WheelSpeed_8c_a9b06a45c350af910e0b84912802616b9}{calculateSpeed}}(ws);}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00062}\mbox{\hyperlink{WheelSpeed_8h_a8a44c706d5c92c453cfbd4e7be159c36}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{WheelSpeed_8c_a8a44c706d5c92c453cfbd4e7be159c36}{setTimeInterval}}(\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}* ws, \textcolor{keywordtype}{float} interval) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00063}00063     ws-\/>\mbox{\hyperlink{structWheelSpeed_a454f0d96c91e9ddd41b215873fdef473}{interval}} = interval + \mbox{\hyperlink{TimeUtils_8h_aee85a3385434e4615f588684cb7c5aca}{getCurrentTime}}();}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00066}\mbox{\hyperlink{WheelSpeed_8h_a27cf8300dac12d235a50cf77b9f9aaac}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{WheelSpeed_8c_abfbed5b438cb45d5327460b0f4006fb6}{addPulse}}(\mbox{\hyperlink{structWheelSpeed}{WheelSpeed}}* ws, \textcolor{keywordtype}{int} num) \{}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00067}00067     ws-\/>\mbox{\hyperlink{structWheelSpeed_a9797aef29f050455eddc81891a4278a3}{pulses}} += num;}
+\DoxyCodeLine{\Hypertarget{WheelSpeed_8c_source_l00068}00068 \}}
+
+\end{DoxyCode}
