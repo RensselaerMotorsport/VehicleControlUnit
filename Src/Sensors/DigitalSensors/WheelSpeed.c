@@ -1,5 +1,7 @@
-#include "../../../includes/WheelSpeed.h"
-#include "../../../includes/TimeUtils.h"
+#include "../../../Inc/Sensors/DigitalSensors/WheelSpeed.h"
+#include "../../../Inc/Utils/Conversions.h"
+#include "../../../Inc/Utils/TimeUtils.h"
+
 #include <stdio.h>
 #include <math.h>
 
@@ -7,16 +9,6 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-/*
- * Initialization function for a wheel speed sensor.
- *
- * @param ws A pointer to the WheelSpeed structure.
- * @pram hz Rate at which the sensor is called (in hz).
- * @pram port Location of sensor.
- * @pram radius Radius of wheel (in mm).
- * @pram numTeeth Number of teeth on reluctor wheel.
- * @pram location Location of sensor on car.
- */
 void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth,
                     WHEEL_LOCATION location) {
     initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
@@ -29,25 +21,6 @@ void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth
     ws->interval = getCurrentTime();
 }
 
-// TODO: Perhaps add class for conversions.
-float MPS_TO_MPH = 2.236936;
-
-/**
- * Converts from meters per second to miles per hour
- *
- * @param metersPerSecond The speed to convert in meters per second.
- * @return The speed in miles per hour.
- */
-float convertMpsToMph(float metersPerSecond) {
-    return metersPerSecond * MPS_TO_MPH;
-}
-
-/**
- * Translates data to speed in mph.
- *
- * @param ws A pointer to the WheelSpeed structure.
- * @return The speed in miles per hour.
- */
 float calculateSpeed(WheelSpeed* ws) {
     // Check if the pointer is null
     if (ws == NULL) {
@@ -81,35 +54,15 @@ float calculateSpeed(WheelSpeed* ws) {
     return speed;
 }
 
-/*
- * Updated the speed var in this sensor.
- *
- * @param ws A pointer to the WheelSpeed structure.
- */
 void updateWheelSpeed(void* ws) {
     WheelSpeed* wsPtr = (WheelSpeed*)ws;
     wsPtr->speed = calculateSpeed(ws);
 }
 
-
-/*
- * Add pulses to sensor;
- * For testing and debugging.
- *
- * @param ws A pointer to the WheelSpeed structure.
- * @param num Number of pulses to add.
- */
-void addPulse(WheelSpeed* ws, int num) {
-    ws->pulses += num;
-}
-
-/*
- * Set time interval.
- * For testing and debugging.
- *
- * @param ws A pointer to the WheelSpeed structure.
- * @param interval Time interval to set.
- */
 void setTimeInterval(WheelSpeed* ws, float interval) {
     ws->interval = interval + getCurrentTime();
+}
+
+void addPulse(WheelSpeed* ws, int num) {
+    ws->pulses += num;
 }

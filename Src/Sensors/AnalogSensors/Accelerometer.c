@@ -1,4 +1,5 @@
-#include "../../../includes/Accelerometer.h"
+#include "../../../Inc/Sensors/AnalogSensors/Accelerometer.h"
+
 #include <stdio.h>
 
 const float kOffsetVolts = 2.5; // 2.5 V at 0 g

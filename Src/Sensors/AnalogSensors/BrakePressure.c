@@ -1,4 +1,5 @@
-#include "../../../includes/BrakePressure.h"
+#include "../../../Inc/Sensors/AnalogSensors/BrakePressure.h"
+
 #include <stdio.h>
 
 // Constants for brake pressure calculations
@@ -28,10 +29,12 @@ float transferFunctionBrakePressure(float rawVal) {
     if (rawVal < kLowOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too low\n");
         return 0;
-    } else if (rawVal > kHighOutputSaturation) {
+    }
+    else if (rawVal > kHighOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too high\n");
         return 115;
-    } else {
+    }
+    else {
         return ((rawVal - kOffsetVoltage) / kVoltsPerPSIA);
     }
 }

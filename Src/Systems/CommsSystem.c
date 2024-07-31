@@ -1,4 +1,4 @@
-#include "../../includes/CommsSystem.h"
+#include "../../Inc/Systems/CommsSystem.h"
 
 void initCommsSystem(CommsSystem* comms, const char* name, int hz, CommsType type) {
     initSystem(&comms->system, name, hz, COMMS);

@@ -1,4 +1,4 @@
-#include "../../../includes/Temperature.h"
+#include "../../../Inc/Sensors/AnalogSensors/Temperature.h"
 
 void initTemperature(Temperature* temp, int hz, int channel) {
     initAnalogSensor(&temp->base, "Temperature", hz, channel);
@@ -9,7 +9,7 @@ void initTemperature(Temperature* temp, int hz, int channel) {
 void updateTemperature(void* temp) {
     printf("Implement Temperature::update\n");
     Temperature *myTemp = (Temperature *)temp;
-    myTemp->degrees = transferFunction(temp, getAnalogSensorData(&myTemp->base));
+    myTemp->degrees = transferFunction(temp, 0);
 }
 
 double getTemperatureCelsius(Temperature* temp) {
@@ -20,6 +20,6 @@ double getTemperatureFahrenheit(Temperature* temp) {
     return temp->degrees * 9.0 / 5.0 + 32;
 }
 
-double transferFunction(Temperature* t, int rawVal) {
-    return 0.0; // TODO: Implement
+double transferFunction(Temperature* temp, int rawVal) {
+    return 0.0;
 }

@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include "../includes/Scheduler.h"
-#include "../includes/App.h"
-#include "../includes/Temperature.h"
-#include "../includes/ShockPot.h"
+#include "../Inc/Scheduler/Scheduler.h"
+#include "../Inc/Sensors/AnalogSensors/App.h"
+#include "../Inc/Sensors/AnalogSensors/Temperature.h"
+#include "../Inc/Sensors/AnalogSensors/ShockPot.h"
 
 int main() {
     Scheduler scheduler;
@@ -14,7 +13,7 @@ int main() {
 
     initApp(&appSensor, 200, 1);
     initTemperature(&temperatureSensor, 10, 2);
-    initShockPot(&shockPotSensor, 1000, 3, front_left);
+    initShockPot(&shockPotSensor, 1000, 3, FRONT_LEFT);
 
     sensorArray[0] = (Sensor*)&appSensor;
     sensorArray[1] = (Sensor*)&temperatureSensor;

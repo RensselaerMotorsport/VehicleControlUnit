@@ -40,8 +40,14 @@ void initTorqueControl(TorqueControl* tc, int hz, float maxTorque);
  */
 void setDesiredTorque(TorqueControl* tc, float torque);
 
-//  TODO: Add docs
-void setTorque(TorqueControl* tc, float torque);
+/*
+ * Sets the actual torque for Torque Control Actuator
+ * For testing and debugging.
+ *
+ * @param tc A pointer to the TorqueControl structure.
+ * @param torque The torque to be set (in Nm).
+ */
+void setActualTorque(TorqueControl* tc, float torque);
 
 /**
  * @brief Updates the Torque Control Actuator based on sensor inputs and calculations.
@@ -64,5 +70,12 @@ TorqueStatus checkTorqueLimits(TorqueControl* tc);
 
 // TODO: Add doc / add function in if applicable
 void sendTorqueCommand(const TorqueControl* tc);
+
+/**
+ * @brief Checks the safety of the torque with multiple monitors.
+ *
+ * @param tc A pointer to the TorqueControl structure.
+ */
+int torqueSafetyCheck(void* tc);
 
 #endif // RENSSELAERMOTORSPORT_TORQUE_CONTROL_H

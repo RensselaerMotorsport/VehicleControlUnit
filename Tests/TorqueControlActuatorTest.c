@@ -1,8 +1,8 @@
-#include "../includes/TorqueControlActuator.h"
+#include "../Inc/Systems/Controller/TorqueControl.h"
 
 int testTorqueControlInitialization(float maxTorque, const char* testName) {
-    TorqueControlActuator tc;
-    initTorqueControlActuator(&tc, 0, 0, maxTorque);
+    TorqueControl tc;
+    initTorqueControl(&tc, 0, maxTorque);
 
     if (tc.status != TORQUE_OK) {
         printf("%s Failed: Initial status is not OK.\n", testName);
@@ -15,13 +15,13 @@ int testTorqueControlInitialization(float maxTorque, const char* testName) {
 
 int testTorqueUpdate(float torque, float desiredTorque,
                      TorqueStatus desiredStatus, const char* testName) {
-    TorqueControlActuator tc;
+    TorqueControl tc;
     float maxTorque = 100.0f;
-    initTorqueControlActuator(&tc, 0, 0, maxTorque);
+    initTorqueControl(&tc, 0, maxTorque);
 
     setActualTorque(&tc, torque);
     setDesiredTorque(&tc, desiredTorque);
-    updateTorqueControlActuator(&tc);
+    updateTorqueControl(&tc);
     TorqueStatus status = checkTorqueLimits(&tc);
 
     if (status != desiredStatus) {

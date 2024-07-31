@@ -16,6 +16,7 @@ typedef struct {
  * @param hz     The frequency in Hertz at which the sensor operates.
  * @param port   Location of the digital sensor on board.
  */
-void initDigitalSensor(DigitalSensor* digitalsensor, const char* name, int hz, int port);
+void initDigitalSensor(DigitalSensor* digitalsensor, const char* name, int hz,
+                       int port);
 
 #endif // RENNSSELAERMOTORSPORT_DIGITALSENSOR_H

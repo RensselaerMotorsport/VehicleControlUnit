@@ -1,4 +1,4 @@
-#include "../../includes/Task.h"
+#include "../../Inc/Scheduler/Task.h"
 
 void TaskInit(Task* task, Sensor* sensor, int hz) {
     task->sensor = sensor;
