@@ -21,7 +21,7 @@ typedef struct {
     int (*check_heartbeat)(void* self); // Check if the controller is still alive
 } ExternalSystem;
 
-/*
+/**
  * Initializes the External System with initial settings.
  *
  * @param external A pointer to the ExternalSystem structure.

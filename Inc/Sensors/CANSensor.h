@@ -7,6 +7,13 @@ typedef struct {
     Sensor sensor;
 } CANSensor;
 
-void initCANSensor(CANSensor* cansensor, const char* name, int hz);
+/**
+ * @brief Initializes a CAN sensor with the given parameters.
+ *
+ * @param canSensor Pointer to the Sensor structure to initialize.
+ * @param name   Pointer to a string containing the name of the sensor.
+ * @param hz     The frequency in Hertz at which the sensor operates.
+ */
+void initCANSensor(CANSensor* canSensor, const char* name, int hz);
 
-#endif
+#endif // RENSSELAERMOTORSPORT_CANSENSOR_H
