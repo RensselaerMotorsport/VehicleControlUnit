@@ -19,7 +19,7 @@ typedef struct {
 void initECSIndicator(ESCIndicator* esc, int hz, int port);
 
 /**
- * TODO: Update this doc when function implemented.
+ * FIXME: Update this doc when function implemented.
  *
  * @brief Updated for this sensor.
  *

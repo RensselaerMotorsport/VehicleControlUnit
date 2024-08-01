@@ -3,7 +3,7 @@
 
 #include "../Sensors/Sensor.h"
 
-// TODO: Configure board to get high-resolution time
+// FIXME: Configure board to get high-resolution time
 typedef int highResTime;
 
 typedef struct {
