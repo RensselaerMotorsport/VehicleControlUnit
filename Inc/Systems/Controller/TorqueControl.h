@@ -33,7 +33,7 @@ void initTorqueControl(TorqueControl* tc, int hz, float maxTorque);
 
 /**
  * @brief Sets the desired torque for the Torque Control Actuator.
- * @note NOTE: Should this be a map?
+ * @note FIXME: Update to this to a map in the future.
  *
  * @param tc A pointer to the TorqueControl structure.
  * @param torque The desired torque to be set (in Nm).
@@ -41,7 +41,7 @@ void initTorqueControl(TorqueControl* tc, int hz, float maxTorque);
 void setDesiredTorque(TorqueControl* tc, float torque);
 
 /*
- * Sets the actual torque for Torque Control Actuator
+ * @brief Sets the actual torque for Torque Control Actuator
  * For testing and debugging.
  *
  * @param tc A pointer to the TorqueControl structure.
@@ -61,7 +61,7 @@ void updateTorqueControl(void* tc);
  * TODO: move into torque police
  *
  * @brief Checks if the actual torque is within the defined limits and desired range.
- * @note NOTE: When should each torque condition be in place?
+ * @note FIXME: When should each torque condition be in place?
  *
  * @param tc A pointer to the TorqueControl structure.
  * @return The actual status of the torque.
