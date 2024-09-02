@@ -6,9 +6,9 @@ name: Generate Doxygen documentation
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
+    branches:
       - "main"
-      - "RMSW-13" 
+      - "RMSW-13"
   pull_request:
     branches:
     - "main"
@@ -41,8 +41,7 @@ jobs:
               sudo apt-get install -y doxygen graphviz
           else
               echo "Doxygen is already installed."
-          fi
-          
+
       - name: Set up Doxygen
         uses: mattnotmitt/doxygen-action@v1.9.5
 
@@ -55,4 +54,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: ./Docs

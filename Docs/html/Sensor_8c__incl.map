@@ -1,9 +1,0 @@
-<map id="Src/Sensors/Sensor.c" name="Src/Sensors/Sensor.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="185,5,333,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,150,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,34,124,75,122,70,227,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="174,79,344,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="262,31,262,63,256,63,256,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="367,79,431,105"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,29,363,69,360,74,281,34"/>
-</map>

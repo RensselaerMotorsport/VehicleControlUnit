@@ -1,9 +1,0 @@
-<map id="Inc/Utils/Common.h" name="Inc/Utils/Common.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="222,5,358,31"/>
-<area shape="rect" id="Node000002" href="$TorqueControl_8c.html" title=" " alt="" coords="5,79,161,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,39,136,81,134,76,243,34"/>
-<area shape="rect" id="Node000003" href="$ControllerSystem_8c.html" title=" " alt="" coords="185,87,394,112"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,47,292,86,287,86,287,47"/>
-<area shape="rect" id="Node000004" href="$Updateable_8c.html" title=" " alt="" coords="419,87,571,112"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="336,34,464,83,462,88,334,39"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Src/Sensors/AnalogSensors/BrakePressure.c" name="Src/Sensors/AnalogSensors/BrakePressure.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="88,5,274,46"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,205,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,48,129,84,125,81,160,45"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="229,94,288,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,45,238,81,234,84,198,48"/>
-</map>

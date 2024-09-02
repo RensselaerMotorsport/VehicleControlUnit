@@ -1,7 +1,0 @@
-<map id="CommsSystem" name="CommsSystem">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,116,208"/>
-<area shape="rect" id="Node000002" href="$structSystem.html" title=" " alt="" coords="28,94,93,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,135,63,182,58,182,58,135"/>
-<area shape="rect" id="Node000003" href="$structUpdateable.html" title=" " alt="" coords="17,5,104,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="63,47,63,94,58,94,58,47"/>
-</map>

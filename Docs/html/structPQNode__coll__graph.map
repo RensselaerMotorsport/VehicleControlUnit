@@ -1,9 +1,0 @@
-<map id="PQNode" name="PQNode">
-<area shape="rect" id="Node000001" title=" " alt="" coords="13,271,85,297"/>
-<area shape="rect" id="Node000002" href="$structTask.html" title=" " alt="" coords="24,183,74,208"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,224,52,271,46,271,46,224"/>
-<area shape="rect" id="Node000003" href="$structSensor.html" title=" " alt="" coords="18,94,80,120"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="52,135,52,182,46,182,46,135"/>
-<area shape="rect" id="Node000004" href="$structUpdateable.html" title=" " alt="" coords="5,5,93,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="52,47,52,94,46,94,46,47"/>
-</map>

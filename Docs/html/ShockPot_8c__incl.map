@@ -1,9 +1,0 @@
-<map id="Src/Sensors/AnalogSensors/ShockPot.c" name="Src/Sensors/AnalogSensors/ShockPot.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="138,5,323,46"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,94,176,120"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,49,126,88,124,84,194,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="200,94,261,120"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,46,233,78,228,78,228,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="285,94,344,120"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,44,292,81,289,85,249,48"/>
-</map>

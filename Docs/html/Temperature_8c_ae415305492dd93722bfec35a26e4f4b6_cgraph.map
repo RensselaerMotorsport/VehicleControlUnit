@@ -1,7 +1,0 @@
-<map id="updateTemperature" name="updateTemperature">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,139,56"/>
-<area shape="rect" id="Node000002" href="$AnalogSensor_8c.html#a0582917ac27a10396b74a185c5b23f33" title="Retrieves data from the analog sensor." alt="" coords="187,5,334,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,32,171,28,172,33,140,37"/>
-<area shape="rect" id="Node000003" href="$Temperature_8c.html#af902ee3403a7a07e9f38240b3f0cb284" title=" " alt="" coords="203,55,318,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,49,188,56,187,61,139,55"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="PQPush" name="PQPush">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,76,56"/>
-<area shape="rect" id="Node000002" href="$PriorityQueue_8c.html#ab7631090c485201b8c6f7773b0575e3f" title=" " alt="" coords="124,5,203,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,34,108,27,109,32,76,39"/>
-<area shape="rect" id="Node000003" href="$PriorityQueue_8c.html#aca9cc7f25c9cc6fd37c05dbb5b81e727" title=" " alt="" coords="127,55,200,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="76,48,112,55,111,60,75,53"/>
-</map>

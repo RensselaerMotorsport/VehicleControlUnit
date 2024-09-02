@@ -1,7 +1,0 @@
-<map id="transferFunctionSteeringColumn" name="transferFunctionSteeringColumn">
-<area shape="rect" id="Node000001" title=" " alt="" coords="384,5,547,46"/>
-<area shape="rect" id="Node000002" href="$SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title=" " alt="" coords="184,13,336,39"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,28,336,28,336,23,368,23"/>
-<area shape="rect" id="Node000003" href="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title=" " alt="" coords="5,13,136,39"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="168,28,136,28,136,23,168,23"/>
-</map>
