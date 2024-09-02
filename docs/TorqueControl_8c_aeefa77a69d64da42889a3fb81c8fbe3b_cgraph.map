@@ -1,0 +1,13 @@
+<map id="initTorqueControl" name="initTorqueControl">
+<area shape="rect" id="node1" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="5,129,125,155"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="175,80,314,105"/>
+<area shape="rect" id="node9" href="$TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="179,129,311,155"/>
+<area shape="rect" id="node10" href="$TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="173,179,316,204"/>
+<area shape="rect" id="node3" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="389,80,472,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="545,80,651,105"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="699,5,803,31"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="701,55,801,80"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="701,104,800,129"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="699,153,802,179"/>
+<area shape="rect" id="node11" href="$TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="364,179,497,204"/>
+</map>

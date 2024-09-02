@@ -1,0 +1,5 @@
+<map id="updateBms" name="updateBms">
+<area shape="rect" id="node1" title="Updates the BMS data." alt="" coords="5,31,93,56"/>
+<area shape="rect" id="node2" href="$BmsData_8c.html#af16280268efae856ebc869b7774a8564" title="Converts the BmsData structure to a string." alt="" coords="152,5,273,31"/>
+<area shape="rect" id="node3" href="$Bms_8c.html#a620d8c276477a59b82aeed5a804ca2e5" title="Transfers raw BMS data to a BmsData structure." alt="" coords="141,55,284,80"/>
+</map>

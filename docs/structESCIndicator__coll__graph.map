@@ -1,0 +1,6 @@
+<map id="ESCIndicator" name="ESCIndicator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,269,104,295"/>
+<area shape="rect" id="node2" href="$structDigitalSensor.html" title=" " alt="" coords="5,181,104,207"/>
+<area shape="rect" id="node3" href="$structSensor.html" title=" " alt="" coords="23,93,86,119"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="11,5,99,31"/>
+</map>

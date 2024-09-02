@@ -1,0 +1,8 @@
+<map id="Scheduler" name="Scheduler">
+<area shape="rect" id="node1" title=" " alt="" coords="15,445,95,471"/>
+<area shape="rect" id="node2" href="$structPriorityQueue.html" title=" " alt="" coords="5,357,105,383"/>
+<area shape="rect" id="node3" href="$structPQNode.html" title=" " alt="" coords="19,269,91,295"/>
+<area shape="rect" id="node4" href="$structTask.html" title=" " alt="" coords="30,181,81,207"/>
+<area shape="rect" id="node5" href="$structSensor.html" title=" " alt="" coords="24,93,87,119"/>
+<area shape="rect" id="node6" href="$structUpdateable.html" title=" " alt="" coords="11,5,99,31"/>
+</map>

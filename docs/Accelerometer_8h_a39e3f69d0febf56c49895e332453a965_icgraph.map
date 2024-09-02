@@ -1,0 +1,4 @@
+<map id="updateAccelerometer" name="updateAccelerometer">
+<area shape="rect" id="node1" title="Updates the accelerometer data." alt="" coords="176,5,321,31"/>
+<area shape="rect" id="node2" href="$Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title="Initializes the accelerometer with the given channel, frequency, and multiplexer channel." alt="" coords="5,5,128,31"/>
+</map>

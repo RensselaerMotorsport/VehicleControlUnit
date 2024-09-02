@@ -1,0 +1,6 @@
+<map id="Accelerometer" name="Accelerometer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,269,112,295"/>
+<area shape="rect" id="node2" href="$structAnalogSensor.html" title=" " alt="" coords="7,181,110,207"/>
+<area shape="rect" id="node3" href="$structSensor.html" title=" " alt="" coords="27,93,90,119"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="15,5,103,31"/>
+</map>

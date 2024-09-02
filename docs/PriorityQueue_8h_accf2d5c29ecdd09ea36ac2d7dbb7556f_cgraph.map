@@ -1,0 +1,5 @@
+<map id="PQPop" name="PQPop">
+<area shape="rect" id="node1" title="Pops the highest priority task from the priority queue." alt="" coords="5,31,69,56"/>
+<area shape="rect" id="node2" href="$PriorityQueue_8c.html#a6656021f82dc5fc0e47981fad7fda2bd" title="Restores the heap property by moving the node at the given index down." alt="" coords="117,5,213,31"/>
+<area shape="rect" id="node3" href="$PriorityQueue_8c.html#a3db90f839aff3e0e896ca237483bb926" title="Checks if the priority queue is empty." alt="" coords="121,55,209,80"/>
+</map>

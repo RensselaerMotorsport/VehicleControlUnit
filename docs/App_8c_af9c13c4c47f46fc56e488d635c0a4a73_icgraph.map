@@ -1,0 +1,4 @@
+<map id="updateApp" name="updateApp">
+<area shape="rect" id="node1" title="Updates the APP data." alt="" coords="116,5,200,31"/>
+<area shape="rect" id="node2" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="5,5,68,31"/>
+</map>

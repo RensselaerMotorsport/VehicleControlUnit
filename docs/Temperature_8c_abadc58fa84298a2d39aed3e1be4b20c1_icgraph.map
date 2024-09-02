@@ -1,0 +1,5 @@
+<map id="transferFunction" name="transferFunction">
+<area shape="rect" id="node1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="348,5,464,31"/>
+<area shape="rect" id="node2" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="165,5,300,31"/>
+<area shape="rect" id="node3" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="5,5,117,31"/>
+</map>
