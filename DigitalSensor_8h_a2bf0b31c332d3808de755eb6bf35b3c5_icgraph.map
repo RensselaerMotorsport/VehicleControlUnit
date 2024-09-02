@@ -1,0 +1,5 @@
+<map id="initDigitalSensor" name="initDigitalSensor">
+<area shape="rect" id="node1" title="Initializes a digital sensor with the given parameters." alt="" coords="168,31,284,56"/>
+<area shape="rect" id="node2" href="$ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="5,5,120,31"/>
+<area shape="rect" id="node3" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="7,55,119,80"/>
+</map>

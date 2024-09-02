@@ -1,0 +1,8 @@
+<map id="SchedulerInit" name="SchedulerInit">
+<area shape="rect" id="node1" title="Initializes the scheduler with the given sensors." alt="" coords="5,55,104,80"/>
+<area shape="rect" id="node2" href="$PriorityQueue_8c.html#af5ad572e37189c56cf0816638dd85d97" title="Initializes the priority queue." alt="" coords="158,5,217,31"/>
+<area shape="rect" id="node3" href="$PriorityQueue_8c.html#ae841bdf0664368f8d4484b0e5dbd33d7" title="Pushes a task with a given priority onto the priority queue." alt="" coords="152,55,223,80"/>
+<area shape="rect" id="node6" href="$Task_8c.html#ada95c849b23900ccbebc6a389f6dba19" title="Initializes a task with the given sensor and update frequency." alt="" coords="153,104,222,129"/>
+<area shape="rect" id="node4" href="$PriorityQueue_8c.html#ab7631090c485201b8c6f7773b0575e3f" title="Restores the heap property by moving the node at the given index up." alt="" coords="271,31,351,56"/>
+<area shape="rect" id="node5" href="$PriorityQueue_8c.html#aca9cc7f25c9cc6fd37c05dbb5b81e727" title="Checks if the priority queue is full." alt="" coords="274,80,347,105"/>
+</map>

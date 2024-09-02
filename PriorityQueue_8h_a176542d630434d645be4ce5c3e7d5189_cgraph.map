@@ -1,0 +1,4 @@
+<map id="PQPeek" name="PQPeek">
+<area shape="rect" id="node1" title="Peeks at the highest priority task in the priority queue without removing it." alt="" coords="5,5,76,31"/>
+<area shape="rect" id="node2" href="$PriorityQueue_8c.html#a3db90f839aff3e0e896ca237483bb926" title="Checks if the priority queue is empty." alt="" coords="124,5,212,31"/>
+</map>

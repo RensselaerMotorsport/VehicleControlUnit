@@ -1,0 +1,9 @@
+<map id="initMonitorSystem" name="initMonitorSystem">
+<area shape="rect" id="node1" title="Initializes the Monitor System with initial settings." alt="" coords="5,80,132,105"/>
+<area shape="rect" id="node2" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="180,80,263,105"/>
+<area shape="rect" id="node3" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="311,80,416,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="464,5,568,31"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="466,55,566,80"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="467,104,565,129"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="465,153,567,179"/>
+</map>

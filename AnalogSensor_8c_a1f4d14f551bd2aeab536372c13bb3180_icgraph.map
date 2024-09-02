@@ -1,0 +1,9 @@
+<map id="initAnalogSensor" name="initAnalogSensor">
+<area shape="rect" id="node1" title="Initializes an analog sensor." alt="" coords="184,129,304,155"/>
+<area shape="rect" id="node2" href="$Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title="Initializes the accelerometer with the given channel, frequency, and multiplexer channel." alt="" coords="9,5,132,31"/>
+<area shape="rect" id="node3" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="39,55,102,80"/>
+<area shape="rect" id="node4" href="$BrakePressure_8c.html#a6cc0bf29d38b4637cb6a0a36f0196a81" title="Initializes the BrakePressure sensor with the given frequency and channel." alt="" coords="8,104,133,129"/>
+<area shape="rect" id="node5" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="23,153,119,179"/>
+<area shape="rect" id="node6" href="$SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,203,136,228"/>
+<area shape="rect" id="node7" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="15,252,127,277"/>
+</map>
