@@ -41,6 +41,7 @@ jobs:
               sudo apt-get install -y doxygen graphviz
           else
               echo "Doxygen is already installed."
+          fi
 
       - name: Set up Doxygen
         uses: mattnotmitt/doxygen-action@v1.9.5
