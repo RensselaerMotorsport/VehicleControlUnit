@@ -1,6 +1,0 @@
-<map id="initCANSensor" name="initCANSensor">
-<area shape="rect" id="node1" title="Initializes a CAN sensor with the given parameters." alt="" coords="120,55,228,80"/>
-<area shape="rect" id="node2" href="$Bms_8c.html#afeeadcad4acba40f2d7197368054b051" title="Initializes the BMS with the given frequency." alt="" coords="5,5,72,31"/>
-<area shape="rect" id="node3" href="$Esc_8c.html#a88716097de898ba50d9866c5639e8c52" title="Initializes the ESC with the given frequency." alt="" coords="8,55,69,80"/>
-<area shape="rect" id="node4" href="$Imd_8c.html#a4920d20ec1d5bea9a18548398159754b" title="Initializes the IMD with the given frequency." alt="" coords="8,104,69,129"/>
-</map>

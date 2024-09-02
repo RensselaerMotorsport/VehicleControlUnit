@@ -1,4 +1,0 @@
-<map id="TaskInit" name="TaskInit">
-<area shape="rect" id="node1" title="Initializes a task with the given sensor and update frequency." alt="" coords="152,5,221,31"/>
-<area shape="rect" id="node2" href="$Scheduler_8c.html#adf18e0985dd8f66c0a65156d46718c5a" title="Initializes the scheduler with the given sensors." alt="" coords="5,5,104,31"/>
-</map>

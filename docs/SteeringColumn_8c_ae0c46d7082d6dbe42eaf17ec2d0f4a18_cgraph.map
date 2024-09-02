@@ -1,4 +1,0 @@
-<map id="updateSteeringColumn" name="updateSteeringColumn">
-<area shape="rect" id="node1" title="Updates the SteeringColumn data." alt="" coords="5,13,159,38"/>
-<area shape="rect" id="node2" href="$SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e" title="Converts raw steering column data to a meaningful rotation angle." alt="" coords="207,5,371,45"/>
-</map>

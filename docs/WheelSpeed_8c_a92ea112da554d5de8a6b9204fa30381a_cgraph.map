@@ -1,7 +1,0 @@
-<map id="updateWheelSpeed" name="updateWheelSpeed">
-<area shape="rect" id="node1" title="Updated the speed var in this sensor." alt="" coords="5,56,140,81"/>
-<area shape="rect" id="node2" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title="Translates data to speed in mph." alt="" coords="188,56,299,81"/>
-<area shape="rect" id="node3" href="$Conversions_8c.html#afc7e7aa256276c3574cb19108257cfc8" title=" " alt="" coords="347,5,477,31"/>
-<area shape="rect" id="node4" href="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca" title="Retrieves the current time in seconds." alt="" coords="525,81,636,107"/>
-<area shape="rect" id="node5" href="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d" title="Measures the time interval since the last recorded time." alt="" coords="355,107,469,132"/>
-</map>

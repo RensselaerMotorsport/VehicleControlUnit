@@ -1,6 +1,0 @@
-<map id="calculateSpeed" name="calculateSpeed">
-<area shape="rect" id="node1" title="Translates data to speed in mph." alt="" coords="5,56,116,81"/>
-<area shape="rect" id="node2" href="$Conversions_8c.html#afc7e7aa256276c3574cb19108257cfc8" title=" " alt="" coords="164,5,295,31"/>
-<area shape="rect" id="node3" href="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca" title="Retrieves the current time in seconds." alt="" coords="343,81,453,107"/>
-<area shape="rect" id="node4" href="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d" title="Measures the time interval since the last recorded time." alt="" coords="172,107,287,132"/>
-</map>

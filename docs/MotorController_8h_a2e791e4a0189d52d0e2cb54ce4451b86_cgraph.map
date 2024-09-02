@@ -1,4 +1,0 @@
-<map id="getMotorTemp" name="getMotorTemp">
-<area shape="rect" id="node1" title="Gets the motor temperature from the MotorController." alt="" coords="5,5,112,31"/>
-<area shape="rect" id="node2" href="$Esc_8c.html#ab22e08670025a52ba2a27b404f22b2a5" title="Gets the temperature of the ESC." alt="" coords="160,5,255,31"/>
-</map>
