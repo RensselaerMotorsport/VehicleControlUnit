@@ -1,4 +1,0 @@
-<map id="updateBrakePressure" name="updateBrakePressure">
-<area shape="rect" id="node1" title="Updates the brake pressure data." alt="" coords="179,5,325,31"/>
-<area shape="rect" id="node2" href="$BrakePressure_8c.html#a6cc0bf29d38b4637cb6a0a36f0196a81" title="Initializes the BrakePressure sensor with the given frequency and channel." alt="" coords="5,5,131,31"/>
-</map>

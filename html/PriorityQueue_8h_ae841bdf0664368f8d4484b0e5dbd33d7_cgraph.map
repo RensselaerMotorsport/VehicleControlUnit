@@ -1,5 +1,0 @@
-<map id="PQPush" name="PQPush">
-<area shape="rect" id="node1" title="Pushes a task with a given priority onto the priority queue." alt="" coords="5,31,76,56"/>
-<area shape="rect" id="node2" href="$PriorityQueue_8c.html#ab7631090c485201b8c6f7773b0575e3f" title="Restores the heap property by moving the node at the given index up." alt="" coords="124,5,204,31"/>
-<area shape="rect" id="node3" href="$PriorityQueue_8c.html#aca9cc7f25c9cc6fd37c05dbb5b81e727" title="Checks if the priority queue is full." alt="" coords="127,55,201,80"/>
-</map>

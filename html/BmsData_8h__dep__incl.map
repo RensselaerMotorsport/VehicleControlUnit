@@ -1,8 +1,0 @@
-<map id="Inc/Sensors/CANSensors/BmsData.h" name="Inc/Sensors/CANSensors/BmsData.h">
-<area shape="rect" id="node1" title=" " alt="" coords="204,5,376,45"/>
-<area shape="rect" id="node2" href="$Bms_8h.html" title=" " alt="" coords="105,93,277,133"/>
-<area shape="rect" id="node6" href="$BmsData_8c.html" title=" " alt="" coords="301,93,476,133"/>
-<area shape="rect" id="node3" href="$Accumulator_8h.html" title=" " alt="" coords="7,181,179,221"/>
-<area shape="rect" id="node5" href="$Bms_8c.html" title=" " alt="" coords="203,181,377,221"/>
-<area shape="rect" id="node4" href="$Accumulator_8c.html" title=" " alt="" coords="5,269,180,309"/>
-</map>

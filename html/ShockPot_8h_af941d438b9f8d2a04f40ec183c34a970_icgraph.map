@@ -1,4 +1,0 @@
-<map id="updateShockPot" name="updateShockPot">
-<area shape="rect" id="node1" title="Updates the ShockPot data." alt="" coords="149,5,268,31"/>
-<area shape="rect" id="node2" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="5,5,101,31"/>
-</map>

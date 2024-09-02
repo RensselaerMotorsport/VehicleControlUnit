@@ -1,4 +1,0 @@
-<map id="updateShockPot" name="updateShockPot">
-<area shape="rect" id="node1" title="Updates the ShockPot data." alt="" coords="5,5,124,31"/>
-<area shape="rect" id="node2" href="$ShockPot_8c.html#afb25ee0b1b77e61690f7ff0c700754ab" title="Converts raw ShockPot data to a meaningful distance value." alt="" coords="172,5,345,31"/>
-</map>

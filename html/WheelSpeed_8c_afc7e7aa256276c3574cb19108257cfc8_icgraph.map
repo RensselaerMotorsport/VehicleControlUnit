@@ -1,9 +1,0 @@
-<map id="convertMpsToMph" name="convertMpsToMph">
-<area shape="rect" id="Node000001" title=" " alt="" coords="504,5,634,31"/>
-<area shape="rect" id="Node000002" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title=" " alt="" coords="346,5,456,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="489,21,457,21,457,16,489,16"/>
-<area shape="rect" id="Node000003" href="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a" title=" " alt="" coords="165,5,298,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,21,298,21,298,16,330,16"/>
-<area shape="rect" id="Node000004" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title=" " alt="" coords="5,5,117,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="149,21,117,21,117,16,149,16"/>
-</map>

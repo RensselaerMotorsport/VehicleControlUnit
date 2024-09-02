@@ -1,6 +1,0 @@
-<map id="ControllerSystem" name="ControllerSystem">
-<area shape="rect" id="node1" title=" " alt="" coords="5,269,127,295"/>
-<area shape="rect" id="node2" href="$structSystem.html" title=" " alt="" coords="33,93,99,119"/>
-<area shape="rect" id="node4" href="$structMonitorSystem.html" title=" " alt="" coords="114,181,223,207"/>
-<area shape="rect" id="node3" href="$structUpdateable.html" title=" " alt="" coords="22,5,110,31"/>
-</map>
