@@ -9,9 +9,17 @@ typedef struct {
     Accelerometer z;
 } AccelerometerWrapper;
 
-void initAccelerometerWrapper(AccelerometerWrapper* wrapper, 
-                              Accelerometer* ax, 
-                              Accelerometer* ay, 
+/**
+ * @brief Initializes the AccelerometerWrapper with the given accelerometers.
+ *
+ * @param wrapper Pointer to the AccelerometerWrapper structure to initialize.
+ * @param ax      Pointer to the x-axis Accelerometer.
+ * @param ay      Pointer to the y-axis Accelerometer.
+ * @param az      Pointer to the z-axis Accelerometer.
+ */
+void initAccelerometerWrapper(AccelerometerWrapper* wrapper,
+                              Accelerometer* ax,
+                              Accelerometer* ay,
                               Accelerometer* az);
 
-#endif
+#endif // RENNSMOTORSPORT_ACCELEROMETERWRAPPER_H

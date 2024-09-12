@@ -1,4 +1,5 @@
 #include "../../../Inc/Sensors/AnalogSensors/ShockPot.h"
+
 #include <math.h>
 #include <stdio.h>
 
@@ -6,7 +7,7 @@ void initShockPot(ShockPot* shockPot, int hz, int channel, WHEEL_LOCATION locati
     initAnalogSensor(&shockPot->base, "ShockPot", hz, channel);
     shockPot->distance = -1;
     shockPot->wheel_location = location;
-    shockPot->base.base.update = updateShockPot;
+    shockPot->base.sensor.updateable.update = updateShockPot;
 }
 
 float getShockPotDistance(ShockPot* shockPot) {
@@ -24,7 +25,8 @@ float transferFunctionShockPot(float rawVal) {
     if (rawVal < 15) {
         printf("ShockPot::transfer_function rawValue is too low\n");
         return -1;
-    } else if (rawVal > 135) {
+    }
+    else if (rawVal > 135) {
         printf("ShockPot::transfer_function rawValue is too high\n");
         return -1;
     }

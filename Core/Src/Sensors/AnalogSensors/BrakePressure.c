@@ -1,4 +1,5 @@
 #include "../../../Inc/Sensors/AnalogSensors/BrakePressure.h"
+
 #include <stdio.h>
 
 // Constants for brake pressure calculations
@@ -10,7 +11,7 @@ static const float kHighOutputSaturation = 4.65; // Output saturation for oversu
 void initBrakePressure(BrakePressure* bp, int hz, int channel) {
     initAnalogSensor(&bp->base, "BrakePressure", hz, channel);
     bp->pressure = -1;
-    bp->base.base.update = updateBrakePressure;
+    bp->base.sensor.updateable.update = updateBrakePressure;
 }
 
 float getBrakePressure(BrakePressure* bp) {
@@ -28,10 +29,12 @@ float transferFunctionBrakePressure(float rawVal) {
     if (rawVal < kLowOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too low\n");
         return 0;
-    } else if (rawVal > kHighOutputSaturation) {
+    }
+    else if (rawVal > kHighOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too high\n");
         return 115;
-    } else {
+    }
+    else {
         return ((rawVal - kOffsetVoltage) / kVoltsPerPSIA);
     }
 }

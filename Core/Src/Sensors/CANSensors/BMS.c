@@ -1,13 +1,16 @@
-#include "../../../Inc/Sensors/CANSensors/BMS.h"
+#include "../../../Inc/Sensors/CANSensors/Bms.h"
+
 #include <stdio.h>  // For printf
 
 void initBms(Bms* bms, int hz) {
-    if (bms) {
-        initCANSensor(&bms->base, "Bms", hz);
-        // Assume initBmsData initializes with default or zero values
-        initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);
-        bms->base.base.update = updateBms;
+    if (!bms) {
+        return;
     }
+
+    initCANSensor(&bms->base, "Bms", hz);
+    // Assume initBmsData initializes with default or zero values
+    initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);
+    bms->base.sensor.updateable.update = updateBms;
 }
 
 void updateBms(void* bms) {

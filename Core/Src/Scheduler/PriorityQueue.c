@@ -4,6 +4,12 @@ void PQInit(PriorityQueue* pq) {
     pq->size = 0;
 }
 
+/**
+ * @brief Restores the heap property by moving the node at the given index up.
+ *
+ * @param pq    Pointer to the PriorityQueue structure.
+ * @param index The index of the node to move up.
+ */
 void heapifyUp(PriorityQueue* pq, int index) {
     while (index > 1 && pq->nodes[index / 2].priority > pq->nodes[index].priority) {
         PQNode temp = pq->nodes[index];
@@ -13,6 +19,13 @@ void heapifyUp(PriorityQueue* pq, int index) {
     }
 }
 
+
+/**
+ * @brief Restores the heap property by moving the node at the given index down.
+ *
+ * @param pq    Pointer to the PriorityQueue structure.
+ * @param index The index of the node to move down.
+ */
 void heapifyDown(PriorityQueue* pq, int index) {
     while (2 * index <= pq->size) {
         int j = 2 * index;

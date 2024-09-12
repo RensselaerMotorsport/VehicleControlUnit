@@ -4,12 +4,20 @@
 #include "Sensor.h"
 
 typedef struct {
-    Sensor base;
+    Sensor sensor;
     int channel;
 } AnalogSensor;
 
-void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel);
 
-int getAnalogSensorData(AnalogSensor* sensor);
+/**
+ * @brief Initializes an analog sensor.
+ *
+ * @param analogSensor Pointer to the analog sensor to initialize.
+ * @param name Name of the sensor.
+ * @param hz Sampling frequency in Hertz.
+ * @param channel Analog channel number.
+ */
+void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz,
+                      int channel);
 
-#endif
+#endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H
