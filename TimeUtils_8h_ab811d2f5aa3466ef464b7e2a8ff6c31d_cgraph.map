@@ -1,4 +1,0 @@
-<map id="measureInterval" name="measureInterval">
-<area shape="rect" id="node1" title="Measures the time interval since the last recorded time." alt="" coords="5,5,120,31"/>
-<area shape="rect" id="node2" href="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca" title="Retrieves the current time in seconds." alt="" coords="168,5,279,31"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="measureInterval" name="measureInterval">
-<area shape="rect" id="node1" title="Measures the time interval since the last recorded time." alt="" coords="507,5,621,31"/>
-<area shape="rect" id="node2" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title="Translates data to speed in mph." alt="" coords="348,5,459,31"/>
-<area shape="rect" id="node3" href="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a" title="Updated the speed var in this sensor." alt="" coords="165,5,300,31"/>
-<area shape="rect" id="node4" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="5,5,117,31"/>
-</map>

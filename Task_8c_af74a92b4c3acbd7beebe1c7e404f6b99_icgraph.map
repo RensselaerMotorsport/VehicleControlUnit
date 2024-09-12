@@ -1,4 +1,0 @@
-<map id="TaskExecute" name="TaskExecute">
-<area shape="rect" id="node1" title="Executes the task by calling the sensor&#39;s update function." alt="" coords="156,5,253,31"/>
-<area shape="rect" id="node2" href="$Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="5,5,108,31"/>
-</map>

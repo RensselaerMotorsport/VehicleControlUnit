@@ -1,4 +1,0 @@
-<map id="getAppPosition" name="getAppPosition">
-<area shape="rect" id="node1" title="Gets the current position of the APP." alt="" coords="173,5,284,31"/>
-<area shape="rect" id="node2" href="$MotorController_8c.html#a5e58b938d347017c6e51634f7faa08f9" title="Gets the pedal position from the MotorController." alt="" coords="5,5,125,31"/>
-</map>
