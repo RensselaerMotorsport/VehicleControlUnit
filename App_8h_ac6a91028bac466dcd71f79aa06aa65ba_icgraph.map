@@ -1,0 +1,6 @@
+<map id="transferFunctionApp" name="transferFunctionApp">
+<area shape="rect" id="node1" title="Converts raw APP data to a meaningful position value." alt="" coords="347,5,485,31"/>
+<area shape="rect" id="node2" href="$App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="215,5,299,31"/>
+<area shape="rect" id="node3" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="104,5,167,31"/>
+<area shape="rect" id="node4" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>

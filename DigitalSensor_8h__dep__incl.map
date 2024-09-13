@@ -1,0 +1,9 @@
+<map id="Core/Inc/Sensors/DigitalSensor.h" name="Core/Inc/Sensors/DigitalSensor.h">
+<area shape="rect" id="node1" title=" " alt="" coords="196,5,359,45"/>
+<area shape="rect" id="node2" href="$ESCIndicator_8h.html" title=" " alt="" coords="8,93,171,133"/>
+<area shape="rect" id="node4" href="$WheelSpeed_8h.html" title=" " alt="" coords="196,93,359,133"/>
+<area shape="rect" id="node7" href="$DigitalSensor_8c.html" title=" " alt="" coords="383,93,548,133"/>
+<area shape="rect" id="node3" href="$ESCIndicator_8c.html" title=" " alt="" coords="5,181,171,221"/>
+<area shape="rect" id="node5" href="$WheelSpeed_8c.html" title=" " alt="" coords="195,181,360,221"/>
+<area shape="rect" id="node6" href="$WheelSpeedTest_8c.html" title=" " alt="" coords="385,189,583,214"/>
+</map>

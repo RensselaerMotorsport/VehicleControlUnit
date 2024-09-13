@@ -1,0 +1,6 @@
+<map id="transferFunction" name="transferFunction">
+<area shape="rect" id="node1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="447,5,563,31"/>
+<area shape="rect" id="node2" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="264,5,399,31"/>
+<area shape="rect" id="node3" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="104,5,216,31"/>
+<area shape="rect" id="node4" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>

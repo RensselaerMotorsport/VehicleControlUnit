@@ -1,0 +1,11 @@
+<map id="Error_Handler" name="Error_Handler">
+<area shape="rect" id="node1" title="This function is executed in case of error occurrence." alt="" coords="347,153,448,179"/>
+<area shape="rect" id="node2" href="$stm32f7xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad" title="PCD MSP Initialization This function configures the hardware resources used in this example." alt="" coords="135,5,268,31"/>
+<area shape="rect" id="node3" href="$stm32f7xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="130,55,273,80"/>
+<area shape="rect" id="node4" href="$main_8c.html#a3a68950ead69b4a7fd8aca513666c7d4" title="ETH Initialization Function." alt="" coords="151,104,251,129"/>
+<area shape="rect" id="node6" href="$main_8c.html#a1d1beb7da60021ee1adbca294f28ba88" title="TIM1 Initialization Function." alt="" coords="149,153,253,179"/>
+<area shape="rect" id="node7" href="$main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8" title="USART3 Initialization Function." alt="" coords="117,203,286,228"/>
+<area shape="rect" id="node8" href="$main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f" title="USB_OTG_FS Initialization Function." alt="" coords="104,252,299,277"/>
+<area shape="rect" id="node9" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="130,301,273,327"/>
+<area shape="rect" id="node5" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,203,56,228"/>
+</map>

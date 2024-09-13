@@ -1,0 +1,18 @@
+<map id="testTransferFunction" name="testTransferFunction">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,148,107"/>
+<area shape="rect" id="node2" href="$WheelSpeed_8c.html#abfbed5b438cb45d5327460b0f4006fb6" title="Add pulses to sensor;." alt="" coords="214,5,290,31"/>
+<area shape="rect" id="node3" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title="Translates data to speed in mph." alt="" coords="539,156,649,181"/>
+<area shape="rect" id="node7" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="196,107,308,132"/>
+<area shape="rect" id="node16" href="$WheelSpeed_8c.html#a8a44c706d5c92c453cfbd4e7be159c36" title="Set time interval." alt="" coords="367,5,479,31"/>
+<area shape="rect" id="node4" href="$Conversions_8c.html#afc7e7aa256276c3574cb19108257cfc8" title=" " alt="" coords="697,107,828,132"/>
+<area shape="rect" id="node5" href="$TimeUtils_8c.html#aee85a3385434e4615f588684cb7c5aca" title="Retrieves the current time in seconds." alt="" coords="876,95,987,120"/>
+<area shape="rect" id="node6" href="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d" title="Measures the time interval since the last recorded time." alt="" coords="705,156,820,181"/>
+<area shape="rect" id="node8" href="$DigitalSensor_8c.html#a485376e49d8618b1709c567de17663e6" title="Initializes a digital sensor with the given parameters." alt="" coords="365,156,481,181"/>
+<area shape="rect" id="node15" href="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a" title="Updated the speed var in this sensor." alt="" coords="356,107,491,132"/>
+<area shape="rect" id="node9" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="554,231,634,256"/>
+<area shape="rect" id="node10" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="710,257,815,283"/>
+<area shape="rect" id="node11" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="879,280,983,305"/>
+<area shape="rect" id="node12" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="881,329,981,355"/>
+<area shape="rect" id="node13" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="882,181,981,207"/>
+<area shape="rect" id="node14" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="880,231,983,256"/>
+</map>

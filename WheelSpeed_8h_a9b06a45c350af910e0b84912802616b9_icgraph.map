@@ -1,0 +1,7 @@
+<map id="calculateSpeed" name="calculateSpeed">
+<area shape="rect" id="node1" title="Translates data to speed in mph." alt="" coords="637,5,748,31"/>
+<area shape="rect" id="node2" href="$WheelSpeedTest_8c.html#a5a508e6c237eeb9cad95e7b1eac65956" title=" " alt="" coords="104,5,247,31"/>
+<area shape="rect" id="node4" href="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a" title="Updated the speed var in this sensor." alt="" coords="455,31,589,56"/>
+<area shape="rect" id="node3" href="$WheelSpeedTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" id="node5" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="295,31,407,56"/>
+</map>

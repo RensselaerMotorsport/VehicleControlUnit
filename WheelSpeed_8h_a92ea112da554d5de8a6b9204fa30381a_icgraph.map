@@ -1,0 +1,6 @@
+<map id="updateWheelSpeed" name="updateWheelSpeed">
+<area shape="rect" id="node1" title="Updated the speed var in this sensor." alt="" coords="455,5,589,31"/>
+<area shape="rect" id="node2" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="295,5,407,31"/>
+<area shape="rect" id="node3" href="$WheelSpeedTest_8c.html#a5a508e6c237eeb9cad95e7b1eac65956" title=" " alt="" coords="104,5,247,31"/>
+<area shape="rect" id="node4" href="$WheelSpeedTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+</map>

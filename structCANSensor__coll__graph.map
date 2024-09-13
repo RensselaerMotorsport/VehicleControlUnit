@@ -1,0 +1,5 @@
+<map id="CANSensor" name="CANSensor">
+<area shape="rect" id="node1" title=" " alt="" coords="5,181,96,207"/>
+<area shape="rect" id="node2" href="$structSensor.html" title=" " alt="" coords="19,93,82,119"/>
+<area shape="rect" id="node3" href="$structUpdateable.html" title=" " alt="" coords="7,5,95,31"/>
+</map>

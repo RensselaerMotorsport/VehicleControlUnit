@@ -1,0 +1,10 @@
+<map id="getCurrentTime" name="getCurrentTime">
+<area shape="rect" id="node1" title="Retrieves the current time in seconds." alt="" coords="960,56,1071,81"/>
+<area shape="rect" id="node2" href="$WheelSpeed_8c.html#a9b06a45c350af910e0b84912802616b9" title="Translates data to speed in mph." alt="" coords="638,5,749,31"/>
+<area shape="rect" id="node6" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="295,56,407,81"/>
+<area shape="rect" id="node7" href="$TimeUtils_8c.html#ab811d2f5aa3466ef464b7e2a8ff6c31d" title="Measures the time interval since the last recorded time." alt="" coords="797,31,912,56"/>
+<area shape="rect" id="node8" href="$WheelSpeed_8c.html#a8a44c706d5c92c453cfbd4e7be159c36" title="Set time interval." alt="" coords="637,132,749,157"/>
+<area shape="rect" id="node3" href="$WheelSpeedTest_8c.html#a5a508e6c237eeb9cad95e7b1eac65956" title=" " alt="" coords="104,56,247,81"/>
+<area shape="rect" id="node5" href="$WheelSpeed_8c.html#a92ea112da554d5de8a6b9204fa30381a" title="Updated the speed var in this sensor." alt="" coords="455,31,589,56"/>
+<area shape="rect" id="node4" href="$WheelSpeedTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,81"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="PQIsEmpty" name="PQIsEmpty">
+<area shape="rect" id="node1" title="Checks if the priority queue is empty." alt="" coords="373,56,461,81"/>
+<area shape="rect" id="node2" href="$PriorityQueue_8c.html#a176542d630434d645be4ce5c3e7d5189" title="Peeks at the highest priority task in the priority queue without removing it." alt="" coords="255,5,325,31"/>
+<area shape="rect" id="node3" href="$Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="104,56,207,81"/>
+<area shape="rect" id="node5" href="$PriorityQueue_8c.html#accf2d5c29ecdd09ea36ac2d7dbb7556f" title="Pops the highest priority task from the priority queue." alt="" coords="258,107,322,132"/>
+<area shape="rect" id="node4" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,81"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="toStringBmsData" name="toStringBmsData">
+<area shape="rect" id="node1" title="Converts the BmsData structure to a string." alt="" coords="256,5,377,31"/>
+<area shape="rect" id="node2" href="$BMS_8c.html#a7cf1064f4bd9766093c805955762221a" title="Updates the BMS data." alt="" coords="120,5,208,31"/>
+<area shape="rect" id="node3" href="$BMS_8c.html#afeeadcad4acba40f2d7197368054b051" title="Initializes the BMS with the given frequency." alt="" coords="5,5,72,31"/>
+</map>

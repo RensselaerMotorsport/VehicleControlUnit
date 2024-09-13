@@ -1,0 +1,10 @@
+<map id="Core/Inc/Systems/Controller/TorqueControl.h" name="Core/Inc/Systems/Controller/TorqueControl.h">
+<area shape="rect" id="node1" title=" " alt="" coords="281,5,467,45"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="303,93,445,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,387,65,412"/>
+<area shape="rect" id="node4" title=" " alt="" coords="416,387,479,412"/>
+<area shape="rect" id="node5" title=" " alt="" coords="270,387,334,412"/>
+<area shape="rect" id="node6" href="$System_8h.html" title=" " alt="" coords="236,240,312,265"/>
+<area shape="rect" id="node8" href="$MonitorSystem_8h.html" title=" " alt="" coords="315,167,433,192"/>
+<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="98,313,237,339"/>
+</map>
