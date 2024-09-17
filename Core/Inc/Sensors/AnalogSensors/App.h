@@ -40,4 +40,13 @@ void updateApp(void* app);
  */
 float transferFunctionApp(float rawVal);
 
+/**
+ * @brief Sets pedal position in app sensor.
+ * @note For testing only
+ *
+ * @param app Pointer to app sensor.
+ * @param pos Position to set on sensor.
+ */
+void setAppPos(App* app, float pos);
+
 #endif // RENSSELAERMOTORSPORT_APP_H

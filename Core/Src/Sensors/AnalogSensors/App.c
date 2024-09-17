@@ -31,3 +31,7 @@ float transferFunctionApp(float rawVal) {
     }
     return (22.5 * rawVal) - 56.25;
 }
+
+void setAppPos(App* app, float pos) {
+    app.position = pos;
+}
