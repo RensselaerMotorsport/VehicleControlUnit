@@ -14,8 +14,8 @@ float getAppPosition(App* app) {
 
 void updateApp(void* app) {
     App *myApp = (App *)app;
-    printf("Implement App::update\n");
-    float rawData = 0.0f;
+    // FIXME: Implement APP connection with stm
+    float rawData = 1.0f;
     myApp->position = transferFunctionApp(rawData);
 }
 
@@ -33,5 +33,5 @@ float transferFunctionApp(float rawVal) {
 }
 
 void setAppPos(App* app, float pos) {
-    app.position = pos;
+    app->position = pos;
 }
