@@ -1,0 +1,4 @@
+../Core/Src/Sensors/AnalogSensors/Accelerometer.c:7:6:initAccelerometer	24	static
+../Core/Src/Sensors/AnalogSensors/Accelerometer.c:13:7:getAccelerometerValue	16	static
+../Core/Src/Sensors/AnalogSensors/Accelerometer.c:17:6:updateAccelerometer	24	static
+../Core/Src/Sensors/AnalogSensors/Accelerometer.c:24:7:transferFunctionAccelerometer	16	static

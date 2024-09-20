@@ -1,0 +1,9 @@
+../Core/Src/stm32f7xx_hal_msp.c:63:6:HAL_MspInit	1
+../Core/Src/stm32f7xx_hal_msp.c:86:6:HAL_ETH_MspInit	2
+../Core/Src/stm32f7xx_hal_msp.c:153:6:HAL_ETH_MspDeInit	2
+../Core/Src/stm32f7xx_hal_msp.c:195:6:HAL_TIM_Base_MspInit	2
+../Core/Src/stm32f7xx_hal_msp.c:217:6:HAL_TIM_Base_MspDeInit	2
+../Core/Src/stm32f7xx_hal_msp.c:239:6:HAL_UART_MspInit	3
+../Core/Src/stm32f7xx_hal_msp.c:286:6:HAL_UART_MspDeInit	2
+../Core/Src/stm32f7xx_hal_msp.c:315:6:HAL_PCD_MspInit	3
+../Core/Src/stm32f7xx_hal_msp.c:369:6:HAL_PCD_MspDeInit	2

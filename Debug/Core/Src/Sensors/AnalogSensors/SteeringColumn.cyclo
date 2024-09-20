@@ -1,0 +1,4 @@
+../Core/Src/Sensors/AnalogSensors/SteeringColumn.c:4:6:initSteeringColumn	1
+../Core/Src/Sensors/AnalogSensors/SteeringColumn.c:11:7:getSteeringColumnRotationAngle	1
+../Core/Src/Sensors/AnalogSensors/SteeringColumn.c:15:6:updateSteeringColumn	1
+../Core/Src/Sensors/AnalogSensors/SteeringColumn.c:22:7:transferFunctionSteeringColumn	1

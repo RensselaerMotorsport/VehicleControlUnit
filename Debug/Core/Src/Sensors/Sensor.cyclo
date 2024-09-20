@@ -1,0 +1,3 @@
+../Core/Src/Sensors/Sensor.c:4:6:initSensor	1
+../Core/Src/Sensors/Sensor.c:10:6:defaultUpdate	1
+../Core/Src/Sensors/Sensor.c:14:6:writeDataToFileImplementation	2

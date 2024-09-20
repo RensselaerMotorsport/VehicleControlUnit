@@ -1,0 +1,2 @@
+../Core/Src/Sensors/AnalogSensors/WheelSpeed.c:4:6:initWheelSpeed	1
+../Core/Src/Sensors/AnalogSensors/WheelSpeed.c:9:7:translateFluxToSpeed	1

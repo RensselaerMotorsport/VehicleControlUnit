@@ -1,0 +1,4 @@
+../Core/Src/Sensors/AnalogSensors/ShockPot.c:5:6:initShockPot	1
+../Core/Src/Sensors/AnalogSensors/ShockPot.c:12:7:getShockPotDistance	1
+../Core/Src/Sensors/AnalogSensors/ShockPot.c:16:6:updateShockPot	1
+../Core/Src/Sensors/AnalogSensors/ShockPot.c:23:7:transferFunctionShockPot	3

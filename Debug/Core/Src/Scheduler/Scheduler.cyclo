@@ -1,0 +1,3 @@
+../Core/Src/Scheduler/Scheduler.c:8:6:SchedulerInit	4
+../Core/Src/Scheduler/Scheduler.c:29:6:SchedulerRun	6
+../Core/Src/Scheduler/Scheduler.c:50:6:SchedulerStop	1

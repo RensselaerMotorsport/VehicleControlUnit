@@ -1,0 +1,2 @@
+../Core/Src/Scheduler/Task.c:3:6:TaskInit	24	static
+../Core/Src/Scheduler/Task.c:9:6:TaskExecute	16	static

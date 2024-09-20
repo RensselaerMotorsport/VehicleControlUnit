@@ -1,0 +1,4 @@
+../Core/Src/Sensors/AnalogSensors/App.c:4:6:initApp	24	static
+../Core/Src/Sensors/AnalogSensors/App.c:10:7:getAppPosition	16	static
+../Core/Src/Sensors/AnalogSensors/App.c:14:6:updateApp	24	static
+../Core/Src/Sensors/AnalogSensors/App.c:21:7:transferFunctionApp	16	static

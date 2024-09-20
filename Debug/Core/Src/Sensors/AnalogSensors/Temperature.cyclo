@@ -1,0 +1,5 @@
+../Core/Src/Sensors/AnalogSensors/Temperature.c:3:6:initTemperature	1
+../Core/Src/Sensors/AnalogSensors/Temperature.c:9:6:updateTemperature	1
+../Core/Src/Sensors/AnalogSensors/Temperature.c:14:8:getTemperatureCelsius	1
+../Core/Src/Sensors/AnalogSensors/Temperature.c:18:8:getTemperatureFahrenheit	1
+../Core/Src/Sensors/AnalogSensors/Temperature.c:22:8:transferFunction	1

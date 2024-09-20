@@ -1,0 +1,4 @@
+../Core/Src/Sensors/AnalogSensors/BrakePressure.c:10:6:initBrakePressure	24	static
+../Core/Src/Sensors/AnalogSensors/BrakePressure.c:16:7:getBrakePressure	16	static
+../Core/Src/Sensors/AnalogSensors/BrakePressure.c:20:6:updateBrakePressure	24	static
+../Core/Src/Sensors/AnalogSensors/BrakePressure.c:27:7:transferFunctionBrakePressure	16	static

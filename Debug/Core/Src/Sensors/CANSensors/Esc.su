@@ -1,0 +1,7 @@
+../Core/Src/Sensors/CANSensors/Esc.c:4:6:initEsc	16	static
+../Core/Src/Sensors/CANSensors/Esc.c:13:7:getEscTemp	16	static
+../Core/Src/Sensors/CANSensors/Esc.c:17:7:getEscMotorRevolutions	16	static
+../Core/Src/Sensors/CANSensors/Esc.c:21:6:updateEsc	24	static
+../Core/Src/Sensors/CANSensors/Esc.c:30:7:tempTransferFunctionEsc	16	static
+../Core/Src/Sensors/CANSensors/Esc.c:34:7:motorRevolutionsTransferFunctionEsc	16	static
+../Core/Src/Sensors/CANSensors/Esc.c:38:7:toStringEsc	16	static

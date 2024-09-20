@@ -1,0 +1,2 @@
+../Core/Src/Sensors/CANSensors/BmsData.c:4:6:initBmsData	48	static
+../Core/Src/Sensors/CANSensors/BmsData.c:19:7:toStringBmsData	16	static

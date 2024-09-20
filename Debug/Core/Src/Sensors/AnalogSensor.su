@@ -1,0 +1,2 @@
+../Core/Src/Sensors/AnalogSensor.c:4:6:initAnalogSensor	24	static
+../Core/Src/Sensors/AnalogSensor.c:10:5:getAnalogSensorData	16	static

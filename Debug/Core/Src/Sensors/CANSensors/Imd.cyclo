@@ -1,0 +1,8 @@
+../Core/Src/Sensors/CANSensors/Imd.c:4:6:initImd	1
+../Core/Src/Sensors/CANSensors/Imd.c:11:6:getImdStatus	1
+../Core/Src/Sensors/CANSensors/Imd.c:15:6:getRunningFlag	1
+../Core/Src/Sensors/CANSensors/Imd.c:19:6:resetRunningFlag	1
+../Core/Src/Sensors/CANSensors/Imd.c:23:6:updateImd	1
+../Core/Src/Sensors/CANSensors/Imd.c:32:6:imdStatusTransferFunction	1
+../Core/Src/Sensors/CANSensors/Imd.c:36:6:runningFlagTransferFunction	1
+../Core/Src/Sensors/CANSensors/Imd.c:40:7:toStringImd	1

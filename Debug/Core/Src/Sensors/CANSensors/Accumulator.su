@@ -1,0 +1,3 @@
+../Core/Src/Sensors/CANSensors/Accumulator.c:3:6:initAccumulator	24	static
+../Core/Src/Sensors/CANSensors/Accumulator.c:11:6:setAccumulatorState	16	static
+../Core/Src/Sensors/CANSensors/Accumulator.c:17:14:getAccumulatorState	16	static

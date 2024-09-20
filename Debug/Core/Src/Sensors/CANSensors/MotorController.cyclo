@@ -1,0 +1,3 @@
+../Core/Src/Sensors/CANSensors/MotorController.c:3:6:initMotorController	2
+../Core/Src/Sensors/CANSensors/MotorController.c:10:7:getPedalPosition	3
+../Core/Src/Sensors/CANSensors/MotorController.c:17:7:getMotorTemp	3

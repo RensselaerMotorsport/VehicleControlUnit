@@ -1,0 +1,5 @@
+../Core/Src/Sensors/AnalogSensors/Temperature.c:3:6:initTemperature	24	static
+../Core/Src/Sensors/AnalogSensors/Temperature.c:9:6:updateTemperature	24	static
+../Core/Src/Sensors/AnalogSensors/Temperature.c:14:8:getTemperatureCelsius	16	static
+../Core/Src/Sensors/AnalogSensors/Temperature.c:18:8:getTemperatureFahrenheit	16	static
+../Core/Src/Sensors/AnalogSensors/Temperature.c:22:8:transferFunction	16	static

@@ -1,0 +1,3 @@
+../Core/Src/Scheduler/Scheduler.c:8:6:SchedulerInit	56	static
+../Core/Src/Scheduler/Scheduler.c:29:6:SchedulerRun	40	static
+../Core/Src/Scheduler/Scheduler.c:50:6:SchedulerStop	16	static

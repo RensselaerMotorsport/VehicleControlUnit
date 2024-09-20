@@ -1,0 +1,6 @@
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:4:6:initWheelFlux	1
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:12:7:getWheelFlux	1
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:16:7:getWheelRadius	1
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:20:16:getWheelLocation	1
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:24:6:updateWheelFlux	1
+../Core/Src/Sensors/AnalogSensors/WheelFlux.c:31:7:transferFunctionWheelFlux	1
