@@ -5,178 +5,115 @@ void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channe
     initSensor(&sensor->base, name, hz);
     sensor->channel = channel;
 
-    if(sensor->channel == 0) {
-    	// HAL code to bind to PA0
-    	__HAL_RCC_GPIOA_CLK_ENABLE();
-    	GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_0;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+	// Struct for intializing the common settings for all GPIO channels
+    GPIO_InitTypeDef GPIOXout_Struct;
+    GPIOXout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIOXout_Struct.Pull = GPIO_PULLUP;
+    GPIOXout_Struct.Speed = GPIO_SPEED_MEDIUM;
 
-    } else if (sensor->channel == 1) {
-		//HAL code to bind to PA1
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_1;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+	// Condition checks the value of sensor->channel
+	// Channels 0-7 -> GPIOA, 8-9 -> GPIOB, 10-16 -> GPIOC
+    if (sensor->channel >= 0 && sensor->channel <= 7) {
+        __HAL_RCC_GPIOA_CLK_ENABLE();
 
-    } else if (sensor->channel == 2) {
-		//HAL code to bind to PA2
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_2;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+        switch (sensor->channel) {
+            case 0:
+                // HAL code to bind to PA0
+                GPIOXout_Struct.Pin = GPIO_PIN_0;
+                break;
+            case 1:
+                // HAL code to bind to PA1
+                GPIOXout_Struct.Pin = GPIO_PIN_1;
+                break;
+            case 2:
+                // HAL code to bind to PA2
+                GPIOXout_Struct.Pin = GPIO_PIN_2;
+                break;
+            case 3:
+                // HAL code to bind to PA3
+                GPIOXout_Struct.Pin = GPIO_PIN_3;
+                break;
+            case 4:
+                // HAL code to bind to PA4
+                GPIOXout_Struct.Pin = GPIO_PIN_4;
+                break;
+            case 5:
+                // HAL code to bind to PA5
+                GPIOXout_Struct.Pin = GPIO_PIN_5;
+                break;
+            case 6:
+                // HAL code to bind to PA6
+                GPIOXout_Struct.Pin = GPIO_PIN_6;
+                break;
+            case 7:
+                // HAL code to bind to PA7
+                GPIOXout_Struct.Pin = GPIO_PIN_7;
+                break;
+            default:
+                // Handle invalid channel numbers
+                break;
+        }
 
-    } else if (sensor->channel == 3) {
-		//HAL code to bind to PA3
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_3;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+        HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);
 
-    } else if (sensor->channel == 4) {
-    	//HAL code to bind to PA4
-    	__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_4;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+    } else if (sensor->channel >= 8 && sensor->channel <= 9) {
+        __HAL_RCC_GPIOB_CLK_ENABLE();
 
-	} else if (sensor->channel == 5) {
-		//HAL code to bind to PA5
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_5;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+        switch (sensor->channel) {
+            case 8:
+                // HAL code to bind to PB0
+                GPIOXout_Struct.Pin = GPIO_PIN_0;
+                break;
+            case 9:
+                // HAL code to bind to PB1
+                GPIOXout_Struct.Pin = GPIO_PIN_1;
+                break;
+            default:
+                // Handle invalid channel numbers
+                break;
+        }
 
-	} else if (sensor->channel == 6) {
-		//HAL code to bind to PA6
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_6;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+		HAL_GPIO_Init(GPIOB, &GPIOXout_Struct);
 
-	} else if (sensor->channel == 7) {
-		//HAL code to bind to PA7
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOAout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_7;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOA, &GPIOAout_Struct);
+    } else if (sensor->channel >= 10 && sensor->channel <= 16) {
+        __HAL_RCC_GPIOC_CLK_ENABLE();
 
-	} else if (sensor->channel == 8) {
-		//HAL code to bind to PBO
-		__HAL_RCC_GPIOB_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOBout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_0;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOB, &GPIOBout_Struct);
+        switch (sensor->channel) {
+            case 10:
+                // HAL code to bind to PC0
+                GPIOXout_Struct.Pin = GPIO_PIN_0;
+                break;
+            case 11:
+                // HAL code to bind to PC1
+                GPIOXout_Struct.Pin = GPIO_PIN_1;
+                break;
+            case 12:
+                // HAL code to bind to PC2
+                GPIOXout_Struct.Pin = GPIO_PIN_2;
+                break;
+			case 13:
+                // HAL code to bind to PC3
+                GPIOXout_Struct.Pin = GPIO_PIN_3;
+                break;
+			case 14:
+                // HAL code to bind to PC4
+                GPIOXout_Struct.Pin = GPIO_PIN_4;
+                break;
+			case 15:
+                // HAL code to bind to PC5
+                GPIOXout_Struct.Pin = GPIO_PIN_5;
+                break;
+			case 16:
+                // HAL code to bind to PC6
+                GPIOXout_Struct.Pin = GPIO_PIN_6;
+                break;
+            default:
+                // Handle invalid channel numbers
+                break;
+        }
 
-	} else if (sensor->channel == 9) {
-		//HAL code to bind to PB1
-		__HAL_RCC_GPIOB_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOBout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_1;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOB, &GPIOBout_Struct);
-
-	} else if (sensor->channel == 10) {
-		//HAL code to bind to PC0
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_0;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 11) {
-		//HAL code to bind to PC1
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_1;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 12) {
-		//HAL code to bind to PC2
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_2;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 13) {
-		//HAL code to bind to PC3
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_3;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 14) {
-		//HAL code to bind to PC4
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_4;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 15) {
-		//HAL code to bind to PC5
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_5;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-
-	} else if (sensor->channel == 16) {
-		//HAL code to bind to PC6
-		__HAL_RCC_GPIOC_CLK_ENABLE();
-		GPIO_InitTypeDef GPIOCout_Struct;
-		GPIOJout_Struct.Pin = GPIO_PIN_6;
-		GPIOJout_Struct.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIOJout_Struct.Pull = GPIO_PULLUP;
-		GPIOJout_Struct.Speed = GPIO_SPEED_MEDIUM;
-		HAL_GPIO_Init(GPIOC, &GPIOCout_Struct);
-	}
-
-
+        HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);
+    }
 }
 
 // TODO: Make a function to retrieve data
