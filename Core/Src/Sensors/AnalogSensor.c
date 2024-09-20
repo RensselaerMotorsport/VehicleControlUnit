@@ -14,8 +14,6 @@
  * - Channels 0-7: GPIOA
  * - Channels 8-9: GPIOB
  * - Channels 10-16: GPIOC
- *
- * @note Ensure that the RCC (Reset and Clock Control) for the respective GPIO port is enabled before calling this function
  */
 
 void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel) {
