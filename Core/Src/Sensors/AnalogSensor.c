@@ -1,6 +1,23 @@
 #include "../../Inc/Sensors/AnalogSensor.h"
 #include <stdio.h>
 
+/**
+ * @brief Initializes an analog sensor and configures the corresponding GPIO pin
+ *
+ * @param sensor Pointer to the AnalogSensor structure to initialize
+ * @param name Name of the sensor (string)
+ * @param hz Sampling frequency in Hertz
+ * @param channel ADC channel number for the sensor (0-16)
+ *
+ * This function initializes the base sensor properties, sets the ADC channel,
+ * and configures the corresponding GPIO pin based on the channel number:
+ * - Channels 0-7: GPIOA
+ * - Channels 8-9: GPIOB
+ * - Channels 10-16: GPIOC
+ *
+ * @note Ensure that the RCC (Reset and Clock Control) for the respective GPIO port is enabled before calling this function
+ */
+
 void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel) {
     initSensor(&sensor->base, name, hz);
     sensor->channel = channel;
