@@ -80,18 +80,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="AnalogSensor_8h_source.html">../../Inc/Sensors/AnalogSensor.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for AnalogSensor.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="AnalogSensor_8c__incl.png" border="0" usemap="#aCore_2Src_2Sensors_2AnalogSensor_8c" alt=""/></div>
 <map name="aCore_2Src_2Sensors_2AnalogSensor_8c" id="aCore_2Src_2Sensors_2AnalogSensor_8c">
-<area shape="rect" title=" " alt="" coords="21,5,241,31"/>
-<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="53,79,209,119"/>
-<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="95,167,168,192"/>
-<area shape="rect" title=" " alt="" coords="5,313,65,339"/>
-<area shape="rect" title=" " alt="" coords="197,313,260,339"/>
-<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="62,240,201,265"/>
-<area shape="rect" title=" " alt="" coords="99,313,163,339"/>
+<area shape="rect" title=" " alt="" coords="103,5,323,31"/>
+<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="77,79,233,119"/>
+<area shape="rect" title=" " alt="" coords="211,313,271,339"/>
+<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="108,167,181,192"/>
+<area shape="rect" title=" " alt="" coords="5,313,68,339"/>
+<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="65,240,203,265"/>
+<area shape="rect" title=" " alt="" coords="102,313,166,339"/>
 </map>
 </div>
 </div>
@@ -99,13 +100,40 @@ Include dependency graph for AnalogSensor.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1f4d14f551bd2aeab536372c13bb3180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180">initAnalogSensor</a> (<a class="el" href="structAnalogSensor.html">AnalogSensor</a> *analogsensor, const char *name, int hz, int channel)</td></tr>
-<tr class="memdesc:a1f4d14f551bd2aeab536372c13bb3180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an analog sensor.  <a href="AnalogSensor_8c.html#a1f4d14f551bd2aeab536372c13bb3180">More...</a><br /></td></tr>
-<tr class="separator:a1f4d14f551bd2aeab536372c13bb3180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7423527b0a148c48a087c030171a20c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalogSensor_8c.html#a7423527b0a148c48a087c030171a20c5">initAnalogSensor</a> (<a class="el" href="structAnalogSensor.html">AnalogSensor</a> *sensor, const char *name, int hz, int channel)</td></tr>
+<tr class="memdesc:a7423527b0a148c48a087c030171a20c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes an analog sensor and configures the corresponding GPIO pin.  <a href="AnalogSensor_8c.html#a7423527b0a148c48a087c030171a20c5">More...</a><br /></td></tr>
+<tr class="separator:a7423527b0a148c48a087c030171a20c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0582917ac27a10396b74a185c5b23f33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AnalogSensor_8c.html#a0582917ac27a10396b74a185c5b23f33">getAnalogSensorData</a> (<a class="el" href="structAnalogSensor.html">AnalogSensor</a> *sensor)</td></tr>
+<tr class="separator:a0582917ac27a10396b74a185c5b23f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1f4d14f551bd2aeab536372c13bb3180" name="a1f4d14f551bd2aeab536372c13bb3180"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f4d14f551bd2aeab536372c13bb3180">&#9670;&#160;</a></span>initAnalogSensor()</h2>
+<a id="a0582917ac27a10396b74a185c5b23f33" name="a0582917ac27a10396b74a185c5b23f33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0582917ac27a10396b74a185c5b23f33">&#9670;&#160;</a></span>getAnalogSensorData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getAnalogSensorData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAnalogSensor.html">AnalogSensor</a> *&#160;</td>
+          <td class="paramname"><em>sensor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AnalogSensor_8c_source.html#l00135">135</a> of file <a class="el" href="AnalogSensor_8c_source.html">AnalogSensor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                              {</div>
+<div class="line"><span class="lineno">  136</span>    <span class="comment">// Placeholder for sensor data retrieval logic</span></div>
+<div class="line"><span class="lineno">  137</span>    <span class="comment">// Would normally interface with hardware here</span></div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> 0; <span class="comment">// Default return</span></div>
+<div class="line"><span class="lineno">  139</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7423527b0a148c48a087c030171a20c5" name="a7423527b0a148c48a087c030171a20c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7423527b0a148c48a087c030171a20c5">&#9670;&#160;</a></span>initAnalogSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -114,7 +142,7 @@ Functions</h2></td></tr>
           <td class="memname">void initAnalogSensor </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structAnalogSensor.html">AnalogSensor</a> *&#160;</td>
-          <td class="paramname"><em>analogsensor</em>, </td>
+          <td class="paramname"><em>sensor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -142,32 +170,146 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes an analog sensor. </p>
+<p>Initializes an analog sensor and configures the corresponding GPIO pin. </p>
+<p >Initializes an analog sensor.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">analogSensor</td><td>Pointer to the analog sensor to initialize. </td></tr>
-    <tr><td class="paramname">name</td><td>Name of the sensor. </td></tr>
-    <tr><td class="paramname">hz</td><td>Sampling frequency in Hertz. </td></tr>
-    <tr><td class="paramname">channel</td><td>Analog channel number. </td></tr>
+    <tr><td class="paramname">sensor</td><td>Pointer to the <a class="el" href="structAnalogSensor.html">AnalogSensor</a> structure to initialize </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the sensor (string) </td></tr>
+    <tr><td class="paramname">hz</td><td>Sampling frequency in Hertz </td></tr>
+    <tr><td class="paramname">channel</td><td>ADC channel number for the sensor (0-16)</td></tr>
   </table>
   </dd>
 </dl>
+<p>This function initializes the base sensor properties, sets the ADC channel, and configures the corresponding GPIO pin based on the channel number:</p><ul>
+<li>Channels 0-7: GPIOA</li>
+<li>Channels 8-9: GPIOB</li>
+<li>Channels 10-16: GPIOC </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="AnalogSensor_8c_source.html#l00003">3</a> of file <a class="el" href="AnalogSensor_8c_source.html">AnalogSensor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                                         {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_function" href="Sensor_8h.html#afa23c62d6ac2176a3ab170f42bce0663">initSensor</a>(&amp;analogsensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">sensor</a>, name, hz, <a class="code hl_enumvalue" href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6">ANALOG</a>);</div>
-<div class="line"><span class="lineno">    5</span>    analogsensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> = channel;</div>
-<div class="line"><span class="lineno">    6</span>}</div>
-<div class="ttc" id="aSensor_8h_html_a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6"><div class="ttname"><a href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a49060614b990fe7d76fef9cd92990ce6">ANALOG</a></div><div class="ttdeci">@ ANALOG</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00010">Sensor.h:10</a></div></div>
+<p class="definition">Definition at line <a class="el" href="AnalogSensor_8c_source.html#l00019">19</a> of file <a class="el" href="AnalogSensor_8c_source.html">AnalogSensor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                                   {</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_function" href="Sensor_8h.html#afa23c62d6ac2176a3ab170f42bce0663">initSensor</a>(&amp;sensor-&gt;base, name, hz);</div>
+<div class="line"><span class="lineno">   21</span>    sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> = channel;</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="comment">// Struct for intializing the common settings for all GPIO channels</span></div>
+<div class="line"><span class="lineno">   24</span>    GPIO_InitTypeDef GPIOXout_Struct;</div>
+<div class="line"><span class="lineno">   25</span>    GPIOXout_Struct.Mode = GPIO_MODE_OUTPUT_PP;</div>
+<div class="line"><span class="lineno">   26</span>    GPIOXout_Struct.Pull = GPIO_PULLUP;</div>
+<div class="line"><span class="lineno">   27</span>    GPIOXout_Struct.Speed = GPIO_SPEED_MEDIUM;</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// Condition checks the value of sensor-&gt;channel</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">// Channels 0-7 -&gt; GPIOA, 8-9 -&gt; GPIOB, 10-16 -&gt; GPIOC</span></div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &gt;= 0 &amp;&amp; sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &lt;= 7) {</div>
+<div class="line"><span class="lineno">   32</span>        __HAL_RCC_GPIOA_CLK_ENABLE();</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">switch</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a>) {</div>
+<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">   36</span>                <span class="comment">// HAL code to bind to PA0</span></div>
+<div class="line"><span class="lineno">   37</span>                GPIOXout_Struct.Pin = GPIO_PIN_0;</div>
+<div class="line"><span class="lineno">   38</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">   40</span>                <span class="comment">// HAL code to bind to PA1</span></div>
+<div class="line"><span class="lineno">   41</span>                GPIOXout_Struct.Pin = GPIO_PIN_1;</div>
+<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">   44</span>                <span class="comment">// HAL code to bind to PA2</span></div>
+<div class="line"><span class="lineno">   45</span>                GPIOXout_Struct.Pin = GPIO_PIN_2;</div>
+<div class="line"><span class="lineno">   46</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">   48</span>                <span class="comment">// HAL code to bind to PA3</span></div>
+<div class="line"><span class="lineno">   49</span>                GPIOXout_Struct.Pin = GPIO_PIN_3;</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">case</span> 4:</div>
+<div class="line"><span class="lineno">   52</span>                <span class="comment">// HAL code to bind to PA4</span></div>
+<div class="line"><span class="lineno">   53</span>                GPIOXout_Struct.Pin = GPIO_PIN_4;</div>
+<div class="line"><span class="lineno">   54</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">case</span> 5:</div>
+<div class="line"><span class="lineno">   56</span>                <span class="comment">// HAL code to bind to PA5</span></div>
+<div class="line"><span class="lineno">   57</span>                GPIOXout_Struct.Pin = GPIO_PIN_5;</div>
+<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">case</span> 6:</div>
+<div class="line"><span class="lineno">   60</span>                <span class="comment">// HAL code to bind to PA6</span></div>
+<div class="line"><span class="lineno">   61</span>                GPIOXout_Struct.Pin = GPIO_PIN_6;</div>
+<div class="line"><span class="lineno">   62</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">case</span> 7:</div>
+<div class="line"><span class="lineno">   64</span>                <span class="comment">// HAL code to bind to PA7</span></div>
+<div class="line"><span class="lineno">   65</span>                GPIOXout_Struct.Pin = GPIO_PIN_7;</div>
+<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   67</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   68</span>                <span class="comment">// Handle invalid channel numbers</span></div>
+<div class="line"><span class="lineno">   69</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>        HAL_GPIO_Init(GPIOA, &amp;GPIOXout_Struct);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &gt;= 8 &amp;&amp; sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &lt;= 9) {</div>
+<div class="line"><span class="lineno">   75</span>        __HAL_RCC_GPIOB_CLK_ENABLE();</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">switch</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a>) {</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">case</span> 8:</div>
+<div class="line"><span class="lineno">   79</span>                <span class="comment">// HAL code to bind to PB0</span></div>
+<div class="line"><span class="lineno">   80</span>                GPIOXout_Struct.Pin = GPIO_PIN_0;</div>
+<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">case</span> 9:</div>
+<div class="line"><span class="lineno">   83</span>                <span class="comment">// HAL code to bind to PB1</span></div>
+<div class="line"><span class="lineno">   84</span>                GPIOXout_Struct.Pin = GPIO_PIN_1;</div>
+<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   87</span>                <span class="comment">// Handle invalid channel numbers</span></div>
+<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>        HAL_GPIO_Init(GPIOB, &amp;GPIOXout_Struct);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &gt;= 10 &amp;&amp; sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a> &lt;= 16) {</div>
+<div class="line"><span class="lineno">   94</span>        __HAL_RCC_GPIOC_CLK_ENABLE();</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">switch</span> (sensor-&gt;<a class="code hl_variable" href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">channel</a>) {</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">case</span> 10:</div>
+<div class="line"><span class="lineno">   98</span>                <span class="comment">// HAL code to bind to PC0</span></div>
+<div class="line"><span class="lineno">   99</span>                GPIOXout_Struct.Pin = GPIO_PIN_0;</div>
+<div class="line"><span class="lineno">  100</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">case</span> 11:</div>
+<div class="line"><span class="lineno">  102</span>                <span class="comment">// HAL code to bind to PC1</span></div>
+<div class="line"><span class="lineno">  103</span>                GPIOXout_Struct.Pin = GPIO_PIN_1;</div>
+<div class="line"><span class="lineno">  104</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">case</span> 12:</div>
+<div class="line"><span class="lineno">  106</span>                <span class="comment">// HAL code to bind to PC2</span></div>
+<div class="line"><span class="lineno">  107</span>                GPIOXout_Struct.Pin = GPIO_PIN_2;</div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">case</span> 13:</div>
+<div class="line"><span class="lineno">  110</span>                <span class="comment">// HAL code to bind to PC3</span></div>
+<div class="line"><span class="lineno">  111</span>                GPIOXout_Struct.Pin = GPIO_PIN_3;</div>
+<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">case</span> 14:</div>
+<div class="line"><span class="lineno">  114</span>                <span class="comment">// HAL code to bind to PC4</span></div>
+<div class="line"><span class="lineno">  115</span>                GPIOXout_Struct.Pin = GPIO_PIN_4;</div>
+<div class="line"><span class="lineno">  116</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  117</span>            <span class="keywordflow">case</span> 15:</div>
+<div class="line"><span class="lineno">  118</span>                <span class="comment">// HAL code to bind to PC5</span></div>
+<div class="line"><span class="lineno">  119</span>                GPIOXout_Struct.Pin = GPIO_PIN_5;</div>
+<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  121</span>            <span class="keywordflow">case</span> 16:</div>
+<div class="line"><span class="lineno">  122</span>                <span class="comment">// HAL code to bind to PC6</span></div>
+<div class="line"><span class="lineno">  123</span>                GPIOXout_Struct.Pin = GPIO_PIN_6;</div>
+<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  125</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  126</span>                <span class="comment">// Handle invalid channel numbers</span></div>
+<div class="line"><span class="lineno">  127</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>        HAL_GPIO_Init(GPIOC, &amp;GPIOXout_Struct);</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
+<div class="line"><span class="lineno">  132</span>}</div>
 <div class="ttc" id="aSensor_8h_html_afa23c62d6ac2176a3ab170f42bce0663"><div class="ttname"><a href="Sensor_8h.html#afa23c62d6ac2176a3ab170f42bce0663">initSensor</a></div><div class="ttdeci">void initSensor(Sensor *sensor, const char *name, int hz, SensorType type)</div><div class="ttdoc">Initializes a sensor with the given parameters.</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8c_source.html#l00004">Sensor.c:4</a></div></div>
 <div class="ttc" id="astructAnalogSensor_html_a01ed701a4a02f637c35124e2982b0954"><div class="ttname"><a href="structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954">AnalogSensor::channel</a></div><div class="ttdeci">int channel</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00008">AnalogSensor.h:8</a></div></div>
-<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00007">AnalogSensor.h:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="AnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_cgraph.png" border="0" usemap="#aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_cgraph" alt=""/></div>
-<map name="aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_cgraph" id="aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_cgraph">
-<area shape="rect" title="Initializes an analog sensor." alt="" coords="5,80,125,105"/>
+<div class="center"><img src="AnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_cgraph.png" border="0" usemap="#aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_cgraph" alt=""/></div>
+<map name="aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_cgraph" id="aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_cgraph">
+<area shape="rect" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="5,80,125,105"/>
 <area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="173,80,253,105"/>
 <area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="301,80,407,105"/>
 <area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="455,5,559,31"/>
@@ -179,9 +321,9 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="AnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_icgraph.png" border="0" usemap="#aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_icgraph" alt=""/></div>
-<map name="aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_icgraph" id="aAnalogSensor_8c_a1f4d14f551bd2aeab536372c13bb3180_icgraph">
-<area shape="rect" title="Initializes an analog sensor." alt="" coords="283,129,403,155"/>
+<div class="center"><img src="AnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_icgraph.png" border="0" usemap="#aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_icgraph" alt=""/></div>
+<map name="aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_icgraph" id="aAnalogSensor_8c_a7423527b0a148c48a087c030171a20c5_icgraph">
+<area shape="rect" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="283,129,403,155"/>
 <area shape="rect" href="Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title="Initializes the accelerometer with the given channel, frequency, and multiplexer channel." alt="" coords="108,5,231,31"/>
 <area shape="rect" href="App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="138,55,201,80"/>
 <area shape="rect" href="BrakePressure_8c.html#a6cc0bf29d38b4637cb6a0a36f0196a81" title="Initializes the BrakePressure sensor with the given frequency and channel." alt="" coords="107,104,232,129"/>
