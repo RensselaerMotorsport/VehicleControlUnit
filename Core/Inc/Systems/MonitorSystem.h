@@ -9,6 +9,7 @@
 
 typedef enum {
     m_TORQUE,
+    m_APPS,
     m_TRACTION,
     m_ACCUMULATOR
 } MonitorType;

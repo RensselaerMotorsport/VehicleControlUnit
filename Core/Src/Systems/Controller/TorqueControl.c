@@ -25,7 +25,7 @@ int startTorqueControl(TorqueControl* tc) {
 }
 
 void setDesiredTorque(TorqueControl* tc, float torque) {
-    if (tc->safety(tc) == FAILURE) {
+    if (tc->base.safety(tc) == FAILURE) {
         printf("Torque Control Actuator is not in a safe state\n");
         return;
     }
@@ -42,7 +42,7 @@ void setActualTorque(TorqueControl* tc, float torque) {
 
 void updateTorqueControl(void* tc) {
     TorqueControl* tcPtr = (TorqueControl*)tc;
-    if (tcPtr->safety(tc) == FAILURE) {
+    if (tcPtr->base.safety(tc) == FAILURE) {
         printf("Torque Control Actuator is not in a safe state\n");
         return;
     }

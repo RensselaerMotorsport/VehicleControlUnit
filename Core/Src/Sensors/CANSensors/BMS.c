@@ -1,4 +1,4 @@
-#include "../../../Inc/Sensors/CANSensors/Bms.h"
+#include "../../../Inc/Sensors/CANSensors/BMS.h"
 
 #include <stdio.h>  // For printf
 
