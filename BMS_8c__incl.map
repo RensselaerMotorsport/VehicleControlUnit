@@ -1,5 +1,12 @@
 <map id="Core/Src/Sensors/CANSensors/BMS.c" name="Core/Src/Sensors/CANSensors/BMS.c">
-<area shape="rect" id="node1" title=" " alt="" coords="37,5,242,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,93,148,133"/>
-<area shape="rect" id="node3" title=" " alt="" coords="172,101,232,126"/>
+<area shape="rect" id="node1" title=" " alt="" coords="135,5,341,45"/>
+<area shape="rect" id="node2" href="$BMS_8h.html" title=" " alt="" coords="99,93,244,133"/>
+<area shape="rect" id="node5" title=" " alt="" coords="219,401,279,427"/>
+<area shape="rect" id="node3" href="$CANSensor_8h.html" title=" " alt="" coords="116,181,227,207"/>
+<area shape="rect" id="node9" href="$BmsData_8h.html" title=" " alt="" coords="5,181,92,207"/>
+<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="123,255,196,280"/>
+<area shape="rect" id="node6" title=" " alt="" coords="13,401,76,427"/>
+<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="73,328,211,353"/>
+<area shape="rect" id="node8" title=" " alt="" coords="110,401,174,427"/>
+<area shape="rect" id="node10" title=" " alt="" coords="11,255,86,280"/>
 </map>

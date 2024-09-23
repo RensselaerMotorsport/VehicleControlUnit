@@ -3,13 +3,16 @@
 <area shape="rect" id="node2" href="$CommsSystem_8h.html" title=" " alt="" coords="185,86,415,111"/>
 <area shape="rect" id="node3" href="$ExternalSystem_8h.html" title=" " alt="" coords="7,167,183,207"/>
 <area shape="rect" id="node6" href="$ControllerSystem_8h.html" title=" " alt="" coords="462,167,647,207"/>
-<area shape="rect" id="node11" href="$MonitorSystem_8h.html" title=" " alt="" coords="489,79,663,119"/>
-<area shape="rect" id="node13" href="$System_8c.html" title=" " alt="" coords="687,86,873,111"/>
+<area shape="rect" id="node14" href="$MonitorSystem_8h.html" title=" " alt="" coords="489,79,663,119"/>
+<area shape="rect" id="node16" href="$System_8c.html" title=" " alt="" coords="687,86,873,111"/>
 <area shape="rect" id="node5" href="$CommsSystem_8c.html" title=" " alt="" coords="207,174,438,199"/>
 <area shape="rect" id="node4" href="$ExternalSystem_8c.html" title=" " alt="" coords="5,255,184,295"/>
-<area shape="rect" id="node7" href="$TorqueControl_8h.html" title=" " alt="" coords="357,255,542,295"/>
-<area shape="rect" id="node10" href="$ControllerSystem_8c.html" title=" " alt="" coords="567,255,753,295"/>
-<area shape="rect" id="node8" href="$TorqueControl_8c.html" title=" " alt="" coords="255,343,441,383"/>
-<area shape="rect" id="node9" href="$TorqueControlActuatorTest_8c.html" title=" " alt="" coords="465,343,636,383"/>
-<area shape="rect" id="node12" href="$MonitorSystem_8c.html" title=" " alt="" coords="671,167,846,207"/>
+<area shape="rect" id="node7" href="$Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="253,255,438,295"/>
+<area shape="rect" id="node10" href="$TorqueControl_8h.html" title=" " alt="" coords="462,255,647,295"/>
+<area shape="rect" id="node13" href="$ControllerSystem_8c.html" title=" " alt="" coords="672,255,859,295"/>
+<area shape="rect" id="node8" href="$Apps_8c.html" title=" " alt="" coords="60,343,247,383"/>
+<area shape="rect" id="node9" href="$AppsTest_8c.html" title=" " alt="" coords="271,350,427,375"/>
+<area shape="rect" id="node11" href="$TorqueControl_8c.html" title=" " alt="" coords="459,343,645,383"/>
+<area shape="rect" id="node12" href="$TorqueControlActuatorTest_8c.html" title=" " alt="" coords="669,343,840,383"/>
+<area shape="rect" id="node15" href="$MonitorSystem_8c.html" title=" " alt="" coords="671,167,846,207"/>
 </map>

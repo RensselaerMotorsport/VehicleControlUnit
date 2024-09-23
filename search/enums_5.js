@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['torquestatus_0',['TorqueStatus',['../TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816',1,'TorqueControl.h']]],
-  ['type_1',['type',['../Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d',1,'Updateable.h']]]
+  ['sensortype_0',['SensorType',['../Sensor_8h.html#a213c434cb928c4ca22513e2302632435',1,'Sensor.h']]],
+  ['systemtype_1',['SystemType',['../System_8h.html#a922f019f64e4183a18638787f6ba539b',1,'System.h']]]
 ];

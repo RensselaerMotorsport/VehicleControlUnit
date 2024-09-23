@@ -1,0 +1,13 @@
+<map id="Core/Inc/Systems/Controller/Apps.h" name="Core/Inc/Systems/Controller/Apps.h">
+<area shape="rect" id="node1" title=": Contains the logic for the two app sensors." alt="" coords="233,5,418,45"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="465,101,607,126"/>
+<area shape="rect" id="node9" href="$App_8h.html" title=" " alt="" coords="141,93,323,133"/>
+<area shape="rect" id="node3" title=" " alt="" coords="237,401,297,427"/>
+<area shape="rect" id="node4" title=" " alt="" coords="550,401,613,427"/>
+<area shape="rect" id="node5" title=" " alt="" coords="727,401,791,427"/>
+<area shape="rect" id="node6" href="$System_8h.html" title=" " alt="" coords="483,255,559,280"/>
+<area shape="rect" id="node8" href="$MonitorSystem_8h.html" title=" " alt="" coords="526,181,645,207"/>
+<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="405,328,544,353"/>
+<area shape="rect" id="node10" href="$AnalogSensor_8h.html" title=" " alt="" coords="5,181,128,207"/>
+<area shape="rect" id="node11" href="$Sensor_8h.html" title=" " alt="" coords="267,255,341,280"/>
+</map>

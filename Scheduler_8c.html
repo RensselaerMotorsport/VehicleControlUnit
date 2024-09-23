@@ -75,8 +75,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Scheduler.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -116,11 +115,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ab6d888e50b0c00ef172f5e4dc325220e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scheduler_8c.html#ab6d888e50b0c00ef172f5e4dc325220e">SchedulerStop</a> (<a class="el" href="structScheduler.html">Scheduler</a> *scheduler)</td></tr>
 <tr class="memdesc:ab6d888e50b0c00ef172f5e4dc325220e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the scheduler.  <a href="Scheduler_8c.html#ab6d888e50b0c00ef172f5e4dc325220e">More...</a><br /></td></tr>
 <tr class="separator:ab6d888e50b0c00ef172f5e4dc325220e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a1747882be2660a8acf6f2319fe49214d"><td class="memItemLeft" align="right" valign="top">volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scheduler_8c.html#a1747882be2660a8acf6f2319fe49214d">timer_flag</a></td></tr>
-<tr class="separator:a1747882be2660a8acf6f2319fe49214d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="adf18e0985dd8f66c0a65156d46718c5a" name="adf18e0985dd8f66c0a65156d46718c5a"></a>
@@ -240,8 +234,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   43</span>    <a class="code hl_struct" href="structTask.html">Task</a> currentTask;</div>
 <div class="line"><span class="lineno">   44</span> </div>
 <div class="line"><span class="lineno">   45</span>    <span class="keywordflow">while</span> (scheduler-&gt;<a class="code hl_variable" href="structScheduler.html#a8a0b0619fdfbda3338fc4964999b3ffd">running</a>) {</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="Scheduler_8c.html#a1747882be2660a8acf6f2319fe49214d">timer_flag</a> &lt; 0) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="Scheduler_8c.html#a1747882be2660a8acf6f2319fe49214d">timer_flag</a>--;</div>
+<div class="line"><span class="lineno">   46</span>        <span class="comment">// if (timer_flag &lt; 0) continue;</span></div>
+<div class="line"><span class="lineno">   47</span>        <span class="comment">// timer_flag--;</span></div>
 <div class="line"><span class="lineno">   48</span>        <span class="comment">// FIXME: Re-implement timer.</span></div>
 <div class="line"><span class="lineno">   49</span>        <span class="comment">// int currentTime = HAL_GetTick();</span></div>
 <div class="line"><span class="lineno">   50</span>        <span class="keywordtype">int</span> currentTime = 0;</div>
@@ -260,7 +254,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aPriorityQueue_8h_html_a176542d630434d645be4ce5c3e7d5189"><div class="ttname"><a href="PriorityQueue_8h.html#a176542d630434d645be4ce5c3e7d5189">PQPeek</a></div><div class="ttdeci">bool PQPeek(PriorityQueue *pq, Task *task)</div><div class="ttdoc">Peeks at the highest priority task in the priority queue without removing it.</div><div class="ttdef"><b>Definition:</b> <a href="PriorityQueue_8c_source.html#l00056">PriorityQueue.c:56</a></div></div>
 <div class="ttc" id="aPriorityQueue_8h_html_a3db90f839aff3e0e896ca237483bb926"><div class="ttname"><a href="PriorityQueue_8h.html#a3db90f839aff3e0e896ca237483bb926">PQIsEmpty</a></div><div class="ttdeci">bool PQIsEmpty(PriorityQueue *pq)</div><div class="ttdoc">Checks if the priority queue is empty.</div><div class="ttdef"><b>Definition:</b> <a href="PriorityQueue_8c_source.html#l00062">PriorityQueue.c:62</a></div></div>
 <div class="ttc" id="aPriorityQueue_8h_html_accf2d5c29ecdd09ea36ac2d7dbb7556f"><div class="ttname"><a href="PriorityQueue_8h.html#accf2d5c29ecdd09ea36ac2d7dbb7556f">PQPop</a></div><div class="ttdeci">bool PQPop(PriorityQueue *pq, Task *task)</div><div class="ttdoc">Pops the highest priority task from the priority queue.</div><div class="ttdef"><b>Definition:</b> <a href="PriorityQueue_8c_source.html#l00048">PriorityQueue.c:48</a></div></div>
-<div class="ttc" id="aScheduler_8c_html_a1747882be2660a8acf6f2319fe49214d"><div class="ttname"><a href="Scheduler_8c.html#a1747882be2660a8acf6f2319fe49214d">timer_flag</a></div><div class="ttdeci">volatile uint32_t timer_flag</div><div class="ttdef"><b>Definition:</b> <a href="stm32f7xx__it_8c_source.html#l00202">stm32f7xx_it.c:202</a></div></div>
 <div class="ttc" id="aTask_8h_html_af74a92b4c3acbd7beebe1c7e404f6b99"><div class="ttname"><a href="Task_8h.html#af74a92b4c3acbd7beebe1c7e404f6b99">TaskExecute</a></div><div class="ttdeci">void TaskExecute(Task *task)</div><div class="ttdoc">Executes the task by calling the sensor's update function.</div><div class="ttdef"><b>Definition:</b> <a href="Task_8c_source.html#l00009">Task.c:9</a></div></div>
 <div class="ttc" id="astructTask_html_a299d1cdf8501da3b0fb21f9e49a245d6"><div class="ttname"><a href="structTask.html#a299d1cdf8501da3b0fb21f9e49a245d6">Task::hz</a></div><div class="ttdeci">int hz</div><div class="ttdef"><b>Definition:</b> <a href="Task_8h_source.html#l00010">Task.h:10</a></div></div>
 <div class="ttc" id="astructTask_html_aecd0764bd9e73850d02ea0d633fe4ed1"><div class="ttname"><a href="structTask.html#aecd0764bd9e73850d02ea0d633fe4ed1">Task::nextExecTime</a></div><div class="ttdeci">highResTime nextExecTime</div><div class="ttdef"><b>Definition:</b> <a href="Task_8h_source.html#l00011">Task.h:11</a></div></div>
@@ -321,31 +314,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   65</span>    scheduler-&gt;<a class="code hl_variable" href="structScheduler.html#a8a0b0619fdfbda3338fc4964999b3ffd">running</a> = 0;</div>
 <div class="line"><span class="lineno">   66</span>}</div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a1747882be2660a8acf6f2319fe49214d" name="a1747882be2660a8acf6f2319fe49214d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1747882be2660a8acf6f2319fe49214d">&#9670;&#160;</a></span>timer_flag</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">volatile uint32_t timer_flag</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="stm32f7xx__it_8c_source.html#l00202">202</a> of file <a class="el" href="stm32f7xx__it_8c_source.html">stm32f7xx_it.c</a>.</p>
-
 </div>
 </div>
 </div><!-- contents -->

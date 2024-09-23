@@ -1,0 +1,16 @@
+<map id="Core/Src/Systems/Controller/Apps.c" name="Core/Src/Systems/Controller/Apps.c">
+<area shape="rect" id="node1" title=" " alt="" coords="369,5,556,45"/>
+<area shape="rect" id="node2" href="$Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="263,93,388,133"/>
+<area shape="rect" id="node13" href="$Common_8h.html" title=" " alt="" coords="412,93,513,133"/>
+<area shape="rect" id="node14" title=" " alt="" coords="537,101,599,126"/>
+<area shape="rect" id="node3" href="$ControllerSystem_8h.html" title=" " alt="" coords="465,189,607,214"/>
+<area shape="rect" id="node10" href="$App_8h.html" title=" " alt="" coords="141,181,323,221"/>
+<area shape="rect" id="node4" title=" " alt="" coords="237,489,297,515"/>
+<area shape="rect" id="node5" title=" " alt="" coords="550,489,613,515"/>
+<area shape="rect" id="node6" title=" " alt="" coords="727,489,791,515"/>
+<area shape="rect" id="node7" href="$System_8h.html" title=" " alt="" coords="483,343,559,368"/>
+<area shape="rect" id="node9" href="$MonitorSystem_8h.html" title=" " alt="" coords="526,269,645,295"/>
+<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="405,416,544,441"/>
+<area shape="rect" id="node11" href="$AnalogSensor_8h.html" title=" " alt="" coords="5,269,128,295"/>
+<area shape="rect" id="node12" href="$Sensor_8h.html" title=" " alt="" coords="267,343,341,368"/>
+</map>

@@ -9,5 +9,8 @@ var searchData=
   ['analogsensor_2ec_6',['AnalogSensor.c',['../AnalogSensor_8c.html',1,'']]],
   ['analogsensor_2eh_7',['AnalogSensor.h',['../AnalogSensor_8h.html',1,'']]],
   ['app_2ec_8',['App.c',['../App_8c.html',1,'']]],
-  ['app_2eh_9',['App.h',['../App_8h.html',1,'']]]
+  ['app_2eh_9',['App.h',['../App_8h.html',1,'']]],
+  ['apps_2ec_10',['Apps.c',['../Apps_8c.html',1,'']]],
+  ['apps_2eh_11',['Apps.h',['../Apps_8h.html',1,'']]],
+  ['appstest_2ec_12',['AppsTest.c',['../AppsTest_8c.html',1,'']]]
 ];

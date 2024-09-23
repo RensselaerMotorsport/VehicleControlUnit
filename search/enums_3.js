@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monitortype_0',['MonitorType',['../MonitorSystem_8h.html#ac69ce5a28782fdc01f7ba5c236cd5f72',1,'MonitorSystem.h']]]
+  ['faulttype_0',['FaultType',['../MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398',1,'MonitorSystem.h']]]
 ];

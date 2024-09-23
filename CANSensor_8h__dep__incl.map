@@ -1,13 +1,14 @@
 <map id="Core/Inc/Sensors/CANSensor.h" name="Core/Inc/Sensors/CANSensor.h">
-<area shape="rect" id="node1" title=" " alt="" coords="346,5,553,31"/>
-<area shape="rect" id="node2" href="$BMS_8h.html" title=" " alt="" coords="8,79,211,119"/>
-<area shape="rect" id="node3" href="$Esc_8h.html" title=" " alt="" coords="235,79,437,119"/>
-<area shape="rect" id="node7" href="$Imd_8h.html" title=" " alt="" coords="461,79,664,119"/>
-<area shape="rect" id="node11" href="$CANSensor_8c.html" title=" " alt="" coords="688,86,896,111"/>
-<area shape="rect" id="node4" href="$MotorController_8h.html" title=" " alt="" coords="7,167,209,207"/>
-<area shape="rect" id="node6" href="$Esc_8c.html" title=" " alt="" coords="233,167,439,207"/>
-<area shape="rect" id="node5" href="$MotorController_8c.html" title=" " alt="" coords="5,255,211,295"/>
-<area shape="rect" id="node8" href="$Accumulator_8h.html" title=" " alt="" coords="463,167,665,207"/>
-<area shape="rect" id="node10" href="$Imd_8c.html" title=" " alt="" coords="689,167,895,207"/>
-<area shape="rect" id="node9" href="$Accumulator_8c.html" title=" " alt="" coords="461,255,667,295"/>
+<area shape="rect" id="node1" title=" " alt="" coords="574,5,781,31"/>
+<area shape="rect" id="node2" href="$BMS_8h.html" title=" " alt="" coords="235,79,437,119"/>
+<area shape="rect" id="node6" href="$Esc_8h.html" title=" " alt="" coords="691,79,893,119"/>
+<area shape="rect" id="node10" href="$Imd_8h.html" title=" " alt="" coords="463,79,665,119"/>
+<area shape="rect" id="node12" href="$CANSensor_8c.html" title=" " alt="" coords="917,86,1125,111"/>
+<area shape="rect" id="node3" href="$Accumulator_8h.html" title=" " alt="" coords="235,167,437,207"/>
+<area shape="rect" id="node5" href="$BMS_8c.html" title=" " alt="" coords="5,167,211,207"/>
+<area shape="rect" id="node4" href="$Accumulator_8c.html" title=" " alt="" coords="233,255,439,295"/>
+<area shape="rect" id="node7" href="$MotorController_8h.html" title=" " alt="" coords="920,167,1123,207"/>
+<area shape="rect" id="node9" href="$Esc_8c.html" title=" " alt="" coords="691,167,896,207"/>
+<area shape="rect" id="node8" href="$MotorController_8c.html" title=" " alt="" coords="919,255,1124,295"/>
+<area shape="rect" id="node11" href="$Imd_8c.html" title=" " alt="" coords="461,167,667,207"/>
 </map>
