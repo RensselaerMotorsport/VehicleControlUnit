@@ -11,7 +11,8 @@
 #define MAX_MONITORS 10
 
 typedef enum {
-    c_TORQUE
+    c_TORQUE,
+    c_APPS,
 } ControllerType;
 
 typedef struct {

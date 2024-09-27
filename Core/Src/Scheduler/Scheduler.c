@@ -5,7 +5,7 @@
 // #include "../../Inc/stm32f7xx_hal_conf.h"
 
 // Timer flag declared in the interrupt handler
-extern volatile uint32_t timer_flag;
+// extern volatile uint32_t timer_flag;
 
 /**
  * Initializes the priority queue and schedules tasks based on the given sensors
@@ -43,8 +43,8 @@ void SchedulerRun(Scheduler* scheduler) {
     Task currentTask;
 
     while (scheduler->running) {
-        if (timer_flag < 0) continue;
-        timer_flag--;
+        // if (timer_flag < 0) continue;
+        // timer_flag--;
         // FIXME: Re-implement timer.
         // int currentTime = HAL_GetTick();
         int currentTime = 0;
