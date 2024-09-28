@@ -15,46 +15,38 @@
 // User includes
 #include "Sensor.h"
 
-
-#define ADC_BUF_LEN 4096
-#define ADC_CHANNELS 2
+// Defines
+#define ADC_CHANNELS 16  // Total number of ADC channels
 #define UART_BUF_SIZE 100
-#define BUFFER_SIZE 1000  // Size of the circular buffer
+#define BUFFER_SIZE 1000 // Size of the circular buffer, change in the future if needed
 
+// Structures
 typedef struct {
     Sensor sensor;
     int channel;
 } AnalogSensor;
 
 typedef struct {
-    uint16_t adc4;
-    uint16_t adc5;
+    uint16_t adc[ADC_CHANNELS]; // Array to hold all 16 ADC values
 } ADCSample;
 
-/**
- * @brief Initializes an analog sensor.
- *
- * @param analogSensor Pointer to the analog sensor to initialize.
- * @param name Name of the sensor.
- * @param hz Sampling frequency in Hertz.
- * @param channel Analog channel number.
- */
-
 // Function declarations
-void initAnalogSensor(AnalogSensor* analogsensor, const char* name, int hz, int channel);
-void ProcessADCData(uint16_t* data, uint32_t length);
+void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel);
+void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_data);
 ADCSample getLatestSample(void);
 uint32_t getRecentSamples(ADCSample* samples, uint32_t num_samples);
 int getAnalogSensorData(AnalogSensor* sensor);
 
 // External variable declarations
-extern ADC_HandleTypeDef hadc1;
-extern DMA_HandleTypeDef hdma_adc1;
+extern ADC_HandleTypeDef hadc1, hadc2, hadc3;
+extern DMA_HandleTypeDef hdma_adc1, hdma_adc2, hdma_adc3;
 extern UART_HandleTypeDef huart2;
 
-extern uint16_t adc_buf[ADC_BUF_LEN * ADC_CHANNELS];
-extern volatile uint16_t adc_value_ch4;
-extern volatile uint16_t adc_value_ch5;
+// ADC buffers
+extern uint16_t adc1_buffer[6];
+extern uint16_t adc2_buffer[6];
+extern uint16_t adc3_buffer[4];
+
 extern char uart_buf[UART_BUF_SIZE];
 
 #endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H
