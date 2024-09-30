@@ -31,7 +31,7 @@ var searchData=
   ['pqisempty_28',['PQIsEmpty',['../PriorityQueue_8h.html#a3db90f839aff3e0e896ca237483bb926',1,'PQIsEmpty(PriorityQueue *pq):&#160;PriorityQueue.c'],['../PriorityQueue_8c.html#a3db90f839aff3e0e896ca237483bb926',1,'PQIsEmpty(PriorityQueue *pq):&#160;PriorityQueue.c']]],
   ['pqisfull_29',['PQIsFull',['../PriorityQueue_8h.html#aca9cc7f25c9cc6fd37c05dbb5b81e727',1,'PQIsFull(PriorityQueue *pq):&#160;PriorityQueue.c'],['../PriorityQueue_8c.html#aca9cc7f25c9cc6fd37c05dbb5b81e727',1,'PQIsFull(PriorityQueue *pq):&#160;PriorityQueue.c']]],
   ['pqnode_30',['PQNode',['../structPQNode.html',1,'']]],
-  ['pqpeek_31',['PQPeek',['../PriorityQueue_8c.html#a176542d630434d645be4ce5c3e7d5189',1,'PQPeek(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c'],['../PriorityQueue_8h.html#a176542d630434d645be4ce5c3e7d5189',1,'PQPeek(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c']]],
+  ['pqpeek_31',['PQPeek',['../PriorityQueue_8h.html#a176542d630434d645be4ce5c3e7d5189',1,'PQPeek(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c'],['../PriorityQueue_8c.html#a176542d630434d645be4ce5c3e7d5189',1,'PQPeek(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c']]],
   ['pqpop_32',['PQPop',['../PriorityQueue_8h.html#accf2d5c29ecdd09ea36ac2d7dbb7556f',1,'PQPop(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c'],['../PriorityQueue_8c.html#accf2d5c29ecdd09ea36ac2d7dbb7556f',1,'PQPop(PriorityQueue *pq, Task *task):&#160;PriorityQueue.c']]],
   ['pqpush_33',['PQPush',['../PriorityQueue_8h.html#ae841bdf0664368f8d4484b0e5dbd33d7',1,'PQPush(PriorityQueue *pq, Task task, int priority):&#160;PriorityQueue.c'],['../PriorityQueue_8c.html#ae841bdf0664368f8d4484b0e5dbd33d7',1,'PQPush(PriorityQueue *pq, Task task, int priority):&#160;PriorityQueue.c']]],
   ['prefetch_5fenable_34',['PREFETCH_ENABLE',['../stm32f7xx__hal__conf_8h.html#a13fc0d5e7bb925385c0cc0772ba6a391',1,'stm32f7xx_hal_conf.h']]],
@@ -40,5 +40,6 @@ var searchData=
   ['priorityqueue_37',['PriorityQueue',['../structPriorityQueue.html',1,'']]],
   ['priorityqueue_2ec_38',['PriorityQueue.c',['../PriorityQueue_8c.html',1,'']]],
   ['priorityqueue_2eh_39',['PriorityQueue.h',['../PriorityQueue_8h.html',1,'']]],
-  ['pulses_40',['pulses',['../structWheelSpeed.html#a9797aef29f050455eddc81891a4278a3',1,'WheelSpeed']]]
+  ['processadcdata_40',['ProcessADCData',['../AnalogSensor_8h.html#a22c254271c3d89c9a6b4b73515fd9c3e',1,'ProcessADCData(uint16_t *adc1_data, uint16_t *adc2_data, uint16_t *adc3_data):&#160;AnalogSensor.c'],['../AnalogSensor_8c.html#a22c254271c3d89c9a6b4b73515fd9c3e',1,'ProcessADCData(uint16_t *adc1_data, uint16_t *adc2_data, uint16_t *adc3_data):&#160;AnalogSensor.c']]],
+  ['pulses_41',['pulses',['../structWheelSpeed.html#a9797aef29f050455eddc81891a4278a3',1,'WheelSpeed']]]
 ];

@@ -35,9 +35,13 @@ var searchData=
   ['motorcontroller_2eh_32',['MotorController.h',['../MotorController_8h.html',1,'']]],
   ['motorrevolutionstransferfunctionesc_33',['motorRevolutionsTransferFunctionEsc',['../Esc_8c.html#a1d48d66ecc4e88d905a656fe6becf6e6',1,'Esc.c']]],
   ['mps_5fto_5fmph_34',['MPS_TO_MPH',['../Conversions_8c.html#ad8b6d7c5a8c110a8001bc4c0423ead04',1,'Conversions.c']]],
-  ['mx_5feth_5finit_35',['MX_ETH_Init',['../main_8c.html#a3a68950ead69b4a7fd8aca513666c7d4',1,'main.c']]],
-  ['mx_5fgpio_5finit_36',['MX_GPIO_Init',['../main_8c.html#ae89fdd15729ad41a66911190fcbab23a',1,'main.c']]],
-  ['mx_5ftim1_5finit_37',['MX_TIM1_Init',['../main_8c.html#a1d1beb7da60021ee1adbca294f28ba88',1,'main.c']]],
-  ['mx_5fusart3_5fuart_5finit_38',['MX_USART3_UART_Init',['../main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8',1,'main.c']]],
-  ['mx_5fusb_5fotg_5ffs_5fpcd_5finit_39',['MX_USB_OTG_FS_PCD_Init',['../main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f',1,'main.c']]]
+  ['mx_5fadc1_5finit_35',['MX_ADC1_Init',['../main_8c.html#aaa163e37853e6fc971474824d9f655ca',1,'main.c']]],
+  ['mx_5fadc2_5finit_36',['MX_ADC2_Init',['../main_8c.html#a4e987f0fdef6459c1a03ca830bac23f5',1,'main.c']]],
+  ['mx_5fadc3_5finit_37',['MX_ADC3_Init',['../main_8c.html#ae1e1b355e2d7714a267fee7e71891e59',1,'main.c']]],
+  ['mx_5fdma_5finit_38',['MX_DMA_Init',['../main_8c.html#a608dc9e9bcaf978f1611f3ec57670f64',1,'main.c']]],
+  ['mx_5fgpio_5finit_39',['MX_GPIO_Init',['../main_8c.html#ae89fdd15729ad41a66911190fcbab23a',1,'main.c']]],
+  ['mx_5ftim1_5finit_40',['MX_TIM1_Init',['../main_8c.html#a1d1beb7da60021ee1adbca294f28ba88',1,'main.c']]],
+  ['mx_5fusart2_5fuart_5finit_41',['MX_USART2_UART_Init',['../main_8c.html#a6db1014d713f6f5c0f52a13299ee0733',1,'main.c']]],
+  ['mx_5fusart3_5fuart_5finit_42',['MX_USART3_UART_Init',['../main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8',1,'main.c']]],
+  ['mx_5fusb_5fotg_5ffs_5fpcd_5finit_43',['MX_USB_OTG_FS_PCD_Init',['../main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f',1,'main.c']]]
 ];

@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="1019,412,1124,437"/>
 <area shape="rect" id="node3" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="891,437,971,463"/>
 <area shape="rect" id="node26" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="741,116,824,141"/>
-<area shape="rect" id="node4" href="$AnalogSensor_8c.html#a7423527b0a148c48a087c030171a20c5" title="Initializes an analog sensor." alt="" coords="723,363,843,388"/>
+<area shape="rect" id="node4" href="$AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="723,363,843,388"/>
 <area shape="rect" id="node17" href="$CANSensor_8c.html#a0331142dd6c26bd37590734c174cb274" title="Initializes a CAN sensor with the given parameters." alt="" coords="729,536,837,561"/>
 <area shape="rect" id="node21" href="$DigitalSensor_8c.html#a485376e49d8618b1709c567de17663e6" title="Initializes a digital sensor with the given parameters." alt="" coords="725,659,841,684"/>
 <area shape="rect" id="node5" href="$Accelerometer_8c.html#acf82e4569532339a0a1eb666e1398d4b" title="Initializes the accelerometer with the given channel, frequency, and multiplexer channel." alt="" coords="544,461,667,487"/>

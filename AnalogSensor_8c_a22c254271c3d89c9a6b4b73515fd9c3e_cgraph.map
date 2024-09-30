@@ -1,0 +1,4 @@
+<map id="ProcessADCData" name="ProcessADCData">
+<area shape="rect" id="node1" title="Processes ADC data from all three ADCs and stores it in the circular buffer." alt="" coords="5,5,129,31"/>
+<area shape="rect" id="node2" href="$AnalogSensor_8c.html#a4a6892a9770cd6ea9b1fc78ccaf5892b" title="Adds a sample to the circular buffer." alt="" coords="177,5,313,31"/>
+</map>

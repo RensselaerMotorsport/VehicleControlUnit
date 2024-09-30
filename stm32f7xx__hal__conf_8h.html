@@ -84,7 +84,7 @@ $(function() {
 <code>#include &quot;stm32f7xx_hal_gpio.h&quot;</code><br />
 <code>#include &quot;stm32f7xx_hal_dma.h&quot;</code><br />
 <code>#include &quot;stm32f7xx_hal_cortex.h&quot;</code><br />
-<code>#include &quot;stm32f7xx_hal_eth.h&quot;</code><br />
+<code>#include &quot;stm32f7xx_hal_adc.h&quot;</code><br />
 <code>#include &quot;stm32f7xx_hal_flash.h&quot;</code><br />
 <code>#include &quot;stm32f7xx_hal_i2c.h&quot;</code><br />
 <code>#include &quot;stm32f7xx_hal_pwr.h&quot;</code><br />
@@ -96,19 +96,19 @@ Include dependency graph for stm32f7xx_hal_conf.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="stm32f7xx__hal__conf_8h__incl.png" border="0" usemap="#aCore_2Inc_2stm32f7xx__hal__conf_8h" alt=""/></div>
 <map name="aCore_2Inc_2stm32f7xx__hal__conf_8h" id="aCore_2Inc_2stm32f7xx__hal__conf_8h">
-<area shape="rect" title=" " alt="" coords="947,5,1081,45"/>
+<area shape="rect" title=" " alt="" coords="949,5,1084,45"/>
 <area shape="rect" title=" " alt="" coords="5,93,145,119"/>
 <area shape="rect" title=" " alt="" coords="169,93,312,119"/>
 <area shape="rect" title=" " alt="" coords="337,93,483,119"/>
 <area shape="rect" title=" " alt="" coords="507,93,654,119"/>
 <area shape="rect" title=" " alt="" coords="678,93,835,119"/>
-<area shape="rect" title=" " alt="" coords="860,93,1000,119"/>
-<area shape="rect" title=" " alt="" coords="1025,93,1174,119"/>
-<area shape="rect" title=" " alt="" coords="1198,93,1337,119"/>
-<area shape="rect" title=" " alt="" coords="1361,93,1504,119"/>
-<area shape="rect" title=" " alt="" coords="1528,93,1668,119"/>
-<area shape="rect" title=" " alt="" coords="1693,93,1837,119"/>
-<area shape="rect" title=" " alt="" coords="1861,93,2004,119"/>
+<area shape="rect" title=" " alt="" coords="860,93,1003,119"/>
+<area shape="rect" title=" " alt="" coords="1027,93,1177,119"/>
+<area shape="rect" title=" " alt="" coords="1201,93,1339,119"/>
+<area shape="rect" title=" " alt="" coords="1364,93,1507,119"/>
+<area shape="rect" title=" " alt="" coords="1531,93,1671,119"/>
+<area shape="rect" title=" " alt="" coords="1695,93,1839,119"/>
+<area shape="rect" title=" " alt="" coords="1864,93,2007,119"/>
 </map>
 </div>
 </div>
@@ -119,8 +119,8 @@ Macros</h2></td></tr>
 <tr class="memitem:a877ae99e8c47a609ea97c888912bf75f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f">HAL_MODULE_ENABLED</a></td></tr>
 <tr class="memdesc:a877ae99e8c47a609ea97c888912bf75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the list of modules to be used in the HAL driver.  <a href="stm32f7xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f">More...</a><br /></td></tr>
 <tr class="separator:a877ae99e8c47a609ea97c888912bf75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f68b22ea2284ed91c3414db0dea786"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a90f68b22ea2284ed91c3414db0dea786">HAL_ETH_MODULE_ENABLED</a></td></tr>
-<tr class="separator:a90f68b22ea2284ed91c3414db0dea786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a476f1655c969ae57e89a74d98c75f43f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a476f1655c969ae57e89a74d98c75f43f">HAL_ADC_MODULE_ENABLED</a></td></tr>
+<tr class="separator:a476f1655c969ae57e89a74d98c75f43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23382b8f04b3e6db2c59dfa1ef5ea4a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a23382b8f04b3e6db2c59dfa1ef5ea4a2">HAL_TIM_MODULE_ENABLED</a></td></tr>
 <tr class="separator:a23382b8f04b3e6db2c59dfa1ef5ea4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a167269406e73327b95c3bb7b9cfe6d89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a167269406e73327b95c3bb7b9cfe6d89">HAL_UART_MODULE_ENABLED</a></td></tr>
@@ -262,7 +262,7 @@ Macros</h2></td></tr>
 <tr class="separator:a41e5cb0b39ad74f0aafb83dbcecf9006"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bcc92663c42ec434f527847bbc4abc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a3bcc92663c42ec434f527847bbc4abc1">MAC_ADDR5</a>&#160;&#160;&#160;0U</td></tr>
 <tr class="separator:a3bcc92663c42ec434f527847bbc4abc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cdaf687f7a7f2dba570d5a722990786"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a0cdaf687f7a7f2dba570d5a722990786">ETH_RX_BUF_SIZE</a>&#160;&#160;&#160;1524 /* buffer size for receive               */</td></tr>
+<tr class="memitem:a0cdaf687f7a7f2dba570d5a722990786"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#a0cdaf687f7a7f2dba570d5a722990786">ETH_RX_BUF_SIZE</a>&#160;&#160;&#160;ETH_MAX_PACKET_SIZE /* buffer size for receive               */</td></tr>
 <tr class="separator:a0cdaf687f7a7f2dba570d5a722990786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af83956dfc1b135c3c92ac409758b6cf4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32f7xx__hal__conf_8h.html#af83956dfc1b135c3c92ac409758b6cf4">ETH_TX_BUF_SIZE</a>&#160;&#160;&#160;ETH_MAX_PACKET_SIZE /* buffer size for transmit              */</td></tr>
 <tr class="separator:af83956dfc1b135c3c92ac409758b6cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -384,7 +384,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ETH_RX_BUF_SIZE&#160;&#160;&#160;1524 /* buffer size for receive               */</td>
+          <td class="memname">#define ETH_RX_BUF_SIZE&#160;&#160;&#160;ETH_MAX_PACKET_SIZE /* buffer size for receive               */</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -460,6 +460,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a476f1655c969ae57e89a74d98c75f43f" name="a476f1655c969ae57e89a74d98c75f43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a476f1655c969ae57e89a74d98c75f43f">&#9670;&#160;</a></span>HAL_ADC_MODULE_ENABLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HAL_ADC_MODULE_ENABLED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="stm32f7xx__hal__conf_8h_source.html#l00041">41</a> of file <a class="el" href="stm32f7xx__hal__conf_8h_source.html">stm32f7xx_hal_conf.h</a>.</p>
+
+</div>
+</div>
 <a id="aa9b5a3a425901e097de70092dbe31e0f" name="aa9b5a3a425901e097de70092dbe31e0f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9b5a3a425901e097de70092dbe31e0f">&#9670;&#160;</a></span>HAL_CORTEX_MODULE_ENABLED</h2>
 
@@ -489,22 +505,6 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="stm32f7xx__hal__conf_8h_source.html#l00083">83</a> of file <a class="el" href="stm32f7xx__hal__conf_8h_source.html">stm32f7xx_hal_conf.h</a>.</p>
-
-</div>
-</div>
-<a id="a90f68b22ea2284ed91c3414db0dea786" name="a90f68b22ea2284ed91c3414db0dea786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90f68b22ea2284ed91c3414db0dea786">&#9670;&#160;</a></span>HAL_ETH_MODULE_ENABLED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define HAL_ETH_MODULE_ENABLED</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="stm32f7xx__hal__conf_8h_source.html#l00048">48</a> of file <a class="el" href="stm32f7xx__hal__conf_8h_source.html">stm32f7xx_hal_conf.h</a>.</p>
 
 </div>
 </div>

@@ -86,14 +86,20 @@ Include dependency graph for SteeringColumn.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="SteeringColumn_8c__incl.png" border="0" usemap="#aCore_2Src_2Sensors_2AnalogSensors_2SteeringColumn_8c" alt=""/></div>
 <map name="aCore_2Src_2Sensors_2AnalogSensors_2SteeringColumn_8c" id="aCore_2Src_2Sensors_2AnalogSensors_2SteeringColumn_8c">
-<area shape="rect" title=" " alt="" coords="105,5,323,45"/>
-<area shape="rect" href="SteeringColumn_8h.html" title=" " alt="" coords="31,93,251,133"/>
-<area shape="rect" title=" " alt="" coords="211,401,271,427"/>
-<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="75,181,198,207"/>
-<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="99,255,172,280"/>
-<area shape="rect" title=" " alt="" coords="5,401,68,427"/>
-<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="65,328,203,353"/>
-<area shape="rect" title=" " alt="" coords="102,401,166,427"/>
+<area shape="rect" title=" " alt="" coords="687,5,905,45"/>
+<area shape="rect" href="SteeringColumn_8h.html" title=" " alt="" coords="613,93,833,133"/>
+<area shape="rect" title=" " alt="" coords="393,401,453,427"/>
+<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="433,181,556,207"/>
+<area shape="rect" title=" " alt="" coords="5,255,96,280"/>
+<area shape="rect" title=" " alt="" coords="485,255,600,280"/>
+<area shape="rect" title=" " alt="" coords="625,255,767,280"/>
+<area shape="rect" title=" " alt="" coords="792,255,939,280"/>
+<area shape="rect" title=" " alt="" coords="963,255,1107,280"/>
+<area shape="rect" title=" " alt="" coords="159,401,223,427"/>
+<area shape="rect" title=" " alt="" coords="347,255,411,280"/>
+<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="249,255,322,280"/>
+<area shape="rect" title=" " alt="" coords="257,401,319,427"/>
+<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="171,328,309,353"/>
 </map>
 </div>
 </div>
@@ -199,14 +205,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SteeringColumn_8c_source.html#l00005">5</a> of file <a class="el" href="SteeringColumn_8c_source.html">SteeringColumn.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>                                                                                   {</div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_function" href="AnalogSensor_8h.html#a1f4d14f551bd2aeab536372c13bb3180">initAnalogSensor</a>(&amp;sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>, <span class="stringliteral">&quot;SteeringColumn&quot;</span>, hz, channel);</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_function" href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a>(&amp;sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>, <span class="stringliteral">&quot;SteeringColumn&quot;</span>, hz, channel);</div>
 <div class="line"><span class="lineno">    7</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a0dd1e7baa84b2910114b55428a199f61">rotation_angle</a> = -1;</div>
 <div class="line"><span class="lineno">    8</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">zero_offset</a> = zeroOffset;</div>
 <div class="line"><span class="lineno">    9</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>.<a class="code hl_variable" href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">sensor</a>.<a class="code hl_variable" href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a> = <a class="code hl_function" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">updateSteeringColumn</a>;</div>
 <div class="line"><span class="lineno">   10</span>}</div>
-<div class="ttc" id="aAnalogSensor_8h_html_a1f4d14f551bd2aeab536372c13bb3180"><div class="ttname"><a href="AnalogSensor_8h.html#a1f4d14f551bd2aeab536372c13bb3180">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogsensor, const char *name, int hz, int channel)</div><div class="ttdoc">Initializes an analog sensor.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00019">AnalogSensor.c:19</a></div></div>
+<div class="ttc" id="aAnalogSensor_8h_html_a1ca748e7158a6c8439c3b04313e769e6"><div class="ttname"><a href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogSensor, const char *name, int hz, int channel)</div><div class="ttdoc">Initializes an analog sensor and configures the corresponding GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00039">AnalogSensor.c:39</a></div></div>
 <div class="ttc" id="aSteeringColumn_8c_html_ae0c46d7082d6dbe42eaf17ec2d0f4a18"><div class="ttname"><a href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">updateSteeringColumn</a></div><div class="ttdeci">void updateSteeringColumn(void *sc)</div><div class="ttdoc">Updates the SteeringColumn data.</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8c_source.html#l00016">SteeringColumn.c:16</a></div></div>
-<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00007">AnalogSensor.h:7</a></div></div>
+<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00025">AnalogSensor.h:25</a></div></div>
 <div class="ttc" id="astructSensor_html_a7e6cf7138f6d350fd2bf0a76fba7a2ad"><div class="ttname"><a href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">Sensor::updateable</a></div><div class="ttdeci">Updateable updateable</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00016">Sensor.h:16</a></div></div>
 <div class="ttc" id="astructSteeringColumn_html_a6054bb7b70dcb20f7d4b28e81029cba6"><div class="ttname"><a href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">SteeringColumn::zero_offset</a></div><div class="ttdeci">float zero_offset</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8h_source.html#l00009">SteeringColumn.h:9</a></div></div>
 <div class="ttc" id="astructSteeringColumn_html_ae45ecdecde2067ea466cd57006b24afc"><div class="ttname"><a href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">SteeringColumn::base</a></div><div class="ttdeci">AnalogSensor base</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8h_source.html#l00007">SteeringColumn.h:7</a></div></div>
@@ -217,7 +223,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="SteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph.png" border="0" usemap="#aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph" alt=""/></div>
 <map name="aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph" id="aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph">
 <area shape="rect" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,109,136,135"/>
-<area shape="rect" href="AnalogSensor_8c.html#a7423527b0a148c48a087c030171a20c5" title="Initializes an analog sensor." alt="" coords="201,83,321,108"/>
+<area shape="rect" href="AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="201,83,321,108"/>
 <area shape="rect" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title="Updates the SteeringColumn data." alt="" coords="184,133,337,159"/>
 <area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="427,80,507,105"/>
 <area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="597,80,703,105"/>

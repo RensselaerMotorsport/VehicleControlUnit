@@ -7,7 +7,7 @@
 <area shape="rect" id="node15" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="263,203,401,228"/>
 <area shape="rect" id="node17" href="$MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc" title="Initializes the Monitor System with initial settings." alt="" coords="269,252,395,277"/>
 <area shape="rect" id="node18" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="287,153,377,179"/>
-<area shape="rect" id="node6" href="$AnalogSensor_8c.html#a7423527b0a148c48a087c030171a20c5" title="Initializes an analog sensor." alt="" coords="449,79,569,104"/>
+<area shape="rect" id="node6" href="$AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="449,79,569,104"/>
 <area shape="rect" id="node13" href="$App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="467,128,551,153"/>
 <area shape="rect" id="node7" href="$Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="647,79,727,104"/>
 <area shape="rect" id="node8" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="804,153,909,179"/>

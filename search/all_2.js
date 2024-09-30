@@ -14,5 +14,9 @@ var searchData=
   ['brakepressure_11',['BrakePressure',['../structBrakePressure.html',1,'']]],
   ['brakepressure_2ec_12',['BrakePressure.c',['../BrakePressure_8c.html',1,'']]],
   ['brakepressure_2eh_13',['BrakePressure.h',['../BrakePressure_8h.html',1,'']]],
-  ['busfault_5fhandler_14',['BusFault_Handler',['../stm32f7xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f7xx_it.c'],['../stm32f7xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f7xx_it.c']]]
+  ['buffer_5fcount_14',['buffer_count',['../AnalogSensor_8c.html#a5ec37a5e4e59d8812e3c8013d001df58',1,'AnalogSensor.c']]],
+  ['buffer_5fhead_15',['buffer_head',['../AnalogSensor_8c.html#ac2c9f6f3a271135248f0b4f019624e18',1,'AnalogSensor.c']]],
+  ['buffer_5fsize_16',['BUFFER_SIZE',['../AnalogSensor_8h.html#a6b20d41d6252e9871430c242cb1a56e7',1,'AnalogSensor.h']]],
+  ['buffer_5ftail_17',['buffer_tail',['../AnalogSensor_8c.html#aa614b16e76636d31d897b36460452a3c',1,'AnalogSensor.c']]],
+  ['busfault_5fhandler_18',['BusFault_Handler',['../stm32f7xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f7xx_it.c'],['../stm32f7xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f7xx_it.c']]]
 ];

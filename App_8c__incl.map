@@ -1,10 +1,16 @@
 <map id="Core/Src/Sensors/AnalogSensors/App.c" name="Core/Src/Sensors/AnalogSensors/App.c">
-<area shape="rect" id="node1" title=" " alt="" coords="115,5,332,45"/>
-<area shape="rect" id="node2" href="$App_8h.html" title=" " alt="" coords="92,93,243,133"/>
-<area shape="rect" id="node5" title=" " alt="" coords="211,401,271,427"/>
-<area shape="rect" id="node3" href="$AnalogSensor_8h.html" title=" " alt="" coords="85,181,207,207"/>
-<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="103,255,176,280"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,401,68,427"/>
-<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="65,328,203,353"/>
-<area shape="rect" id="node8" title=" " alt="" coords="102,401,166,427"/>
+<area shape="rect" id="node1" title=" " alt="" coords="687,5,905,45"/>
+<area shape="rect" id="node2" href="$App_8h.html" title=" " alt="" coords="665,93,815,133"/>
+<area shape="rect" id="node9" title=" " alt="" coords="393,401,453,427"/>
+<area shape="rect" id="node3" href="$AnalogSensor_8h.html" title=" " alt="" coords="433,181,556,207"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,255,96,280"/>
+<area shape="rect" id="node5" title=" " alt="" coords="485,255,600,280"/>
+<area shape="rect" id="node6" title=" " alt="" coords="625,255,767,280"/>
+<area shape="rect" id="node7" title=" " alt="" coords="792,255,939,280"/>
+<area shape="rect" id="node8" title=" " alt="" coords="963,255,1107,280"/>
+<area shape="rect" id="node10" title=" " alt="" coords="159,401,223,427"/>
+<area shape="rect" id="node11" title=" " alt="" coords="347,255,411,280"/>
+<area shape="rect" id="node12" href="$Sensor_8h.html" title=" " alt="" coords="249,255,322,280"/>
+<area shape="rect" id="node13" title=" " alt="" coords="257,401,319,427"/>
+<area shape="rect" id="node14" href="$Updateable_8h.html" title=" " alt="" coords="171,328,309,353"/>
 </map>
