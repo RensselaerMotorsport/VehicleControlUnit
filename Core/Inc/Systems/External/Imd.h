@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-#include "../CANSensor.h"
+#include "../ExternalSystem.h"
 
 typedef struct {
     CANSensor base;

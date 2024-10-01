@@ -3,8 +3,6 @@
 
 #include <stdbool.h>
 
-#include "../Sensors/Sensor.h"
-#include "Task.h"
 #include "PriorityQueue.h"
 
 #define MAX_SENSORS 10

@@ -1,7 +1,7 @@
 #ifndef RENSSELAERMOTORSPORT_TASK_H
 #define RENSSELAERMOTORSPORT_TASK_H
 
-#include "../Sensors/Sensor.h"
+#include "../Utils/Updatable.h"
 
 // FIXME: Configure board to get high-resolution time
 typedef int highResTime;
