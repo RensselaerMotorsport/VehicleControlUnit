@@ -4,9 +4,67 @@
 #include "../ExternalSystem.h"
 #include "BmsData.h"
 
+typedef enum {
+    BMS_PACK_VOLTAGE,
+    BMS_PACK_CURRENT,
+    BMS_STATE_OF_CHARGE,
+    BMS_CELL_VOLTAGE_MIN,
+    BMS_CELL_VOLTAGE_MAX,
+    BMS_CELL_TEMPERATURE_MIN,
+    BMS_CELL_TEMPERATURE_MAX,
+    BMS_TOTAL_PACK_CAPACITY,
+    BMS_REMAINING_PACK_CAPACITY,
+    BMS_PACK_HEALTH,
+    BMS_CHARGE_STATUS,
+} BmsSignal;
+
 typedef struct {
-    CANSensor base;
-    BmsData data;
+    const char* signalName;
+    BmsSignal signalType;
+} BmsSignalMap;
+
+BmsSignalMap bmsSignalMap[] = {
+    {"Pack_Voltage", BMS_PACK_VOLTAGE},
+    {"Pack_Current", BMS_PACK_CURRENT},
+    {"State_of_Charge", BMS_STATE_OF_CHARGE},
+    {"Cell_Voltage_Min", BMS_CELL_VOLTAGE_MIN},
+    {"Cell_Voltage_Max", BMS_CELL_VOLTAGE_MAX},
+    {"Cell_Temperature_Min", BMS_CELL_TEMPERATURE_MIN},
+    {"Cell_Temperature_Max", BMS_CELL_TEMPERATURE_MAX},
+    {"Total_Pack_Capacity", BMS_TOTAL_PACK_CAPACITY},
+    {"Remaining_Pack_Capacity", BMS_REMAINING_PACK_CAPACITY},
+    {"Pack_Health", BMS_PACK_HEALTH},
+    {"Charge_Status", BMS_CHARGE_STATUS},
+};
+
+
+typedef struct {
+    const char* signalName;
+    BmsSignal signalType;
+} BmsSignalMap;
+
+BmsSignalMap bmsSignalMap[] = {
+    {"Pack_Voltage", BMS_PACK_VOLTAGE},
+    {"Pack_Current", BMS_PACK_CURRENT},
+    {"State_of_Charge", BMS_STATE_OF_CHARGE},
+    {"Cell_Voltage_Min", BMS_CELL_VOLTAGE_MIN},
+    {"Cell_Voltage_Max", BMS_CELL_VOLTAGE_MAX},
+};
+
+typedef struct {
+    ExternalSystem system;
+
+    float packVoltage;
+    float packCurrent;
+    float stateOfCharge;
+    float cellVoltageMin;
+    float cellVoltageMax;
+    float cellTemperatureMin;
+    float cellTemperatureMax;
+    float totalPackCapacity;
+    float remainingPackCapacity;
+    float packHealth;
+    uint8_t chargeStatus; // 0: Discharging, 1: Charging, 2: Idle
 } Bms;
 
 /**
