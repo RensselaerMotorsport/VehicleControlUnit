@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define UPDATE(item_)  ((item_)->updateable.update(item_))
+#define UPDATE(item_)  ((item_)->updateable->update(item_))
 #define STATUS(item_)  ((item_).updateable.status(&item_.updateable))
 #define ENABLE(item_)  ((item_).updateable.enable(&item_.updateable))
 #define DISABLE(item_)  ((item_).updateable.disable(&item_.updateable))

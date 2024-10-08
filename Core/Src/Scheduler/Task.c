@@ -1,13 +1,13 @@
 #include "../../Inc/Scheduler/Task.h"
 
-void TaskInit(Task* task, Sensor* sensor, int hz) {
-    task->sensor = sensor;
+void TaskInit(Task* task, Updateable* updateable, int hz) {
+    task->updateable = updateable;
     task->hz = hz;
     task->nextExecTime = 0;
 }
 
 void TaskExecute(Task* task) {
-    if (task->sensor && task->sensor->updateable.update) {
-        UPDATE(task->sensor);
+    if (task->updateable && task->updateable->update) {
+        UPDATE(task);
     }
 }

@@ -3,8 +3,11 @@
 #include <stdio.h>  // For printf
 
 void initEsc(Esc* esc, int hz) {
-    if (esc == NULL) {
-        return;
+    if (esc != NULL) {
+        initCANSensor(&esc->base, "Esc", hz, 0);
+        esc->temp = 0.0;
+        esc->motor_revolutions = 0.0;
+        esc->base.sensor.updateable.update = updateEsc;
     }
 
     initCANSensor(&esc->base, "Esc", hz);
