@@ -16,9 +16,9 @@
  * - Channels 10-16: GPIOC
  */
 
-void initAnalogSensor(AnalogSensor* sensor, const char* name, int hz, int channel) {
-    initSensor(&sensor->base, name, hz);
-    sensor->channel = channel;
+void initAnalogSensor(AnalogSensor* anSensor, const char* name, int hz, int channel) {
+    initSensor(&anSensor->sensor, name, hz, ANALOG);
+    anSensor->channel = channel;
 
 	// Struct for intializing the common settings for all GPIO channels
     GPIO_InitTypeDef GPIOXout_Struct;

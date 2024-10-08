@@ -7,6 +7,12 @@
 #include "BmsData.h"
 
 typedef enum {
+    DISCHARGING,
+    CHARGING,
+    IDLE,
+} BmsChargeStatus;
+
+typedef enum {
     Invalid_Signal = -1,
     BMS_PACK_VOLTAGE,
     BMS_PACK_CURRENT,
@@ -53,7 +59,7 @@ typedef struct {
     float totalPackCapacity;
     float remainingPackCapacity;
     float packHealth;
-    uint8_t chargeStatus; // 0: Discharging, 1: Charging, 2: Idle
+    BmsChargeStatus chargeStatus;
 } Bms;
 
 /**

@@ -44,7 +44,7 @@ char* getSignalName(Signal* sig);
 
 int getSignalCount(Message* msg);
 
-Signal** getSignals(Message* msg);
+Signal* getSignals(Message* msg);
 
 int parseDbcFile(DBC* dbc, const char *filename);
 
@@ -52,6 +52,6 @@ int getDbcMessageCount(DBC* dbc);
 
 uint8_t* getMessageData(Message* msg);
 
-Message** getDbcMessages(DBC* dbc);
+Message* getDbcMessages(DBC* dbc);
 
 void printDbc(const DBC *dbc);

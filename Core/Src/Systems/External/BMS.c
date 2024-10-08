@@ -47,13 +47,14 @@ void assignBmsValue(Bms* bms, BmsSignal type, float value) {
 }
 
 bool bmsTransferFunction(Bms* bms, DBC* dbc) {
-    Message** messages = getDbcMessages(dbc);
-    for (Message** msg = messages; *msg != NULL; msg++) {
-        Signal** signals = getSignals(*msg);
-        for (Signal** sig = signals; *sig != NULL; sig++) {
-            char* name = getSignalName(*sig);
+    Message* messages = getDbcMessages(dbc);
+    for (Message* msg = messages; msg != NULL; msg++) {
+
+        Signal* signals = getSignals(msg);
+        for (Signal* sig = signals; sig != NULL; sig++) {
+            char* name = getSignalName(sig);
             BmsSignal type = lookupBmsSignal(name);
-            float value = extractSignalValue(*sig);
+            float value = extractSignalValue(sig);
             assignBmsValue(bms, type, value);
         }
     }
@@ -62,6 +63,7 @@ bool bmsTransferFunction(Bms* bms, DBC* dbc) {
 
 void updateBms(void* bms) {
     Bms* myBms = (Bms*) bms;
+    printf("Not implemented\n");
 }
 
 // TODO: make this as similar to the normal update as possible.

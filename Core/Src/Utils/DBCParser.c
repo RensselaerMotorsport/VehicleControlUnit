@@ -4,6 +4,19 @@
 #include <string.h>
 #include <stdlib.h>
 
+Message* getDbcMessage(DBC* dbc) {
+    return dbc->messages;
+}
+
+Signal* getSignals(Message* msg) {
+    return msg->signals;
+}
+
+char* getSignalName(Signal* sig) {
+    return sig->name;
+}
+
+
 int parseDbcLine(char *line, DBC *dbc) {
     // static Message *current_message = NULL;
 
