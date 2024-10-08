@@ -1,12 +1,12 @@
-#include "../../../Inc/Sensors/CANSensors/Imd.h"
+#include "../../../Inc/Systems/External/Imd.h"
 
 #include <stdio.h>  // For printf
 
 void initImd(Imd* imd, int hz) {
-    initCANSensor(&imd->base, "Imd", hz, 0);
+    // initCANSensor(&imd->system, "Imd", hz, 0);
     imd->imd_status = false;
     imd->running_flag = false;
-    imd->base.sensor.updateable.update = updateImd;
+    // imd->base.sensor.updateable.update = updateImd;
 }
 
 bool getImdStatus(const Imd* imd) {

@@ -16,7 +16,6 @@ char* getSignalName(Signal* sig) {
     return sig->name;
 }
 
-
 int parseDbcLine(char *line, DBC *dbc) {
     // static Message *current_message = NULL;
 
@@ -42,6 +41,40 @@ int parseDbcLine(char *line, DBC *dbc) {
         Signal *signal = &message->signals[message->signal_count++];
         sscanf(line, " SG_ %s : %d|%d@%d%c (%f,%f) [%f|%f] %s %s", signal->name, &signal->start_bit, &signal->length, &signal->endian, &signal->signd, &signal->scale, &signal->offset, &signal->min, &signal->max, signal->unit, signal->reciever);
     }
+}
+
+float extractSignalValue(Signal* sig, const uint8_t* canData) {
+    // Extract raw bits from CAN data based on start_bit and length
+    uint64_t rawValue = 0;
+
+    // Extract the raw value bitwise, handle endianess
+    for (int i = 0; i < sig->length; i++) {
+        int bitPos = sig->start_bit + i;
+        int bytePos = bitPos / 8;
+        int bitInByte = bitPos % 8;
+
+        if (sig->endian == 0) {  // Assuming 0 is little endian, 1 is big endian
+            rawValue |= ((canData[bytePos] >> bitInByte) & 0x01) << i;
+        } else {
+            // Handle big-endian differently (adjust byte order, bit shift accordingly)
+            // Big endian handling code here
+        }
+    }
+
+    // Apply sign conversion if necessary
+    if (sig->signd && (rawValue & (1ULL << (sig->length - 1)))) {
+        // Extend sign if signal is signed and the sign bit is set
+        rawValue |= ~((1ULL << sig->length) - 1);
+    }
+
+    // Apply scaling and offset
+    float physicalValue = rawValue * sig->scale + sig->offset;
+
+    // Optionally, you can clamp it to min and max
+    if (physicalValue < sig->min) physicalValue = sig->min;
+    if (physicalValue > sig->max) physicalValue = sig->max;
+
+    return physicalValue;
 }
 
 int parseDbcFile(DBC *dbc, const char *filename) {

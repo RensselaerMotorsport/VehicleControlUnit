@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include "../ExternalSystem.h"
+#include "../../../Inc/Systems/DBCParser.h"
 #include "BmsData.h"
 
 typedef enum {
@@ -48,6 +49,7 @@ static BmsSignalMap bmsSignalMap[] = {
 
 typedef struct {
     ExternalSystem extSystem;
+    Message** dbcMessageMap;
 
     float packVoltage;
     float packCurrent;
@@ -67,8 +69,9 @@ typedef struct {
  *
  * @param bms Pointer to the Bms structure to initialize.
  * @param hz  The frequency in Hertz at which the BMS operates.
+ * @param dbcFn The filename of the dbc file to use to interpret the can data.
  */
-void initBms(Bms* bms, int hz);
+void initBms(Bms* bms, int hz, const char* dbcFn);
 
 /** // FIXME: Modify this
  * @brief Transfers raw BMS data to a BmsData structure.
@@ -90,8 +93,8 @@ void updateBms(void* bms);
  * @warning For testing and debugging use only
  *
  * @param bms Pointer to the Bms structure to update.
- * @param dbcFilename Name of file containing dbc.
+ * @param canDataFn Name of file containing can data.
  */
-void updateBmsTest(void* bms, const char* dbcFilename);
+void updateBmsTest(void* bms, const char* canDataFn);
 
 #endif // RENNSSELAERMOTORSPORT_BMS_H

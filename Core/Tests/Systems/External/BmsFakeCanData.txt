@@ -1,0 +1,5 @@
+BO_ 100 BMS_Voltage: 8 BMS
+SG_ Pack_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
+
+Raw CAN Data (in Hex): 0x16E8
+Interpreted Value: (0x16E8) * 0.1 = 360.5 V

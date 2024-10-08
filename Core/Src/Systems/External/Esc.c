@@ -1,19 +1,19 @@
-#include "../../../Inc/Sensors/CANSensors/Esc.h"
+#include "../../../Inc/Systems/External/Esc.h"
 
 #include <stdio.h>  // For printf
 
 void initEsc(Esc* esc, int hz) {
     if (esc != NULL) {
-        initCANSensor(&esc->base, "Esc", hz, 0);
+        // initCANSensor(&esc->base, "Esc", hz, 0);
         esc->temp = 0.0;
         esc->motor_revolutions = 0.0;
-        esc->base.sensor.updateable.update = updateEsc;
+        // esc->base.sensor.updateable.update = updateEsc;
     }
 
-    initCANSensor(&esc->base, "Esc", hz);
+    // initCANSensor(&esc->base, "Esc", hz);
     esc->temp = 0.0;
     esc->motor_revolutions = 0.0;
-    esc->base.sensor.updateable.update = updateEsc;
+    // esc->base.sensor.updateable.update = updateEsc;
 }
 
 float getEscTemp(const Esc* esc) {

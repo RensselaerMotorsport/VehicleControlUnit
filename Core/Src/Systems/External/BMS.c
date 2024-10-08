@@ -1,16 +1,40 @@
 #include "../../../Inc/Systems/External/BMS.h"
-#include "../../../Inc/Systems/DBCParser.h"
-
 
 #include <stdio.h>  // For printf
 
-void initBms(Bms* bms, int hz) {
-    if (bms != NULL) {
-        initExternalSystem(&bms->extSystem, "Bms", hz, 0);
-        // Assume initBmsData initializes with default or zero values
-        /*initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);*/
-        bms->extSystem.system.updateable.update = updateBms;
+void initBms(Bms* bms, int hz, const char* dbcFn) {
+    if (bms == NULL) return;
+
+    initExternalSystem(&bms->extSystem, "Bms", hz, 0);
+
+    bms->packVoltage = 0.0f;
+    bms->packCurrent = 0.0f;
+    bms->stateOfCharge = 0.0f;
+    bms->cellVoltageMin = 0.0f;
+    bms->cellVoltageMax = 0.0f;
+    bms->cellTemperatureMin = 0.0f;
+    bms->cellTemperatureMax = 0.0f;
+    bms->totalPackCapacity = 0.0f;
+    bms->remainingPackCapacity = 0.0f;
+    bms->packHealth = 0.0f;
+    bms->chargeStatus = IDLE;
+    bms->extSystem.system.updateable.update = updateBms;
+
+    DBC dbc;
+    if(!parseDbcFile(&dbc, dbcFn)) {
+        printf("Update Test Error: Couldn't parse dbc.\n");
+        return;
     }
+
+    Message* messageMap[MAX_MESSAGES] = {NULL};
+
+    int size = dbc.messageCount;
+    for (int i = 0; i < size; i++) {
+        int index = dbc.messages[i].id / 100;
+        messageMap[index] = &dbc.messages[i];
+    }
+
+    bms->dbcMessageMap = (Message**)messageMap;
 }
 
 BmsSignal lookupBmsSignal(const char* name) {
@@ -46,20 +70,23 @@ void assignBmsValue(Bms* bms, BmsSignal type, float value) {
     }
 }
 
-bool bmsTransferFunction(Bms* bms, DBC* dbc) {
-    Message* messages = getDbcMessages(dbc);
-    for (Message* msg = messages; msg != NULL; msg++) {
+bool bmsTransferFunction(Bms* bms, uint8_t* canData) {
+    int index = canData.messageId / 100;
+    Message* message = bms->dbcMessageMap[index];
 
-        Signal* signals = getSignals(msg);
-        for (Signal* sig = signals; sig != NULL; sig++) {
-            char* name = getSignalName(sig);
-            BmsSignal type = lookupBmsSignal(name);
-            float value = extractSignalValue(sig);
-            assignBmsValue(bms, type, value);
+    // Check if the message ID matches the expected one
+    if (message != NULL && message->id == canData.messageId) {
+        // Decode signals within the message
+        for (int i = 0; i < message->signal_count; i++) {
+            Signal* signal = &message->signals[i];
+            float value = extractSignalValue(signal, canData);
+            // assignBmsValue(bms, signal->type, value);  // Assign value to Bms
         }
+        return true;
     }
-    return true;
+    return false;  // Message ID not found or doesn't match
 }
+
 
 void updateBms(void* bms) {
     Bms* myBms = (Bms*) bms;
@@ -69,15 +96,12 @@ void updateBms(void* bms) {
 // TODO: make this as similar to the normal update as possible.
 //
 // @warning For testing and debugging purposes only
-void updateBmsTest(void* bms, const char* dbcFilename) {
+void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
-    DBC dbc;
-    if(!parseDbcFile(&dbc, dbcFilename)) {
-        printf("Update Test Error: Couldn't parse dbc.\n");
-        return;
-    }
-    if(!bmsTransferFunction(myBms, &dbc)) {
+    uint8_t* canData = parseCanData(canDataFn);
+
+    // Call the transfer function to decode the message
+    if (!bmsTransferFunction(bms, canData)) {
         printf("Update Test Error: Transfer function failed.\n");
-        return;
     }
 }

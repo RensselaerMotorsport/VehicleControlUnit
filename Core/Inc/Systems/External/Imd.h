@@ -6,7 +6,7 @@
 #include "../ExternalSystem.h"
 
 typedef struct {
-    CANSensor base;
+    ExternalSystem system;
     bool imd_status;
     bool running_flag;
 } Imd;

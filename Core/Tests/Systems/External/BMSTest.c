@@ -5,9 +5,9 @@
 
 #define BmsHz 500
 
-int testBmsInit(const char* testName) {
+int testBmsInit(const char* dbcFn, const char* testName) {
     Bms bms;
-    initBms(&bms, BmsHz);
+    initBms(&bms, BmsHz, dbcFn);
 
     if (bms.chargeStatus != IDLE || bms.packVoltage != 0.0f ||
         bms.packCurrent != 0.0f) {

@@ -4,7 +4,7 @@
 #include "../ExternalSystem.h"
 
 typedef struct {
-    CANSensor base;
+    // CANSensor base;
     float temp;
     float motor_revolutions;
 } Esc;
