@@ -1,107 +1,81 @@
-#include "../../../Inc/Sensors/CANSensors/BMS.h"
+#include "../../../Inc/Systems/External/BMS.h"
+#include "../../../Inc/Systems/DBCParser.h"
+
 
 #include <stdio.h>  // For printf
 
 void initBms(Bms* bms, int hz) {
     if (bms != NULL) {
-        initCANSensor(&bms->base, "Bms", hz, 0);
+        initExternalSystem(&bms->extSystem, "Bms", hz, 0);
         // Assume initBmsData initializes with default or zero values
-        initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);
-        bms->base.sensor.updateable.update = updateBms;
+        /*initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);*/
+        bms->extSystem.system.updateable.update = updateBms;
     }
 }
 
-    initCANSensor(&bms->base, "Bms", hz);
-    // Assume initBmsData initializes with default or zero values
-    initBmsData(&bms->data, 0, 0, 0, 0, 0, 0, 0, 0, false);
-    bms->base.sensor.updateable.update = updateBms;
-}
-
-bool parseBmsSignal(Bms* bmsData, BmsSignal signal, float value) {
-    switch (signal) {
-        case BMS_PACK_VOLTAGE:
-            bmsData->packVoltage = value;
-            break;
-        case BMS_PACK_CURRENT:
-            bmsData->packCurrent = value;
-            break;
-        case BMS_STATE_OF_CHARGE:
-            bmsData->stateOfCharge = value;
-            break;
-        case BMS_CELL_VOLTAGE_MIN:
-            bmsData->cellVoltageMin = value;
-            break;
-        case BMS_CELL_VOLTAGE_MAX:
-            bmsData->cellVoltageMax = value;
-            break;
-        case BMS_CELL_TEMPERATURE_MIN:
-            bmsData->cellTemperatureMin = value;
-            break;
-        case BMS_CELL_TEMPERATURE_MAX:
-            bmsData->cellTemperatureMax = value;
-            break;
-        case BMS_TOTAL_PACK_CAPACITY:
-            bmsData->totalPackCapacity = value;
-            break;
-        case BMS_REMAINING_PACK_CAPACITY:
-            bmsData->remainingPackCapacity = value;
-            break;
-        case BMS_PACK_HEALTH:
-            bmsData->packHealth = value;
-            break;
-        case BMS_CHARGE_STATUS:
-            bmsData->chargeStatus = (uint8_t) value;
-            break;
-        default:
-            // Handle unknown signals if necessary
-            return false;
-    }
-    return true;
-}
-
-bool bmsTransferFunction(const Message* message, Bms* bmsData) {
-    // Iterate through signals and decode each one
-    for (int j = 0; j < message->signal_count; j++) {
-        Signal signal = message->signals[j];
-        float decodedValue = ParseSignal(message, &signal);
-
-        // Find the BMS signal type based on the signal name
-        BmsSignal bmsSignalType;
-        bool signalFound = false;
-        for (int k = 0; k < sizeof(bmsSignalMap)/sizeof(BmsSignalMap); k++) {
-            if (strcmp(signal.name, bmsSignalMap[k].signalName) == 0) {
-                bmsSignalType = bmsSignalMap[k].signalType;
-                signalFound = true;
-                break;
-            }
-        }
-
-        if (!signalFound) {
-            // Handle unknown signals if necessary
-            continue;
-        }
-
-        if (!parseBmsSignal(bmsData, bmsSignalType, decodedValue)) {
-            return false;
+BmsSignal lookupBmsSignal(const char* name) {
+    for (int i = 0; bmsSignalMap[i].signalName != NULL; i++) {
+        if (strcmp(bmsSignalMap[i].signalName, name) == 0) {
+            return bmsSignalMap[i].signalType;
         }
     }
+    return -1; // Invalid signal
+}
 
+void assignBmsValue(Bms* bms, BmsSignal type, float value) {
+    // Define the array inside the function where `bms` is available
+    void* bmsSignalPointers[] = {
+        &bms->packVoltage,
+        &bms->packCurrent,
+        &bms->stateOfCharge,
+        &bms->cellVoltageMin,
+        &bms->cellVoltageMax,
+        &bms->cellTemperatureMin,
+        &bms->cellTemperatureMax,
+        &bms->totalPackCapacity,
+        &bms->remainingPackCapacity,
+        &bms->packHealth,
+        &bms->chargeStatus
+    };
+
+    // Assign values based on type
+    if (type == BMS_CHARGE_STATUS) {
+        *(uint8_t*)bmsSignalPointers[type] = (uint8_t)value; // Cast to uint8_t for chargeStatus
+    } else {
+        *(float*)bmsSignalPointers[type] = value; // Default cast to float for others
+    }
+}
+
+bool bmsTransferFunction(Bms* bms, DBC* dbc) {
+    Message** messages = getDbcMessages(dbc);
+    for (Message** msg = messages; *msg != NULL; msg++) {
+        Signal** signals = getSignals(*msg);
+        for (Signal** sig = signals; *sig != NULL; sig++) {
+            char* name = getSignalName(*sig);
+            BmsSignal type = lookupBmsSignal(name);
+            float value = extractSignalValue(*sig);
+            assignBmsValue(bms, type, value);
+        }
+    }
     return true;
 }
 
 void updateBms(void* bms) {
     Bms* myBms = (Bms*) bms;
-    CanData canData = data; // Assume 'data' is obtained from the CAN message
+}
 
-    myBms->packVoltage = canData.packVoltage;
-    myBms->packCurrent = canData.packCurrent;
-    myBms->stateOfCharge = canData.stateOfCharge;
-    myBms->cellVoltageMin = canData.cellVoltageMin;
-    myBms->cellVoltageMax = canData.cellVoltageMax;
-    myBms->cellTemperatureMin = canData.cellTemperatureMin;
-    myBms->cellTemperatureMax = canData.cellTemperatureMax;
-    myBms->totalPackCapacity = canData.totalPackCapacity;
-    myBms->remainingPackCapacity = canData.remainingPackCapacity;
-    myBms->packHealth = canData.packHealth;
-    myBms->chargeStatus = canData.chargeStatus;
+// TODO: make this as similar to the normal update as possible.
+//
+// @warning For testing and debugging purposes only
+void updateBmsTest(void* bms, const char* dbcFilename) {
+    Bms* myBms = (Bms*) bms;
+    DBC dbc;
+    if(!parseDbcFile(&dbc, dbcFilename)) {
+        printf("Update Test Error: Couldn't parse dbc.\n");
+        return;
+    }
+    if(!bmsTransferFunction(myBms, &dbc)) {
+        printf("Update Test Error: Transfer function failed.\n");
+        return;
+    }
 }

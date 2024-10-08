@@ -1,10 +1,10 @@
-#include "../../includes/DBCParser.h"
-#include "../../includes/PrintHelpers.h"
+#include "../../Inc/Systems/DBCParser.h"
+#include "../../Inc/Systems/PrintHelpers.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-int parse_dbc_line(char *line, DBC *dbc) {
+int parseDbcLine(char *line, DBC *dbc) {
     // static Message *current_message = NULL;
 
     if (strncmp(line, "BO_", 3) == 0) {
@@ -31,7 +31,7 @@ int parse_dbc_line(char *line, DBC *dbc) {
     }
 }
 
-int parse_dbc_file(const char *filename, DBC *dbc) {
+int parseDbcFile(DBC *dbc, const char *filename) {
     FILE *file = fopen(filename, "r");
     if (!file) {
         perror("Failed to open DBC file");
@@ -42,7 +42,7 @@ int parse_dbc_file(const char *filename, DBC *dbc) {
     dbc->message_count = 0;
 
     while (fgets(line, sizeof(line), file)) {
-        if (!parse_dbc_line(line, dbc)) {
+        if (!parseDbcLine(line, dbc)) {
             return 0;
         }
     }
@@ -51,7 +51,7 @@ int parse_dbc_file(const char *filename, DBC *dbc) {
     return 1;
 }
 
-void print_dbc(const DBC *dbc) {
+void printDbc(const DBC *dbc) {
     printf("Printing DBC file with %d messages\n", dbc->message_count);
     for (int i = 0; i < dbc->message_count; i++) {
         const Message *msg = &dbc->messages[i];

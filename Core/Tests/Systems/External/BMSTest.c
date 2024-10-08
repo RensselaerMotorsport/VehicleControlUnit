@@ -1,6 +1,4 @@
-#include "../Inc/Systems/External/BMS.h"
-
-#include "../Inc/Systems/External/Bms.h"
+#include "../../../Inc/Systems/External/BMS.h"
 
 #include <stdio.h>
 #include <assert.h>

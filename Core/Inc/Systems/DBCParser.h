@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 #define MAX_LINE_LENGTH 256
 #define MAX_SIGNALS 64
 #define MAX_MESSAGES 256
@@ -34,8 +36,22 @@ typedef struct {
     int message_count;
 } DBC;
 
-int parse_dbc_line(char *line, DBC *dbc);
+// FIXME: Organize into own classes
 
-int parse_dbc_file(const char *filename, DBC *dbc);
+float extractSignalValue(Signal* sig);
 
-void print_dbc(const DBC *dbc);
+char* getSignalName(Signal* sig);
+
+int getSignalCount(Message* msg);
+
+Signal** getSignals(Message* msg);
+
+int parseDbcFile(DBC* dbc, const char *filename);
+
+int getDbcMessageCount(DBC* dbc);
+
+uint8_t* getMessageData(Message* msg);
+
+Message** getDbcMessages(DBC* dbc);
+
+void printDbc(const DBC *dbc);

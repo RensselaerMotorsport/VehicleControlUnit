@@ -1,10 +1,13 @@
 #ifndef RENNSSELAERMOTORSPORT_BMS_H
 #define RENNSSELAERMOTORSPORT_BMS_H
 
+#include <stdint.h>
+
 #include "../ExternalSystem.h"
 #include "BmsData.h"
 
 typedef enum {
+    Invalid_Signal = -1,
     BMS_PACK_VOLTAGE,
     BMS_PACK_CURRENT,
     BMS_STATE_OF_CHARGE,
@@ -23,7 +26,7 @@ typedef struct {
     BmsSignal signalType;
 } BmsSignalMap;
 
-BmsSignalMap bmsSignalMap[] = {
+static BmsSignalMap bmsSignalMap[] = {
     {"Pack_Voltage", BMS_PACK_VOLTAGE},
     {"Pack_Current", BMS_PACK_CURRENT},
     {"State_of_Charge", BMS_STATE_OF_CHARGE},
@@ -37,22 +40,8 @@ BmsSignalMap bmsSignalMap[] = {
     {"Charge_Status", BMS_CHARGE_STATUS},
 };
 
-
 typedef struct {
-    const char* signalName;
-    BmsSignal signalType;
-} BmsSignalMap;
-
-BmsSignalMap bmsSignalMap[] = {
-    {"Pack_Voltage", BMS_PACK_VOLTAGE},
-    {"Pack_Current", BMS_PACK_CURRENT},
-    {"State_of_Charge", BMS_STATE_OF_CHARGE},
-    {"Cell_Voltage_Min", BMS_CELL_VOLTAGE_MIN},
-    {"Cell_Voltage_Max", BMS_CELL_VOLTAGE_MAX},
-};
-
-typedef struct {
-    ExternalSystem system;
+    ExternalSystem extSystem;
 
     float packVoltage;
     float packCurrent;
@@ -75,6 +64,14 @@ typedef struct {
  */
 void initBms(Bms* bms, int hz);
 
+/** // FIXME: Modify this
+ * @brief Transfers raw BMS data to a BmsData structure.
+ *
+ * @param rawData Pointer to the array of raw data.
+ * @return The converted BmsData structure.
+ */
+BmsData transferFunctionBms(float* rawdata);
+
 /**
  * @brief Updates the BMS data.
  *
@@ -83,11 +80,12 @@ void initBms(Bms* bms, int hz);
 void updateBms(void* bms);
 
 /**
- * @brief Transfers raw BMS data to a BmsData structure.
+ * @brief Updates the BMS data.
+ * @warning For testing and debugging use only
  *
- * @param rawData Pointer to the array of raw data.
- * @return The converted BmsData structure.
+ * @param bms Pointer to the Bms structure to update.
+ * @param dbcFilename Name of file containing dbc.
  */
-BmsData transferFunctionBms(float* rawdata);
+void updateBmsTest(void* bms, const char* dbcFilename);
 
 #endif // RENNSSELAERMOTORSPORT_BMS_H
