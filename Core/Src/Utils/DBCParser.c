@@ -21,17 +21,17 @@ int parseDbcLine(char *line, DBC *dbc) {
 
     if (strncmp(line, "BO_", 3) == 0) {
         // Check if we went over the limit of allowed messages
-        if (dbc->message_count > MAX_MESSAGES) {
+        if (dbc->messageCount > MAX_MESSAGES) {
             fprintf(stderr, "Exceeded maximum number of messages\n");
             return 0;
         }
         // Message definition
-        Message *message = &dbc->messages[dbc->message_count++];
+        Message *message = &dbc->messages[dbc->messageCount++];
         sscanf(line, "BO_ %d %s %d %s", &message->id, message->name, &message->dlc, message->sender);
         message->name[strlen(message->name) - 1] = '\0'; // remove colon from end of name
         message->signal_count = 0; 
     } else if (strncmp(line, " SG_", 4) == 0) {
-        Message *message = &dbc->messages[dbc->message_count - 1];
+        Message *message = &dbc->messages[dbc->messageCount - 1];
         // Check if we went over the limit of allowed signals
         if (message->signal_count > MAX_SIGNALS) {
             fprintf(stderr, "Exceeded maximum number of signals\n");
@@ -85,7 +85,7 @@ int parseDbcFile(DBC *dbc, const char *filename) {
     }
 
     char line[MAX_LINE_LENGTH];
-    dbc->message_count = 0;
+    dbc->messageCount = 0;
 
     while (fgets(line, sizeof(line), file)) {
         if (!parseDbcLine(line, dbc)) {
@@ -98,8 +98,8 @@ int parseDbcFile(DBC *dbc, const char *filename) {
 }
 
 void printDbc(const DBC *dbc) {
-    printf("Printing DBC file with %d messages\n", dbc->message_count);
-    for (int i = 0; i < dbc->message_count; i++) {
+    printf("Printing DBC file with %d messages\n", dbc->messageCount);
+    for (int i = 0; i < dbc->messageCount; i++) {
         const Message *msg = &dbc->messages[i];
         printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
         for (int j = 0; j < msg->signal_count; j++) {
@@ -108,4 +108,31 @@ void printDbc(const DBC *dbc) {
         }
         printf("\n");
     }
+}
+
+
+CanMessage parseCanData(const char* filename) {
+    CanMessage canMsg;
+    FILE* file = fopen(filename, "rb");
+
+    if (!file) {
+        perror("Failed to open CAN data file");
+        exit(EXIT_FAILURE);
+    }
+
+    // Read CAN data (assuming the first 4 bytes are the message ID and next are the data)
+    uint8_t rawData[10];  // Adjust based on your message size, max 10 bytes here
+    fread(rawData, sizeof(uint8_t), sizeof(rawData), file);
+    fclose(file);
+
+    // Extract message ID from the first 4 bytes
+    canMsg.messageId = (rawData[0] << 24) | (rawData[1] << 16) | (rawData[2] << 8) | rawData[3];
+
+    // Extract message data (adjust this as per the actual message length)
+    canMsg.dataLength = sizeof(rawData) - 4;
+    for (int i = 0; i < canMsg.dataLength; i++) {
+        canMsg.data[i] = rawData[i + 4];
+    }
+
+    return canMsg;
 }

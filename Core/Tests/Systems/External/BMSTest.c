@@ -19,23 +19,23 @@ int testBmsInit(const char* dbcFn, const char* testName) {
     }
 }
 
-// int testBmsUpdate(float voltage, float current, ChargeStatus expectedChargeStatus,
-//                   const char* dbcFile, const char* testName) {
-//     Bms bms;
-//     initBms(&bms, BmsHz);
-//
-//     updateBmsTest(&bms, dbcFile);
-//
-//     if (getBmsPackVoltage(&bms) != voltage || getBmsPackCurrent(&bms) != current ||
-//         getBmsChargeStatus(&bms) != expectedChargeStatus) {
-//         printf("Failed: %s. BMS pack voltage, current, or charge status is incorrect.\n", testName);
-//         return 0;
-//     } else {
-//         printf("Passed: %s.\n", testName);
-//         return 1;
-//     }
-// }
-//
+int testBmsUpdate(float voltage, float current, BmsChargeStatus expectedChargeStatus,
+                  const char* dbcFn, const char* canDataFn, const char* testName) {
+    Bms bms;
+    initBms(&bms, BmsHz, dbcFn);
+
+    updateBmsTest(&bms, canDataFn);
+
+    if (bms.packVoltage != voltage || bms.packCurrent != current ||
+        bms.chargeStatus != expectedChargeStatus) {
+        printf("Failed: %s. BMS pack voltage, current, or charge status is incorrect.\n", testName);
+        return 0;
+    } else {
+        printf("Passed: %s.\n", testName);
+        return 1;
+    }
+}
+
 // int testBmsResetStatus(const char* testName) {
 //     Bms bms;
 //     initBms(&bms, BmsHz);
@@ -53,10 +53,21 @@ int testBmsInit(const char* dbcFn, const char* testName) {
 // }
 
 int main() {
-    assert(testBmsInit("BMS Initialization Test"));
+    assert(testBmsInit(
+        "Tests/Systems/External/BmsFakeDbc.txt",
+        "BMS Initialization Test"
+    ));
 
-    // // Normal Operation (Charging)
-    // assert(testBmsUpdate(400.0f, -50.0f, CHARGE_STATUS_CHARGING, "BMS Charging Operation Test"));
+    // Normal Operation (Charging)
+    assert(testBmsUpdate(
+        400.0f,
+        100.0f,
+        IDLE,
+        "Tests/Systems/External/BmsFakeDbc.txt",
+        "Tests/Systems/External/BmsFakeCanData.txt",
+        "BMS Charging Operation Test"
+    ));
+
     // // Normal Operation (Discharging)
     // assert(testBmsUpdate(400.0f, 50.0f, CHARGE_STATUS_DISCHARGING, "BMS Discharging Operation Test"));
     // // Overvoltage Condition

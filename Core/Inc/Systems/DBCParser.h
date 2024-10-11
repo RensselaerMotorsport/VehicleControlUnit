@@ -61,30 +61,6 @@ typedef struct {
     int dataLength;   // Length of the data in bytes
 } CanMessage;
 
-CanMessage parseCanData(const char* filename) {
-    CanMessage canMsg;
-    FILE* file = fopen(filename, "rb");
-
-    if (!file) {
-        perror("Failed to open CAN data file");
-        exit(EXIT_FAILURE);
-    }
-
-    // Read CAN data (assuming the first 4 bytes are the message ID and next are the data)
-    uint8_t rawData[10];  // Adjust based on your message size, max 10 bytes here
-    fread(rawData, sizeof(uint8_t), sizeof(rawData), file);
-    fclose(file);
-
-    // Extract message ID from the first 4 bytes
-    canMsg.messageId = (rawData[0] << 24) | (rawData[1] << 16) | (rawData[2] << 8) | rawData[3];
-
-    // Extract message data (adjust this as per the actual message length)
-    canMsg.dataLength = sizeof(rawData) - 4;
-    for (int i = 0; i < canMsg.dataLength; i++) {
-        canMsg.data[i] = rawData[i + 4];
-    }
-
-    return canMsg;
-}
+CanMessage parseCanData(const char* filename);
 
 #endif  // RENNSSELAERMOTORSPORT_DBC_H

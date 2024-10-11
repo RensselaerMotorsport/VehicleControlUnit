@@ -22,7 +22,7 @@ void initBms(Bms* bms, int hz, const char* dbcFn) {
 
     DBC dbc;
     if(!parseDbcFile(&dbc, dbcFn)) {
-        printf("Update Test Error: Couldn't parse dbc.\n");
+        printf("Error: Couldn't parse dbc.\n");
         return;
     }
 
@@ -70,16 +70,16 @@ void assignBmsValue(Bms* bms, BmsSignal type, float value) {
     }
 }
 
-bool bmsTransferFunction(Bms* bms, uint8_t* canData) {
-    int index = canData.messageId / 100;
+bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
+    int index = canData->messageId / 100;
     Message* message = bms->dbcMessageMap[index];
 
     // Check if the message ID matches the expected one
-    if (message != NULL && message->id == canData.messageId) {
+    if (message != NULL && message->id == canData->messageId) {
         // Decode signals within the message
         for (int i = 0; i < message->signal_count; i++) {
             Signal* signal = &message->signals[i];
-            float value = extractSignalValue(signal, canData);
+            float value = extractSignalValue(signal, canData->data);
             // assignBmsValue(bms, signal->type, value);  // Assign value to Bms
         }
         return true;
@@ -98,10 +98,10 @@ void updateBms(void* bms) {
 // @warning For testing and debugging purposes only
 void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
-    uint8_t* canData = parseCanData(canDataFn);
+    CanMessage canData = parseCanData(canDataFn);
 
     // Call the transfer function to decode the message
-    if (!bmsTransferFunction(bms, canData)) {
+    if (!bmsTransferFunction(myBms, &canData)) {
         printf("Update Test Error: Transfer function failed.\n");
     }
 }
