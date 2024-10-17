@@ -2,28 +2,3 @@ BO_ 100 BMS_Voltage: 8 BMS
 SG_ Pack_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
 Raw CAN Data (in Hex): 0x0FA0
 Interpreted Value: (0x0FA0) * 0.1 = 400.0 V
-
-BO_ 200 BMS_Current: 8 BMS
-SG_ Pack_Current : 0|16@1+ (0.1,0) [-500|500] "A"  BMS
-Raw CAN Data (in Hex): 0x03E8
-Interpreted Value: (0x03E8) * 0.1 = 100.0 A
-
-BO_ 300 BMS_State_Of_Charge: 8 BMS
-SG_ State_of_Charge : 0|8@1+ (1,0) [0|100] "%"  BMS
-Raw CAN Data (in Hex): 0x50
-Interpreted Value: (0x50) * 1 = 80.0 %
-
-BO_ 400 BMS_Cell_Voltage_Min: 8 BMS
-SG_ Cell_Voltage_Min : 0|16@1+ (0.001,0) [0|5] "V"  BMS
-Raw CAN Data (in Hex): 0x0C80
-Interpreted Value: (0x0C80) * 0.001 = 3.2 V
-
-BO_ 500 BMS_Cell_Voltage_Max: 8 BMS
-SG_ Cell_Voltage_Max : 0|16@1+ (0.001,0) [0|5] "V"  BMS
-Raw CAN Data (in Hex): 0x0ED8
-Interpreted Value: (0x0ED8) * 0.001 = 3.8 V
-
-BO_ 600 BMS_Charge_Status: 8 BMS
-SG_ Charge_Status : 0|2@1+ (1,0) [0|2] ""  BMS
-Raw CAN Data (in Hex): 0x02
-Interpreted Value: 2 (Idle)

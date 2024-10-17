@@ -49,6 +49,7 @@ static BmsSignalMap bmsSignalMap[] = {
 
 typedef struct {
     ExternalSystem extSystem;
+    DBC* dbc;
     Message** dbcMessageMap;
 
     float packVoltage;

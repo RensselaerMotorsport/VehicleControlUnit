@@ -111,28 +111,47 @@ void printDbc(const DBC *dbc) {
 }
 
 
-CanMessage parseCanData(const char* filename) {
-    CanMessage canMsg;
-    FILE* file = fopen(filename, "rb");
-
+int parseCanData(CanMessage* canMsg, const DBC* dbc, const char* filename) {
+    FILE* file = fopen(filename, "r");
     if (!file) {
         perror("Failed to open CAN data file");
         exit(EXIT_FAILURE);
     }
 
-    // Read CAN data (assuming the first 4 bytes are the message ID and next are the data)
-    uint8_t rawData[10];  // Adjust based on your message size, max 10 bytes here
-    fread(rawData, sizeof(uint8_t), sizeof(rawData), file);
-    fclose(file);
+    char line[256];
+    int messageId = -1;
+    float scale = 1.0, offset = 0.0;
 
-    // Extract message ID from the first 4 bytes
-    canMsg.messageId = (rawData[0] << 24) | (rawData[1] << 16) | (rawData[2] << 8) | rawData[3];
+    while (fgets(line, sizeof(line), file)) {
+        // Line contains the message ID (First Line)
+        if (strncmp(line, "BO_", 3) == 0) {
+            sscanf(line, "BO_ %d", &messageId);
+            canMsg->messageId = messageId;
 
-    // Extract message data (adjust this as per the actual message length)
-    canMsg.dataLength = sizeof(rawData) - 4;
-    for (int i = 0; i < canMsg.dataLength; i++) {
-        canMsg.data[i] = rawData[i + 4];
+            //FIXME: Check that message is known
+            /*for (int i = 0; i < dbc->messageCount; i++) {*/
+            /*    if (dbc->messages[i].id != messageId) {*/
+            /*        printf("Message ID %d not found in DBC\n", messageId);*/
+            /*        continue;*/
+            /*    }*/
+            /*}*/
+        }
+
+        // Line contains signal info (Second Line)
+        if (strncmp(line, "SG_", 3) == 0) {
+            sscanf(line, "SG_ %*s : %*s (%f,%f)", &scale, &offset);
+        }
+
+        // Line contains raw CAN data
+        if (strncmp(line, "Raw CAN Data", 3) == 0) {
+            unsigned char rawData[8];
+            sscanf(line, "Raw CAN Data (in Hex): 0x%X", &rawData);
+
+            // Interpret the value based on scale and offset
+            canMsg->data = rawData;
+        }
     }
 
-    return canMsg;
+    fclose(file);
+    return 1;
 }

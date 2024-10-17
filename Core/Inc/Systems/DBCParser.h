@@ -61,6 +61,6 @@ typedef struct {
     int dataLength;   // Length of the data in bytes
 } CanMessage;
 
-CanMessage parseCanData(const char* filename);
+int parseCanData(CanMessage* canMsg, const DBC* dbc, const char* filename);
 
 #endif  // RENNSSELAERMOTORSPORT_DBC_H
