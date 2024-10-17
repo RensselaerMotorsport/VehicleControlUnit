@@ -29,22 +29,22 @@ typedef enum {
 } BmsSignal;
 
 typedef struct {
-    const char* signalName;
+    unsigned int id;
     BmsSignal signalType;
 } BmsSignalMap;
 
 static BmsSignalMap bmsSignalMap[] = {
-    {"Pack_Voltage", BMS_PACK_VOLTAGE},
-    {"Pack_Current", BMS_PACK_CURRENT},
-    {"State_of_Charge", BMS_STATE_OF_CHARGE},
-    {"Cell_Voltage_Min", BMS_CELL_VOLTAGE_MIN},
-    {"Cell_Voltage_Max", BMS_CELL_VOLTAGE_MAX},
-    {"Cell_Temperature_Min", BMS_CELL_TEMPERATURE_MIN},
-    {"Cell_Temperature_Max", BMS_CELL_TEMPERATURE_MAX},
-    {"Total_Pack_Capacity", BMS_TOTAL_PACK_CAPACITY},
-    {"Remaining_Pack_Capacity", BMS_REMAINING_PACK_CAPACITY},
-    {"Pack_Health", BMS_PACK_HEALTH},
-    {"Charge_Status", BMS_CHARGE_STATUS},
+    {100, BMS_PACK_VOLTAGE},
+    {200, BMS_PACK_CURRENT},
+    {300, BMS_STATE_OF_CHARGE},
+    {400, BMS_CELL_VOLTAGE_MIN},
+    {500, BMS_CELL_VOLTAGE_MAX},
+    {600, BMS_CELL_TEMPERATURE_MIN},
+    {700, BMS_CELL_TEMPERATURE_MAX},
+    {800, BMS_TOTAL_PACK_CAPACITY},
+    {900, BMS_REMAINING_PACK_CAPACITY},
+    {1000, BMS_PACK_HEALTH},
+    {1100, BMS_CHARGE_STATUS},
 };
 
 typedef struct {

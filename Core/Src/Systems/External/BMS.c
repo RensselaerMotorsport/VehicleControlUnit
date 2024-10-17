@@ -37,39 +37,46 @@ void initBms(Bms* bms, int hz, const char* dbcFn) {
     }
 
     bms->dbcMessageMap = (Message**)messageMap;
-    printDbc(&dbc);
 }
 
-BmsSignal lookupBmsSignal(const char* name) {
-    for (int i = 0; bmsSignalMap[i].signalName != NULL; i++) {
-        if (strcmp(bmsSignalMap[i].signalName, name) == 0) {
-            return bmsSignalMap[i].signalType;
-        }
-    }
-    return -1; // Invalid signal
-}
-
-void assignBmsValue(Bms* bms, BmsSignal type, float value) {
-    // Define the array inside the function where `bms` is available
-    void* bmsSignalPointers[] = {
-        &bms->packVoltage,
-        &bms->packCurrent,
-        &bms->stateOfCharge,
-        &bms->cellVoltageMin,
-        &bms->cellVoltageMax,
-        &bms->cellTemperatureMin,
-        &bms->cellTemperatureMax,
-        &bms->totalPackCapacity,
-        &bms->remainingPackCapacity,
-        &bms->packHealth,
-        &bms->chargeStatus
-    };
-
-    // Assign values based on type
-    if (type == BMS_CHARGE_STATUS) {
-        *(uint8_t*)bmsSignalPointers[type] = (uint8_t)value; // Cast to uint8_t for chargeStatus
-    } else {
-        *(float*)bmsSignalPointers[type] = value; // Default cast to float for others
+void assignBmsValue(Bms* bms, int id, float value) {
+    switch (id) {
+        case 100:
+            bms->packVoltage = value;
+            break;
+        case 200:
+            bms->packCurrent = value;
+            break;
+        case 300:
+            bms->stateOfCharge = value;
+            break;
+        case 400:
+            bms->cellVoltageMin = value;
+            break;
+        case 500:
+            bms->cellVoltageMax = value;
+            break;
+        case 600:
+            bms->cellTemperatureMin = value;
+            break;
+        case 700:
+            bms->cellTemperatureMax = value;
+            break;
+        case 800:
+            bms->totalPackCapacity = value;
+            break;
+        case 900:
+            bms->remainingPackCapacity = value;
+            break;
+        case 1000:
+            bms->packHealth = value;
+            break;
+        case 1100:
+            bms->chargeStatus = (int)value;  // Assuming chargeStatus is an integer (discharge/charge state)
+            break;
+        default:
+            // Handle invalid signal case if needed
+            break;
     }
 }
 
@@ -82,8 +89,8 @@ bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
         // Decode signals within the message
         for (int i = 0; i < message->signal_count; i++) {
             Signal* signal = &message->signals[i];
-            float value = extractSignalValue(signal, canData->data);
-            // assignBmsValue(bms, signal->type, value);  // Assign value to Bms
+            float value = extractSignalValue(signal, &canData->data);
+            assignBmsValue(bms, message->id, value);
         }
         return true;
     }
@@ -102,7 +109,7 @@ void updateBms(void* bms) {
 void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
     CanMessage canData;
-    parseCanData(&canData, myBms->dbc, canDataFn);
+    parseCanData(&canData, canDataFn);
 
     // Call the transfer function to decode the message
     if (!bmsTransferFunction(myBms, &canData)) {

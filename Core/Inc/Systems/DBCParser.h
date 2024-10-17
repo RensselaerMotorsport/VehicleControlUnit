@@ -43,7 +43,7 @@ typedef struct {
 
 char* getSignalName(Signal* sig);
 
-float extractSignalValue(Signal* sig, const uint8_t* canData);
+float extractSignalValue(Signal* sig, const unsigned int* canData);
 
 Signal* getSignals(Message* msg);
 
@@ -57,10 +57,10 @@ void printDbc(const DBC *dbc);
 
 typedef struct {
     int messageId;
-    uint8_t data[8];  // CAN message data, typically up to 8 bytes
+    unsigned int data;  // CAN message data
     int dataLength;   // Length of the data in bytes
 } CanMessage;
 
-int parseCanData(CanMessage* canMsg, const DBC* dbc, const char* filename);
+int parseCanData(CanMessage* canMsg, const char* filename);
 
 #endif  // RENNSSELAERMOTORSPORT_DBC_H

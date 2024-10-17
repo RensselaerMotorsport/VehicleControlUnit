@@ -43,34 +43,11 @@ int parseDbcLine(char *line, DBC *dbc) {
     }
 }
 
-float extractSignalValue(Signal* sig, const uint8_t* canData) {
-    // Extract raw bits from CAN data based on start_bit and length
-    uint64_t rawValue = 0;
+float extractSignalValue(Signal* sig, const unsigned int* canData) {
+    // Apply scaling and offset directly to the raw CAN data
+    float physicalValue = *canData * sig->scale + sig->offset;
 
-    // Extract the raw value bitwise, handle endianess
-    for (int i = 0; i < sig->length; i++) {
-        int bitPos = sig->start_bit + i;
-        int bytePos = bitPos / 8;
-        int bitInByte = bitPos % 8;
-
-        if (sig->endian == 0) {  // Assuming 0 is little endian, 1 is big endian
-            rawValue |= ((canData[bytePos] >> bitInByte) & 0x01) << i;
-        } else {
-            // Handle big-endian differently (adjust byte order, bit shift accordingly)
-            // Big endian handling code here
-        }
-    }
-
-    // Apply sign conversion if necessary
-    if (sig->signd && (rawValue & (1ULL << (sig->length - 1)))) {
-        // Extend sign if signal is signed and the sign bit is set
-        rawValue |= ~((1ULL << sig->length) - 1);
-    }
-
-    // Apply scaling and offset
-    float physicalValue = rawValue * sig->scale + sig->offset;
-
-    // Optionally, you can clamp it to min and max
+    // Optionally clamp it to min and max
     if (physicalValue < sig->min) physicalValue = sig->min;
     if (physicalValue > sig->max) physicalValue = sig->max;
 
@@ -111,7 +88,7 @@ void printDbc(const DBC *dbc) {
 }
 
 
-int parseCanData(CanMessage* canMsg, const DBC* dbc, const char* filename) {
+int parseCanData(CanMessage* canMsg, const char* filename) {
     FILE* file = fopen(filename, "r");
     if (!file) {
         perror("Failed to open CAN data file");
@@ -127,25 +104,18 @@ int parseCanData(CanMessage* canMsg, const DBC* dbc, const char* filename) {
         if (strncmp(line, "BO_", 3) == 0) {
             sscanf(line, "BO_ %d", &messageId);
             canMsg->messageId = messageId;
-
-            //FIXME: Check that message is known
-            /*for (int i = 0; i < dbc->messageCount; i++) {*/
-            /*    if (dbc->messages[i].id != messageId) {*/
-            /*        printf("Message ID %d not found in DBC\n", messageId);*/
-            /*        continue;*/
-            /*    }*/
-            /*}*/
         }
 
         // Line contains signal info (Second Line)
+        // FIXME: Maybe not needed
         if (strncmp(line, "SG_", 3) == 0) {
             sscanf(line, "SG_ %*s : %*s (%f,%f)", &scale, &offset);
         }
 
         // Line contains raw CAN data
         if (strncmp(line, "Raw CAN Data", 3) == 0) {
-            unsigned char rawData[8];
-            sscanf(line, "Raw CAN Data (in Hex): 0x%X", &rawData);
+            unsigned int rawData;
+            sscanf(line, "Raw CAN Data (in Hex): 0x%x", &rawData);
 
             // Interpret the value based on scale and offset
             canMsg->data = rawData;
