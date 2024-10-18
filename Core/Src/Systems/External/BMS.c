@@ -1,7 +1,7 @@
 #include "../../../Inc/Systems/External/BMS.h"
 
 #include <stdio.h>  // For printf
-#include "../../../Inc/Systems/DBCParser.h"
+#include "../../../Inc/Systems/External/Can/Can.h"
 
 void initBms(Bms* bms, int hz, const char* dbcFn) {
     if (bms == NULL) return;
@@ -72,7 +72,7 @@ void assignBmsValue(Bms* bms, int id, float value) {
             bms->packHealth = value;
             break;
         case 1100:
-            bms->chargeStatus = (int)value;  // Assuming chargeStatus is an integer (discharge/charge state)
+            bms->chargeStatus = (int)value;
             break;
         default:
             // Handle invalid signal case if needed

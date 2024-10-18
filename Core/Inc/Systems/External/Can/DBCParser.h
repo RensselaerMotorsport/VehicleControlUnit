@@ -39,11 +39,7 @@ typedef struct {
     int messageCount;
 } DBC;
 
-// FIXME: Organize into own classes
-
 char* getSignalName(Signal* sig);
-
-float extractSignalValue(Signal* sig, const unsigned int* canData);
 
 Signal* getSignals(Message* msg);
 
@@ -54,13 +50,5 @@ uint8_t* getMessageData(Message* msg);
 Message* getDbcMessages(DBC* dbc);
 
 void printDbc(const DBC *dbc);
-
-typedef struct {
-    int messageId;
-    unsigned int data;  // CAN message data
-    int dataLength;   // Length of the data in bytes
-} CanMessage;
-
-int parseCanData(CanMessage* canMsg, const char* filename);
 
 #endif  // RENNSSELAERMOTORSPORT_DBC_H
