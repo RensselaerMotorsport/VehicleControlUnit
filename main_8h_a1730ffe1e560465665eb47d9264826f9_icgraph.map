@@ -1,15 +1,24 @@
 <map id="Error_Handler" name="Error_Handler">
-<area shape="rect" id="node1" title="This function is executed in case of error occurrence." alt="" coords="347,252,448,277"/>
+<area shape="rect" id="node1" title="This function is executed in case of error occurrence." alt="" coords="347,475,448,500"/>
 <area shape="rect" id="node2" href="$stm32f7xx__hal__msp_8c.html#aa30863492d5c3103e3e8ce8a63dadd07" title="ADC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="135,5,268,31"/>
-<area shape="rect" id="node3" href="$stm32f7xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad" title="PCD MSP Initialization This function configures the hardware resources used in this example." alt="" coords="135,55,268,80"/>
-<area shape="rect" id="node4" href="$stm32f7xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="130,104,273,129"/>
-<area shape="rect" id="node5" href="$main_8c.html#aaa163e37853e6fc971474824d9f655ca" title="ADC1 Initialization Function." alt="" coords="147,153,255,179"/>
-<area shape="rect" id="node7" href="$main_8c.html#a4e987f0fdef6459c1a03ca830bac23f5" title="ADC2 Initialization Function." alt="" coords="147,203,255,228"/>
-<area shape="rect" id="node8" href="$main_8c.html#ae1e1b355e2d7714a267fee7e71891e59" title="ADC3 Initialization Function." alt="" coords="147,252,255,277"/>
-<area shape="rect" id="node9" href="$main_8c.html#a1d1beb7da60021ee1adbca294f28ba88" title="TIM1 Initialization Function." alt="" coords="149,301,253,327"/>
-<area shape="rect" id="node10" href="$main_8c.html#a6db1014d713f6f5c0f52a13299ee0733" title="USART2 Initialization Function." alt="" coords="117,351,286,376"/>
-<area shape="rect" id="node11" href="$main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8" title="USART3 Initialization Function." alt="" coords="117,400,286,425"/>
-<area shape="rect" id="node12" href="$main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f" title="USB_OTG_FS Initialization Function." alt="" coords="104,449,299,475"/>
-<area shape="rect" id="node13" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="130,499,273,524"/>
-<area shape="rect" id="node6" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,327,56,352"/>
+<area shape="rect" id="node3" href="$stm32f7xx__hal__msp_8c.html#abe01a202c27b23fc150aa66af3130073" title="I2C MSP Initialization This function configures the hardware resources used in this example." alt="" coords="138,55,265,80"/>
+<area shape="rect" id="node4" href="$stm32f7xx__hal__msp_8c.html#a73af972b44ba2890202363cd8b197dad" title="PCD MSP Initialization This function configures the hardware resources used in this example." alt="" coords="135,104,268,129"/>
+<area shape="rect" id="node5" href="$stm32f7xx__hal__msp_8c.html#a0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="130,153,273,179"/>
+<area shape="rect" id="node6" href="$main_8c.html#aaa163e37853e6fc971474824d9f655ca" title="ADC1 Initialization Function." alt="" coords="147,203,255,228"/>
+<area shape="rect" id="node8" href="$main_8c.html#a4e987f0fdef6459c1a03ca830bac23f5" title="ADC2 Initialization Function." alt="" coords="147,252,255,277"/>
+<area shape="rect" id="node9" href="$main_8c.html#ae1e1b355e2d7714a267fee7e71891e59" title="ADC3 Initialization Function." alt="" coords="147,301,255,327"/>
+<area shape="rect" id="node10" href="$main_8c.html#a26a9a123c67bc69ec4660783b1c0e4b0" title="CAN1 Initialization Function." alt="" coords="147,351,256,376"/>
+<area shape="rect" id="node11" href="$main_8c.html#a928b689216b902fce7bb2cc61d75c032" title="CAN2 Initialization Function." alt="" coords="147,400,256,425"/>
+<area shape="rect" id="node12" href="$main_8c.html#a4230d11f81d0b16e112f1cc3f40cb42f" title="I2C1 Initialization Function." alt="" coords="151,449,252,475"/>
+<area shape="rect" id="node13" href="$main_8c.html#af71812af4fbb9ebbe0f681165b657433" title="I2C2 Initialization Function." alt="" coords="151,499,252,524"/>
+<area shape="rect" id="node14" href="$main_8c.html#af4e34667b0cb79444cb7933306644053" title="I2C4 Initialization Function." alt="" coords="151,548,252,573"/>
+<area shape="rect" id="node15" href="$main_8c.html#ad13211e797777a447435fa0b54dcac7c" title="SPI3 Initialization Function." alt="" coords="150,597,253,623"/>
+<area shape="rect" id="node16" href="$main_8c.html#ae687426e9c731fb50a2a7b96dd24809e" title="SPI4 Initialization Function." alt="" coords="150,647,253,672"/>
+<area shape="rect" id="node17" href="$main_8c.html#ac69056d4aa54e5b93e9a98478a7031bc" title="SPI5 Initialization Function." alt="" coords="150,696,253,721"/>
+<area shape="rect" id="node18" href="$main_8c.html#a1d1beb7da60021ee1adbca294f28ba88" title="TIM1 Initialization Function." alt="" coords="149,745,253,771"/>
+<area shape="rect" id="node19" href="$main_8c.html#a6db1014d713f6f5c0f52a13299ee0733" title="USART2 Initialization Function." alt="" coords="117,795,286,820"/>
+<area shape="rect" id="node20" href="$main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8" title="USART3 Initialization Function." alt="" coords="117,844,286,869"/>
+<area shape="rect" id="node21" href="$main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f" title="USB_OTG_FS Initialization Function." alt="" coords="104,893,299,919"/>
+<area shape="rect" id="node22" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="130,943,273,968"/>
+<area shape="rect" id="node7" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,573,56,599"/>
 </map>
