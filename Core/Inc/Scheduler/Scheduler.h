@@ -18,7 +18,6 @@ typedef struct Scheduler {
  *
  * @param scheduler   Pointer to the Scheduler structure to initialize.
  * @param updateableArray Array of pointers to Updateable structures to be scheduled.
- * @param numSensors  Number of sensors in the sensorArray.
  */
 void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
 

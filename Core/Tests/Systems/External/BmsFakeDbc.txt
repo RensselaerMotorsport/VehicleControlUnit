@@ -9,7 +9,7 @@ NS_ :
 BU_: BMS
 
 BO_ 100 BMS_Voltage: 8 BMS
- SG_ Pack_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
+ SG_ Pack_Voltage : 0|8@1+ (0.1,0) [0|1000] "V"  BMS
 
 BO_ 200 BMS_Current: 8 BMS
  SG_ Pack_Current : 0|16@1+ (0.1,0) [-500|500] "A"  BMS

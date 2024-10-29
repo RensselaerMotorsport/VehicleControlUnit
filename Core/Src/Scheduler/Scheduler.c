@@ -15,12 +15,16 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     PQInit(&scheduler->tasks);
     scheduler->running = false;
 
-    int count = 0;
-    for (Updateable* updateable; updateable != NULL; updateable++) {
-        count++;
-        if (count >= MAX_SENSORS) {
-            printf("Warning: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
+    for (int i = 0; updatableArray[i] != NULL; i++) {
+        if (i >= MAX_SENSORS) {
+            printf("Warning: Number of sensors exceeds MAX_SENSORS. "
+                   "Some sensors will not be scheduled.\n");
             break;
+        }
+
+        Updateable* updateable = updatableArray[i];
+        if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
+            continue; // Skip invalid frequencies
         }
 
         Task task;

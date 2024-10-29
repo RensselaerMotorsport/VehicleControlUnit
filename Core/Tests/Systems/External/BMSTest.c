@@ -19,13 +19,13 @@ int testBmsInit(const char* dbcFn, const char* testName) {
     }
 }
 
-int testBmsUpdate(float voltage, float current, BmsChargeStatus expectedChargeStatus,
-                  const char* dbcFn, const char* canDataFn, const char* testName) {
+int testBmsUpdate(float voltage, float current, BmsChargeStatus expectedChargeStatus, const char* dbcFn, const char* canDataFn, const char* testName) {
     Bms bms;
     initBms(&bms, BmsHz, dbcFn);
 
     updateBmsTest(&bms, canDataFn);
 
+    printf("%f\n", bms.packVoltage);
     if (bms.packVoltage != voltage) {
         printf("Failed: %s. BMS pack voltage, current, or charge status is incorrect.\n", testName);
         return 0;
