@@ -28,7 +28,7 @@ typedef struct {
 } AnalogSensor;
 
 typedef struct {
-    uint16_t adc[ADC_CHANNELS];  // Array to hold all 16 ADC values
+    uint16_t adc[ADC_CHANNELS]; // Array to hold all 16 ADC values
 } ADCSample;
 
 // Function declarations
