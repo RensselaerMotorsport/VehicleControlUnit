@@ -1,0 +1,2 @@
+BO_ 101 BMS_Current: 8 BMS
+Raw CAN Data (in Hex): 0x00000000

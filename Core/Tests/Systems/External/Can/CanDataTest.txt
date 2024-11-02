@@ -1,0 +1,2 @@
+BO_ 100 BMS_Voltage: 8 BMS
+Raw CAN Data (in Hex): 0x00000001
