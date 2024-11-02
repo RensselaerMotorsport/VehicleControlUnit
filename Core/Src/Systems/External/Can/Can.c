@@ -7,12 +7,13 @@
 
 int parseCanData(CanMessage* canMsg, const char* fn) {
     FILE* file = fopen(fn, "r");
-    if (!file) {
-        fprintf(stderr, "Failed to open CAN data file at path: %s - %s\n", fn, strerror(errno));
+    if (!canMsg || !file) {
+        fprintf(stderr, "Failed to open CAN data file at path: %s - %s\n",
+                fn, strerror(errno));
         exit(EXIT_FAILURE);
     }
 
-    char line[256];
+    char line[MAX_LINE_LENGTH];
     int messageId = -1;
 
     while (fgets(line, sizeof(line), file)) {
@@ -23,7 +24,7 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
         }
 
         // Line contains raw CAN data
-        if (strncmp(line, "Raw CAN Data", 3) == 0) {
+        if (strncmp(line, "Raw CAN Data", 12) == 0) {
             unsigned int rawData;
             sscanf(line, "Raw CAN Data (in Hex): 0x%x", &rawData);
 
@@ -36,70 +37,78 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
     return 1;
 }
 
-float extractSignalValue(Signal* sig, const unsigned int* canData) {
+/**
+ * @brief Decodes a raw signal value from little-endian formatted CAN data.
+ *
+ * @param sig The signal configuration, defining bit length and start position.
+ * @param byteData Pointer to the CAN data interpreted as a byte array.
+ * @return uint64_t The raw extracted signal value.
+ */
+uint64_t decodeLittleEndian(const Signal* sig, const uint8_t* byteData) {
     uint64_t rawValue = 0;
+    int byteLength = (sig->length + 7) / 8;
 
-    if (sig->endian == ENDIAN_LITTLE) {
-        // Little endian bit extraction
-        for (int i = 0; i < sig->length; i++) {
-            int bitPos = sig->start_bit + i;
-            int byteIndex = bitPos / 8;
-            int bitInByte = bitPos % 8;
-            
-            // Treating `canData` as an array of bytes
-            const uint8_t* byteData = (const uint8_t*) canData;
-            int bitValue = (byteData[byteIndex] >> bitInByte) & 0x1;
+    for (int i = 0; i < byteLength; i++) {
+        uint8_t currentByte = byteData[i];
 
-            // Debug prints for each step of the extraction
-            // printf("Extracting bit %d:\n", i);
-            // printf("  bitPos: %d\n", bitPos);
-            // printf("  byteIndex: %d\n", byteIndex);
-            // printf("  bitInByte: %d\n", bitInByte);
-            // printf("  bitValue: %d\n", bitValue);
-
-            // Set the extracted bit in rawValue
-            rawValue |= ((uint64_t)bitValue) << i;
-
-            // Print intermediate rawValue after setting this bit
-            // printf("  rawValue (intermediate): %llu\n", rawValue);
-        }
-    } else {
-        // Big endian bit extraction
-        for (int i = 0; i < sig->length; i++) {
-            int bitPos = sig->start_bit + i;
-            int byteIndex = bitPos / 8;
-            int bitInByte = 7 - (bitPos % 8);
-            
-            // Treating `canData` as an array of bytes
-            const uint8_t* byteData = (const uint8_t*) canData;
-            int bitValue = (byteData[byteIndex] >> bitInByte) & 0x1;
-
-            // Debug prints for each step of the extraction
-            // printf("Extracting bit %d:\n", i);
-            // printf("  bitPos: %d\n", bitPos);
-            // printf("  byteIndex: %d\n", byteIndex);
-            // printf("  bitInByte: %d\n", bitInByte);
-            // printf("  bitValue: %d\n", bitValue);
-
-            // Set the extracted bit in rawValue
-            rawValue |= ((uint64_t)bitValue) << (sig->length - i - 1);
-
-            // Print intermediate rawValue after setting this bit
-            // printf("  rawValue (intermediate): %llu\n", rawValue);
-        }
+        // Add the byte to rawValue at the correct position in rawValue
+        rawValue |= ((uint64_t)currentByte) << (8 * i);
     }
 
-    int64_t signedValue = 0;
-    if (sig->signd == 's') {
-        // For signed values, apply sign extension if the most significant bit is set
+    return rawValue;
+}
+
+/**
+ * @brief Decodes a raw signal value from big-endian formatted CAN data.
+ *
+ * @param sig The signal configuration, defining bit length and start position.
+ * @param byteData Pointer to the CAN data interpreted as a byte array.
+ * @return uint64_t The raw extracted signal value.
+ */
+uint64_t decodeBigEndian(const Signal* sig, const uint8_t* byteData) {
+    uint64_t rawValue = 0;
+    int byteLength = (sig->length + 7) / 8;
+
+    for (int i = byteLength - 1; i >= 0; i--) {
+        uint8_t currentByte = byteData[i];
+
+        // Shift the byte into the correct position in rawValue
+        rawValue = (rawValue << 8) | currentByte;
+    }
+
+    return rawValue;
+}
+
+/**
+ * @brief Applies sign extension to a raw value if the signal is signed.
+ *
+ * @param rawValue The extracted raw signal value.
+ * @param sig The signal configuration, specifying if the signal is signed.
+ * @return int64_t The signed (or unsigned) interpreted value.
+ */
+int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
+    if (sig->isSigned == 's') {
+        // Check the most significant bit for sign extension
         if (rawValue & (1ULL << (sig->length - 1))) {
-            signedValue = (int64_t)(rawValue | (~0ULL << sig->length));
-        } else {
-            signedValue = (int64_t)rawValue;
+            return (int64_t)(rawValue | (~0ULL << sig->length));
         }
-    } else {
-        signedValue = (int64_t)rawValue;  // Unsigned values
     }
+    return (int64_t)rawValue;
+}
+
+float extractSignalValue(Signal* sig, const unsigned int* canData) {
+    uint64_t rawValue;
+    const uint8_t* byteData = (const uint8_t*) canData;
+
+    // Determine the decoding method based on endian type
+    if (sig->endian == ENDIAN_LITTLE) {
+        rawValue = decodeLittleEndian(sig, byteData);
+    } else {
+        rawValue = decodeBigEndian(sig, byteData);
+    }
+
+    // Apply sign extension if the signal is signed
+    int64_t signedValue = applySignExtension(rawValue, sig);
 
     // Convert to physical value using scale and offset
     float physicalValue = (float)signedValue * sig->scale + sig->offset;

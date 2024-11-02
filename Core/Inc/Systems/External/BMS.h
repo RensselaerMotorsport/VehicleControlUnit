@@ -52,7 +52,7 @@ typedef struct {
     DBC* dbc;
     Message** dbcMessageMap;
 
-    // TODO: Add bms data back in 
+    // TODO: Add bms data back in
     float packVoltage;
     float packCurrent;
     float stateOfCharge;
@@ -75,7 +75,7 @@ typedef struct {
  */
 void initBms(Bms* bms, int hz, const char* dbcFn);
 
-/** // FIXME: Modify this
+/**
  * @brief Transfers raw BMS data to a BmsData structure.
  *
  * @param rawData Pointer to the array of raw data.

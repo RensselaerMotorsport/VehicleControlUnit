@@ -3,7 +3,6 @@
 
 #include <stdint.h>
 
-#define MAX_LINE_LENGTH 256
 #define MAX_SIGNALS 64
 #define MAX_MESSAGES 256
 #define MAX_SIGNAL_NAME_LENGTH 64
@@ -11,15 +10,19 @@
 #define MAX_NODE_NAME_LENGTH 64
 #define MAX_UNIT_NAME_LENGTH 64
 
-#define ENDIAN_LITTLE 0
-#define ENDIAN_BIG    1
+static const int MAX_LINE_LENGTH = 256;
+
+typedef enum {
+    ENDIAN_LITTLE = 0,
+    ENDIAN_BIG = 1,
+} Endianness;
 
 typedef struct {
     char name[MAX_SIGNAL_NAME_LENGTH];
     int start_bit;
     int length;
     int endian;
-    char signd;
+    char isSigned;
     float scale;
     float offset;
     float min;

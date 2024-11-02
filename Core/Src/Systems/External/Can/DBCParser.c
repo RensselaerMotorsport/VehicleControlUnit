@@ -39,7 +39,7 @@ int parseDbcLine(char *line, DBC *dbc) {
         }
         // Signal definition
         Signal *signal = &message->signals[message->signal_count++];
-        sscanf(line, " SG_ %s : %d|%d@%d%c (%f,%f) [%f|%f] %s %s", signal->name, &signal->start_bit, &signal->length, &signal->endian, &signal->signd, &signal->scale, &signal->offset, &signal->min, &signal->max, signal->unit, signal->reciever);
+        sscanf(line, " SG_ %s : %d|%d@%d%c (%f,%f) [%f|%f] %s %s", signal->name, &signal->start_bit, &signal->length, &signal->endian, &signal->isSigned, &signal->scale, &signal->offset, &signal->min, &signal->max, signal->unit, signal->reciever);
     }
 }
 
@@ -70,7 +70,7 @@ void printDbc(const DBC *dbc) {
         printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
         for (int j = 0; j < msg->signal_count; j++) {
             const Signal *sig = &msg->signals[j];
-            printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \n\t\tUnit: %s, Reciever: %s)\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->signd, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
+            printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \n\t\tUnit: %s, Reciever: %s)\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
         }
         printf("\n");
     }
