@@ -27,17 +27,17 @@ int getIMDStatus(void* imdValues, IMDStatus status) {
     return IMD->IMDStatus;
 }
 
-float getIsoResistanceNeg (void* imdValues, float IsoResistanceNeg) {
+float getIsoResistanceNeg (void* imdValues) {
     IMDValues* IMD = (IMDValues*) imdValues;
     return IMD->IsoResistanceNeg;
 }
 
-float getIsoResistancePos (void* imdValues, float IsoResistancePos) {
+float getIsoResistancePos (void* imdValues) {
     IMDValues* IMD = (IMDValues*) imdValues;
     return IMD->IsoResistancePos;
 }
 
-float getIsoResistanceCorrected (void* imdValues, float IsoResistancePos) {
+float getIsoResistanceCorrected (void* imdValues) {
     IMDValues* IMD = (IMDValues*) imdValues;
     return IMD->IsoResistanceCorrected;
 }

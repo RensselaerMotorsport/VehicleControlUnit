@@ -19,17 +19,54 @@ typedef struct {
     IMDStatus IMDStatus;
 } IMDValues;
 
+
+/**
+ * @brief Initializes the IMD with the specified frequency.
+ * 
+ * @param IMD Pointer to the IMDValues structure to initialize.
+ * @param hz Frequency in hertz at which the IMD should operate.
+ */
 void initIMD(IMDValues* IMD, int hz);
 
+/**
+ * @brief Updates the IMD values.
+ * 
+ * @param IMDValues Pointer to the IMD values that need to be updated.
+ */
 void updateIMD(void* IMDValues);
 
+/**
+ * @brief Gets the status of the IMD.
+ *
+ * @param IMDValues A pointer to the structure IMDValues.
+ * @param status An IMDStatus variable to store the retrieved status.
+ * @return An integer representing the status of IMD.
+ */
 int getIMDStatus(void* IMDValues, IMDStatus status);
 
-float getIsoResistanceNeg(void* IMDValues, float IsoResistanceNeg);
+/**
+ * @brief Retrieves the negative isolation resistance value from the given IMD values.
+ *
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The negative isolation resistance value.
+ */
+float getIsoResistanceNeg(void* IMDValues);
 
-float getIsoResistancePos(void* IMDValues, float IsoResistancePos);
+/**
+ * @brief Retrieves the positive isolation resistance value from the IMD values.
+ *
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The positive isolation resistance value.
+ */
+float getIsoResistancePos(void* IMDValues);
 
-float getIsoResistanceCorrected(void* IMDValues, float IsoResistancePos);
+/**
+ * @brief Retrieves the positive isolation resistance value from the IMD values.
+ *
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The corrected isolation resistance value.
+ */
+float getIsoResistanceCorrected(void* IMDValues);
 
 
 
