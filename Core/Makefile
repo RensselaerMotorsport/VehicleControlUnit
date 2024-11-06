@@ -20,6 +20,11 @@ OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 TEST_SOURCES = $(shell find $(TEST_DIR) -type f -name '*.c')
 TEST_OBJECTS = $(TEST_SOURCES:$(TEST_DIR)/%.c=$(OBJ_DIR)/%.o)
 
+# Enable TEST_MODE if -test flag is present
+ifneq ($(filter -test,$(MAKEFLAGS)),)
+    CFLAGS += -DTEST_MODE
+endif
+
 all: main.out
 
 main.out: $(OBJECTS)
