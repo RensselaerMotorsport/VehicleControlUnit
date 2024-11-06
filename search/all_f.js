@@ -6,5 +6,6 @@ var searchData=
   ['rotation_5fangle_3',['rotation_angle',['../structSteeringColumn.html#a0dd1e7baa84b2910114b55428a199f61',1,'SteeringColumn']]],
   ['running_4',['running',['../structScheduler.html#a8a0b0619fdfbda3338fc4964999b3ffd',1,'Scheduler']]],
   ['running_5fflag_5',['running_flag',['../structImd.html#a8da0cb22700aa213c6dae1b124f9e0c3',1,'Imd']]],
-  ['runningflagtransferfunction_6',['runningFlagTransferFunction',['../Imd_8c.html#acfcfbd308965537c3d89348194661370',1,'Imd.c']]]
+  ['runningflag_6',['runningFlag',['../structIMDValues.html#a879a9ddc1bd7152f8a2aed2e84f21f5e',1,'IMDValues']]],
+  ['runningflagtransferfunction_7',['runningFlagTransferFunction',['../Imd_8c.html#acfcfbd308965537c3d89348194661370',1,'Imd.c']]]
 ];
