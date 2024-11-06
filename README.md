@@ -17,5 +17,4 @@ This software is intended to be run on a real time operating system
  6. `sudo apt-get install gcc -y`
  7. git clone VCU repo in wsl
  8. Open in VScode `code .`
- 9. Change directory to Core `cd Core`
- 10. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
+ 9. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make /Core/Tests/TorqueControlActuatorTest.out && ./Core/Tests/TorqueControlActuatorTest.out`)
