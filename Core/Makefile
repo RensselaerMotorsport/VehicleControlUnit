@@ -16,26 +16,36 @@ SOURCES = $(shell find $(SRC_DIR) -mindepth 2 -type f -name '*.c')
 # Create corresponding object files paths
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Test objects compilation
+# Test sources and objects
 TEST_SOURCES = $(shell find $(TEST_DIR) -type f -name '*.c')
 TEST_OBJECTS = $(TEST_SOURCES:$(TEST_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-# Enable TEST_MODE if -test flag is present
-ifneq ($(filter -test,$(MAKEFLAGS)),)
+# Check if TEST_MODE is set
+ifdef TEST_MODE
     CFLAGS += -DTEST_MODE
 endif
 
-all: main.out
+# Default target
+all: prepare main.out
 
+# Prepare directory structure
+prepare:
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
+	@mkdir -p $(OBJ_DIR)/$(TEST_DIR)
+	@echo "Directory structure created."
+
+# Main program build
 main.out: $(OBJECTS)
 	$(CC) $^ -o $@ $(CFLAGS)
+	@echo "Built main program: $@"
 
-# Generic rule for compiling C source to object files in SRC_DIR
+# Rule for compiling C source to object files in SRC_DIR
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -MMD -c $< -o $@
 
-# Generic rule for compiling C source to object files in TEST_DIR
+# Rule for compiling C source to object files in TEST_DIR
 $(OBJ_DIR)/%.o: $(TEST_DIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -MMD -c $< -o $@
@@ -44,10 +54,12 @@ $(OBJ_DIR)/%.o: $(TEST_DIR)/%.c
 $(TEST_DIR)/%.out: $(TEST_DIR)/%.c $(OBJECTS)
 	@mkdir -p $(@D)
 	$(CC) $< $(OBJECTS) -o $@ $(CFLAGS)
+	@echo "Built test executable: $@"
 
 # Clean rule
 clean:
 	rm -rf $(OBJ_DIR) *.out
+	@echo "Cleaned up build files."
 
 # Include dependencies
 -include $(OBJECTS:.o=.d)
