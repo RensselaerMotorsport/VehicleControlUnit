@@ -82,14 +82,17 @@ void assignBmsValue(Bms* bms, int id, float value) {
 
 bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     int index = canData->messageId;
+    printf("Id %d\n",  index);
     Message* message = bms->dbcMessageMap[index];
+
+    printf("%d\n", message->id);
 
     // Check if the message ID matches the expected one
     if (message != NULL && message->id == canData->messageId) {
         // Decode signals within the message
         for (int i = 0; i < message->signal_count; i++) {
             Signal* signal = &message->signals[i];
-            float value = extractSignalValue(signal, &canData->data);
+            float value = extractSignalValue(signal, canData->data);
             assignBmsValue(bms, message->id, value);
         }
         return true;

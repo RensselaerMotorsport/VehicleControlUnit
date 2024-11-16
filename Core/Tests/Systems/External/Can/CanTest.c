@@ -3,21 +3,22 @@
 
 #include "../../../../Inc/Systems/External/Can/Can.h"
 
-int testParseCanData(const char* fn, int expected, const char* testName) {
+int testParseCanData(const char* fileName, const unsigned char* expected,
+                     const char* testName) {
     CanMessage canMsg;
 
-    int worked = parseCanData(&canMsg, fn);
-    if (!worked) {
-        printf("%s parseCanData function broke.\n", testName);
+    // Parse the CAN data
+    if (!parseCanData(&canMsg, fileName)) {
+        printf("%s: parseCanData function failed.\n", testName);
         return 1;
     }
 
-    unsigned int result = canMsg.data;
-    if (result == expected) {
+    // Compare the parsed data to the expected data
+    if (strncmp((const char*)canMsg.data, expected, canMsg.dataLength) == 0) {
         printf("%s passed.\n", testName);
         return 0;
     } else {
-        printf("%s failed. Expected %d, got %d.\n", testName, expected, result);
+        printf("%s failed.\nExpected: %s\nGot: %s\n", testName, expected, canMsg.data);
         return 1;
     }
 }
@@ -39,10 +40,12 @@ int main() {
     int result = 0;
 
     // Test cases for parseCanData
+    const unsigned char* expectedData1 = "0100000000000000";
     result += testParseCanData("Tests/Systems/External/Can/CanDataTest.txt",
-                               1, "Parse CAN Data Test: General");
+                               expectedData1, "Parse CAN Data Test: General");
+    const unsigned char* expectedData0 = "0000000000000000";
     result += testParseCanData("Tests/Systems/External/Can/CanDataTest1.txt",
-                               0, "Parse CAN Data Test: General 2");
+                               expectedData0, "Parse CAN Data Test: General 2");
 
     // Base signal configuration
     Signal testSignal;

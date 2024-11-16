@@ -19,12 +19,34 @@ int testBmsInit(const char* dbcFn, const char* testName) {
     }
 }
 
+int testBmsUpdateVoltage(float voltage, const char* dbcFn, const char* canFn,
+                         const char* testName) {
+    Bms bms;
+    initBms(&bms, BmsHz, dbcFn);
+    updateBmsTest(&bms, canFn);
+
+    if (true) {
+        printf("Failed: %s. BMS ...\n", testName);
+        return 0;
+    } else {
+        printf("Passed: %s.\n", testName);
+        return 1;
+    }
+}
+
 int main() {
     int result = 0;
 
     result += testBmsInit(
         "Tests/Systems/External/BmsFakeDbc.txt",
         "BMS Initialization Test"
+    );
+
+    result += testBmsUpdateVoltage(
+        400.0f,
+        "Tests/Systems/External/BmsFakeDbc.txt",
+        "Tests/Systems/External/BmsFakeCanData.txt",
+        "Bms Update Test: Voltage"
     );
 
     // Display overall test result

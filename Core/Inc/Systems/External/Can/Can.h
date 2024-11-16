@@ -3,10 +3,12 @@
 
 #include "DBCParser.h"
 
+#define MAX_CAN_DATA_LENGTH 16
+
 typedef struct {
     int messageId;
-    unsigned int data;  // CAN message data
-    int dataLength;   // Length of the data in bytes
+    unsigned char dataLength;   // Length of the data in bytes
+    unsigned char data[MAX_CAN_DATA_LENGTH];         // CAN message data
 } CanMessage;
 
 /**
@@ -37,6 +39,6 @@ int parseCanData(CanMessage* canMsg, const char* fn);
  * @param sig The signal to get the factors from.
  * @param canData The data to extract to value from
  */
-float extractSignalValue(Signal* sig, const unsigned int* canData);
+float extractSignalValue(Signal* sig, const unsigned char* canData);
 
 #endif // RENSSELAERMOTORSPORT_CAN_H

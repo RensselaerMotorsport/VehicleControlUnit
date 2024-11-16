@@ -2,38 +2,75 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <errno.h>
 #include <stdlib.h>
 
-int parseCanData(CanMessage* canMsg, const char* fn) {
-    FILE* file = fopen(fn, "r");
-    if (!canMsg || !file) {
-        fprintf(stderr, "Failed to open CAN data file at path: %s - %s\n",
-                fn, strerror(errno));
-        exit(EXIT_FAILURE);
+/**
+ * @brief Reads a single line from a file into the provided buffer.
+ * 
+ * @param fileName Path to the file to be read.
+ * @param lineBuffer Pointer to the buffer where the line will be stored.
+ * @param bufferSize Size of the buffer to ensure no overflow.
+ * @return int 1 on success, 0 on failure.
+ */
+int readFileLine(const char* fileName, char* lineBuffer, size_t bufferSize) {
+    if (!fileName || !lineBuffer) {
+        fprintf(stderr, "Invalid input to readFileLine\n");
+        return 0;
     }
 
-    char line[MAX_LINE_LENGTH];
-    int messageId = -1;
+    FILE* file = fopen(fileName, "r");
+    if (!file) {
+        fprintf(stderr, "Failed to open file at path: %s\n", fileName);
+        return 0;
+    }
 
-    while (fgets(line, sizeof(line), file)) {
-        // Line contains the message ID (First Line)
-        if (strncmp(line, "BO_", 3) == 0) {
-            sscanf(line, "BO_ %d", &messageId);
-            canMsg->messageId = messageId;
-        }
-
-        // Line contains raw CAN data
-        if (strncmp(line, "Raw CAN Data", 12) == 0) {
-            unsigned int rawData;
-            sscanf(line, "Raw CAN Data (in Hex): 0x%x", &rawData);
-
-            // Interpret the value based on scale and offset
-            canMsg->data = rawData;
-        }
+    if (!fgets(lineBuffer, bufferSize, file)) {
+        fprintf(stderr, "Failed to read line from file: %s\n", fileName);
+        fclose(file);
+        return 0;
     }
 
     fclose(file);
+    return 1;
+}
+
+/**
+ * @brief Extracts a hexadecimal substring from a source string and converts it 
+ *        to an integer.
+ * 
+ * @param source The source string to extract from.
+ * @param start The starting position in the source string.
+ * @param length The number of characters to extract.
+ * @return unsigned int The extracted value as an integer.
+ */
+unsigned int extractHexValue(const char* source, int start, int length) {
+    char temp[9] = {0}; // Max size: 8 characters + null terminator
+    strncpy(temp, source + start, length);
+    temp[length] = '\0';
+    return (unsigned int)strtol(temp, NULL, 16);
+}
+
+int parseCanData(CanMessage* canMsg, const char* fn) {
+    if (!canMsg || !fn) {
+        fprintf(stderr, "Invalid input to parseCanData\n");
+        return 0;
+    }
+
+    char line[MAX_LINE_LENGTH];
+    if (!readFileLine(fn, line, sizeof(line))) {
+        return 0;
+    }
+
+    // Extract CAN ID (first 3 characters)
+    canMsg->messageId = extractHexValue(line, 0, 3);
+
+    // Extract DLC (next 2 characters)
+    canMsg->dataLength = (unsigned char)extractHexValue(line, 3, 2);
+
+    // Extract raw data bytes (Remaining Bytes)
+    strncpy((char*)canMsg->data, line + 5, canMsg->dataLength);
+    canMsg->data[canMsg->dataLength] = '\0'; // Null Terminate for safety
+
     return 1;
 }
 
@@ -96,7 +133,7 @@ int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
     return (int64_t)rawValue;
 }
 
-float extractSignalValue(Signal* sig, const unsigned int* canData) {
+float extractSignalValue(Signal* sig, const unsigned char* canData) {
     uint64_t rawValue;
     const uint8_t* byteData = (const uint8_t*) canData;
 

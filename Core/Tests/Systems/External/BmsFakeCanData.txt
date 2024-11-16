@@ -1,4 +1,1 @@
-BO_ 100 BMS_Voltage: 8 BMS
-SG_ Pack_Voltage : 0|16@1+ (0.1,0) [0|1000] "V"  BMS
-Raw CAN Data (in Hex): 0x0FA0
-Interpreted Value: (0x0FA0) * 0.1 = 400.0 V
+10008A00F000000000000
