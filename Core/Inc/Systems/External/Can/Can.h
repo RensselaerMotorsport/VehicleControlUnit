@@ -7,8 +7,8 @@
 
 typedef struct {
     int messageId;
-    unsigned char dataLength;   // Length of the data in bytes
-    unsigned char data[MAX_CAN_DATA_LENGTH];         // CAN message data
+    unsigned char dataLength;
+    unsigned char data[MAX_CAN_DATA_LENGTH];
 } CanMessage;
 
 /**

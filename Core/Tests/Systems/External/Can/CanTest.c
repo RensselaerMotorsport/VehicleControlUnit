@@ -3,8 +3,8 @@
 
 #include "../../../../Inc/Systems/External/Can/Can.h"
 
-int testParseCanData(const char* fileName, const unsigned char* expected,
-                     const char* testName) {
+int testParseCanData(const char* fileName, const int id, const int len,
+                     const char* data, const char* testName) {
     CanMessage canMsg;
 
     // Parse the CAN data
@@ -13,39 +13,69 @@ int testParseCanData(const char* fileName, const unsigned char* expected,
         return 1;
     }
 
-    // Compare the parsed data to the expected data
-    if (strncmp((const char*)canMsg.data, expected, canMsg.dataLength) == 0) {
-        printf("%s passed.\n", testName);
-        return 0;
-    } else {
-        printf("%s failed.\nExpected: %s\nGot: %s\n", testName, expected, canMsg.data);
+    if (canMsg.messageId != id) {
+        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, id, canMsg.messageId);
         return 1;
     }
+
+    if (canMsg.dataLength != len) {
+        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, len, canMsg.dataLength);
+        return 1;
+    }
+
+    if (canMsg.dataLength * 2 != strlen(data) 
+        || strncmp((const char*)canMsg.data, data, canMsg.dataLength * 2) != 0) {
+        printf("%s failed.\nExpected: %s\nGot: %s\n", testName, data, canMsg.data);
+        return 1;
+    }
+
+    printf("%s passed.\n", testName);
+    return 0;
 }
 
-int testExtractSignalValue(Signal* sig, unsigned int canData, float expected,
-                           const char* testName) {
+int testExtractSignalValue(Signal* sig, const int canData,
+                           float expected, const char* testName) {
     float result = extractSignalValue(sig, &canData);
 
-    if (result == expected) {
-        printf("%s passed.\n", testName);
-        return 0;
-    } else {
+    if (result != expected) {
         printf("%s failed. Expected %.2f, got %.2f.\n", testName, expected, result);
         return 1;
     }
+
+    printf("%s passed.\n", testName);
+    return 0;
 }
 
 int main() {
     int result = 0;
 
     // Test cases for parseCanData
-    const unsigned char* expectedData1 = "0100000000000000";
-    result += testParseCanData("Tests/Systems/External/Can/CanDataTest.txt",
-                               expectedData1, "Parse CAN Data Test: General");
-    const unsigned char* expectedData0 = "0000000000000000";
-    result += testParseCanData("Tests/Systems/External/Can/CanDataTest1.txt",
-                               expectedData0, "Parse CAN Data Test: General 2");
+    const char* expectedData1 = "0100000000000000";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTest.txt",
+        100,
+        8,
+        expectedData1,
+        "Parse CAN Data Test: General"
+    );
+
+    const char* expectedData0 = "0000000000000000";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTest1.txt",
+        101,
+        8,
+        expectedData0,
+        "Parse CAN Data Test: General 2"
+    );
+
+    const char* expectedDataBms = "0FA01770A0000350";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTestBms.txt",
+        1712,
+        8,
+        expectedDataBms,
+        "Parse CAN Data Test: General BMS"
+    );
 
     // Base signal configuration
     Signal testSignal;

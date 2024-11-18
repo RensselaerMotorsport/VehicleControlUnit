@@ -11,7 +11,8 @@ int testBmsInit(const char* dbcFn, const char* testName) {
 
     if (bms.chargeStatus != IDLE || bms.packVoltage != 0.0f ||
         bms.packCurrent != 0.0f) {
-        printf("Failed: %s. Initial charge status, pack voltage, or pack current is incorrect.\n", testName);
+        printf("Failed: %s. Initial charge status, pack voltage, or pack "
+               "current is incorrect.\n", testName);
         return 1;
     } else {
         printf("Passed: %s.\n", testName);
@@ -25,13 +26,15 @@ int testBmsUpdateVoltage(float voltage, const char* dbcFn, const char* canFn,
     initBms(&bms, BmsHz, dbcFn);
     updateBmsTest(&bms, canFn);
 
-    if (true) {
+    printf("%f\n", bms.packVoltage);
+
+    if (bms.packVoltage != voltage) {
         printf("Failed: %s. BMS ...\n", testName);
         return 0;
-    } else {
-        printf("Passed: %s.\n", testName);
-        return 1;
     }
+
+    printf("Passed: %s.\n", testName);
+    return 1;
 }
 
 int main() {
@@ -42,6 +45,7 @@ int main() {
         "BMS Initialization Test"
     );
 
+    // TODO: Add update test suit
     result += testBmsUpdateVoltage(
         400.0f,
         "Tests/Systems/External/BmsFakeDbc.txt",
@@ -55,8 +59,6 @@ int main() {
     } else {
         printf("Some tests failed.\n");
     }
-
-    // TODO: Add update test suit
 
     return 0;
 }

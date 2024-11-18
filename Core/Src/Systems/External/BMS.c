@@ -82,10 +82,7 @@ void assignBmsValue(Bms* bms, int id, float value) {
 
 bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     int index = canData->messageId;
-    printf("Id %d\n",  index);
     Message* message = bms->dbcMessageMap[index];
-
-    printf("%d\n", message->id);
 
     // Check if the message ID matches the expected one
     if (message != NULL && message->id == canData->messageId) {
@@ -113,6 +110,9 @@ void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
     CanMessage canData;
     parseCanData(&canData, canDataFn);
+
+    // DEBUG: printing can info
+    printf("CAN: ID: %d, Len: %d, Data: %s\n", canData.messageId, canData.dataLength, canData.data);
 
     // Call the transfer function to decode the message
     if (!bmsTransferFunction(myBms, &canData)) {

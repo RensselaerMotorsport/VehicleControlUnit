@@ -47,6 +47,7 @@ unsigned int extractHexValue(const char* source, int start, int length) {
     char temp[9] = {0}; // Max size: 8 characters + null terminator
     strncpy(temp, source + start, length);
     temp[length] = '\0';
+    // Base 16 conversion
     return (unsigned int)strtol(temp, NULL, 16);
 }
 
@@ -67,9 +68,9 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
     // Extract DLC (next 2 characters)
     canMsg->dataLength = (unsigned char)extractHexValue(line, 3, 2);
 
-    // Extract raw data bytes (Remaining Bytes)
-    strncpy((char*)canMsg->data, line + 5, canMsg->dataLength);
-    canMsg->data[canMsg->dataLength] = '\0'; // Null Terminate for safety
+    // Extract data (Remaining characters)
+    strncpy((char*)canMsg->data, line + 5, canMsg->dataLength * 2);
+    canMsg->data[canMsg->dataLength * 2] = '\0'; // Null-terminate for safety
 
     return 1;
 }
@@ -135,7 +136,9 @@ int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
 
 float extractSignalValue(Signal* sig, const unsigned char* canData) {
     uint64_t rawValue;
+    // printf("CAN: %s\n", canData);
     const uint8_t* byteData = (const uint8_t*) canData;
+    // printf("byte : %d\n", byteData);
 
     // Determine the decoding method based on endian type
     if (sig->endian == ENDIAN_LITTLE) {
@@ -144,11 +147,14 @@ float extractSignalValue(Signal* sig, const unsigned char* canData) {
         rawValue = decodeBigEndian(sig, byteData);
     }
 
+    // printf("Raw: %d\n", rawValue);
+
     // Apply sign extension if the signal is signed
     int64_t signedValue = applySignExtension(rawValue, sig);
 
     // Convert to physical value using scale and offset
     float physicalValue = (float)signedValue * sig->scale + sig->offset;
+    // printf("%f\n", physicalValue);
 
     // Clamp to minimum and maximum defined in the signal
     if (physicalValue < sig->min) physicalValue = sig->min;
