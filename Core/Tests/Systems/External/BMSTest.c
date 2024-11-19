@@ -26,29 +26,29 @@ int testBmsUpdateVoltage(float voltage, const char* dbcFn, const char* canFn,
     initBms(&bms, BmsHz, dbcFn);
     updateBmsTest(&bms, canFn);
 
-    printf("%f\n", bms.packVoltage);
+    printf("Voltage: %f\n", bms.packVoltage);
 
     if (bms.packVoltage != voltage) {
         printf("Failed: %s. BMS ...\n", testName);
-        return 0;
+        return 1;
     }
 
     printf("Passed: %s.\n", testName);
-    return 1;
+    return 0;
 }
 
 int main() {
     int result = 0;
 
     result += testBmsInit(
-        "Tests/Systems/External/BmsFakeDbc.txt",
+        "Tests/Systems/External/Orion_CANBUS.dbc",
         "BMS Initialization Test"
     );
 
     // TODO: Add update test suit
     result += testBmsUpdateVoltage(
         400.0f,
-        "Tests/Systems/External/BmsFakeDbc.txt",
+        "Tests/Systems/External/Orion_CANBUS.dbc",
         "Tests/Systems/External/BmsFakeCanData.txt",
         "Bms Update Test: Voltage"
     );

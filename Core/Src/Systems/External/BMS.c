@@ -1,6 +1,6 @@
 #include "../../../Inc/Systems/External/BMS.h"
 
-#include <stdio.h>  // For printf
+#include <stdio.h>
 #include "../../../Inc/Systems/External/Can/Can.h"
 
 void initBms(Bms* bms, int hz, const char* dbcFn) {
@@ -97,13 +97,14 @@ bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     return false;  // Message ID not found or doesn't match
 }
 
-
+// TODO: Implemented this
 void updateBms(void* bms) {
     Bms* myBms = (Bms*) bms;
     printf("Not implemented\n");
 }
 
 // TODO: make this as similar to the normal update as possible.
+// Add doxy comments
 //
 // @warning For testing and debugging purposes only
 void updateBmsTest(void* bms, const char* canDataFn) {

@@ -6,7 +6,7 @@
 
 /**
  * @brief Reads a single line from a file into the provided buffer.
- * 
+ *
  * @param fileName Path to the file to be read.
  * @param lineBuffer Pointer to the buffer where the line will be stored.
  * @param bufferSize Size of the buffer to ensure no overflow.
@@ -35,9 +35,9 @@ int readFileLine(const char* fileName, char* lineBuffer, size_t bufferSize) {
 }
 
 /**
- * @brief Extracts a hexadecimal substring from a source string and converts it 
+ * @brief Extracts a hexadecimal substring from a source string and converts it
  *        to an integer.
- * 
+ *
  * @param source The source string to extract from.
  * @param start The starting position in the source string.
  * @param length The number of characters to extract.
@@ -76,45 +76,25 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
 }
 
 /**
- * @brief Decodes a raw signal value from little-endian formatted CAN data.
+ * @brief Flips the bits from little-endian to big-endian
  *
- * @param sig The signal configuration, defining bit length and start position.
- * @param byteData Pointer to the CAN data interpreted as a byte array.
- * @return uint64_t The raw extracted signal value.
+ * @param littleEndianHex The hex value in little-endian format.
+ * @param numBytes Number of bytes in hex
+ * @return const unsigned char* Hex in big-endian format.
  */
-uint64_t decodeLittleEndian(const Signal* sig, const uint8_t* byteData) {
-    uint64_t rawValue = 0;
-    int byteLength = (sig->length + 7) / 8;
+const unsigned char* charToBigEndian(const unsigned char *littleEndianHex,
+                                     int numBytes) {
+    static unsigned char result[MAX_CAN_DATA_LENGTH];
 
-    for (int i = 0; i < byteLength; i++) {
-        uint8_t currentByte = byteData[i];
-
-        // Add the byte to rawValue at the correct position in rawValue
-        rawValue |= ((uint64_t)currentByte) << (8 * i);
+    for (int i = 0; i < numBytes; i++) {
+        // Reverse bytes: Copy 2 characters (1 byte) at a time from end to start
+        result[i * 2] = littleEndianHex[(numBytes - 1 - i) * 2];
+        result[i * 2 + 1] = littleEndianHex[(numBytes - 1 - i) * 2 + 1];
     }
 
-    return rawValue;
-}
+    result[numBytes * 2] = '\0'; // Null-terminate the output
 
-/**
- * @brief Decodes a raw signal value from big-endian formatted CAN data.
- *
- * @param sig The signal configuration, defining bit length and start position.
- * @param byteData Pointer to the CAN data interpreted as a byte array.
- * @return uint64_t The raw extracted signal value.
- */
-uint64_t decodeBigEndian(const Signal* sig, const uint8_t* byteData) {
-    uint64_t rawValue = 0;
-    int byteLength = (sig->length + 7) / 8;
-
-    for (int i = byteLength - 1; i >= 0; i--) {
-        uint8_t currentByte = byteData[i];
-
-        // Shift the byte into the correct position in rawValue
-        rawValue = (rawValue << 8) | currentByte;
-    }
-
-    return rawValue;
+    return result;
 }
 
 /**
@@ -135,26 +115,22 @@ int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
 }
 
 float extractSignalValue(Signal* sig, const unsigned char* canData) {
-    uint64_t rawValue;
-    // printf("CAN: %s\n", canData);
-    const uint8_t* byteData = (const uint8_t*) canData;
-    // printf("byte : %d\n", byteData);
+    const unsigned char* charData = canData;
 
-    // Determine the decoding method based on endian type
+    // Flip bits if little-endian
     if (sig->endian == ENDIAN_LITTLE) {
-        rawValue = decodeLittleEndian(sig, byteData);
-    } else {
-        rawValue = decodeBigEndian(sig, byteData);
+        charData = charToBigEndian(charData, sig->length);
     }
 
-    // printf("Raw: %d\n", rawValue);
+    // FIXME: Figure out how to convent with an unsigned char
+    // Not to high of a priority
+    uint64_t rawValue = strtol((const char*)charData, NULL, 16);
 
     // Apply sign extension if the signal is signed
     int64_t signedValue = applySignExtension(rawValue, sig);
 
     // Convert to physical value using scale and offset
     float physicalValue = (float)signedValue * sig->scale + sig->offset;
-    // printf("%f\n", physicalValue);
 
     // Clamp to minimum and maximum defined in the signal
     if (physicalValue < sig->min) physicalValue = sig->min;

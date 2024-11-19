@@ -52,7 +52,7 @@ typedef struct {
  *
  * @param[in] sig Pointer to the Signal structure from which to get the name.
  * @return Pointer to a character string containing the signal name.
- * @note The returned pointer references memory within the Signal structure; 
+ * @note The returned pointer references memory within the Signal structure;
  * do not modify or free it.
  */
 char* getSignalName(Signal* sig);
@@ -60,12 +60,12 @@ char* getSignalName(Signal* sig);
 /**
  * @brief Retrieves the array of signals associated with a message.
  *
- * This function returns a pointer to the array of Signal structures that are 
+ * This function returns a pointer to the array of Signal structures that are
  * associated with the given message.
  *
  * @param[in] msg Pointer to the Message structure from which to retrieve the signals.
  * @return Pointer to the first element of an array of Signal structures.
- * @note The number of signals can be obtained from the Message structure's 
+ * @note The number of signals can be obtained from the Message structure's
  * signal count member.
  */
 Signal* getSignals(Message* msg);
@@ -104,7 +104,7 @@ uint8_t* getMessageData(Message* msg);
  *
  * @param[in] dbc Pointer to the DBC structure from which to retrieve the messages.
  * @return Pointer to the first element of an array of Message structures.
- * @note The number of messages can be obtained from the DBC structure's message 
+ * @note The number of messages can be obtained from the DBC structure's message
  * count member.
  */
 Message* getDbcMessages(DBC* dbc);
