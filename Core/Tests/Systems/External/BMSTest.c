@@ -14,10 +14,10 @@ int testBmsInit(const char* dbcFn, const char* testName) {
         printf("Failed: %s. Initial charge status, pack voltage, or pack "
                "current is incorrect.\n", testName);
         return 1;
-    } else {
-        printf("Passed: %s.\n", testName);
-        return 0;
     }
+
+    printf("Passed: %s.\n", testName);
+    return 0;
 }
 
 int testBmsUpdateVoltage(float voltage, const char* dbcFn, const char* canFn,

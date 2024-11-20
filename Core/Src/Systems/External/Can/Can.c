@@ -114,8 +114,10 @@ int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
     return (int64_t)rawValue;
 }
 
+// TODO: Put in signal class
 float extractSignalValue(Signal* sig, const unsigned char* canData) {
     const unsigned char* charData = canData;
+    printf("char data: %s\n", charData);
 
     // Flip bits if little-endian
     if (sig->endian == ENDIAN_LITTLE) {
@@ -125,6 +127,7 @@ float extractSignalValue(Signal* sig, const unsigned char* canData) {
     // FIXME: Figure out how to convent with an unsigned char
     // Not to high of a priority
     uint64_t rawValue = strtol((const char*)charData, NULL, 16);
+    printf("Raw value: %d\n", rawValue);
 
     // Apply sign extension if the signal is signed
     int64_t signedValue = applySignExtension(rawValue, sig);
@@ -135,6 +138,7 @@ float extractSignalValue(Signal* sig, const unsigned char* canData) {
     // Clamp to minimum and maximum defined in the signal
     if (physicalValue < sig->min) physicalValue = sig->min;
     if (physicalValue > sig->max) physicalValue = sig->max;
+    printf("phy value: %f\n", physicalValue);
 
     return physicalValue;
 }

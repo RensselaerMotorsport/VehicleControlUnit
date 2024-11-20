@@ -27,7 +27,8 @@ int parseDbcLine(char *line, DBC *dbc) {
         }
         // Message definition
         Message *message = &dbc->messages[dbc->messageCount++];
-        sscanf(line, "BO_ %d %s %d %s", &message->id, message->name, &message->dlc, message->sender);
+        // FIXME: Change back to a normal
+        sscanf(line, "BO_ %d %s %d %s", &message->id-1712, message->name, &message->dlc, message->sender);
         message->name[strlen(message->name) - 1] = '\0'; // remove colon from end of name
         message->signal_count = 0; 
     } else if (strncmp(line, " SG_", 4) == 0) {

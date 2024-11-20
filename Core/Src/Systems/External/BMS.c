@@ -27,16 +27,6 @@ void initBms(Bms* bms, int hz, const char* dbcFn) {
         return;
     }
     bms->dbc = &dbc;
-
-    Message* messageMap[MAX_MESSAGES] = {NULL};
-
-    int size = dbc.messageCount;
-    for (int i = 0; i < size; i++) {
-        int index = dbc.messages[i].id % MAX_MESSAGES;
-        messageMap[index] = &dbc.messages[i];
-    }
-
-    bms->dbcMessageMap = (Message**)messageMap;
 }
 
 void assignBmsValue(Bms* bms, int id, float value) {
@@ -80,21 +70,49 @@ void assignBmsValue(Bms* bms, int id, float value) {
     }
 }
 
+// TODO: Put in signal class
+uint64_t extractSignalBits(const char* sourceData, int start_bit, int length) {
+    // Convert the hex string to a 64-bit integer
+    uint64_t data = 0;
+    sscanf(sourceData, "%llx", &data);
+
+    // Shift to isolate the desired bits
+    uint64_t mask = (1ULL << length) - 1;   // Create a mask for the desired bit length
+    uint64_t extracted = (data >> (64 - start_bit - length)) & mask;
+
+    printf("Converted Data: 0x%016llX\n", data);
+    printf("Start Bit: %d, Length: %d, Extracted: 0x%llX\n", start_bit, length, extracted);
+
+    return extracted;
+}
+
 bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     int index = canData->messageId;
-    Message* message = bms->dbcMessageMap[index];
+    printf("ID: %d\n", index);
+    Message* message = &bms->dbc->messages[index-1712];
 
     // Check if the message ID matches the expected one
-    if (message != NULL && message->id == canData->messageId) {
-        // Decode signals within the message
-        for (int i = 0; i < message->signal_count; i++) {
-            Signal* signal = &message->signals[i];
-            float value = extractSignalValue(signal, canData->data);
-            assignBmsValue(bms, message->id, value);
-        }
-        return true;
+    if (message == NULL && message->id != canData->messageId) {
+        printf("Message ID not found\n");
+        return false;  // Message ID not found or doesn't match
     }
-    return false;  // Message ID not found or doesn't match
+
+    printf("Message ID found: %d\n", message->id);
+    printf("Signal Count: %d\n", message->signal_count);
+    // Decode signals within the message
+    for (int i = 0; i < message->signal_count; i++) {
+        Signal* signal = &message->signals[i];
+
+        // Extract the relevant data bits
+        const unsigned char* extracted = extractSignalBits((const char*)canData->data, signal->start_bit, signal->length);
+        printf("Temp data: %s\n", extracted);
+
+        // Pass the extracted signal data to the extractSignalValue function
+        // float value = extractSignalValue(signal, extracted);
+        // printf("Value: %f\n", value);
+        // assignBmsValue(bms, message->id, value);
+    }
+    return true;
 }
 
 // TODO: Implemented this

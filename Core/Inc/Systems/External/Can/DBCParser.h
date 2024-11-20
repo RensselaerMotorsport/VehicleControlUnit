@@ -41,6 +41,7 @@ typedef struct {
 } Message;
 
 typedef struct {
+    // FIXME: Messages can start in the thousands maybe need a key pair here
     Message messages[MAX_MESSAGES];
     int messageCount;
 } DBC;
