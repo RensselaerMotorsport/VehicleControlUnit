@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "../../../../Inc/Systems/PrintHelpers.h"
 
 /**
  * @brief Reads a single line from a file into the provided buffer.
@@ -82,17 +83,26 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
  * @param numBytes Number of bytes in hex
  * @return const unsigned char* Hex in big-endian format.
  */
-const unsigned char* charToBigEndian(const unsigned char *littleEndianHex,
-                                     int numBytes) {
+const unsigned char* charToBigEndian(const unsigned char *hex, int len) {
+    if (len % 8 != 0) {
+        printf(
+            ANSI_COLOR_RED
+            "Error: Byte Length undivisable by 8. Unable to flip bytes.\n"
+            ANSI_COLOR_RESET
+        );
+        return hex;
+    }
+
+    int numBytes = len / 8;
     static unsigned char result[MAX_CAN_DATA_LENGTH];
 
     for (int i = 0; i < numBytes; i++) {
-        // Reverse bytes: Copy 2 characters (1 byte) at a time from end to start
-        result[i * 2] = littleEndianHex[(numBytes - 1 - i) * 2];
-        result[i * 2 + 1] = littleEndianHex[(numBytes - 1 - i) * 2 + 1];
+        // Reverse bytes
+        result[i * 2] = hex[(numBytes - 1 - i) * 2];
+        result[i * 2 + 1] = hex[(numBytes - 1 - i) * 2 + 1];
     }
 
-    result[numBytes * 2] = '\0'; // Null-terminate the output
+    result[numBytes * 2] = '\0';
 
     return result;
 }
@@ -117,17 +127,15 @@ int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
 // TODO: Put in signal class
 float extractSignalValue(Signal* sig, const unsigned char* canData) {
     const unsigned char* charData = canData;
-    printf("char data: %s\n", charData);
 
     // Flip bits if little-endian
+    // NOTE: This may not be how to handle endianess
     if (sig->endian == ENDIAN_LITTLE) {
         charData = charToBigEndian(charData, sig->length);
     }
 
     // FIXME: Figure out how to convent with an unsigned char
-    // Not to high of a priority
     uint64_t rawValue = strtol((const char*)charData, NULL, 16);
-    printf("Raw value: %d\n", rawValue);
 
     // Apply sign extension if the signal is signed
     int64_t signedValue = applySignExtension(rawValue, sig);
@@ -138,7 +146,6 @@ float extractSignalValue(Signal* sig, const unsigned char* canData) {
     // Clamp to minimum and maximum defined in the signal
     if (physicalValue < sig->min) physicalValue = sig->min;
     if (physicalValue > sig->max) physicalValue = sig->max;
-    printf("phy value: %f\n", physicalValue);
 
     return physicalValue;
 }

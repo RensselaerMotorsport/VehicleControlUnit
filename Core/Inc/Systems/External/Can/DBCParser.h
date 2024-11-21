@@ -3,12 +3,7 @@
 
 #include <stdint.h>
 
-#define MAX_SIGNALS 64
-#define MAX_MESSAGES 256
-#define MAX_SIGNAL_NAME_LENGTH 64
-#define MAX_MESSAGE_NAME_LENGTH 64
-#define MAX_NODE_NAME_LENGTH 64
-#define MAX_UNIT_NAME_LENGTH 64
+#include "Message.h"
 
 static const int MAX_LINE_LENGTH = 256;
 
@@ -18,58 +13,10 @@ typedef enum {
 } Endianness;
 
 typedef struct {
-    char name[MAX_SIGNAL_NAME_LENGTH];
-    int start_bit;
-    int length;
-    int endian;
-    char isSigned;
-    float scale;
-    float offset;
-    float min;
-    float max;
-    char unit[MAX_UNIT_NAME_LENGTH];
-    char reciever[MAX_NODE_NAME_LENGTH];
-} Signal;
-
-typedef struct {
-    int id;
-    char name[MAX_MESSAGE_NAME_LENGTH];
-    int dlc;  // Data Length Code
-    char sender[MAX_NODE_NAME_LENGTH];
-    Signal signals[MAX_SIGNALS];
-    int signal_count;
-} Message;
-
-typedef struct {
     // FIXME: Messages can start in the thousands maybe need a key pair here
     Message messages[MAX_MESSAGES];
     int messageCount;
 } DBC;
-
-/**
- * @brief Retrieves the name of a given signal.
- *
- * This function returns a pointer to the name string of the specified signal.
- *
- * @param[in] sig Pointer to the Signal structure from which to get the name.
- * @return Pointer to a character string containing the signal name.
- * @note The returned pointer references memory within the Signal structure;
- * do not modify or free it.
- */
-char* getSignalName(Signal* sig);
-
-/**
- * @brief Retrieves the array of signals associated with a message.
- *
- * This function returns a pointer to the array of Signal structures that are
- * associated with the given message.
- *
- * @param[in] msg Pointer to the Message structure from which to retrieve the signals.
- * @return Pointer to the first element of an array of Signal structures.
- * @note The number of signals can be obtained from the Message structure's
- * signal count member.
- */
-Signal* getSignals(Message* msg);
 
 /**
  * @brief Parses a DBC (CAN database) file and populates the DBC structure.

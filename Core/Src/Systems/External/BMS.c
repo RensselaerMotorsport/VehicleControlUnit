@@ -29,40 +29,36 @@ void initBms(Bms* bms, int hz, const char* dbcFn) {
     bms->dbc = &dbc;
 }
 
-void assignBmsValue(Bms* bms, int id, float value) {
+void assignBmsValue(Bms* bms, int id, float value, const char* name) {
     switch (id) {
-        case 100:
-            bms->packVoltage = value;
+        // TODO: Remember to update +1712
+        case 0:
+            if (strcmp(name, "Pack_Current") == 0) {
+                bms->packCurrent = value;
+            } else if (strcmp(name, "Pack_Inst_Voltage") == 0) {
+                bms->packVoltage = value;
+            } else if (strcmp(name, "Pack_SOC") == 0) {
+                bms->stateOfCharge = value;
+            } else if (strcmp(name, "Relay_State") == 0) {
+                /*bms->relayState = (int)value;*/
+            } else if (strcmp(name, "CRC_Checksum") == 0) {
+                // TODO: Deal with this
+
+                /*bms->crcChecksum = (int)value;*/
+            }
             break;
-        case 200:
-            bms->packCurrent = value;
-            break;
-        case 300:
-            bms->stateOfCharge = value;
-            break;
-        case 400:
-            bms->cellVoltageMin = value;
-            break;
-        case 500:
-            bms->cellVoltageMax = value;
-            break;
-        case 600:
-            bms->cellTemperatureMin = value;
-            break;
-        case 700:
-            bms->cellTemperatureMax = value;
-            break;
-        case 800:
-            bms->totalPackCapacity = value;
-            break;
-        case 900:
-            bms->remainingPackCapacity = value;
-            break;
-        case 1000:
-            bms->packHealth = value;
-            break;
-        case 1100:
-            bms->chargeStatus = (int)value;
+        case 1:
+            if (strcmp(name, "Pack_DCL") == 0) {
+                /*bms->packDCL = value;*/
+            } else if (strcmp(name, "Pack_CCL") == 0) {
+                /*bms->packCCL = value;*/
+            } else if (strcmp(name, "High_Temperature") == 0) {
+                /*bms->highTemperature = value;*/
+            } else if (strcmp(name, "Low_Temperature") == 0) {
+                /*bms->lowTemperature = value;*/
+            } else if (strcmp(name, "CRC_Checksum") == 0) {
+                /*bms->crcChecksum = (int)value;*/
+            }
             break;
         default:
             // Handle invalid signal case if needed
@@ -71,46 +67,50 @@ void assignBmsValue(Bms* bms, int id, float value) {
 }
 
 // TODO: Put in signal class
-uint64_t extractSignalBits(const char* sourceData, int start_bit, int length) {
-    // Convert the hex string to a 64-bit integer
-    uint64_t data = 0;
-    sscanf(sourceData, "%llx", &data);
+const unsigned char* extractSignalBytes(const unsigned char* data, int startBit,
+                                        int len) {
+    static unsigned char result[MAX_CAN_DATA_LENGTH];
+    memset(result, 0, MAX_CAN_DATA_LENGTH);
 
-    // Shift to isolate the desired bits
-    uint64_t mask = (1ULL << length) - 1;   // Create a mask for the desired bit length
-    uint64_t extracted = (data >> (64 - start_bit - length)) & mask;
+    int posAfterData = 7;
+    int bitOffset = (startBit - posAfterData);
+    int startByte = bitOffset / 8;
+    int endByte = (bitOffset + len - 1) / 8;
+    int resultIndex = 0;
 
-    printf("Converted Data: 0x%016llX\n", data);
-    printf("Start Bit: %d, Length: %d, Extracted: 0x%llX\n", start_bit, length, extracted);
+    // Copy relevant bytes to the result array
+    for (int i = startByte * 2; i <= endByte * 2; i+=2) {
+        result[resultIndex++] = data[i];
+        result[resultIndex++] = data[i+1];
+    }
 
-    return extracted;
+    return result;
 }
 
 bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     int index = canData->messageId;
-    printf("ID: %d\n", index);
     Message* message = &bms->dbc->messages[index-1712];
 
     // Check if the message ID matches the expected one
     if (message == NULL && message->id != canData->messageId) {
-        printf("Message ID not found\n");
         return false;  // Message ID not found or doesn't match
     }
 
-    printf("Message ID found: %d\n", message->id);
-    printf("Signal Count: %d\n", message->signal_count);
     // Decode signals within the message
     for (int i = 0; i < message->signal_count; i++) {
         Signal* signal = &message->signals[i];
 
         // Extract the relevant data bits
-        const unsigned char* extracted = extractSignalBits((const char*)canData->data, signal->start_bit, signal->length);
-        printf("Temp data: %s\n", extracted);
+        const unsigned char* extracted = extractSignalBytes(
+            (const unsigned char*)canData->data,
+            signal->start_bit,
+            signal->length
+        );
 
         // Pass the extracted signal data to the extractSignalValue function
-        // float value = extractSignalValue(signal, extracted);
-        // printf("Value: %f\n", value);
-        // assignBmsValue(bms, message->id, value);
+        float value = extractSignalValue(signal, extracted);
+        // TODO: check that this works
+        assignBmsValue(bms, message->id, value, signal->name);
     }
     return true;
 }
@@ -129,9 +129,6 @@ void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
     CanMessage canData;
     parseCanData(&canData, canDataFn);
-
-    // DEBUG: printing can info
-    printf("CAN: ID: %d, Len: %d, Data: %s\n", canData.messageId, canData.dataLength, canData.data);
 
     // Call the transfer function to decode the message
     if (!bmsTransferFunction(myBms, &canData)) {

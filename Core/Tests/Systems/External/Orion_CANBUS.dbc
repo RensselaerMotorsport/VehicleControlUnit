@@ -37,11 +37,11 @@ BU_: BMS Third_Party_Device
 
 
 BO_ 1712 MSGID_0X6B0: 8 BMS
- SG_ Pack_Current : 7|16@0+ (0.1,0) [0|0] "Amps"  Third_Party_Device
- SG_ Pack_Inst_Voltage : 23|16@0+ (0.1,0) [0|0] "Volts"  Third_Party_Device
- SG_ Pack_SOC : 39|8@0+ (0.5,0) [0|0] "Percent"  Third_Party_Device
- SG_ Relay_State : 47|16@0+ (1.0,0) [0|0] ""  Third_Party_Device
- SG_ CRC_Checksum : 63|8@0+ (1.0,1720) [0|0] ""  Third_Party_Device
+ SG_ Pack_Current : 7|16@0+ (0.1,0) [0|1000] "Amps"  Third_Party_Device
+ SG_ Pack_Inst_Voltage : 23|16@0+ (0.1,0) [0|1000] "Volts"  Third_Party_Device
+ SG_ Pack_SOC : 39|8@0+ (0.5,0) [0|100] "Percent"  Third_Party_Device
+ SG_ Relay_State : 47|16@0+ (1.0,0) [0|5] ""  Third_Party_Device
+ SG_ CRC_Checksum : 63|8@0+ (1.0,1720) [0|10000] ""  Third_Party_Device
 
 BO_ 1713 MSGID_0X6B1: 8 BMS
  SG_ Pack_DCL : 7|16@0+ (1.0,0) [0|0] "Amps"  Third_Party_Device

@@ -86,7 +86,7 @@ int runExtractSignalValueTest() {
     Signal testSignal;
     strcpy(testSignal.name, "TestSignal");
     testSignal.start_bit = 0;
-    testSignal.length = 1;
+    testSignal.length = 8;
     testSignal.scale = 1.0f;
     testSignal.offset = 0.0f;
     testSignal.min = -10.0f;
@@ -102,7 +102,7 @@ int runExtractSignalValueTest() {
     );
 
     // 2. Edge case - maximum 16-bit unsigned value
-    testSignal.length = 2;
+    testSignal.length = 16;
     result += testExtractSignalValue(
         &testSignal,
         (const unsigned char*)"FFFF",
@@ -111,7 +111,6 @@ int runExtractSignalValueTest() {
     );
 
     // 3. Mid-range value
-    testSignal.length = 2;
     result += testExtractSignalValue(
         &testSignal,
         (const unsigned char*)"9001",
@@ -122,7 +121,7 @@ int runExtractSignalValueTest() {
     // 4. Scaling and offset adjustments
     testSignal.scale = 0.5f;
     testSignal.offset = 10.0f;
-    testSignal.length = 1;
+    testSignal.length = 8;
     result += testExtractSignalValue(
         &testSignal,
         (const unsigned char*)"80",
@@ -131,6 +130,7 @@ int runExtractSignalValueTest() {
     );
 
     // 5. Big endian test with a typical value
+    testSignal.length = 16;
     testSignal.endian = ENDIAN_BIG;
     testSignal.scale = 1.0f;
     testSignal.offset = 0.0f;
