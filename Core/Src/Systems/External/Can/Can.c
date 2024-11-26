@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../../../../Inc/Systems/PrintHelpers.h"
 
 /**
  * @brief Reads a single line from a file into the provided buffer.
@@ -74,78 +73,4 @@ int parseCanData(CanMessage* canMsg, const char* fn) {
     canMsg->data[canMsg->dataLength * 2] = '\0'; // Null-terminate for safety
 
     return 1;
-}
-
-/**
- * @brief Flips the bits from little-endian to big-endian
- *
- * @param littleEndianHex The hex value in little-endian format.
- * @param numBytes Number of bytes in hex
- * @return const unsigned char* Hex in big-endian format.
- */
-const unsigned char* charToBigEndian(const unsigned char *hex, int len) {
-    if (len % 8 != 0) {
-        printf(
-            ANSI_COLOR_RED
-            "Error: Byte Length undivisable by 8. Unable to flip bytes.\n"
-            ANSI_COLOR_RESET
-        );
-        return hex;
-    }
-
-    int numBytes = len / 8;
-    static unsigned char result[MAX_CAN_DATA_LENGTH];
-
-    for (int i = 0; i < numBytes; i++) {
-        // Reverse bytes
-        result[i * 2] = hex[(numBytes - 1 - i) * 2];
-        result[i * 2 + 1] = hex[(numBytes - 1 - i) * 2 + 1];
-    }
-
-    result[numBytes * 2] = '\0';
-
-    return result;
-}
-
-/**
- * @brief Applies sign extension to a raw value if the signal is signed.
- *
- * @param rawValue The extracted raw signal value.
- * @param sig The signal configuration, specifying if the signal is signed.
- * @return int64_t The signed (or unsigned) interpreted value.
- */
-int64_t applySignExtension(uint64_t rawValue, const Signal* sig) {
-    if (sig->isSigned == 's') {
-        // Check the most significant bit for sign extension
-        if (rawValue & (1ULL << (sig->length - 1))) {
-            return (int64_t)(rawValue | (~0ULL << sig->length));
-        }
-    }
-    return (int64_t)rawValue;
-}
-
-// TODO: Put in signal class
-float extractSignalValue(Signal* sig, const unsigned char* canData) {
-    const unsigned char* charData = canData;
-
-    // Flip bits if little-endian
-    // NOTE: This may not be how to handle endianess
-    if (sig->endian == ENDIAN_LITTLE) {
-        charData = charToBigEndian(charData, sig->length);
-    }
-
-    // FIXME: Figure out how to convent with an unsigned char
-    uint64_t rawValue = strtol((const char*)charData, NULL, 16);
-
-    // Apply sign extension if the signal is signed
-    int64_t signedValue = applySignExtension(rawValue, sig);
-
-    // Convert to physical value using scale and offset
-    float physicalValue = (float)signedValue * sig->scale + sig->offset;
-
-    // Clamp to minimum and maximum defined in the signal
-    if (physicalValue < sig->min) physicalValue = sig->min;
-    if (physicalValue > sig->max) physicalValue = sig->max;
-
-    return physicalValue;
 }

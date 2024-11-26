@@ -33,18 +33,6 @@ typedef struct {
 int parseDbcFile(DBC* dbc, const char *filename);
 
 /**
- * @brief Retrieves the data payload of a CAN message.
- *
- * This function returns a pointer to the data payload of the specified message.
- *
- * @param[in] msg Pointer to the Message structure from which to retrieve the data.
- * @return Pointer to an array of uint8_t containing the message data.
- * @note The length of the data can be obtained from the Message structure's data
- * length member.
- */
-uint8_t* getMessageData(Message* msg);
-
-/**
  * @brief Retrieves the array of messages from a DBC structure.
  *
  * This function returns a pointer to the array of Message structures contained

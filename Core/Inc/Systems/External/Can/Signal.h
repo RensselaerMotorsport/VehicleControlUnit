@@ -32,4 +32,13 @@ typedef struct {
  */
 char* getSignalName(Signal* sig);
 
+/**
+ * @brief Parses the CAN data with the given signal.
+ *
+ * @param sig The signal parsed from the DBC that is used to decode the data.
+ * @param canData Hexadecimal string representing can data. (w/o 0x)
+ * @return float Value from data and signal.
+ */
+float extractSignalValue(Signal* sig, const unsigned char* canData);
+
 #endif  // RENNSSELAERMOTORSPORT_SIGNAL_H

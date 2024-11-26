@@ -1,4 +1,5 @@
 #include "../../../Inc/Systems/External/BMS.h"
+#include "../../../Inc/Systems/PrintHelpers.h"
 
 #include <stdio.h>
 #include "../../../Inc/Systems/External/Can/Can.h"
@@ -66,27 +67,6 @@ void assignBmsValue(Bms* bms, int id, float value, const char* name) {
     }
 }
 
-// TODO: Put in signal class
-const unsigned char* extractSignalBytes(const unsigned char* data, int startBit,
-                                        int len) {
-    static unsigned char result[MAX_CAN_DATA_LENGTH];
-    memset(result, 0, MAX_CAN_DATA_LENGTH);
-
-    int posAfterData = 7;
-    int bitOffset = (startBit - posAfterData);
-    int startByte = bitOffset / 8;
-    int endByte = (bitOffset + len - 1) / 8;
-    int resultIndex = 0;
-
-    // Copy relevant bytes to the result array
-    for (int i = startByte * 2; i <= endByte * 2; i+=2) {
-        result[resultIndex++] = data[i];
-        result[resultIndex++] = data[i+1];
-    }
-
-    return result;
-}
-
 bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     int index = canData->messageId;
     Message* message = &bms->dbc->messages[index-1712];
@@ -99,17 +79,7 @@ bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
     // Decode signals within the message
     for (int i = 0; i < message->signal_count; i++) {
         Signal* signal = &message->signals[i];
-
-        // Extract the relevant data bits
-        const unsigned char* extracted = extractSignalBytes(
-            (const unsigned char*)canData->data,
-            signal->start_bit,
-            signal->length
-        );
-
-        // Pass the extracted signal data to the extractSignalValue function
-        float value = extractSignalValue(signal, extracted);
-        // TODO: check that this works
+        float value = extractSignalValue(signal, canData->data);
         assignBmsValue(bms, message->id, value, signal->name);
     }
     return true;
@@ -118,12 +88,16 @@ bool bmsTransferFunction(Bms* bms, CanMessage* canData) {
 // TODO: Implemented this
 void updateBms(void* bms) {
     Bms* myBms = (Bms*) bms;
-    printf("Not implemented\n");
+    printf("BMS Update Not implemented\n");
+    // CanMessage canData = fetchCanData(...);
+    // parseCanData(&canData, canDataFn);
+    //
+    // // Call the transfer function to decode the message
+    // if (!bmsTransferFunction(myBms, &canData)) {
+    //     printf("Error: Transfer function failed.\n");
+    // }
 }
 
-// TODO: make this as similar to the normal update as possible.
-// Add doxy comments
-//
 // @warning For testing and debugging purposes only
 void updateBmsTest(void* bms, const char* canDataFn) {
     Bms* myBms = (Bms*) bms;
