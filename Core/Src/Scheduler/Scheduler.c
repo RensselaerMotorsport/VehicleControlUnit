@@ -7,30 +7,32 @@
 // Timer flag declared in the interrupt handler
 // extern volatile uint32_t timer_flag;
 
-/**
- * Initializes the priority queue and schedules tasks based on the given sensors
- * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
- */
-void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors) {
-    if (numSensors > MAX_SENSORS) {
-        printf("Warning: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
-        numSensors = MAX_SENSORS;  // Limit the number of sensors to MAX_SENSORS
+bool SchedulerInit(Scheduler* scheduler, Updateable* updateables[],
+                   int numUpdatables) {
+    if (numUpdatables > MAX_UPDATEABLES) {
+        // TODO: Make red when print helpers is added
+        printf("Error: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
+        return false;
     }
 
     PQInit(&scheduler->tasks);
     scheduler->running = false;
 
-    for (int i = 0; i < numSensors; i++) {
+    for (int i = 0; i < numUpdatables; i++) {
         Task task;
-        Sensor* sensor = sensorArray[i];
-        if (sensor == NULL) {
-            continue;
+
+        Updateable* updateable = (Updateable*) updateables[i];
+        if (updateable == nullptr) {
+            // TODO: Make red when print helpers is added
+            printf("Error: An Updatable is a nullptr\n");
+            return false;
         }
-        TaskInit(&task, sensor, sensor->updateable.hz);
-        int hz = 1000 / sensor->updateable.hz;
+        TaskInit(&task, updateable, updateable->hz);
+        int hz = 1000 / updateable->hz;
         int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
         PQPush(&scheduler->tasks, task, initialPriority);
     }
+    return true;
 }
 
 /**
@@ -55,7 +57,8 @@ void SchedulerRun(Scheduler* scheduler) {
             if (PQPop(&scheduler->tasks, &currentTask)) {
                 TaskExecute(&currentTask);
                 currentTask.nextExecTime = currentTime + (1000 / currentTask.hz);
-                PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);  // Reinsert task with new priority
+                // Reinsert task with new priority
+                PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);
             }
         }
     }
