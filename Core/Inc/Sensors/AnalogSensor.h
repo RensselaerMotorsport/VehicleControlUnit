@@ -1,16 +1,17 @@
 #ifndef RENSSELAERMOTORSPORT_ANALOGSENSOR_H
 #define RENSSELAERMOTORSPORT_ANALOGSENSOR_H
-// STM32 HAL includes
-#include "stm32f7xx.h"
-#include "stm32f7xx_hal.h"
-#include "stm32f7xx_hal_adc.h"
-#include "stm32f7xx_hal_dma.h"
-#include "stm32f7xx_hal_uart.h"
 
 // Standard C includes
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+
+// STM32 HAL includes
+#include "../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h"
+#include "../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h"
+#include "../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h"
+#include "../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h"
+#include "../../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h"
 
 // User includes
 #include "Sensor.h"

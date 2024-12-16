@@ -7,26 +7,27 @@
 // Timer flag declared in the interrupt handler
 // extern volatile uint32_t timer_flag;
 
-bool SchedulerInit(Scheduler* scheduler, Updateable* updateables[],
-                   int numUpdatables) {
-    if (numUpdatables > MAX_UPDATEABLES) {
-        // TODO: Make red when print helpers is added
-        printf("Error: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
-        return false;
-    }
-
+/**
+ * Initializes the priority queue and schedules tasks based on the given sensors
+ * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
+ */
+bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     PQInit(&scheduler->tasks);
     scheduler->running = false;
 
-    for (int i = 0; i < numUpdatables; i++) {
-        Task task;
-
-        Updateable* updateable = (Updateable*) updateables[i];
-        if (updateable == nullptr) {
-            // TODO: Make red when print helpers is added
-            printf("Error: An Updatable is a nullptr\n");
-            return false;
+    for (int i = 0; updatableArray[i] != NULL; i++) {
+        if (i >= MAX_SENSORS) {
+            printf("Warning: Number of sensors exceeds MAX_SENSORS. "
+                   "Some sensors will not be scheduled.\n");
+            break;
         }
+
+        Updateable* updateable = updatableArray[i];
+        if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
+            continue; // Skip invalid frequencies
+        }
+
+        Task task;
         TaskInit(&task, updateable, updateable->hz);
         int hz = 1000 / updateable->hz;
         int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;

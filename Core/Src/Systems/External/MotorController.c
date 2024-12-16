@@ -1,4 +1,4 @@
-#include "../../../Inc/Sensors/CANSensors/MotorController.h"
+#include "../../../Inc/Systems/External/MotorController.h"
 
 void initMotorController(MotorController* mc, Esc* esc, App* app) {
     if (mc != NULL) {

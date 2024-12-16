@@ -9,7 +9,6 @@
 typedef enum {
     ANALOG,
     DIGITAL,
-    CAN
 } SensorType;
 
 typedef struct {

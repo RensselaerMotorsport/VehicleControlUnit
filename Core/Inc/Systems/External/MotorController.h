@@ -2,7 +2,7 @@
 #define RENNSSELAERMOTORSPORT_MOTORCONTROLLER_H
 
 #include "Esc.h"
-#include "../AnalogSensors/App.h"
+#include "../../Sensors/AnalogSensors/App.h"
 
 typedef struct {
     Esc* esc;

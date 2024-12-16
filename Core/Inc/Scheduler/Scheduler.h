@@ -26,11 +26,10 @@ typedef struct Scheduler {
  * @brief Initializes the scheduler with the given sensors.
  *
  * @param scheduler   Pointer to the Scheduler structure to initialize.
- * @param updatables Array of pointers to Updatables to be scheduled.
- * @param numUpdatables  Number of sensors in the updatables array.
+ * @param updateableArray Array of pointers to Updateable structures to be scheduled.
+ * @return True if init worked. False otherwise
  */
-bool SchedulerInit(Scheduler* scheduler, Updateable* updateables[], 
-                   int numUpdatables);
+bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
 
 /**
  * @brief Runs the scheduler, executing tasks based on their priority.

@@ -1,10 +1,10 @@
 #ifndef RENNSSELAERMOTORSPORT_ESC_H
 #define RENNSSELAERMOTORSPORT_ESC_H
 
-#include "../CANSensor.h"
+#include "../ExternalSystem.h"
 
 typedef struct {
-    CANSensor base;
+    // CANSensor base;
     float temp;
     float motor_revolutions;
 } Esc;
