@@ -63,6 +63,10 @@ void updateApps(void* apps) {
     if (appsPtr->status != APPS_OK) return;
 }
 
+Updateable* GetUpdateableApps(Apps* apps) {
+    return &(apps->base.system.updateable);
+}
+
 float getAppsPosition(Apps* apps) {
     checkAppsLimit(apps);
     if (apps->status != APPS_OK) return 0.0f;

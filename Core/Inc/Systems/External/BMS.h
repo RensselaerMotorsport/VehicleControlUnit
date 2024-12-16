@@ -2,6 +2,7 @@
 #define RENNSSELAERMOTORSPORT_BMS_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #include "../ExternalSystem.h"
 #include "../../../Inc/Systems/External/Can/DBCParser.h"
@@ -45,7 +46,7 @@ void initBms(Bms* bms, int hz, const char* dbcFn);
  * @param rawData Pointer to the array of raw data.
  * @return The converted BmsData structure.
  */
-BmsData transferFunctionBms(float* rawdata);
+bool transferFunctionBms(float* rawdata);
 
 /**
  * @brief Updates the BMS data.

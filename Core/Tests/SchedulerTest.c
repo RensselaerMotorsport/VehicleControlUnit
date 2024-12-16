@@ -9,11 +9,9 @@
 #include "../Inc/Systems/Controller/Apps.h"
 #include "../Inc/Sensors/DigitalSensors/WheelSpeed.h"
 
-int testSchedulerInit() {
-    Scheduler scheduler;
+Updateable** initUpdatables() {
     int numSensors = 2;
 
-    // Initialize Updateables
     Apps apps;
     int appsHz = 200;
     initApps(&apps, appsHz, 0, 1);
@@ -24,19 +22,46 @@ int testSchedulerInit() {
     int numTeeth = 40;
     initWheelSpeed(&wheelSpeed, wheelSpeedHz, 0, radius, numTeeth, 0);
 
-    void* updatableArr[numSensors];
-    updatableArr[0] = &apps;
-    updatableArr[1] = &wheelSpeed;
+    // Dynamically allocate the array
+    Updateable** updateableArr = malloc((numSensors + 1) * sizeof(Updateable*));
+    if (!updateableArr) return NULL;
 
-    if (SchedulerInit(&scheduler, &updatableArray, numSensors))
+    updateableArr[0] = GetUpdateableApps(&apps);
+    updateableArr[1] = &(wheelSpeed.base.sensor.updateable);
+    updateableArr[2] = NULL;
+    return updateableArr;
+}
+
+int testSchedulerInit() {
+    Scheduler scheduler;
+
+    // Initialize Updateables
+    Updateable** updateableArr = initUpdatables();
+
+    // Initialize Scheduler
+    if (SchedulerInit(&scheduler, updateableArr))
         return 0;
     return 1;
 }
 
+int testSchedulerRun() {
+    // Init Scheduler
+    Scheduler scheduler;
+    Updateable** updateableArr = initUpdatables();
+    SchedulerInit(&scheduler, updateableArr);
+
+    // Scheduler Test
+    SchedulerRun(&scheduler);
+
+    return 1;
+}
+
 int main() {
+    printf("Starting Scheduler Test...\n");
     int result = 0;
 
     result += testSchedulerInit();
+    result += testSchedulerRun();
 
     // Display overall test result
     if (result == 0) {

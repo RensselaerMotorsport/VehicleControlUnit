@@ -1,6 +1,8 @@
 #include <time.h>
 #include <stdint.h>
 #include "../../Inc/Scheduler/Scheduler.h"
+#include "../../Inc/Systems/PrintHelpers.h"
+
 // FIXME: Was supposed to be timer include.
 // #include "../../Inc/stm32f7xx_hal_conf.h"
 
@@ -16,15 +18,23 @@ bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     scheduler->running = false;
 
     for (int i = 0; updatableArray[i] != NULL; i++) {
-        if (i >= MAX_SENSORS) {
-            printf("Warning: Number of sensors exceeds MAX_SENSORS. "
-                   "Some sensors will not be scheduled.\n");
-            break;
+        if (i >= MAX_UPDATEABLES) {
+            printf(
+                ANSI_COLOR_RED
+                "Error: Number of sensors exceeds MAX_SENSORS.\n"
+                ANSI_COLOR_RESET
+            );
+            return false;
         }
 
         Updateable* updateable = updatableArray[i];
         if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
-            continue; // Skip invalid frequencies
+            printf(
+                ANSI_COLOR_RED
+                "Error: Updatable hz is outside of normal range.\n"
+                ANSI_COLOR_RESET
+            );
+            return false;
         }
 
         Task task;

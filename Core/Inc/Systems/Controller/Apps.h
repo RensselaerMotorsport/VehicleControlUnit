@@ -42,6 +42,14 @@ void initApps(Apps* apps, int hz, int channel1, int channel2);
 void updateApps(void* apps);
 
 /**
+ * @brief Retrieves updateable portion of APPS system
+ *
+ * @param apps A pointer to the APPs structure.
+ * @return Pointer to updateable structure
+ */
+Updateable* GetUpdateableApps(Apps* apps);
+
+/**
  * @brief Averages app sensors to get pedal position.
  *
  * @param apps Pointer to the APPS controller.

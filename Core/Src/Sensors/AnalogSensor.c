@@ -40,6 +40,7 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
     initSensor(&analogSensor->sensor, name, hz, ANALOG);
     analogSensor->channel = channel;
 
+#ifndef TEST
     GPIO_InitTypeDef GPIOXout_Struct = {0};
     GPIOXout_Struct.Mode = GPIO_MODE_ANALOG;
     GPIOXout_Struct.Pull = GPIO_NOPULL;
@@ -72,6 +73,7 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
         GPIOXout_Struct.Pin = GPIO_PIN_4 << (channel - 14);
         /*HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);*/
     }
+#endif // Test
 }
 
 /**
