@@ -3,6 +3,31 @@
 
 #include <math.h>
 
+void initApps(Apps* apps, int hz, int channel1, int channel2) {
+    // FIXME: This can't be dynamic
+    // Allocate memory for the app instances
+    apps->app[0] = (App*)malloc(sizeof(App));
+    apps->app[1] = (App*)malloc(sizeof(App));
+
+    // Check if memory allocation was successful
+    if (apps->app[0] == NULL || apps->app[1] == NULL) {
+        return;
+    }
+
+    // System setup
+    MonitorSystem monitor;
+    initMonitorSystem(&monitor, "APPs Monitor", 200, m_APPS, VEHICLE_SHUTDOWN);
+    initControllerSystem(&apps->base, "APPS", hz, c_APPS);
+    defaultAddMonitor(&apps->base, &monitor);
+
+    // Controller setup
+    apps->base.system.updateable.update = updateApps;
+    apps->base.safety = appsSafetyCheck;
+    apps->status = APPS_OK;
+    initApp(apps->app[0], hz, channel1);
+    initApp(apps->app[1], hz, channel2);
+}
+
 /**
  * @brief Checks App limits for faults
  *
@@ -27,31 +52,8 @@ void checkAppsLimit(Apps* apps) {
     }
 }
 
-void initApps(Apps* apps, int hz, int channel1, int channel2) {
-    // Allocate memory for the app instances
-    apps->app[0] = (App*)malloc(sizeof(App));
-    apps->app[1] = (App*)malloc(sizeof(App));
-
-    // Check if memory allocation was successful
-    if (apps->app[0] == NULL || apps->app[1] == NULL) {
-        return;
-    }
-
-    // System setup
-    MonitorSystem monitor;
-    initMonitorSystem(&monitor, "APPs Monitor", 200, m_APPS, VEHICLE_SHUTDOWN);
-    initControllerSystem(&apps->base, "APPS", hz, c_APPS);
-    defaultAddMonitor(&apps->base, &monitor);
-
-    // Controller setup
-    apps->base.system.updateable.update = updateApps;
-    apps->base.safety = appsSafetyCheck;
-    apps->status = APPS_OK;
-    initApp(apps->app[0], hz, channel1);
-    initApp(apps->app[1], hz, channel2);
-}
-
 void updateApps(void* apps) {
+    printf("Updating Apps\n");
     Apps* appsPtr = (Apps*) apps;
     updateApp(&appsPtr->app[0]);
     updateApp(&appsPtr->app[1]);

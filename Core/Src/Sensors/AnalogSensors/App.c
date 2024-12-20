@@ -19,6 +19,10 @@ void updateApp(void* app) {
     myApp->position = transferFunctionApp(rawData);
 }
 
+Updateable* GetUpdateableApp(App* app) {
+    return &(app->base.sensor.updateable);
+}
+
 float transferFunctionApp(float rawVal) {
     // This is a +-45 degree sensor
     if (rawVal < 0.5) {

@@ -1,7 +1,7 @@
 # Compiler settings
 CC = gcc
-# TODO: Remove -g and -O0 flags for production
-CFLAGS = -g -O0 -IIncludes -pthread -lm -DTEST
+# TODO: Remove -g, -Wall, Wextra, and -O0 flags for production
+CFLAGS = -g -O0 -IIncludes -pthread -lm -DTEST -Wall -Wextra
 
 # Base source and test directories
 SRC_DIR = Src

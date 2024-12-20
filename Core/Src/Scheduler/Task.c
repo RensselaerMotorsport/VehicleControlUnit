@@ -1,6 +1,6 @@
 #include "../../Inc/Scheduler/Task.h"
 
-void TaskInit(Task* task, Updateable* updateable, int hz) {
+void TaskInit(Task* task, const Updateable* updateable, int hz) {
     task->updateable = updateable;
     task->hz = hz;
     task->nextExecTime = 0;

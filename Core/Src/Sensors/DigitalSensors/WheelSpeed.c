@@ -59,6 +59,10 @@ void updateWheelSpeed(void* ws) {
     wsPtr->speed = calculateSpeed(ws);
 }
 
+Updateable* GetUpdateableWheelSpeed(WheelSpeed* ws) {
+    return &(ws->base.sensor.updateable);
+}
+
 void setTimeInterval(WheelSpeed* ws, float interval) {
     ws->interval = interval + getCurrentTime();
 }

@@ -33,6 +33,14 @@ float getAppPosition(App* app);
 void updateApp(void* app);
 
 /**
+ * @brief Retrieves updateable portion of APP system
+ *
+ * @param apps A pointer to the APP structure.
+ * @return Pointer to updateable structure
+ */
+Updateable* GetUpdateableApp(App* app);
+
+/**
  * @brief Converts raw APP data to a meaningful position value.
  *
  * @param rawVal The raw data from the APP.

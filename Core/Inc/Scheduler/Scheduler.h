@@ -39,6 +39,14 @@ bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
 void SchedulerRun(Scheduler* scheduler);
 
 /**
+ * @brief Runs the scheduler for a set number of iterations
+ *
+ * @warning For testing proposes only
+ * @param scheduler Pointer to the Scheduler structure to run.
+ */
+void SchedulerRunLimited(Scheduler* scheduler, int numItterations);
+
+/**
  * @brief Stops the scheduler.
  *
  * @param scheduler Pointer to the Scheduler structure to stop.

@@ -8,7 +8,7 @@ typedef int highResTime;
 typedef struct {
     int hz;
     highResTime nextExecTime;
-    Updateable* updateable;
+    const Updateable* updateable;
 } Task;
 
 /**
@@ -18,7 +18,7 @@ typedef struct {
  * @param updateable Pointer to the Updateable associated with the task.
  * @param hz The update frequency in Hertz.
  */
-void TaskInit(Task* task, Updateable* updateable, int hz);
+void TaskInit(Task* task, const Updateable* updateable, int hz);
 
 /**
  * @brief Executes the task by calling the updateable's update function.

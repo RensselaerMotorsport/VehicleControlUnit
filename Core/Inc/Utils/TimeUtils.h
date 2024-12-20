@@ -1,3 +1,12 @@
+/**
+  ******************************************************************************
+  * @file           : TimeUtils.h
+  * @warning        : DEPRECIATED - Replaced by Platform time
+  ******************************************************************************
+*/
+
+// TODO: Remove the uses of this everywhere
+
 #ifndef RENNSSELAERMOTORSPORT_TIME_UTILS_H
 #define RENNSSELAERMOTORSPORT_TIME_UTILS_H
 

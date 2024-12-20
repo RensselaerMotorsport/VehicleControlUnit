@@ -42,6 +42,14 @@ float calculateSpeed(WheelSpeed* ws);
 void updateWheelSpeed(void* ws);
 
 /**
+ * @brief Retrieves updateable portion of WheelSpeed system
+ *
+ * @param ws A pointer to the WheelSpeed structure.
+ * @return Pointer to updateable structure
+ */
+Updateable* GetUpdateableWheelSpeed(WheelSpeed* ws);
+
+/**
  * @brief Set time interval.
  * @note For testing and debugging.
  *
