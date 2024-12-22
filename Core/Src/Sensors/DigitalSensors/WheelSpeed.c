@@ -1,6 +1,7 @@
 #include "../../../Inc/Sensors/DigitalSensors/WheelSpeed.h"
 #include "../../../Inc/Utils/Conversions.h"
-#include "../../../Inc/Utils/TimeUtils.h"
+#include "../../../Inc/Utils/PlatformTime.h"
+#include "../../../Inc/Systems/PrintHelpers.h"
 
 #include <stdio.h>
 #include <math.h>
@@ -13,12 +14,13 @@ void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth
                     WHEEL_LOCATION location) {
     initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
     ws->base.sensor.updateable.update = updateWheelSpeed;
+    ws->base.sensor.updateable.context = ws;
     ws->radius = radius;
     ws->wheel_location = location;
     ws->numTeeth = numTeeth;
     ws->pulses = 0;
     ws->speed = 0.0f;
-    ws->interval = getCurrentTime();
+    ws->interval = CURRENT_TIME_MS();
 }
 
 float calculateSpeed(WheelSpeed* ws) {
@@ -34,14 +36,15 @@ float calculateSpeed(WheelSpeed* ws) {
     float delta = measureInterval(ws->interval);
 
     // Reset pulse count and elapsed time for the next measurement interval
-    ws->interval = getCurrentTime();
+    ws->interval = CURRENT_TIME_MS();
     ws->pulses = 0;
 
     // Verify inputs
     if (numTeeth <= 0 || radius <= 0.0f || pulses <= 0 || delta <= 0.0) {
-        printf("Error: Invalid argument. "
-               "NumTeeth = %d, Radius = %.2f, Pulses = %d, Time Delta = %.2f\n",
-               numTeeth, radius, pulses, delta);
+        fprintf(stderr, ANSI_COLOR_RED "Error: Invalid argument. "
+            "NumTeeth = %d, Radius = %.2f, Pulses = %d, Time Delta = %.2f\n"
+            ANSI_COLOR_RESET, numTeeth, radius, pulses, delta
+        );
         return 0.0f;
     }
 
@@ -55,6 +58,13 @@ float calculateSpeed(WheelSpeed* ws) {
 }
 
 void updateWheelSpeed(void* ws) {
+    if (ws == NULL) {
+        printf(ANSI_COLOR_RED
+            "Error: Null pointer passed to updateWheelSpeed.\n"
+            ANSI_COLOR_RESET
+        );
+        return;
+    }
     WheelSpeed* wsPtr = (WheelSpeed*)ws;
     wsPtr->speed = calculateSpeed(ws);
 }
@@ -64,7 +74,7 @@ Updateable* GetUpdateableWheelSpeed(WheelSpeed* ws) {
 }
 
 void setTimeInterval(WheelSpeed* ws, float interval) {
-    ws->interval = interval + getCurrentTime();
+    ws->interval = interval + CURRENT_TIME_MS();
 }
 
 void addPulse(WheelSpeed* ws, int num) {

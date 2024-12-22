@@ -21,7 +21,7 @@ bool addUpdatableToScheduler(Scheduler* sched, const Updateable* item) {
     }
 
     Task task;
-    TaskInit(&task, item, item->hz);
+    TaskInit(&task, item, 1);
     int hz = 1000 / item->hz;
     int initialPriority = CURRENT_TIME_MS() + hz;
     PQPush(&sched->tasks, task, initialPriority);
@@ -32,7 +32,7 @@ bool addUpdatableToScheduler(Scheduler* sched, const Updateable* item) {
  * Initializes the priority queue and schedules tasks based on the given sensors
  * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
  */
-bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
+bool SchedulerInit(Scheduler* scheduler, Updateable** updatableArray) {
     PQInit(&scheduler->tasks);
     scheduler->running = false;
 
@@ -65,12 +65,6 @@ bool HasDueTask(Scheduler* scheduler, int currentTime) {
            peekTask.nextExecTime <= currentTime;
 }
 
-/**
- * Processes each task for a given time
- *
- * @param scheduler Pointer to scheduler structure
- * @param currentTime The time in which were processing
- */
 void ProcessDueTasks(Scheduler* scheduler, int currentTime) {
     Task currentTask;
     while (HasDueTask(scheduler, currentTime)) {
@@ -80,7 +74,6 @@ void ProcessDueTasks(Scheduler* scheduler, int currentTime) {
         }
         // Execute task
         TaskExecute(&currentTask);
-        printf("Updating: %s.\n", currentTask.updateable->name);
         currentTask.nextExecTime = currentTime + (1000 / currentTask.hz);
         // Reschedule task with new priority
         PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);
@@ -94,18 +87,6 @@ void SchedulerRun(Scheduler* scheduler) {
         int currentTime = CURRENT_TIME_MS();
         ProcessDueTasks(scheduler, currentTime);
     }
-}
-
-/// @warning For testing proposes only
-void SchedulerRunLimited(Scheduler* scheduler, int numItterations) {
-    scheduler->running = true;
-
-    for (int i = 0; i < numItterations; ++i) {
-        int currentTime = CURRENT_TIME_MS();
-        ProcessDueTasks(scheduler, currentTime);
-    }
-
-    scheduler->running = false;
 }
 
 void SchedulerStop(Scheduler* scheduler) {

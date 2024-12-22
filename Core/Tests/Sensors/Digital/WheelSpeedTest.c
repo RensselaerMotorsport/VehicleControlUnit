@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>  // for fabs function
-#include "../Inc/Sensors/DigitalSensors/WheelSpeed.h"
+#include "../../../Inc/Sensors/DigitalSensors/WheelSpeed.h"
 
 int testTransferFunction(float radius, int numTeeth, int pulseCount,
                          float timeInterval, float expectedSpeed,

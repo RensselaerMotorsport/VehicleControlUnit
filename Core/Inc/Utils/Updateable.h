@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define UPDATE(item_)  ((item_)->updateable->update(item_))
+#define UPDATE(item_)  ((item_)->updateable->update((item_)->updateable->context))
 #define STATUS(item_)  ((item_).updateable.status(&item_.updateable))
 #define ENABLE(item_)  ((item_).updateable.enable(&item_.updateable))
 #define DISABLE(item_)  ((item_).updateable.disable(&item_.updateable))
@@ -23,6 +23,7 @@ typedef struct Updateable {
     char name[MAX_NAME_LENGTH];
     int hz;
     int enabled;
+    void* context; // Pointer back to the owning object
     void (*update)(void* self);
     int (*status)(struct Updateable* self);
     int (*enable)(struct Updateable* self);

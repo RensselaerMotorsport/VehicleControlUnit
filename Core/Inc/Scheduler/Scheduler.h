@@ -29,7 +29,15 @@ typedef struct Scheduler {
  * @param updateableArray Array of pointers to Updateable structures to be scheduled.
  * @return True if init worked. False otherwise
  */
-bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
+bool SchedulerInit(Scheduler* scheduler, Updateable** updatableArray);
+
+/**
+ * Processes each task for a given time
+ *
+ * @param scheduler Pointer to scheduler structure
+ * @param currentTime The time in which were processing
+ */
+void ProcessDueTasks(Scheduler* scheduler, int currentTime);
 
 /**
  * @brief Runs the scheduler, executing tasks based on their priority.
@@ -37,14 +45,6 @@ bool SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
  * @param scheduler Pointer to the Scheduler structure to run.
  */
 void SchedulerRun(Scheduler* scheduler);
-
-/**
- * @brief Runs the scheduler for a set number of iterations
- *
- * @warning For testing proposes only
- * @param scheduler Pointer to the Scheduler structure to run.
- */
-void SchedulerRunLimited(Scheduler* scheduler, int numItterations);
 
 /**
  * @brief Stops the scheduler.
