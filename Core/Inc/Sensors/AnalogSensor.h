@@ -1,5 +1,6 @@
 #ifndef RENSSELAERMOTORSPORT_ANALOGSENSOR_H
 #define RENSSELAERMOTORSPORT_ANALOGSENSOR_H
+
 // STM32 HAL includes
 #include "stm32f7xx.h"
 #include "stm32f7xx_hal.h"
@@ -21,6 +22,12 @@
 #define BUFFER_SIZE 1000 // Size of the circular buffer, change in the future if needed
 
 // Structures
+typedef struct {
+    GPIO_TypeDef* port;
+    uint16_t pin;
+    uint32_t rcc;
+} GPIOConfig;
+
 typedef struct {
     Sensor sensor;
     int channel;
@@ -48,6 +55,26 @@ extern uint16_t adc2_buffer[6];
 extern uint16_t adc3_buffer[4];
 
 extern char uart_buf[UART_BUF_SIZE];
+
+// GPIO configuration Map
+const GPIOConfig gpioMap[] = {
+    {GPIOA, GPIO_PIN_0, __HAL_RCC_GPIOA_CLK_ENABLE}, // Channel 0
+    {GPIOA, GPIO_PIN_1, __HAL_RCC_GPIOA_CLK_ENABLE}, // 1
+    {GPIOA, GPIO_PIN_2, __HAL_RCC_GPIOA_CLK_ENABLE}, // 2
+    {GPIOA, GPIO_PIN_3, __HAL_RCC_GPIOA_CLK_ENABLE}, // 3
+    {GPIOA, GPIO_PIN_4, __HAL_RCC_GPIOA_CLK_ENABLE}, // 4
+    {GPIOA, GPIO_PIN_5, __HAL_RCC_GPIOA_CLK_ENABLE}, // 5
+    {GPIOA, GPIO_PIN_6, __HAL_RCC_GPIOA_CLK_ENABLE}, // 6
+    {GPIOA, GPIO_PIN_7, __HAL_RCC_GPIOA_CLK_ENABLE}, // 7
+    {GPIOB, GPIO_PIN_0, __HAL_RCC_GPIOB_CLK_ENABLE}, // 8
+    {GPIOB, GPIO_PIN_1, __HAL_RCC_GPIOB_CLK_ENABLE}, // 9
+    {GPIOC, GPIO_PIN_0, __HAL_RCC_GPIOC_CLK_ENABLE}, // 10
+    {GPIOC, GPIO_PIN_1, __HAL_RCC_GPIOC_CLK_ENABLE}, // 11
+    {GPIOC, GPIO_PIN_2, __HAL_RCC_GPIOC_CLK_ENABLE}, // 12
+    {GPIOC, GPIO_PIN_3, __HAL_RCC_GPIOC_CLK_ENABLE}, // 13
+    {GPIOC, GPIO_PIN_4, __HAL_RCC_GPIOC_CLK_ENABLE}, // 14
+    {GPIOC, GPIO_PIN_5, __HAL_RCC_GPIOC_CLK_ENABLE}, // 15
+};
 
 #endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H
 

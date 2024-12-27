@@ -1,7 +1,6 @@
 #include "../../Inc/Sensors/AnalogSensor.h"
-#include <stdio.h>
-#include <string.h>
 #include "stm32f7xx_hal.h"
+#include "../../Inc/Systems/PrintHelpers.h"
 
 // Circular buffer to store ADC samples
 static ADCSample adc_circular_buffer[BUFFER_SIZE];
@@ -40,38 +39,21 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
     initSensor(&analogSensor->sensor, name, hz, ANALOG);
     analogSensor->channel = channel;
 
+    // Invalid Channel Check
+    if (channel < 0 || channel >= sizeof(gpioMap) / sizeof(gpioMap[0]))
+        printf(ANSI_COLOR_RED "Error: Analog Channel Out of Range.\n" ANSI_COLOR_RESET);
+
     GPIO_InitTypeDef GPIOXout_Struct = {0};
     GPIOXout_Struct.Mode = GPIO_MODE_ANALOG;
     GPIOXout_Struct.Pull = GPIO_NOPULL;
     GPIOXout_Struct.Speed = GPIO_SPEED_FREQ_HIGH;
 
-    // Map channels to appropriate GPIO pins based on ADC configuration
-    if (channel >= 0 && channel <= 5) {
-        // ADC1: PA0-PA5
-        __HAL_RCC_GPIOA_CLK_ENABLE();
-        GPIOXout_Struct.Pin = GPIO_PIN_0 << channel;
-        HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);
-    } else if (channel == 6 || channel == 7) {
-        // ADC2: PA6-PA7
-        __HAL_RCC_GPIOA_CLK_ENABLE();
-        GPIOXout_Struct.Pin = GPIO_PIN_6 << (channel - 6);
-        HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);
-    } else if (channel == 8 || channel == 9) {
-        // ADC2: PB0-PB1
-        __HAL_RCC_GPIOB_CLK_ENABLE();
-        GPIOXout_Struct.Pin = GPIO_PIN_0 << (channel - 8);
-        HAL_GPIO_Init(GPIOB, &GPIOXout_Struct);
-    } else if (channel >= 10 && channel <= 13) {
-        // ADC3: PC0-PC3
-        __HAL_RCC_GPIOC_CLK_ENABLE();
-        GPIOXout_Struct.Pin = GPIO_PIN_0 << (channel - 10);
-        HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);
-    } else if (channel == 14 || channel == 15) {
-        // ADC2: PC4-PC5
-        __HAL_RCC_GPIOC_CLK_ENABLE();
-        GPIOXout_Struct.Pin = GPIO_PIN_4 << (channel - 14);
-        HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);
-    }
+    // Enable the clock for the GPIO port
+    gpioMap[channel].rcc();
+
+    // Initialize the GPIO
+    GPIOXout_Struct.Pin = gpioMap[channel].pin;
+    HAL_GPIO_Init(gpioMap[channel].port, &GPIOXout_Struct);
 }
 
 /**
