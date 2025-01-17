@@ -1,6 +1,9 @@
 #include "../../Inc/Sensors/AnalogSensor.h"
+#include <stdio.h>
+#include <string.h>
+#ifndef TEST_MODE
 #include "stm32f7xx_hal.h"
-#include "../../Inc/Systems/PrintHelpers.h"
+#endif
 
 // Circular buffer to store ADC samples
 static ADCSample adc_circular_buffer[BUFFER_SIZE];
@@ -38,6 +41,8 @@ static uint32_t buffer_count = 0;
 void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel) {
     initSensor(&analogSensor->sensor, name, hz, ANALOG);
     analogSensor->channel = channel;
+  
+    #ifndef TEST_MODE
 
     // Invalid Channel Check
     if (channel < 0 || channel >= sizeof(gpioMap) / sizeof(gpioMap[0]))
@@ -54,6 +59,8 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
     // Initialize the GPIO
     GPIOXout_Struct.Pin = gpioMap[channel].pin;
     HAL_GPIO_Init(gpioMap[channel].port, &GPIOXout_Struct);
+    #endif
+
 }
 
 /**
@@ -113,7 +120,9 @@ void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_dat
     char uart_buf[100];
     snprintf(uart_buf, sizeof(uart_buf), "ADC0: %4d, ADC7: %4d, ADC10: %4d\r\n",
              sample.adc[0], sample.adc[7], sample.adc[10]);
+    #ifndef TEST_MODE
     HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+    #endif
 }
 
 
