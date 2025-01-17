@@ -1,4 +1,5 @@
 #include "../../Inc/Sensors/AnalogSensor.h"
+#include "../../Inc/Utils/Common.h"
 #include <stdio.h>
 #include <string.h>
 #ifndef TEST_MODE
@@ -10,6 +11,27 @@ static ADCSample adc_circular_buffer[BUFFER_SIZE];
 static uint32_t buffer_head = 0;
 static uint32_t buffer_tail = 0;
 static uint32_t buffer_count = 0;
+
+
+// GPIO configuration Map
+const GPIOConfig gpioMap[] = {
+    {GPIOA, GPIO_PIN_0, RCC_GPIOA_Enable}, // Channel 0
+    {GPIOA, GPIO_PIN_1, RCC_GPIOA_Enable}, // 1
+    {GPIOA, GPIO_PIN_2, RCC_GPIOA_Enable}, // 2
+    {GPIOA, GPIO_PIN_3, RCC_GPIOA_Enable}, // 3
+    {GPIOA, GPIO_PIN_4, RCC_GPIOA_Enable}, // 4
+    {GPIOA, GPIO_PIN_5, RCC_GPIOA_Enable}, // 5
+    {GPIOA, GPIO_PIN_6, RCC_GPIOA_Enable}, // 6
+    {GPIOA, GPIO_PIN_7, RCC_GPIOA_Enable}, // 7
+    {GPIOB, GPIO_PIN_0, RCC_GPIOB_Enable}, // 8
+    {GPIOB, GPIO_PIN_1, RCC_GPIOB_Enable}, // 9
+    {GPIOC, GPIO_PIN_0, RCC_GPIOC_Enable}, // 10
+    {GPIOC, GPIO_PIN_1, RCC_GPIOC_Enable}, // 11
+    {GPIOC, GPIO_PIN_2, RCC_GPIOC_Enable}, // 12
+    {GPIOC, GPIO_PIN_3, RCC_GPIOC_Enable}, // 13
+    {GPIOC, GPIO_PIN_4, RCC_GPIOC_Enable}, // 14
+    {GPIOC, GPIO_PIN_5, RCC_GPIOC_Enable}, // 15
+};
 
 // The AnalogSensor system is configured to handle 16 channels (0-15) across three ADCs:
 // - ADC1: Channels 0-5 (PA0-PA5)
