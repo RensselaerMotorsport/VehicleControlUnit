@@ -14,16 +14,16 @@ typedef enum{
 
 typedef struct{
     ControllerSystem base;
-    float minPressure;
-    float maxPressure;
-    float frontPressure;
-    float rearPressure;
-    float temperature;
-    float maxTemperatureAllowed;
+    int minPressure;
+    int maxPressure;
+    float *frontPressure;
+    float *rearPressure;
+    float *temperature;
+    int maxTemperatureAllowed;
     BrakeSystemStatus status;
-    float brakeLightActivationPoint;
+    int brakeLightActivationPoint;
     int brakeLightActive;
-    float heavyBrakingActivationPoint;
+    int heavyBrakingActivationPoint;
     int heavyBraking;
 } BrakeSystemControl;
 
@@ -34,19 +34,22 @@ typedef struct{
  *
  * @param bsc A pointer to the BrakeControl structure.
  * @param hz Rate at which the sensorors are called (in hz).
- * @param maxTemp The maximum temperature limit set for the system (in celcius?).
+ * @param maxTemp The maximum temperature limit set for the system (in farenheight).
  * @param brakeLightActivationPoint At what voltage the brake light will activate.
  * @param heavyBrakingActivationPoint At what voltage the system recognises "heavy braking".
+ * @param fbp_channel The channel number for the front brake pressure sensor
+ * @param rbp_channel The channel number for the rear brake pressure sensor
+ * @param temp_channel The channel number for the temperature sensor
  */
-void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, float brakeLightActivationPoint, float heavyBrakingActivationPoint);
+void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel);
 
 /**
  * @brief Updates BrakeSystemStatus with current sensor data.
  *
  * @param bsc A pointer to the BrakeControl structure.
- * @param frontPressure The voltage reading from the front brake line pressure sensor.
- * @param rearPressure The voltage reading from the rear brake line pressure sensor.
- * @param temperature The voltage reading from the brake rotor temperature sensor.
+ * @param frontPressure The reading from the front brake line pressure sensor (in psi).
+ * @param rearPressure The reading from the rear brake line pressure sensor (in psi).
+ * @param temperature The reading from the brake rotor temperature sensor (in farenheight).
  */
 void setSensorReadings(BrakeSystemControl *bsc, float frontPressure, float rearPressure, float temperaure);
 

@@ -1,14 +1,16 @@
 #include "../../../Inc/Systems/Controller/BrakeSystemControl.h"
 #include "../../../Inc/Utils/Common.h"
+#include "../../../Inc/Sensors/AnalogSensors/BrakePressure.h"
+#include "../../../Inc/Sensors/AnalogSensors/Temperature.h"
 
-void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, float brakeLightActivationPoint, float heavyBrakingActivationPoint){
+void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel){
     initControllerSystem(&bsc-> base, "Brake System Control", hz, c_BRAKES);
     bsc -> maxTemperatureAllowed = maxTemp;
-    bsc -> frontPressure = 0.0;
-    bsc -> rearPressure = 0.0;
-    bsc -> minPressure = 0.5;
-    bsc -> maxPressure = 4.5;
-    bsc -> temperature = 0.0;
+    initBrakePressure(bsc -> frontPressure, hz, fbp_channel);
+    initBrakePressure(bsc -> rearPressure, hz, rbp_channel);
+    bsc -> minPressure = 0;
+    bsc -> maxPressure = 2000;
+    initTemperature(bsc -> temperature, hz, temp_channel);
     bsc -> brakeLightActivationPoint = brakeLightActivationPoint;
     bsc -> brakeLightActive = 0;
     bsc -> heavyBrakingActivationPoint = heavyBrakingActivationPoint;
@@ -18,13 +20,13 @@ void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, float 
 }
 
 void setSensorReadings(BrakeSystemControl *bsc, float frontPressure, float rearPressure, float temperature){
-    bsc -> frontPressure = frontPressure;
-    bsc -> rearPressure = rearPressure;
-    bsc -> temperature = temperature;
+    updateBrakePressure(bsc -> frontPressure);
+    updateBrakePressure(bsc -> rearPressure);
+    updateTemperature(bsc -> temperature);
 }
 
 void activateBrakeLight(BrakeSystemControl *bsc){
-    if (bsc -> frontPressure > bsc -> brakeLightActivationPoint || bsc -> rearPressure > bsc -> brakeLightActivationPoint){
+    if (getBrakePressure(bsc -> frontPressure) > bsc -> brakeLightActivationPoint || getBrakePressure(bsc -> rearPressure) > bsc -> brakeLightActivationPoint){
         bsc -> brakeLightActive = 1;
         return;
     }
@@ -33,7 +35,7 @@ void activateBrakeLight(BrakeSystemControl *bsc){
 }
 
 void inHeavyBreaking(BrakeSystemControl *bsc){
-    if (bsc -> frontPressure > bsc -> heavyBrakingActivationPoint || bsc -> rearPressure > bsc -> heavyBrakingActivationPoint){
+    if (getBrakePressure(bsc -> frontPressure) > bsc -> heavyBrakingActivationPoint || getBrakePressure(bsc -> rearPressure) > bsc -> heavyBrakingActivationPoint){
         bsc -> heavyBraking = 1;
         return;
     }
@@ -42,14 +44,17 @@ void inHeavyBreaking(BrakeSystemControl *bsc){
 }
 
 BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc){
-    if (bsc -> frontPressure > bsc -> maxPressure || bsc -> rearPressure > bsc -> maxPressure){
+    if (getBrakePressure(bsc -> frontPressure) > bsc -> maxPressure || getBrakePressure(bsc -> rearPressure) > bsc -> maxPressure){
         return PRESSURE_OVER_LIMIT;
     }
-    else if (bsc->frontPressure > bsc->maxPressure || bsc->rearPressure > bsc->maxPressure){
+    else if (getBrakePressure(bsc -> frontPressure) > bsc -> maxPressure || getBrakePressure(bsc -> rearPressure) > bsc -> maxPressure){
         return PRESSURE_UNDER_LIMIT;
     }
-    else if (bsc->temperature > bsc->maxTemperatureAllowed){
+    else if (getTemperatureFahrenheit(bsc -> temperature) > bsc -> maxTemperatureAllowed){
         return TEMPERATURE_OVER_LIMIT;
+    }
+    else if (getTemperatureFahrenheit(bsc -> temperature) < 0){
+        return TEMPERATURE_SENSOR_ERROR;
     }
 }
 
@@ -64,4 +69,18 @@ int brakeSafteyCheck(void* bsc){
         return FAILURE;
     }
     return SUCCESS;
+}
+
+//The following functions below are for testing functionality and should not be used elsewhere
+
+void setFrontPressure(BrakeSystemControl *bsc, float *pressure){
+    bsc -> frontPressure = pressure;
+}
+
+void setRearPressure(BrakeSystemControl *bsc, float *pressure){
+    bsc -> rearPressure = pressure;
+}
+
+void setTemperature(BrakeSystemControl *bsc, float *temperature){
+    bsc -> temperature = temperature;
 }
