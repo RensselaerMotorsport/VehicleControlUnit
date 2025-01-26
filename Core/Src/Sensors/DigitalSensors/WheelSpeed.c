@@ -15,6 +15,7 @@ void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth
     initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
     ws->base.sensor.updateable.update = updateWheelSpeed;
     ws->base.sensor.updateable.context = ws;
+    ws->base.sensor.updateable.log = logWheelSpeed;
     ws->radius = radius;
     ws->wheel_location = location;
     ws->numTeeth = numTeeth;
@@ -66,7 +67,17 @@ void updateWheelSpeed(void* ws) {
         return;
     }
     WheelSpeed* wsPtr = (WheelSpeed*)ws;
+    wsPtr->rawData = 0.0f;
     wsPtr->speed = calculateSpeed(ws);
+}
+
+void logWheelSpeed(void* ws) {
+    WheelSpeed* myWs = (WheelSpeed*)ws;
+    char logEntry[LOG_ENTRY_SIZE];
+
+    snprintf(logEntry, LOG_ENTRY_SIZE, "Wheel Speed, %.2f, %.2f",
+             myWs->rawData, myWs->speed);
+    logToBuffer(logEntry);
 }
 
 Updateable* GetUpdateableWheelSpeed(WheelSpeed* ws) {

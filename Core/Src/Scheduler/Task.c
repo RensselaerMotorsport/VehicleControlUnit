@@ -25,4 +25,11 @@ void TaskExecute(Task* task) {
     }
 
     UPDATE(task);
+
+#ifndef STOPLOGGING
+    // Perform logging
+    if (task->updateable->log != NULL) {
+        LOG(task);
+    }
+#endif
 }

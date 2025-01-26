@@ -74,7 +74,7 @@ void ProcessDueTasks(Scheduler* scheduler, int currentTime) {
         }
         // Execute task
         TaskExecute(&currentTask);
-        currentTask.nextExecTime = currentTime + (1000 / currentTask.hz);
+        currentTask.nextExecTime = currentTime + (1000 / 1000);
         // Reschedule task with new priority
         PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);
     }

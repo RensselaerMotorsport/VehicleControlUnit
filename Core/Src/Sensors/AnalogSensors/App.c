@@ -5,8 +5,10 @@
 void initApp(App* app, int hz, int channel) {
     initAnalogSensor(&app->base, "App", hz, channel);
     app->position = 0;
+    app->rawData = 0.0f;
     app->base.sensor.updateable.update = updateApp;
     app->base.sensor.updateable.context = app;
+    app->base.sensor.updateable.log = logApp;
 }
 
 float getAppPosition(App* app) {
@@ -15,9 +17,18 @@ float getAppPosition(App* app) {
 
 void updateApp(void* app) {
     App *myApp = (App *)app;
-    // FIXME: Implement APP connection with stm
-    float rawData = 1.0f;
+    float rawData = 0.5f; // Placeholder
+    myApp->rawData = rawData;
     myApp->position = transferFunctionApp(rawData);
+}
+
+void logApp(void* app) {
+    App *myApp = (App *)app;
+    char logEntry[LOG_ENTRY_SIZE];
+
+    snprintf(logEntry, LOG_ENTRY_SIZE, "APP, %.2f, %.2f",
+             myApp->rawData, myApp->position);
+    logToBuffer(logEntry);
 }
 
 Updateable* GetUpdateableApp(App* app) {

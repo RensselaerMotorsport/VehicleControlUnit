@@ -7,6 +7,7 @@
 typedef struct {
     AnalogSensor base;
     float distance;
+    float rawData;
     WHEEL_LOCATION wheel_location;
 } ShockPot;
 
@@ -35,6 +36,13 @@ float getShockPotDistance(ShockPot* shockPot);
  * @param shockPot Pointer to the ShockPot structure to update.
  */
 void updateShockPot(void* shockPot);
+
+/**
+ * @brief Logs the ShockPot data.
+ *
+ * @param shockPot Pointer to the ShockPot structure to update.
+ */
+void logShockPot(void* shockPot);
 
 /**
  * @brief Converts raw ShockPot data to a meaningful distance value.

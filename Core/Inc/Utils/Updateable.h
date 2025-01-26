@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "Logger.h"
+
 #define UPDATE(item_)  ((item_)->updateable->update((item_)->updateable->context))
 #define STATUS(item_)  ((item_).updateable.status(&item_.updateable))
 #define ENABLE(item_)  ((item_).updateable.enable(&item_.updateable))
@@ -28,6 +30,7 @@ typedef struct Updateable {
     int (*status)(struct Updateable* self);
     int (*enable)(struct Updateable* self);
     int (*disable)(struct Updateable* self);
+    void (*log)(void* self);
 } Updateable;
 
 /*
@@ -69,6 +72,13 @@ int defaultEnable(struct Updateable* self);
  * @return int Status after disabling the Updateable object.
  */
 int defaultDisable(struct Updateable* self);
+
+/**
+ * @brief Default log function for Updateable objects.
+ *
+ * @param self Pointer to the object to update.
+ */
+void defaultLog(struct Updateable* self);
 
 /**
  * @brief Write data to a file.

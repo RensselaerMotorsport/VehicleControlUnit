@@ -6,6 +6,7 @@
 typedef struct {
     AnalogSensor base;
     double degrees;
+    double rawData;
 } Temperature;
 
 /**
@@ -23,6 +24,13 @@ void initTemperature(Temperature* temp, int hz, int channel);
  * @param temp Pointer to the Temperature structure to update.
  */
 void updateTemperature(void* temp);
+
+/**
+ * @brief Logs the Temperature data.
+ *
+ * @param temp Pointer to the Temperature structure to update.
+ */
+void logTemperature(void* temp);
 
 /**
  * @brief Gets the current temperature in Celsius.

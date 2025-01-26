@@ -7,6 +7,7 @@ typedef struct {
     AnalogSensor base;
     float rotation_angle;
     float zero_offset;
+    float rawData;
 } SteeringColumn;
 
 /**
@@ -34,6 +35,13 @@ float getSteeringColumnRotationAngle(SteeringColumn* sc);
  * @param sc Pointer to the SteeringColumn structure to update.
  */
 void updateSteeringColumn(void* sc);
+
+/**
+ * @brief Logs the SteeringColumn data.
+ *
+ * @param sc Pointer to the SteeringColumn structure to update.
+ */
+void logSteeringColumn(void* sc);
 
 /**
  * @brief Converts raw steering column data to a meaningful rotation angle.

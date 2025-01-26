@@ -6,6 +6,7 @@
 typedef struct {
     AnalogSensor base;
     float pressure;
+    float rawData;
 } BrakePressure;
 
 /**
@@ -31,6 +32,14 @@ float getBrakePressure(BrakePressure* bp);
  * @param bp Pointer to the BrakePressure structure to update.
  */
 void updateBrakePressure(void* bp);
+
+
+/**
+ * @brief Log the brakepressure data.
+ *
+ * @param bp Pointer to the BrakePressure structure to update.
+ */
+void logBrakePressure(void* bp);
 
 /**
  * @brief Converts raw brake pressure data to a meaningful pressure value.

@@ -12,6 +12,8 @@ void initBrakePressure(BrakePressure* bp, int hz, int channel) {
     initAnalogSensor(&bp->base, "BrakePressure", hz, channel);
     bp->pressure = -1;
     bp->base.sensor.updateable.update = updateBrakePressure;
+    bp->base.sensor.updateable.context = bp;
+    bp->base.sensor.updateable.log = logBrakePressure;
 }
 
 float getBrakePressure(BrakePressure* bp) {
@@ -22,7 +24,17 @@ void updateBrakePressure(void* bp) {
     BrakePressure *brakePressure = (BrakePressure *)bp;
     float rawData = 0.0f; // This should come from sensor read function or simulation
     printf("Implement BrakePressure Update\n");
+    brakePressure->rawData = rawData;
     brakePressure->pressure = transferFunctionBrakePressure(rawData);
+}
+
+void logBrakePressure(void* bp) {
+    BrakePressure *myBp = (BrakePressure *)bp;
+    char logEntry[LOG_ENTRY_SIZE];
+
+    snprintf(logEntry, LOG_ENTRY_SIZE, "BrakePressure, %.2f, %.2f",
+             myBp->rawData, myBp->pressure);
+    logToBuffer(logEntry);
 }
 
 float transferFunctionBrakePressure(float rawVal) {

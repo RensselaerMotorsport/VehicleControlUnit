@@ -6,6 +6,7 @@
 typedef struct {
     AnalogSensor base;
     float value;
+    float rawData;
 } Accelerometer;
 
 /**
@@ -33,6 +34,13 @@ float getAccelerometerValue(Accelerometer* accel);
  * @param accel Pointer to the Accelerometer structure to update.
  */
 void updateAccelerometer(void* accel);
+
+/**
+ * @brief Log the accelerometer data.
+ *
+ * @param accel Pointer to the Accelerometer structure to update.
+ */
+void logAccelerometer(void* accel);
 
 /**
  * @brief Converts raw accelerometer data to a meaningful value.
