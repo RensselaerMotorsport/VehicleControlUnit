@@ -37,7 +37,7 @@ int add_message(CANBus bus, CAN_Message_Template message) {
     return 0;
 }
 
-int add_message(CANBus bus, int id, int dlc, int ide, int rtr, const char* name, const char* sender, int signal_count, CAN_Signal_Template* signals)
+int add_message_lop(CANBus bus, int id, int dlc, int ide, int rtr, const char* name, const char* sender, int signal_count, CAN_Signal_Template* signals)
 {
     // Create a CAN message template
     CAN_Message_Template message;

@@ -120,7 +120,8 @@ int load_dbc_file(CANBus bus, const char* filename);
 int add_message(CANBus bus, CAN_Message_Template message);
 
 /**
- * @brief Adds a message to the CAN message list
+ * @brief Adds a message to the CAN message list by passing in the individual message parameters
+ * hence "LOP" (List of Parameters)
  *
  * @param bus The CAN bus to add the message to
  * @param id The ID of the message
@@ -133,7 +134,7 @@ int add_message(CANBus bus, CAN_Message_Template message);
  * @param signals The signals in the message
  * @return int 0 if the message was added successfully, -1 if the bus is invalid
  */
-int add_message(CANBus bus, int id, int dlc, int ide, int rtr, const char* name, const char* sender);
+int add_message_lop(CANBus bus, int id, int dlc, int ide, int rtr, const char* name, const char* sender, int signal_count, CAN_Signal_Template* signals);
 
 /**
  * @brief Sends a CAN message
