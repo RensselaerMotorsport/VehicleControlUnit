@@ -22,17 +22,17 @@ void updateBrakePressure(void* bp) {
     BrakePressure *brakePressure = (BrakePressure *)bp;
     float rawData = 0.0f; // This should come from sensor read function or simulation
     printf("Implement BrakePressure Update\n");
-    brakePressure -> pressure = (rawData - kOffsetVoltage) / kVoltsPerPSIA;
+    brakePressure->pressure = transferFunctionBrakePressure(rawData);
 }
 
-float transferFunctionBrakePressure(float rawVal) {//not nessecary because BrakeSystemControl already checks if the sensors are within the specified bounds
+float transferFunctionBrakePressure(float rawVal) {
     if (rawVal < kLowOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too low\n");
-        return 0;
+        return -1;
     }
     else if (rawVal > kHighOutputSaturation) {
         printf("BrakePressure::transfer_function rawVal is too high\n");
-        return 115;
+        return 2001;
     }
     else {
         return ((rawVal - kOffsetVoltage) / kVoltsPerPSIA);

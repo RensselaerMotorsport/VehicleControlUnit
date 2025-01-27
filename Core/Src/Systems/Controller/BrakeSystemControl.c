@@ -44,16 +44,19 @@ void inHeavyBreaking(BrakeSystemControl *bsc){
 }
 
 BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc){
-    if (getBrakePressure(bsc -> frontPressure) > bsc -> maxPressure || getBrakePressure(bsc -> rearPressure) > bsc -> maxPressure){
+    float front = getBrakePressure(bsc -> frontPressure);
+    float rear = getBrakePressure(bsc -> rearPressure);
+    float temp = getBrakePressure(bsc -> temperature);
+    if (front > bsc -> maxPressure || rear > bsc -> maxPressure){
         return PRESSURE_OVER_LIMIT;
     }
-    else if (getBrakePressure(bsc -> frontPressure) > bsc -> maxPressure || getBrakePressure(bsc -> rearPressure) > bsc -> maxPressure){
+    else if (front > bsc -> minPressure || rear > bsc -> minPressure){
         return PRESSURE_UNDER_LIMIT;
     }
-    else if (getTemperatureFahrenheit(bsc -> temperature) > bsc -> maxTemperatureAllowed){
+    else if (temp > bsc -> maxTemperatureAllowed){
         return TEMPERATURE_OVER_LIMIT;
     }
-    else if (getTemperatureFahrenheit(bsc -> temperature) < 0){
+    else if (temp < 0){
         return TEMPERATURE_SENSOR_ERROR;
     }
 }
