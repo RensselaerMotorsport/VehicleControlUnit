@@ -10,7 +10,7 @@
 #define ENABLE(item_)  ((item_).updateable.enable(&item_.updateable))
 #define DISABLE(item_)  ((item_).updateable.disable(&item_.updateable))
 
-#define MAX_NAME_LENGTH 64
+#define MAX_NAME_LENGTH 32
 #define DISABLED 0
 #define ENABLED 1
 

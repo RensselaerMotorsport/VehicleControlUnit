@@ -3,20 +3,23 @@
 
 #include <stdint.h>
 
-#include "Message.h"
+#include "Can.h"
 
 static const int MAX_LINE_LENGTH = 256;
 
-typedef enum {
-    ENDIAN_LITTLE = 0,
-    ENDIAN_BIG = 1,
-} Endianness;
 
-typedef struct {
-    // FIXME: Messages can start in the thousands maybe need a key pair here
-    Message messages[MAX_MESSAGES];
-    int messageCount;
-} DBC;
+/**
+ * @brief Parses a single line of a DBC file and populates the CAN_MessageList structure.
+ * 
+ * This function parses a single line of a CAN_MessageList file and populates the provided
+ * CAN_MessageList structure with messages and signals.
+ *
+ * @param[out] messages Pointer to the CAN_MessageList structure that will be 
+ * populated with the parsed data.
+ * @param[in] line Line of the DBC file to parse.
+ * @return Returns 1 on success, or 0 on failure.
+ */
+int parseDbcLine(CAN_MessageList *messages, char *line);
 
 /**
  * @brief Parses a DBC (CAN database) file and populates the DBC structure.
@@ -24,37 +27,23 @@ typedef struct {
  * This function reads the specified DBC file and parses its content, populating
  * the provided DBC structure with messages and signals.
  *
- * @param[out] dbc Pointer to the DBC structure that will be populated with the
- * parsed data.
+ * @param[out] CAN_MessageList Pointer to the CAN_MessageList structure that will 
+ * be populated with the parsed data.
  * @param[in] filename Path to the DBC file to parse.
  * @return Returns 1 on success, or o on failure.
- * @note The DBC structure should be properly initialized before calling this function.
+ * @note The CAN_MessageList structure should be properly initialized before calling this function.
  */
-int parseDbcFile(Message* dbc, const char *filename);
+int parseDbcFile(CAN_MessageList *messages, const char *filename);
 
 /**
- * @brief Retrieves the array of messages from a DBC structure.
+ * @brief Prints the contents of a CAN message list (aka DBC file).
  *
- * This function returns a pointer to the array of Message structures contained
- * within the specified DBC structure.
+ * This function prints the contents of a CAN message list (aka DBC file) to the
+ * console.
  *
- * @param[in] dbc Pointer to the DBC structure from which to retrieve the messages.
- * @return Pointer to the first element of an array of Message structures.
- * @note The number of messages can be obtained from the DBC structure's message
- * count member.
- */
-Message* getDbcMessages(Message* dbc);
-
-/**
- * @brief Prints the contents of a DBC structure to the standard output.
- *
- * This function outputs the details of the DBC structure, including messages
- * and signals, to the console.
- *
- * @param[in] dbc Pointer to the DBC structure to be printed.
- * @return None.
- * @note This function is mainly for debugging and visualization purposes.
- */
-void printDbc(const Message *dbc);
+ * @param[in] messages Pointer to the CAN message list to print.
+ * return void
+*/
+void print_CAN_MessageList(const CAN_MessageList *messages);
 
 #endif  // RENNSSELAERMOTORSPORT_DBC_H

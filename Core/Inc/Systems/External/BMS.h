@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 #include "../ExternalSystem.h"
-#include "../../../Inc/Systems/External/Can/DBCParser.h"
+#include "../Inc/Systems/Comms/Can/DBCParser.h"
 
 typedef enum {
     DISCHARGING,
@@ -14,7 +14,6 @@ typedef enum {
 
 typedef struct {
     ExternalSystem extSystem;
-    DBC* dbc;
 
     // Bms Data
     float packVoltage;
@@ -45,7 +44,7 @@ void initBms(Bms* bms, int hz, const char* dbcFn);
  * @param rawData Pointer to the array of raw data.
  * @return The converted BmsData structure.
  */
-BmsData transferFunctionBms(float* rawdata);
+//BmsData transferFunctionBms(float* rawdata);
 
 /**
  * @brief Updates the BMS data.
