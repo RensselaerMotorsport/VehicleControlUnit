@@ -1,9 +1,12 @@
 #include "../../Inc/Sensors/AnalogSensor.h"
+
 #include <stdio.h>
 #include <string.h>
+
 #ifndef TEST_MODE
 #include "stm32f7xx_hal.h"
 #endif
+
 
 // Circular buffer to store ADC samples
 static ADCSample adc_circular_buffer[BUFFER_SIZE];
@@ -53,27 +56,27 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
         // ADC1: PA0-PA5
         __HAL_RCC_GPIOA_CLK_ENABLE();
         GPIOXout_Struct.Pin = GPIO_PIN_0 << channel;
-        HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);
+        /*HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);*/ // Commented out due to not being recognized
     } else if (channel == 6 || channel == 7) {
         // ADC2: PA6-PA7
         __HAL_RCC_GPIOA_CLK_ENABLE();
         GPIOXout_Struct.Pin = GPIO_PIN_6 << (channel - 6);
-        HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);
+        /*HAL_GPIO_Init(GPIOA, &GPIOXout_Struct);*/
     } else if (channel == 8 || channel == 9) {
         // ADC2: PB0-PB1
         __HAL_RCC_GPIOB_CLK_ENABLE();
         GPIOXout_Struct.Pin = GPIO_PIN_0 << (channel - 8);
-        HAL_GPIO_Init(GPIOB, &GPIOXout_Struct);
+        /*HAL_GPIO_Init(GPIOB, &GPIOXout_Struct);*/
     } else if (channel >= 10 && channel <= 13) {
         // ADC3: PC0-PC3
         __HAL_RCC_GPIOC_CLK_ENABLE();
         GPIOXout_Struct.Pin = GPIO_PIN_0 << (channel - 10);
-        HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);
+        /*HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);*/
     } else if (channel == 14 || channel == 15) {
         // ADC2: PC4-PC5
         __HAL_RCC_GPIOC_CLK_ENABLE();
         GPIOXout_Struct.Pin = GPIO_PIN_4 << (channel - 14);
-        HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);
+        /*HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);*/
     }
     #endif
 }
@@ -138,6 +141,7 @@ void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_dat
     #ifndef TEST_MODE
     HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
     #endif
+
 }
 
 

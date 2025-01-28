@@ -3,8 +3,6 @@
 
 #include <stdbool.h>
 
-#include "../Sensors/Sensor.h"
-#include "Task.h"
 #include "PriorityQueue.h"
 
 #define MAX_SENSORS 10
@@ -19,10 +17,9 @@ typedef struct Scheduler {
  * @brief Initializes the scheduler with the given sensors.
  *
  * @param scheduler   Pointer to the Scheduler structure to initialize.
- * @param sensorArray Array of pointers to Sensor structures to be scheduled.
- * @param numSensors  Number of sensors in the sensorArray.
+ * @param updateableArray Array of pointers to Updateable structures to be scheduled.
  */
-void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors);
+void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]);
 
 /**
  * @brief Runs the scheduler, executing tasks based on their priority.

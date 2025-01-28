@@ -1,0 +1,190 @@
+#include <stdio.h>
+#include <string.h>
+
+#include "../../../../Inc/Systems/External/Can/Can.h"
+
+int testParseCanData(const char* fileName, const int id, const int len,
+                     const char* data, const char* testName) {
+    CanMessage canMsg;
+
+    // Parse the CAN data
+    if (!parseCanData(&canMsg, fileName)) {
+        printf("%s: parseCanData function failed.\n", testName);
+        return 1;
+    }
+
+    if (canMsg.messageId != id) {
+        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, id, canMsg.messageId);
+        return 1;
+    }
+
+    if (canMsg.dataLength != len) {
+        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, len, canMsg.dataLength);
+        return 1;
+    }
+
+    if (canMsg.dataLength * 2 != strlen(data)
+        || strncmp((const char*)canMsg.data, data, canMsg.dataLength * 2) != 0) {
+        printf("%s failed.\nExpected: %s\nGot: %s\n", testName, data, canMsg.data);
+        return 1;
+    }
+
+    printf("%s passed.\n", testName);
+    return 0;
+}
+
+int runParseCanDataTest() {
+    int result = 0;
+
+    const char* expectedData1 = "0100000000000000";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTest.txt",
+        100,
+        8,
+        expectedData1,
+        "Parse CAN Data Test: General"
+    );
+
+    const char* expectedData0 = "0000000000000000";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTest1.txt",
+        101,
+        8,
+        expectedData0,
+        "Parse CAN Data Test: General 2"
+    );
+
+    const char* expectedDataBms = "0FA01770A0000350";
+    result += testParseCanData(
+        "Tests/Systems/External/Can/CanDataTestBms.txt",
+        1712,
+        8,
+        expectedDataBms,
+        "Parse CAN Data Test: General BMS"
+    );
+
+    return result;
+}
+
+int testExtractSignalValue(Signal* sig, const unsigned char* canData,
+                           float expected, const char* testName) {
+    float result = extractSignalValue(sig, canData);
+
+    if (result != expected) {
+        printf("%s failed. Expected %.2f, got %.2f.\n", testName, expected, result);
+        return 1;
+    }
+
+    printf("%s passed.\n", testName);
+    return 0;
+}
+
+int runExtractSignalValueTest() {
+    int result = 0;
+
+    // Base signal configuration
+    Signal testSignal;
+    strcpy(testSignal.name, "TestSignal");
+    testSignal.start_bit = 0;
+    testSignal.length = 8;
+    testSignal.scale = 1.0f;
+    testSignal.offset = 0.0f;
+    testSignal.min = -10.0f;
+    testSignal.max = 65535.0f;
+    testSignal.endian = ENDIAN_LITTLE;
+
+    // 1. Edge case - minimum value
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"00",
+        0.0f,
+        "Extract Signal Value Test: Minimum Value"
+    );
+
+    // 2. Edge case - maximum 16-bit unsigned value
+    testSignal.length = 16;
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"FFFF",
+        65535.0f,
+        "Extract Signal Value Test: Max 16-bit Value"
+    );
+
+    // 3. Mid-range value
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"9001",
+        400.0f,
+        "Extract Signal Value Test: Mid-range (400)"
+    );
+
+    // 4. Scaling and offset adjustments
+    testSignal.scale = 0.5f;
+    testSignal.offset = 10.0f;
+    testSignal.length = 8;
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"80",
+        74.0f,
+        "Extract Signal Value Test: Scale 0.5, Offset 10"
+    );
+
+    // 5. Big endian test with a typical value
+    testSignal.length = 16;
+    testSignal.endian = ENDIAN_BIG;
+    testSignal.scale = 1.0f;
+    testSignal.offset = 0.0f;
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"1234",
+        4660.0f,
+        "Extract Signal Value Test: Big Endian"
+    );
+
+    // 6. Signed value with sign extension
+    testSignal.isSigned = 's';
+    testSignal.length = 8;  // Only 8-bit length to test sign extension
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"FF",
+        -1.0f,
+        "Extract Signal Value Test: Signed -1"
+    );
+
+    // 7. Clamp to min and max - below range
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"F5",
+        -10.0f,
+        "Extract Signal Value Test: Clamp Min -10"
+    );
+
+    // 8. Clamp to min and max - above range
+    testSignal.isSigned = 'u';
+    testSignal.length = 16;
+    testSignal.max = 5000.0f;
+    result += testExtractSignalValue(
+        &testSignal,
+        (const unsigned char*)"FFFF",
+        5000.0f,
+        "Extract Signal Value Test: Clamp Max 5000"
+    );
+
+    return result;
+}
+
+int main() {
+    int result = 0;
+
+    /*result += runParseCanDataTest();*/
+    result += runExtractSignalValueTest();
+
+    // Display overall test result
+    if (result == 0) {
+        printf("All tests passed.\n");
+    } else {
+        printf("Some tests failed.\n");
+    }
+
+    return result;
+}

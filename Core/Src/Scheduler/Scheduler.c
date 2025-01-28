@@ -11,23 +11,25 @@
  * Initializes the priority queue and schedules tasks based on the given sensors
  * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
  */
-void SchedulerInit(Scheduler* scheduler, Sensor* sensorArray[], int numSensors) {
-    if (numSensors > MAX_SENSORS) {
-        printf("Warning: Number of sensors exceeds MAX_SENSORS. Some sensors will not be scheduled.\n");
-        numSensors = MAX_SENSORS;  // Limit the number of sensors to MAX_SENSORS
-    }
-
+void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     PQInit(&scheduler->tasks);
     scheduler->running = false;
 
-    for (int i = 0; i < numSensors; i++) {
-        Task task;
-        Sensor* sensor = sensorArray[i];
-        if (sensor == NULL) {
-            continue;
+    for (int i = 0; updatableArray[i] != NULL; i++) {
+        if (i >= MAX_SENSORS) {
+            printf("Warning: Number of sensors exceeds MAX_SENSORS. "
+                   "Some sensors will not be scheduled.\n");
+            break;
         }
-        TaskInit(&task, sensor, sensor->updateable.hz);
-        int hz = 1000 / sensor->updateable.hz;
+
+        Updateable* updateable = updatableArray[i];
+        if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
+            continue; // Skip invalid frequencies
+        }
+
+        Task task;
+        TaskInit(&task, updateable, updateable->hz);
+        int hz = 1000 / updateable->hz;
         int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
         PQPush(&scheduler->tasks, task, initialPriority);
     }
