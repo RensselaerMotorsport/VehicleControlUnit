@@ -67,15 +67,15 @@ int main(){
     int tests_failed = 0;
 
     tests_failed += testBrakeSystemControlInit(0, 0, 0, "Initialization Test");
-    tests_failed += testFrontPressure(0, 0, 0, -1, PRESSURE_UNDER_LIMIT, "Front Pressure Below Limit Test");
-    tests_failed += testFrontPressure(0, 0, 0, 2001, PRESSURE_OVER_LIMIT, "Front Pressure Above Limit Test");
-    tests_failed += testFrontPressure(0, 0, 0, 1234, BRAKES_OK, "Front Pressure Within Limits Test");
-    tests_failed += testRearPressure(0, 0, 0, -1, PRESSURE_UNDER_LIMIT, "Rear Pressure Below Limit Test");
-    tests_failed += testRearPressure(0, 0, 0, 2001, PRESSURE_OVER_LIMIT, "Rear Pressure Above Limit Test");
-    tests_failed += testRearPressure(0, 0, 0, 1234, BRAKES_OK, "Rear Pressure Within Limits Test");
-    tests_failed += testTemperature(1000, 0, 0, 1001, TEMPERATURE_OVER_LIMIT, "Temperature Above Limit Test");
-    tests_failed += testTemperature(1000, 0, 0, 123, BRAKES_OK, "Temperature Within Limit Test");
-    tests_failed += testTemperature(1000, 0, 0, -1, TEMPERATURE_SENSOR_ERROR, "Temperature Negative Test");
+    tests_failed += testFrontPressure(0, 0, 0, -1.0, PRESSURE_UNDER_LIMIT, "Front Pressure Below Limit Test");
+    tests_failed += testFrontPressure(0, 0, 0, 2001.0, PRESSURE_OVER_LIMIT, "Front Pressure Above Limit Test");
+    tests_failed += testFrontPressure(0, 0, 0, 1234.0, BRAKES_OK, "Front Pressure Within Limits Test");
+    tests_failed += testRearPressure(0, 0, 0, -1.0, PRESSURE_UNDER_LIMIT, "Rear Pressure Below Limit Test");
+    tests_failed += testRearPressure(0, 0, 0, 2001.0, PRESSURE_OVER_LIMIT, "Rear Pressure Above Limit Test");
+    tests_failed += testRearPressure(0, 0, 0, 1234.0, BRAKES_OK, "Rear Pressure Within Limits Test");
+    tests_failed += testTemperature(1000, 0, 0, 1001.0, TEMPERATURE_OVER_LIMIT, "Temperature Above Limit Test");
+    tests_failed += testTemperature(1000, 0, 0, 123.0, BRAKES_OK, "Temperature Within Limit Test");
+    tests_failed += testTemperature(1000, 0, 0, -1.0, TEMPERATURE_SENSOR_ERROR, "Temperature Negative Test");
 
     if (tests_failed == 0) {
         printf("All tests passed.\n");

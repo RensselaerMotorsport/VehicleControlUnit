@@ -2,6 +2,8 @@
 #define RENSSELAERMOTORSPORT_BRAKE_SYSTEM_CONTROL_H
 
 #include "../ControllerSystem.h"
+#include "../../Sensors/AnalogSensors/BrakePressure.h"
+#include "../../Sensors/AnalogSensors/Temperature.h"
 
 typedef enum{
     BRAKES_OK,
@@ -16,9 +18,9 @@ typedef struct{
     ControllerSystem base;
     int minPressure;
     int maxPressure;
-    float *frontPressure;
-    float *rearPressure;
-    float *temperature;
+    BrakePressure *frontPressure;
+    BrakePressure *rearPressure;
+    Temperature *temperature;
     int maxTemperatureAllowed;
     BrakeSystemStatus status;
     int brakeLightActivationPoint;
@@ -80,5 +82,10 @@ BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc);
  * @param bsc A pointer to the BrakeControl structure.
  */
 int brakeSafteyCheck(void* bsc);
+
+// The following functions below are for testing functionality and should not be used elsewhere
+void setFrontPressure(BrakeSystemControl *bsc, float pressure);
+void setRearPressure(BrakeSystemControl *bsc, float pressure);
+void setTemperature(BrakeSystemControl *bsc, float temperature);
 
 #endif

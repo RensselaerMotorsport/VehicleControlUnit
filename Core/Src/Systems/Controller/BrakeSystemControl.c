@@ -46,7 +46,8 @@ void inHeavyBreaking(BrakeSystemControl *bsc){
 BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc){
     float front = getBrakePressure(bsc -> frontPressure);
     float rear = getBrakePressure(bsc -> rearPressure);
-    float temp = getBrakePressure(bsc -> temperature);
+    float temp = getTemperatureFahrenheit(bsc -> temperature);
+    
     if (front > bsc -> maxPressure || rear > bsc -> maxPressure){
         return PRESSURE_OVER_LIMIT;
     }
@@ -76,14 +77,14 @@ int brakeSafteyCheck(void* bsc){
 
 //The following functions below are for testing functionality and should not be used elsewhere
 
-void setFrontPressure(BrakeSystemControl *bsc, float *pressure){
-    bsc -> frontPressure = pressure;
+void setFrontPressure(BrakeSystemControl *bsc, float pressure){
+    bsc -> frontPressure -> pressure = pressure;
 }
 
-void setRearPressure(BrakeSystemControl *bsc, float *pressure){
-    bsc -> rearPressure = pressure;
+void setRearPressure(BrakeSystemControl *bsc, float pressure){
+    bsc -> rearPressure -> pressure = pressure;
 }
 
-void setTemperature(BrakeSystemControl *bsc, float *temperature){
-    bsc -> temperature = temperature;
+void setTemperature(BrakeSystemControl *bsc, float temperature){
+    bsc -> temperature -> degrees = temperature;
 }
