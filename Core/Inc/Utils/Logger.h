@@ -17,8 +17,22 @@ static int logHead = 0;  // Points to the next empty slot
 static int logTail = 0;  // Points to the oldest log entry
 static int logCount = 0; // Number of entries in the buffer
 
-// TODO: Add comments
+/**
+ * @brief Adds a log entry to the circular buffer. If the buffer is full, it
+ * dumps the logs to a file.
+ *
+ * @param logEntry The log entry to add to the buffer.
+ * Must be a null-terminated string.
+ */
 void logToBuffer(const char* logEntry);
+
+/**
+ * @brief Flushes the log buffer to a file by appending each log entry to the
+ * specified file.
+ *
+ * @param filename The name of the file to which the logs will be written.
+ * Must be a null-terminated string.
+ */
 void flushLogsToFile(const char* filename);
 
 #endif // RENSSELAERMOTORSPORT_LOGGER_H

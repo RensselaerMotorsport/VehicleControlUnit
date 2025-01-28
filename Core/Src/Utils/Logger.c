@@ -2,26 +2,20 @@
 
 // Add a log entry to the buffer
 void logToBuffer(const char* logEntry) {
-    if (logCount < LOG_BUFFER_SIZE) {
-        // Add the log entry to the buffer
-        strncpy(logBuffer[logHead], logEntry, LOG_ENTRY_SIZE - 1);
-        logBuffer[logHead][LOG_ENTRY_SIZE - 1] = '\0'; // Ensure null termination
-        logHead = (logHead + 1) % LOG_BUFFER_SIZE;
-        logCount++;
-    } else {
+    if (logCount >= LOG_BUFFER_SIZE) {
         // Dump the buffer and reset if full
         printf("Log buffer full. Dumping logs to prevent overwriting.\n");
         flushLogsToFile("log.csv");
         logHead = 0;
         logTail = 0;
         logCount = 0;
-
-        // Add the new log entry after clearing
-        strncpy(logBuffer[logHead], logEntry, LOG_ENTRY_SIZE - 1);
-        logBuffer[logHead][LOG_ENTRY_SIZE - 1] = '\0'; // Ensure null termination
-        logHead = (logHead + 1) % LOG_BUFFER_SIZE;
-        logCount++;
     }
+
+    // Add the log entry to the buffer
+    strncpy(logBuffer[logHead], logEntry, LOG_ENTRY_SIZE - 1);
+    logBuffer[logHead][LOG_ENTRY_SIZE - 1] = '\0';
+    logHead = (logHead + 1) % LOG_BUFFER_SIZE;
+    logCount++;
 }
 
 // Flush the log buffer to a file
