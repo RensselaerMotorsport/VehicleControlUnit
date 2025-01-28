@@ -108,7 +108,7 @@ int init_CANBus(CANBus bus);
 * @param filename The name of the DBC file to load
 * @return int 0 if the DBC file was loaded successfully, -1 if the file could not be opened
 */
-int load_dbc_file(CANBus bus, const char* filename);
+int load_dbc_file(CANBus bus, const unsigned char* filename);
 
 /**
  * @brief Adds a message to the CAN message list
@@ -182,4 +182,9 @@ void parseSignals(CAN_Message_Template* message, CAN_Message* can_message);
  */
 void parseSignal(CAN_Signal_Template* signal, CAN_Signal* can_signal, CAN_Message* can_message);
 
+
+/**
+ * @brief Prints the CAN message list
+ */
+void print_CAN_Messages_Lists();
 #endif // RENSSELAERMOTORSPORT_CAN_H

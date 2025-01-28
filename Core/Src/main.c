@@ -21,12 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../Inc/Scheduler/Scheduler.h"
-#include "../Inc/Sensors/AnalogSensors/App.h"
-#include "../Inc/Sensors/AnalogSensors/Temperature.h"
-#include "../Inc/Sensors/AnalogSensors/ShockPot.h"
+#include "../Inc/Files/can1_dbc.h"
 #include "../Inc/Systems/Comms/Can/Can.h"
-#include "../Inc/Utils/WheelLocation.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -142,11 +138,36 @@ int main(void)
   MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
 
+  // Clear the screen
+  printf("\033[2J\033[1;1H");
   printf("Welcome to VCU!!!\r\n");
   if (init_CANBus(CAN_1) != 0) {
     printf("CAN1 init failed\r\n");
   }
 
+//  printf("Load DBC status: %d\r\n", load_dbc_file(CAN_1, Core_Inc_Files_can1_dbc));
+
+  // Add a message to the CAN message list
+  CAN_Signal_Template signals[8] = {
+    { .name = "Char 1", .start_bit = 0, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 2", .start_bit = 8, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 3", .start_bit = 16, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 4", .start_bit = 24, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 5", .start_bit = 32, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 6", .start_bit = 40, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 7", .start_bit = 48, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" },
+    { .name = "Char 8", .start_bit = 56, .length = 8, .endian = 0, .isSigned = 0, .scale = 1, .offset = 0, .min = 0, .max = 255, .unit = "unit", .reciever = "reciever" }
+  };
+
+  add_message_lop(CAN_1, 0x123, 8, 0, 0, "Message 1", "AD3", 8, signals);
+
+
+  add_message_lop(CAN_1, 0x124, 8, 0, 0, "Message 2", "VCU", 8, signals);
+
+  // Print the CAN message list
+  print_CAN_Messages_Lists();
+
+  uint8_t txdata[8] = {0, 1, 2, 3, 4, 5, 6, 7};
 
 
   /* USER CODE END 2 */
@@ -155,8 +176,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    char msg[] = "Hello, PuTTY!\r\n";
-    HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+//    char msg[] = "Hello, PuTTY!\r\n";
+//    HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+	send_CAN_message(CAN_1, CAN_2A, 124, txdata, 8);
     HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -509,11 +531,11 @@ static void MX_CAN1_Init(void)
 
   /* USER CODE END CAN1_Init 1 */
   hcan1.Instance = CAN1;
-  hcan1.Init.Prescaler = 16;
+  hcan1.Init.Prescaler = 6;
   hcan1.Init.Mode = CAN_MODE_NORMAL;
   hcan1.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan1.Init.TimeSeg1 = CAN_BS1_1TQ;
-  hcan1.Init.TimeSeg2 = CAN_BS2_1TQ;
+  hcan1.Init.TimeSeg1 = CAN_BS1_13TQ;
+  hcan1.Init.TimeSeg2 = CAN_BS2_2TQ;
   hcan1.Init.TimeTriggeredMode = DISABLE;
   hcan1.Init.AutoBusOff = DISABLE;
   hcan1.Init.AutoWakeUp = DISABLE;
@@ -525,7 +547,30 @@ static void MX_CAN1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN1_Init 2 */
-  init_CANBus(CAN_1);
+  CAN_FilterTypeDef sFilterConfig;
+  sFilterConfig.FilterBank = 0;
+  sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+  sFilterConfig.FilterIdHigh = 0x0000;
+  sFilterConfig.FilterIdLow = 0x0000;
+  sFilterConfig.FilterMaskIdHigh = 0x0000;
+  sFilterConfig.FilterMaskIdLow = 0x0000;
+  sFilterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+  sFilterConfig.FilterActivation = ENABLE;
+  sFilterConfig.SlaveStartFilterBank = 14;
+  HAL_CAN_ConfigFilter(&hcan1, &sFilterConfig);
+
+  // Stop CAN
+  HAL_CAN_Stop(&hcan1);
+  // Start CAN
+  if (HAL_CAN_Start(&hcan1) != HAL_OK) {
+      printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
+  }
+
+  // Start IRQ for CAN Rx
+  if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
+  	printf("interrupt CAN1 init failed\r\n");
+  }
   /* USER CODE END CAN1_Init 2 */
 
 }
@@ -546,10 +591,10 @@ static void MX_CAN2_Init(void)
 
   /* USER CODE END CAN2_Init 1 */
   hcan2.Instance = CAN2;
-  hcan2.Init.Prescaler = 16;
+  hcan2.Init.Prescaler = 4;
   hcan2.Init.Mode = CAN_MODE_NORMAL;
   hcan2.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan2.Init.TimeSeg1 = CAN_BS1_1TQ;
+  hcan2.Init.TimeSeg1 = CAN_BS1_10TQ;
   hcan2.Init.TimeSeg2 = CAN_BS2_1TQ;
   hcan2.Init.TimeTriggeredMode = DISABLE;
   hcan2.Init.AutoBusOff = DISABLE;
@@ -562,7 +607,30 @@ static void MX_CAN2_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN CAN2_Init 2 */
-  init_CANBus(CAN_2);
+  CAN_FilterTypeDef sFilterConfig;
+  sFilterConfig.FilterBank = 0;
+  sFilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;
+  sFilterConfig.FilterScale = CAN_FILTERSCALE_32BIT;
+  sFilterConfig.FilterIdHigh = 0x0000;
+  sFilterConfig.FilterIdLow = 0x0000;
+  sFilterConfig.FilterMaskIdHigh = 0x0000;
+  sFilterConfig.FilterMaskIdLow = 0x0000;
+  sFilterConfig.FilterFIFOAssignment = CAN_RX_FIFO0;
+  sFilterConfig.FilterActivation = ENABLE;
+  sFilterConfig.SlaveStartFilterBank = 14;
+  HAL_CAN_ConfigFilter(&hcan2, &sFilterConfig);
+
+  // Stop CAN
+  HAL_CAN_Stop(&hcan2);
+  // Start CAN
+  if (HAL_CAN_Start(&hcan2) != HAL_OK) {
+      printf("CAN2 Start Error: ErrorCode = 0x%lX\r\n", hcan2.ErrorCode);
+  }
+
+  // Start IRQ for CAN Rx
+  if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
+  	printf("interrupt CAN2 init failed\r\n");
+  }
   /* USER CODE END CAN2_Init 2 */
 
 }

@@ -33,7 +33,7 @@ int parseDbcLine(CAN_MessageList *messages, char *line);
  * @return Returns 1 on success, or o on failure.
  * @note The CAN_MessageList structure should be properly initialized before calling this function.
  */
-int parseDbcFile(CAN_MessageList *messages, const char *filename);
+int parseDbcFile(CAN_MessageList *messages, const unsigned char *dbc_contents);
 
 /**
  * @brief Prints the contents of a CAN message list (aka DBC file).

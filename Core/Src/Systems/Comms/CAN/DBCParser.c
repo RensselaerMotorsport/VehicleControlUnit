@@ -28,24 +28,17 @@ int parseDbcLine(CAN_MessageList *messages, char *line) {
     return 1;
 }
 
-int parseDbcFile(CAN_MessageList *messages, const char *filename) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        fprintf(stderr, "Failed to open file %s\n", filename);
-        return -1;
-    }
-
-    char line[MAX_LINE_LENGTH];
-    while (fgets(line, MAX_LINE_LENGTH, file) != NULL) {
+int parseDbcFile(CAN_MessageList *messages, const unsigned char *dbc_contents) {
+    // dbc contents is a string of the file
+    char* line = strtok(dbc_contents, "\n");
+    while (line != NULL) {
+        printf("Parsing line: %s\n", line);
         if (!parseDbcLine(messages, line)) {
-            fprintf(stderr, "Failed to parse line: %s\n", line);
-            fclose(file);
-            return -1;
+            return 0;
         }
+        line = strtok(NULL, "\n");
     }
-
-    fclose(file);
-    return 0;
+    return 1;
 }
 
 void print_CAN_MessageList(const CAN_MessageList *messages) {
