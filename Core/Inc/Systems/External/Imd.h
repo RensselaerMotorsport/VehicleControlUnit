@@ -1,60 +1,73 @@
-#ifndef RENNSSELAERMOTORSPORT_IMD_H
-#define RENNSSELAERMOTORSPORT_IMD_H
+#ifndef RENSSELAERMOTORSPORT_IMD_H
+#define RENSSELAERMOTORSPORT_IMD_H
 
 #include <stdbool.h>
-
 #include "../ExternalSystem.h"
 
+typedef enum {
+    IMD_OK,
+    IMD_ERROR,
+    IMD_START
+} IMDStatus;
+
 typedef struct {
-    ExternalSystem system;
-    bool imd_status;
-    bool running_flag;
-} Imd;
+    ExternalSystem base;
+    bool runningFlag; //Status: Warnings and Alarms //IMD_Info_General: Byte 4, 5
+    float IsoResistanceNeg; //IMD_Info_IsolationDetail: Byte 0, 1
+    float IsoResistancePos; //IMD_Info_IsolationDetail: Byte 0, 1
+    float IsoResistanceCorrected; //(neg. Tolerance shifted) IMD_Info_General: Byte 0, 1
+    IMDStatus IMDStatus;
+} IMDValues;
+
 
 /**
- * @brief Initializes the IMD with the given frequency.
- *
- * @param imd Pointer to the Imd structure to initialize.
- * @param hz  The frequency in Hertz at which the IMD operates.
+ * @brief Initializes the IMD with the specified frequency.
+ * 
+ * @param IMD Pointer to the IMDValues structure to initialize.
+ * @param hz Frequency in hertz at which the IMD should operate.
  */
-void initImd(Imd* imd, int hz);
+void initIMD(IMDValues* IMD, int hz);
+
+/**
+ * @brief Updates the IMD values.
+ * 
+ * @param IMDValues Pointer to the IMD values that need to be updated.
+ */
+void updateIMD(void* IMDValues);
 
 /**
  * @brief Gets the status of the IMD.
  *
- * @param imd Pointer to the Imd structure to query.
- * @return    The status of the IMD.
+ * @param IMDValues A pointer to the structure IMDValues.
+ * @param status An IMDStatus variable to store the retrieved status.
+ * @return An integer representing the status of IMD.
  */
-bool getImdStatus(const Imd* imd);
+int getIMDStatus(void* IMDValues, IMDStatus status);
 
 /**
- * @brief Gets the running flag of the IMD.
+ * @brief Retrieves the negative isolation resistance value from the given IMD values.
  *
- * @param imd Pointer to the Imd structure to query.
- * @return    The running flag of the IMD.
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The negative isolation resistance value.
  */
-bool getRunningFlag(const Imd* imd);
+float getIsoResistanceNeg(void* IMDValues);
 
 /**
- * @brief Resets the running flag of the IMD.
+ * @brief Retrieves the positive isolation resistance value from the IMD values.
  *
- * @param imd Pointer to the Imd structure to update.
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The positive isolation resistance value.
  */
-void resetRunningFlag(Imd* imd);
+float getIsoResistancePos(void* IMDValues);
 
 /**
- * @brief Updates the IMD data.
+ * @brief Retrieves the positive isolation resistance value from the IMD values.
  *
- * @param imd Pointer to the Imd structure to update.
+ * @param IMDValues Pointer to the structure containing IMD values.
+ * @return The corrected isolation resistance value.
  */
-void updateImd(void* imd);
+float getIsoResistanceCorrected(void* IMDValues);
 
-/**
- * @brief Converts the Imd structure to a string.
- *
- * @param imd Pointer to the Imd structure to convert.
- * @return    Pointer to the string representation of the Imd structure.
- */
-char* toStringImd(const Imd* imd);
 
-#endif // RENNSSELAERMOTORSPORT_IMD_H
+
+#endif // RENSSELAERMOTORSPORT_IMD_H

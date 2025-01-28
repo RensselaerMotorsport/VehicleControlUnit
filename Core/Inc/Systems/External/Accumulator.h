@@ -12,7 +12,6 @@ typedef enum {
 
 typedef struct {
     Bms* bms;
-    Imd* imd;
     CHARGE_STATE state;
 } Accumulator;
 
@@ -23,7 +22,7 @@ typedef struct {
  * @param bms Pointer to the Bms structure.
  * @param imd Pointer to the Imd structure.
  */
-void initAccumulator(Accumulator* acc, Bms* bms, Imd* imd);
+void initAccumulator(Accumulator* acc, Bms* bms);
 
 /**
  * @brief Sets the state of the accumulator.

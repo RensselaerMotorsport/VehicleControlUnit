@@ -1,45 +1,44 @@
-#include "../../../Inc/Systems/External/Imd.h"
+#include "../../../Inc/Systems/External/IMD.h"
+#include "../../../Inc/Systems/ExternalSystem.h"
 
-#include <stdio.h>  // For printf
-
-void initImd(Imd* imd, int hz) {
-    // initCANSensor(&imd->system, "Imd", hz, 0);
-    imd->imd_status = false;
-    imd->running_flag = false;
-    // imd->base.sensor.updateable.update = updateImd;
+void initIMD(IMDValues* IMD, int hz) {
+    initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL);
+    IMD->base.system.updateable.update = updateIMD;
+    IMD->base.system.updateable.status = getIMDStatus;
+    IMD->IMDStatus = IMD_OK;
+    IMD->IsoResistanceNeg = 0;
+    IMD->IsoResistancePos = 0;
+    IMD->IsoResistanceCorrected = 0;
 }
 
-bool getImdStatus(const Imd* imd) {
-    return imd->imd_status;
+void updateIMD(void* IMDValues) {
+    //TODO: Implement logic to determine IMD status
+    /*if (something){
+    set IMD_ERROR;
+    } else if (something){
+        set IMD_START;
+    } else {*/
+    //  set IMD_OK
+        return;
+    }
+
+int getIMDStatus(void* imdValues, IMDStatus status) {
+    IMDValues* IMD = (IMDValues*) imdValues;
+    return IMD->IMDStatus;
 }
 
-bool getRunningFlag(const Imd* imd) {
-    return imd->running_flag;
+float getIsoResistanceNeg (void* imdValues) {
+    IMDValues* IMD = (IMDValues*) imdValues;
+    return IMD->IsoResistanceNeg;
 }
 
-void resetRunningFlag(Imd* imd) {
-    imd->running_flag = true;  // Assuming reset means setting to true
+float getIsoResistancePos (void* imdValues) {
+    IMDValues* IMD = (IMDValues*) imdValues;
+    return IMD->IsoResistancePos;
 }
 
-void updateImd(void* imd) {
-    Imd* myImd = (Imd*) imd;
-    // float var = myImd->base.getData();
-    // myImd->imd_status = imdStatusTransferFunction(var);
-    // myImd->running_flag = runningFlagTransferFunction(var);
-    // printf("IMD Status: %d, Running Flag: %d\n", myImd->imd_status, myImd->running_flag);
-    printf("Implement updateImd\n");
+float getIsoResistanceCorrected (void* imdValues) {
+    IMDValues* IMD = (IMDValues*) imdValues;
+    return IMD->IsoResistanceCorrected;
 }
 
-bool imdStatusTransferFunction(float x) {
-    return x > 0.5; // TODO: Implement
-}
-
-bool runningFlagTransferFunction(float x) {
-    return x > 0.5; // TODO: Implement
-}
-
-char* toStringImd(const Imd* imd) {
-    static char str[32];
-    sprintf(str, "%d,%d", imd->imd_status, imd->running_flag);
-    return str;
-}

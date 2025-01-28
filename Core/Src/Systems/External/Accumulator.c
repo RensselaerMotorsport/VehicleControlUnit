@@ -1,9 +1,8 @@
 #include "../../../Inc/Systems/External/Accumulator.h"
 
-void initAccumulator(Accumulator* acc, Bms* bms, Imd* imd) {
+void initAccumulator(Accumulator* acc, Bms* bms) {
     if (acc != NULL) {
         acc->bms = bms;
-        acc->imd = imd;
         acc->state = standby;  // Default state
     }
 }
