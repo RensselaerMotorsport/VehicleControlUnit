@@ -2,8 +2,18 @@ var searchData=
 [
   ['c_5fapps_0',['c_APPS',['../ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db',1,'ControllerSystem.h']]],
   ['c_5ftorque_1',['c_TORQUE',['../ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9a4acddf6dee63f001a45b4dc09e75851f',1,'ControllerSystem.h']]],
-  ['can_2',['CAN',['../Sensor_8h.html#a213c434cb928c4ca22513e2302632435a1ecfa0998855a0963b5d298332dbd22c',1,'CAN():&#160;Sensor.h'],['../CommsSystem_8h.html#aa47ccaaca64ec7d83344a262ea4ebba3a1ecfa0998855a0963b5d298332dbd22c',1,'CAN():&#160;CommsSystem.h']]],
-  ['charge_3',['charge',['../Accumulator_8h.html#adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b',1,'Accumulator.h']]],
-  ['comms_4',['COMMS',['../System_8h.html#a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5',1,'System.h']]],
-  ['controller_5',['CONTROLLER',['../System_8h.html#a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c',1,'System.h']]]
+  ['can_2',['CAN',['../CommsSystem_8h.html#aa47ccaaca64ec7d83344a262ea4ebba3a1ecfa0998855a0963b5d298332dbd22c',1,'CommsSystem.h']]],
+  ['can_5f1_3',['CAN_1',['../Can_8h.html#a7ce7bcff1bc258b0704bef693c211757a6671963810277b07ab9f9ac5dde7bcf1',1,'Can.h']]],
+  ['can_5f100kbps_4',['CAN_100KBPS',['../Can_8h.html#a0741bcc2672f25cd10e90fac03235b82acbc94b946c460629e5a5ae7924442d7c',1,'Can.h']]],
+  ['can_5f125kbps_5',['CAN_125KBPS',['../Can_8h.html#a0741bcc2672f25cd10e90fac03235b82a45a0b1bc8b45d2155b372abfa7167b0b',1,'Can.h']]],
+  ['can_5f1mbps_6',['CAN_1MBPS',['../Can_8h.html#a0741bcc2672f25cd10e90fac03235b82a86a20584b455e0a64c9b78f6bb31fa9f',1,'Can.h']]],
+  ['can_5f2_7',['CAN_2',['../Can_8h.html#a7ce7bcff1bc258b0704bef693c211757a7ce1c9b7407b91540c1539dfb22bf5f0',1,'Can.h']]],
+  ['can_5f250kbps_8',['CAN_250KBPS',['../Can_8h.html#a0741bcc2672f25cd10e90fac03235b82af6f402cf5a339c554107bf6f8b0c7357',1,'Can.h']]],
+  ['can_5f2a_9',['CAN_2A',['../Can_8h.html#af488c3d8208a6f7c2b93733441261175a1274100e89b60b4ee714761f0713ff67',1,'Can.h']]],
+  ['can_5f2b_10',['CAN_2B',['../Can_8h.html#af488c3d8208a6f7c2b93733441261175a79d8267ca0083d6d73d8202c4f7348e9',1,'Can.h']]],
+  ['can_5f500kbps_11',['CAN_500KBPS',['../Can_8h.html#a0741bcc2672f25cd10e90fac03235b82a0f4b6654aca8061eb9cb186b6abac331',1,'Can.h']]],
+  ['charge_12',['charge',['../Accumulator_8h.html#adbd50c66fa8bc8452e613e16313fa418ad01b8dae20b2816bbad5d9de7a2e2d4b',1,'Accumulator.h']]],
+  ['charging_13',['CHARGING',['../BMS_8h.html#a587719d368f22a253077613527d2b995a07a6dcb68ed5b9432435bf82c1437a3e',1,'BMS.h']]],
+  ['comms_14',['COMMS',['../System_8h.html#a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5',1,'System.h']]],
+  ['controller_15',['CONTROLLER',['../System_8h.html#a922f019f64e4183a18638787f6ba539ba090263695c5c16c6ab9f97e8d570144c',1,'System.h']]]
 ];

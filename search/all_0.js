@@ -19,5 +19,6 @@ var searchData=
   ['_5fstat_16',['_stat',['../syscalls_8c.html#a4711e961db985ed2c850a8be6597af50',1,'syscalls.c']]],
   ['_5ftimes_17',['_times',['../syscalls_8c.html#aaf727ebf57cd64d6c58b23e6ee4a4a69',1,'syscalls.c']]],
   ['_5funlink_18',['_unlink',['../syscalls_8c.html#a70b2f211d665cded5637065aa2bb89dc',1,'syscalls.c']]],
-  ['_5fwait_19',['_wait',['../syscalls_8c.html#aeef0c3372d04caa1bcc99fed2ab6ec72',1,'syscalls.c']]]
+  ['_5fwait_19',['_wait',['../syscalls_8c.html#aeef0c3372d04caa1bcc99fed2ab6ec72',1,'syscalls.c']]],
+  ['_5fwrite_20',['_write',['../main_8c.html#a92830f7410339c4be8b469045686e10b',1,'main.c']]]
 ];

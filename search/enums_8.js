@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wheel_5flocation_0',['WHEEL_LOCATION',['../WheelLocation_8h.html#a6bcc31f28038e411321704f9947331d7',1,'WheelLocation.h']]]
+  ['torquestatus_0',['TorqueStatus',['../TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816',1,'TorqueStatus():&#160;TorqueControl.h'],['../TorqueMonitor_8h.html#a19941765cef874f044e38252d5a0f816',1,'TorqueStatus():&#160;TorqueMonitor.h']]],
+  ['type_1',['type',['../Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d',1,'Updateable.h']]]
 ];

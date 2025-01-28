@@ -1,12 +1,6 @@
-<map id="Core/Tests/WheelSpeedTest.c" name="Core/Tests/WheelSpeedTest.c">
-<area shape="rect" id="node1" title=" " alt="" coords="188,5,387,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="235,387,295,412"/>
-<area shape="rect" id="node3" title=" " alt="" coords="257,86,318,111"/>
-<area shape="rect" id="node4" href="$WheelSpeed_8h.html" title=" " alt="" coords="41,79,232,119"/>
-<area shape="rect" id="node5" href="$DigitalSensor_8h.html" title=" " alt="" coords="5,167,124,192"/>
-<area shape="rect" id="node10" href="$WheelLocation_8h.html" title=" " alt="" coords="148,167,317,192"/>
-<area shape="rect" id="node6" href="$Sensor_8h.html" title=" " alt="" coords="68,240,141,265"/>
-<area shape="rect" id="node7" title=" " alt="" coords="29,387,92,412"/>
-<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="89,313,227,339"/>
-<area shape="rect" id="node9" title=" " alt="" coords="126,387,190,412"/>
+<map id="Core/Tests/Sensors/Digital/WheelSpeedTest.c" name="Core/Tests/Sensors/Digital/WheelSpeedTest.c">
+<area shape="rect" id="node1" title=" " alt="" coords="33,5,208,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,101,65,126"/>
+<area shape="rect" id="node3" title=" " alt="" coords="90,101,151,126"/>
+<area shape="rect" id="node4" title=" " alt="" coords="176,93,367,133"/>
 </map>

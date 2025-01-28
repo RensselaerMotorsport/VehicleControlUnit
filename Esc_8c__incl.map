@@ -1,10 +1,11 @@
-<map id="Core/Src/Sensors/CANSensors/Esc.c" name="Core/Src/Sensors/CANSensors/Esc.c">
-<area shape="rect" id="node1" title=" " alt="" coords="123,5,329,45"/>
-<area shape="rect" id="node2" href="$Esc_8h.html" title=" " alt="" coords="103,93,242,133"/>
-<area shape="rect" id="node5" title=" " alt="" coords="211,401,271,427"/>
-<area shape="rect" id="node3" href="$CANSensor_8h.html" title=" " alt="" coords="92,181,203,207"/>
-<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="104,255,177,280"/>
-<area shape="rect" id="node6" title=" " alt="" coords="5,401,68,427"/>
-<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="65,328,203,353"/>
-<area shape="rect" id="node8" title=" " alt="" coords="102,401,166,427"/>
+<map id="Core/Src/Systems/External/Esc.c" name="Core/Src/Systems/External/Esc.c">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,184,45"/>
+<area shape="rect" id="node2" href="$Esc_8h.html" title=" " alt="" coords="215,93,340,133"/>
+<area shape="rect" id="node4" title=" " alt="" coords="117,475,177,500"/>
+<area shape="rect" id="node3" href="$ExternalSystem_8h.html" title=" " alt="" coords="394,181,526,207"/>
+<area shape="rect" id="node5" title=" " alt="" coords="553,475,615,500"/>
+<area shape="rect" id="node6" title=" " alt="" coords="407,475,471,500"/>
+<area shape="rect" id="node7" href="$System_8h.html" title=" " alt="" coords="373,328,449,353"/>
+<area shape="rect" id="node9" href="$CommsSystem_8h.html" title=" " alt="" coords="449,255,570,280"/>
+<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="235,401,373,427"/>
 </map>

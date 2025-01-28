@@ -1,13 +1,15 @@
-<map id="Core/Inc/Sensors/CANSensors/Accumulator.h" name="Core/Inc/Sensors/CANSensors/Accumulator.h">
-<area shape="rect" id="node1" title=" " alt="" coords="70,5,273,45"/>
-<area shape="rect" id="node2" href="$BMS_8h.html" title=" " alt="" coords="99,93,161,119"/>
-<area shape="rect" id="node11" href="$Imd_8h.html" title=" " alt="" coords="185,93,240,119"/>
-<area shape="rect" id="node3" href="$CANSensor_8h.html" title=" " alt="" coords="116,167,227,192"/>
-<area shape="rect" id="node9" href="$BmsData_8h.html" title=" " alt="" coords="5,167,92,192"/>
-<area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="135,240,208,265"/>
-<area shape="rect" id="node5" title=" " alt="" coords="45,387,105,412"/>
-<area shape="rect" id="node6" title=" " alt="" coords="237,387,300,412"/>
-<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="102,313,241,339"/>
-<area shape="rect" id="node8" title=" " alt="" coords="139,387,203,412"/>
-<area shape="rect" id="node10" title=" " alt="" coords="23,240,98,265"/>
+<map id="Core/Inc/Systems/External/Accumulator.h" name="Core/Inc/Systems/External/Accumulator.h">
+<area shape="rect" id="node1" title=" " alt="" coords="202,5,378,45"/>
+<area shape="rect" id="node2" href="$BMS_8h.html" title=" " alt="" coords="218,93,279,119"/>
+<area shape="rect" id="node12" href="$Imd_8h.html" title=" " alt="" coords="347,93,401,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="41,174,105,199"/>
+<area shape="rect" id="node4" href="$ExternalSystem_8h.html" title=" " alt="" coords="308,174,440,199"/>
+<area shape="rect" id="node11" title=" " alt="" coords="129,167,283,207"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,475,65,500"/>
+<area shape="rect" id="node6" title=" " alt="" coords="416,475,479,500"/>
+<area shape="rect" id="node7" title=" " alt="" coords="270,475,334,500"/>
+<area shape="rect" id="node8" href="$System_8h.html" title=" " alt="" coords="236,328,312,353"/>
+<area shape="rect" id="node10" href="$CommsSystem_8h.html" title=" " alt="" coords="313,255,435,280"/>
+<area shape="rect" id="node9" href="$Updateable_8h.html" title=" " alt="" coords="98,401,237,427"/>
+<area shape="rect" id="node13" title=" " alt="" coords="465,174,539,199"/>
 </map>

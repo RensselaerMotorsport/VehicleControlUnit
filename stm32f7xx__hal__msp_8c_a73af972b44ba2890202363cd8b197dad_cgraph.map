@@ -1,4 +1,0 @@
-<map id="HAL_PCD_MspInit" name="HAL_PCD_MspInit">
-<area shape="rect" id="node1" title="PCD MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,5,139,31"/>
-<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="187,5,288,31"/>
-</map>

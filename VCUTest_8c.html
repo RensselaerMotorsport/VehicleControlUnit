@@ -88,27 +88,32 @@ Include dependency graph for VCUTest.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="VCUTest_8c__incl.png" border="0" usemap="#aCore_2Tests_2VCUTest_8c" alt=""/></div>
 <map name="aCore_2Tests_2VCUTest_8c" id="aCore_2Tests_2VCUTest_8c">
-<area shape="rect" title=" " alt="" coords="465,5,620,31"/>
-<area shape="rect" href="Scheduler_8h.html" title=" " alt="" coords="99,86,283,111"/>
-<area shape="rect" href="App_8h.html" title=" " alt="" coords="336,79,531,119"/>
-<area shape="rect" href="Temperature_8h.html" title=" " alt="" coords="555,79,749,119"/>
-<area shape="rect" href="ShockPot_8h.html" title=" " alt="" coords="773,79,968,119"/>
-<area shape="rect" title=" " alt="" coords="5,240,80,265"/>
-<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="137,313,271,339"/>
-<area shape="rect" href="Task_8h.html" title=" " alt="" coords="143,240,204,265"/>
-<area shape="rect" href="PriorityQueue_8h.html" title=" " alt="" coords="42,167,153,192"/>
-<area shape="rect" title=" " alt="" coords="206,460,266,485"/>
-<area shape="rect" title=" " alt="" coords="83,460,146,485"/>
-<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="167,387,305,412"/>
-<area shape="rect" title=" " alt="" coords="580,460,644,485"/>
-<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="605,167,728,192"/>
-<area shape="rect" title=" " alt="" coords="636,240,727,265"/>
-<area shape="rect" title=" " alt="" coords="751,240,865,265"/>
-<area shape="rect" title=" " alt="" coords="941,240,1083,265"/>
-<area shape="rect" title=" " alt="" coords="1108,240,1255,265"/>
-<area shape="rect" title=" " alt="" coords="380,240,524,265"/>
-<area shape="rect" title=" " alt="" coords="548,240,612,265"/>
-<area shape="rect" href="WheelLocation_8h.html" title=" " alt="" coords="786,167,955,192"/>
+<area shape="rect" title=" " alt="" coords="821,5,976,31"/>
+<area shape="rect" href="Scheduler_8h.html" title=" " alt="" coords="44,86,228,111"/>
+<area shape="rect" href="App_8h.html" title=" " alt="" coords="692,79,887,119"/>
+<area shape="rect" href="Temperature_8h.html" title=" " alt="" coords="911,79,1105,119"/>
+<area shape="rect" href="ShockPot_8h.html" title=" " alt="" coords="1129,79,1324,119"/>
+<area shape="rect" title=" " alt="" coords="5,255,80,280"/>
+<area shape="rect" href="PriorityQueue_8h.html" title=" " alt="" coords="81,167,191,192"/>
+<area shape="rect" href="Task_8h.html" title=" " alt="" coords="104,255,165,280"/>
+<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="2003,343,2141,368"/>
+<area shape="rect" title=" " alt="" coords="2199,416,2259,441"/>
+<area shape="rect" title=" " alt="" coords="2077,416,2139,441"/>
+<area shape="rect" title=" " alt="" coords="1104,416,1168,441"/>
+<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="971,167,1093,192"/>
+<area shape="rect" title=" " alt="" coords="240,255,331,280"/>
+<area shape="rect" title=" " alt="" coords="355,255,469,280"/>
+<area shape="rect" title=" " alt="" coords="494,255,637,280"/>
+<area shape="rect" title=" " alt="" coords="661,255,808,280"/>
+<area shape="rect" title=" " alt="" coords="832,255,976,280"/>
+<area shape="rect" title=" " alt="" coords="1000,255,1064,280"/>
+<area shape="rect" title=" " alt="" coords="1089,240,1295,295"/>
+<area shape="rect" title=" " alt="" coords="1320,247,1536,287"/>
+<area shape="rect" title=" " alt="" coords="1561,240,1743,295"/>
+<area shape="rect" title=" " alt="" coords="1767,240,1950,295"/>
+<area shape="rect" title=" " alt="" coords="1974,240,2157,295"/>
+<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="2181,255,2254,280"/>
+<area shape="rect" href="WheelLocation_8h.html" title=" " alt="" coords="1142,167,1311,192"/>
 </map>
 </div>
 </div>
@@ -154,7 +159,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   20</span>    sensorArray[2] = (<a class="code hl_struct" href="structSensor.html">Sensor</a>*)&amp;shockPotSensor;</div>
 <div class="line"><span class="lineno">   21</span> </div>
 <div class="line"><span class="lineno">   22</span>    <span class="comment">// Initialize Scheduler with sensors</span></div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="Scheduler_8h.html#adf18e0985dd8f66c0a65156d46718c5a">SchedulerInit</a>(&amp;scheduler, sensorArray, 3);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="Scheduler_8h.html#a8806ac2ca53db24211ebf0f81719b505">SchedulerInit</a>(&amp;scheduler, sensorArray, 3);</div>
 <div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span>    <span class="comment">// Run Scheduler to process tasks</span></div>
 <div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="Scheduler_8h.html#ab8065221debac476c547533f73504c20">SchedulerRun</a>(&amp;scheduler);</div>
@@ -167,14 +172,14 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   33</span>}</div>
 <div class="ttc" id="aApp_8h_html_a70256ff87716960d0b2a216d48fd94ce"><div class="ttname"><a href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a></div><div class="ttdeci">void initApp(App *app, int hz, int channel)</div><div class="ttdoc">Initializes the APP with the given frequency and channel.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00005">App.c:5</a></div></div>
 <div class="ttc" id="aPriorityQueue_8h_html_aa3d1fc2927eec213e6b5f9e854c392d2"><div class="ttname"><a href="PriorityQueue_8h.html#aa3d1fc2927eec213e6b5f9e854c392d2">MAX_SENSORS</a></div><div class="ttdeci">#define MAX_SENSORS</div><div class="ttdef"><b>Definition:</b> <a href="PriorityQueue_8h_source.html#l00008">PriorityQueue.h:8</a></div></div>
-<div class="ttc" id="aScheduler_8h_html_ab8065221debac476c547533f73504c20"><div class="ttname"><a href="Scheduler_8h.html#ab8065221debac476c547533f73504c20">SchedulerRun</a></div><div class="ttdeci">void SchedulerRun(Scheduler *scheduler)</div><div class="ttdoc">Runs the scheduler, executing tasks based on their priority.</div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8c_source.html#l00041">Scheduler.c:41</a></div></div>
-<div class="ttc" id="aScheduler_8h_html_adf18e0985dd8f66c0a65156d46718c5a"><div class="ttname"><a href="Scheduler_8h.html#adf18e0985dd8f66c0a65156d46718c5a">SchedulerInit</a></div><div class="ttdeci">void SchedulerInit(Scheduler *scheduler, Sensor *sensorArray[], int numSensors)</div><div class="ttdoc">Initializes the scheduler with the given sensors.</div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8c_source.html#l00014">Scheduler.c:14</a></div></div>
+<div class="ttc" id="aScheduler_8h_html_a8806ac2ca53db24211ebf0f81719b505"><div class="ttname"><a href="Scheduler_8h.html#a8806ac2ca53db24211ebf0f81719b505">SchedulerInit</a></div><div class="ttdeci">void SchedulerInit(Scheduler *scheduler, Updateable *updatableArray[])</div><div class="ttdoc">Initializes the scheduler with the given sensors.</div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8c_source.html#l00014">Scheduler.c:14</a></div></div>
+<div class="ttc" id="aScheduler_8h_html_ab8065221debac476c547533f73504c20"><div class="ttname"><a href="Scheduler_8h.html#ab8065221debac476c547533f73504c20">SchedulerRun</a></div><div class="ttdeci">void SchedulerRun(Scheduler *scheduler)</div><div class="ttdoc">Runs the scheduler, executing tasks based on their priority.</div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8c_source.html#l00043">Scheduler.c:43</a></div></div>
 <div class="ttc" id="aShockPot_8h_html_aa504d587a6cb42be1f4aed7bbea6c1a4"><div class="ttname"><a href="ShockPot_8h.html#aa504d587a6cb42be1f4aed7bbea6c1a4">initShockPot</a></div><div class="ttdeci">void initShockPot(ShockPot *shockPot, int hz, int channel, WHEEL_LOCATION location)</div><div class="ttdoc">Initializes the ShockPot sensor with the given frequency, channel, and wheel location.</div><div class="ttdef"><b>Definition:</b> <a href="ShockPot_8c_source.html#l00006">ShockPot.c:6</a></div></div>
 <div class="ttc" id="aTemperature_8h_html_a72614117a34330f3d93ad6e0d763fad9"><div class="ttname"><a href="Temperature_8h.html#a72614117a34330f3d93ad6e0d763fad9">initTemperature</a></div><div class="ttdeci">void initTemperature(Temperature *temp, int hz, int channel)</div><div class="ttdoc">Initializes the Temperature sensor with the given frequency and channel.</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8c_source.html#l00003">Temperature.c:3</a></div></div>
 <div class="ttc" id="aWheelLocation_8h_html_a6bcc31f28038e411321704f9947331d7a3e4b80cb31443019e807a14549b1d2bd"><div class="ttname"><a href="WheelLocation_8h.html#a6bcc31f28038e411321704f9947331d7a3e4b80cb31443019e807a14549b1d2bd">FRONT_LEFT</a></div><div class="ttdeci">@ FRONT_LEFT</div><div class="ttdef"><b>Definition:</b> <a href="WheelLocation_8h_source.html#l00005">WheelLocation.h:5</a></div></div>
 <div class="ttc" id="astructApp_html"><div class="ttname"><a href="structApp.html">App</a></div><div class="ttdef"><b>Definition:</b> <a href="App_8h_source.html#l00006">App.h:6</a></div></div>
-<div class="ttc" id="astructScheduler_html"><div class="ttname"><a href="structScheduler.html">Scheduler</a></div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8h_source.html#l00013">Scheduler.h:13</a></div></div>
-<div class="ttc" id="astructSensor_html"><div class="ttname"><a href="structSensor.html">Sensor</a></div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00015">Sensor.h:15</a></div></div>
+<div class="ttc" id="astructScheduler_html"><div class="ttname"><a href="structScheduler.html">Scheduler</a></div><div class="ttdef"><b>Definition:</b> <a href="Scheduler_8h_source.html#l00011">Scheduler.h:11</a></div></div>
+<div class="ttc" id="astructSensor_html"><div class="ttname"><a href="structSensor.html">Sensor</a></div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00014">Sensor.h:14</a></div></div>
 <div class="ttc" id="astructShockPot_html"><div class="ttname"><a href="structShockPot.html">ShockPot</a></div><div class="ttdef"><b>Definition:</b> <a href="ShockPot_8h_source.html#l00007">ShockPot.h:7</a></div></div>
 <div class="ttc" id="astructTemperature_html"><div class="ttname"><a href="structTemperature.html">Temperature</a></div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00006">Temperature.h:6</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -186,7 +191,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="129,153,191,179"/>
 <area shape="rect" href="ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="112,55,208,80"/>
 <area shape="rect" href="Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="104,104,216,129"/>
-<area shape="rect" href="Scheduler_8c.html#adf18e0985dd8f66c0a65156d46718c5a" title="Initializes the scheduler with the given sensors." alt="" coords="111,227,209,252"/>
+<area shape="rect" href="Scheduler_8c.html#a8806ac2ca53db24211ebf0f81719b505" title="Initializes the scheduler with the given sensors." alt="" coords="111,227,209,252"/>
 <area shape="rect" href="Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="109,376,211,401"/>
 <area shape="rect" href="AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="271,104,391,129"/>
 <area shape="rect" href="App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="289,153,373,179"/>
@@ -203,7 +208,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="475,55,591,80"/>
 <area shape="rect" href="PriorityQueue_8c.html#af5ad572e37189c56cf0816638dd85d97" title="Initializes the priority queue." alt="" coords="302,252,361,277"/>
 <area shape="rect" href="PriorityQueue_8c.html#ae841bdf0664368f8d4484b0e5dbd33d7" title="Pushes a task with a given priority onto the priority queue." alt="" coords="296,301,367,327"/>
-<area shape="rect" href="Task_8c.html#ada95c849b23900ccbebc6a389f6dba19" title="Initializes a task with the given sensor and update frequency." alt="" coords="297,203,366,228"/>
+<area shape="rect" href="Task_8c.html#aa1e920a3ada35f0a4d299e7a88f73df6" title="Initializes a task with the given sensor and update frequency." alt="" coords="297,203,366,228"/>
 <area shape="rect" href="PriorityQueue_8c.html#ab7631090c485201b8c6f7773b0575e3f" title="Restores the heap property by moving the node at the given index up." alt="" coords="493,277,573,303"/>
 <area shape="rect" href="PriorityQueue_8c.html#aca9cc7f25c9cc6fd37c05dbb5b81e727" title="Checks if the priority queue is full." alt="" coords="497,327,570,352"/>
 <area shape="rect" href="PriorityQueue_8c.html#a3db90f839aff3e0e896ca237483bb926" title="Checks if the priority queue is empty." alt="" coords="489,452,577,477"/>

@@ -1,0 +1,4 @@
+<map id="receive_CAN_message" name="receive_CAN_message">
+<area shape="rect" id="node1" title="Receives a CAN message." alt="" coords="260,13,419,38"/>
+<area shape="rect" id="node2" href="$stm32f7xx__it_8c.html#a7368d39e78009c017d6f81ccf33b9b2c" title=" " alt="" coords="5,5,212,45"/>
+</map>

@@ -1,5 +1,0 @@
-<map id="TaskInit" name="TaskInit">
-<area shape="rect" id="node1" title="Initializes a task with the given sensor and update frequency." alt="" coords="251,5,320,31"/>
-<area shape="rect" id="node2" href="$Scheduler_8c.html#adf18e0985dd8f66c0a65156d46718c5a" title="Initializes the scheduler with the given sensors." alt="" coords="104,5,203,31"/>
-<area shape="rect" id="node3" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
-</map>

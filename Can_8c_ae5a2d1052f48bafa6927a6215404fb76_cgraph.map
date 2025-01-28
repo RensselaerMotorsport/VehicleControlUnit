@@ -1,0 +1,6 @@
+<map id="load_dbc_file" name="load_dbc_file">
+<area shape="rect" id="node1" title="Loads a DBC file into the CAN database. Makes the messages and signals and stores them in the list." alt="" coords="5,31,103,56"/>
+<area shape="rect" id="node2" href="$DBCParser_8c.html#a319664dce3167a7d31bc9e4afd76e252" title="Parses a DBC (CAN database) file and populates the DBC structure." alt="" coords="183,5,282,31"/>
+<area shape="rect" id="node4" href="$DBCParser_8c.html#ade4778b54d16f6de5b603b104b7e63e4" title="Prints the contents of a CAN message list (aka DBC file)." alt="" coords="151,55,315,80"/>
+<area shape="rect" id="node3" href="$DBCParser_8c.html#aae9a66c2121256fbf6275933288b93cc" title="Parses a single line of a DBC file and populates the CAN_MessageList structure." alt="" coords="363,5,465,31"/>
+</map>

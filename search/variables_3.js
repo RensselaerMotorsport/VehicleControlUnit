@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['cellresistance_0',['cellResistance',['../structBmsData.html#a01a979411885a5df6f5632cd183afb99',1,'BmsData']]],
-  ['cellvoltage_1',['cellVoltage',['../structBmsData.html#a1d992a09fc20396ca1ec6b4f06e1473b',1,'BmsData']]],
-  ['channel_2',['channel',['../structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954',1,'AnalogSensor']]],
-  ['chargecurrentlimit_3',['chargeCurrentLimit',['../structBmsData.html#ace569b00c7b4d65838cb3042ab9c4bba',1,'BmsData']]],
-  ['check_5fheartbeat_4',['check_heartbeat',['../structCommsSystem.html#a041ccb955b25c56444e570f354b87b78',1,'CommsSystem::check_heartbeat()'],['../structExternalSystem.html#af0e762ad56062e3f5ff1ff57bdc68954',1,'ExternalSystem::check_heartbeat()']]],
-  ['comms_5',['comms',['../structExternalSystem.html#ae26f40c87edc5ebffe847ebb30de077a',1,'ExternalSystem']]],
-  ['criticalfaults_6',['criticalFaults',['../structBmsData.html#ae2b9514f841b9c81537b6480c7d2253a',1,'BmsData']]]
+  ['can_5fmessages_0',['can_messages',['../Can_8c.html#a4af7489ff69573f4410f051111cd2380',1,'Can.c']]],
+  ['celltemperaturemax_1',['cellTemperatureMax',['../structBms.html#a51670cb79b2354ecf24d16e0c5125f7b',1,'Bms']]],
+  ['celltemperaturemin_2',['cellTemperatureMin',['../structBms.html#ae4db05aea5dcf12374ed9f904a9780ad',1,'Bms']]],
+  ['cellvoltagemax_3',['cellVoltageMax',['../structBms.html#a3c15cc3e47ae19b741c02fec99992fa1',1,'Bms']]],
+  ['cellvoltagemin_4',['cellVoltageMin',['../structBms.html#a254922334d0b44ea546e4e4f702e6e27',1,'Bms']]],
+  ['channel_5',['channel',['../structAnalogSensor.html#a01ed701a4a02f637c35124e2982b0954',1,'AnalogSensor']]],
+  ['chargestatus_6',['chargeStatus',['../structBms.html#abf28078e8a885e9950773e6806bf3316',1,'Bms']]],
+  ['check_5fheartbeat_7',['check_heartbeat',['../structCommsSystem.html#a041ccb955b25c56444e570f354b87b78',1,'CommsSystem::check_heartbeat()'],['../structExternalSystem.html#af0e762ad56062e3f5ff1ff57bdc68954',1,'ExternalSystem::check_heartbeat()']]],
+  ['comms_8',['comms',['../structExternalSystem.html#ae26f40c87edc5ebffe847ebb30de077a',1,'ExternalSystem']]],
+  ['core_5finc_5ffiles_5fcan1_5fdbc_9',['Core_Inc_Files_can1_dbc',['../can1__dbc_8h.html#ac6a157f48a3a06f118dc529af295e2dc',1,'can1_dbc.h']]],
+  ['core_5finc_5ffiles_5fcan1_5fdbc_5flen_10',['Core_Inc_Files_can1_dbc_len',['../can1__dbc_8h.html#a5e83d8ae7f6ecec034168a1e983089f1',1,'can1_dbc.h']]]
 ];

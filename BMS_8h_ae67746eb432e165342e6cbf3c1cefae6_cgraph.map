@@ -1,0 +1,11 @@
+<map id="initBms" name="initBms">
+<area shape="rect" id="node1" title="Initializes the BMS with the given frequency." alt="" coords="5,105,72,131"/>
+<area shape="rect" id="node2" href="$ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="120,80,249,105"/>
+<area shape="rect" id="node9" href="$BMS_8c.html#a7cf1064f4bd9766093c805955762221a" title="Transfers raw BMS data to a BmsData structure." alt="" coords="141,129,229,155"/>
+<area shape="rect" id="node3" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="297,80,380,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="428,80,533,105"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="581,5,685,31"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="583,55,683,80"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="584,104,683,129"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="582,153,685,179"/>
+</map>

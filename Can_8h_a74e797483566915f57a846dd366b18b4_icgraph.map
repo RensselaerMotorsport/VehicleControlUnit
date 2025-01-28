@@ -1,0 +1,7 @@
+<map id="parseSignal" name="parseSignal">
+<area shape="rect" id="node1" title="Parses a CAN signal." alt="" coords="767,13,857,38"/>
+<area shape="rect" id="node2" href="$Can_8c.html#a5844510b96d146c9c3e5f7addeb5b93e" title="Parses signals in a CAN message." alt="" coords="621,13,719,38"/>
+<area shape="rect" id="node3" href="$Can_8c.html#a7b791ed820670f44703fc1bccd0b9424" title="Parses a CAN message." alt="" coords="467,13,573,38"/>
+<area shape="rect" id="node4" href="$Can_8c.html#ab6573fd95381dab7cdbd99990cb4f1de" title="Receives a CAN message." alt="" coords="260,13,419,38"/>
+<area shape="rect" id="node5" href="$stm32f7xx__it_8c.html#a7368d39e78009c017d6f81ccf33b9b2c" title=" " alt="" coords="5,5,212,45"/>
+</map>

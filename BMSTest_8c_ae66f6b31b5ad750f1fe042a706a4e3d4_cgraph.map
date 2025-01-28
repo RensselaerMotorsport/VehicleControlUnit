@@ -1,0 +1,17 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,129,56,155"/>
+<area shape="rect" id="node2" href="$BMS_8c.html#ae67746eb432e165342e6cbf3c1cefae6" title="Initializes the BMS with the given frequency." alt="" coords="289,129,356,155"/>
+<area shape="rect" id="node11" href="$BMSTest_8c.html#ae395c2e3728020529ae335f2fc708522" title=" " alt="" coords="116,129,205,155"/>
+<area shape="rect" id="node12" href="$BMSTest_8c.html#af0b8f947e2ae10029d9c50ba667a139e" title=" " alt="" coords="104,179,217,204"/>
+<area shape="rect" id="node3" href="$ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="428,80,557,105"/>
+<area shape="rect" id="node10" href="$BMS_8c.html#a7cf1064f4bd9766093c805955762221a" title="Transfers raw BMS data to a BmsData structure." alt="" coords="449,129,537,155"/>
+<area shape="rect" id="node4" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="605,80,688,105"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="736,80,841,105"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="889,5,993,31"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="891,55,991,80"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="892,104,991,129"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="890,153,993,179"/>
+<area shape="rect" id="node13" href="$BMSTest_8c.html#aeff4a621d9f3876dc688b3124f52dab8" title=" " alt="" coords="296,179,349,204"/>
+<area shape="rect" id="node15" href="$BMS_8c.html#a10af120a70d76353d9393baae51e5b65" title="Updates the BMS data." alt="" coords="265,228,380,253"/>
+<area shape="rect" id="node14" href="$BMSTest_8c.html#a949af0347e8fbff4ef5c8166d5fe765f" title=" " alt="" coords="453,179,532,204"/>
+</map>

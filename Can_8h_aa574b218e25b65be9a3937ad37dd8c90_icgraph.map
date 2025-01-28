@@ -1,0 +1,5 @@
+<map id="add_message" name="add_message">
+<area shape="rect" id="node1" title="Adds a message to the CAN message list." alt="" coords="279,5,381,31"/>
+<area shape="rect" id="node2" href="$Can_8c.html#aaa66bbcc6c19cff3ff9429a7ec553c7e" title="Adds a message to the CAN message list by passing in the individual message parameters hence &quot;LOP&quot; (L..." alt="" coords="104,5,231,31"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
+</map>

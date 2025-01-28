@@ -8,5 +8,6 @@ var searchData=
   ['timeutils_2eh_5',['TimeUtils.h',['../TimeUtils_8h.html',1,'']]],
   ['torquecontrol_2ec_6',['TorqueControl.c',['../TorqueControl_8c.html',1,'']]],
   ['torquecontrol_2eh_7',['TorqueControl.h',['../TorqueControl_8h.html',1,'']]],
-  ['torquecontrolactuatortest_2ec_8',['TorqueControlActuatorTest.c',['../TorqueControlActuatorTest_8c.html',1,'']]]
+  ['torquecontrolactuatortest_2ec_8',['TorqueControlActuatorTest.c',['../TorqueControlActuatorTest_8c.html',1,'']]],
+  ['torquemonitor_2eh_9',['TorqueMonitor.h',['../TorqueMonitor_8h.html',1,'']]]
 ];

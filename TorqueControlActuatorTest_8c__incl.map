@@ -1,11 +1,4 @@
-<map id="Core/Tests/TorqueControlActuatorTest.c" name="Core/Tests/TorqueControlActuatorTest.c">
-<area shape="rect" id="node1" title=" " alt="" coords="289,5,459,45"/>
-<area shape="rect" id="node2" href="$TorqueControl_8h.html" title=" " alt="" coords="292,93,456,133"/>
-<area shape="rect" id="node3" href="$ControllerSystem_8h.html" title=" " alt="" coords="303,181,445,207"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,475,65,500"/>
-<area shape="rect" id="node5" title=" " alt="" coords="416,475,479,500"/>
-<area shape="rect" id="node6" title=" " alt="" coords="270,475,334,500"/>
-<area shape="rect" id="node7" href="$System_8h.html" title=" " alt="" coords="236,328,312,353"/>
-<area shape="rect" id="node9" href="$MonitorSystem_8h.html" title=" " alt="" coords="315,255,433,280"/>
-<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="98,401,237,427"/>
+<map id="Core/Tests/Systems/Controller/TorqueControlActuatorTest.c" name="Core/Tests/Systems/Controller/TorqueControlActuatorTest.c">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,220,60"/>
+<area shape="rect" id="node2" title=" " alt="" coords="31,108,195,148"/>
 </map>

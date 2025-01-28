@@ -1,12 +1,11 @@
 <map id="Core/Inc/Systems/MonitorSystem.h" name="Core/Inc/Systems/MonitorSystem.h">
-<area shape="rect" id="node1" title=" " alt="" coords="515,5,688,45"/>
-<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="407,93,593,133"/>
-<area shape="rect" id="node10" href="$MonitorSystem_8c.html" title=" " alt="" coords="617,93,791,133"/>
-<area shape="rect" id="node3" href="$Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="198,181,383,221"/>
-<area shape="rect" id="node6" href="$TorqueControl_8h.html" title=" " alt="" coords="407,181,593,221"/>
-<area shape="rect" id="node9" href="$ControllerSystem_8c.html" title=" " alt="" coords="617,181,804,221"/>
+<area shape="rect" id="node1" title=" " alt="" coords="425,5,599,45"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="215,93,401,133"/>
+<area shape="rect" id="node8" href="$TorqueMonitor_8h.html" title=" " alt="" coords="425,93,599,133"/>
+<area shape="rect" id="node9" href="$MonitorSystem_8c.html" title=" " alt="" coords="623,93,798,133"/>
+<area shape="rect" id="node3" href="$Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="6,181,191,221"/>
+<area shape="rect" id="node5" href="$TorqueControl_8h.html" title=" " alt="" coords="215,181,401,221"/>
+<area shape="rect" id="node7" href="$ControllerSystem_8c.html" title=" " alt="" coords="425,181,612,221"/>
 <area shape="rect" id="node4" href="$Apps_8c.html" title=" " alt="" coords="5,269,192,309"/>
-<area shape="rect" id="node5" href="$AppsTest_8c.html" title=" " alt="" coords="217,277,373,302"/>
-<area shape="rect" id="node7" href="$TorqueControl_8c.html" title=" " alt="" coords="404,269,591,309"/>
-<area shape="rect" id="node8" href="$TorqueControlActuatorTest_8c.html" title=" " alt="" coords="615,269,785,309"/>
+<area shape="rect" id="node6" href="$TorqueControl_8c.html" title=" " alt="" coords="216,269,403,309"/>
 </map>

@@ -1,4 +1,8 @@
 <map id="initExternalSystem" name="initExternalSystem">
-<area shape="rect" id="node1" title=" " alt="" coords="116,5,245,31"/>
-<area shape="rect" id="node2" href="$IMD_8c.html#a5f75b2b0a3ee8220e821866d11c53c35" title="Initializes the IMD with the specified frequency." alt="" coords="5,5,68,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="380,49,509,75"/>
+<area shape="rect" id="node2" href="$BMS_8c.html#ae67746eb432e165342e6cbf3c1cefae6" title="Initializes the BMS with the given frequency." alt="" coords="265,24,332,49"/>
+<area shape="rect" id="node6" href="$Imd_8c.html#a5f75b2b0a3ee8220e821866d11c53c35" title="Initializes the IMD with the specified frequency." alt="" coords="267,73,330,99"/>
+<area shape="rect" id="node3" href="$BMSTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,24,56,49"/>
+<area shape="rect" id="node4" href="$BMSTest_8c.html#ae395c2e3728020529ae335f2fc708522" title=" " alt="" coords="116,24,205,49"/>
+<area shape="rect" id="node5" href="$BMSTest_8c.html#af0b8f947e2ae10029d9c50ba667a139e" title=" " alt="" coords="104,73,217,99"/>
 </map>

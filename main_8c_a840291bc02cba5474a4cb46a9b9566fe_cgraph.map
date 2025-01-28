@@ -1,22 +1,26 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title="The application entry point." alt="" coords="5,425,56,451"/>
-<area shape="rect" id="node2" href="$main_8c.html#aaa163e37853e6fc971474824d9f655ca" title="ADC1 Initialization Function." alt="" coords="147,5,255,31"/>
-<area shape="rect" id="node4" href="$main_8c.html#a4e987f0fdef6459c1a03ca830bac23f5" title="ADC2 Initialization Function." alt="" coords="147,55,255,80"/>
-<area shape="rect" id="node5" href="$main_8c.html#ae1e1b355e2d7714a267fee7e71891e59" title="ADC3 Initialization Function." alt="" coords="147,104,255,129"/>
-<area shape="rect" id="node6" href="$main_8c.html#a26a9a123c67bc69ec4660783b1c0e4b0" title="CAN1 Initialization Function." alt="" coords="147,153,256,179"/>
-<area shape="rect" id="node7" href="$main_8c.html#a928b689216b902fce7bb2cc61d75c032" title="CAN2 Initialization Function." alt="" coords="147,203,256,228"/>
-<area shape="rect" id="node8" href="$main_8c.html#a608dc9e9bcaf978f1611f3ec57670f64" title=" " alt="" coords="150,252,253,277"/>
-<area shape="rect" id="node9" href="$main_8c.html#ae89fdd15729ad41a66911190fcbab23a" title="GPIO Initialization Function." alt="" coords="148,301,255,327"/>
-<area shape="rect" id="node10" href="$main_8c.html#a4230d11f81d0b16e112f1cc3f40cb42f" title="I2C1 Initialization Function." alt="" coords="151,351,252,376"/>
-<area shape="rect" id="node11" href="$main_8c.html#af71812af4fbb9ebbe0f681165b657433" title="I2C2 Initialization Function." alt="" coords="151,400,252,425"/>
-<area shape="rect" id="node12" href="$main_8c.html#af4e34667b0cb79444cb7933306644053" title="I2C4 Initialization Function." alt="" coords="151,449,252,475"/>
-<area shape="rect" id="node13" href="$main_8c.html#ad13211e797777a447435fa0b54dcac7c" title="SPI3 Initialization Function." alt="" coords="150,499,253,524"/>
-<area shape="rect" id="node14" href="$main_8c.html#ae687426e9c731fb50a2a7b96dd24809e" title="SPI4 Initialization Function." alt="" coords="150,548,253,573"/>
-<area shape="rect" id="node15" href="$main_8c.html#ac69056d4aa54e5b93e9a98478a7031bc" title="SPI5 Initialization Function." alt="" coords="150,597,253,623"/>
-<area shape="rect" id="node16" href="$main_8c.html#a1d1beb7da60021ee1adbca294f28ba88" title="TIM1 Initialization Function." alt="" coords="149,647,253,672"/>
-<area shape="rect" id="node17" href="$main_8c.html#a6db1014d713f6f5c0f52a13299ee0733" title="USART2 Initialization Function." alt="" coords="117,696,286,721"/>
-<area shape="rect" id="node18" href="$main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8" title="USART3 Initialization Function." alt="" coords="117,745,286,771"/>
-<area shape="rect" id="node19" href="$main_8c.html#a03b71abc2ed6e7a94a08e94b1d74542f" title="USB_OTG_FS Initialization Function." alt="" coords="104,795,299,820"/>
-<area shape="rect" id="node20" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="130,844,273,869"/>
-<area shape="rect" id="node3" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="347,475,448,500"/>
+<area shape="rect" id="node1" title="The application entry point." alt="" coords="5,475,56,500"/>
+<area shape="rect" id="node2" href="$Can_8c.html#aaa66bbcc6c19cff3ff9429a7ec553c7e" title="Adds a message to the CAN message list by passing in the individual message parameters hence &quot;LOP&quot; (L..." alt="" coords="125,5,252,31"/>
+<area shape="rect" id="node4" href="$Can_8c.html#a285e1f1e8fb19554cc1da922de670853" title="Initializes the CANBus struct." alt="" coords="140,55,237,80"/>
+<area shape="rect" id="node5" href="$main_8c.html#aaa163e37853e6fc971474824d9f655ca" title="ADC1 Initialization Function." alt="" coords="135,104,243,129"/>
+<area shape="rect" id="node7" href="$main_8c.html#a4e987f0fdef6459c1a03ca830bac23f5" title="ADC2 Initialization Function." alt="" coords="135,153,243,179"/>
+<area shape="rect" id="node8" href="$main_8c.html#ae1e1b355e2d7714a267fee7e71891e59" title="ADC3 Initialization Function." alt="" coords="135,203,243,228"/>
+<area shape="rect" id="node9" href="$main_8c.html#a26a9a123c67bc69ec4660783b1c0e4b0" title="CAN1 Initialization Function." alt="" coords="134,252,243,277"/>
+<area shape="rect" id="node10" href="$main_8c.html#a928b689216b902fce7bb2cc61d75c032" title="CAN2 Initialization Function." alt="" coords="134,301,243,327"/>
+<area shape="rect" id="node11" href="$main_8c.html#a608dc9e9bcaf978f1611f3ec57670f64" title=" " alt="" coords="137,351,240,376"/>
+<area shape="rect" id="node12" href="$main_8c.html#ae89fdd15729ad41a66911190fcbab23a" title="GPIO Initialization Function." alt="" coords="135,400,242,425"/>
+<area shape="rect" id="node13" href="$main_8c.html#a4230d11f81d0b16e112f1cc3f40cb42f" title="I2C1 Initialization Function." alt="" coords="138,449,239,475"/>
+<area shape="rect" id="node14" href="$main_8c.html#af71812af4fbb9ebbe0f681165b657433" title="I2C2 Initialization Function." alt="" coords="138,499,239,524"/>
+<area shape="rect" id="node15" href="$main_8c.html#af4e34667b0cb79444cb7933306644053" title="I2C4 Initialization Function." alt="" coords="138,548,239,573"/>
+<area shape="rect" id="node16" href="$main_8c.html#ad13211e797777a447435fa0b54dcac7c" title="SPI3 Initialization Function." alt="" coords="137,597,240,623"/>
+<area shape="rect" id="node17" href="$main_8c.html#ae687426e9c731fb50a2a7b96dd24809e" title="SPI4 Initialization Function." alt="" coords="137,647,240,672"/>
+<area shape="rect" id="node18" href="$main_8c.html#ac69056d4aa54e5b93e9a98478a7031bc" title="SPI5 Initialization Function." alt="" coords="137,696,240,721"/>
+<area shape="rect" id="node19" href="$main_8c.html#a1d1beb7da60021ee1adbca294f28ba88" title="TIM1 Initialization Function." alt="" coords="137,745,241,771"/>
+<area shape="rect" id="node20" href="$main_8c.html#a1c98cc38e233c6b46ca2bf9598a5fce8" title="USART3 Initialization Function." alt="" coords="104,795,273,820"/>
+<area shape="rect" id="node21" href="$Can_8c.html#afcb4d14a6399d98f15b8f5b06f6553ee" title="Prints the CAN message list." alt="" coords="114,845,263,885"/>
+<area shape="rect" id="node22" href="$Can_8c.html#ab548c908781d5286aae1c2b28977ff09" title="Sends a CAN message." alt="" coords="116,959,261,984"/>
+<area shape="rect" id="node24" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="117,909,260,935"/>
+<area shape="rect" id="node3" href="$Can_8c.html#aa574b218e25b65be9a3937ad37dd8c90" title="Adds a message to the CAN message list." alt="" coords="363,5,466,31"/>
+<area shape="rect" id="node6" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="364,524,465,549"/>
+<area shape="rect" id="node23" href="$stm32f7xx__it_8c.html#a2669226967657bbddee51792f59293e2" title=" " alt="" coords="321,959,508,984"/>
 </map>

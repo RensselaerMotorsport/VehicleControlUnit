@@ -1,4 +1,7 @@
 <map id="updateBms" name="updateBms">
-<area shape="rect" id="node1" title="Updates the BMS data." alt="" coords="120,5,208,31"/>
-<area shape="rect" id="node2" href="$BMS_8c.html#afeeadcad4acba40f2d7197368054b051" title="Initializes the BMS with the given frequency." alt="" coords="5,5,72,31"/>
+<area shape="rect" id="node1" title="Transfers raw BMS data to a BmsData structure." alt="" coords="380,24,468,49"/>
+<area shape="rect" id="node2" href="$BMS_8c.html#ae67746eb432e165342e6cbf3c1cefae6" title="Initializes the BMS with the given frequency." alt="" coords="265,24,332,49"/>
+<area shape="rect" id="node3" href="$BMSTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,24,56,49"/>
+<area shape="rect" id="node4" href="$BMSTest_8c.html#ae395c2e3728020529ae335f2fc708522" title=" " alt="" coords="116,24,205,49"/>
+<area shape="rect" id="node5" href="$BMSTest_8c.html#af0b8f947e2ae10029d9c50ba667a139e" title=" " alt="" coords="104,73,217,99"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="CAN_Message_Template" name="CAN_Message_Template">
+<area shape="rect" id="node1" title=" " alt="" coords="5,93,176,119"/>
+<area shape="rect" id="node2" href="$structCAN__Signal__Template.html" title=" " alt="" coords="13,5,168,31"/>
+</map>

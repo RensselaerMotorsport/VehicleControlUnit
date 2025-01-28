@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['taskexecute_0',['TaskExecute',['../Task_8c.html#af74a92b4c3acbd7beebe1c7e404f6b99',1,'TaskExecute(Task *task):&#160;Task.c'],['../Task_8h.html#af74a92b4c3acbd7beebe1c7e404f6b99',1,'TaskExecute(Task *task):&#160;Task.c']]],
-  ['taskinit_1',['TaskInit',['../Task_8h.html#ada95c849b23900ccbebc6a389f6dba19',1,'TaskInit(Task *task, Sensor *sensor, int hz):&#160;Task.c'],['../Task_8c.html#ada95c849b23900ccbebc6a389f6dba19',1,'TaskInit(Task *task, Sensor *sensor, int hz):&#160;Task.c']]],
-  ['temptransferfunctionesc_2',['tempTransferFunctionEsc',['../Esc_8c.html#afabed0d8b479eb4da5703e2325262df2',1,'Esc.c']]],
-  ['testappsinit_3',['testAppsInit',['../AppsTest_8c.html#ad3434857738c097152914f7d136dfa68',1,'AppsTest.c']]],
-  ['testappsupdate_4',['testAppsUpdate',['../AppsTest_8c.html#ab4e80573ea468c574bdc6c38043cc2a1',1,'AppsTest.c']]],
-  ['testgetappsposition_5',['testGetAppsPosition',['../AppsTest_8c.html#a108151dc214894907b900f66e63d959a',1,'AppsTest.c']]],
-  ['testtorquecontrolinitialization_6',['testTorqueControlInitialization',['../TorqueControlActuatorTest_8c.html#a1a5fb3d5d0af531e86dd4fc1b4b900b0',1,'TorqueControlActuatorTest.c']]],
-  ['testtorqueupdate_7',['testTorqueUpdate',['../TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8',1,'TorqueControlActuatorTest.c']]],
-  ['testtransferfunction_8',['testTransferFunction',['../WheelSpeedTest_8c.html#a5a508e6c237eeb9cad95e7b1eac65956',1,'WheelSpeedTest.c']]],
-  ['torquesafetycheck_9',['torqueSafetyCheck',['../TorqueControl_8h.html#aeb14e63e836dcb3852ac13e89c82a800',1,'torqueSafetyCheck(void *tc):&#160;TorqueControl.c'],['../TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800',1,'torqueSafetyCheck(void *tc):&#160;TorqueControl.c']]],
-  ['tostringbmsdata_10',['toStringBmsData',['../BmsData_8h.html#af16280268efae856ebc869b7774a8564',1,'toStringBmsData(const BmsData *data):&#160;BmsData.c'],['../BmsData_8c.html#af16280268efae856ebc869b7774a8564',1,'toStringBmsData(const BmsData *data):&#160;BmsData.c']]],
-  ['tostringesc_11',['toStringEsc',['../Esc_8c.html#af4d9012e45c4291a50a3738c198178bf',1,'toStringEsc(const Esc *esc):&#160;Esc.c'],['../Esc_8h.html#af4d9012e45c4291a50a3738c198178bf',1,'toStringEsc(const Esc *esc):&#160;Esc.c']]],
-  ['tostringimd_12',['toStringImd',['../Imd_8h.html#a42260f65943f16375dd44f2d935953fd',1,'toStringImd(const Imd *imd):&#160;Imd.c'],['../Imd_8c.html#a42260f65943f16375dd44f2d935953fd',1,'toStringImd(const Imd *imd):&#160;Imd.c']]],
-  ['transferfunction_13',['transferFunction',['../Temperature_8h.html#a3fa5d8aac6a30b6c1a8b713d7bd17ee7',1,'transferFunction(Temperature *temp, int rawValue):&#160;Temperature.c'],['../Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1',1,'transferFunction(Temperature *temp, int rawVal):&#160;Temperature.c']]],
-  ['transferfunctionaccelerometer_14',['transferFunctionAccelerometer',['../Accelerometer_8h.html#a1f6be4d9ef1b0564e7462ee74523b4c6',1,'transferFunctionAccelerometer(float rawVal):&#160;Accelerometer.c'],['../Accelerometer_8c.html#a1f6be4d9ef1b0564e7462ee74523b4c6',1,'transferFunctionAccelerometer(float rawVal):&#160;Accelerometer.c']]],
-  ['transferfunctionapp_15',['transferFunctionApp',['../App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba',1,'transferFunctionApp(float rawVal):&#160;App.c'],['../App_8h.html#ac6a91028bac466dcd71f79aa06aa65ba',1,'transferFunctionApp(float rawVal):&#160;App.c']]],
-  ['transferfunctionbms_16',['transferFunctionBms',['../BMS_8h.html#ac21e9ae4c1a37f4aea3deb4dadb0e9e1',1,'transferFunctionBms(float *rawdata):&#160;BMS.c'],['../BMS_8c.html#a620d8c276477a59b82aeed5a804ca2e5',1,'transferFunctionBms(float *rawData):&#160;BMS.c']]],
-  ['transferfunctionbrakepressure_17',['transferFunctionBrakePressure',['../BrakePressure_8h.html#a263953f8a1c52229189a61a9af3670c9',1,'transferFunctionBrakePressure(float rawVal):&#160;BrakePressure.c'],['../BrakePressure_8c.html#a263953f8a1c52229189a61a9af3670c9',1,'transferFunctionBrakePressure(float rawVal):&#160;BrakePressure.c']]],
-  ['transferfunctionshockpot_18',['transferFunctionShockPot',['../ShockPot_8h.html#afb25ee0b1b77e61690f7ff0c700754ab',1,'transferFunctionShockPot(float rawVal):&#160;ShockPot.c'],['../ShockPot_8c.html#afb25ee0b1b77e61690f7ff0c700754ab',1,'transferFunctionShockPot(float rawVal):&#160;ShockPot.c']]],
-  ['transferfunctionsteeringcolumn_19',['transferFunctionSteeringColumn',['../SteeringColumn_8h.html#addde23fa13ab83da9f43d4b3515a642e',1,'transferFunctionSteeringColumn(float rawVal):&#160;SteeringColumn.c'],['../SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e',1,'transferFunctionSteeringColumn(float rawVal):&#160;SteeringColumn.c']]]
+  ['receive_5fcan_5fmessage_0',['receive_CAN_message',['../Can_8h.html#aead04426c3102bfa7c6451f1682a1693',1,'receive_CAN_message(CAN_RxHeaderTypeDef *header, uint8_t *data, CANBus bus):&#160;Can.c'],['../Can_8c.html#ab6573fd95381dab7cdbd99990cb4f1de',1,'receive_CAN_message(CAN_RxHeaderTypeDef *RxHeader, uint8_t *RxData, CANBus bus):&#160;Can.c']]],
+  ['runextractsignalvaluetest_1',['runExtractSignalValueTest',['../CanTest_8c.html#a0416e8a759d74b2b36a993833fae637d',1,'CanTest.c']]],
+  ['runparsecandatatest_2',['runParseCanDataTest',['../CanTest_8c.html#a2b38b36949bbbd598c568b155e6ab1e6',1,'CanTest.c']]]
 ];

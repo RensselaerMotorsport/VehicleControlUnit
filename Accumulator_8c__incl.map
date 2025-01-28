@@ -1,14 +1,16 @@
-<map id="Core/Src/Sensors/CANSensors/Accumulator.c" name="Core/Src/Sensors/CANSensors/Accumulator.c">
-<area shape="rect" id="node1" title=" " alt="" coords="69,5,274,45"/>
-<area shape="rect" id="node2" href="$Accumulator_8h.html" title=" " alt="" coords="77,93,266,133"/>
-<area shape="rect" id="node3" href="$BMS_8h.html" title=" " alt="" coords="99,181,161,207"/>
-<area shape="rect" id="node12" href="$Imd_8h.html" title=" " alt="" coords="185,181,240,207"/>
-<area shape="rect" id="node4" href="$CANSensor_8h.html" title=" " alt="" coords="116,255,227,280"/>
-<area shape="rect" id="node10" href="$BmsData_8h.html" title=" " alt="" coords="5,255,92,280"/>
-<area shape="rect" id="node5" href="$Sensor_8h.html" title=" " alt="" coords="135,328,208,353"/>
-<area shape="rect" id="node6" title=" " alt="" coords="45,475,105,500"/>
-<area shape="rect" id="node7" title=" " alt="" coords="237,475,300,500"/>
-<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="102,401,241,427"/>
-<area shape="rect" id="node9" title=" " alt="" coords="139,475,203,500"/>
-<area shape="rect" id="node11" title=" " alt="" coords="23,328,98,353"/>
+<map id="Core/Src/Systems/External/Accumulator.c" name="Core/Src/Systems/External/Accumulator.c">
+<area shape="rect" id="node1" title=" " alt="" coords="201,5,379,45"/>
+<area shape="rect" id="node2" href="$Accumulator_8h.html" title=" " alt="" coords="211,93,369,133"/>
+<area shape="rect" id="node3" href="$BMS_8h.html" title=" " alt="" coords="218,181,279,207"/>
+<area shape="rect" id="node13" href="$Imd_8h.html" title=" " alt="" coords="347,181,401,207"/>
+<area shape="rect" id="node4" title=" " alt="" coords="41,262,105,287"/>
+<area shape="rect" id="node5" href="$ExternalSystem_8h.html" title=" " alt="" coords="308,262,440,287"/>
+<area shape="rect" id="node12" title=" " alt="" coords="129,255,283,295"/>
+<area shape="rect" id="node6" title=" " alt="" coords="5,563,65,588"/>
+<area shape="rect" id="node7" title=" " alt="" coords="416,563,479,588"/>
+<area shape="rect" id="node8" title=" " alt="" coords="270,563,334,588"/>
+<area shape="rect" id="node9" href="$System_8h.html" title=" " alt="" coords="236,416,312,441"/>
+<area shape="rect" id="node11" href="$CommsSystem_8h.html" title=" " alt="" coords="313,343,435,368"/>
+<area shape="rect" id="node10" href="$Updateable_8h.html" title=" " alt="" coords="98,489,237,515"/>
+<area shape="rect" id="node14" title=" " alt="" coords="465,262,539,287"/>
 </map>

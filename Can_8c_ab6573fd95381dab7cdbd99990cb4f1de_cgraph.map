@@ -1,0 +1,6 @@
+<map id="receive_CAN_message" name="receive_CAN_message">
+<area shape="rect" id="node1" title="Receives a CAN message." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="node2" href="$Can_8c.html#a7b791ed820670f44703fc1bccd0b9424" title="Parses a CAN message." alt="" coords="212,5,319,31"/>
+<area shape="rect" id="node3" href="$Can_8c.html#a5844510b96d146c9c3e5f7addeb5b93e" title="Parses signals in a CAN message." alt="" coords="367,5,464,31"/>
+<area shape="rect" id="node4" href="$Can_8c.html#a74e797483566915f57a846dd366b18b4" title="Parses a CAN signal." alt="" coords="512,5,603,31"/>
+</map>

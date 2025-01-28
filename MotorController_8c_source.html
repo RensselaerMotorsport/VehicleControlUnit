@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vehicle Control Unit: Core/Src/Sensors/CANSensors/MotorController.c Source File</title>
+<title>Vehicle Control Unit: Core/Src/Systems/External/MotorController.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,14 +70,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="dir_0a96c62f0905d0c168b247f49229291d.html">Sensors</a></li><li class="navelem"><a class="el" href="dir_40371cb22a8416c75c96c03166a67c95.html">CANSensors</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="dir_9caa121aa6542f06f12ebad342623dcd.html">Systems</a></li><li class="navelem"><a class="el" href="dir_16639e0f1cde00e27f171e99fec06fdc.html">External</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">MotorController.c</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="MotorController_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;../../../Inc/Sensors/CANSensors/MotorController.h&quot;</span></div>
+<a href="MotorController_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;../../../Inc/Systems/External/MotorController.h&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="MotorController_8h.html#a2cd228c513cc182b48edb193ce92d4c9">    3</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="MotorController_8c.html#a2cd228c513cc182b48edb193ce92d4c9">initMotorController</a>(<a class="code hl_struct" href="structMotorController.html">MotorController</a>* mc, <a class="code hl_struct" href="structEsc.html">Esc</a>* esc, <a class="code hl_struct" href="structApp.html">App</a>* app) {</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keywordflow">if</span> (mc != NULL) {</div>
@@ -100,7 +100,7 @@ $(function() {
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> 0.0;  <span class="comment">// Return default value if no esc</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 <div class="ttc" id="aApp_8h_html_a01be170ac09e9dd35ba3f18c537ae409"><div class="ttname"><a href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a></div><div class="ttdeci">float getAppPosition(App *app)</div><div class="ttdoc">Gets the current position of the APP.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00011">App.c:11</a></div></div>
-<div class="ttc" id="aEsc_8h_html_ab22e08670025a52ba2a27b404f22b2a5"><div class="ttname"><a href="Esc_8h.html#ab22e08670025a52ba2a27b404f22b2a5">getEscTemp</a></div><div class="ttdeci">float getEscTemp(const Esc *esc)</div><div class="ttdoc">Gets the temperature of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00016">Esc.c:16</a></div></div>
+<div class="ttc" id="aEsc_8h_html_ab22e08670025a52ba2a27b404f22b2a5"><div class="ttname"><a href="Esc_8h.html#ab22e08670025a52ba2a27b404f22b2a5">getEscTemp</a></div><div class="ttdeci">float getEscTemp(const Esc *esc)</div><div class="ttdoc">Gets the temperature of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00019">Esc.c:19</a></div></div>
 <div class="ttc" id="aMotorController_8c_html_a2cd228c513cc182b48edb193ce92d4c9"><div class="ttname"><a href="MotorController_8c.html#a2cd228c513cc182b48edb193ce92d4c9">initMotorController</a></div><div class="ttdeci">void initMotorController(MotorController *mc, Esc *esc, App *app)</div><div class="ttdoc">Initializes the MotorController with the given ESC and APP.</div><div class="ttdef"><b>Definition:</b> <a href="MotorController_8c_source.html#l00003">MotorController.c:3</a></div></div>
 <div class="ttc" id="aMotorController_8c_html_a2e791e4a0189d52d0e2cb54ce4451b86"><div class="ttname"><a href="MotorController_8c.html#a2e791e4a0189d52d0e2cb54ce4451b86">getMotorTemp</a></div><div class="ttdeci">float getMotorTemp(const MotorController *mc)</div><div class="ttdoc">Gets the motor temperature from the MotorController.</div><div class="ttdef"><b>Definition:</b> <a href="MotorController_8c_source.html#l00017">MotorController.c:17</a></div></div>
 <div class="ttc" id="aMotorController_8c_html_a5e58b938d347017c6e51634f7faa08f9"><div class="ttname"><a href="MotorController_8c.html#a5e58b938d347017c6e51634f7faa08f9">getPedalPosition</a></div><div class="ttdeci">float getPedalPosition(const MotorController *mc)</div><div class="ttdoc">Gets the pedal position from the MotorController.</div><div class="ttdef"><b>Definition:</b> <a href="MotorController_8c_source.html#l00010">MotorController.c:10</a></div></div>

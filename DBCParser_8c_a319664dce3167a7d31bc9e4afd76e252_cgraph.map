@@ -1,0 +1,4 @@
+<map id="parseDbcFile" name="parseDbcFile">
+<area shape="rect" id="node1" title="Parses a DBC (CAN database) file and populates the DBC structure." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="node2" href="$DBCParser_8c.html#aae9a66c2121256fbf6275933288b93cc" title="Parses a single line of a DBC file and populates the CAN_MessageList structure." alt="" coords="152,5,255,31"/>
+</map>

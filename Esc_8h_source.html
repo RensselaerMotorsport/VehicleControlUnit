@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vehicle Control Unit: Core/Inc/Sensors/CANSensors/Esc.h Source File</title>
+<title>Vehicle Control Unit: Core/Inc/Systems/External/Esc.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="dir_11ce29cd7559a9daa2e9ee3919051245.html">Sensors</a></li><li class="navelem"><a class="el" href="dir_939951801ba0c75cd2d4045efaa3d26a.html">CANSensors</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="dir_87f32e59e1d2c13ace05490ab0357862.html">Systems</a></li><li class="navelem"><a class="el" href="dir_afe25ba6330f0a0548152150b84cd5d4.html">External</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,10 +80,10 @@ $(function() {
 <a href="Esc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef RENNSSELAERMOTORSPORT_ESC_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RENNSSELAERMOTORSPORT_ESC_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../CANSensor.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../ExternalSystem.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structEsc.html">    6</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">    7</a></span>    <a class="code hl_struct" href="structCANSensor.html">CANSensor</a> <a class="code hl_variable" href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">base</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">// CANSensor base;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">    8</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a>;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structEsc.html#a53f6f026be346b4972082111f32604ef">    9</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>} <a class="code hl_struct" href="structEsc.html">Esc</a>;</div>
@@ -99,16 +99,14 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">char</span>* <a class="code hl_function" href="Esc_8h.html#af4d9012e45c4291a50a3738c198178bf">toStringEsc</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structEsc.html">Esc</a>* esc);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// RENNSSELAERMOTORSPORT_ESC_H</span></div>
-<div class="ttc" id="aEsc_8h_html_a2341be410f98db76ae4ff696ce496cce"><div class="ttname"><a href="Esc_8h.html#a2341be410f98db76ae4ff696ce496cce">updateEsc</a></div><div class="ttdeci">void updateEsc(void *esc)</div><div class="ttdoc">Updates the ESC data.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00024">Esc.c:24</a></div></div>
-<div class="ttc" id="aEsc_8h_html_a3f3b40db38f7ae61b52114ae8c25a05d"><div class="ttname"><a href="Esc_8h.html#a3f3b40db38f7ae61b52114ae8c25a05d">getEscMotorRevolutions</a></div><div class="ttdeci">float getEscMotorRevolutions(const Esc *esc)</div><div class="ttdoc">Gets the motor revolutions of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00020">Esc.c:20</a></div></div>
+<div class="ttc" id="aEsc_8h_html_a2341be410f98db76ae4ff696ce496cce"><div class="ttname"><a href="Esc_8h.html#a2341be410f98db76ae4ff696ce496cce">updateEsc</a></div><div class="ttdeci">void updateEsc(void *esc)</div><div class="ttdoc">Updates the ESC data.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00027">Esc.c:27</a></div></div>
+<div class="ttc" id="aEsc_8h_html_a3f3b40db38f7ae61b52114ae8c25a05d"><div class="ttname"><a href="Esc_8h.html#a3f3b40db38f7ae61b52114ae8c25a05d">getEscMotorRevolutions</a></div><div class="ttdeci">float getEscMotorRevolutions(const Esc *esc)</div><div class="ttdoc">Gets the motor revolutions of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00023">Esc.c:23</a></div></div>
 <div class="ttc" id="aEsc_8h_html_a88716097de898ba50d9866c5639e8c52"><div class="ttname"><a href="Esc_8h.html#a88716097de898ba50d9866c5639e8c52">initEsc</a></div><div class="ttdeci">void initEsc(Esc *esc, int hz)</div><div class="ttdoc">Initializes the ESC with the given frequency.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00005">Esc.c:5</a></div></div>
-<div class="ttc" id="aEsc_8h_html_ab22e08670025a52ba2a27b404f22b2a5"><div class="ttname"><a href="Esc_8h.html#ab22e08670025a52ba2a27b404f22b2a5">getEscTemp</a></div><div class="ttdeci">float getEscTemp(const Esc *esc)</div><div class="ttdoc">Gets the temperature of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00016">Esc.c:16</a></div></div>
-<div class="ttc" id="aEsc_8h_html_af4d9012e45c4291a50a3738c198178bf"><div class="ttname"><a href="Esc_8h.html#af4d9012e45c4291a50a3738c198178bf">toStringEsc</a></div><div class="ttdeci">char * toStringEsc(const Esc *esc)</div><div class="ttdoc">Converts the Esc structure to a string.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00041">Esc.c:41</a></div></div>
-<div class="ttc" id="astructCANSensor_html"><div class="ttname"><a href="structCANSensor.html">CANSensor</a></div><div class="ttdef"><b>Definition:</b> <a href="CANSensor_8h_source.html#l00006">CANSensor.h:6</a></div></div>
+<div class="ttc" id="aEsc_8h_html_ab22e08670025a52ba2a27b404f22b2a5"><div class="ttname"><a href="Esc_8h.html#ab22e08670025a52ba2a27b404f22b2a5">getEscTemp</a></div><div class="ttdeci">float getEscTemp(const Esc *esc)</div><div class="ttdoc">Gets the temperature of the ESC.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00019">Esc.c:19</a></div></div>
+<div class="ttc" id="aEsc_8h_html_af4d9012e45c4291a50a3738c198178bf"><div class="ttname"><a href="Esc_8h.html#af4d9012e45c4291a50a3738c198178bf">toStringEsc</a></div><div class="ttdeci">char * toStringEsc(const Esc *esc)</div><div class="ttdoc">Converts the Esc structure to a string.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00044">Esc.c:44</a></div></div>
 <div class="ttc" id="astructEsc_html"><div class="ttname"><a href="structEsc.html">Esc</a></div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00006">Esc.h:6</a></div></div>
 <div class="ttc" id="astructEsc_html_a4b81f1d8720191542be8cef2e2ef05c4"><div class="ttname"><a href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">Esc::temp</a></div><div class="ttdeci">float temp</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00008">Esc.h:8</a></div></div>
 <div class="ttc" id="astructEsc_html_a53f6f026be346b4972082111f32604ef"><div class="ttname"><a href="structEsc.html#a53f6f026be346b4972082111f32604ef">Esc::motor_revolutions</a></div><div class="ttdeci">float motor_revolutions</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00009">Esc.h:9</a></div></div>
-<div class="ttc" id="astructEsc_html_ac364076c8cfdfb5fb90efbedfbdca3c1"><div class="ttname"><a href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">Esc::base</a></div><div class="ttdeci">CANSensor base</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00007">Esc.h:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

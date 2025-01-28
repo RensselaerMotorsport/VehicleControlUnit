@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vehicle Control Unit: Core/Src/Sensors/CANSensors/Esc.c File Reference</title>
+<title>Vehicle Control Unit: Core/Src/Systems/External/Esc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="dir_0a96c62f0905d0c168b247f49229291d.html">Sensors</a></li><li class="navelem"><a class="el" href="dir_40371cb22a8416c75c96c03166a67c95.html">CANSensors</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li><li class="navelem"><a class="el" href="dir_9caa121aa6542f06f12ebad342623dcd.html">Systems</a></li><li class="navelem"><a class="el" href="dir_16639e0f1cde00e27f171e99fec06fdc.html">External</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,21 +79,22 @@ $(function() {
   <div class="headertitle"><div class="title">Esc.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Esc_8h_source.html">../../../Inc/Sensors/CANSensors/Esc.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Esc_8h_source.html">../../../Inc/Systems/External/Esc.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Esc.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="Esc_8c__incl.png" border="0" usemap="#aCore_2Src_2Sensors_2CANSensors_2Esc_8c" alt=""/></div>
-<map name="aCore_2Src_2Sensors_2CANSensors_2Esc_8c" id="aCore_2Src_2Sensors_2CANSensors_2Esc_8c">
-<area shape="rect" title=" " alt="" coords="123,5,329,45"/>
-<area shape="rect" href="Esc_8h.html" title=" " alt="" coords="103,93,242,133"/>
-<area shape="rect" title=" " alt="" coords="211,401,271,427"/>
-<area shape="rect" href="CANSensor_8h.html" title=" " alt="" coords="92,181,203,207"/>
-<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="104,255,177,280"/>
-<area shape="rect" title=" " alt="" coords="5,401,68,427"/>
-<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="65,328,203,353"/>
-<area shape="rect" title=" " alt="" coords="102,401,166,427"/>
+<div class="center"><img src="Esc_8c__incl.png" border="0" usemap="#aCore_2Src_2Systems_2External_2Esc_8c" alt=""/></div>
+<map name="aCore_2Src_2Systems_2External_2Esc_8c" id="aCore_2Src_2Systems_2External_2Esc_8c">
+<area shape="rect" title=" " alt="" coords="5,5,184,45"/>
+<area shape="rect" href="Esc_8h.html" title=" " alt="" coords="215,93,340,133"/>
+<area shape="rect" title=" " alt="" coords="117,475,177,500"/>
+<area shape="rect" href="ExternalSystem_8h.html" title=" " alt="" coords="394,181,526,207"/>
+<area shape="rect" title=" " alt="" coords="553,475,615,500"/>
+<area shape="rect" title=" " alt="" coords="407,475,471,500"/>
+<area shape="rect" href="System_8h.html" title=" " alt="" coords="373,328,449,353"/>
+<area shape="rect" href="CommsSystem_8h.html" title=" " alt="" coords="449,255,570,280"/>
+<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="235,401,373,427"/>
 </map>
 </div>
 </div>
@@ -147,10 +148,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The motor revolutions of the ESC. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00020">20</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>                                             {</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">return</span> esc-&gt;<a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a>;</div>
-<div class="line"><span class="lineno">   22</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00023">23</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                             {</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> esc-&gt;<a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a>;</div>
+<div class="line"><span class="lineno">   25</span>}</div>
 <div class="ttc" id="astructEsc_html_a53f6f026be346b4972082111f32604ef"><div class="ttname"><a href="structEsc.html#a53f6f026be346b4972082111f32604ef">Esc::motor_revolutions</a></div><div class="ttdeci">float motor_revolutions</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00009">Esc.h:9</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -180,10 +181,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The temperature of the ESC. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00016">16</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                                 {</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">return</span> esc-&gt;<a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a>;</div>
-<div class="line"><span class="lineno">   18</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00019">19</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                 {</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> esc-&gt;<a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a>;</div>
+<div class="line"><span class="lineno">   21</span>}</div>
 <div class="ttc" id="astructEsc_html_a4b81f1d8720191542be8cef2e2ef05c4"><div class="ttname"><a href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">Esc::temp</a></div><div class="ttdeci">float temp</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00008">Esc.h:8</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -234,38 +235,19 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00005">5</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>                               {</div>
-<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (esc == NULL) {</div>
-<div class="line"><span class="lineno">    7</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">    8</span>    }</div>
-<div class="line"><span class="lineno">    9</span> </div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_function" href="CANSensor_8h.html#a0331142dd6c26bd37590734c174cb274">initCANSensor</a>(&amp;esc-&gt;<a class="code hl_variable" href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">base</a>, <span class="stringliteral">&quot;Esc&quot;</span>, hz);</div>
-<div class="line"><span class="lineno">   11</span>    esc-&gt;<a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a> = 0.0;</div>
-<div class="line"><span class="lineno">   12</span>    esc-&gt;<a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a> = 0.0;</div>
-<div class="line"><span class="lineno">   13</span>    esc-&gt;<a class="code hl_variable" href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">base</a>.<a class="code hl_variable" href="structCANSensor.html#ab11fe7898bbab5b103fa014eaa9c1fad">sensor</a>.<a class="code hl_variable" href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a> = <a class="code hl_function" href="Esc_8c.html#a2341be410f98db76ae4ff696ce496cce">updateEsc</a>;</div>
-<div class="line"><span class="lineno">   14</span>}</div>
-<div class="ttc" id="aCANSensor_8h_html_a0331142dd6c26bd37590734c174cb274"><div class="ttname"><a href="CANSensor_8h.html#a0331142dd6c26bd37590734c174cb274">initCANSensor</a></div><div class="ttdeci">void initCANSensor(CANSensor *canSensor, const char *name, int hz)</div><div class="ttdoc">Initializes a CAN sensor with the given parameters.</div><div class="ttdef"><b>Definition:</b> <a href="CANSensor_8c_source.html#l00003">CANSensor.c:3</a></div></div>
-<div class="ttc" id="aEsc_8c_html_a2341be410f98db76ae4ff696ce496cce"><div class="ttname"><a href="Esc_8c.html#a2341be410f98db76ae4ff696ce496cce">updateEsc</a></div><div class="ttdeci">void updateEsc(void *esc)</div><div class="ttdoc">Updates the ESC data.</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8c_source.html#l00024">Esc.c:24</a></div></div>
-<div class="ttc" id="astructCANSensor_html_ab11fe7898bbab5b103fa014eaa9c1fad"><div class="ttname"><a href="structCANSensor.html#ab11fe7898bbab5b103fa014eaa9c1fad">CANSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="CANSensor_8h_source.html#l00007">CANSensor.h:7</a></div></div>
-<div class="ttc" id="astructEsc_html_ac364076c8cfdfb5fb90efbedfbdca3c1"><div class="ttname"><a href="structEsc.html#ac364076c8cfdfb5fb90efbedfbdca3c1">Esc::base</a></div><div class="ttdeci">CANSensor base</div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00007">Esc.h:7</a></div></div>
-<div class="ttc" id="astructSensor_html_a7e6cf7138f6d350fd2bf0a76fba7a2ad"><div class="ttname"><a href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">Sensor::updateable</a></div><div class="ttdeci">Updateable updateable</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00016">Sensor.h:16</a></div></div>
-<div class="ttc" id="astructUpdateable_html_a16ae43b8576f63634cc825a7294c7a78"><div class="ttname"><a href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">Updateable::update</a></div><div class="ttdeci">void(* update)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00026">Updateable.h:26</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Esc_8c_a88716097de898ba50d9866c5639e8c52_cgraph.png" border="0" usemap="#aEsc_8c_a88716097de898ba50d9866c5639e8c52_cgraph" alt=""/></div>
-<map name="aEsc_8c_a88716097de898ba50d9866c5639e8c52_cgraph" id="aEsc_8c_a88716097de898ba50d9866c5639e8c52_cgraph">
-<area shape="rect" title="Initializes the ESC with the given frequency." alt="" coords="5,105,67,131"/>
-<area shape="rect" href="CANSensor_8c.html#a0331142dd6c26bd37590734c174cb274" title="Initializes a CAN sensor with the given parameters." alt="" coords="115,80,223,105"/>
-<area shape="rect" href="Esc_8c.html#a2341be410f98db76ae4ff696ce496cce" title="Updates the ESC data." alt="" coords="127,129,210,155"/>
-<area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="271,80,351,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="399,80,504,105"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="552,5,656,31"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="554,55,654,80"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="555,104,653,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="553,153,655,179"/>
-</map>
-</div>
-
+<div class="line"><span class="lineno">    6</span>    <span class="keywordflow">if</span> (esc != NULL) {</div>
+<div class="line"><span class="lineno">    7</span>        <span class="comment">// initCANSensor(&amp;esc-&gt;base, &quot;Esc&quot;, hz, 0);</span></div>
+<div class="line"><span class="lineno">    8</span>        esc-&gt;<a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a> = 0.0;</div>
+<div class="line"><span class="lineno">    9</span>        esc-&gt;<a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a> = 0.0;</div>
+<div class="line"><span class="lineno">   10</span>        <span class="comment">// esc-&gt;base.sensor.updateable.update = updateEsc;</span></div>
+<div class="line"><span class="lineno">   11</span>    }</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// initCANSensor(&amp;esc-&gt;base, &quot;Esc&quot;, hz);</span></div>
+<div class="line"><span class="lineno">   14</span>    esc-&gt;<a class="code hl_variable" href="structEsc.html#a4b81f1d8720191542be8cef2e2ef05c4">temp</a> = 0.0;</div>
+<div class="line"><span class="lineno">   15</span>    esc-&gt;<a class="code hl_variable" href="structEsc.html#a53f6f026be346b4972082111f32604ef">motor_revolutions</a> = 0.0;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="comment">// esc-&gt;base.sensor.updateable.update = updateEsc;</span></div>
+<div class="line"><span class="lineno">   17</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1d48d66ecc4e88d905a656fe6becf6e6" name="a1d48d66ecc4e88d905a656fe6becf6e6"></a>
@@ -284,10 +266,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00037">37</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>                                                 {</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> x + 0.0;  <span class="comment">// TODO: Implement</span></div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00040">40</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                 {</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> x + 0.0;  <span class="comment">// TODO: Implement</span></div>
+<div class="line"><span class="lineno">   42</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,10 +289,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00033">33</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>                                     {</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> x + 0.0;  <span class="comment">// TODO: Implement</span></div>
-<div class="line"><span class="lineno">   35</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00036">36</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                     {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> x + 0.0;  <span class="comment">// TODO: Implement</span></div>
+<div class="line"><span class="lineno">   38</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,12 +321,12 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the string representation of the <a class="el" href="structEsc.html">Esc</a> structure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00041">41</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span>                                  {</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keyword">static</span> <span class="keywordtype">char</span> str[100];</div>
-<div class="line"><span class="lineno">   43</span>    <span class="comment">// sprintf(str, &quot;%f,%f&quot;, esc-&gt;temp, esc-&gt;motor_revolutions);</span></div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> str;</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00044">44</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                  {</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keyword">static</span> <span class="keywordtype">char</span> str[100];</div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// sprintf(str, &quot;%f,%f&quot;, esc-&gt;temp, esc-&gt;motor_revolutions);</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> str;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -372,26 +354,17 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00024">24</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>                          {</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_struct" href="structEsc.html">Esc</a>* myEsc = (<a class="code hl_struct" href="structEsc.html">Esc</a>*) esc;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="comment">// int data = myEsc-&gt;base.getData();  // Simplified assumption of data retrieval</span></div>
-<div class="line"><span class="lineno">   27</span>    <span class="comment">// myEsc-&gt;temp = tempTransferFunctionEsc(data);</span></div>
-<div class="line"><span class="lineno">   28</span>    <span class="comment">// myEsc-&gt;motor_revolutions = motorRevolutionsTransferFunctionEsc(data);</span></div>
-<div class="line"><span class="lineno">   29</span>    <span class="comment">// printf(&quot;ESC Temp: %f, Motor Revolutions: %f\n&quot;, myEsc-&gt;temp, myEsc-&gt;motor_revolutions);</span></div>
-<div class="line"><span class="lineno">   30</span>    printf(<span class="stringliteral">&quot;Implement updateEsc logic\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   31</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Esc_8c_source.html#l00027">27</a> of file <a class="el" href="Esc_8c_source.html">Esc.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                          {</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_struct" href="structEsc.html">Esc</a>* myEsc = (<a class="code hl_struct" href="structEsc.html">Esc</a>*) esc;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="comment">// int data = myEsc-&gt;base.getData();  // Simplified assumption of data retrieval</span></div>
+<div class="line"><span class="lineno">   30</span>    <span class="comment">// myEsc-&gt;temp = tempTransferFunctionEsc(data);</span></div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">// myEsc-&gt;motor_revolutions = motorRevolutionsTransferFunctionEsc(data);</span></div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">// printf(&quot;ESC Temp: %f, Motor Revolutions: %f\n&quot;, myEsc-&gt;temp, myEsc-&gt;motor_revolutions);</span></div>
+<div class="line"><span class="lineno">   33</span>    printf(<span class="stringliteral">&quot;Implement updateEsc logic\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
 <div class="ttc" id="astructEsc_html"><div class="ttname"><a href="structEsc.html">Esc</a></div><div class="ttdef"><b>Definition:</b> <a href="Esc_8h_source.html#l00006">Esc.h:6</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Esc_8c_a2341be410f98db76ae4ff696ce496cce_icgraph.png" border="0" usemap="#aEsc_8c_a2341be410f98db76ae4ff696ce496cce_icgraph" alt=""/></div>
-<map name="aEsc_8c_a2341be410f98db76ae4ff696ce496cce_icgraph" id="aEsc_8c_a2341be410f98db76ae4ff696ce496cce_icgraph">
-<area shape="rect" title="Updates the ESC data." alt="" coords="115,5,197,31"/>
-<area shape="rect" href="Esc_8c.html#a88716097de898ba50d9866c5639e8c52" title="Initializes the ESC with the given frequency." alt="" coords="5,5,67,31"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

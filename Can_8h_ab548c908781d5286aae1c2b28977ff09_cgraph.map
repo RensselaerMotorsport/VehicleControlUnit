@@ -1,0 +1,4 @@
+<map id="send_CAN_message" name="send_CAN_message">
+<area shape="rect" id="node1" title="Sends a CAN message." alt="" coords="5,5,151,31"/>
+<area shape="rect" id="node2" href="$stm32f7xx__it_8c.html#a2669226967657bbddee51792f59293e2" title=" " alt="" coords="199,5,385,31"/>
+</map>
