@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifndef TEST_MODE
+#include "stm32f7xx_hal.h"
+#endif
+
+
 // Circular buffer to store ADC samples
 static ADCSample adc_circular_buffer[BUFFER_SIZE];
 static uint32_t buffer_head = 0;
@@ -40,6 +45,7 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
     initSensor(&analogSensor->sensor, name, hz, ANALOG);
     analogSensor->channel = channel;
 
+    #ifndef TEST_MODE
     GPIO_InitTypeDef GPIOXout_Struct = {0};
     GPIOXout_Struct.Mode = GPIO_MODE_ANALOG;
     GPIOXout_Struct.Pull = GPIO_NOPULL;
@@ -72,6 +78,7 @@ void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int 
         GPIOXout_Struct.Pin = GPIO_PIN_4 << (channel - 14);
         /*HAL_GPIO_Init(GPIOC, &GPIOXout_Struct);*/
     }
+    #endif
 }
 
 /**
@@ -128,10 +135,13 @@ void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_dat
     addSampleToBuffer(sample);
 
     // Optional: UART debug output (adjust as needed)
-    /*char uart_buf[100];*/
-    /*snprintf(uart_buf, sizeof(uart_buf), "ADC0: %4d, ADC7: %4d, ADC10: %4d\r\n",*/
-    /*         sample.adc[0], sample.adc[7], sample.adc[10]);*/
-    /*HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);*/
+    char uart_buf[100];
+    snprintf(uart_buf, sizeof(uart_buf), "ADC0: %4d, ADC7: %4d, ADC10: %4d\r\n",
+             sample.adc[0], sample.adc[7], sample.adc[10]);
+    #ifndef TEST_MODE
+    HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
+    #endif
+
 }
 
 
