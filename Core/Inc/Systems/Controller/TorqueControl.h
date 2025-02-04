@@ -5,14 +5,6 @@
 
 #define TORQUE_ERROR_MARGIN 0.05 // TODO: Determine correct value for the margin, or change to lookup table if needed.
 
-// TODO: Move to torque police in the future
-typedef enum {
-    TORQUE_OK,
-    TORQUE_OVER_LIMIT,
-    TORQUE_UNDER_LIMIT,
-    TORQUE_SENSOR_ERROR
-} TorqueStatus;
-
 typedef struct {
     ControllerSystem base;
     float actualTorque;
@@ -56,7 +48,6 @@ void setActualTorque(TorqueControl* tc, float torque);
  */
 void updateTorqueControl(void* tc);
 
-
 /**
  * TODO: move into torque police
  *
@@ -70,12 +61,5 @@ TorqueStatus checkTorqueLimits(TorqueControl* tc);
 
 // TODO: Add doc / add function in if applicable
 void sendTorqueCommand(const TorqueControl* tc);
-
-/**
- * @brief Checks the safety of the torque with multiple monitors.
- *
- * @param tc A pointer to the TorqueControl structure.
- */
-int torqueSafetyCheck(void* tc);
 
 #endif // RENSSELAERMOTORSPORT_TORQUE_CONTROL_H

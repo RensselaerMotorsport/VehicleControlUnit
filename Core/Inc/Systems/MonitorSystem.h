@@ -25,6 +25,8 @@ typedef struct {
     System system;
     MonitorType type;
     FaultType fault;
+    // Default function to run MonitorSystem, takes in the monitor system and controller system
+    int (*runMonitor)(void* self);
 } MonitorSystem;
 
 /**
@@ -37,6 +39,6 @@ typedef struct {
  * @param fault The type of fault to execute when monitor trips (per FaultType).
 */
 void initMonitorSystem(MonitorSystem* monitor, const char* name, int hz,
-                       MonitorType type, FaultType fault);
+                       MonitorType type, FaultType fault, int (*runMonitor)(void* self));
 
 #endif // RENSSELAERMOTORSPORT_MONITOR_SYSTEM_H
