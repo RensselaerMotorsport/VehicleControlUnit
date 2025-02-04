@@ -6,5 +6,6 @@ var searchData=
   ['float_5ferror_3',['FLOAT_ERROR',['../BMSTest_8c.html#aca925e826a12507f44e22c892075885c',1,'BMSTest.c']]],
   ['floatequal_4',['floatEqual',['../BMSTest_8c.html#a949af0347e8fbff4ef5c8166d5fe765f',1,'BMSTest.c']]],
   ['front_5fleft_5',['FRONT_LEFT',['../WheelLocation_8h.html#a6bcc31f28038e411321704f9947331d7a3e4b80cb31443019e807a14549b1d2bd',1,'WheelLocation.h']]],
-  ['front_5fright_6',['FRONT_RIGHT',['../WheelLocation_8h.html#a6bcc31f28038e411321704f9947331d7aae8a476ec2a06c02ffb4074660093318',1,'WheelLocation.h']]]
+  ['front_5fright_6',['FRONT_RIGHT',['../WheelLocation_8h.html#a6bcc31f28038e411321704f9947331d7aae8a476ec2a06c02ffb4074660093318',1,'WheelLocation.h']]],
+  ['frontpressure_7',['frontPressure',['../structBrakeSystemControl.html#a6c4e084b930f7c2ec553d2628b1f8f6b',1,'BrakeSystemControl']]]
 ];

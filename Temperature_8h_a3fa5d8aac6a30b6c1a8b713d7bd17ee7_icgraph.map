@@ -1,6 +1,13 @@
 <map id="transferFunction" name="transferFunction">
-<area shape="rect" id="node1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="447,5,563,31"/>
-<area shape="rect" id="node2" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="264,5,399,31"/>
-<area shape="rect" id="node3" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="104,5,216,31"/>
-<area shape="rect" id="node4" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" id="node1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="905,129,1021,155"/>
+<area shape="rect" id="node2" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="723,129,857,155"/>
+<area shape="rect" id="node3" href="$Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="551,104,663,129"/>
+<area shape="rect" id="node11" href="$BrakeSystemControl_8c.html#a4a2ccc089278da59b7df2e00d0e61243" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="540,153,675,179"/>
+<area shape="rect" id="node4" href="$BrakeSystemControl_8c.html#a08566012ad9d058c3519af0767f6743a" title="Initializes the Braking System with initial settings." alt="" coords="333,80,492,105"/>
+<area shape="rect" id="node10" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="387,129,438,155"/>
+<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="104,5,285,31"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="131,55,258,80"/>
+<area shape="rect" id="node8" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="133,104,256,129"/>
+<area shape="rect" id="node9" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="136,153,253,179"/>
+<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,56,105"/>
 </map>

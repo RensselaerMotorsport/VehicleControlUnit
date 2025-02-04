@@ -1,8 +1,8 @@
 <map id="initIMD" name="initIMD">
 <area shape="rect" id="node1" title="Initializes the IMD with the specified frequency." alt="" coords="5,80,68,105"/>
-<area shape="rect" id="node2" href="$IMD_8c.html#ad1d26785fed119d06a15715387ebafd5" title="Gets the status of the IMD." alt="" coords="129,31,232,56"/>
+<area shape="rect" id="node2" href="$Imd_8c.html#ad1d26785fed119d06a15715387ebafd5" title="Gets the status of the IMD." alt="" coords="129,31,232,56"/>
 <area shape="rect" id="node3" href="$ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="116,80,245,105"/>
-<area shape="rect" id="node10" href="$IMD_8c.html#aece32b5a3b7ddffa613156314deb91c9" title="Updates the IMD values." alt="" coords="138,129,223,155"/>
+<area shape="rect" id="node10" href="$Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9" title="Updates the IMD values." alt="" coords="138,129,223,155"/>
 <area shape="rect" id="node4" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="293,80,376,105"/>
 <area shape="rect" id="node5" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="424,80,529,105"/>
 <area shape="rect" id="node6" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="577,5,681,31"/>

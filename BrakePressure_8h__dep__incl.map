@@ -1,4 +1,7 @@
 <map id="Core/Inc/Sensors/AnalogSensors/BrakePressure.h" name="Core/Inc/Sensors/AnalogSensors/BrakePressure.h">
-<area shape="rect" id="node1" title=" " alt="" coords="7,5,221,45"/>
-<area shape="rect" id="node2" href="$BrakePressure_8c.html" title=" " alt="" coords="5,93,223,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="122,5,337,45"/>
+<area shape="rect" id="node2" href="$BrakeSystemControl_8h.html" title=" " alt="" coords="137,93,322,133"/>
+<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html" title=" " alt="" coords="5,181,192,221"/>
+<area shape="rect" id="node5" href="$BrakePressure_8c.html" title=" " alt="" coords="346,93,563,133"/>
+<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html" title=" " alt="" coords="217,181,426,221"/>
 </map>

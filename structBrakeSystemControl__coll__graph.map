@@ -1,0 +1,11 @@
+<map id="BrakeSystemControl" name="BrakeSystemControl">
+<area shape="rect" id="node1" title=" " alt="" coords="134,372,275,397"/>
+<area shape="rect" id="node2" href="$structControllerSystem.html" title=" " alt="" coords="5,269,127,295"/>
+<area shape="rect" id="node3" href="$structSystem.html" title=" " alt="" coords="113,93,179,119"/>
+<area shape="rect" id="node5" href="$structMonitorSystem.html" title=" " alt="" coords="91,181,201,207"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="158,5,246,31"/>
+<area shape="rect" id="node8" href="$structSensor.html" title=" " alt="" coords="227,93,289,119"/>
+<area shape="rect" id="node6" href="$structBrakePressure.html" title=" " alt="" coords="151,269,259,295"/>
+<area shape="rect" id="node7" href="$structAnalogSensor.html" title=" " alt="" coords="225,181,328,207"/>
+<area shape="rect" id="node9" href="$structTemperature.html" title=" " alt="" coords="283,269,377,295"/>
+</map>

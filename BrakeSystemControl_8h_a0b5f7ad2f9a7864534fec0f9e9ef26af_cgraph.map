@@ -1,0 +1,4 @@
+<map id="activateBrakeLight" name="activateBrakeLight">
+<area shape="rect" id="node1" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="node2" href="$BrakePressure_8c.html#a60fc11e2ec7062cde216bb02ec3bcb2f" title="Gets the current brake pressure." alt="" coords="184,5,311,31"/>
+</map>
