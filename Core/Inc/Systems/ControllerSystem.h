@@ -15,9 +15,16 @@ typedef enum {
     c_APPS,
 } ControllerType;
 
+typedef enum {
+    c_idle,
+    c_computed,
+    c_validated
+} ControllerState;
+
 typedef struct {
     System system;
     ControllerType type;
+    ControllerState state;
     MonitorSystem* monitors[MAX_MONITORS]; // What monitors are associated with this controller?
     int num_monitors;
     int (*safety)(void* self); // Check if the controller is operating safely
@@ -53,6 +60,14 @@ int defaultAddMonitor(void* self, MonitorSystem* monitor);
  * @return SUCCESS if the monitor was removed, FAILURE otherwise.
 */
 int defaultRemoveMonitor(void* self, MonitorSystem* monitor);
+
+/**
+ * @brief Default safety function for ControllerSystem objects.
+ *
+ * @param self Pointer to the ControllerSystem object.
+ * @return int Status of the ControllerSystem object.
+*/
+int defaultSafety(void* self);
 
 #endif // RENSSELAERMOTORSPORT_CONTROLLER_SYSTEM_H
 

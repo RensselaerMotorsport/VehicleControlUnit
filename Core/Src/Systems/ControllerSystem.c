@@ -6,7 +6,7 @@ void initControllerSystem(ControllerSystem* controller, const char* name, int hz
     initSystem(&controller->system, name, hz, CONTROLLER);
     controller->type = type;
     controller->num_monitors = 0;
-    controller->safety = NULL;
+    controller->safety = defaultSafety;
 }
 
 int defaultAddMonitor(void* self, MonitorSystem* monitor) {
@@ -32,4 +32,20 @@ int defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
     }
     printf("Monitor not found in the controller\n");
     return FAILURE;
+}
+
+int defaultSafety(void* self) {
+    ControllerSystem* controller = (ControllerSystem*)self;
+    if (controller->num_monitors == 0) {
+        printf("No monitors set for Controller\n");
+        return FAILURE;
+    }
+    
+    ControllerSystem* controller = (ControllerSystem*)self;
+    for (int i = 0; i < controller->num_monitors; i++) {
+        if (controller->monitors[i]->runMonitor(controller->monitors[i]) == FAILURE) {
+            return FAILURE;
+        }
+    }
+    return SUCCESS;
 }
