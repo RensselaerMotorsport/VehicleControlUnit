@@ -1,6 +1,4 @@
-#include <assert.h>
 #include <stdbool.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 /* Defines a mapping from one input to one output. */
@@ -34,7 +32,10 @@ typedef struct {
 /* Allocates memory for a table. */
 table *table_alloc(unsigned long count) {
   // The table must contain at least two elements; a minimum and a maximum
-  assert(count >= 2);
+  // assert(count >= 2);
+  if (count < 2) {
+    return NULL;
+  }
 
   unsigned long size = sizeof(table) + count * sizeof(point);
 
@@ -69,10 +70,10 @@ void table_init_linear(table *table, double in_min, double in_max,
 
 /* Prints the points of the table. */
 void table_print(const table *table) {
-  for (unsigned long n = 0; n < table->count; n++) {
-    point point = table->points[n];
-    printf("%f -> %f\n", point.input, point.output);
-  }
+//  for (unsigned long n = 0; n < table->count; n++) {
+//    point point = table->points[n];
+//    printf("%f -> %f\n", point.input, point.output);
+//  }
 }
 
 /* Sorts the table by input,  */
@@ -93,8 +94,9 @@ unsigned long table_search(const table *table, double in) {
     }
   }
 
-  assert(n >= 1);
-  assert(n < table->count);
+  // Assert that the value is in range.
+  //assert(n >= 1);
+  //assert(n < table->count);
 
   return n;
 }
