@@ -13,6 +13,7 @@
 typedef enum {
     c_TORQUE,
     c_APPS,
+    c_BRAKES,
 } ControllerType;
 
 typedef struct {

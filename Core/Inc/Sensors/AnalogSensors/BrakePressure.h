@@ -32,6 +32,7 @@ float getBrakePressure(BrakePressure* bp);
  */
 void updateBrakePressure(void* bp);
 
+
 /**
  * @brief Converts raw brake pressure data to a meaningful pressure value.
  *
