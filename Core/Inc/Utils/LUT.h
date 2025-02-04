@@ -1,7 +1,6 @@
-#include <assert.h>
+#ifndef RENNSSELAERMOTORSPORT_LUT_H
+#define RENNSSELAERMOTORSPORT_LUT_H
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 /* Defines a mapping from one input to one output. */
 typedef struct {
@@ -47,3 +46,4 @@ unsigned long table_search(const table *table, double in);
 /* Samples the table and calculates the approximate output value. Returns true
  * on success. */
 bool table_sample(const table *table, double in, double *out);
+#endif // RENNSSELAERMOTORSPORT_LUT_H
