@@ -1,7 +1,7 @@
 # Compiler settings
 CC = gcc
 # TODO: Remove -g and -O0 flags for production
-CFLAGS = -g -O0 -IInc -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/ -DSTM32F767xx  -pthread -lm
+CFLAGS = -g -O0 -IInc -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/ -DSTM32F767xx -pthread -lm
 
 # Base source and test directories
 SRC_DIR = Src
@@ -21,8 +21,9 @@ TEST_SOURCES = $(shell find $(TEST_DIR) -type f -name '*.c')
 TEST_OBJECTS = $(TEST_SOURCES:$(TEST_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Check if TEST_MODE is set
+# NOTE Don't indent this!
 ifdef TEST_MODE
-    CFLAGS += -DTEST_MODE
+CFLAGS += -DTEST_MODE
 endif
 
 # Default target
