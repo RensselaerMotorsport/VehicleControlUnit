@@ -1,7 +1,7 @@
 # Compiler settings
 CC = gcc
 # TODO: Remove -g and -O0 flags for production
-CFLAGS = -g -O0 -IIncludes -pthread -lm
+CFLAGS = -g -O0 -IInc -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/ -DSTM32F767xx  -pthread -lm
 
 # Base source and test directories
 SRC_DIR = Src
