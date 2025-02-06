@@ -19,6 +19,8 @@ typedef struct {
     IMDStatus IMDStatus;
 } IMDValues;
 
+// FIXME
+int getIMDStatus_FIXME(struct Updateable* u);
 
 /**
  * @brief Initializes the IMD with the specified frequency.

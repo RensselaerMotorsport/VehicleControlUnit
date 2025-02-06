@@ -1,14 +1,19 @@
-#include "../../../Inc/Systems/External/IMD.h"
+#include "../../../Inc/Systems/External/Imd.h"
 #include "../../../Inc/Systems/ExternalSystem.h"
 
 void initIMD(IMDValues* IMD, int hz) {
     initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL);
     IMD->base.system.updateable.update = updateIMD;
-    IMD->base.system.updateable.status = getIMDStatus;
+    IMD->base.system.updateable.status = getIMDStatus_FIXME;
     IMD->IMDStatus = IMD_OK;
     IMD->IsoResistanceNeg = 0;
     IMD->IsoResistancePos = 0;
     IMD->IsoResistanceCorrected = 0;
+}
+
+// FIXME
+int getIMDStatus_FIXME(struct Updateable* u) {
+  return 0;
 }
 
 void updateIMD(void* IMDValues) {
