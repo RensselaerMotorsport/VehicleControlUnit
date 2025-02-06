@@ -18,4 +18,5 @@ This software is intended to be run on a real time operating system
  7. git clone VCU repo in wsl
  8. Open in VScode `code .`
  9. Change directory to Core `cd Core`
- 10. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
+ 10. Define the environment variable `TEST_MODE` (e.g. `export TEST_MODE=1`)
+ 11. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
