@@ -5,7 +5,7 @@
 #include "../../Sensors/AnalogSensors/BrakePressure.h"
 #include "../../Sensors/AnalogSensors/Temperature.h"
 
-typedef enum{
+typedef enum {
     BRAKES_OK,
     PRESSURE_UNDER_LIMIT,
     PRESSURE_OVER_LIMIT,
@@ -49,11 +49,8 @@ void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int br
  * @brief Updates BrakeSystemStatus with current sensor data.
  *
  * @param bsc A pointer to the BrakeControl structure.
- * @param frontPressure The reading from the front brake line pressure sensor (in psi).
- * @param rearPressure The reading from the rear brake line pressure sensor (in psi).
- * @param temperature The reading from the brake rotor temperature sensor (in farenheight).
  */
-void setSensorReadings(BrakeSystemControl *bsc, float frontPressure, float rearPressure, float temperaure);
+void setSensorReadings(BrakeSystemControl *bsc);
 
 /**
  * @brief Checks whether the line pressure is higher than the activation point specified by the user.

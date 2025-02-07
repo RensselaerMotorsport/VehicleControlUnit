@@ -3,7 +3,7 @@
 
 #include <string.h>
 
-void initUpdateable(Updateable* updateable, const char* name, int hz) {
+void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child) {
     strncpy(updateable->name, name, MAX_NAME_LENGTH);
     updateable->hz = hz;
     updateable->update = defaultUpdate;
@@ -11,10 +11,14 @@ void initUpdateable(Updateable* updateable, const char* name, int hz) {
     updateable->enable = defaultEnable;
     updateable->disable = defaultDisable;
     updateable->enabled = DISABLED;
+    updateable->type = utype;
+    // Have a pointer to the child struct
+    updateable->child = child;
 }
 
 void defaultUpdate(void* self) {
-    printf("Warning: Calling default Sensor Update Function.\n");
+    // Print in yellow color
+    printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, ((Updateable*)self)->name);
 }
 
 int defaultStatus(struct Updateable* self) {

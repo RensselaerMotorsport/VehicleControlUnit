@@ -10,6 +10,7 @@
 typedef enum {
     m_TORQUE,
     m_APPS,
+    m_BRAKES,
     m_TRACTION,
     m_ACCUMULATOR
 } MonitorType;
@@ -25,7 +26,6 @@ typedef struct {
     System system;
     MonitorType type;
     FaultType fault;
-    // Default function to run MonitorSystem, takes in the monitor system and controller system
     int (*runMonitor)(void* self);
 } MonitorSystem;
 

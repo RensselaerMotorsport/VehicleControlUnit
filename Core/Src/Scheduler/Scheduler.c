@@ -16,6 +16,7 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     scheduler->running = false;
 
     for (int i = 0; updatableArray[i] != NULL; i++) {
+    	printf("hi\r\n");
         if (i >= MAX_SENSORS) {
             printf("Warning: Number of sensors exceeds MAX_SENSORS. "
                    "Some sensors will not be scheduled.\n");
@@ -30,7 +31,13 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
         Task task;
         TaskInit(&task, updateable, updateable->hz);
         int hz = 1000 / updateable->hz;
+        // Setup for STM32
+        #ifndef TEST_MODE
+        printf("hal tick: %u\r\n", HAL_GetTick());
+        int initialPriority = HAL_GetTick() + hz;
+        #else
         int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
+        #endif
         PQPush(&scheduler->tasks, task, initialPriority);
     }
 }
@@ -45,6 +52,7 @@ void SchedulerRun(Scheduler* scheduler) {
     Task currentTask;
 
     while (scheduler->running) {
+    	printf("im runningggg!!\r\n");
         // if (timer_flag < 0) continue;
         // timer_flag--;
         // FIXME: Re-implement timer.

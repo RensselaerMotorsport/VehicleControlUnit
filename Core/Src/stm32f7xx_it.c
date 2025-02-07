@@ -22,7 +22,7 @@
 #include "stm32f7xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "../Inc/Sensors/AnalogSensor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -295,13 +295,13 @@ int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *
     if (bus == CAN_1) {
         if (HAL_CAN_AddTxMessage(&hcan1, TxHeader, data, &mailbox) != HAL_OK) {
         	uint32_t error = HAL_CAN_GetError(&hcan1);
-			printf("CAN Transmission Error: %lx\n", error);
+			printf("CAN1 Transmission Error: %lx\n", error);
             return -1;
         }
     } else if (bus == CAN_2) {
         if (HAL_CAN_AddTxMessage(&hcan2, TxHeader, data, &mailbox) != HAL_OK) {
         	uint32_t error = HAL_CAN_GetError(&hcan2);
-			printf("CAN Transmission Error: %lx\n", error);
+			printf("CAN2 Transmission Error: %lx\n", error);
             return -1;
         }
     } else {
@@ -320,5 +320,15 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
         HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader2, RxData2);
         receive_CAN_message(&RxHeader2, RxData2, CAN_2);
     }
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
+  if (hadc == &hadc1) {
+    ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
+  } else if (hadc == &hadc2) {
+    ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
+  } else if (hadc == &hadc3) {
+    ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
+  }
 }
 /* USER CODE END 1 */

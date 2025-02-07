@@ -6,20 +6,12 @@
 
 #define TORQUE_ERROR_MARGIN 0.05 // TODO: Determine correct value for the margin, or change to lookup table if needed.
 
-// TODO: Move to torque police in the future
-typedef enum {
-    TORQUE_OK,
-    TORQUE_OVER_LIMIT,
-    TORQUE_UNDER_LIMIT,
-    TORQUE_SENSOR_ERROR
-} TorqueStatus;
-
 typedef struct {
     MonitorSystem base;
     float maxAllowedTorque;
     TorqueStatus status;
     TorqueControl* torqueControl;
-} TorqueControl;
+} TorquePolice;
 
 void initTorquePolice(TorquePolice* tp, TorqueControl *tc, int hz, float maxTorque);
 int startTorquePolice(TorquePolice* tp);

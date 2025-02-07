@@ -17,7 +17,7 @@
 typedef enum {
     SENSOR,
     SYSTEM
-} type;
+} UpdateableType;
 
 typedef struct Updateable {
     char name[MAX_NAME_LENGTH];
@@ -27,6 +27,8 @@ typedef struct Updateable {
     int (*status)(struct Updateable* self);
     int (*enable)(struct Updateable* self);
     int (*disable)(struct Updateable* self);
+    UpdateableType type;
+    void* child;
 } Updateable;
 
 /*
@@ -36,7 +38,7 @@ typedef struct Updateable {
  * @param name The name of the updateable.
  * @param hz Rate at which the updateable is called (in hz).
 */
-void initUpdateable(Updateable* updateable, const char* name, int hz);
+void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child);
 
 /**
  * @brief Default update function for Updateable objects.

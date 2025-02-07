@@ -1,4 +1,4 @@
-#include "../../../Inc/Systems/Controller/TorquePolice.h"
+#include "../../../Inc/Systems/Monitor/TorquePolice.h"
 #include "../../../Inc/Utils/Common.h"
 
 // Make new TorquePolice MonitorSystem
@@ -15,10 +15,6 @@ int startTorquePolice(TorquePolice* tp) {
         printf("Monitor function not set for TorquePolice\n");
         return FAILURE;
     }
-    else if (tp->base.runMonitor(tp) == FAILURE) {
-        printf("Torque Police is not in a safe state\n");
-        return FAILURE;
-    }
     ENABLE(tp->base.system);
     return SUCCESS;
 }
@@ -26,12 +22,12 @@ int startTorquePolice(TorquePolice* tp) {
 // Check the TorquePolice MonitorSystem
 int checkTorquePolice(void* tp) {
     TorquePolice* tpPtr = (TorquePolice*)tp;
-    if (tpPtr->torqueControl->status != TORQUE_OK) {
-        printf("Torque Control Actuator is not in a safe state\n");
+    TorqueControl* tc = tpPtr->torqueControl;
+    if (tc->desiredTorque > tpPtr->maxAllowedTorque) {
+        tpPtr->status = TORQUE_OVER_LIMIT;
         return FAILURE;
-    }
-    if (tpPtr->torqueControl->desiredTorque > tpPtr->maxAllowedTorque) {
-        printf("Desired torque exceeds the maximum allowed torque\n");
+    } else if (tc->status == TORQUE_SENSOR_ERROR) {
+        tpPtr->status = TORQUE_SENSOR_ERROR;
         return FAILURE;
     }
     return SUCCESS;

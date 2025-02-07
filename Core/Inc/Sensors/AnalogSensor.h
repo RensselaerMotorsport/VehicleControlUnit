@@ -27,8 +27,7 @@
 
 // Defines
 #define ADC_CHANNELS 16  // Total number of ADC channels
-#define UART_BUF_SIZE 100
-#define BUFFER_SIZE 1000 // Size of the circular buffer, change in the future if needed
+#define VREF 5 // Reference voltage for ADC on pin AADV
 
 // Structures
 typedef struct {
@@ -36,30 +35,21 @@ typedef struct {
     int channel;
 } AnalogSensor;
 
-typedef struct {
-    uint16_t adc[ADC_CHANNELS]; // Array to hold all 16 ADC values
-} ADCSample;
-
 // Function declarations
 void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel);
-void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_data);
-ADCSample getLatestSample(void);
-uint32_t getRecentSamples(ADCSample* samples, uint32_t num_samples);
-int getAnalogSensorData(AnalogSensor* sensor);
+void ProcessADCData(uint16_t* adc1_buffer, uint16_t* adc2_buffer, uint16_t* adc3_buffer);
+float getAnalogSensorData(AnalogSensor* sensor);
 
 #ifndef TEST_MODE
 // External variable declarations
 extern ADC_HandleTypeDef hadc1, hadc2, hadc3;
 extern DMA_HandleTypeDef hdma_adc1, hdma_adc2, hdma_adc3;
-extern UART_HandleTypeDef huart2;
 #endif
 
 // ADC buffers
 extern uint16_t adc1_buffer[6];
 extern uint16_t adc2_buffer[6];
 extern uint16_t adc3_buffer[4];
-
-extern char uart_buf[UART_BUF_SIZE];
 
 #endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H
 
