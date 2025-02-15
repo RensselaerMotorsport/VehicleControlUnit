@@ -16,6 +16,7 @@
 typedef enum {
     APPS_OK,
     APPS_FAULT,
+    APPS_LOW
 } AppsStatus;
 
 typedef struct {

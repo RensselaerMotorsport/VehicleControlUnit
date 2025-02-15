@@ -2,15 +2,17 @@
 #define RENSSELAERMOTORSPORT_TORQUE_CONTROL_H
 
 #include "../ControllerSystem.h"
+#include "../../Utils/Constants.h"
 #include "Apps.h"
-
-#define TORQUE_ERROR_MARGIN 0.05 // TODO: Determine correct value for the margin, or change to lookup table if needed.
 
 typedef enum {
     TORQUE_OK,
+    TORQUE_RTD,
+    TORQUE_LOW,
     TORQUE_OVER_LIMIT,
     TORQUE_UNDER_LIMIT,
-    TORQUE_SENSOR_ERROR
+    TORQUE_SENSOR_ERROR,
+    TORQUE_BRAKE_FIGHT
 } TorqueStatus;
 
 typedef struct {
@@ -34,7 +36,7 @@ void initTorqueControl(TorqueControl* tc, Apps* apps, int hz, float maxTorque);
  * @brief Starts the Torque Control Actuator.
  *
  * @param tc A pointer to the TorqueControl structure.
- * @return SUCCESS if the actuator was started, FAILURE otherwise.
+ * @return _SUCCESS if the actuator was started, _FAILURE otherwise.
  */
 int startTorqueControl(TorqueControl* tc);
 
@@ -43,7 +45,7 @@ int startTorqueControl(TorqueControl* tc);
  *
  * @param tc A pointer to the TorqueControl structure.
  * @param torque The desired torque to be set (in Nm).
- * @return SUCCESS if the desired torque was set, FAILURE otherwise.
+ * @return _SUCCESS if the desired torque was set, _FAILURE otherwise.
  */
 int setDesiredTorque(void* self);
 

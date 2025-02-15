@@ -4,7 +4,7 @@
 #include <math.h>
 
 void initTorqueControl(TorqueControl* tc, Apps* apps, int hz, float maxTorque) {
-    initControllerSystem(&tc->base, "Torque Control", hz, c_TORQUE, setDesiredTorque);
+    initControllerSystem(&tc->base, "Torque Control", hz, c_TORQUE, setDesiredTorque, tc);
     tc->desiredTorque = 0;
     tc->maxAllowedTorque = maxTorque;
     tc->apps = apps;
@@ -13,15 +13,15 @@ void initTorqueControl(TorqueControl* tc, Apps* apps, int hz, float maxTorque) {
 int startTorqueControl(TorqueControl* tc) {
     if (tc->base.safety == NULL) {
         printf("Safety system not set for Torque Control\n");
-        return FAILURE;
+        return _FAILURE;
     }
-    else if (tc->base.safety(tc) == FAILURE) {
+    else if (tc->base.safety(tc) == _FAILURE) {
         printf("Torque Control Actuator is not in a safe state\n");
-        return FAILURE;
+        return _FAILURE;
     }
     ENABLE(tc->base.system);
     tc->base.state = c_idle;
-    return SUCCESS;
+    return _SUCCESS;
 }
 
 int setDesiredTorque(void* self) {
@@ -36,7 +36,13 @@ int setDesiredTorque(void* self) {
 
     // Perform any desired mapping, i.e. fit to sigmoid function.
     double normalized = torque / tc->maxAllowedTorque;  // Normalize to range [0, 1]
-    double s_curve = 1.0 / (1.0 + exp(-1 * (normalized - 0.5)));
+    double s_curve = 1.0 / (1.0 + exp(-10 * (normalized - 0.5)));
     tc->desiredTorque = s_curve * tc->maxAllowedTorque;
     tc->base.state = c_computed;
+    
+    #ifdef DEBUGn
+    printf("Desired Torque: %f\r\n", tc->desiredTorque);
+    #endif
+
+    return _SUCCESS;
 }

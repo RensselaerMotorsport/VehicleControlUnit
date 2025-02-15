@@ -4,7 +4,7 @@
 #include <math.h>
 
 void initApps(Apps* apps, int hz, int channel1, int channel2) {
-    initControllerSystem(&apps->base, "Apps", hz, c_APPS, updateApps);
+    initControllerSystem(&apps->base, "Apps", hz, c_APPS, updateApps, apps);
     // Allocate memory for the app instances
     apps->app[0] = (App*)malloc(sizeof(App));
     apps->app[1] = (App*)malloc(sizeof(App));
@@ -29,13 +29,17 @@ int updateApps(void* self) {
     // Set to computed
     appsPtr->base.state = c_computed;
     
+    
+    #ifdef DEBUGn
     printf("Apps updated. #1: %f, #2: %f\r\n", getAppPosition(appsPtr->app[0]), getAppPosition(appsPtr->app[1]));
-    if (appsPtr->status != APPS_OK) return FAILURE;
-    return SUCCESS;
+    #endif
+
+    return _SUCCESS;
 }
 
 float getAppsPosition(Apps* apps) {
     if (apps->base.state != c_validated) {
+        
         printf("Apps Controller value has not been validated\r\n");
         return 0.0f;
     }

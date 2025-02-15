@@ -13,34 +13,20 @@ void initBrakePolice(BrakePolice* bp, BrakeSystemControl *bsc, int hz, int maxTe
 int startBrakePolice(BrakePolice* bp) {
     if (bp->base.runMonitor == NULL) {
         printf("Monitor function not set for BrakePolice\n");
-        return FAILURE;
+        return _FAILURE;
     }
     ENABLE(bp->base.system);
-    return SUCCESS;
+    return _SUCCESS;
 }
 
 // Check the BrakePolice MonitorSystem
 int checkBrakePolice(void* bp) {
     BrakePolice* bpPtr = (BrakePolice*)bp;
     BrakeSystemControl* bsc = bpPtr->bsc;
+    bsc->status = checkSensorLimits(bsc);
     if (bsc->status != BRAKES_OK) {
-      return FAILURE;
+      return _FAILURE;
     } 
-    
-    float front = getBrakePressure(bsc -> frontPressure);
-    float rear = getBrakePressure(bsc -> rearPressure);
-    float temp = getTemperatureFahrenheit(bsc -> temperature);
-    if (front > bsc -> maxPressure || rear > bsc -> maxPressure){
-      return PRESSURE_OVER_LIMIT;
-    }
-    else if (front > bsc -> minPressure || rear > bsc -> minPressure){
-        return PRESSURE_UNDER_LIMIT;
-    }
-    else if (temp > bsc -> maxTemperatureAllowed){
-        return TEMPERATURE_OVER_LIMIT;
-    }
-    else if (temp < 0){
-        return TEMPERATURE_SENSOR_ERROR;
-    }
-    return SUCCESS;
+
+    return _SUCCESS;
 }

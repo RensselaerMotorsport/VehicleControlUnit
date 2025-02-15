@@ -16,14 +16,13 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
     scheduler->running = false;
 
     for (int i = 0; updatableArray[i] != NULL; i++) {
-    	printf("hi\r\n");
         if (i >= MAX_SENSORS) {
             printf("Warning: Number of sensors exceeds MAX_SENSORS. "
                    "Some sensors will not be scheduled.\n");
             break;
         }
 
-        Updateable* updateable = updatableArray[i];
+        Updateable* updateable = (Updateable*)updatableArray[i];
         if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
             continue; // Skip invalid frequencies
         }
@@ -52,12 +51,11 @@ void SchedulerRun(Scheduler* scheduler) {
     Task currentTask;
 
     while (scheduler->running) {
-    	printf("im runningggg!!\r\n");
         // if (timer_flag < 0) continue;
         // timer_flag--;
         // FIXME: Re-implement timer.
-        // int currentTime = HAL_GetTick();
-        int currentTime = 0;
+        int currentTime = HAL_GetTick();
+        // int currentTime = 0;
 
         while (!PQIsEmpty(&scheduler->tasks) &&
                PQPeek(&scheduler->tasks, &currentTask) &&

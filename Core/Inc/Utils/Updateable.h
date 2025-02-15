@@ -15,6 +15,7 @@
 #define ENABLED 1
 
 typedef enum {
+    OUTPUT,
     SENSOR,
     SYSTEM
 } UpdateableType;
@@ -76,7 +77,7 @@ int defaultDisable(struct Updateable* self);
  *
  * @param filename Name of the file to write to.
  * @param self Pointer to the object whose data is to be written.
- * @return SUCCESS if the data was written, FAILURE otherwise.
+ * @return _SUCCESS if the data was written, _FAILURE otherwise.
  */
 int writeDataToFileImplementation(const char* filename, void* self);
 

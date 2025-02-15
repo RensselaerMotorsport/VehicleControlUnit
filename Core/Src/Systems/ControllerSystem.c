@@ -4,7 +4,8 @@
 #include "../../Inc/Scheduler/Task.h"
 
 void initControllerSystem(ControllerSystem* controller, const char* name, int hz,
-                          ControllerType type, int (*updateController)(void* self)) {
+                          ControllerType type, int (*updateController)(void* self),
+                          void* child) {
     initSystem(&controller->system, name, hz, CONTROLLER, controller);
     controller->type = type;
     controller->num_monitors = 0;
@@ -16,6 +17,7 @@ void initControllerSystem(ControllerSystem* controller, const char* name, int hz
 
     // Set the updateable function to generic controller update/safety
     controller->system.updateable.update = c_defaultUpdate;
+    controller->child = child;
     
 }
 
@@ -23,10 +25,10 @@ int c_defaultAddMonitor(void* self, MonitorSystem* monitor) {
     ControllerSystem* controller = (ControllerSystem*)self;
     if (controller->num_monitors >= MAX_MONITORS) {
         printf("Cannot add more monitors to the controller\n");
-        return FAILURE;
+        return _FAILURE;
     }
     controller->monitors[controller->num_monitors++] = monitor;
-    return SUCCESS;
+    return _SUCCESS;
 }
 
 int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
@@ -37,11 +39,11 @@ int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
                 controller->monitors[j] = controller->monitors[j + 1];
             }
             controller->num_monitors--;
-            return SUCCESS;
+            return _SUCCESS;
         }
     }
     printf("Monitor not found in the controller\n");
-    return FAILURE;
+    return _FAILURE;
 }
 
 void c_defaultUpdate(void* self) {
@@ -53,7 +55,7 @@ void c_defaultUpdate(void* self) {
     ControllerSystem* controller = (ControllerSystem*)system->child;
 
     // Perform the controller update
-    if (controller->updateController(controller) == FAILURE) {
+    if (controller->updateController(controller) == _FAILURE) {
         return;
     }
 
@@ -61,11 +63,11 @@ void c_defaultUpdate(void* self) {
     controller->state = c_computed;
 
     // Perform the safety check
-    if (controller->safety(controller) == FAILURE) {
+    if (controller->safety(controller) == _FAILURE) {
         return;
     }
     
-    // Return success
+    // Return _SUCCESS
     return;
 }
 
@@ -74,19 +76,19 @@ int c_defaultSafety(void* self) {
 
     if (controller->state != c_computed) {
         printf("Controller not computed new value\n");
-        return FAILURE;
+        return _FAILURE;
     }
 
     if (controller->num_monitors == 0) {
         printf("No monitors set for Controller\n");
-        return FAILURE;
+        return _FAILURE;
     }
     
     for (int i = 0; i < controller->num_monitors; i++) {
-        if (controller->monitors[i]->runMonitor(controller->monitors[i]) == FAILURE) {
-            return FAILURE;
+        if (controller->monitors[i]->runMonitor(controller->monitors[i]) == _FAILURE) {
+            return _FAILURE;
         }
     }
     controller->state = c_validated;
-    return SUCCESS;
+    return _SUCCESS;
 }

@@ -2,8 +2,8 @@
 #define RENSSELAERMOTORSPORT_COMMON_H
 
 // Definition of common constants and macros used throughout the project
-#define SUCCESS 0
-#define FAILURE 1
+#define _SUCCESS 0
+#define _FAILURE 1
 
 // Print colors for terminal output
 #define ANSI_COLOR_RED     "\x1b[31m"

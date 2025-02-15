@@ -7,14 +7,14 @@
 
 #include "System.h"
 #include "MonitorSystem.h"
+#include "../Utils/Constants.h"
 #include "../Utils/Updateable.h"
-
-#define MAX_MONITORS 10
 
 typedef enum {
     c_TORQUE,
     c_APPS,
     c_BRAKES,
+    c_RTD
 } ControllerType;
 
 typedef enum {
@@ -33,6 +33,7 @@ typedef struct {
     int (*addMonitor)(void* self, MonitorSystem* monitor); // Add a monitor to the controller
     int (*removeMonitor)(void* self, MonitorSystem* monitor); // Remove a monitor from the controller
     int (*updateController)(void* self); // Update the controller
+    void* child;
 } ControllerSystem;
 
 /**
@@ -45,14 +46,15 @@ typedef struct {
  * @param updateController The function to update the controller.
 */
 void initControllerSystem(ControllerSystem* controller, const char* name, int hz,
-                          ControllerType type, int (*updateController)(void* self));
+                          ControllerType type, int (*updateController)(void* self),
+                          void* child);
 
 /**
  * @brief Adds a monitor to the controller.
  *
  * @param self A pointer to the ControllerSystem structure.
  * @param monitor A pointer to the MonitorSystem structure to add.
- * @return SUCCESS if the monitor was added, FAILURE otherwise.
+ * @return _SUCCESS if the monitor was added, _FAILURE otherwise.
 */
 int c_defaultAddMonitor(void* self, MonitorSystem* monitor);
 
@@ -61,7 +63,7 @@ int c_defaultAddMonitor(void* self, MonitorSystem* monitor);
  *
  * @param self A pointer to the ControllerSystem structure.
  * @param monitor A pointer to the MonitorSystem structure to remove.
- * @return SUCCESS if the monitor was removed, FAILURE otherwise.
+ * @return _SUCCESS if the monitor was removed, _FAILURE otherwise.
 */
 int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor);
 

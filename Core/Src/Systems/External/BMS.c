@@ -7,7 +7,7 @@
 void initBms(Bms* bms, int hz, const char* dbcFn) {
    if (bms == NULL) return;
 
-   initExternalSystem(&bms->extSystem, "Bms", hz, 0);
+   initExternalSystem(&bms->extSystem, "Bms", hz, 0, NULL, NULL);
 
    bms->packVoltage = 0.0f;
    bms->packCurrent = 0.0f;

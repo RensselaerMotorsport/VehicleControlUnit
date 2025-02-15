@@ -12,7 +12,8 @@ typedef enum {
     m_APPS,
     m_BRAKES,
     m_TRACTION,
-    m_ACCUMULATOR
+    m_ACCUMULATOR,
+    m_RTD
 } MonitorType;
 
 typedef enum {

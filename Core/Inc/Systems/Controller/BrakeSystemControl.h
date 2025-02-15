@@ -2,6 +2,7 @@
 #define RENSSELAERMOTORSPORT_BRAKE_SYSTEM_CONTROL_H
 
 #include "../ControllerSystem.h"
+#include "../../../Inc/Outputs/DigitalOutput.h"
 #include "../../Sensors/AnalogSensors/BrakePressure.h"
 #include "../../Sensors/AnalogSensors/Temperature.h"
 
@@ -25,6 +26,8 @@ typedef struct{
     BrakeSystemStatus status;
     int brakeLightActivationPoint;
     int brakeLightActive;
+    int brakeLightBlink;
+    DigitalOutput *brakeLight;
     int heavyBrakingActivationPoint;
     int heavyBraking;
 } BrakeSystemControl;
@@ -42,8 +45,24 @@ typedef struct{
  * @param fbp_channel The channel number for the front brake pressure sensor
  * @param rbp_channel The channel number for the rear brake pressure sensor
  * @param temp_channel The channel number for the temperature sensor
+ * @param light_port The port number for the brake light
  */
-void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel);
+void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel, int light_port);
+
+
+/**
+ * @brief Starts the Brake System Controller.
+ *
+ * @param bsc A pointer to the BrakeControl structure.
+ */
+int startBrakeSystemControl(BrakeSystemControl *bsc);
+
+/**
+ * @brief Updates the Brake System Controller.
+ *
+ * @param bsc A pointer to the BrakeControl structure.
+ */
+int updateBrakeSystemControl(void* bsc);
 
 /**
  * @brief Updates BrakeSystemStatus with current sensor data.

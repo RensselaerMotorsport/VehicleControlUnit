@@ -25,10 +25,6 @@
 // User includes
 #include "Sensor.h"
 
-// Defines
-#define ADC_CHANNELS 16  // Total number of ADC channels
-#define VREF 5 // Reference voltage for ADC on pin AADV
-
 // Structures
 typedef struct {
     Sensor sensor;
@@ -37,7 +33,7 @@ typedef struct {
 
 // Function declarations
 void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel);
-void ProcessADCData(uint16_t* adc1_buffer, uint16_t* adc2_buffer, uint16_t* adc3_buffer);
+void ProcessADCData(uint32_t* adc1_buffer, uint32_t* adc2_buffer, uint32_t* adc3_buffer);
 float getAnalogSensorData(AnalogSensor* sensor);
 
 #ifndef TEST_MODE
@@ -47,9 +43,9 @@ extern DMA_HandleTypeDef hdma_adc1, hdma_adc2, hdma_adc3;
 #endif
 
 // ADC buffers
-extern uint16_t adc1_buffer[6];
-extern uint16_t adc2_buffer[6];
-extern uint16_t adc3_buffer[4];
+extern uint32_t adc1_buffer[7];
+extern uint32_t adc2_buffer[7];
+extern uint32_t adc3_buffer[8];
 
 #endif // RENSSELAERMOTORSPORT_ANALOGSENSOR_H
 

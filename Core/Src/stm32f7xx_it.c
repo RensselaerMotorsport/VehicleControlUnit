@@ -23,6 +23,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "../Inc/Sensors/AnalogSensor.h"
+#include "../Inc/Sensors/DigitalSensor.h"
+#include "../Inc/Outputs/DigitalOutput.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +67,10 @@ extern DMA_HandleTypeDef hdma_adc2;
 extern DMA_HandleTypeDef hdma_adc3;
 extern CAN_HandleTypeDef hcan1;
 extern CAN_HandleTypeDef hcan2;
+extern CAN_HandleTypeDef hcan3;
+extern DMA_HandleTypeDef hdma_dac1;
+extern DMA_HandleTypeDef hdma_dac2;
+extern TIM_HandleTypeDef htim2;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -208,6 +214,34 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles DMA1 stream5 global interrupt.
+  */
+void DMA1_Stream5_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream5_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_dac1);
+  /* USER CODE BEGIN DMA1_Stream5_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream5_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 stream6 global interrupt.
+  */
+void DMA1_Stream6_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream6_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_dac2);
+  /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream6_IRQn 1 */
+}
+
+/**
   * @brief This function handles CAN1 RX0 interrupts.
   */
 void CAN1_RX0_IRQHandler(void)
@@ -219,6 +253,20 @@ void CAN1_RX0_IRQHandler(void)
   /* USER CODE BEGIN CAN1_RX0_IRQn 1 */
 
   /* USER CODE END CAN1_RX0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM2 global interrupt.
+  */
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
 }
 
 /**
@@ -277,6 +325,20 @@ void CAN2_RX0_IRQHandler(void)
   /* USER CODE END CAN2_RX0_IRQn 1 */
 }
 
+/**
+  * @brief This function handles CAN3 RX0 interrupt.
+  */
+void CAN3_RX0_IRQHandler(void)
+{
+  /* USER CODE BEGIN CAN3_RX0_IRQn 0 */
+
+  /* USER CODE END CAN3_RX0_IRQn 0 */
+  HAL_CAN_IRQHandler(&hcan3);
+  /* USER CODE BEGIN CAN3_RX0_IRQn 1 */
+
+  /* USER CODE END CAN3_RX0_IRQn 1 */
+}
+
 /* USER CODE BEGIN 1 */
 volatile uint32_t timer_flag = 0;
 
@@ -285,7 +347,39 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     if (htim->Instance == TIM1)
     {
         timer_flag++;
-    }
+    } else if (htim->Instance == TIM2) {
+        // OUTPUTS
+        // D10
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, digital_out_buffer[0]);
+        // D9
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, digital_out_buffer[1]);
+        // D8
+        HAL_GPIO_WritePin(GPIOF, GPIO_PIN_12, digital_out_buffer[2]);
+        // D7
+        HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, digital_out_buffer[3]);
+        // D6
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9 , digital_out_buffer[4]);
+        // D5
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, digital_out_buffer[5]);
+        // D4 for I2C
+        // HAL_GPIO_WritePin(GPIOF, GPIO_PIN_14, digital_out_buffer[6]);
+        // D3
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_13, digital_out_buffer[6]);
+        // D2
+        // HAL_GPIO_WritePin(GPIOF, GPIO_PIN_15, digital_out_buffer[8]);
+        // D1
+        // HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, digital_out_buffer[9]);
+        // D0
+        HAL_GPIO_WritePin(GPIOG, GPIO_PIN_9, digital_out_buffer[7]);
+
+        // INPUTS
+        // D42
+        digital_in_buffer[0] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8);
+        // D41
+        digital_in_buffer[1] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_7);
+        // D40
+        digital_in_buffer[2] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_10);
+      }
 }
 
 // Polling for sending CAN messages
@@ -322,6 +416,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     }
 }
 
+// Callback for ADC conversion complete
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
   if (hadc == &hadc1) {
     ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
@@ -331,4 +426,5 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
     ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
   }
 }
+
 /* USER CODE END 1 */
