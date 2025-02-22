@@ -1,17 +1,55 @@
-# VehicleContorlUnit
+# Vehicle Contorl Unit 🏎️
 ## Overview
 This is the c library for controlling the car.
 
-This software is intended to be run on a real time operating system
+This software is intended to be run on a real time operating system.
 
-##  Pretty graphs: 
+### Pretty Graphs
 ```git log --graph --abbrev-commit --decorate --date=relative --all```
 
 ## Software Compilation on VS Code
 
+To compile purely software using .
+
+1. You idealy would want to fetch the repository to the same directory that can be accessed by STM32 Cube IDE to ensure seamless workflow and updates from software to hardware, so follow step 1 to 4 from [Basic Setup for Hardware Compilation](#basic-setup-for-hardware-compilation)
+2. Open the repository folder in VS Code. 
+3. Install the [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug), [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) extensions in VS Code. 
+4. Install WSL from Microsoft Store.
+5. Open WSL in terminal.
+6. Install the required tools in WSL using the following commands:
+    ```
+    sudo apt update
+    sudo apt install -y gcc-arm-none-eabi
+    sudo apt install -y build-essential cmake
+    sudo apt install -y ninja-build
+    ```
+7. cd to the repository using WSL:
+    ```
+    cd /mnt/c/Users/yourusername/STM32CubeIDE/workspace_x.xx.x/VehicleControlUnit
+    ```
+8. Open repository with WSL in VS Code:
+    ```
+    code .
+    ```
+9. 
+
+### SIL (Software) Testing
+
+ 1. Install WSL from Microsoft Store
+ 2. Run terminal as administrator
+ 3. run `wsl --update` (If it's stuck at 0%, try `wsl --update --web-download`)
+ 4. Start wsl in terminal: `wsl`
+ 5. `sudo apt-get update && sudo apt-get upgrade -y`
+ 6. `sudo apt-get install gcc -y`
+ 7. git clone VCU repo in wsl
+ 8. Open in VScode `code .`
+ 9. Change directory to Core `cd Core`
+ 10. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
 
 
 ## Software Compilation to Hardware 
+
+### Basic Setup for Hardware Compilation
 
 To compile software into firmware that is flashed onto the STM32 board. 
 
@@ -28,7 +66,7 @@ To compile software into firmware that is flashed onto the STM32 board.
 
 ### Developing Tips on the IDE
 #### File Creation / Duplication
-- New project with existing .ioc file:
+- New project with **existing .ioc file**:
 
     File > New > STM32 Project from an Existing STM32CubeMX Configuration File (.ioc), then select the pre-existing file
 
@@ -45,24 +83,14 @@ HAL intialization code for peripherals can be automatically generated into main.
 > [!CAUTION]
 > Code generation rewrites the main.c such that all user code (denoted by the user code begin and end comments) will be GONE. Be sure to save the user code elsewhere. 
 
-### HAL documentation
+#### Useful Documentation
+
+
+### HIL (Hardware) Testing
+
+### PIL (Processor) Testing 
 
 
 ## Useful Git Commands and Tools
 
-- 
-
-
-
-## Running Tests on Windows
-
- 1. Install WSL from Microsoft Store
- 2. Run terminal as administrator
- 3. run `wsl --update` (If it's stuck at 0%, try `wsl --update --web-download`)
- 4. Start wsl in terminal: `wsl`
- 5. `sudo apt-get update && sudo apt-get upgrade -y`
- 6. `sudo apt-get install gcc -y`
- 7. git clone VCU repo in wsl
- 8. Open in VScode `code .`
- 9. Change directory to Core `cd Core`
- 10. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
+Common errors and mitigation techniques (e.g. git clean -xfd)
