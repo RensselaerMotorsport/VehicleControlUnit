@@ -4,16 +4,11 @@
 void initIMD(IMDValues* IMD, int hz) {
     initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL);
     IMD->base.system.updateable.update = updateIMD;
-    IMD->base.system.updateable.status = getIMDStatus_FIXME;
+    // IMD->base.system.updateable.status = getIMDStatus; // FIXME: Update getIMDStatus
     IMD->IMDStatus = IMD_OK;
     IMD->IsoResistanceNeg = 0;
     IMD->IsoResistancePos = 0;
     IMD->IsoResistanceCorrected = 0;
-}
-
-// FIXME
-int getIMDStatus_FIXME(struct Updateable* u) {
-  return 0;
 }
 
 void updateIMD(void* IMDValues) {
