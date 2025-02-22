@@ -9,7 +9,8 @@ This software is intended to be run on a real time operating system.
 
 ## Software Compilation on VS Code
 
-To compile purely software using .
+### Basic Setup for Software Compilation
+To compile purely software using cmake
 
 1. You idealy would want to fetch the repository to the same directory that can be accessed by STM32 Cube IDE to ensure seamless workflow and updates from software to hardware, so follow step 1 to 4 from [Basic Setup for Hardware Compilation](#basic-setup-for-hardware-compilation)
 2. Open the repository folder in VS Code. 
@@ -22,6 +23,7 @@ To compile purely software using .
     sudo apt install -y gcc-arm-none-eabi
     sudo apt install -y build-essential cmake
     sudo apt install -y ninja-build
+    sudo apt install make cmake
     ```
 7. cd to the repository using WSL:
     ```
@@ -31,7 +33,17 @@ To compile purely software using .
     ```
     code .
     ```
-9. 
+9. cd to the directory that houses the makefile:
+    ```
+    cd Core
+    ```
+10. Build the project using cmake
+    ```
+    make clean 
+    make all
+    make test?
+    ```
+11. ** TO DO: Write what to expect ** 
 
 ### SIL (Software) Testing
 
