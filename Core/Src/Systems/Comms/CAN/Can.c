@@ -23,17 +23,19 @@ int load_dbc_file(CANBus bus, const unsigned char* filename)
 {
     // Load the DBC file
     #ifdef TEST_MODE
-    unsigned char* dbc_contents = fopen(filename);
+    // unsigned char* dbc_contents = fopen(filename, "w");
     #else
     unsigned char* dbc_contents = filename;
     #endif
 //    printf("Loading DBC file: %c\r\r\n", filename[0]);
     
+    #ifndef TEST_MODE
     // Parse the DBC file
     parseDbcFile(&can_messages[bus], dbc_contents);
+    #endif
 
 	#ifdef TEST_MODE
-    fclose(dbc_file);
+    // fclose(dbc_contents);
 	#endif
 
     print_CAN_MessageList(&can_messages[bus]);
@@ -94,10 +96,12 @@ int send_CAN_message(CANBus bus, CANProtocol protocol, uint32_t id, uint8_t* dat
     }
     printf("\r\n");
 
+    #ifndef TEST_MODE
     // Send the CAN message
     if (send_CAN_message_helper(bus, &TxHeader, data) != 0) {
         return -2;
     }
+    #endif
     return 0;
 }
 
