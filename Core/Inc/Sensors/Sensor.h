@@ -7,8 +7,8 @@
 #include "../Utils/Updateable.h"
 
 typedef enum {
-    ANALOG,
-    DIGITAL,
+    s_ANALOG,
+    s_DIGITAL,
 } SensorType;
 
 typedef struct {

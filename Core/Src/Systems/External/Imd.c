@@ -2,7 +2,7 @@
 #include "../../../Inc/Systems/ExternalSystem.h"
 
 void initIMD(IMDValues* IMD, int hz) {
-    initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL);
+    initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL, NULL, NULL);
     IMD->base.system.updateable.update = updateIMD;
     IMD->base.system.updateable.status = getIMDStatus;
     IMD->IMDStatus = IMD_OK;

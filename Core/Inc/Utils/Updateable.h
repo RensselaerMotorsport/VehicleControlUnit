@@ -15,9 +15,10 @@
 #define ENABLED 1
 
 typedef enum {
+    OUTPUT,
     SENSOR,
     SYSTEM
-} type;
+} UpdateableType;
 
 typedef struct Updateable {
     char name[MAX_NAME_LENGTH];
@@ -27,6 +28,8 @@ typedef struct Updateable {
     int (*status)(struct Updateable* self);
     int (*enable)(struct Updateable* self);
     int (*disable)(struct Updateable* self);
+    UpdateableType type;
+    void* child;
 } Updateable;
 
 /*
@@ -36,7 +39,7 @@ typedef struct Updateable {
  * @param name The name of the updateable.
  * @param hz Rate at which the updateable is called (in hz).
 */
-void initUpdateable(Updateable* updateable, const char* name, int hz);
+void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child);
 
 /**
  * @brief Default update function for Updateable objects.
@@ -74,7 +77,7 @@ int defaultDisable(struct Updateable* self);
  *
  * @param filename Name of the file to write to.
  * @param self Pointer to the object whose data is to be written.
- * @return SUCCESS if the data was written, FAILURE otherwise.
+ * @return _SUCCESS if the data was written, _FAILURE otherwise.
  */
 int writeDataToFileImplementation(const char* filename, void* self);
 
