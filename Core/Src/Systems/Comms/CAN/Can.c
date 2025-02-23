@@ -1,7 +1,10 @@
+#ifndef TEST_MODE
+#include "stm32f7xx_it.h"
+#endif
+
 #include "../../../../Inc/Systems/Comms/Can/Can.h"
 #include "../../../../Inc/Systems/Comms/Can/DBCParser.h"
 #include "../../../../Inc/Systems/PrintHelpers.h"
-#include "../../../../Inc/stm32f7xx_it.h"
 
 #include <stdio.h>
 #include <string.h>

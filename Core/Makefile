@@ -1,7 +1,7 @@
 # Compiler settings
 CC = gcc
 # TODO: Remove -g and -O0 flags for production
-CFLAGS = -g -O0 -IInc -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/ -DSTM32F767xx -pthread -lm
+CFLAGS = -g -O0 -IInc -IInc/fake_include -pthread -lm # -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/
 
 # Base source and test directories
 SRC_DIR = Src
@@ -12,7 +12,16 @@ OBJ_DIR = Obj
 
 # Recursively find all C sources in subdirectories of SRC_DIR,
 # excluding the SRC_DIR root itself
-SOURCES = $(shell find $(SRC_DIR) -mindepth 2 -type f -name '*.c')
+SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
+          ! -name 'stm32*.c' \
+          ! -name '*hal*.c' \
+          ! -name '*HAL*.c' \
+          ! -name 'syscalls*.c' \
+          ! -name 'sysmem*.c' \
+          ! -name 'system_stm32*.c' \
+          ! -name 'startup_stm32*.c' \
+          ! -path '*/STM32*/*' \
+          ! -path '*/Drivers/*')
 # Create corresponding object files paths
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
