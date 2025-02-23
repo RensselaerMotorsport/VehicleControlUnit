@@ -107,27 +107,4 @@ TO DO
 
 ## Useful Git Commands and Tools
 
-### Command Line Git
-#### git clean -xfd
-
-Removes all untracked files and directories from your working directory.Essentially, prevents files like build artifacts, generated binary files, IDE-specific temporary files and debug outputs from getting commited.
-
-- x: Removes ignored files
-- f: Forces the clean operation
-- d: Removes untracked directories
-
-TO DO: Add more useful cli commands
-
-### Tools
-#### VS Code Source Control
-
-Intuitive and accessible GUI for committng, creating pull requests, creating branches... essentially replaces the need to use command line git. 
-
-#### [Github Pull Request Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
-
-Allows reviewing and managing of GitHub pull requests and issues directly in VS Code.
-
-#### [Github Desktop](https://desktop.github.com/download/)
-
-Intuitive GUI for cloning repositories to user specified directories, switching branches, fetching/pushing from origin.
-
+Common errors and mitigation techniques (e.g. git clean -xfd)
