@@ -13,6 +13,7 @@ OBJ_DIR = Obj
 # Recursively find all C sources in subdirectories of SRC_DIR,
 # excluding the SRC_DIR root itself
 SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
+          ! -name 'main.c' \
           ! -name 'stm32*.c' \
           ! -name '*hal*.c' \
           ! -name '*HAL*.c' \
@@ -22,6 +23,9 @@ SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
           ! -name 'startup_stm32*.c' \
           ! -path '*/STM32*/*' \
           ! -path '*/Drivers/*')
+ifndef TEST_MODE
+SOURCES += $(SRC_DIR)/main.c
+endif
 # Create corresponding object files paths
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
