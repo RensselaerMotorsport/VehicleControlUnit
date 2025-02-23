@@ -9,7 +9,8 @@ This software is intended to be run on a real time operating system.
 
 ## Software Compilation on VS Code
 
-To compile purely software using .
+### Basic Setup for Software Compilation
+To compile purely software using cmake
 
 1. You idealy would want to fetch the repository to the same directory that can be accessed by STM32 Cube IDE to ensure seamless workflow and updates from software to hardware, so follow step 1 to 4 from [Basic Setup for Hardware Compilation](#basic-setup-for-hardware-compilation)
 2. Open the repository folder in VS Code. 
@@ -22,6 +23,7 @@ To compile purely software using .
     sudo apt install -y gcc-arm-none-eabi
     sudo apt install -y build-essential cmake
     sudo apt install -y ninja-build
+    sudo apt install make cmake
     ```
 7. cd to the repository using WSL:
     ```
@@ -31,7 +33,17 @@ To compile purely software using .
     ```
     code .
     ```
-9. 
+9. cd to the directory that houses the makefile:
+    ```
+    cd Core
+    ```
+10. Build the project using cmake
+    ```
+    make clean 
+    make all
+    make test?
+    ```
+11. TO DO: Write what to expect
 
 ### SIL (Software) Testing
 
@@ -62,7 +74,7 @@ To compile software into firmware that is flashed onto the STM32 board.
     ```
 5. A folder titled VehicleControlUnit should appear in your workspace. 
 6. Open STM32 Cube IDE. Select `C:\Users\yourusername\STM32CubeIDE\workspace_x.xx.x` as the launch directory.
-7. Connect STM32 board to computer. Flash firmware  by running the project in debug mode. ** have to test this agai
+7. Connect STM32 board to computer. Flash firmware by running the project in debug mode. TO DO: Test with board
 
 ### Developing Tips on the IDE
 #### File Creation / Duplication
@@ -84,13 +96,37 @@ HAL intialization code for peripherals can be automatically generated into main.
 > Code generation rewrites the main.c such that all user code (denoted by the user code begin and end comments) will be GONE. Be sure to save the user code elsewhere. 
 
 #### Useful Documentation
-
+TO DO: Add links to documents
 
 ### HIL (Hardware) Testing
+TO DO
 
 ### PIL (Processor) Testing 
+TO DO
 
 
 ## Useful Git Commands and Tools
 
-Common errors and mitigation techniques (e.g. git clean -xfd)
+### Command Line Git
+#### git clean -xfd
+
+Removes all untracked files and directories from your working directory.Essentially, prevents files like build artifacts, generated binary files, IDE-specific temporary files and debug outputs from getting commited.
+
+- x: Removes ignored files
+- f: Forces the clean operation
+- d: Removes untracked directories
+
+TO DO: Add more useful cli commands
+
+### Tools
+#### VS Code Source Control
+
+Intuitive and accessible GUI for committng, creating pull requests, creating branches... essentially replaces the need to use command line git. 
+
+#### [Github Pull Request Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+
+Allows reviewing and managing of GitHub pull requests and issues directly in VS Code.
+
+#### [Github Desktop](https://desktop.github.com/download/)
+
+Intuitive GUI for cloning repositories to user specified directories, switching branches, fetching/pushing from origin.
