@@ -86,8 +86,6 @@ To compile software into firmware that is flashed onto the STM32 board.
 
     File > New > STM32 Project, then enter board name into "Commercial Part Number"
 
-
-
 #### Code generation with .ioc file 
 
 HAL intialization code for peripherals can be automatically generated into main.c once configured in the .ioc file. Any changes in the .ioc file will require code generation (to update main.c) - right click the .ioc file then click "Code Generation". 
@@ -103,7 +101,6 @@ TO DO
 
 ### PIL (Processor) Testing 
 TO DO
-
 
 ## Useful Git Commands and Tools
 
