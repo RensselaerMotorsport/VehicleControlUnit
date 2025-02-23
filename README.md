@@ -130,4 +130,3 @@ Allows reviewing and managing of GitHub pull requests and issues directly in VS 
 #### [Github Desktop](https://desktop.github.com/download/)
 
 Intuitive GUI for cloning repositories to user specified directories, switching branches, fetching/pushing from origin.
-
