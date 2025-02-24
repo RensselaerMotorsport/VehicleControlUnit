@@ -3,7 +3,6 @@
 
 #include "../Inc/Utils/LUT.h"
 
-/* Compares two points. */
 int point_compare(const void *a, const void *b) {
   const point *pa = a;
   const point *pb = b;
@@ -18,7 +17,6 @@ bool point_is_between(const point *min, const point *max, double in) {
   return min->input <= in && in <= max->input;
 }
 
-/* Allocates memory for a table. */
 table *table_alloc(unsigned long count) {
   // The table must contain at least two elements; a minimum and a maximum
   // assert(count >= 2);
@@ -41,7 +39,6 @@ table *table_alloc(unsigned long count) {
   return table;
 }
 
-/* Releases memory occupied by a table. */
 void table_release(table *table) {
   // TODO Potential issue freeing flexible array of points
   free(table);
@@ -110,8 +107,6 @@ bool table_is_okay_input(table *table, double in) {
   return point_is_between(min, max, in);
 }
 
-/* Initializes the points such that input and output of all points are equally
- * spaced. */
 void table_init_linear(table *table, double in_min, double in_max,
                        double out_min, double out_max) {
   // The first step is not a scaled step, since it is just [in_min out_min]
@@ -126,7 +121,6 @@ void table_init_linear(table *table, double in_min, double in_max,
   }
 }
 
-/* Prints the points of the table. */
 void table_print(const table *table) {
   //  for (unsigned long n = 0; n < table->count; n++) {
   //    point point = table->points[n];
@@ -134,13 +128,10 @@ void table_print(const table *table) {
   //  }
 }
 
-/* Sorts the table by input,  */
 void table_sort(table *table) {
   qsort(table->points_, table->count_, sizeof(point), point_compare);
 }
 
-/* Search for the index of the first point in the table that has a greater
- * input. */
 unsigned long table_search(const table *table, double in) {
   // TODO Implement a more efficient search algorithm; should not be necessary
   // for small tables
@@ -159,8 +150,6 @@ unsigned long table_search(const table *table, double in) {
   return n;
 }
 
-/* Samples the table and calculates the approximate output value. Returns true
- * on success. */
 bool table_sample(table *table, double in, double *out) {
   // This is where the constraint that the table contains at least two elements
   // is derived from
