@@ -20,6 +20,10 @@ int point_compare(const void *a, const void *b) {
   return 0;
 }
 
+bool point_is_between(const point *min, const point *max, double in) {
+  return min->input <= in && in <= max->input;
+}
+
 /* Defines a table of multiple points, forming a continuous mapping from inputs
  * to outputs. */
 typedef struct {
@@ -52,6 +56,31 @@ void table_release(table *table) {
   free(table);
 }
 
+const point *table_min_point(const table *table) { 
+  // FIXME Return NULL on uninitialized minimum reference point
+  return &table->points[0]; 
+}
+
+const point *table_max_point(const table *table) {
+  // FIXME Return NULL on uninitialized maximum reference point
+  return &table->points[table->count - 1];
+}
+
+bool table_is_okay_input(const table *table, double in) {
+  const point *min = table_min_point(table);
+  const point *max = table_max_point(table);
+  if (min == NULL || max == NULL) {
+    return false;
+  }
+  return point_is_between(min, max, in);
+}
+
+void table_set_reference_point(table *table, unsigned long n, double input,
+                               double output) {
+  table->points[n].input = input;
+  table->points[n].output = output;
+}
+
 /* Initializes the points such that input and output of all points are equally
  * spaced. */
 void table_init_linear(table *table, double in_min, double in_max,
@@ -62,18 +91,18 @@ void table_init_linear(table *table, double in_min, double in_max,
   double out_step = (out_max - out_min) / scaled_steps;
 
   for (unsigned long n = 0; n < table->count; n++) {
-    point *point = &table->points[n];
-    point->input = in_min + in_step * n;
-    point->output = out_min + out_step * n;
+    double in = in_min + in_step * n;
+    double out = out_min + out_step * n;
+    table_set_reference_point(table, n, in, out);
   }
 }
 
 /* Prints the points of the table. */
 void table_print(const table *table) {
-//  for (unsigned long n = 0; n < table->count; n++) {
-//    point point = table->points[n];
-//    printf("%f -> %f\n", point.input, point.output);
-//  }
+  //  for (unsigned long n = 0; n < table->count; n++) {
+  //    point point = table->points[n];
+  //    printf("%f -> %f\n", point.input, point.output);
+  //  }
 }
 
 /* Sorts the table by input,  */
@@ -95,8 +124,8 @@ unsigned long table_search(const table *table, double in) {
   }
 
   // Assert that the value is in range.
-  //assert(n >= 1);
-  //assert(n < table->count);
+  // assert(n >= 1);
+  // assert(n < table->count);
 
   return n;
 }
@@ -106,22 +135,25 @@ unsigned long table_search(const table *table, double in) {
 bool table_sample(const table *table, double in, double *out) {
   // This is where the constraint that the table contains at least two elements
   // is derived from
-  const point min = table->points[0];
-  const point max = table->points[table->count - 1];
+  const point *min = table_min_point(table);
+  const point *max = table_max_point(table);
 
-  if (in < min.input || in > max.input)
+  if (min == NULL || max == NULL) {
+    return false;
+  }
+
+  if (!point_is_between(min, max, in))
     return false;
 
-  if (in == min.input) {
-    *out = min.output;
+  if (in == min->input) {
+    *out = min->output;
     return true;
   }
 
-  if (in == max.input) {
-    *out = max.output;
+  if (in == max->input) {
+    *out = max->output;
     return true;
   }
-
 
   // Search for the first point in the table that has a greater input
   unsigned long n = table_search(table, in);
