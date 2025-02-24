@@ -71,7 +71,7 @@ $(TEST_DIR)/%.out: $(TEST_DIR)/%.c $(OBJECTS)
 
 # Clean rule
 clean:
-	rm -rf $(OBJ_DIR) *.out
+	rm -rf $(OBJ_DIR) main.out $(shell find $(TEST_DIR) -type f -name '*.out')
 	@echo "Cleaned up build files."
 
 # Include dependencies
