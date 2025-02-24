@@ -138,9 +138,6 @@ void ProcessADCData(uint16_t* adc1_data, uint16_t* adc2_data, uint16_t* adc3_dat
     char uart_buf[100];
     snprintf(uart_buf, sizeof(uart_buf), "ADC0: %4d, ADC7: %4d, ADC10: %4d\r\n",
              sample.adc[0], sample.adc[7], sample.adc[10]);
-    #ifndef TEST_MODE
-    HAL_UART_Transmit(&huart2, (uint8_t*)uart_buf, strlen(uart_buf), HAL_MAX_DELAY);
-    #endif
 
 }
 
