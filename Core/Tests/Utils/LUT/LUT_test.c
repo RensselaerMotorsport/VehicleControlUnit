@@ -37,10 +37,6 @@ double altitude_m_at_pressure_mb(double pressure_mb) {
   return 44330 * (1 - result);
 }
 
-// Adds the expected result of a pressure measurement to the table in the given
-// position. In the future, this should be added as a method of table itself.
-void table_add_reference_point_(table *table, double pressure_mb) {}
-
 // Tests if an uninitialized table behaves as expected; everything should be
 // zero-valued and methods should not be functional
 void test_uninitialized_table(table *table) {
@@ -49,10 +45,10 @@ void test_uninitialized_table(table *table) {
        !table_is_initialized(table));
   test("min is undefined", "min is defined", table_min_point(table) == NULL);
   test("max is undefined", "max is defined", table_max_point(table) == NULL);
-  test("0 is not okay input", "0 is okay input",
-       !table_is_okay_input(table, 0));
-  test("300 is not okay input", "300 is okay input",
-       !table_is_okay_input(table, 300));
+  test("cannot sample 0 mb", "can sample 0 mb",
+       !table_can_sample(table, 0));
+  test("can sample 300 mb", "cannot sample 300 mb",
+       !table_can_sample(table, 300));
   double altitude_m;
   bool okay = table_sample(table, 300, &altitude_m);
   test("is not okay", "is okay", !okay);
@@ -70,10 +66,10 @@ void test_initialized_table(table *table) {
   test("max is defined", "max is undefined", table_max_point(table) != NULL);
   test("max is last point in table", "max is not last point in table",
        table_max_point(table) == &table->points_[table->count_ - 1]);
-  test("0 is not okay input", "0 is okay input",
-       !table_is_okay_input(table, 0));
-  test("300 is okay input", "300 is not okay input",
-       table_is_okay_input(table, 300));
+  test("cannot sample 0 mb", "can sample 0 mb",
+       !table_can_sample(table, 0));
+  test("can sample 300 mb", "cannot sample 300 mb",
+       table_can_sample(table, 300));
   double altitude_m;
   bool okay = table_sample(table, 300, &altitude_m);
   test("is okay", "is not okay", okay);
@@ -100,8 +96,8 @@ int main() {
 
   // Initializes the table with equally-spaced points using the transfer
   // function
-  for (unsigned int n = 0; n < pressure_mb_to_altitude_m->count_; ++n) {
-    double reference_pressure_mb = 300 + n * 100;
+  for (unsigned int reference_pressure_mb = 300; reference_pressure_mb <= 1100;
+       reference_pressure_mb += 100) {
     assert(table_add_reference_point(
         pressure_mb_to_altitude_m, reference_pressure_mb,
         altitude_m_at_pressure_mb(reference_pressure_mb)));

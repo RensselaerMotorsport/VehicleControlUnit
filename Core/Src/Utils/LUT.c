@@ -17,6 +17,17 @@ bool point_is_between(const point *min, const point *max, double in) {
   return min->input <= in && in <= max->input;
 }
 
+/* Returns true if the input can interpolate between the min and max. */
+bool can_interpolate(const point *min, const point *max, double in) {
+  // Either point is not defined, so can't interpolate
+  if (min == NULL || max == NULL) {
+    return false;
+  }
+
+  // The input can interpolate if it is between the min and max
+  return point_is_between(min, max, in);
+}
+
 table *table_alloc(unsigned long count) {
   // The table must contain at least two elements; a minimum and a maximum
   // assert(count >= 2);
@@ -98,13 +109,10 @@ const point *table_max_point(table *table) {
   return &table->points_[table->count_ - 1];
 }
 
-bool table_is_okay_input(table *table, double in) {
+bool table_can_sample(table *table, double in) {
   const point *min = table_min_point(table);
   const point *max = table_max_point(table);
-  if (min == NULL || max == NULL) {
-    return false;
-  }
-  return point_is_between(min, max, in);
+  return can_interpolate(min, max, in);
 }
 
 void table_init_linear(table *table, double in_min, double in_max,
@@ -156,12 +164,11 @@ bool table_sample(table *table, double in, double *out) {
   const point *min = table_min_point(table);
   const point *max = table_max_point(table);
 
-  if (min == NULL || max == NULL) {
+  // If can't interpolate between the endpoints, can't interpolate between
+  // intermediate points
+  if (!can_interpolate(min, max, in)) {
     return false;
   }
-
-  if (!point_is_between(min, max, in))
-    return false;
 
   if (in == min->input) {
     *out = min->output;

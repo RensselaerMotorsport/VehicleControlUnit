@@ -51,8 +51,8 @@ const point *table_min_point(table *table);
  * input). If the maximum reference point is not defined, returns NULL. */
 const point *table_max_point(table *table);
 
-/* Tests if the input is valid for the table. */
-bool table_is_okay_input(table *table, double in);
+/* Tests if the input is a valid sample for the table. */
+bool table_can_sample(table *table, double in);
 
 /* Initializes the reference points such that input and output of all reference
  * points are equally spaced. */
