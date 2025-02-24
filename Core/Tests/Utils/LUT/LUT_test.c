@@ -39,21 +39,14 @@ double altitude_m_at_pressure_mb(double pressure_mb) {
 
 // Adds the expected result of a pressure measurement to the table in the given
 // position. In the future, this should be added as a method of table itself.
-void table_add_reference_point_(table *table, unsigned int n,
-                                double pressure_mb) {
-  // NOTE Probably not necessary for testing, but in case the index is somehow
-  // out of range
-  assert(n >= 0 && n < table->count);
-  table->points[n].input = pressure_mb;
-  // TODO If this gets added to the table implementation itself, use a parameter
-  // for output
-  table->points[n].output = altitude_m_at_pressure_mb(pressure_mb);
-}
+void table_add_reference_point_(table *table, double pressure_mb) {}
 
 // Tests if an uninitialized table behaves as expected; everything should be
 // zero-valued and methods should not be functional
-void test_uninitialized_table(const table *table) {
+void test_uninitialized_table(table *table) {
   test_start("uninitialized table");
+  test("table is uninitialized", "table is initialized",
+       !table_is_initialized(table));
   test("min is undefined", "min is defined", table_min_point(table) == NULL);
   test("max is undefined", "max is defined", table_max_point(table) == NULL);
   test("0 is not okay input", "0 is okay input",
@@ -67,14 +60,16 @@ void test_uninitialized_table(const table *table) {
 
 // Tests if an uninitialized table behaves as expected; everything should be
 // zero-valued and methods should not be functional
-void test_initialized_table(const table *table) {
+void test_initialized_table(table *table) {
   test_start("initialized table");
+  test("table is initialized", "table is uninitialized",
+       table_is_initialized(table));
   test("min is defined", "min is undefined", table_min_point(table) != NULL);
   test("min is first point in table", "min is not first point in table",
-       table_min_point(table) == &table->points[0]);
+       table_min_point(table) == &table->points_[0]);
   test("max is defined", "max is undefined", table_max_point(table) != NULL);
   test("max is last point in table", "max is not last point in table",
-       table_max_point(table) == &table->points[table->count - 1]);
+       table_max_point(table) == &table->points_[table->count_ - 1]);
   test("0 is not okay input", "0 is okay input",
        !table_is_okay_input(table, 0));
   test("300 is okay input", "300 is not okay input",
@@ -86,7 +81,7 @@ void test_initialized_table(const table *table) {
 
 // Tests if sampling a known reference input in the table returns the known
 // reference output
-void test_sampling_reference_point(const table *table) {
+void test_sampling_reference_point(table *table) {
   double reference_pressure_mb = 300;
   double reference_altitude_m =
       altitude_m_at_pressure_mb(reference_pressure_mb);
@@ -105,10 +100,11 @@ int main() {
 
   // Initializes the table with equally-spaced points using the transfer
   // function
-  for (unsigned int n = 0; n < pressure_mb_to_altitude_mb->count; ++n) {
+  for (unsigned int n = 0; n < pressure_mb_to_altitude_mb->count_; ++n) {
     double reference_pressure_mb = 300 + n * 100;
-    table_add_reference_point_(pressure_mb_to_altitude_mb, n,
-                               reference_pressure_mb);
+    assert(table_add_reference_point(
+        pressure_mb_to_altitude_mb, reference_pressure_mb,
+        altitude_m_at_pressure_mb(reference_pressure_mb)));
   }
 
   test_initialized_table(pressure_mb_to_altitude_mb);

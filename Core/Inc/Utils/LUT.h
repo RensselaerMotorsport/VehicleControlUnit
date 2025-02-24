@@ -20,9 +20,13 @@ bool point_is_between(const point *min, const point *max, double in);
  * continuous mapping from inputs to outputs. */
 typedef struct {
   /* Number of reference points. */
-  unsigned long count;
+  unsigned long count_;
+  /* Number of added reference points. */
+  unsigned long added_;
+  /* True if the table is initialized; cache for table_is_initialized. */
+  bool initialized_;
   /* Reference points. */
-  point points[];
+  point points_[];
 } table;
 
 /* Allocates memory for a table. */
@@ -31,22 +35,24 @@ table *table_alloc(unsigned long count);
 /* Releases memory occupied by a table. */
 void table_release(table *table);
 
+/* Returns true if all reference points in the table have been added. */
+bool table_is_initialized(table *table);
+
+/* Adds a reference point to the table. Returns true if the reference point was
+ * added. */
+bool table_add_reference_point(table *table, double in, double out);
+
 /* Gets the minimum reference point (the reference point with the least input).
  * If the minimum reference point is not defined, returns NULL.
  */
-const point *table_min_point(const table *table);
+const point *table_min_point(table *table);
 
 /* Gets the maximum reference point (the reference point with the greatest
  * input). If the maximum reference point is not defined, returns NULL. */
-const point *table_max_point(const table *table);
+const point *table_max_point(table *table);
 
 /* Tests if the input is valid for the table. */
-bool table_is_okay_input(const table *table, double in);
-
-/* Sets a reference point in the table. Returns true if the reference point was
- * added. */
-void table_set_reference_point(table *table, unsigned long n, double input,
-                               double output);
+bool table_is_okay_input(table *table, double in);
 
 /* Initializes the reference points such that input and output of all reference
  * points are equally spaced. */
@@ -65,5 +71,5 @@ unsigned long table_search(const table *table, double in);
 
 /* Samples the table and calculates the approximate output value. Returns true
  * on success. */
-bool table_sample(const table *table, double in, double *out);
+bool table_sample(table *table, double in, double *out);
 #endif // RENNSSELAERMOTORSPORT_LUT_H

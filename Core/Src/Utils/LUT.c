@@ -1,13 +1,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-/* Defines a mapping from one input to one output. */
-typedef struct {
-  /* Input value. */
-  double input;
-  /* Output value. */
-  double output;
-} point;
+#include "../Inc/Utils/LUT.h"
 
 /* Compares two points. */
 int point_compare(const void *a, const void *b) {
@@ -24,15 +18,6 @@ bool point_is_between(const point *min, const point *max, double in) {
   return min->input <= in && in <= max->input;
 }
 
-/* Defines a table of multiple points, forming a continuous mapping from inputs
- * to outputs. */
-typedef struct {
-  /* Number of points. */
-  unsigned long count;
-  /* Points themselves. */
-  point points[];
-} table;
-
 /* Allocates memory for a table. */
 table *table_alloc(unsigned long count) {
   // The table must contain at least two elements; a minimum and a maximum
@@ -45,7 +30,13 @@ table *table_alloc(unsigned long count) {
 
   table *table = malloc(size);
 
-  table->count = count;
+  table->count_ = count;
+  table->added_ = 0;
+  table->initialized_ = false;
+  for (unsigned long n = 0; n < count; ++n) {
+    table->points_[n].input = 0;
+    table->points_[n].output = 0;
+  }
 
   return table;
 }
@@ -56,17 +47,61 @@ void table_release(table *table) {
   free(table);
 }
 
-const point *table_min_point(const table *table) { 
-  // FIXME Return NULL on uninitialized minimum reference point
-  return &table->points[0]; 
+bool table_is_initialized(table *table) {
+  // Nothing has invalidated the initialized state of the table
+  if (table->initialized_) {
+    return true;
+  }
+
+  bool all_reference_points = table->added_ == table->count_;
+
+  if (!all_reference_points) {
+    table->initialized_ = false;
+    return table->initialized_;
+  }
+
+  bool sorted = true;
+  const point *previous_point = &table->points_[0];
+  for (unsigned long n = 1; n < table->count_; ++n) {
+    const point *point = &table->points_[n];
+    // Found a decrease, which violates table being sorted
+    if (point->input < previous_point->input) {
+      sorted = false;
+    }
+  }
+  table->initialized_ = sorted;
+  return table->initialized_;
 }
 
-const point *table_max_point(const table *table) {
-  // FIXME Return NULL on uninitialized maximum reference point
-  return &table->points[table->count - 1];
+bool table_add_reference_point(table *table, double in, double out) {
+  if (table_is_initialized(table)) {
+    return false;
+  }
+
+  // NOTE This may should not actually be necessary; the only way to get here is
+  // if the table is not initialized already; there may be a lurking logic error
+  table->initialized_ = false;
+
+  table->points_[table->added_].input = in;
+  table->points_[table->added_].output = out;
+  table->added_++;
+
+  return true;
 }
 
-bool table_is_okay_input(const table *table, double in) {
+const point *table_min_point(table *table) {
+  if (!table_is_initialized(table))
+    return NULL;
+  return &table->points_[0];
+}
+
+const point *table_max_point(table *table) {
+  if (!table_is_initialized(table))
+    return NULL;
+  return &table->points_[table->count_ - 1];
+}
+
+bool table_is_okay_input(table *table, double in) {
   const point *min = table_min_point(table);
   const point *max = table_max_point(table);
   if (min == NULL || max == NULL) {
@@ -75,25 +110,19 @@ bool table_is_okay_input(const table *table, double in) {
   return point_is_between(min, max, in);
 }
 
-void table_set_reference_point(table *table, unsigned long n, double input,
-                               double output) {
-  table->points[n].input = input;
-  table->points[n].output = output;
-}
-
 /* Initializes the points such that input and output of all points are equally
  * spaced. */
 void table_init_linear(table *table, double in_min, double in_max,
                        double out_min, double out_max) {
   // The first step is not a scaled step, since it is just [in_min out_min]
-  unsigned long scaled_steps = table->count - 1;
+  unsigned long scaled_steps = table->count_ - 1;
   double in_step = (in_max - in_min) / scaled_steps;
   double out_step = (out_max - out_min) / scaled_steps;
 
-  for (unsigned long n = 0; n < table->count; n++) {
+  for (unsigned long n = 0; n < table->count_; n++) {
     double in = in_min + in_step * n;
     double out = out_min + out_step * n;
-    table_set_reference_point(table, n, in, out);
+    table_add_reference_point(table, in, out);
   }
 }
 
@@ -107,7 +136,7 @@ void table_print(const table *table) {
 
 /* Sorts the table by input,  */
 void table_sort(table *table) {
-  qsort(table->points, table->count, sizeof(point), point_compare);
+  qsort(table->points_, table->count_, sizeof(point), point_compare);
 }
 
 /* Search for the index of the first point in the table that has a greater
@@ -117,8 +146,8 @@ unsigned long table_search(const table *table, double in) {
   // for small tables
 
   unsigned long n;
-  for (n = 0; n < table->count; n++) {
-    if (table->points[n].input > in) {
+  for (n = 0; n < table->count_; n++) {
+    if (table->points_[n].input > in) {
       break;
     }
   }
@@ -132,7 +161,7 @@ unsigned long table_search(const table *table, double in) {
 
 /* Samples the table and calculates the approximate output value. Returns true
  * on success. */
-bool table_sample(const table *table, double in, double *out) {
+bool table_sample(table *table, double in, double *out) {
   // This is where the constraint that the table contains at least two elements
   // is derived from
   const point *min = table_min_point(table);
@@ -157,8 +186,8 @@ bool table_sample(const table *table, double in, double *out) {
 
   // Search for the first point in the table that has a greater input
   unsigned long n = table_search(table, in);
-  point low = table->points[n - 1];
-  point high = table->points[n];
+  point low = table->points_[n - 1];
+  point high = table->points_[n];
 
   // Map the input value to a t-value [0, 1]
   double t = (in - low.input) / (high.input - low.input);
