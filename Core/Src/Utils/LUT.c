@@ -1,0 +1,193 @@
+#include <stdbool.h>
+#include <stdlib.h>
+
+#include "../Inc/Utils/LUT.h"
+
+int point_compare(const void *a, const void *b) {
+  const point *pa = a;
+  const point *pb = b;
+  if (pa->input < pb->input)
+    return -1;
+  if (pa->input > pb->input)
+    return 1;
+  return 0;
+}
+
+bool point_is_between(const point *min, const point *max, double in) {
+  return min->input <= in && in <= max->input;
+}
+
+/* Returns true if the input can interpolate between the min and max. */
+bool can_interpolate(const point *min, const point *max, double in) {
+  // Either point is not defined, so can't interpolate
+  if (min == NULL || max == NULL) {
+    return false;
+  }
+
+  // The input can interpolate if it is between the min and max
+  return point_is_between(min, max, in);
+}
+
+table *table_alloc(unsigned long count) {
+  // The table must contain at least two elements; a minimum and a maximum
+  // assert(count >= 2);
+  if (count < 2) {
+    return NULL;
+  }
+
+  unsigned long size = sizeof(table) + count * sizeof(point);
+
+  table *table = malloc(size);
+
+  table->count_ = count;
+  table->added_ = 0;
+  table->initialized_ = false;
+  for (unsigned long n = 0; n < count; ++n) {
+    table->points_[n].input = 0;
+    table->points_[n].output = 0;
+  }
+
+  return table;
+}
+
+void table_release(table *table) {
+  // TODO Potential issue freeing flexible array of points
+  free(table);
+}
+
+bool table_is_initialized(table *table) {
+  // Nothing has invalidated the initialized state of the table
+  if (table->initialized_) {
+    return true;
+  }
+
+  bool all_reference_points = table->added_ == table->count_;
+
+  if (!all_reference_points) {
+    table->initialized_ = false;
+    return table->initialized_;
+  }
+
+  bool sorted = true;
+  const point *previous_point = &table->points_[0];
+  for (unsigned long n = 1; n < table->count_; ++n) {
+    const point *point = &table->points_[n];
+    // Found a decrease, which violates table being sorted
+    if (point->input < previous_point->input) {
+      sorted = false;
+    }
+  }
+  table->initialized_ = sorted;
+  return table->initialized_;
+}
+
+bool table_add_reference_point(table *table, double in, double out) {
+  if (table_is_initialized(table)) {
+    return false;
+  }
+
+  // NOTE This may should not actually be necessary; the only way to get here is
+  // if the table is not initialized already; there may be a lurking logic error
+  table->initialized_ = false;
+
+  table->points_[table->added_].input = in;
+  table->points_[table->added_].output = out;
+  table->added_++;
+
+  return true;
+}
+
+const point *table_min_point(table *table) {
+  if (!table_is_initialized(table))
+    return NULL;
+  return &table->points_[0];
+}
+
+const point *table_max_point(table *table) {
+  if (!table_is_initialized(table))
+    return NULL;
+  return &table->points_[table->count_ - 1];
+}
+
+bool table_can_sample(table *table, double in) {
+  const point *min = table_min_point(table);
+  const point *max = table_max_point(table);
+  return can_interpolate(min, max, in);
+}
+
+void table_init_linear(table *table, double in_min, double in_max,
+                       double out_min, double out_max) {
+  // The first step is not a scaled step, since it is just [in_min out_min]
+  unsigned long scaled_steps = table->count_ - 1;
+  double in_step = (in_max - in_min) / scaled_steps;
+  double out_step = (out_max - out_min) / scaled_steps;
+
+  for (unsigned long n = 0; n < table->count_; n++) {
+    double in = in_min + in_step * n;
+    double out = out_min + out_step * n;
+    table_add_reference_point(table, in, out);
+  }
+}
+
+void table_print(const table *table) {
+  //  for (unsigned long n = 0; n < table->count; n++) {
+  //    point point = table->points[n];
+  //    printf("%f -> %f\n", point.input, point.output);
+  //  }
+}
+
+void table_sort(table *table) {
+  qsort(table->points_, table->count_, sizeof(point), point_compare);
+}
+
+unsigned long table_search(const table *table, double in) {
+  // TODO Implement a more efficient search algorithm; should not be necessary
+  // for small tables
+
+  unsigned long n;
+  for (n = 0; n < table->count_; n++) {
+    if (table->points_[n].input > in) {
+      break;
+    }
+  }
+
+  // Assert that the value is in range.
+  // assert(n >= 1);
+  // assert(n < table->count);
+
+  return n;
+}
+
+bool table_sample(table *table, double in, double *out) {
+  // This is where the constraint that the table contains at least two elements
+  // is derived from
+  const point *min = table_min_point(table);
+  const point *max = table_max_point(table);
+
+  // If can't interpolate between the endpoints, can't interpolate between
+  // intermediate points
+  if (!can_interpolate(min, max, in)) {
+    return false;
+  }
+
+  if (in == min->input) {
+    *out = min->output;
+    return true;
+  }
+
+  if (in == max->input) {
+    *out = max->output;
+    return true;
+  }
+
+  // Search for the first point in the table that has a greater input
+  unsigned long n = table_search(table, in);
+  point low = table->points_[n - 1];
+  point high = table->points_[n];
+
+  // Map the input value to a t-value [0, 1]
+  double t = (in - low.input) / (high.input - low.input);
+
+  *out = low.output + t * (high.output - low.output);
+  return true;
+}
