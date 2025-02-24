@@ -1,11 +1,41 @@
 # Vehicle Contorl Unit 🏎️
 ## Overview
-This is the c library for controlling the car.
+This is a custom implementation of a Vehicle Processor written by Rensselaer Motorsport to be used on FSAE vehicles through the STM32F767Zi microprocessor. It implements several systems and safety features to provide a secure and reliable method of operating datalogging, controls, and component simulation operations on a vehicle.
 
-This software is intended to be run on a real time operating system.
+While our implementation is configured to be a central car computer and controller, this same code can be used to make something like a local CAN node or a small datalogging unit on a less powerful STM chip (i.e. F1 or F3) by reconfiguring code through STM32 Cube MX.
 
-### Pretty Graphs
-```git log --graph --abbrev-commit --decorate --date=relative --all```
+This software is intended to be run on a real time operating system (i.e. FreeRTOS).
+
+### Documentation:
+For code documentation, please see our Doxygen page: [RM-VCU Doxygen](https://rensselaermotorsport.github.io/VehicleControlUnit/files.html)
+
+### Folder Structure
+```
+VehicleControlUnit/
+├── Core/
+│   ├── Inc/                  # Header files
+│   │   └──                    # Similar to Src/
+│   ├── Src/                  # Source files
+│   │   ├── Outputs/          # Digital and Analog Outputs
+│   │   ├── Scheduler/        # Scheduling service for VCU
+│   │   ├── Sensors/          # Digital and Analog Inputs
+│   │   ├── Systems/          # Control, Safety, & Comm Systems
+│   │   └── Utils/            # Helper files
+│   ├── Tests/                # Unit tests
+│   └── Makefile              # makefile
+├── Hardware/                 # KiCAD files for hardware dev
+├── Documentation/            # Project documentation resources
+├── Drivers/                  # Hardware abstraction layer drivers
+│   ├── CMSIS/                # CMSIS files
+│   └── STM32F7xx_HAL_Driver/ # STM32 HAL drivers
+├── .gitignore                # Git ignore file
+├── README.md                 # Project readme
+└── VehicleControlUnit.ioc    # Cube MX configuration file
+```
+
+### General Program Structure
+
+
 
 ## Software Compilation on VS Code
 
@@ -59,7 +89,7 @@ To compile purely software using cmake
  10. Open terminal and run: `make "test file directory".out && ./"test file directory".out` (e.g. `make Tests/TorqueControlActuatorTest.out && ./Tests/TorqueControlActuatorTest.out`)
 
 
-## Software Compilation to Hardware 
+## Software Compilation to Hardware (STM 32 Cube IDE)
 
 ### Basic Setup for Hardware Compilation
 
@@ -74,7 +104,7 @@ To compile software into firmware that is flashed onto the STM32 board.
     ```
 5. A folder titled VehicleControlUnit should appear in your workspace. 
 6. Open STM32 Cube IDE. Select `C:\Users\yourusername\STM32CubeIDE\workspace_x.xx.x` as the launch directory.
-7. Connect STM32 board to computer. Flash firmware by running the project in debug mode. TO DO: Test with board
+7. Connect STM32 board to computer. Flash firmware by running the project in debug mode. Refer to [HIL](#hil-hardware-testing) and [PIL](#pil-processor-testing) testing sections for more details
 
 ### Developing Tips on the IDE
 #### File Creation / Duplication
@@ -90,14 +120,25 @@ To compile software into firmware that is flashed onto the STM32 board.
 
 HAL intialization code for peripherals can be automatically generated into main.c once configured in the .ioc file. Any changes in the .ioc file will require code generation (to update main.c) - right click the .ioc file then click "Code Generation". 
 
-> [!CAUTION]
-> Code generation rewrites the main.c such that all user code (denoted by the user code begin and end comments) will be GONE. Be sure to save the user code elsewhere. 
 
+> [!CAUTION]
+> Code generation rewrites files such as main.c/.h, stm32*.c/.h, and so. Make sure any custom code is inbetween the comments labelled "BEGIN/END USER CODE." Otherwise, it will overwrite any code you wrote outside these blocks. Anything inside of the Scheduler, Sensors, System, Outputs, and Utils folders is safe.
 #### Useful Documentation
 TO DO: Add links to documents
 
 ### HIL (Hardware) Testing
-TO DO
+It may be useful to first setup a test bench to simulate your car's hardware. The bench below simulates the following:
+
+- CAN Bus activity on Bus 1
+- APPs input (double)
+- Brake input
+- RTD input
+- Throttle Signal output
+- Brake Light output
+- RTD status indicator
+
+![HIL test bench](Documentation/shabbyHILsetup.jpg)
+
 
 ### PIL (Processor) Testing 
 TO DO
@@ -127,3 +168,28 @@ Allows reviewing and managing of GitHub pull requests and issues directly in VS 
 #### [Github Desktop](https://desktop.github.com/download/)
 
 Intuitive GUI for cloning repositories to user specified directories, switching branches, fetching/pushing from origin.
+
+#### Pretty Graphs
+Run this command in the terminal to generate pretty git commit graphs
+```git log --graph --abbrev-commit --decorate --date=relative --all```
+
+#### STM32 Cube IDE
+Useful for compiling code onto STM boards, and to also debug in real time on the hardware. You can put in breakpoints, view memory regions, and CPU utilization to name some useful tools.
+
+#### STM32 Cube MX
+Useful for configuring clocks and GPIO on STM boards using HAL (Hardware Abstraction Layer). It can then generate this code into the project for you.
+
+</br>
+
+> [!CAUTION]
+> Code generation rewrites files such as main.c/.h, stm32*.c/.h, and so. Make sure any custom code is inbetween the comments labelled "BEGIN/END USER CODE." Otherwise, it will overwrite any code you wrote outside these blocks. Anything inside of the Scheduler, Sensors, System, Outputs, and Utils folders is safe.
+
+</br>
+STM 32 Cube MX interface for GPIO:
+
+![STM 32 Cube MX interface for GPIO](Documentation/CubeMXpic1.png)
+
+</br>
+STM 32 Cube MX interface for Clocks:
+
+![STM 32 Cube MX interface for Clocks](Documentation/CubeMXpic2.png)
