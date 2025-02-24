@@ -54,20 +54,8 @@ const point *table_max_point(table *table);
 /* Tests if the input is a valid sample for the table. */
 bool table_can_sample(table *table, double in);
 
-/* Initializes the reference points such that input and output of all reference
- * points are equally spaced. */
-void table_init_linear(table *table, double in_min, double in_max,
-                       double out_min, double out_max);
-
-/* Prints the reference points of the table. */
-void table_print(const table *table);
-
 /* Sorts the reference points by input. */
 void table_sort(table *table);
-
-/* Search for the index of the first reference point in the table that has a
- * greater input. */
-unsigned long table_search(const table *table, double in);
 
 /* Samples the table and calculates the approximate output value. Returns true
  * on success. */

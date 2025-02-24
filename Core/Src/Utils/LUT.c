@@ -129,17 +129,12 @@ void table_init_linear(table *table, double in_min, double in_max,
   }
 }
 
-void table_print(const table *table) {
-  //  for (unsigned long n = 0; n < table->count; n++) {
-  //    point point = table->points[n];
-  //    printf("%f -> %f\n", point.input, point.output);
-  //  }
-}
-
 void table_sort(table *table) {
   qsort(table->points_, table->count_, sizeof(point), point_compare);
 }
 
+/* Search for the index of the first reference point in the table that has a
+ * greater input. */
 unsigned long table_search(const table *table, double in) {
   // TODO Implement a more efficient search algorithm; should not be necessary
   // for small tables
