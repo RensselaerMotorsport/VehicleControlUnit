@@ -1,7 +1,7 @@
 # Compiler settings
 CC = gcc
 # TODO: Remove -g and -O0 flags for production
-CFLAGS = -g -O0 -IInc -IInc/fake_include -pthread -lm # -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/
+CFLAGS = -g -O0 -IInc  -pthread -lm
 
 # Base source and test directories
 SRC_DIR = Src
@@ -10,8 +10,11 @@ TEST_DIR = Tests
 # Object files directory
 OBJ_DIR = Obj
 
-# Recursively find all C sources in subdirectories of SRC_DIR,
-# excluding the SRC_DIR root itself
+# Set empty SOURCES variable
+SOURCES = ""
+
+ifdef TEST_MODE
+CFLAGS += -DTEST_MODE -IInc/fake_include
 SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
           ! -name 'stm32*.c' \
           ! -name '*hal*.c' \
@@ -22,18 +25,17 @@ SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
           ! -name 'startup_stm32*.c' \
           ! -path '*/STM32*/*' \
           ! -path '*/Drivers/*')
+else
+CFLAGS += -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include/ -I../Drivers/CMSIS/Include/ -I../Drivers/STM32F7xx_HAL_Driver/Inc/ -DSTM32F767xx
+SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c')
+endif
+
 # Create corresponding object files paths
 OBJECTS = $(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Test sources and objects
 TEST_SOURCES = $(shell find $(TEST_DIR) -type f -name '*.c')
 TEST_OBJECTS = $(TEST_SOURCES:$(TEST_DIR)/%.c=$(OBJ_DIR)/%.o)
-
-# Check if TEST_MODE is set
-# NOTE Don't indent this!
-ifdef TEST_MODE
-CFLAGS += -DTEST_MODE
-endif
 
 # Default target
 all: prepare main.out
