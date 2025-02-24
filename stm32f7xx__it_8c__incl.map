@@ -1,7 +1,9 @@
 <map id="Core/Src/stm32f7xx_it.c" name="Core/Src/stm32f7xx_it.c">
-<area shape="rect" id="node1" title="Interrupt Service Routines." alt="" coords="21,5,181,31"/>
-<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="5,159,65,185"/>
-<area shape="rect" id="node4" href="$stm32f7xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="104,79,209,104"/>
-<area shape="rect" id="node3" title=" " alt="" coords="43,240,158,265"/>
-<area shape="rect" id="node5" href="$Can_8h.html" title=" " alt="" coords="90,152,245,192"/>
+<area shape="rect" id="node1" title="Interrupt Service Routines." alt="" coords="60,5,220,31"/>
+<area shape="rect" id="node2" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="57,79,117,104"/>
+<area shape="rect" id="node5" href="$stm32f7xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="153,79,258,104"/>
+<area shape="rect" id="node3" href="$stm32f7xx__hal_8h.html" title=" " alt="" coords="5,240,120,265"/>
+<area shape="rect" id="node4" title=" " alt="" coords="57,159,117,185"/>
+<area shape="rect" id="node6" href="$Can_8h.html" title=" " alt="" coords="141,152,296,192"/>
+<area shape="rect" id="node7" title=" " alt="" coords="187,240,251,265"/>
 </map>

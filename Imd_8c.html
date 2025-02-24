@@ -79,7 +79,7 @@ $(function() {
   <div class="headertitle"><div class="title">Imd.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="IMD_8h_source.html">../../../Inc/Systems/External/IMD.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Imd_8h_source.html">../../../Inc/Systems/External/Imd.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ExternalSystem_8h_source.html">../../../Inc/Systems/ExternalSystem.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Imd.c:</div>
@@ -87,7 +87,7 @@ Include dependency graph for Imd.c:</div>
 <div class="center"><img src="Imd_8c__incl.png" border="0" usemap="#aCore_2Src_2Systems_2External_2Imd_8c" alt=""/></div>
 <map name="aCore_2Src_2Systems_2External_2Imd_8c" id="aCore_2Src_2Systems_2External_2Imd_8c">
 <area shape="rect" title=" " alt="" coords="234,5,413,45"/>
-<area shape="rect" href="IMD_8h.html" title=" " alt="" coords="211,93,337,133"/>
+<area shape="rect" href="Imd_8h.html" title=" " alt="" coords="211,93,337,133"/>
 <area shape="rect" href="ExternalSystem_8h.html" title=" " alt="" coords="308,181,440,207"/>
 <area shape="rect" title=" " alt="" coords="209,181,283,207"/>
 <area shape="rect" title=" " alt="" coords="5,475,65,500"/>
@@ -109,7 +109,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aece32b5a3b7ddffa613156314deb91c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9">updateIMD</a> (void *<a class="el" href="structIMDValues.html">IMDValues</a>)</td></tr>
 <tr class="memdesc:aece32b5a3b7ddffa613156314deb91c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the IMD values.  <a href="Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9">More...</a><br /></td></tr>
 <tr class="separator:aece32b5a3b7ddffa613156314deb91c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d26785fed119d06a15715387ebafd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5">getIMDStatus</a> (void *imdValues, <a class="el" href="IMD_8h.html#a9f01a176f9de4b760a320dd1a107f598">IMDStatus</a> status)</td></tr>
+<tr class="memitem:ad1d26785fed119d06a15715387ebafd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5">getIMDStatus</a> (void *imdValues, <a class="el" href="Imd_8h.html#a9f01a176f9de4b760a320dd1a107f598">IMDStatus</a> status)</td></tr>
 <tr class="memdesc:ad1d26785fed119d06a15715387ebafd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the status of the IMD.  <a href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5">More...</a><br /></td></tr>
 <tr class="separator:ad1d26785fed119d06a15715387ebafd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5594bc510ba459ca4eede8a782dbf3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Imd_8c.html#a7b5594bc510ba459ca4eede8a782dbf3">getIsoResistanceNeg</a> (void *imdValues)</td></tr>
@@ -138,7 +138,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="IMD_8h.html#a9f01a176f9de4b760a320dd1a107f598">IMDStatus</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Imd_8h.html#a9f01a176f9de4b760a320dd1a107f598">IMDStatus</a>&#160;</td>
           <td class="paramname"><em>status</em>&#160;</td>
         </tr>
         <tr>
@@ -150,6 +150,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the status of the IMD. </p>
+<p >FIXME: Update this function to use <a class="el" href="structUpdateable.html">Updateable</a> ptr </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="structIMDValues.html">IMDValues</a></td><td>A pointer to the structure <a class="el" href="structIMDValues.html">IMDValues</a>. </td></tr>
@@ -165,17 +166,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IMDStatus;</div>
 <div class="line"><span class="lineno">   28</span>}</div>
 <div class="ttc" id="aExternalSystem_8h_html_aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303"><div class="ttname"><a href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a></div><div class="ttdeci">@ IMD</div><div class="ttdef"><b>Definition:</b> <a href="ExternalSystem_8h_source.html#l00015">ExternalSystem.h:14</a></div></div>
-<div class="ttc" id="astructIMDValues_html"><div class="ttname"><a href="structIMDValues.html">IMDValues</a></div><div class="ttdef"><b>Definition:</b> <a href="IMD_8h_source.html#l00013">IMD.h:13</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Imd_8c_ad1d26785fed119d06a15715387ebafd5_icgraph.png" border="0" usemap="#aImd_8c_ad1d26785fed119d06a15715387ebafd5_icgraph" alt=""/></div>
-<map name="aImd_8c_ad1d26785fed119d06a15715387ebafd5_icgraph" id="aImd_8c_ad1d26785fed119d06a15715387ebafd5_icgraph">
-<area shape="rect" title="Gets the status of the IMD." alt="" coords="116,5,219,31"/>
-<area shape="rect" href="Imd_8c.html#a5f75b2b0a3ee8220e821866d11c53c35" title="Initializes the IMD with the specified frequency." alt="" coords="5,5,68,31"/>
-</map>
-</div>
-
+<div class="ttc" id="astructIMDValues_html"><div class="ttname"><a href="structIMDValues.html">IMDValues</a></div><div class="ttdef"><b>Definition:</b> <a href="Imd_8h_source.html#l00013">Imd.h:13</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa55de630fa00e920d955addf8ff1861e" name="aa55de630fa00e920d955addf8ff1861e"></a>
@@ -316,24 +308,22 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">    4</span>                                     {</div>
 <div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="ExternalSystem_8h.html#a4e4f320bb768dfd6c0ba22cbafc14fed">initExternalSystem</a>(&amp;<a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;base, <span class="stringliteral">&quot;IMD&quot;</span>, hz, <a class="code hl_enumvalue" href="System_8h.html#a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5">EXTERNAL</a>);</div>
 <div class="line"><span class="lineno">    6</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;base.system.updateable.update = <a class="code hl_function" href="Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9">updateIMD</a>;</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;base.system.updateable.status = <a class="code hl_function" href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5">getIMDStatus</a>;</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IMDStatus = <a class="code hl_enumvalue" href="IMD_8h.html#a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26">IMD_OK</a>;</div>
+<div class="line"><span class="lineno">    7</span>    <span class="comment">// IMD-&gt;base.system.updateable.status = getIMDStatus; // FIXME: Update getIMDStatus</span></div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IMDStatus = <a class="code hl_enumvalue" href="Imd_8h.html#a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26">IMD_OK</a>;</div>
 <div class="line"><span class="lineno">    9</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IsoResistanceNeg = 0;</div>
 <div class="line"><span class="lineno">   10</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IsoResistancePos = 0;</div>
 <div class="line"><span class="lineno">   11</span>    <a class="code hl_enumvalue" href="ExternalSystem_8h.html#aa3ca4a11130df4f4b95894cff017475ca8c41c05a63a15c5d188d02f6f4db4303">IMD</a>-&gt;IsoResistanceCorrected = 0;</div>
 <div class="line"><span class="lineno">   12</span>}</div>
 <div class="ttc" id="aExternalSystem_8h_html_a4e4f320bb768dfd6c0ba22cbafc14fed"><div class="ttname"><a href="ExternalSystem_8h.html#a4e4f320bb768dfd6c0ba22cbafc14fed">initExternalSystem</a></div><div class="ttdeci">void initExternalSystem(ExternalSystem *external, const char *name, int hz, ExternalType type)</div><div class="ttdef"><b>Definition:</b> <a href="ExternalSystem_8c_source.html#l00003">ExternalSystem.c:3</a></div></div>
-<div class="ttc" id="aIMD_8h_html_a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26"><div class="ttname"><a href="IMD_8h.html#a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26">IMD_OK</a></div><div class="ttdeci">@ IMD_OK</div><div class="ttdef"><b>Definition:</b> <a href="IMD_8h_source.html#l00008">IMD.h:8</a></div></div>
-<div class="ttc" id="aImd_8c_html_ad1d26785fed119d06a15715387ebafd5"><div class="ttname"><a href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5">getIMDStatus</a></div><div class="ttdeci">int getIMDStatus(void *imdValues, IMDStatus status)</div><div class="ttdoc">Gets the status of the IMD.</div><div class="ttdef"><b>Definition:</b> <a href="Imd_8c_source.html#l00025">Imd.c:25</a></div></div>
 <div class="ttc" id="aImd_8c_html_aece32b5a3b7ddffa613156314deb91c9"><div class="ttname"><a href="Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9">updateIMD</a></div><div class="ttdeci">void updateIMD(void *IMDValues)</div><div class="ttdoc">Updates the IMD values.</div><div class="ttdef"><b>Definition:</b> <a href="Imd_8c_source.html#l00014">Imd.c:14</a></div></div>
+<div class="ttc" id="aImd_8h_html_a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26"><div class="ttname"><a href="Imd_8h.html#a9f01a176f9de4b760a320dd1a107f598a46e682738ad8ec7d2284f8fb1ba25c26">IMD_OK</a></div><div class="ttdeci">@ IMD_OK</div><div class="ttdef"><b>Definition:</b> <a href="Imd_8h_source.html#l00008">Imd.h:8</a></div></div>
 <div class="ttc" id="aSystem_8h_html_a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5"><div class="ttname"><a href="System_8h.html#a922f019f64e4183a18638787f6ba539ba63fbb9fe7b9a695d3a65541465cb99d5">EXTERNAL</a></div><div class="ttdeci">@ EXTERNAL</div><div class="ttdef"><b>Definition:</b> <a href="System_8h_source.html#l00012">System.h:12</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Imd_8c_a5f75b2b0a3ee8220e821866d11c53c35_cgraph.png" border="0" usemap="#aImd_8c_a5f75b2b0a3ee8220e821866d11c53c35_cgraph" alt=""/></div>
 <map name="aImd_8c_a5f75b2b0a3ee8220e821866d11c53c35_cgraph" id="aImd_8c_a5f75b2b0a3ee8220e821866d11c53c35_cgraph">
-<area shape="rect" title="Initializes the IMD with the specified frequency." alt="" coords="5,80,68,105"/>
-<area shape="rect" href="Imd_8c.html#ad1d26785fed119d06a15715387ebafd5" title="Gets the status of the IMD." alt="" coords="129,31,232,56"/>
+<area shape="rect" title="Initializes the IMD with the specified frequency." alt="" coords="5,105,68,131"/>
 <area shape="rect" href="ExternalSystem_8c.html#a4e4f320bb768dfd6c0ba22cbafc14fed" title=" " alt="" coords="116,80,245,105"/>
 <area shape="rect" href="Imd_8c.html#aece32b5a3b7ddffa613156314deb91c9" title="Updates the IMD values." alt="" coords="138,129,223,155"/>
 <area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="293,80,376,105"/>
