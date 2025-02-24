@@ -37,7 +37,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+#ifndef TEST_MODE
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -64,7 +64,6 @@ TIM_HandleTypeDef htim1;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,7 +84,7 @@ static void MX_SPI3_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_SPI5_Init(void);
 /* USER CODE BEGIN PFP */
-
+#endif
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -101,6 +100,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+
+  #ifndef TEST_MODE
 
   /* USER CODE END 1 */
 
@@ -137,6 +138,8 @@ int main(void)
   MX_SPI4_Init();
   MX_SPI5_Init();
   /* USER CODE BEGIN 2 */
+
+  #endif
 
   // Clear the screen
   printf("\033[2J\033[1;1H");
@@ -176,15 +179,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//    char msg[] = "Hello, PuTTY!\r\n";
-//    HAL_UART_Transmit(&huart3, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
-	send_CAN_message(CAN_1, CAN_2A, 124, txdata, 8);
+	  send_CAN_message(CAN_1, CAN_2A, 124, txdata, 8);
+
+    #ifndef TEST_MODE
     HAL_Delay(1000);
+    #endif
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+
+  #ifndef TEST_MODE
 }
 
 /**
@@ -1157,7 +1164,11 @@ int _write(int file, char *data, int len)
     // Transmit data using USART3
     HAL_UART_Transmit(&huart3, (uint8_t *)data, len, HAL_MAX_DELAY);
     return len;
+
+#endif // <--- DONT DELETE THIS, IT IS LINKED TO LAST LINE IN MAIN FUNCTION TO ALLOW SIL BUILDS
+
 }
+
 /* USER CODE END 4 */
 
 /**
@@ -1168,7 +1179,11 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+  
+  #ifndef TEST_MODE
   __disable_irq();
+  #endif
+
   while (1)
   {
   }
