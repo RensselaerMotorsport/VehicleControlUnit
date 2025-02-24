@@ -1,4 +1,5 @@
 # Vehicle Contorl Unit 🏎️
+(Don't worry, our code is better than our spelling! 🙂 )
 ## Overview
 This is a custom implementation of a Vehicle Processor written by Rensselaer Motorsport to be used on FSAE vehicles through the STM32F767Zi microprocessor. It implements several systems and safety features to provide a secure and reliable method of operating datalogging, controls, and component simulation operations on a vehicle.
 
@@ -75,7 +76,7 @@ To compile purely software using cmake
     ```
 11. TO DO: Write what to expect
 
-### SIL (Software) Testing
+### SIL (Software-In-Loop) Testing
 
  1. Install WSL from Microsoft Store
  2. Run terminal as administrator
@@ -123,10 +124,31 @@ HAL intialization code for peripherals can be automatically generated into main.
 
 > [!CAUTION]
 > Code generation rewrites files such as main.c/.h, stm32*.c/.h, and so. Make sure any custom code is inbetween the comments labelled "BEGIN/END USER CODE." Otherwise, it will overwrite any code you wrote outside these blocks. Anything inside of the Scheduler, Sensors, System, Outputs, and Utils folders is safe.
-#### Useful Documentation
-TO DO: Add links to documents
+#### Useful STM32 Documentation
 
-### HIL (Hardware) Testing
+This first section come's from [RPI's ECSE 4790 homepage](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/resources.html), and is copied word for word:
+- [Datasheet](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/7f7327136f5c83e037dd8bf9120ce65b/stm32f769xx_Datasheet.pdf): Contains specifications, pinouts, electrical characteristics and limitations, etc. of STM32F7xx Chips
+- [Errata (ES0334)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/59aca466492bfb25073b6375ef6a94b3/ES0334_stm32f76xxx_Errata.pdf): A list of known bugs and workarounds.
+- [Reference Manual (RM0410)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/6741063f8f7385e79b0fa1130b398c72/RM0410-stm32f76xxx_Reference_Manual.pdf): Contains overview and functionality of each component of the device in addition to each component’s applicable registers.
+- [Programming Manual (PM0253)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/4e8bb486014bd0f7218a6c050ca04728/PM0253-stm32f7_Programming_Manual.pdf): Describes low-level programming models for the device, memory/address mapping, and instruction sets (assembly).
+- [HAL and LL Driver Manual (UM1905)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/9d0bbd399996d3a12e1ccbd9c7b3dfa5/UM1905-stm32f7_HAL_and_LL_Drivers.pdf): Description of the Hardware Abstraction Layer (HAL) and Low-Layer (LL) drivers and their contained functions, structs, constants, etc.
+- [ADC Modes Overview (AN3116)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/13a0f873aa3b4acb44116670b5d7434e/AN3116-stm32_ADC_modes.pdf): Brief overview of the Analog-to-Digital Converters for STM32 devices. This includes indepdent, interleaved, trigger, injected etc. modes in single and multi-channel.
+- [DSP Overview (AN4841)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/93ea37dd0b9319c4663bb1f6fb5cf686/AN4841-stm32_DSP_using_CMSIS.pdf): Brief overview of Digital Signal Processing support on STM devices, including discussions of hardware DSP commands and supporting drivers.
+- [DMA Controller Overview (AN4031)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/3ae2bb168327c58be3daa8fedeb1a428/AN4031-stm32_DMA_Controller.pdf): Thorough overview of the Direct Memory Access Controllers for STM32 devices.
+- [USB Host Library Manual (UM1720)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/45ce42dd98c03962db568619aa479ee5/UM1720-stm32_USB_Host_Library.pdf): Description of the abstraction library for configuring STM32 devices to be a USB Host Controller.
+- [USB Device Library Manual (UM1734)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/c5c44d90d897e5752d66a41ac6125157/UM1734-stm32_USB_Device_Library.pdf): Description of the abstraction library for configuring STM32 devices to be a USB peripheral.
+- [FatFs Filesystem Manual (UM1721)](https://sites.ecse.rpi.edu/courses/static/ECSE-4790/_downloads/5eb7dc73663cc9f9bbcbc34d9ef0dd3f/UM1721-stm32_FatFs_Library.pdf): Overview of the FatFs library for interfacing with FAT filesystems. The source project documentation can be found here: http://elm-chan.org/fsw/ff/00index_e.html.
+
+This second section comes from resources team members have found independently:
+- [Nucleo Board Documentation (MB1137)](https://www.st.com/resource/en/user_manual/um1974-stm32-nucleo144-boards-mb1137-stmicroelectronics.pdf): Overview of available hardware on the Nucleo Board and GPIO pinouts. Make sure to reference sections for F767Zi.
+- [Timers](https://wiki.st.com/stm32mcu/index.php?title=Getting_started_with_TIM&oldid=58943#STM32CubeMX_Timer_configuration): Basic intro on how to configure and use timers on STM32 devices.
+- [Digital to Aanalog Converters](https://wiki.st.com/stm32mcu/wiki/Getting_started_with_DAC): Basic intro on how to configure and use DACs on STM32 devices.
+- [Analog to Digital Converters](https://www.bing.com/search?q=stm32+adc+&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=stm32+adc+&sc=12-10&sk=&cvid=12323BBFA4DF4267B9A0CDEB00B38924&ghsh=0&ghacc=0&ghpl=): Basic intro on how to configure and use ADCs on STM32 devices.
+- [Controller Area Network (CAN)](https://controllerstech.com/can-protocol-in-stm32/): Basic intro on how to configure and use CAN on STM32 devices.
+- [Real Time Operating System (RTOS)](https://embeddedthere.com/getting-started-with-freertos-in-stm32-example-code-included/): Basic intro on how to configure and use RTOS on STM32 devices.
+- [Real Time Operating System (RTOS) Playlist](https://www.youtube.com/playlist?list=PLnMKNibPkDnExrAsDpjjF1PsvtoAIBquX): Much more in depth overview of RTOS
+
+### HIL (Hardware-In-Loop) Testing
 It may be useful to first setup a test bench to simulate your car's hardware. The bench below simulates the following:
 
 - CAN Bus activity on Bus 1
@@ -139,9 +161,35 @@ It may be useful to first setup a test bench to simulate your car's hardware. Th
 
 ![HIL test bench](Documentation/shabbyHILsetup.jpg)
 
+After constructing your test bench, you can directly modify the main.c file with firmware for testing the desired systems. You can also set up a separate file in the Tests folder where you import the main function of the system you want to test. Follow these steps for proper testing procedures:
 
-### PIL (Processor) Testing 
-TO DO
+1. **Modify main.c** (Option 1):
+    - Ensure that your test bench is properly connected and powered.
+    - Open the main.c file in your project.
+    - Insert the necessary test code within the `BEGIN/END USER CODE` blocks to avoid overwriting during code generation.
+    - Compile and flash the firmware onto the STM32 board.
+
+2. **Create a Test File** (Option 2):
+    - Navigate to the Tests folder in your project directory.
+    - Create a new test file, e.g., `SystemTest.c`.
+    - Include the necessary headers and import the main function or specific functions you want to test.
+    - Write test cases to validate the functionality of the system.
+    - Reference these tests in main.c, compile and flash the firmware onto the STM32 board.
+
+3. **Run Tests**:
+    - Monitor the output of the tests to ensure that the system behaves as expected.
+    - Use debugging tools in STM32 Cube IDE or VS Code to step through the code and inspect variables and memory.
+
+4. **Document Results**:
+    - Record the results of your tests, noting any discrepancies or issues.
+    - Update the documentation with any changes or findings from the tests.
+
+By following these procedures, you can ensure that your firmware is thoroughly tested and reliable before deployment.
+
+### PIL (Processor-In-Loop) Testing 
+Still bringing this up, but ideally you will be able to run software on the microprocessor itself, but without need for hardware aside from the board. This lets you test within the microprocessor to make sure you are not running into computation limits, memory limits, or separation from real-time, but provides more mobile-friendly testing in opposition to carrying a HIL testbench around.
+
+<img src="Documentation/Mango.png" alt="mango" width="30"/>
 
 ## Useful Git Commands and Tools
 
