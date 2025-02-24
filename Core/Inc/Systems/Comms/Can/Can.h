@@ -1,8 +1,12 @@
 #ifndef __RENSSELAERMOTORSPORT_CAN_H__
 #define __RENSSELAERMOTORSPORT_CAN_H__
 
-#include "stm32f7xx_hal.h"
 
+#ifndef TEST_MODE
+#include "stm32f7xx_hal.h"
+#endif
+
+#include <stdint.h>
 
 /*******************************************************************/
 
@@ -35,6 +39,35 @@ typedef struct CAN_Signal {
 
 // Messages
 #define MAX_MESSAGE_NAME_LENGTH 32
+
+#ifdef TEST_MODE
+// define a dummy CAN_RxHeaderTypeDef
+typedef struct CAN_RxHeaderTypeDef {
+    uint32_t StdId;
+    uint32_t ExtId;
+    uint32_t IDE;
+    uint32_t RTR;
+    uint32_t DLC;
+    uint32_t FMI;
+    uint32_t FIFONumber;
+} CAN_RxHeaderTypeDef;
+
+// define a dummy CAN_TxHeaderTypeDef
+typedef struct CAN_TxHeaderTypeDef {
+    uint32_t StdId;
+    uint32_t ExtId;
+    uint32_t IDE;
+    uint32_t RTR;
+    uint32_t DLC;
+    uint32_t TransmitGlobalTime;
+} CAN_TxHeaderTypeDef;
+
+// define STM32 CAN constants
+#define CAN_ID_STD 0x00
+#define CAN_ID_EXT 0x04
+#define CAN_RTR_DATA 0x00
+#define CAN_RTR_REMOTE 0x02
+#endif
 
 typedef struct CAN_Message_Template {
     int id;
