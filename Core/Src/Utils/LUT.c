@@ -28,17 +28,17 @@ bool can_interpolate(const point *min, const point *max, double in) {
   return point_is_between(min, max, in);
 }
 
-table *table_alloc(unsigned long count) {
-  // The table must contain at least two elements; a minimum and a maximum
-  // assert(count >= 2);
-  if (count < 2) {
-    return NULL;
+bool table_init(table *table, unsigned long count) {
+  if (table == NULL) {
+    return false;
   }
 
-  unsigned long size = sizeof(table) + count * sizeof(point);
+  // Table must contain at least two reference points
+  if (count < 2 || count > TABLE_CAPACITY) {
+    return false;
+  }
 
-  table *table = malloc(size);
-
+  // Set up table values to expected values
   table->count_ = count;
   table->added_ = 0;
   table->initialized_ = false;
@@ -47,12 +47,7 @@ table *table_alloc(unsigned long count) {
     table->points_[n].output = 0;
   }
 
-  return table;
-}
-
-void table_release(table *table) {
-  // TODO Potential issue freeing flexible array of points
-  free(table);
+  return true;
 }
 
 bool table_is_initialized(table *table) {

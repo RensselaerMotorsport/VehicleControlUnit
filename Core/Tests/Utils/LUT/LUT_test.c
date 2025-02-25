@@ -148,24 +148,25 @@ void test_sampling_unknown_point(table *table) {
 }
 
 int main() {
-  table *pressure_mb_to_altitude_m = table_alloc(9);
+  table pressure_mb_to_altitude_m;
+  assert(table_init(&pressure_mb_to_altitude_m, 9));
 
-  test_uninitialized_table(pressure_mb_to_altitude_m);
+  test_uninitialized_table(&pressure_mb_to_altitude_m);
 
   // Initializes the table with equally-spaced points using the transfer
   // function
   for (unsigned int reference_pressure_mb = 300; reference_pressure_mb <= 1100;
        reference_pressure_mb += 100) {
     assert(table_add_reference_point(
-        pressure_mb_to_altitude_m, reference_pressure_mb,
+        &pressure_mb_to_altitude_m, reference_pressure_mb,
         altitude_m_at_pressure_mb(reference_pressure_mb)));
   }
 
-  test_initialized_table(pressure_mb_to_altitude_m);
+  test_initialized_table(&pressure_mb_to_altitude_m);
 
-  test_sampling_endpoints(pressure_mb_to_altitude_m);
+  test_sampling_endpoints(&pressure_mb_to_altitude_m);
 
-  test_sampling_reference_point(pressure_mb_to_altitude_m);
+  test_sampling_reference_point(&pressure_mb_to_altitude_m);
 
-  test_sampling_unknown_point(pressure_mb_to_altitude_m);
+  test_sampling_unknown_point(&pressure_mb_to_altitude_m);
 }
