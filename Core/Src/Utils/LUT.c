@@ -115,20 +115,6 @@ bool table_can_sample(table *table, double in) {
   return can_interpolate(min, max, in);
 }
 
-void table_init_linear(table *table, double in_min, double in_max,
-                       double out_min, double out_max) {
-  // The first step is not a scaled step, since it is just [in_min out_min]
-  unsigned long scaled_steps = table->count_ - 1;
-  double in_step = (in_max - in_min) / scaled_steps;
-  double out_step = (out_max - out_min) / scaled_steps;
-
-  for (unsigned long n = 0; n < table->count_; n++) {
-    double in = in_min + in_step * n;
-    double out = out_min + out_step * n;
-    table_add_reference_point(table, in, out);
-  }
-}
-
 void table_sort(table *table) {
   qsort(table->points_, table->count_, sizeof(point), point_compare);
 }
