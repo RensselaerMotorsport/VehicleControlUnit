@@ -10,6 +10,14 @@ This software is intended to be run on a real time operating system (i.e. FreeRT
 ### Documentation:
 For code documentation, please see our Doxygen page: [RM-VCU Doxygen](https://rensselaermotorsport.github.io/VehicleControlUnit/files.html)
 
+### General Program Structure
+The VCU architecture is backboned by a scheculer containing updateable tasks. The Updateable type is the root for everything, and ensures functionality for enabling, disabling, updating, and safety checking any component that is an updateable. Three main components branch off of the updateable class: sensors, systems, and outputs. Sensors and outputs are self explanatory, having analog and digital counterparts for both. Systems contain four components:
+
+- Communications: These represent interfaces for complex communication protocols like CAN Bus, I2C, etc. Controllers and External systems can interact with communicatinos systems to send and recieve data about the car.
+- Controllers: These are control systems for various components on the car. They can interact with sensors and outputs, along with other controllers or external systems to recieve and post data. However, before posting data to other systems or outputs, they must first be verified by monitor systems.
+- External: These represent shells of external components such as Inverters, BMS', etc. These can be used for storing variables in datalogging, and to simulate external systems if need be. 
+- Monitors: These are the safety component to Controller systems. It includes a set of routine tests that execute at the end of a Controller's update period. When all of a Controller's Monitors have passed, the Controller is moved from a computed to validated state, ensuring that it can safelt post to external resources, or respond to requests for data.
+
 ### Folder Structure
 ```
 VehicleControlUnit/
@@ -33,10 +41,6 @@ VehicleControlUnit/
 ├── README.md                 # Project readme
 └── VehicleControlUnit.ioc    # Cube MX configuration file
 ```
-
-### General Program Structure
-
-
 
 ## Software Compilation on VS Code
 
