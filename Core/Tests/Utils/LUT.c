@@ -27,7 +27,7 @@ void test(const char *pass_message, const char *fail_message, bool passes) {
 // Tests if the values are approximately equal (pass) or
 // not (fail); approximately equal depends on the value of ϵ
 // (TEST_EQUAL_EPSILON)
-void test_equal(const char *a_label, const char *b_label, double a, double b) {
+void test_equal(const char *a_label, const char *b_label, float a, float b) {
   bool passes = fabs(a - b) < TEST_EQUAL_EPSILON;
   if (passes) {
     printf("PASS\t%s = %s (%f = %f)\n", a_label, b_label, a, b);
@@ -40,8 +40,8 @@ void test_equal(const char *a_label, const char *b_label, double a, double b) {
 // (fail); percent error threshold depends on the value of δ
 // (TEST_ERROR_DELTA_PERCENT)
 void test_within_error(const char *actual_label, const char *expected_label,
-                       double actual, double expected) {
-  double percent_error = (actual - expected) / expected * 100;
+                       float actual, float expected) {
+  float percent_error = (actual - expected) / expected * 100;
   bool passes = fabs(percent_error) < TEST_ERROR_DELTA_PERCENT;
   if (passes) {
     printf("PASS\t%s ≈ %s (%f ≈ %f)\n", actual_label, expected_label, actual,
@@ -55,10 +55,10 @@ void test_within_error(const char *actual_label, const char *expected_label,
 // Generates expected altitude measurements in meters for pressure readings in
 // millibar. Uses the international barometric formula.
 // https://cdn-shop.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf
-double altitude_m_at_pressure_mb(double pressure_mb) {
-  const double SEA_LEVEL_PRESSURE_MB = 1013.25;
+float altitude_m_at_pressure_mb(float pressure_mb) {
+  const float SEA_LEVEL_PRESSURE_MB = 1013.25;
   // TODO Explain how this comes about
-  double result = pow(pressure_mb / SEA_LEVEL_PRESSURE_MB, 1 / 5.255);
+  float result = pow(pressure_mb / SEA_LEVEL_PRESSURE_MB, 1 / 5.255);
   return 44330 * (1 - result);
 }
 
@@ -73,7 +73,7 @@ void test_uninitialized_table(table *table) {
   test("cannot sample 0 mb", "can sample 0 mb", !table_can_sample(table, 0));
   test("cannot sample 300 mb", "can sample 300 mb",
        !table_can_sample(table, 300));
-  double altitude_m;
+  float altitude_m;
   bool okay = table_sample(table, 300, &altitude_m);
   test("is not okay", "is okay", !okay);
 }
@@ -98,13 +98,13 @@ void test_initialized_table(table *table) {
 // Tests if sampling a known reference input in the table returns the known
 // reference output
 void test_sampling_endpoints(table *table) {
-  double min_reference_pressure_mb = 300;
-  double max_reference_pressure_mb = 1100;
-  double min_reference_altitude_m =
+  float min_reference_pressure_mb = 300;
+  float max_reference_pressure_mb = 1100;
+  float min_reference_altitude_m =
       altitude_m_at_pressure_mb(min_reference_pressure_mb);
-  double max_reference_altitude_m =
+  float max_reference_altitude_m =
       altitude_m_at_pressure_mb(max_reference_pressure_mb);
-  double altitude_m = 0.0;
+  float altitude_m = 0.0;
 
   test_start("sampling min reference point");
   test("is okay", "is not okay",
@@ -121,10 +121,10 @@ void test_sampling_endpoints(table *table) {
 // Tests if sampling a known reference input in the table returns the known
 // reference output
 void test_sampling_reference_point(table *table) {
-  double reference_pressure_mb = 600;
-  double reference_altitude_m =
+  float reference_pressure_mb = 600;
+  float reference_altitude_m =
       altitude_m_at_pressure_mb(reference_pressure_mb);
-  double altitude_m = 0.0;
+  float altitude_m = 0.0;
 
   test_start("sampling reference point");
   test("is okay", "is not okay",
@@ -136,13 +136,13 @@ void test_sampling_reference_point(table *table) {
 // Tests if sampling an unknown input in the table returns an
 // approximately-correct output
 void test_sampling_unknown_point(table *table) {
-  double pressure_mb = 650;
-  double expected_altitude_m = altitude_m_at_pressure_mb(pressure_mb);
-  double altitude_m = 0.0;
+  float pressure_mb = 650;
+  float expected_altitude_m = altitude_m_at_pressure_mb(pressure_mb);
+  float altitude_m = 0.0;
 
   test_start("sampling reference point");
   test("is okay", "is not okay", table_sample(table, pressure_mb, &altitude_m));
-  double percent_error =
+  float percent_error =
       (altitude_m - expected_altitude_m) / expected_altitude_m * 100;
   test_within_error("altitude", "expected altitude", altitude_m, expected_altitude_m);
 }
