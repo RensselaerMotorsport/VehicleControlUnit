@@ -11,10 +11,26 @@ typedef struct {
   float output;
 } point;
 
-/* Compares two points. */
+/**
+ * @brief Compares two points by input.
+ *
+ * @param a The first point to compare.
+ * @param b The second point to compare.
+ * @return A negative integer if the first point is before the second point,
+ * zero if the first point is equal to the second point, or a positive integer
+ * if the first point is greater than the second point.
+ */
 int point_compare(const void *a, const void *b);
 
-/* Returns true if the input is between the minimum input and maximum input. */
+/**
+ * @brief Determines if the input value is between the input of two points.
+ *
+ * @param min A point with an input less than the input of max.
+ * @param max A point with an input greater than the input of min.
+ * @param in An input value to test with the two points.
+ * @return True if the input value is between the minimum input and maximum
+ * input.
+ */
 bool point_is_between(const point *min, const point *max, float in);
 
 #define TABLE_CAPACITY 64
@@ -32,32 +48,68 @@ typedef struct {
   point points_[TABLE_CAPACITY];
 } table;
 
-/* Performs table initalization. Does not add points. Returns true if the table was initalized. */
+/**
+ * @brief Initializes the table.
+ *
+ * @param table A pointer to the table to initialize.
+ * @param count The number of reference points in the table.
+ * @return True if the table was successfully initialized.
+ */
 bool table_init(table *table, uint16_t count);
 
-/* Adds a reference point to the table. Returns true if the reference point was
- * added. */
+/**
+ * @brief Adds a reference point to the table.
+ *
+ * @param table A pointer to the table to add the point to.
+ * @param in The input ("from") value.
+ * @param out The output ("to") value at the input value.
+ * @return True if the reference point was added to the table.
+ */
 bool table_add_reference_point(table *table, float in, float out);
 
-/* Returns true if all reference points in the table have been added. */
+/**
+ * @brief Checks if the table has been fully initialized, with all reference
+ * points added.
+ *
+ * @param table A pointer to the table to check.
+ * @return True if the table has been fully initialized.
+ */
 bool table_is_initialized(table *table);
 
-/* Gets the minimum reference point (the reference point with the least input).
- * If the minimum reference point is not defined, returns NULL.
+/**
+ * @brief Retrieves the point in the table with the least input value.
+ *
+ * @param table A pointer to the table.
+ * @return If there is a minimum point, a pointer to the minimum point,
+ * otherwise NULL.
  */
 const point *table_min_point(table *table);
 
-/* Gets the maximum reference point (the reference point with the greatest
- * input). If the maximum reference point is not defined, returns NULL. */
+/**
+ * @brief Retrieves the point in the table with the greatest input value.
+ *
+ * @param table A pointer to the table.
+ * @return If there is a maximum point, a pointer to the maximum point,
+ * otherwise NULL.
+ */
 const point *table_max_point(table *table);
 
-/* Tests if the input is a valid sample for the table. */
+/**
+ * @brief Checks if the input input is valid for the table.
+ *
+ * @param table A pointer to the table to check.
+ * @param in The input value to check.
+ * @return True if the input value is valid for the table.
+ */
 bool table_can_sample(table *table, float in);
 
-/* Sorts the reference points by input. */
-void table_sort(table *table);
-
-/* Samples the table and calculates the approximate output value. Returns true
- * on success. */
+/**
+ * @brief Samples a output value from the table for an input value.
+ *
+ * @param table A pointer to the table to sample.
+ * @param in The input value to sample.
+ * @param out A pointer to the destination of the output value.
+ * @return True if the output value was written, otherwise false.
+ */
 bool table_sample(table *table, float in, float *out);
 #endif // RENNSSELAERMOTORSPORT_LUT_H
