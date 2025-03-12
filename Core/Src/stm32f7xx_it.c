@@ -70,7 +70,10 @@ extern CAN_HandleTypeDef hcan2;
 extern CAN_HandleTypeDef hcan3;
 extern DMA_HandleTypeDef hdma_dac1;
 extern DMA_HandleTypeDef hdma_dac2;
+extern DAC_HandleTypeDef hdac;
 extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim6;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -154,19 +157,6 @@ void UsageFault_Handler(void)
 }
 
 /**
-  * @brief This function handles System service call via SWI instruction.
-  */
-void SVC_Handler(void)
-{
-  /* USER CODE BEGIN SVCall_IRQn 0 */
-
-  /* USER CODE END SVCall_IRQn 0 */
-  /* USER CODE BEGIN SVCall_IRQn 1 */
-
-  /* USER CODE END SVCall_IRQn 1 */
-}
-
-/**
   * @brief This function handles Debug monitor.
   */
 void DebugMon_Handler(void)
@@ -177,33 +167,6 @@ void DebugMon_Handler(void)
   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
 
   /* USER CODE END DebugMonitor_IRQn 1 */
-}
-
-/**
-  * @brief This function handles Pendable request for system service.
-  */
-void PendSV_Handler(void)
-{
-  /* USER CODE BEGIN PendSV_IRQn 0 */
-
-  /* USER CODE END PendSV_IRQn 0 */
-  /* USER CODE BEGIN PendSV_IRQn 1 */
-
-  /* USER CODE END PendSV_IRQn 1 */
-}
-
-/**
-  * @brief This function handles System tick timer.
-  */
-void SysTick_Handler(void)
-{
-  /* USER CODE BEGIN SysTick_IRQn 0 */
-
-  /* USER CODE END SysTick_IRQn 0 */
-  HAL_IncTick();
-  /* USER CODE BEGIN SysTick_IRQn 1 */
-
-  /* USER CODE END SysTick_IRQn 1 */
 }
 
 /******************************************************************************/
@@ -267,6 +230,23 @@ void TIM2_IRQHandler(void)
   /* USER CODE BEGIN TIM2_IRQn 1 */
 
   /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts.
+  */
+void TIM6_DAC_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+
+  /* USER CODE END TIM6_DAC_IRQn 0 */
+  if (hdac.State != HAL_DAC_STATE_RESET) {
+    HAL_DAC_IRQHandler(&hdac);
+  }
+  HAL_TIM_IRQHandler(&htim6);
+  /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+
+  /* USER CODE END TIM6_DAC_IRQn 1 */
 }
 
 /**
@@ -340,47 +320,6 @@ void CAN3_RX0_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
-volatile uint32_t timer_flag = 0;
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim->Instance == TIM1)
-    {
-        timer_flag++;
-    } else if (htim->Instance == TIM2) {
-        // OUTPUTS
-        // D10
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, digital_out_buffer[0]);
-        // D9
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, digital_out_buffer[1]);
-        // D8
-        HAL_GPIO_WritePin(GPIOF, GPIO_PIN_12, digital_out_buffer[2]);
-        // D7
-        HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, digital_out_buffer[3]);
-        // D6
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9 , digital_out_buffer[4]);
-        // D5
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, digital_out_buffer[5]);
-        // D4 for I2C
-        // HAL_GPIO_WritePin(GPIOF, GPIO_PIN_14, digital_out_buffer[6]);
-        // D3
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_13, digital_out_buffer[6]);
-        // D2
-        // HAL_GPIO_WritePin(GPIOF, GPIO_PIN_15, digital_out_buffer[8]);
-        // D1
-        // HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, digital_out_buffer[9]);
-        // D0
-        HAL_GPIO_WritePin(GPIOG, GPIO_PIN_9, digital_out_buffer[7]);
-
-        // INPUTS
-        // D42
-        digital_in_buffer[0] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8);
-        // D41
-        digital_in_buffer[1] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_7);
-        // D40
-        digital_in_buffer[2] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_10);
-      }
-}
 
 // Polling for sending CAN messages
 int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *data)

@@ -1,7 +1,6 @@
 #include "../../Inc/Systems/ExternalSystem.h"
 #include "../../Inc/Utils/Common.h"
 #include "../../Inc/Utils/Updateable.h"
-#include "../../Inc/Scheduler/Task.h"
 
 void initExternalSystem(ExternalSystem* external, const char* name, int hz,
                         ExternalType type, int (*updateExternal)(ExternalSystem* external), 
@@ -17,7 +16,10 @@ void initExternalSystem(ExternalSystem* external, const char* name, int hz,
     external->system.updateable.update = e_defaultUpdate;
 }
 
-int e_defaultUpdate(Updateable* updateable) {
+int e_defaultUpdate(void* self) {
+    // Cast the void pointer to a Updateable pointer
+    Updateable* updateable = ((Updateable*)self);
+
     // Cast the child pointer to a external system
     System* system = (System*)updateable->child;
     ExternalSystem* external = (ExternalSystem*)system->child;
