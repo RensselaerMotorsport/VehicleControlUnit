@@ -1,20 +1,32 @@
-#include <time.h>
-#include <stdint.h>
 #include "../../Inc/Scheduler/Scheduler.h"
-// FIXME: Was supposed to be timer include.
-// #include "../../Inc/stm32f7xx_hal_conf.h"
+#include "cmsis_os2.h"
+#include <stdint.h>
 
-// Timer flag declared in the interrupt handler
-// extern volatile uint32_t timer_flag;
+#include <stdio.h>  // Required for printf
 
 /**
- * Initializes the priority queue and schedules tasks based on the given sensors
- * and their update frequencies. Limits the number of sensors to MAX_SENSORS.
+ * @brief The process of each updatable.
+ *
+ * @param pvParameters the Updatable structure, should be automatically assigned.
  */
-void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
-    PQInit(&scheduler->tasks);
-    scheduler->running = false;
+void SensorTask(void *pvParameters) {
+	Updateable *updateable = (Updateable *)pvParameters;
+	uint32_t frequency = osKernelGetTickCount() + (1000 / updateable->hz);
 
+	// Infinite loop
+	while (1) {
+		if (!updateable || !updateable->update) {
+			fprintf(stderr, "Error: Updateable dosn't have update function or is NULL!\n");
+			break;
+		}
+
+		UPDATE(updateable);
+		printf("[UPDATE] %s is updating...\n", updateable->name);
+		osDelay(frequency);
+	}
+}
+
+void SchedulerInit(Updateable* updatableArray[]) {
     for (int i = 0; updatableArray[i] != NULL; i++) {
         if (i >= MAX_SENSORS) {
             printf("Warning: Number of sensors exceeds MAX_SENSORS. "
@@ -27,48 +39,16 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
             continue; // Skip invalid frequencies
         }
 
-        Task task;
-        TaskInit(&task, updateable, updateable->hz);
-        int hz = 1000 / updateable->hz;
-        // Setup for STM32
-        #ifndef TEST_MODE
-        printf("hal tick: %u\r\n", HAL_GetTick());
-        int initialPriority = HAL_GetTick() + hz;
-        #else
-        int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
-        #endif
-        PQPush(&scheduler->tasks, task, initialPriority);
+        // Create RTOS task
+        osThreadAttr_t thread_attr = {
+            .name = updateable->name,
+            .priority = osPriorityNormal
+        };
+
+        if (osThreadNew(SensorTask, (void*)updateable, &thread_attr) == NULL) {
+			fprintf(stderr, "Error: Failed to create thread for %s!\n", updateable->name);
+			return;
+		}
+		printf("[SCHEDULER] Created thread for %s\n", updateable->name);
     }
-}
-
-/**
- * Runs the scheduler, repeatedly executing tasks based on their scheduled
- * execution times. Uses Sleep or usleep to avoid busy-waiting if no tasks are
- * ready to execute.
- */
-void SchedulerRun(Scheduler* scheduler) {
-    scheduler->running = true;
-    Task currentTask;
-
-    while (scheduler->running) {
-        // if (timer_flag < 0) continue;
-        // timer_flag--;
-        // FIXME: Re-implement timer.
-        int currentTime = HAL_GetTick();
-        // int currentTime = 0;
-
-        while (!PQIsEmpty(&scheduler->tasks) &&
-               PQPeek(&scheduler->tasks, &currentTask) &&
-               currentTask.nextExecTime <= currentTime) {
-            if (PQPop(&scheduler->tasks, &currentTask)) {
-                TaskExecute(&currentTask);
-                currentTask.nextExecTime = currentTime + (1000 / currentTask.hz);
-                PQPush(&scheduler->tasks, currentTask, currentTask.nextExecTime);  // Reinsert task with new priority
-            }
-        }
-    }
-}
-
-void SchedulerStop(Scheduler* scheduler) {
-    scheduler->running = 0;
 }

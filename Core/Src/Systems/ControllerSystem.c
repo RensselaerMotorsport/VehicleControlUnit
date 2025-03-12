@@ -1,7 +1,6 @@
 #include "../../Inc/Systems/ControllerSystem.h"
 #include "../../Inc/Utils/Common.h"
 #include "../../Inc/Utils/Updateable.h"
-#include "../../Inc/Scheduler/Task.h"
 
 void initControllerSystem(ControllerSystem* controller, const char* name, int hz,
                           ControllerType type, int (*updateController)(void* self),
@@ -39,7 +38,7 @@ int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
                 controller->monitors[j] = controller->monitors[j + 1];
             }
             controller->num_monitors--;
-            return _SUCCESS;
+//            return _SUCCESS;
         }
     }
     printf("Monitor not found in the controller\n");
@@ -48,7 +47,7 @@ int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
 
 void c_defaultUpdate(void* self) {
     // Cast the void pointer to a Updateable pointer
-    Updateable* updateable = ((Task*)self)->updateable;
+    Updateable* updateable = ((Updateable*)self);
 
     // Cast the child pointer to a controller system
     System* system = (System*)updateable->child;

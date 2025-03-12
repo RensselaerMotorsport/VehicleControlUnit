@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -81,6 +82,13 @@ TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart3;
 
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 /* USER CODE END PV */
 
@@ -102,6 +110,8 @@ static void MX_I2C2_Init(void);
 static void MX_I2C4_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_SPI6_Init(void);
+void StartDefaultTask(void *argument);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -275,25 +285,54 @@ int main(void)
   Inverter* inverter = malloc(sizeof(Inverter));
   initInverter(inverter, tc, 10, 200, 100, 400);
 
-  // Make Scheduler from updateable array
-  Scheduler scheduler;
+  // Add Updatables to static array
+  Updateable* updateables[6] = {
+	&apps->base.system.updateable,
+	&bsc->base.system.updateable,
+	&rtd->base.system.updateable,
+	&tc->base.system.updateable,
+	&inverter->base.system.updateable,
+	NULL
+  };
 
-  Updateable* updateables[6];
-  updateables[0] = &apps->base.system.updateable;
-  updateables[1] = &bsc->base.system.updateable;
-  updateables[2] = &rtd->base.system.updateable;
-  updateables[3] = &tc->base.system.updateable;
-  updateables[4] = &inverter->base.system.updateable;
-  updateables[5] = NULL;
-
-
-
-
-  SchedulerInit(&scheduler, updateables);
-
-  // Start the Scheduler
-  SchedulerRun(&scheduler);
+  SchedulerInit(updateables);
   /* USER CODE END 2 */
+
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* creation of defaultTask */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -1203,19 +1242,19 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA1_Stream5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
   /* DMA1_Stream6_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
   /* DMA2_Stream1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
 
 }
@@ -1394,7 +1433,84 @@ int _write(int file, char *data, int len)
     HAL_UART_Transmit(&huart3, (uint8_t *)data, len, HAL_MAX_DELAY);
     return len;
 }
+
+volatile uint32_t timer_flag = 0; // This is for HAL_TIM_Period Elapsed Callback
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+  // Delete itself immediately. We don't need this, It can't be deleted.
+  vTaskDelete(NULL);
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END 5 */
+}
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+  else if (htim->Instance == TIM1) {
+  	timer_flag++;
+  } else if (htim->Instance == TIM2) {
+  	// OUTPUTS
+  	// D10
+  	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, digital_out_buffer[0]);
+  	// D9
+  	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, digital_out_buffer[1]);
+  	// D8
+  	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_12, digital_out_buffer[2]);
+  	// D7
+  	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_13, digital_out_buffer[3]);
+  	// D6
+  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9 , digital_out_buffer[4]);
+  	// D5
+  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, digital_out_buffer[5]);
+  	// D4 for I2C
+  	// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_14, digital_out_buffer[6]);
+  	// D3
+  	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_13, digital_out_buffer[6]);
+  	// D2
+  	// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_15, digital_out_buffer[8]);
+  	// D1
+  	// HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, digital_out_buffer[9]);
+  	// D0
+  	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_9, digital_out_buffer[7]);
+
+  	// INPUTS
+  	// D42
+  	digital_in_buffer[0] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_8);
+  	// D41
+  	digital_in_buffer[1] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_7);
+  	// D40
+  	digital_in_buffer[2] = HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_10);
+  }
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
