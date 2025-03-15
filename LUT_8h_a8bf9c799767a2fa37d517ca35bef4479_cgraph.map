@@ -1,0 +1,4 @@
+<map id="table_max_point" name="table_max_point">
+<area shape="rect" id="node1" title="Retrieves the point in the table with the greatest input value." alt="" coords="5,5,121,31"/>
+<area shape="rect" id="node2" href="$Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="169,5,296,31"/>
+</map>

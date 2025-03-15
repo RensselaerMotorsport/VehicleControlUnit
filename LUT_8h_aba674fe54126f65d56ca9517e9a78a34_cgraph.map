@@ -1,0 +1,4 @@
+<map id="table_add_reference_point" name="table_add_reference_point">
+<area shape="rect" id="node1" title="Adds a reference point to the table." alt="" coords="5,5,144,45"/>
+<area shape="rect" id="node2" href="$Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="192,13,319,38"/>
+</map>

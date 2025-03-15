@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pqnode_0',['PQNode',['../structPQNode.html',1,'']]],
-  ['priorityqueue_1',['PriorityQueue',['../structPriorityQueue.html',1,'']]]
+  ['point_0',['point',['../structpoint.html',1,'']]],
+  ['pqnode_1',['PQNode',['../structPQNode.html',1,'']]],
+  ['priorityqueue_2',['PriorityQueue',['../structPriorityQueue.html',1,'']]]
 ];
