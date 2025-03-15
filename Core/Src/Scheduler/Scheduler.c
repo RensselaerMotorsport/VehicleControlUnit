@@ -11,17 +11,17 @@
  */
 void SensorTask(void *pvParameters) {
 	Updateable *updateable = (Updateable *)pvParameters;
-	uint32_t frequency = osKernelGetTickCount() + (1000 / updateable->hz);
+	uint32_t frequency = 1000 / updateable->hz;
 
 	// Infinite loop
 	while (1) {
 		if (!updateable || !updateable->update) {
-			fprintf(stderr, "Error: Updateable dosn't have update function or is NULL!\n");
-			break;
+			printf("[ERROR] %s Task exited unexpectedly!\r\n", updateable->name);
+			osThreadExit();  // Properly terminate task
 		}
 
 		UPDATE(updateable);
-		printf("[UPDATE] %s is updating...\n", updateable->name);
+		printf("[DEBUG SCEDULER] %s is updating...\r\n", updateable->name);
 		osDelay(frequency);
 	}
 }
@@ -42,6 +42,7 @@ void SchedulerInit(Updateable* updatableArray[]) {
         // Create RTOS task
         osThreadAttr_t thread_attr = {
             .name = updateable->name,
+			.stack_size = 128 * 4,
             .priority = osPriorityNormal
         };
 
@@ -49,6 +50,6 @@ void SchedulerInit(Updateable* updatableArray[]) {
 			fprintf(stderr, "Error: Failed to create thread for %s!\n", updateable->name);
 			return;
 		}
-		printf("[SCHEDULER] Created thread for %s\n", updateable->name);
+		printf("[DEBUG SCHEDULER] Created thread for %s\r\n", updateable->name);
     }
 }
