@@ -142,7 +142,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -286,16 +286,14 @@ int main(void)
   initInverter(inverter, tc, 10, 200, 100, 400);
 
   // Add Updatables to static array
-  Updateable* updateables[6] = {
+  Updateable* updateables[3] = {
 	&apps->base.system.updateable,
 	&bsc->base.system.updateable,
-	&rtd->base.system.updateable,
-	&tc->base.system.updateable,
-	&inverter->base.system.updateable,
+	//&rtd->base.system.updateable,
+	//&tc->base.system.updateable,
+	//&inverter->base.system.updateable,
 	NULL
   };
-
-  SchedulerInit(updateables);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -322,6 +320,7 @@ int main(void)
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
+  SchedulerInit(updateables);
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
