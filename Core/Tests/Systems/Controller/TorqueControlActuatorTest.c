@@ -34,8 +34,7 @@ int testTorqueUpdate(float torque, float desiredTorque,
     }
 }
 
-// Main function to run all tests
-int main() {
+int torque_control_main() {
     int result = 0;
 
     result += testTorqueControlInitialization(100.0f, "Initialization Test");

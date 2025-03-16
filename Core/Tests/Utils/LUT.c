@@ -147,7 +147,7 @@ void test_sampling_unknown_point(table *table) {
   test_within_error("altitude", "expected altitude", altitude_m, expected_altitude_m);
 }
 
-int main() {
+void lut_main() {
   table pressure_mb_to_altitude_m;
   assert(table_init(&pressure_mb_to_altitude_m, 9));
 

@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
+#include <stdbool.h>
 
 #define BmsHz 500
 
@@ -58,7 +59,7 @@ int testBmsUpdate(Bms* expectedBms, const char* dbcFn, const char* canFn,
     return 0;
 }
 
-int main() {
+int bms_main() {
     int result = 0;
 
     result += testBmsInit(

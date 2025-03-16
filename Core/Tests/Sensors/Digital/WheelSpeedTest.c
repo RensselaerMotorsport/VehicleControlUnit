@@ -26,7 +26,7 @@ int testTransferFunction(float radius, int numTeeth, int pulseCount,
     }
 }
 
-int main() {
+int wheel_speed_main() {
     int result = 0;
 
     // Low speed tests

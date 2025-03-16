@@ -53,7 +53,7 @@ int testGetAppsPosition(float pos1, float pos2, float desiredPos,
     }
 }
 
-int main() {
+int apps_main() {
     assert(testAppsInit("Initialization Test"));
 
     // Normal Operation
