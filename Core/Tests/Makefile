@@ -23,12 +23,12 @@ VCU_SRCS = $(shell find $(VCU_DIR) -type f -name '*.c' \
           ! -name 'startup_stm32*.c' \
           ! -path '*/STM32*/*' \
           ! -path '*/Drivers/*')
-VCU_OBJ_DIR = ../Obj
+VCU_OBJ_DIR = Obj
 VCU_OBJS = $(VCU_SRCS:$(VCU_DIR)/%.c=$(VCU_OBJ_DIR)/%.o)
 
 TEST_DIR = .
 TEST_SRCS = $(shell find $(TEST_DIR) -type f -name '*.c')
-TEST_OBJ_DIR = ../Obj/Test
+TEST_OBJ_DIR = Obj/Test
 TEST_OBJS = $(TEST_SRCS:$(TEST_DIR)/%.c=$(TEST_OBJ_DIR)/%.o)
 TEST_INCS = -I$(TEST_INC)
 TEST_CFLAGS = $(TEST_INCS)
