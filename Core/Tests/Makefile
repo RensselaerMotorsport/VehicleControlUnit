@@ -1,7 +1,14 @@
-CC = gcc
-CFLAGS = -g -O0 -I../Inc -pthread -lm -MMD
+VCU_INC = ../Inc
+# TODO Figure out why this is Inc but VCU_INC is be ../Inc
+STM32_FAKE_INC = Inc/fake_include
 
-OBJ_DIR = Obj
+INCS = -I$(VCU_INC) -I$(STM32_FAKE_INC)
+LIBS = -lm
+
+CC = gcc
+CPPFLAGS = -DTEST_MODE
+CFLAGS = -g -O0 -pthread -MMD $(INCS) $(CPPFLAGS)
+LDFLAGS = $(LIBS)
 
 VCU_DIR = ../Src
 VCU_SRCS = $(shell find $(VCU_DIR) -type f -name '*.c' \
@@ -16,17 +23,19 @@ VCU_SRCS = $(shell find $(VCU_DIR) -type f -name '*.c' \
           ! -path '*/STM32*/*' \
           ! -path '*/Drivers/*')
 VCU_OBJ_DIR = ../Obj
-VCU_OBJS = $(VCU_SRCS:$(VCU_DIR)/%.c=$(OBJ_DIR)/%.o)
+VCU_OBJS = $(VCU_SRCS:$(VCU_DIR)/%.c=$(VCU_OBJ_DIR)/%.o)
 
 TEST_DIR = .
 TEST_SRCS = $(shell find $(TEST_DIR) -type f -name '*.c')
-TEST_OBJ_DIR = $(OBJ_DIR)/Test
+TEST_OBJ_DIR = ../Obj/Test
 TEST_OBJS = $(TEST_SRCS:$(TEST_DIR)/%.c=$(TEST_OBJ_DIR)/%.o)
-CFLAGS += -DTEST_MODE -IInc/fake_include
 
-TEST_EXECUTABLE = test
+TEST_EXECUTABLE = test.out
 
-all: debug $(TEST_EXECUTABLE)
+all: $(TEST_EXECUTABLE)
+
+clean:
+	rm -rf $(VCU_OBJ_DIR) $(TEST_OBJ_DIR) $(TEST_EXECUTABLE)
 
 debug:
 	@echo "VCU_SRCS = $(VCU_SRCS)"
@@ -35,18 +44,14 @@ debug:
 	@echo "TEST_OBJS = $(TEST_OBJS)"
 
 $(TEST_EXECUTABLE): $(VCU_OBJS) $(TEST_OBJS)
-	@echo "TODO LDFLAGS?"
-	$(CC) $(CFLAGS) $(VCU_OBJS) $(TEST_OBJS) -o $@
-	@echo "Built main test executable $@"
+	$(CC) $(LDFLAGS) $(VCU_OBJS) $(TEST_OBJS) -o $@
 
-$(OBJ_DIR)/%.o: $(VCU_DIR)/%.c
+$(VCU_OBJ_DIR)/%.o: $(VCU_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(VCU_CFLAGS) -c $< -o $@
 
 $(TEST_OBJ_DIR)/%.o: $(TEST_DIR)/%.c
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	rm -rf $(OBJ_DIR) $(TEST_OBJ_DIR) main.out $(shell find $(TEST_DIR) -type f -name '*.out')
-	@echo "Cleaned up build files."
+.PHONY: all clean debug
