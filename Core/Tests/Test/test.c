@@ -31,7 +31,7 @@ void test_equal(const char *a_label, const char *b_label, float a, float b) {
   if (passes) {
     printf(TEST_PASS "%s = %s (%f = %f)\n", a_label, b_label, a, b);
   } else {
-    printf(TEST_FAIL "FAIL\t%s ≠ %s (%f ≠ %f)\n", a_label, b_label, a, b);
+    printf(TEST_FAIL "%s ≠ %s (%f ≠ %f)\n", a_label, b_label, a, b);
   }
 }
 

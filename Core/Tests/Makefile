@@ -1,7 +1,7 @@
 VCU_INC = ../Inc
 # TODO Figure out why this is Inc but VCU_INC is be ../Inc
 STM32_FAKE_INC = Inc/fake_include
-TEST_INC = .
+TEST_INC = Test
 
 INCS = -I$(VCU_INC) -I$(STM32_FAKE_INC)
 LIBS = -lm
