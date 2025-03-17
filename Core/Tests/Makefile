@@ -1,6 +1,7 @@
 VCU_INC = ../Inc
 # TODO Figure out why this is Inc but VCU_INC is be ../Inc
 STM32_FAKE_INC = Inc/fake_include
+TEST_INC = .
 
 INCS = -I$(VCU_INC) -I$(STM32_FAKE_INC)
 LIBS = -lm
@@ -29,6 +30,8 @@ TEST_DIR = .
 TEST_SRCS = $(shell find $(TEST_DIR) -type f -name '*.c')
 TEST_OBJ_DIR = ../Obj/Test
 TEST_OBJS = $(TEST_SRCS:$(TEST_DIR)/%.c=$(TEST_OBJ_DIR)/%.o)
+TEST_INCS = -I$(TEST_INC)
+TEST_CFLAGS = $(TEST_INCS)
 
 TEST_EXECUTABLE = test.out
 
@@ -44,14 +47,14 @@ debug:
 	@echo "TEST_OBJS = $(TEST_OBJS)"
 
 $(TEST_EXECUTABLE): $(VCU_OBJS) $(TEST_OBJS)
-	$(CC) $(LDFLAGS) $(VCU_OBJS) $(TEST_OBJS) -o $@
+	$(CC) -o $@ $(LDFLAGS) $(VCU_OBJS) $(TEST_OBJS)
 
 $(VCU_OBJ_DIR)/%.o: $(VCU_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) $(VCU_CFLAGS) -c $< -o $@
+	$(CC) -o $@ $(CFLAGS) -c $<
 
 $(TEST_OBJ_DIR)/%.o: $(TEST_DIR)/%.c
 	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -o $@ $(CFLAGS) $(TEST_CFLAGS) -c $<
 
 .PHONY: all clean debug
