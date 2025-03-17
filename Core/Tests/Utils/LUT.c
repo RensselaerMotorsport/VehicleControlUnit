@@ -93,7 +93,7 @@ void test_sampling_unknown_point(table *table) {
   float expected_altitude_m = altitude_m_at_pressure_mb(pressure_mb);
   float altitude_m = 0.0;
 
-  test_start("sampling reference point");
+  test_start("sampling unknown point");
   test("is okay", "is not okay", table_sample(table, pressure_mb, &altitude_m));
   float percent_error =
       (altitude_m - expected_altitude_m) / expected_altitude_m * 100;
