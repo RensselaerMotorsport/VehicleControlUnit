@@ -11,6 +11,28 @@
 #define TEST_ERROR_DELTA_PERCENT 5
 #endif
 
+// TODO Find a way to do
+// TEST(NAME) {
+//   // test body
+// }
+// TODO Also find a way for the name to have spaces / nicer formatting
+#define TEST(NAME, BODY)                                                       \
+  {                                                                            \
+    test_t *T = test_start(#NAME);                                             \
+    BODY test_end(T);                                                          \
+  }
+
+// TODO Add versions of the macros where labels are the variable names
+
+#define ASSERT(BOOL, OK, ERR) test_assert(T, OK, ERR, BOOL)
+
+#define ASSERT_OK(BOOL) ASSERT(BOOL, "is okay", "is not okay")
+
+#define ASSERT_EQ(GOT, WANT, OK, ERR) test_assert_equal(T, OK, ERR, GOT, WANT)
+
+#define ASSERT_IN_ERROR(GOT, WANT, OK, ERR)                                    \
+  test_assert_within_error(T, OK, ERR, GOT, WANT)
+
 // Records status for a set of assertions.
 typedef struct {
   const char *name;
@@ -25,19 +47,19 @@ void test_end(test_t *t);
 
 // Prints a message depending on if the test passes or fails
 void test_assert(test_t *t, const char *pass_message, const char *fail_message,
-          bool passes);
+                 bool passes);
 
 // Tests if the values are approximately equal (pass) or
 // not (fail); approximately equal depends on the value of ϵ
 // (TEST_EQUAL_EPSILON)
-void test_assert_equal(test_t *t, const char *a_label, const char *b_label, float a,
-                float b);
+void test_assert_equal(test_t *t, const char *a_label, const char *b_label,
+                       float a, float b);
 
 // Tests if the values are within a percent error threshold (pass) or not
 // (fail); percent error threshold depends on the value of δ
 // (TEST_ERROR_DELTA_PERCENT)
 void test_assert_within_error(test_t *t, const char *actual_label,
-                       const char *expected_label, float actual,
-                       float expected);
+                              const char *expected_label, float actual,
+                              float expected);
 
 #endif // TEST_H

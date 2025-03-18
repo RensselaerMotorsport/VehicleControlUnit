@@ -18,36 +18,44 @@ float altitude_m_at_pressure_mb(float pressure_mb) {
 // Tests if an uninitialized table behaves as expected; everything should be
 // zero-valued and methods should not be functional
 void test_uninitialized_table(table *table) {
-  test_t *t = test_start("uninitialized table");
-  test_assert(t, "table is uninitialized", "table is initialized",
-       !table_is_initialized(table));
-  test_assert(t, "min is undefined", "min is defined", table_min_point(table) == NULL);
-  test_assert(t, "max is undefined", "max is defined", table_max_point(table) == NULL);
-  test_assert(t, "cannot sample 0 mb", "can sample 0 mb", !table_can_sample(table, 0));
-  test_assert(t, "cannot sample 300 mb", "can sample 300 mb",
-       !table_can_sample(table, 300));
-  float altitude_m;
-  bool okay = table_sample(table, 300, &altitude_m);
-  test_assert(t, "is not okay", "is okay", !okay);
-  test_end(t);
+  TEST(uninitialized_table, {
+    ASSERT(!table_is_initialized(table), "table is uninitialized",
+           "table is initialized");
+    ASSERT(table_min_point(table) == NULL, "min is undefined",
+           "min is defined");
+    ASSERT(table_max_point(table) == NULL, "max is undefined",
+           "max is defined");
+    ASSERT(!table_can_sample(table, 0),
+           "cannot sample outside of domain (0 mb)",
+           "can sample outside of domain (0 mb)");
+    ASSERT(!table_can_sample(table, 300), "cannot sample in domain (300 mb)",
+           "can sample outside of domain (300 mb)");
+    float altitude_m;
+    ASSERT(!table_sample(table, 300, &altitude_m), "sampling is not okay",
+           "sampling is okay");
+  })
 }
 
 // Tests if an uninitialized table behaves as expected; nothing should be
 // zero-valued and methods should be functional
 void test_initialized_table(table *table) {
-  test_t *t = test_start("initialized table");
-  test_assert(t, "table is initialized", "table is uninitialized",
-       table_is_initialized(table));
-  test_assert(t, "min is defined", "min is undefined", table_min_point(table) != NULL);
-  test_assert(t, "min is first point in table", "min is not first point in table",
-       table_min_point(table) == &table->points_[0]);
-  test_assert(t, "max is defined", "max is undefined", table_max_point(table) != NULL);
-  test_assert(t, "max is last point in table", "max is not last point in table",
-       table_max_point(table) == &table->points_[table->count_ - 1]);
-  test_assert(t, "cannot sample 0 mb", "can sample 0 mb", !table_can_sample(table, 0));
-  test_assert(t, "can sample 300 mb", "cannot sample 300 mb",
-       table_can_sample(table, 300));
-  test_end(t);
+  TEST(initialized_table, {
+    ASSERT(table_is_initialized(table), "table is initalized",
+           "table is uninitialized");
+    ASSERT(table_min_point(table) != NULL, "min is defined",
+           "min is undefined");
+    ASSERT(table_min_point(table) == &table->points_[0],
+           "min is first point in table", "min is not first point in table");
+    ASSERT(table_max_point(table) != NULL, "max is defined",
+           "max is undefined");
+    ASSERT(table_max_point(table) == &table->points_[table->count_ - 1],
+           "max is last point in table", "max is not last point in table");
+    ASSERT(!table_can_sample(table, 0),
+           "cannot sample outside of domain (0 mb)",
+           "can sample outside of domain (0 mb)");
+    ASSERT(table_can_sample(table, 300), "can sample in domain (300 mb)",
+           "cannot sample outside of domain (300 mb)");
+  })
 }
 
 // Tests if sampling a known reference input in the table returns the known
@@ -61,19 +69,17 @@ void test_sampling_endpoints(table *table) {
       altitude_m_at_pressure_mb(max_reference_pressure_mb);
   float altitude_m = 0.0;
 
-  test_t *t1 = test_start("sampling min reference point");
-  test_assert(t1, "is okay", "is not okay",
-       table_sample(table, min_reference_pressure_mb, &altitude_m));
-  test_assert_equal(t1, "altitude", "reference altitude", altitude_m,
-             min_reference_altitude_m);
-  test_end(t1);
+  TEST(sampling_min_reference_point, {
+    ASSERT_OK(table_sample(table, min_reference_pressure_mb, &altitude_m));
+    ASSERT_EQ(altitude_m, min_reference_altitude_m, "altitude",
+              "reference altitude");
+  })
 
-  test_t *t2 = test_start("sampling max reference point");
-  test_assert(t2, "is okay", "is not okay",
-       table_sample(table, max_reference_pressure_mb, &altitude_m));
-  test_assert_equal(t2, "altitude", "reference altitude", altitude_m,
-             max_reference_altitude_m);
-  test_end(t2);
+  TEST(sampling_max_reference_point, {
+    ASSERT_OK(table_sample(table, max_reference_pressure_mb, &altitude_m));
+    ASSERT_EQ(altitude_m, max_reference_altitude_m, "altitude",
+              "reference altitude");
+  });
 }
 
 // Tests if sampling a known reference input in the table returns the known
@@ -83,12 +89,11 @@ void test_sampling_reference_point(table *table) {
   float reference_altitude_m = altitude_m_at_pressure_mb(reference_pressure_mb);
   float altitude_m = 0.0;
 
-  test_t *t = test_start("sampling reference point");
-  test_assert(t, "is okay", "is not okay",
-       table_sample(table, reference_pressure_mb, &altitude_m));
-  test_assert_equal(t, "altitude", "reference altitude", altitude_m,
-             reference_altitude_m);
-  test_end(t);
+  TEST(sampling_reference_point, {
+    ASSERT_OK(table_sample(table, reference_pressure_mb, &altitude_m));
+    ASSERT_EQ(altitude_m, reference_altitude_m, "altitude",
+              "reference altitude");
+  })
 }
 
 // Tests if sampling an unknown input in the table returns an
@@ -98,14 +103,13 @@ void test_sampling_unknown_point(table *table) {
   float expected_altitude_m = altitude_m_at_pressure_mb(pressure_mb);
   float altitude_m = 0.0;
 
-  test_t *t = test_start("sampling unknown point");
-  test_assert(t, "is okay", "is not okay",
-       table_sample(table, pressure_mb, &altitude_m));
-  float percent_error =
-      (altitude_m - expected_altitude_m) / expected_altitude_m * 100;
-  test_assert_within_error(t, "altitude", "expected altitude", altitude_m,
-                    expected_altitude_m);
-  test_end(t);
+  TEST(sampling_unknown_point, {
+    ASSERT_OK(table_sample(table, pressure_mb, &altitude_m));
+    float percent_error =
+        (altitude_m - expected_altitude_m) / expected_altitude_m * 100;
+    ASSERT_IN_ERROR(altitude_m, expected_altitude_m, "altitude",
+                    "expected altitude");
+  })
 }
 
 void lut_main() {
