@@ -26,7 +26,7 @@
 
 #define ASSERT(BOOL, OK, ERR) test_assert(T, OK, ERR, BOOL)
 
-#define ASSERT_OK(BOOL) ASSERT(BOOL, "is okay", "is not okay")
+#define ASSERT_OK(BOOL, LABEL) ASSERT(BOOL, LABEL" is okay", LABEL" is not okay")
 
 #define ASSERT_EQ(GOT, WANT, OK, ERR) test_assert_equal(T, OK, ERR, GOT, WANT)
 

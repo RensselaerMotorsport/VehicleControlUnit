@@ -70,13 +70,13 @@ void test_sampling_endpoints(table *table) {
   float altitude_m = 0.0;
 
   TEST(sampling_min_reference_point, {
-    ASSERT_OK(table_sample(table, min_reference_pressure_mb, &altitude_m));
+    ASSERT_OK(table_sample(table, min_reference_pressure_mb, &altitude_m), "sample");
     ASSERT_EQ(altitude_m, min_reference_altitude_m, "altitude",
               "reference altitude");
   })
 
   TEST(sampling_max_reference_point, {
-    ASSERT_OK(table_sample(table, max_reference_pressure_mb, &altitude_m));
+    ASSERT_OK(table_sample(table, max_reference_pressure_mb, &altitude_m), "sample");
     ASSERT_EQ(altitude_m, max_reference_altitude_m, "altitude",
               "reference altitude");
   });
@@ -90,7 +90,7 @@ void test_sampling_reference_point(table *table) {
   float altitude_m = 0.0;
 
   TEST(sampling_reference_point, {
-    ASSERT_OK(table_sample(table, reference_pressure_mb, &altitude_m));
+    ASSERT_OK(table_sample(table, reference_pressure_mb, &altitude_m), "sample");
     ASSERT_EQ(altitude_m, reference_altitude_m, "altitude",
               "reference altitude");
   })
@@ -104,7 +104,7 @@ void test_sampling_unknown_point(table *table) {
   float altitude_m = 0.0;
 
   TEST(sampling_unknown_point, {
-    ASSERT_OK(table_sample(table, pressure_mb, &altitude_m));
+    ASSERT_OK(table_sample(table, pressure_mb, &altitude_m), "sample");
     float percent_error =
         (altitude_m - expected_altitude_m) / expected_altitude_m * 100;
     ASSERT_IN_ERROR(altitude_m, expected_altitude_m, "altitude",
