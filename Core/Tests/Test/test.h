@@ -26,12 +26,14 @@
 
 #define ASSERT(BOOL, OK, ERR) test_assert(T, OK, ERR, BOOL)
 
-#define ASSERT_OK(BOOL, LABEL) ASSERT(BOOL, LABEL" is okay", LABEL" is not okay")
+#define ASSERT_OK(BOOL, LABEL)                                                 \
+  ASSERT(BOOL, LABEL " is okay", LABEL " is not okay")
 
-#define ASSERT_EQ(GOT, WANT, OK, ERR) test_assert_equal(T, OK, ERR, GOT, WANT)
+#define ASSERT_EQ(GOT, WANT, GOT_LABEL, WANT_LABEL)                            \
+  test_assert_equal(T, GOT_LABEL, WANT_LABEL, GOT, WANT)
 
-#define ASSERT_IN_ERROR(GOT, WANT, OK, ERR)                                    \
-  test_assert_within_error(T, OK, ERR, GOT, WANT)
+#define ASSERT_IN_ERROR(GOT, WANT, GOT_LABEL, WANT_LABEL)                      \
+  test_assert_within_error(T, GOT_LABEL, WANT_LABEL, GOT, WANT)
 
 // Records status for a set of assertions.
 typedef struct {
