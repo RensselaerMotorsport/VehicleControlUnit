@@ -63,7 +63,7 @@ int testTemperature(int maxTemp, int brakeLightActivationPoint, int heavyBraking
 }
 
 
-int main(){
+int brake_main(){
     int tests_failed = 0;
 
     tests_failed += testBrakeSystemControlInit(0, 0, 0, "Initialization Test");
