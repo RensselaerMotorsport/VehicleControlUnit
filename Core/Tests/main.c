@@ -6,24 +6,17 @@
 
 // Forward declare the main functions
 void lut_main();
-int wheel_speed_main();
-int torque_control_main();
+void wheel_speed_main();
+void torque_control_main();
 // FIXME Needs fixing (check with code owners)
 // int brake_main();
-int apps_main();
-int bms_main();
-
-// FIXME Temporary wrapper for lut_main (void) until migrated
-int lut_main_wrapper() {
-  lut_main();
-  return 0;
-}
+void apps_main();
+void bms_main();
 
 // Defines a map from a string to a main function.
 typedef struct {
   const char *name;
-  // TODO Eventually this can / should become void
-  int (*main)();
+  void (*main)();
 } map;
 
 // NOTE run_all_tests calls each of the values (mains) of this!
@@ -31,10 +24,10 @@ typedef struct {
 static map name_to_main[] = {{"apps", apps_main},
                              /*{ "brake", brake_main },*/
                              {"bms", bms_main},
-                             {"lut", lut_main_wrapper},
+                             {"lut", lut_main},
                              {"torque_control", torque_control_main},
                              {"wheel_speed", wheel_speed_main}};
-#define NUM_TESTS (sizeof(name_to_main)/sizeof(name_to_main[0]))
+#define NUM_TESTS (sizeof(name_to_main) / sizeof(name_to_main[0]))
 
 void run_all_tests() {
   for (int n = 0; n < NUM_TESTS; ++n) {

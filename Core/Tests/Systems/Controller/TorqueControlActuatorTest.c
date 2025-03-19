@@ -1,55 +1,50 @@
 #include "../Inc/Systems/Controller/TorqueControl.h"
+#include "test.h"
 
-int testTorqueControlInitialization(float maxTorque, const char* testName) {
-    TorqueControl tc;
-    initTorqueControl(&tc, 0, maxTorque);
+#define MAX_TORQUE 100
 
-    if (tc.status != TORQUE_OK) {
-        printf("%s Failed: Initial status is not OK.\n", testName);
-        return 1;
-    } else {
-        printf("%s Passed: Initial status is OK.\n", testName);
-        return 0;
-    }
-}
+#define TORQUE_DO(torque, desired) \
+  TorqueControl tc; \
+  initTorqueControl(&tc, 0, MAX_TORQUE); \
+  setActualTorque(&tc, torque); \
+  setDesiredTorque(&tc, desired); \
+  updateTorqueControl(&tc); \
+  TorqueStatus status = checkTorqueLimits(&tc);
 
-int testTorqueUpdate(float torque, float desiredTorque,
-                     TorqueStatus desiredStatus, const char* testName) {
-    TorqueControl tc;
-    float maxTorque = 100.0f;
-    initTorqueControl(&tc, 0, maxTorque);
+void torque_control_main() {
+    TEST(torque_init, {
+      TorqueControl tc;
+      initTorqueControl(&tc, 0, 100);
+      ASSERT(tc.status == TORQUE_OK, "status is expected", "status is not expected");
+    })
 
-    setActualTorque(&tc, torque);
-    setDesiredTorque(&tc, desiredTorque);
-    updateTorqueControl(&tc);
-    TorqueStatus status = checkTorqueLimits(&tc);
+    TEST(update_normal, {
+      TORQUE_DO(75, 75)
+      ASSERT(tc.status == TORQUE_OK, "status is expected", "status is not expected");
+    })
 
-    if (status != desiredStatus) {
-        printf("%s Failed: Status after update is incorrect, actual status: %d.\n",
-               testName, status);
-        return 1;
-    } else {
-        printf("%s Passed: Status after update is correct.\n", testName);
-        return 0;
-    }
-}
+    TEST(update_below_desired, {
+      TORQUE_DO(93.5, 95)
+      ASSERT(tc.status == TORQUE_OK, "status is expected", "status is not expected");
+    })
 
-int torque_control_main() {
-    int result = 0;
+    TEST(update_above_desired, {
+      TORQUE_DO(98.5, 95)
+      ASSERT(tc.status == TORQUE_OK, "status is expected", "status is not expected");
+    })
 
-    result += testTorqueControlInitialization(100.0f, "Initialization Test");
-    result += testTorqueUpdate(75.0f, 75.0f, TORQUE_OK, "Update Test Normal");
-    result += testTorqueUpdate(93.5f, 95.0f, TORQUE_OK, "Update Test Close to Limit Below");
-    result += testTorqueUpdate(98.5f, 95.0f, TORQUE_OK, "Update Test Close to Limit Above");
-    result += testTorqueUpdate(101.0f, 95.0f, TORQUE_OVER_LIMIT, "Update Test Over Limit");
-    result += testTorqueUpdate(-10.0f, 20.0f, TORQUE_UNDER_LIMIT, "Update Test Negative Torque");
-    result += testTorqueUpdate(10.0f, 80.0f, TORQUE_SENSOR_ERROR, "Update Test Sensor Error");
+    TEST(update_over_limit, {
+      TORQUE_DO(101, 95)
+      ASSERT(tc.status == TORQUE_OVER_LIMIT, "status is expected", "status is not expected");
+    })
 
-    if (result == 0) {
-        printf("All tests passed.\n");
-    } else {
-        printf("Some tests failed.\n");
-    }
+    TEST(update_negative_torque, {
+      TORQUE_DO(-10, 95)
+      ASSERT(tc.status == TORQUE_UNDER_LIMIT, "status is expected", "status is not expected");
+    })
 
-    return result;
+    TEST(update_sensor_error, {
+      TORQUE_DO(10, 80)
+      ASSERT(tc.status == TORQUE_SENSOR_ERROR, "status is expected", "status is not expected");
+    })
 }

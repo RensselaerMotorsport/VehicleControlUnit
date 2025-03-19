@@ -1,26 +1,9 @@
 #include "../../../Inc/Systems/External/BMS.h"
+#include "test.h"
 
-#include <stdio.h>
 #include <assert.h>
 #include <math.h>
 #include <stdbool.h>
-
-#define BmsHz 500
-
-int testBmsInit(const char* dbcFn, const char* testName) {
-    Bms bms;
-    initBms(&bms, BmsHz, dbcFn);
-
-    if (bms.chargeStatus != IDLE || bms.packVoltage != 0.0f ||
-        bms.packCurrent != 0.0f) {
-        printf("Failed: %s. Initial charge status, pack voltage, or pack "
-               "current is incorrect.\n", testName);
-        return 1;
-    }
-
-    printf("Passed: %s.\n", testName);
-    return 0;
-}
 
 // TODO: Put in bms file
 #define FLOAT_ERROR 1e-5
@@ -44,28 +27,16 @@ bool equal(Bms* bms1, Bms* bms2) {
     return true;
 }
 
-int testBmsUpdate(Bms* expectedBms, const char* dbcFn, const char* canFn,
-                  const char* testName) {
-    Bms bms;
-    initBms(&bms, BmsHz, dbcFn);
-    updateBmsTest(&bms, canFn);
+#define BmsHz 500
 
-    if (equal(&bms, expectedBms)) {
-        printf("Failed: %s. BMS ...\n", testName);
-        return 1;
-    }
-
-    printf("Passed: %s.\n", testName);
-    return 0;
-}
-
-int bms_main() {
-    int result = 0;
-
-    result += testBmsInit(
-        "Tests/Systems/External/Orion_CANBUS.dbc",
-        "BMS Initialization Test"
-    );
+void bms_main() {
+    TEST(bms_init, {
+      Bms bms;
+      initBms(&bms, BmsHz, "Tests/Systems/External/Orion_CANBUS.dbc");
+      ASSERT(bms.chargeStatus == IDLE, "bms is idle", "bms is not idle");
+      ASSERT_EQ(bms.packVoltage, 0, "pack voltage", "expected pack voltage");
+      ASSERT_EQ(bms.packCurrent, 0, "pack current", "expected pack current");
+    })
 
     Bms expectedBms;
     initBms(&expectedBms, BmsHz, "Tests/Systems/External/Orion_CANBUS.dbc");
@@ -73,19 +44,11 @@ int bms_main() {
     expectedBms.packVoltage = 400.0f;
     expectedBms.stateOfCharge = 80.0f;
 
-    result += testBmsUpdate(
-        &expectedBms,
-        "Tests/Systems/External/Orion_CANBUS.dbc",
-        "Tests/Systems/External/BmsFakeCanData.txt",
-        "Bms Update Test: First Message (1712)"
-    );
-
-    // Display overall test result
-    if (result == 0) {
-        printf("All tests passed.\n");
-    } else {
-        printf("Some tests failed.\n");
-    }
-
-    return 0;
+    TEST(bms_update, {
+      Bms bms;
+      initBms(&bms, BmsHz, "Tests/Systems/External/Orion_CANBUS.dbc");
+      updateBmsTest(&bms, "Tests/Systems/External/BmsFakeCanData.txt");
+      // FIXME Should this be equal or !equal? Original had it as equal is a failure
+      ASSERT(!equal(&bms, &expectedBms), "bms doesn't equal expected bms", "bms equals expected bms");
+    })
 }
