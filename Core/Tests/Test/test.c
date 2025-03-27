@@ -1,22 +1,10 @@
 #include "test.h"
+#include "Utils/Common.h"
 
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-
-#define ESC "\x1b["
-#define ESC_AQUA ESC "36m"
-#define ESC_GREEN ESC "32m"
-#define ESC_RED ESC "31m"
-#define ESC_RESET ESC "0m"
-
-#define TEST_DELIM "\t"
-#define TEST_START ESC_AQUA "START" ESC_RESET TEST_DELIM
-#define TEST_PASS ESC_GREEN "PASS" ESC_RESET TEST_DELIM
-#define TEST_OK ESC_GREEN "OK" ESC_RESET TEST_DELIM
-#define TEST_ERR ESC_RED "ERR" ESC_RESET TEST_DELIM
-#define TEST_FAIL ESC_RED "FAIL" ESC_RESET TEST_DELIM
 
 test_t *test_start(const char *name) {
   test_t *t = malloc(sizeof(test_t));
