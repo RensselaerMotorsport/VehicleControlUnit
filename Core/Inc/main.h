@@ -27,11 +27,17 @@ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* Skip STM32 HAL includes if STM32_HAL_DISABLED is defined */
 #include "stm32f7xx_hal.h"
+
+
+/* USER CODE END Includes */
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

@@ -51,7 +51,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+#ifndef TEST_MODE
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -103,7 +103,7 @@ static void MX_I2C4_Init(void);
 static void MX_SPI4_Init(void);
 static void MX_SPI6_Init(void);
 /* USER CODE BEGIN PFP */
-
+#endif
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -126,6 +126,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+
+  #ifndef TEST_MODE
 
   /* USER CODE END 1 */
 
@@ -163,6 +165,8 @@ int main(void)
   MX_SPI4_Init();
   MX_SPI6_Init();
   /* USER CODE BEGIN 2 */
+
+  #endif
 
   // Clear the screen
   printf("\033[2J\033[1;1H");
@@ -304,6 +308,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+
+  #ifndef TEST_MODE
 }
 
 /**
@@ -1393,7 +1399,11 @@ int _write(int file, char *data, int len)
     // Transmit data using USART3
     HAL_UART_Transmit(&huart3, (uint8_t *)data, len, HAL_MAX_DELAY);
     return len;
+
+#endif // <--- DONT DELETE THIS, IT IS LINKED TO LAST LINE IN MAIN FUNCTION TO ALLOW SIL BUILDS
+
 }
+
 /* USER CODE END 4 */
 
 /**
@@ -1404,7 +1414,11 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
+  
+  #ifndef TEST_MODE
   __disable_irq();
+  #endif
+
   while (1)
   {
     printf("Error_Handler\r\n");
