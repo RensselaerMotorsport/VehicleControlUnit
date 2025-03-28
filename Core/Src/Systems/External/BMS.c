@@ -1,5 +1,5 @@
 #include "../../../Inc/Systems/External/BMS.h"
-#include "../../../Inc/Systems/PrintHelpers.h"
+#include "../../../Inc/Utils/Common.h"
 
 #include <stdio.h>
 #include "../../../Inc/Systems/Comms/Can/Can.h"

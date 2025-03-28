@@ -8,18 +8,6 @@
 #include "stm32f7xx_hal.h"
 #endif
 
-
-/**
- * @brief Initializes an analog output
- *
- * @param output Pointer to the AnalogOutput structure to initialize
- * @param name Name of the output (string)
- * @param hz Sampling frequency in Hertz
- * @param channel ADC channel number for the output (0-16)
- *
- * This function initializes the base output properties, sets the ADC channel,
- * and configures the corresponding GPIO pin based on the channel number.
- */
 void initAnalogOutput(AnalogOutput* analogOutput, const char* name, int hz, int channel) {
     initOutput(&analogOutput->output, name, hz, o_ANALOG);
     analogOutput->channel = channel;

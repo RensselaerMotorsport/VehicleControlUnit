@@ -6,8 +6,9 @@
 void initApps(Apps* apps, int hz, int channel1, int channel2) {
     initControllerSystem(&apps->base, "Apps", hz, c_APPS, updateApps, apps);
     // Allocate memory for the app instances
-    apps->app[0] = (App*)malloc(sizeof(App));
-    apps->app[1] = (App*)malloc(sizeof(App));
+    App app1, app2;
+    apps->app[0] = &app1;
+    apps->app[1] = &app2;
 
     // Check if memory allocation was successful
     if (apps->app[0] == NULL || apps->app[1] == NULL) {

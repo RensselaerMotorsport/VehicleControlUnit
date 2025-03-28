@@ -6,20 +6,27 @@
 
 void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel, int light_port){
     initControllerSystem(&bsc-> base, "Brake System Control", hz, c_BRAKES, updateBrakeSystemControl, bsc);
-    bsc->frontPressure = (BrakePressure *)malloc(sizeof(BrakePressure));
-    bsc->rearPressure = (BrakePressure *)malloc(sizeof(BrakePressure));
-    bsc->temperature = (Temperature *)malloc(sizeof(Temperature));
-    bsc->brakeLight = (DigitalOutput *)malloc(sizeof(DigitalOutput));
-    bsc -> maxTemperatureAllowed = maxTemp;
+    BrakePressure frontPressure, rearPressure;
+    Temperature temperature;
+    DigitalOutput brakeLight;
+
+    bsc->frontPressure = &frontPressure;
+    bsc->rearPressure = &rearPressure;
     initBrakePressure(bsc -> frontPressure, hz, fbp_channel);
     initBrakePressure(bsc -> rearPressure, hz, rbp_channel);
+    
+    bsc->temperature = &temperature;
+    initTemperature(bsc -> temperature, hz, temp_channel);
+
+    bsc->brakeLight = &brakeLight;
+    initDigitalOutput(bsc -> brakeLight, "Brake Light", hz, light_port);
+
+    bsc -> maxTemperatureAllowed = maxTemp;
     bsc -> minPressure = 0;
     bsc -> maxPressure = 2000;
-    initTemperature(bsc -> temperature, hz, temp_channel);
     bsc -> brakeLightActivationPoint = brakeLightActivationPoint;
     bsc -> brakeLightActive = 0;
     bsc -> brakeLightBlink = 0;
-    initDigitalOutput(bsc -> brakeLight, "Brake Light", hz, light_port);
     bsc -> heavyBrakingActivationPoint = heavyBrakingActivationPoint;
     bsc -> heavyBraking = 0;
     bsc -> status = BRAKES_OK;

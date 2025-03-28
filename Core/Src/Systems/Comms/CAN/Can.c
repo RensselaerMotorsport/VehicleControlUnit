@@ -1,6 +1,6 @@
 #include "../../../../Inc/Systems/Comms/Can/Can.h"
 #include "../../../../Inc/Systems/Comms/Can/DBCParser.h"
-#include "../../../../Inc/Systems/PrintHelpers.h"
+#include "../../../../Inc/Systems/Common.h"
 #include "../../../../Inc/stm32f7xx_it.h"
 
 #include <stdio.h>
@@ -105,23 +105,23 @@ int send_CAN_message(CANBus bus, CANProtocol protocol, uint32_t id, uint8_t* dat
 void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus bus) {
 	CAN_Message* can_message = malloc(sizeof(CAN_Message) + sizeof(CAN_Signal) * 8);
 	can_message->header = *RxHeader;
-	    memcpy(can_message->data, RxData, 8);
+    memcpy(can_message->data, RxData, 8);
 
-	    // Parse the message
-	    parseMessage(&can_messages[bus], can_message);
+    // Parse the message
+    parseMessage(&can_messages[bus], can_message);
 
-	    // Print out the contents of the message
-	    printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
+    // Print out the contents of the message
+    printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
 
-        // Print the signals
-        for (int i = 0; i < can_message->template->signal_count; i++) {
-            CAN_Signal* signal = &can_message->signals[i];
-            printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
-        }
-        printf("\r\n");
+    // Print the signals
+    for (int i = 0; i < can_message->template->signal_count; i++) {
+        CAN_Signal* signal = &can_message->signals[i];
+        printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
+    }
+    printf("\r\n");
 
-	    // Free the message
-	    free(can_message);
+    // Free the message
+    free(can_message);
 }
 
 // Parse a CAN message

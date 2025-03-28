@@ -18,12 +18,15 @@ extern uint32_t dac1_buffer[DAC1_BUFFER_SIZE];
 extern uint32_t dac2_buffer[DAC2_BUFFER_SIZE];
 
 /**
- * @brief Initializes a analog output with the given parameters.
+ * @brief Initializes an analog output
  *
- * @param analogoutput Pointer to the Output structure to initialize.
- * @param name   Pointer to a string containing the name of the output.
- * @param hz     The frequency in Hertz at which the output operates.
- * @param port   Location of the analog output on board.
+ * @param output Pointer to the AnalogOutput structure to initialize
+ * @param name Name of the output (string)
+ * @param hz Sampling frequency in Hertz
+ * @param channel ADC channel number for the output (0-16)
+ *
+ * This function initializes the base output properties, sets the ADC channel,
+ * and configures the corresponding GPIO pin based on the channel number.
  */
 void initAnalogOutput(AnalogOutput* analogoutput, const char* name, int hz,
                        int channel);

@@ -10,7 +10,7 @@ extern uint8_t digital_out_buffer[NUM_DIGITAL_OUTPUTS];
 
 typedef struct {
   Output output;
-    int port;
+  int port;
 } DigitalOutput;
 
 /**

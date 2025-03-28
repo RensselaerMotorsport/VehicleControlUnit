@@ -217,73 +217,73 @@ int main(void)
   send_CAN_message(CAN_1, CAN_2A, 124, txdata, 8);
 
   // Make Apps Controller and Monitor
-  Apps* apps = malloc(sizeof(Apps));
-  initApps(apps, 10, 8, 4);
+  Apps apps;
+  initApps(&apps, 10, 8, 4);
 
-  AppsMonitor* am = malloc(sizeof(AppsMonitor));
-  initAppsMonitor(am, apps, 10);
+  AppsMonitor am;
+  initAppsMonitor(&am, &apps, 10);
 
   // Bind Appsmonitor to Apps
-  apps->base.addMonitor(apps, am);
+  apps.base.addMonitor(&apps, &am);
 
   // Start the Apps Monitor
-  startAppsMonitor(am);
+  startAppsMonitor(&am);
 
   // Make Break Controller and Monitor
-  BrakeSystemControl* bsc = malloc(sizeof(BrakeSystemControl));
-  initBrakeSystemControl(bsc, 10, 200, 400, 1000, 10, 5, 6, 0);
+  BrakeSystemControl bsc;
+  initBrakeSystemControl(&bsc, 10, 200, 400, 1000, 10, 5, 6, 0);
 
-  BrakePolice* bp = malloc(sizeof(BrakePolice));
-  initBrakePolice(bp, bsc, 100, 200);
+  BrakePolice bp;
+  initBrakePolice(&bp, &bsc, 100, 200);
 
   // Bind BrakePolice to BrakeSystemControl
-  bsc->base.addMonitor(bsc, bp);
+  bsc.base.addMonitor(&bsc, &bp);
 
   // Start the Brake Controller and Monitor
-  startBrakeSystemControl(bsc);
-  startBrakePolice(bp);
+  startBrakeSystemControl(&bsc);
+  startBrakePolice(&bp);
 
   // Make RTD Controller and Monitor
-  RTD* rtd = malloc(sizeof(RTD));
-  initRTD(rtd, apps, bsc, 10, 0, 1);
+  RTD rtd;
+  initRTD(&rtd, &apps, &bsc, 10, 0, 1);
 
-  RTDMonitor* rm = malloc(sizeof(RTDMonitor));
-  initRTDMonitor(rm, rtd, 10);
+  RTDMonitor rm;
+  initRTDMonitor(&rm, &rtd, 10);
 
   // Bind RTDMonitor to RTD
-  rtd->base.addMonitor(rtd, rm);
+  rtd.base.addMonitor(&rtd, &rm);
 
   // Start the RTD Controller and Monitor
-  startRTD(rtd);
-  startRTDMonitor(rm);
+  startRTD(&rtd);
+  startRTDMonitor(&rm);
 
   // Make Torque Controller and Monitor
-  TorqueControl* tc = malloc(sizeof(TorqueControl));
-  initTorqueControl(tc, apps, 10, 240);
+  TorqueControl tc;
+  initTorqueControl(&tc, &apps, 10, 240);
 
-  TorquePolice* tp = malloc(sizeof(TorquePolice));
-  initTorquePolice(tp, tc, bsc, rtd, 100, 240);
+  TorquePolice tp;
+  initTorquePolice(&tp, &tc, &bsc, &rtd, 100, 240);
 
   // Bind TorquePolice to TorqueControl
-  tc->base.addMonitor(tc, tp);
+  tc.base.addMonitor(&tc, &tp);
 
   // Start the Torque Controller and Monitor
-  startTorqueControl(tc);
-  startTorquePolice(tp);
+  startTorqueControl(&tc);
+  startTorquePolice(&tp);
 
   // Make Inverter
-  Inverter* inverter = malloc(sizeof(Inverter));
-  initInverter(inverter, tc, 10, 200, 100, 400);
+  Inverter inverter;
+  initInverter(&inverter, &tc, 10, 200, 100, 400);
 
   // Make Scheduler from updateable array
   Scheduler scheduler;
 
   Updateable* updateables[6];
-  updateables[0] = &apps->base.system.updateable;
-  updateables[1] = &bsc->base.system.updateable;
-  updateables[2] = &rtd->base.system.updateable;
-  updateables[3] = &tc->base.system.updateable;
-  updateables[4] = &inverter->base.system.updateable;
+  updateables[0] = &apps.base.system.updateable;
+  updateables[1] = &bsc.base.system.updateable;
+  updateables[2] = &rtd.base.system.updateable;
+  updateables[3] = &tc.base.system.updateable;
+  updateables[4] = &inverter.base.system.updateable;
   updateables[5] = NULL;
 
 
