@@ -1,9 +1,8 @@
 <map id="Core/Inc/Sensors/AnalogSensors/App.h" name="Core/Inc/Sensors/AnalogSensors/App.h">
-<area shape="rect" id="node1" title=" " alt="" coords="307,5,522,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="197,5,411,45"/>
 <area shape="rect" id="node2" href="$Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="6,93,191,133"/>
 <area shape="rect" id="node4" href="$MotorController_8h.html" title=" " alt="" coords="216,93,392,133"/>
 <area shape="rect" id="node6" href="$App_8c.html" title=" " alt="" coords="417,93,634,133"/>
-<area shape="rect" id="node7" href="$VCUTest_8c.html" title=" " alt="" coords="659,101,813,126"/>
 <area shape="rect" id="node3" href="$Apps_8c.html" title=" " alt="" coords="5,181,192,221"/>
 <area shape="rect" id="node5" href="$MotorController_8c.html" title=" " alt="" coords="216,181,395,221"/>
 </map>

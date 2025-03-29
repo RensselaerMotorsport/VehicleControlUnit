@@ -1,12 +1,9 @@
 <map id="getAppPosition" name="getAppPosition">
-<area shape="rect" id="node1" title="Gets the current position of the APP." alt="" coords="745,56,856,81"/>
-<area shape="rect" id="node2" href="$Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="579,56,695,81"/>
-<area shape="rect" id="node3" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="412,5,529,31"/>
-<area shape="rect" id="node10" href="$MotorController_8c.html#a5e58b938d347017c6e51634f7faa08f9" title="Gets the pedal position from the MotorController." alt="" coords="577,105,697,131"/>
-<area shape="rect" id="node6" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="425,68,516,93"/>
-<area shape="rect" id="node4" href="$AppsTest_8c.html#a108151dc214894907b900f66e63d959a" title=" " alt="" coords="104,44,247,69"/>
-<area shape="rect" id="node5" href="$AppsTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,93,56,119"/>
-<area shape="rect" id="node7" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="295,93,364,119"/>
-<area shape="rect" id="node9" href="$AppsTest_8c.html#ab4e80573ea468c574bdc6c38043cc2a1" title=" " alt="" coords="117,143,233,168"/>
-<area shape="rect" id="node8" href="$AppsTest_8c.html#ad3434857738c097152914f7d136dfa68" title=" " alt="" coords="129,93,221,119"/>
+<area shape="rect" id="node1" title="Gets the current position of the APP." alt="" coords="589,55,700,80"/>
+<area shape="rect" id="node2" href="$Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="423,55,539,80"/>
+<area shape="rect" id="node3" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="256,5,373,31"/>
+<area shape="rect" id="node7" href="$MotorController_8c.html#a5e58b938d347017c6e51634f7faa08f9" title="Gets the pedal position from the MotorController." alt="" coords="421,104,541,129"/>
+<area shape="rect" id="node4" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="269,55,360,80"/>
+<area shape="rect" id="node5" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,55,208,80"/>
+<area shape="rect" id="node6" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,55,91,80"/>
 </map>

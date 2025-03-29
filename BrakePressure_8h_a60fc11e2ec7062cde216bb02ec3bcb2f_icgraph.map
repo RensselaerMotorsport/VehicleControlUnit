@@ -1,10 +1,10 @@
 <map id="getBrakePressure" name="getBrakePressure">
-<area shape="rect" id="node1" title="Gets the current brake pressure." alt="" coords="461,55,588,80"/>
-<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html#a0b5f7ad2f9a7864534fec0f9e9ef26af" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="281,5,411,31"/>
-<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="279,55,413,80"/>
-<area shape="rect" id="node8" href="$BrakeSystemControl_8c.html#a7a7109d84a83c476d3f02bebfcd464ac" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="286,104,406,129"/>
-<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="104,5,231,31"/>
-<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="106,55,229,80"/>
-<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="109,104,226,129"/>
-<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,56,80"/>
+<area shape="rect" id="node1" title="Gets the current brake pressure." alt="" coords="500,55,627,80"/>
+<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html#a0b5f7ad2f9a7864534fec0f9e9ef26af" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="319,5,450,31"/>
+<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="317,55,452,80"/>
+<area shape="rect" id="node8" href="$BrakeSystemControl_8c.html#a7a7109d84a83c476d3f02bebfcd464ac" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="325,104,445,129"/>
+<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="143,5,269,31"/>
+<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="145,55,267,80"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="147,104,265,129"/>
+<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,55,95,80"/>
 </map>

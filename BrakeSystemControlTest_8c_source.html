@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Vehicle Control Unit: Core/Tests/BrakeSystemControlTest.c Source File</title>
+<title>Vehicle Control Unit: Core/Tests/Systems/Controller/BrakeSystemControlTest.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_1f4cbefea1b86fbbad1dbe5e68ce3547.html">Tests</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_1f4cbefea1b86fbbad1dbe5e68ce3547.html">Tests</a></li><li class="navelem"><a class="el" href="dir_a585bc67d1d7fbad0a5442109481fd26.html">Systems</a></li><li class="navelem"><a class="el" href="dir_41b21e7450a4bdacb3249d3062495509.html">Controller</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="BrakeSystemControlTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="BrakeSystemControlTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6">   66</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6">brake_main</a>(){</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> tests_failed = 0;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    tests_failed += <a class="code hl_function" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f">testBrakeSystemControlInit</a>(0, 0, 0, <span class="stringliteral">&quot;Initialization Test&quot;</span>);</div>
@@ -165,10 +165,10 @@ $(function() {
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> tests_failed;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 <div class="ttc" id="aBrakeSystemControlTest_8c_html_a12bf61478092a24d4ebb4f71258166b1"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1">testRearPressure</a></div><div class="ttdeci">int testRearPressure(int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, float pressure, BrakeSystemStatus desiredStatus, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00033">BrakeSystemControlTest.c:33</a></div></div>
+<div class="ttc" id="aBrakeSystemControlTest_8c_html_a35c81574c3f76c86b6697c88383d9bc6"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6">brake_main</a></div><div class="ttdeci">int brake_main()</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00066">BrakeSystemControlTest.c:66</a></div></div>
 <div class="ttc" id="aBrakeSystemControlTest_8c_html_aa0c31f634f317dd26896227a5ca4043f"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f">testBrakeSystemControlInit</a></div><div class="ttdeci">int testBrakeSystemControlInit(int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00003">BrakeSystemControlTest.c:3</a></div></div>
 <div class="ttc" id="aBrakeSystemControlTest_8c_html_abfd98a7c1fdfc9e06a8b3763bcf79eca"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca">testFrontPressure</a></div><div class="ttdeci">int testFrontPressure(int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, float pressure, BrakeSystemStatus desiredStatus, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00017">BrakeSystemControlTest.c:17</a></div></div>
 <div class="ttc" id="aBrakeSystemControlTest_8c_html_ac2d64fa6c33aa02357cfb48de120b385"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385">testTemperature</a></div><div class="ttdeci">int testTemperature(int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, float temperature, BrakeSystemStatus desiredStatus, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00049">BrakeSystemControlTest.c:49</a></div></div>
-<div class="ttc" id="aBrakeSystemControlTest_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="BrakeSystemControlTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControlTest_8c_source.html#l00066">BrakeSystemControlTest.c:66</a></div></div>
 <div class="ttc" id="aBrakeSystemControl_8h_html_a08566012ad9d058c3519af0767f6743a"><div class="ttname"><a href="BrakeSystemControl_8h.html#a08566012ad9d058c3519af0767f6743a">initBrakeSystemControl</a></div><div class="ttdeci">void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel)</div><div class="ttdoc">Initializes the Braking System with initial settings.</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControl_8c_source.html#l00006">BrakeSystemControl.c:6</a></div></div>
 <div class="ttc" id="aBrakeSystemControl_8h_html_a0da99eaf3efbafc0a7925bc86cd1cc70"><div class="ttname"><a href="BrakeSystemControl_8h.html#a0da99eaf3efbafc0a7925bc86cd1cc70">setFrontPressure</a></div><div class="ttdeci">void setFrontPressure(BrakeSystemControl *bsc, float pressure)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControl_8c_source.html#l00080">BrakeSystemControl.c:80</a></div></div>
 <div class="ttc" id="aBrakeSystemControl_8h_html_a75f8575f65e75f70cd065012c70e21b2"><div class="ttname"><a href="BrakeSystemControl_8h.html#a75f8575f65e75f70cd065012c70e21b2">setTemperature</a></div><div class="ttdeci">void setTemperature(BrakeSystemControl *bsc, float temperature)</div><div class="ttdef"><b>Definition:</b> <a href="BrakeSystemControl_8c_source.html#l00088">BrakeSystemControl.c:88</a></div></div>

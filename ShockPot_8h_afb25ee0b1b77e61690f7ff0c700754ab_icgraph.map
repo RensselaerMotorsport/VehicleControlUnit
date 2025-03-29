@@ -1,6 +1,5 @@
 <map id="transferFunctionShockPot" name="transferFunctionShockPot">
-<area shape="rect" id="node1" title="Converts raw ShockPot data to a meaningful distance value." alt="" coords="415,5,588,31"/>
-<area shape="rect" id="node2" href="$ShockPot_8c.html#af941d438b9f8d2a04f40ec183c34a970" title="Updates the ShockPot data." alt="" coords="248,5,367,31"/>
-<area shape="rect" id="node3" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="104,5,200,31"/>
-<area shape="rect" id="node4" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" id="node1" title="Converts raw ShockPot data to a meaningful distance value." alt="" coords="316,5,489,31"/>
+<area shape="rect" id="node2" href="$ShockPot_8c.html#af941d438b9f8d2a04f40ec183c34a970" title="Updates the ShockPot data." alt="" coords="149,5,268,31"/>
+<area shape="rect" id="node3" href="$ShockPot_8c.html#aa504d587a6cb42be1f4aed7bbea6c1a4" title="Initializes the ShockPot sensor with the given frequency, channel, and wheel location." alt="" coords="5,5,101,31"/>
 </map>

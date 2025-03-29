@@ -1,12 +1,8 @@
 <map id="transferFunctionApp" name="transferFunctionApp">
-<area shape="rect" id="node1" title="Converts raw APP data to a meaningful position value." alt="" coords="683,80,821,105"/>
-<area shape="rect" id="node2" href="$App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="551,80,635,105"/>
-<area shape="rect" id="node3" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="426,104,489,129"/>
-<area shape="rect" id="node10" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="412,55,503,80"/>
-<area shape="rect" id="node4" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="295,104,364,129"/>
-<area shape="rect" id="node9" href="$VCUTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="304,153,355,179"/>
-<area shape="rect" id="node5" href="$AppsTest_8c.html#ad3434857738c097152914f7d136dfa68" title=" " alt="" coords="129,104,221,129"/>
-<area shape="rect" id="node7" href="$AppsTest_8c.html#ab4e80573ea468c574bdc6c38043cc2a1" title=" " alt="" coords="117,5,233,31"/>
-<area shape="rect" id="node8" href="$AppsTest_8c.html#a108151dc214894907b900f66e63d959a" title=" " alt="" coords="104,55,247,80"/>
-<area shape="rect" id="node6" href="$AppsTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,55,56,80"/>
+<area shape="rect" id="node1" title="Converts raw APP data to a meaningful position value." alt="" coords="527,31,665,56"/>
+<area shape="rect" id="node2" href="$App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="395,31,479,56"/>
+<area shape="rect" id="node3" href="$App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="270,5,333,31"/>
+<area shape="rect" id="node6" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="256,55,347,80"/>
+<area shape="rect" id="node4" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,31,208,56"/>
+<area shape="rect" id="node5" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,31,91,56"/>
 </map>

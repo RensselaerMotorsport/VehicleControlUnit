@@ -75,265 +75,176 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">TorqueControlActuatorTest.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;../Inc/Systems/Controller/TorqueControl.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="test_8h_source.html">test.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TorqueControlActuatorTest.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="TorqueControlActuatorTest_8c__incl.png" border="0" usemap="#aCore_2Tests_2Systems_2Controller_2TorqueControlActuatorTest_8c" alt=""/></div>
 <map name="aCore_2Tests_2Systems_2Controller_2TorqueControlActuatorTest_8c" id="aCore_2Tests_2Systems_2Controller_2TorqueControlActuatorTest_8c">
-<area shape="rect" title=" " alt="" coords="5,5,220,60"/>
-<area shape="rect" title=" " alt="" coords="31,108,195,148"/>
+<area shape="rect" title=" " alt="" coords="47,5,261,60"/>
+<area shape="rect" title=" " alt="" coords="5,108,169,148"/>
+<area shape="rect" href="test_8h.html" title=" " alt="" coords="193,115,248,141"/>
+<area shape="rect" title=" " alt="" coords="183,196,258,221"/>
 </map>
 </div>
 </div>
 <p><a href="TorqueControlActuatorTest_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aaffdf293ef95fd884b05ac19b8f90ad3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#aaffdf293ef95fd884b05ac19b8f90ad3">MAX_TORQUE</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:aaffdf293ef95fd884b05ac19b8f90ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81396645485194e5557c27489e02866"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(torque,  desired)</td></tr>
+<tr class="separator:aa81396645485194e5557c27489e02866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1a5fb3d5d0af531e86dd4fc1b4b900b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#a1a5fb3d5d0af531e86dd4fc1b4b900b0">testTorqueControlInitialization</a> (float maxTorque, const char *testName)</td></tr>
-<tr class="separator:a1a5fb3d5d0af531e86dd4fc1b4b900b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4d8a246bfcaee0c5c0ffa1d979449d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a> (float torque, float desiredTorque, <a class="el" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a> desiredStatus, const char *testName)</td></tr>
-<tr class="separator:aa4d8a246bfcaee0c5c0ffa1d979449d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2cc120e0e42267120fe878c2a1d6af6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6">torque_control_main</a> ()</td></tr>
+<tr class="separator:af2cc120e0e42267120fe878c2a1d6af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aaffdf293ef95fd884b05ac19b8f90ad3" name="aaffdf293ef95fd884b05ac19b8f90ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaffdf293ef95fd884b05ac19b8f90ad3">&#9670;&#160;</a></span>MAX_TORQUE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">#define MAX_TORQUE&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00004">4</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
+
+</div>
+</div>
+<a id="aa81396645485194e5557c27489e02866" name="aa81396645485194e5557c27489e02866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81396645485194e5557c27489e02866">&#9670;&#160;</a></span>TORQUE_DO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TORQUE_DO</td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">torque, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">desired&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_struct" href="structTorqueControl.html">TorqueControl</a> tc; \</div>
+<div class="line">  initTorqueControl(&amp;tc, 0, <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aaffdf293ef95fd884b05ac19b8f90ad3">MAX_TORQUE</a>); \</div>
+<div class="line">  setActualTorque(&amp;tc, torque); \</div>
+<div class="line">  setDesiredTorque(&amp;tc, desired); \</div>
+<div class="line">  updateTorqueControl(&amp;tc); \</div>
+<div class="line">  <a class="code hl_enumeration" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a> status = <a class="code hl_function" href="TorqueControl_8h.html#a4ab6cddbad72392b7744b4e44102c5c2">checkTorqueLimits</a>(&amp;tc);</div>
+<div class="ttc" id="aTorqueControlActuatorTest_8c_html_aaffdf293ef95fd884b05ac19b8f90ad3"><div class="ttname"><a href="TorqueControlActuatorTest_8c.html#aaffdf293ef95fd884b05ac19b8f90ad3">MAX_TORQUE</a></div><div class="ttdeci">#define MAX_TORQUE</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControlActuatorTest_8c_source.html#l00004">TorqueControlActuatorTest.c:4</a></div></div>
+<div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a></div><div class="ttdeci">TorqueStatus</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00009">TorqueControl.h:9</a></div></div>
+<div class="ttc" id="aTorqueControl_8h_html_a4ab6cddbad72392b7744b4e44102c5c2"><div class="ttname"><a href="TorqueControl_8h.html#a4ab6cddbad72392b7744b4e44102c5c2">checkTorqueLimits</a></div><div class="ttdeci">TorqueStatus checkTorqueLimits(TorqueControl *tc)</div><div class="ttdoc">Checks if the actual torque is within the defined limits and desired range.</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00058">TorqueControl.c:58</a></div></div>
+<div class="ttc" id="astructTorqueControl_html"><div class="ttname"><a href="structTorqueControl.html">TorqueControl</a></div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00016">TorqueControl.h:16</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00006">6</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="af2cc120e0e42267120fe878c2a1d6af6" name="af2cc120e0e42267120fe878c2a1d6af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2cc120e0e42267120fe878c2a1d6af6">&#9670;&#160;</a></span>torque_control_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void torque_control_main </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00038">38</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>           {</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordtype">int</span> result = 0;</div>
+<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00014">14</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>                           {</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(torque_init, {</div>
+<div class="line"><span class="lineno">   16</span>      <a class="code hl_struct" href="structTorqueControl.html">TorqueControl</a> tc;</div>
+<div class="line"><span class="lineno">   17</span>      <a class="code hl_function" href="TorqueControl_8h.html#aeefa77a69d64da42889a3fb81c8fbe3b">initTorqueControl</a>(&amp;tc, 0, 100);</div>
+<div class="line"><span class="lineno">   18</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.<a class="code hl_variable" href="structTorqueControl.html#a9dd59ad5b85adefa0003d489c4421a22">status</a> == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, <span class="stringliteral">&quot;status is expected&quot;</span>, <span class="stringliteral">&quot;status is not expected&quot;</span>);</div>
+<div class="line"><span class="lineno">   19</span>    })</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_normal, {</div>
+<div class="line"><span class="lineno">   22</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(75, 75)</div>
+<div class="line"><span class="lineno">   23</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   24</span>    })</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_below_desired, {</div>
+<div class="line"><span class="lineno">   27</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(93.5, 95)</div>
+<div class="line"><span class="lineno">   28</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   29</span>    })</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_above_desired, {</div>
+<div class="line"><span class="lineno">   32</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(98.5, 95)</div>
+<div class="line"><span class="lineno">   33</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   34</span>    })</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_over_limit, {</div>
+<div class="line"><span class="lineno">   37</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(101, 95)</div>
+<div class="line"><span class="lineno">   38</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a896122d211966640f3aaa21ea2c144c9">TORQUE_OVER_LIMIT</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   39</span>    })</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#a1a5fb3d5d0af531e86dd4fc1b4b900b0">testTorqueControlInitialization</a>(100.0f, <span class="stringliteral">&quot;Initialization Test&quot;</span>);</div>
-<div class="line"><span class="lineno">   42</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(75.0f, 75.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, <span class="stringliteral">&quot;Update Test Normal&quot;</span>);</div>
-<div class="line"><span class="lineno">   43</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(93.5f, 95.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, <span class="stringliteral">&quot;Update Test Close to Limit Below&quot;</span>);</div>
-<div class="line"><span class="lineno">   44</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(98.5f, 95.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>, <span class="stringliteral">&quot;Update Test Close to Limit Above&quot;</span>);</div>
-<div class="line"><span class="lineno">   45</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(101.0f, 95.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a896122d211966640f3aaa21ea2c144c9">TORQUE_OVER_LIMIT</a>, <span class="stringliteral">&quot;Update Test Over Limit&quot;</span>);</div>
-<div class="line"><span class="lineno">   46</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(-10.0f, 20.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a2fb8ce196a35749de3f55b38def3526a">TORQUE_UNDER_LIMIT</a>, <span class="stringliteral">&quot;Update Test Negative Torque&quot;</span>);</div>
-<div class="line"><span class="lineno">   47</span>    result += <a class="code hl_function" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a>(10.0f, 80.0f, <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a71f9cc27d29f6233b9ec9143d8dd8307">TORQUE_SENSOR_ERROR</a>, <span class="stringliteral">&quot;Update Test Sensor Error&quot;</span>);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (result == 0) {</div>
-<div class="line"><span class="lineno">   50</span>        printf(<span class="stringliteral">&quot;All tests passed.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   51</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   52</span>        printf(<span class="stringliteral">&quot;Some tests failed.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   56</span>}</div>
-<div class="ttc" id="aTorqueControlActuatorTest_8c_html_a1a5fb3d5d0af531e86dd4fc1b4b900b0"><div class="ttname"><a href="TorqueControlActuatorTest_8c.html#a1a5fb3d5d0af531e86dd4fc1b4b900b0">testTorqueControlInitialization</a></div><div class="ttdeci">int testTorqueControlInitialization(float maxTorque, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControlActuatorTest_8c_source.html#l00003">TorqueControlActuatorTest.c:3</a></div></div>
-<div class="ttc" id="aTorqueControlActuatorTest_8c_html_aa4d8a246bfcaee0c5c0ffa1d979449d8"><div class="ttname"><a href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8">testTorqueUpdate</a></div><div class="ttdeci">int testTorqueUpdate(float torque, float desiredTorque, TorqueStatus desiredStatus, const char *testName)</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControlActuatorTest_8c_source.html#l00016">TorqueControlActuatorTest.c:16</a></div></div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_negative_torque, {</div>
+<div class="line"><span class="lineno">   42</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(-10, 95)</div>
+<div class="line"><span class="lineno">   43</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a2fb8ce196a35749de3f55b38def3526a">TORQUE_UNDER_LIMIT</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   44</span>    })</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(update_sensor_error, {</div>
+<div class="line"><span class="lineno">   47</span>      <a class="code hl_define" href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a>(10, 80)</div>
+<div class="line"><span class="lineno">   48</span>      <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(tc.status == <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a71f9cc27d29f6233b9ec9143d8dd8307">TORQUE_SENSOR_ERROR</a>, &quot;status is expected&quot;, &quot;status is not expected&quot;);</div>
+<div class="line"><span class="lineno">   49</span>    })</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aTorqueControlActuatorTest_8c_html_aa81396645485194e5557c27489e02866"><div class="ttname"><a href="TorqueControlActuatorTest_8c.html#aa81396645485194e5557c27489e02866">TORQUE_DO</a></div><div class="ttdeci">#define TORQUE_DO(torque, desired)</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControlActuatorTest_8c_source.html#l00006">TorqueControlActuatorTest.c:6</a></div></div>
 <div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a></div><div class="ttdeci">@ TORQUE_OK</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00010">TorqueControl.h:10</a></div></div>
 <div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816a2fb8ce196a35749de3f55b38def3526a"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a2fb8ce196a35749de3f55b38def3526a">TORQUE_UNDER_LIMIT</a></div><div class="ttdeci">@ TORQUE_UNDER_LIMIT</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00012">TorqueControl.h:12</a></div></div>
 <div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816a71f9cc27d29f6233b9ec9143d8dd8307"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a71f9cc27d29f6233b9ec9143d8dd8307">TORQUE_SENSOR_ERROR</a></div><div class="ttdeci">@ TORQUE_SENSOR_ERROR</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00014">TorqueControl.h:13</a></div></div>
 <div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816a896122d211966640f3aaa21ea2c144c9"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a896122d211966640f3aaa21ea2c144c9">TORQUE_OVER_LIMIT</a></div><div class="ttdeci">@ TORQUE_OVER_LIMIT</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00011">TorqueControl.h:11</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TorqueControlActuatorTest_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
-<map name="aTorqueControlActuatorTest_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="aTorqueControlActuatorTest_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,180,56,205"/>
-<area shape="rect" href="TorqueControlActuatorTest_8c.html#a1a5fb3d5d0af531e86dd4fc1b4b900b0" title=" " alt="" coords="104,141,297,167"/>
-<area shape="rect" href="TorqueControlActuatorTest_8c.html#aa4d8a246bfcaee0c5c0ffa1d979449d8" title=" " alt="" coords="137,204,264,229"/>
-<area shape="rect" href="TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="347,128,467,153"/>
-<area shape="rect" href="ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="519,80,658,105"/>
-<area shape="rect" href="TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="523,129,655,155"/>
-<area shape="rect" href="TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="517,179,660,204"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="733,80,816,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="889,80,995,105"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="1043,5,1147,31"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="1045,55,1145,80"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="1045,104,1144,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="1043,153,1146,179"/>
-<area shape="rect" href="TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="708,204,841,229"/>
-<area shape="rect" href="TorqueControl_8c.html#acf804cd24b83ff7c0a107dab85ca7035" title=" " alt="" coords="349,280,466,305"/>
-<area shape="rect" href="TorqueControl_8c.html#a79bbf3adc773001fb5c3424f9cc31d60" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="345,329,469,355"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a1a5fb3d5d0af531e86dd4fc1b4b900b0" name="a1a5fb3d5d0af531e86dd4fc1b4b900b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a5fb3d5d0af531e86dd4fc1b4b900b0">&#9670;&#160;</a></span>testTorqueControlInitialization()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int testTorqueControlInitialization </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>maxTorque</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>testName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00003">3</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                           {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_struct" href="structTorqueControl.html">TorqueControl</a> tc;</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="TorqueControl_8h.html#aeefa77a69d64da42889a3fb81c8fbe3b">initTorqueControl</a>(&amp;tc, 0, maxTorque);</div>
-<div class="line"><span class="lineno">    6</span> </div>
-<div class="line"><span class="lineno">    7</span>    <span class="keywordflow">if</span> (tc.<a class="code hl_variable" href="structTorqueControl.html#a9dd59ad5b85adefa0003d489c4421a22">status</a> != <a class="code hl_enumvalue" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816a02551be508a7c565b4ad03bcaf1ec652">TORQUE_OK</a>) {</div>
-<div class="line"><span class="lineno">    8</span>        printf(<span class="stringliteral">&quot;%s Failed: Initial status is not OK.\n&quot;</span>, testName);</div>
-<div class="line"><span class="lineno">    9</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">   10</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   11</span>        printf(<span class="stringliteral">&quot;%s Passed: Initial status is OK.\n&quot;</span>, testName);</div>
-<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   13</span>    }</div>
-<div class="line"><span class="lineno">   14</span>}</div>
 <div class="ttc" id="aTorqueControl_8h_html_aeefa77a69d64da42889a3fb81c8fbe3b"><div class="ttname"><a href="TorqueControl_8h.html#aeefa77a69d64da42889a3fb81c8fbe3b">initTorqueControl</a></div><div class="ttdeci">void initTorqueControl(TorqueControl *tc, int hz, float maxTorque)</div><div class="ttdoc">Initializes the Torque Control Actuator with initial settings.</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00004">TorqueControl.c:4</a></div></div>
-<div class="ttc" id="astructTorqueControl_html"><div class="ttname"><a href="structTorqueControl.html">TorqueControl</a></div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00016">TorqueControl.h:16</a></div></div>
 <div class="ttc" id="astructTorqueControl_html_a9dd59ad5b85adefa0003d489c4421a22"><div class="ttname"><a href="structTorqueControl.html#a9dd59ad5b85adefa0003d489c4421a22">TorqueControl::status</a></div><div class="ttdeci">TorqueStatus status</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00021">TorqueControl.h:21</a></div></div>
+<div class="ttc" id="atest_8h_html_a6f7538d6cc803cc844985f51c27cef09"><div class="ttname"><a href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a></div><div class="ttdeci">#define TEST(NAME, BODY)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00019">test.h:19</a></div></div>
+<div class="ttc" id="atest_8h_html_ad6a3f2cc888ea044061bad8ed38882ee"><div class="ttname"><a href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a></div><div class="ttdeci">#define ASSERT(BOOL, OK, ERR)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00027">test.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="TorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_cgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_cgraph" alt=""/></div>
-<map name="aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_cgraph" id="aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,129,199,155"/>
-<area shape="rect" href="TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="247,129,367,155"/>
-<area shape="rect" href="ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="417,80,555,105"/>
-<area shape="rect" href="TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="420,129,552,155"/>
-<area shape="rect" href="TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="415,179,557,204"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="631,80,713,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="787,80,892,105"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="940,5,1044,31"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="942,55,1042,80"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="943,104,1041,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="941,153,1043,179"/>
-<area shape="rect" href="TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="605,179,739,204"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_icgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_icgraph" alt=""/></div>
-<map name="aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_icgraph" id="aTorqueControlActuatorTest_8c_a1a5fb3d5d0af531e86dd4fc1b4b900b0_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,297,31"/>
-<area shape="rect" href="TorqueControlActuatorTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="aa4d8a246bfcaee0c5c0ffa1d979449d8" name="aa4d8a246bfcaee0c5c0ffa1d979449d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4d8a246bfcaee0c5c0ffa1d979449d8">&#9670;&#160;</a></span>testTorqueUpdate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int testTorqueUpdate </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>torque</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>desiredTorque</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a>&#160;</td>
-          <td class="paramname"><em>desiredStatus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>testName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TorqueControlActuatorTest_8c_source.html#l00016">16</a> of file <a class="el" href="TorqueControlActuatorTest_8c_source.html">TorqueControlActuatorTest.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                                       {</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_struct" href="structTorqueControl.html">TorqueControl</a> tc;</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">float</span> maxTorque = 100.0f;</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_function" href="TorqueControl_8h.html#aeefa77a69d64da42889a3fb81c8fbe3b">initTorqueControl</a>(&amp;tc, 0, maxTorque);</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="TorqueControl_8h.html#acf804cd24b83ff7c0a107dab85ca7035">setActualTorque</a>(&amp;tc, torque);</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="TorqueControl_8h.html#a79bbf3adc773001fb5c3424f9cc31d60">setDesiredTorque</a>(&amp;tc, desiredTorque);</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_function" href="TorqueControl_8h.html#adb9354dc1d302c0c274370e5be35096f">updateTorqueControl</a>(&amp;tc);</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumeration" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a> status = <a class="code hl_function" href="TorqueControl_8h.html#a4ab6cddbad72392b7744b4e44102c5c2">checkTorqueLimits</a>(&amp;tc);</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (status != desiredStatus) {</div>
-<div class="line"><span class="lineno">   28</span>        printf(<span class="stringliteral">&quot;%s Failed: Status after update is incorrect, actual status: %d.\n&quot;</span>,</div>
-<div class="line"><span class="lineno">   29</span>               testName, status);</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><span class="lineno">   31</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   32</span>        printf(<span class="stringliteral">&quot;%s Passed: Status after update is correct.\n&quot;</span>, testName);</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span>}</div>
-<div class="ttc" id="aTorqueControl_8h_html_a19941765cef874f044e38252d5a0f816"><div class="ttname"><a href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a></div><div class="ttdeci">TorqueStatus</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8h_source.html#l00009">TorqueControl.h:9</a></div></div>
-<div class="ttc" id="aTorqueControl_8h_html_a4ab6cddbad72392b7744b4e44102c5c2"><div class="ttname"><a href="TorqueControl_8h.html#a4ab6cddbad72392b7744b4e44102c5c2">checkTorqueLimits</a></div><div class="ttdeci">TorqueStatus checkTorqueLimits(TorqueControl *tc)</div><div class="ttdoc">Checks if the actual torque is within the defined limits and desired range.</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00058">TorqueControl.c:58</a></div></div>
-<div class="ttc" id="aTorqueControl_8h_html_a79bbf3adc773001fb5c3424f9cc31d60"><div class="ttname"><a href="TorqueControl_8h.html#a79bbf3adc773001fb5c3424f9cc31d60">setDesiredTorque</a></div><div class="ttdeci">void setDesiredTorque(TorqueControl *tc, float torque)</div><div class="ttdoc">Sets the desired torque for the Torque Control Actuator.</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00027">TorqueControl.c:27</a></div></div>
-<div class="ttc" id="aTorqueControl_8h_html_acf804cd24b83ff7c0a107dab85ca7035"><div class="ttname"><a href="TorqueControl_8h.html#acf804cd24b83ff7c0a107dab85ca7035">setActualTorque</a></div><div class="ttdeci">void setActualTorque(TorqueControl *tc, float torque)</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00039">TorqueControl.c:39</a></div></div>
-<div class="ttc" id="aTorqueControl_8h_html_adb9354dc1d302c0c274370e5be35096f"><div class="ttname"><a href="TorqueControl_8h.html#adb9354dc1d302c0c274370e5be35096f">updateTorqueControl</a></div><div class="ttdeci">void updateTorqueControl(void *tc)</div><div class="ttdoc">Updates the Torque Control Actuator based on sensor inputs and calculations.</div><div class="ttdef"><b>Definition:</b> <a href="TorqueControl_8c_source.html#l00043">TorqueControl.c:43</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_cgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_cgraph" alt=""/></div>
-<map name="aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_cgraph" id="aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,229,132,255"/>
-<area shape="rect" href="TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="543,204,676,229"/>
-<area shape="rect" href="TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="182,128,302,153"/>
-<area shape="rect" href="TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="352,179,495,204"/>
-<area shape="rect" href="TorqueControl_8c.html#acf804cd24b83ff7c0a107dab85ca7035" title=" " alt="" coords="183,280,301,305"/>
-<area shape="rect" href="TorqueControl_8c.html#a79bbf3adc773001fb5c3424f9cc31d60" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="180,329,304,355"/>
-<area shape="rect" href="ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="354,80,493,105"/>
-<area shape="rect" href="TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="357,129,489,155"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="568,80,651,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="724,80,829,105"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="877,5,981,31"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="879,55,979,80"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="880,104,979,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="878,153,981,179"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="TorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_icgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_icgraph" alt=""/></div>
-<map name="aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_icgraph" id="aTorqueControlActuatorTest_8c_aa4d8a246bfcaee0c5c0ffa1d979449d8_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,231,31"/>
-<area shape="rect" href="TorqueControlActuatorTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<div class="center"><img src="TorqueControlActuatorTest_8c_af2cc120e0e42267120fe878c2a1d6af6_cgraph.png" border="0" usemap="#aTorqueControlActuatorTest_8c_af2cc120e0e42267120fe878c2a1d6af6_cgraph" alt=""/></div>
+<map name="aTorqueControlActuatorTest_8c_af2cc120e0e42267120fe878c2a1d6af6_cgraph" id="aTorqueControlActuatorTest_8c_af2cc120e0e42267120fe878c2a1d6af6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,129,144,155"/>
+<area shape="rect" href="TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,129,312,155"/>
+<area shape="rect" href="ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="362,80,501,105"/>
+<area shape="rect" href="TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="365,129,497,155"/>
+<area shape="rect" href="TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="360,179,503,204"/>
+<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="576,80,659,105"/>
+<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="732,80,837,105"/>
+<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="885,5,989,31"/>
+<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="887,55,987,80"/>
+<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="888,104,987,129"/>
+<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="886,153,989,179"/>
+<area shape="rect" href="TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="551,179,684,204"/>
 </map>
 </div>
 

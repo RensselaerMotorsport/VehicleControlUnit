@@ -1,10 +1,7 @@
 <map id="checkAppsLimit" name="checkAppsLimit">
-<area shape="rect" id="node1" title="Checks App limits for faults." alt="" coords="599,56,715,81"/>
-<area shape="rect" id="node2" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="295,5,412,31"/>
-<area shape="rect" id="node5" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="460,81,551,107"/>
-<area shape="rect" id="node3" href="$AppsTest_8c.html#a108151dc214894907b900f66e63d959a" title=" " alt="" coords="104,57,247,83"/>
-<area shape="rect" id="node4" href="$AppsTest_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,107,56,132"/>
-<area shape="rect" id="node6" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="319,107,388,132"/>
-<area shape="rect" id="node8" href="$AppsTest_8c.html#ab4e80573ea468c574bdc6c38043cc2a1" title=" " alt="" coords="117,156,233,181"/>
-<area shape="rect" id="node7" href="$AppsTest_8c.html#ad3434857738c097152914f7d136dfa68" title=" " alt="" coords="129,107,221,132"/>
+<area shape="rect" id="node1" title="Checks App limits for faults." alt="" coords="421,31,537,56"/>
+<area shape="rect" id="node2" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="256,5,373,31"/>
+<area shape="rect" id="node3" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="269,55,360,80"/>
+<area shape="rect" id="node4" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,55,208,80"/>
+<area shape="rect" id="node5" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,55,91,80"/>
 </map>

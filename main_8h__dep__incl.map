@@ -1,6 +1,6 @@
 <map id="Core/Inc/main.h" name="Core/Inc/main.h">
 <area shape="rect" id="node1" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="155,5,269,31"/>
-<area shape="rect" id="node2" href="$main_8c.html" title=": Main program body" alt="" coords="5,86,120,111"/>
+<area shape="rect" id="node2" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="5,86,120,111"/>
 <area shape="rect" id="node3" href="$stm32f7xx__hal__msp_8c.html" title="This file provides code for the MSP Initialization and de&#45;Initialization codes." alt="" coords="144,79,280,119"/>
 <area shape="rect" id="node4" href="$stm32f7xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="304,86,464,111"/>
 </map>

@@ -1,5 +1,7 @@
 <map id="Core/Tests/Sensors" name="Core/Tests/Sensors">
-<area shape="rect" id="node2" href="dir_629157f4605f9abcfafd17cede30bf18.html" title="Digital" alt="" coords="37,63,96,88"/>
+<area shape="rect" id="node1" href="dir_e5406b42293b0952f2ead92a35df37e4.html" title="Test" alt="" coords="43,136,91,161"/>
+<area shape="rect" id="node3" href="dir_629157f4605f9abcfafd17cede30bf18.html" title="Digital" alt="" coords="37,63,96,88"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000010_000029.html" title="1" alt="" coords="71,110,79,125"/>
 <area shape="rect" id="clust2" href="dir_ddcee824faf6dbb3b9c10d3a7f2912e1.html" alt="" coords="27,52,203,99"/>
-<area shape="rect" id="clust1" href="dir_1f4cbefea1b86fbbad1dbe5e68ce3547.html" title="Tests" alt="" coords="16,16,213,109"/>
+<area shape="rect" id="clust1" href="dir_1f4cbefea1b86fbbad1dbe5e68ce3547.html" title="Tests" alt="" coords="16,16,213,172"/>
 </map>

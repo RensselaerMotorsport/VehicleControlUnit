@@ -1,6 +1,6 @@
 <map id="Core/Tests/Sensors/Digital/WheelSpeedTest.c" name="Core/Tests/Sensors/Digital/WheelSpeedTest.c">
-<area shape="rect" id="node1" title=" " alt="" coords="33,5,208,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,101,65,126"/>
-<area shape="rect" id="node3" title=" " alt="" coords="90,101,151,126"/>
-<area shape="rect" id="node4" title=" " alt="" coords="176,93,367,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="87,5,261,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,93,196,133"/>
+<area shape="rect" id="node3" href="$test_8h.html" title=" " alt="" coords="220,101,275,126"/>
+<area shape="rect" id="node4" title=" " alt="" coords="210,181,285,207"/>
 </map>

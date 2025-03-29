@@ -1,6 +1,6 @@
 <map id="table_can_sample" name="table_can_sample">
-<area shape="rect" id="node1" title="Checks if the input input is valid for the table." alt="" coords="291,35,417,60"/>
-<area shape="rect" id="node2" href="$Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="104,5,243,31"/>
-<area shape="rect" id="node4" href="$Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="114,55,233,95"/>
-<area shape="rect" id="node3" href="$Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,35,56,60"/>
+<area shape="rect" id="node1" title="Checks if the input input is valid for the table." alt="" coords="311,35,437,60"/>
+<area shape="rect" id="node2" href="$Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="124,5,263,31"/>
+<area shape="rect" id="node4" href="$Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="134,55,253,95"/>
+<area shape="rect" id="node3" href="$Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,35,76,60"/>
 </map>

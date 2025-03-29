@@ -1,0 +1,14 @@
+<map id="torque_control_main" name="torque_control_main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,129,144,155"/>
+<area shape="rect" id="node2" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,129,312,155"/>
+<area shape="rect" id="node3" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="362,80,501,105"/>
+<area shape="rect" id="node10" href="$TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="365,129,497,155"/>
+<area shape="rect" id="node11" href="$TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="360,179,503,204"/>
+<area shape="rect" id="node4" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="576,80,659,105"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="732,80,837,105"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="885,5,989,31"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="887,55,987,80"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="888,104,987,129"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="886,153,989,179"/>
+<area shape="rect" id="node12" href="$TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="551,179,684,204"/>
+</map>

@@ -75,12 +75,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">LUT.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;../Inc/Utils/LUT.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="test_8h_source.html">test.h</a>&quot;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -89,33 +89,20 @@ Include dependency graph for LUT.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c__incl.png" border="0" usemap="#aCore_2Tests_2Utils_2LUT_8c" alt=""/></div>
 <map name="aCore_2Tests_2Utils_2LUT_8c" id="aCore_2Tests_2Utils_2LUT_8c">
-<area shape="rect" title=" " alt="" coords="150,5,307,31"/>
+<area shape="rect" title=" " alt="" coords="185,5,342,31"/>
 <area shape="rect" title=" " alt="" coords="5,79,127,104"/>
-<area shape="rect" title=" " alt="" coords="151,79,219,104"/>
-<area shape="rect" title=" " alt="" coords="243,79,305,104"/>
-<area shape="rect" title=" " alt="" coords="329,79,389,104"/>
+<area shape="rect" href="test_8h.html" title=" " alt="" coords="151,79,205,104"/>
+<area shape="rect" title=" " alt="" coords="229,79,297,104"/>
+<area shape="rect" title=" " alt="" coords="322,79,383,104"/>
+<area shape="rect" title=" " alt="" coords="408,79,468,104"/>
+<area shape="rect" title=" " alt="" coords="141,152,215,177"/>
 </map>
 </div>
 </div>
 <p><a href="Tests_2Utils_2LUT_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a6cc298c4cdb7fb35d5d3cc6af02d4518"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a6cc298c4cdb7fb35d5d3cc6af02d4518">TEST_EQUAL_EPSILON</a>&#160;&#160;&#160;0.1</td></tr>
-<tr class="separator:a6cc298c4cdb7fb35d5d3cc6af02d4518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a552127fe812284b4d56f5fe9dc6c3d33"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a552127fe812284b4d56f5fe9dc6c3d33">TEST_ERROR_DELTA_PERCENT</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a552127fe812284b4d56f5fe9dc6c3d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a78517adc9e2707f0da97e92ac0794971"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a> (const char *test_label)</td></tr>
-<tr class="separator:a78517adc9e2707f0da97e92ac0794971"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7d43c6d3b94b201457ac4d539f6977b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a> (const char *pass_message, const char *fail_message, bool passes)</td></tr>
-<tr class="separator:ae7d43c6d3b94b201457ac4d539f6977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403f242223bba24d59895439202cab08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08">test_equal</a> (const char *a_label, const char *b_label, float a, float b)</td></tr>
-<tr class="separator:a403f242223bba24d59895439202cab08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce7ef1da4ae45bafd752f1ac6e116ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a6ce7ef1da4ae45bafd752f1ac6e116ea">test_within_error</a> (const char *actual_label, const char *expected_label, float actual, float expected)</td></tr>
-<tr class="separator:a6ce7ef1da4ae45bafd752f1ac6e116ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f9937b7dd1d309d00b0b7964979feeb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a> (float pressure_mb)</td></tr>
 <tr class="separator:a8f9937b7dd1d309d00b0b7964979feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f19be401a60014f89cede4d7d67a135"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135">test_uninitialized_table</a> (<a class="el" href="structtable.html">table</a> *<a class="el" href="structtable.html">table</a>)</td></tr>
@@ -128,42 +115,9 @@ Functions</h2></td></tr>
 <tr class="separator:a4c90f3fd5c1acb5bccc48c952d3768cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abeb470ebfdfdd04d4673d81db23bbb5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f">test_sampling_unknown_point</a> (<a class="el" href="structtable.html">table</a> *<a class="el" href="structtable.html">table</a>)</td></tr>
 <tr class="separator:abeb470ebfdfdd04d4673d81db23bbb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
-<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4c48e2956bf94173eb7715e8cafc20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20">lut_main</a> ()</td></tr>
+<tr class="separator:aff4c48e2956bf94173eb7715e8cafc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a6cc298c4cdb7fb35d5d3cc6af02d4518" name="a6cc298c4cdb7fb35d5d3cc6af02d4518"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc298c4cdb7fb35d5d3cc6af02d4518">&#9670;&#160;</a></span>TEST_EQUAL_EPSILON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEST_EQUAL_EPSILON&#160;&#160;&#160;0.1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00008">8</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-
-</div>
-</div>
-<a id="a552127fe812284b4d56f5fe9dc6c3d33" name="a552127fe812284b4d56f5fe9dc6c3d33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a552127fe812284b4d56f5fe9dc6c3d33">&#9670;&#160;</a></span>TEST_ERROR_DELTA_PERCENT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEST_ERROR_DELTA_PERCENT&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00012">12</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a8f9937b7dd1d309d00b0b7964979feeb" name="a8f9937b7dd1d309d00b0b7964979feeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f9937b7dd1d309d00b0b7964979feeb">&#9670;&#160;</a></span>altitude_m_at_pressure_mb()</h2>
@@ -181,222 +135,98 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00058">58</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>                                                   {</div>
-<div class="line"><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> SEA_LEVEL_PRESSURE_MB = 1013.25;</div>
-<div class="line"><span class="lineno">   60</span>  <span class="comment">// TODO Explain how this comes about</span></div>
-<div class="line"><span class="lineno">   61</span>  <span class="keywordtype">float</span> result = pow(pressure_mb / SEA_LEVEL_PRESSURE_MB, 1 / 5.255);</div>
-<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">return</span> 44330 * (1 - result);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00011">11</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                                                   {</div>
+<div class="line"><span class="lineno">   12</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> SEA_LEVEL_PRESSURE_MB = 1013.25;</div>
+<div class="line"><span class="lineno">   13</span>  <span class="comment">// TODO Explain how this comes about</span></div>
+<div class="line"><span class="lineno">   14</span>  <span class="keywordtype">float</span> result = pow(pressure_mb / SEA_LEVEL_PRESSURE_MB, 1 / 5.255);</div>
+<div class="line"><span class="lineno">   15</span>  <span class="keywordflow">return</span> 44330 * (1 - result);</div>
+<div class="line"><span class="lineno">   16</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a8f9937b7dd1d309d00b0b7964979feeb_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a8f9937b7dd1d309d00b0b7964979feeb_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a8f9937b7dd1d309d00b0b7964979feeb_icgraph" id="aTests_2Utils_2LUT_8c_a8f9937b7dd1d309d00b0b7964979feeb_icgraph">
-<area shape="rect" title=" " alt="" coords="319,62,501,87"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,62,56,87"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="104,33,271,58"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="105,83,269,123"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="106,147,269,187"/>
+<area shape="rect" title=" " alt="" coords="339,61,521,86"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,61,76,86"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="124,32,291,57"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="125,82,289,122"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="126,146,289,186"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+<a id="aff4c48e2956bf94173eb7715e8cafc20" name="aff4c48e2956bf94173eb7715e8cafc20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4c48e2956bf94173eb7715e8cafc20">&#9670;&#160;</a></span>lut_main()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int main </td>
+          <td class="memname">void lut_main </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00150">150</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>           {</div>
-<div class="line"><span class="lineno">  151</span>  <a class="code hl_struct" href="structtable.html">table</a> pressure_mb_to_altitude_m;</div>
-<div class="line"><span class="lineno">  152</span>  assert(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a56f43fad8934b122156977dcd84e5e51">table_init</a>(&amp;pressure_mb_to_altitude_m, 9));</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135">test_uninitialized_table</a>(&amp;pressure_mb_to_altitude_m);</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>  <span class="comment">// Initializes the table with equally-spaced points using the transfer</span></div>
-<div class="line"><span class="lineno">  157</span>  <span class="comment">// function</span></div>
-<div class="line"><span class="lineno">  158</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> reference_pressure_mb = 300; reference_pressure_mb &lt;= 1100;</div>
-<div class="line"><span class="lineno">  159</span>       reference_pressure_mb += 100) {</div>
-<div class="line"><span class="lineno">  160</span>    assert(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#aba674fe54126f65d56ca9517e9a78a34">table_add_reference_point</a>(</div>
-<div class="line"><span class="lineno">  161</span>        &amp;pressure_mb_to_altitude_m, reference_pressure_mb,</div>
-<div class="line"><span class="lineno">  162</span>        <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(reference_pressure_mb)));</div>
-<div class="line"><span class="lineno">  163</span>  }</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a">test_initialized_table</a>(&amp;pressure_mb_to_altitude_m);</div>
-<div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421">test_sampling_endpoints</a>(&amp;pressure_mb_to_altitude_m);</div>
-<div class="line"><span class="lineno">  168</span> </div>
-<div class="line"><span class="lineno">  169</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf">test_sampling_reference_point</a>(&amp;pressure_mb_to_altitude_m);</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f">test_sampling_unknown_point</a>(&amp;pressure_mb_to_altitude_m);</div>
-<div class="line"><span class="lineno">  172</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00115">115</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>                {</div>
+<div class="line"><span class="lineno">  116</span>  <a class="code hl_struct" href="structtable.html">table</a> pressure_mb_to_altitude_m;</div>
+<div class="line"><span class="lineno">  117</span>  assert(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a56f43fad8934b122156977dcd84e5e51">table_init</a>(&amp;pressure_mb_to_altitude_m, 9));</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135">test_uninitialized_table</a>(&amp;pressure_mb_to_altitude_m);</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>  <span class="comment">// Initializes the table with equally-spaced points using the transfer</span></div>
+<div class="line"><span class="lineno">  122</span>  <span class="comment">// function</span></div>
+<div class="line"><span class="lineno">  123</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> reference_pressure_mb = 300; reference_pressure_mb &lt;= 1100;</div>
+<div class="line"><span class="lineno">  124</span>       reference_pressure_mb += 100) {</div>
+<div class="line"><span class="lineno">  125</span>    assert(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#aba674fe54126f65d56ca9517e9a78a34">table_add_reference_point</a>(</div>
+<div class="line"><span class="lineno">  126</span>        &amp;pressure_mb_to_altitude_m, reference_pressure_mb,</div>
+<div class="line"><span class="lineno">  127</span>        <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(reference_pressure_mb)));</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a">test_initialized_table</a>(&amp;pressure_mb_to_altitude_m);</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421">test_sampling_endpoints</a>(&amp;pressure_mb_to_altitude_m);</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf">test_sampling_reference_point</a>(&amp;pressure_mb_to_altitude_m);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f">test_sampling_unknown_point</a>(&amp;pressure_mb_to_altitude_m);</div>
+<div class="line"><span class="lineno">  137</span>}</div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a56f43fad8934b122156977dcd84e5e51"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a56f43fad8934b122156977dcd84e5e51">table_init</a></div><div class="ttdeci">bool table_init(table *table, uint16_t count)</div><div class="ttdoc">Initializes the table.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00031">LUT.c:31</a></div></div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_aba674fe54126f65d56ca9517e9a78a34"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#aba674fe54126f65d56ca9517e9a78a34">table_add_reference_point</a></div><div class="ttdeci">bool table_add_reference_point(table *table, float in, float out)</div><div class="ttdoc">Adds a reference point to the table.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00079">LUT.c:79</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a4c90f3fd5c1acb5bccc48c952d3768cf"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf">test_sampling_reference_point</a></div><div class="ttdeci">void test_sampling_reference_point(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00123">LUT.c:123</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a4f19be401a60014f89cede4d7d67a135"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135">test_uninitialized_table</a></div><div class="ttdeci">void test_uninitialized_table(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00067">LUT.c:67</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a7ac025ddb85e3062888e98c4c9785421"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421">test_sampling_endpoints</a></div><div class="ttdeci">void test_sampling_endpoints(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00100">LUT.c:100</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a7c7a819614acd198a368ab5955f6e91a"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a">test_initialized_table</a></div><div class="ttdeci">void test_initialized_table(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00083">LUT.c:83</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a8f9937b7dd1d309d00b0b7964979feeb"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a></div><div class="ttdeci">float altitude_m_at_pressure_mb(float pressure_mb)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00058">LUT.c:58</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_abeb470ebfdfdd04d4673d81db23bbb5f"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f">test_sampling_unknown_point</a></div><div class="ttdeci">void test_sampling_unknown_point(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00138">LUT.c:138</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a4c90f3fd5c1acb5bccc48c952d3768cf"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf">test_sampling_reference_point</a></div><div class="ttdeci">void test_sampling_reference_point(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00087">LUT.c:87</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a4f19be401a60014f89cede4d7d67a135"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135">test_uninitialized_table</a></div><div class="ttdeci">void test_uninitialized_table(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00020">LUT.c:20</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a7ac025ddb85e3062888e98c4c9785421"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421">test_sampling_endpoints</a></div><div class="ttdeci">void test_sampling_endpoints(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00063">LUT.c:63</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a7c7a819614acd198a368ab5955f6e91a"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a">test_initialized_table</a></div><div class="ttdeci">void test_initialized_table(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00041">LUT.c:41</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a8f9937b7dd1d309d00b0b7964979feeb"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a></div><div class="ttdeci">float altitude_m_at_pressure_mb(float pressure_mb)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00011">LUT.c:11</a></div></div>
+<div class="ttc" id="aTests_2Utils_2LUT_8c_html_abeb470ebfdfdd04d4673d81db23bbb5f"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f">test_sampling_unknown_point</a></div><div class="ttdeci">void test_sampling_unknown_point(table *table)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00101">LUT.c:101</a></div></div>
 <div class="ttc" id="astructtable_html"><div class="ttname"><a href="structtable.html">table</a></div><div class="ttdef"><b>Definition:</b> <a href="LUT_8h_source.html#l00040">LUT.h:40</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Tests_2Utils_2LUT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
-<map name="aTests_2Utils_2LUT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="aTests_2Utils_2LUT_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,252,56,277"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="319,5,501,31"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#aba674fe54126f65d56ca9517e9a78a34" title="Adds a reference point to the table." alt="" coords="549,657,688,697"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a56f43fad8934b122156977dcd84e5e51" title="Initializes the table." alt="" coords="150,708,225,733"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="118,404,257,429"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="104,153,271,179"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="105,89,269,129"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="106,203,269,243"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="128,286,247,326"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="736,455,863,480"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0" title="Checks if the input input is valid for the table." alt="" coords="347,404,473,429"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="561,404,677,429"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="562,455,675,480"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="388,252,432,277"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="371,203,449,228"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="563,203,674,228"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a777856dc33d4b1a78b8590802413a5d0" title="Determines if the input value is between the input of two points." alt="" coords="738,203,861,228"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="361,104,459,129"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08" title=" " alt="" coords="369,55,451,80"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a2abfe2e285578aec08a50cbeccb2fe60" title=" " alt="" coords="571,104,667,129"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a6ce7ef1da4ae45bafd752f1ac6e116ea" title=" " alt="" coords="351,153,469,179"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ae7d43c6d3b94b201457ac4d539f6977b" name="ae7d43c6d3b94b201457ac4d539f6977b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7d43c6d3b94b201457ac4d539f6977b">&#9670;&#160;</a></span>test()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void test </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>pass_message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fail_message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>passes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00019">19</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                                           {</div>
-<div class="line"><span class="lineno">   20</span>  <span class="keywordflow">if</span> (passes) {</div>
-<div class="line"><span class="lineno">   21</span>    printf(<span class="stringliteral">&quot;PASS\t%s\n&quot;</span>, pass_message);</div>
-<div class="line"><span class="lineno">   22</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   23</span>    printf(<span class="stringliteral">&quot;FAIL\t%s\n&quot;</span>, fail_message);</div>
-<div class="line"><span class="lineno">   24</span>  }</div>
-<div class="line"><span class="lineno">   25</span>}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Tests_2Utils_2LUT_8c_ae7d43c6d3b94b201457ac4d539f6977b_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_ae7d43c6d3b94b201457ac4d539f6977b_icgraph" alt=""/></div>
-<map name="aTests_2Utils_2LUT_8c_ae7d43c6d3b94b201457ac4d539f6977b_icgraph" id="aTests_2Utils_2LUT_8c_ae7d43c6d3b94b201457ac4d539f6977b_icgraph">
-<area shape="rect" title=" " alt="" coords="319,112,363,137"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="118,5,257,31"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="104,55,271,80"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="105,105,269,145"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="106,169,269,209"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="128,233,247,273"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,112,56,137"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a403f242223bba24d59895439202cab08" name="a403f242223bba24d59895439202cab08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a403f242223bba24d59895439202cab08">&#9670;&#160;</a></span>test_equal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void test_equal </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>a_label</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>b_label</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00030">30</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                                            {</div>
-<div class="line"><span class="lineno">   31</span>  <span class="keywordtype">bool</span> passes = fabs(a - b) &lt; <a class="code hl_define" href="Tests_2Utils_2LUT_8c.html#a6cc298c4cdb7fb35d5d3cc6af02d4518">TEST_EQUAL_EPSILON</a>;</div>
-<div class="line"><span class="lineno">   32</span>  <span class="keywordflow">if</span> (passes) {</div>
-<div class="line"><span class="lineno">   33</span>    printf(<span class="stringliteral">&quot;PASS\t%s = %s (%f = %f)\n&quot;</span>, a_label, b_label, a, b);</div>
-<div class="line"><span class="lineno">   34</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   35</span>    printf(<span class="stringliteral">&quot;FAIL\t%s ≠ %s (%f ≠ %f)\n&quot;</span>, a_label, b_label, a, b);</div>
-<div class="line"><span class="lineno">   36</span>  }</div>
-<div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a6cc298c4cdb7fb35d5d3cc6af02d4518"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a6cc298c4cdb7fb35d5d3cc6af02d4518">TEST_EQUAL_EPSILON</a></div><div class="ttdeci">#define TEST_EQUAL_EPSILON</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00008">LUT.c:8</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Tests_2Utils_2LUT_8c_a403f242223bba24d59895439202cab08_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a403f242223bba24d59895439202cab08_icgraph" alt=""/></div>
-<map name="aTests_2Utils_2LUT_8c_a403f242223bba24d59895439202cab08_icgraph" id="aTests_2Utils_2LUT_8c_a403f242223bba24d59895439202cab08_icgraph">
-<area shape="rect" title=" " alt="" coords="319,35,401,60"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="104,5,271,31"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="105,55,269,95"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,35,56,60"/>
+<div class="center"><img src="Tests_2Utils_2LUT_8c_aff4c48e2956bf94173eb7715e8cafc20_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_aff4c48e2956bf94173eb7715e8cafc20_cgraph" alt=""/></div>
+<map name="aTests_2Utils_2LUT_8c_aff4c48e2956bf94173eb7715e8cafc20_cgraph" id="aTests_2Utils_2LUT_8c_aff4c48e2956bf94173eb7715e8cafc20_cgraph">
+<area shape="rect" title=" " alt="" coords="5,199,76,224"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="339,45,521,71"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#aba674fe54126f65d56ca9517e9a78a34" title="Adds a reference point to the table." alt="" coords="361,499,499,539"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a56f43fad8934b122156977dcd84e5e51" title="Initializes the table." alt="" coords="170,419,245,444"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="138,317,277,343"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="124,45,291,71"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="125,95,289,135"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="126,159,289,199"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="148,223,267,263"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="733,297,860,323"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0" title="Checks if the input input is valid for the table." alt="" coords="367,247,493,272"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="569,297,685,323"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="571,247,684,272"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="572,95,683,120"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a777856dc33d4b1a78b8590802413a5d0" title="Determines if the input value is between the input of two points." alt="" coords="735,95,858,120"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="381,95,479,120"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a2abfe2e285578aec08a50cbeccb2fe60" title=" " alt="" coords="579,45,675,71"/>
 </map>
 </div>
 
@@ -418,41 +248,44 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00083">83</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   83</span>                                          {</div>
-<div class="line"><span class="lineno">   84</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;initialized table&quot;</span>);</div>
-<div class="line"><span class="lineno">   85</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;table is initialized&quot;</span>, <span class="stringliteral">&quot;table is uninitialized&quot;</span>,</div>
-<div class="line"><span class="lineno">   86</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e">table_is_initialized</a>(<a class="code hl_struct" href="structtable.html">table</a>));</div>
-<div class="line"><span class="lineno">   87</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;min is defined&quot;</span>, <span class="stringliteral">&quot;min is undefined&quot;</span>, <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) != NULL);</div>
-<div class="line"><span class="lineno">   88</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;min is first point in table&quot;</span>, <span class="stringliteral">&quot;min is not first point in table&quot;</span>,</div>
-<div class="line"><span class="lineno">   89</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == &amp;<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a1a9bba45bb690ee62901043abcc2abc6">points_</a>[0]);</div>
-<div class="line"><span class="lineno">   90</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;max is defined&quot;</span>, <span class="stringliteral">&quot;max is undefined&quot;</span>, <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) != NULL);</div>
-<div class="line"><span class="lineno">   91</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;max is last point in table&quot;</span>, <span class="stringliteral">&quot;max is not last point in table&quot;</span>,</div>
-<div class="line"><span class="lineno">   92</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == &amp;<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a1a9bba45bb690ee62901043abcc2abc6">points_</a>[<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a3b1b496c020a92cc4ac04a54c3b7c81a">count_</a> - 1]);</div>
-<div class="line"><span class="lineno">   93</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;cannot sample 0 mb&quot;</span>, <span class="stringliteral">&quot;can sample 0 mb&quot;</span>, !<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 0));</div>
-<div class="line"><span class="lineno">   94</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;can sample 300 mb&quot;</span>, <span class="stringliteral">&quot;cannot sample 300 mb&quot;</span>,</div>
-<div class="line"><span class="lineno">   95</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300));</div>
-<div class="line"><span class="lineno">   96</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00041">41</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                          {</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(initialized_table, {</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e">table_is_initialized</a>(<a class="code hl_struct" href="structtable.html">table</a>), <span class="stringliteral">&quot;table is initalized&quot;</span>,</div>
+<div class="line"><span class="lineno">   44</span>           <span class="stringliteral">&quot;table is uninitialized&quot;</span>);</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) != NULL, <span class="stringliteral">&quot;min is defined&quot;</span>,</div>
+<div class="line"><span class="lineno">   46</span>           <span class="stringliteral">&quot;min is undefined&quot;</span>);</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == &amp;<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a1a9bba45bb690ee62901043abcc2abc6">points_</a>[0],</div>
+<div class="line"><span class="lineno">   48</span>           <span class="stringliteral">&quot;min is first point in table&quot;</span>, <span class="stringliteral">&quot;min is not first point in table&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) != NULL, <span class="stringliteral">&quot;max is defined&quot;</span>,</div>
+<div class="line"><span class="lineno">   50</span>           <span class="stringliteral">&quot;max is undefined&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == &amp;<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a1a9bba45bb690ee62901043abcc2abc6">points_</a>[<a class="code hl_struct" href="structtable.html">table</a>-&gt;<a class="code hl_variable" href="structtable.html#a3b1b496c020a92cc4ac04a54c3b7c81a">count_</a> - 1],</div>
+<div class="line"><span class="lineno">   52</span>           <span class="stringliteral">&quot;max is last point in table&quot;</span>, <span class="stringliteral">&quot;max is not last point in table&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(!<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 0),</div>
+<div class="line"><span class="lineno">   54</span>           <span class="stringliteral">&quot;cannot sample outside of domain (0 mb)&quot;</span>,</div>
+<div class="line"><span class="lineno">   55</span>           <span class="stringliteral">&quot;can sample outside of domain (0 mb)&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300), <span class="stringliteral">&quot;can sample in domain (300 mb)&quot;</span>,</div>
+<div class="line"><span class="lineno">   57</span>           <span class="stringliteral">&quot;cannot sample outside of domain (300 mb)&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>  })</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a337694c90b53070fed61988168a38f0e"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e">table_is_initialized</a></div><div class="ttdeci">bool table_is_initialized(table *table)</div><div class="ttdoc">Checks if the table has been fully initialized, with all reference points added.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00053">LUT.c:53</a></div></div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a695bcbcfca3112e2261bddf0cbdd84e0"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a></div><div class="ttdeci">const point * table_min_point(table *table)</div><div class="ttdoc">Retrieves the point in the table with the least input value.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00095">LUT.c:95</a></div></div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a76eea049e3d8e035933e5781485bcba0"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a></div><div class="ttdeci">bool table_can_sample(table *table, float in)</div><div class="ttdoc">Checks if the input input is valid for the table.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00107">LUT.c:107</a></div></div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a8bf9c799767a2fa37d517ca35bef4479"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a></div><div class="ttdeci">const point * table_max_point(table *table)</div><div class="ttdoc">Retrieves the point in the table with the greatest input value.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00101">LUT.c:101</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a78517adc9e2707f0da97e92ac0794971"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a></div><div class="ttdeci">void test_start(const char *test_label)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00016">LUT.c:16</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_ae7d43c6d3b94b201457ac4d539f6977b"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a></div><div class="ttdeci">void test(const char *pass_message, const char *fail_message, bool passes)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00019">LUT.c:19</a></div></div>
 <div class="ttc" id="astructtable_html_a1a9bba45bb690ee62901043abcc2abc6"><div class="ttname"><a href="structtable.html#a1a9bba45bb690ee62901043abcc2abc6">table::points_</a></div><div class="ttdeci">point points_[TABLE_CAPACITY]</div><div class="ttdef"><b>Definition:</b> <a href="LUT_8h_source.html#l00048">LUT.h:48</a></div></div>
 <div class="ttc" id="astructtable_html_a3b1b496c020a92cc4ac04a54c3b7c81a"><div class="ttname"><a href="structtable.html#a3b1b496c020a92cc4ac04a54c3b7c81a">table::count_</a></div><div class="ttdeci">uint16_t count_</div><div class="ttdef"><b>Definition:</b> <a href="LUT_8h_source.html#l00042">LUT.h:42</a></div></div>
+<div class="ttc" id="atest_8h_html_a6f7538d6cc803cc844985f51c27cef09"><div class="ttname"><a href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a></div><div class="ttdeci">#define TEST(NAME, BODY)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00019">test.h:19</a></div></div>
+<div class="ttc" id="atest_8h_html_ad6a3f2cc888ea044061bad8ed38882ee"><div class="ttname"><a href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a></div><div class="ttdeci">#define ASSERT(BOOL, OK, ERR)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00027">test.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_cgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_cgraph" id="aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,100,144,126"/>
+<area shape="rect" title=" " alt="" coords="5,50,144,75"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0" title="Checks if the input input is valid for the table." alt="" coords="192,126,319,151"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="367,75,483,100"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="531,26,657,51"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="368,26,481,51"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="233,175,277,200"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="217,224,294,250"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="369,126,480,151"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a777856dc33d4b1a78b8590802413a5d0" title="Determines if the input value is between the input of two points." alt="" coords="533,126,655,151"/>
 </map>
@@ -462,8 +295,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_icgraph" id="aTests_2Utils_2LUT_8c_a7c7a819614acd198a368ab5955f6e91a_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,243,31"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" title=" " alt="" coords="124,5,263,31"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,5,76,31"/>
 </map>
 </div>
 
@@ -485,40 +318,39 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00100">100</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>                                           {</div>
-<div class="line"><span class="lineno">  101</span>  <span class="keywordtype">float</span> min_reference_pressure_mb = 300;</div>
-<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">float</span> max_reference_pressure_mb = 1100;</div>
-<div class="line"><span class="lineno">  103</span>  <span class="keywordtype">float</span> min_reference_altitude_m =</div>
-<div class="line"><span class="lineno">  104</span>      <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(min_reference_pressure_mb);</div>
-<div class="line"><span class="lineno">  105</span>  <span class="keywordtype">float</span> max_reference_altitude_m =</div>
-<div class="line"><span class="lineno">  106</span>      <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(max_reference_pressure_mb);</div>
-<div class="line"><span class="lineno">  107</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;sampling min reference point&quot;</span>);</div>
-<div class="line"><span class="lineno">  110</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;is okay&quot;</span>, <span class="stringliteral">&quot;is not okay&quot;</span>,</div>
-<div class="line"><span class="lineno">  111</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, min_reference_pressure_mb, &amp;altitude_m));</div>
-<div class="line"><span class="lineno">  112</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08">test_equal</a>(<span class="stringliteral">&quot;altitude&quot;</span>, <span class="stringliteral">&quot;reference altitude&quot;</span>, altitude_m,</div>
-<div class="line"><span class="lineno">  113</span>             min_reference_altitude_m);</div>
-<div class="line"><span class="lineno">  114</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;sampling max reference point&quot;</span>);</div>
-<div class="line"><span class="lineno">  115</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;is okay&quot;</span>, <span class="stringliteral">&quot;is not okay&quot;</span>,</div>
-<div class="line"><span class="lineno">  116</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, max_reference_pressure_mb, &amp;altitude_m));</div>
-<div class="line"><span class="lineno">  117</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08">test_equal</a>(<span class="stringliteral">&quot;altitude&quot;</span>, <span class="stringliteral">&quot;reference altitude&quot;</span>, altitude_m,</div>
-<div class="line"><span class="lineno">  118</span>             max_reference_altitude_m);</div>
-<div class="line"><span class="lineno">  119</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00063">63</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                           {</div>
+<div class="line"><span class="lineno">   64</span>  <span class="keywordtype">float</span> min_reference_pressure_mb = 300;</div>
+<div class="line"><span class="lineno">   65</span>  <span class="keywordtype">float</span> max_reference_pressure_mb = 1100;</div>
+<div class="line"><span class="lineno">   66</span>  <span class="keywordtype">float</span> min_reference_altitude_m =</div>
+<div class="line"><span class="lineno">   67</span>      <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(min_reference_pressure_mb);</div>
+<div class="line"><span class="lineno">   68</span>  <span class="keywordtype">float</span> max_reference_altitude_m =</div>
+<div class="line"><span class="lineno">   69</span>      <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(max_reference_pressure_mb);</div>
+<div class="line"><span class="lineno">   70</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(sampling_min_reference_point, {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_define" href="test_8h.html#a670718c4858d55445f863a90d2b48f44">ASSERT_OK</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, min_reference_pressure_mb, &amp;altitude_m), <span class="stringliteral">&quot;sample&quot;</span>);</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_define" href="test_8h.html#aaea78fd61dad1ef1c7be39cc0380f619">ASSERT_EQ</a>(altitude_m, min_reference_altitude_m, <span class="stringliteral">&quot;altitude&quot;</span>,</div>
+<div class="line"><span class="lineno">   75</span>              <span class="stringliteral">&quot;reference altitude&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>  })</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(sampling_max_reference_point, {</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_define" href="test_8h.html#a670718c4858d55445f863a90d2b48f44">ASSERT_OK</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, max_reference_pressure_mb, &amp;altitude_m), <span class="stringliteral">&quot;sample&quot;</span>);</div>
+<div class="line"><span class="lineno">   80</span>    <a class="code hl_define" href="test_8h.html#aaea78fd61dad1ef1c7be39cc0380f619">ASSERT_EQ</a>(altitude_m, max_reference_altitude_m, <span class="stringliteral">&quot;altitude&quot;</span>,</div>
+<div class="line"><span class="lineno">   81</span>              <span class="stringliteral">&quot;reference altitude&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>  });</div>
+<div class="line"><span class="lineno">   83</span>}</div>
 <div class="ttc" id="aSrc_2Utils_2LUT_8c_html_a550d99f7bfdbf9a65111a8f33214cd9c"><div class="ttname"><a href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a></div><div class="ttdeci">bool table_sample(table *table, float in, float *out)</div><div class="ttdoc">Samples a output value from the table for an input value.</div><div class="ttdef"><b>Definition:</b> <a href="Src_2Utils_2LUT_8c_source.html#l00137">LUT.c:137</a></div></div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a403f242223bba24d59895439202cab08"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08">test_equal</a></div><div class="ttdeci">void test_equal(const char *a_label, const char *b_label, float a, float b)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00030">LUT.c:30</a></div></div>
+<div class="ttc" id="atest_8h_html_a670718c4858d55445f863a90d2b48f44"><div class="ttname"><a href="test_8h.html#a670718c4858d55445f863a90d2b48f44">ASSERT_OK</a></div><div class="ttdeci">#define ASSERT_OK(BOOL, LABEL)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00029">test.h:29</a></div></div>
+<div class="ttc" id="atest_8h_html_aaea78fd61dad1ef1c7be39cc0380f619"><div class="ttname"><a href="test_8h.html#aaea78fd61dad1ef1c7be39cc0380f619">ASSERT_EQ</a></div><div class="ttdeci">#define ASSERT_EQ(GOT, WANT, GOT_LABEL, WANT_LABEL)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00032">test.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_cgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_cgraph" id="aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_cgraph">
-<area shape="rect" title=" " alt="" coords="5,128,172,153"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="220,29,403,55"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="262,79,361,104"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="289,128,333,153"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08" title=" " alt="" coords="270,177,353,203"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="273,227,350,252"/>
+<area shape="rect" title=" " alt="" coords="5,56,172,81"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="220,31,403,56"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="262,80,361,105"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="453,5,564,31"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="451,55,567,80"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="452,104,565,129"/>
@@ -532,8 +364,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_icgraph" id="aTests_2Utils_2LUT_8c_a7ac025ddb85e3062888e98c4c9785421_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,271,31"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" title=" " alt="" coords="124,5,291,31"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,5,76,31"/>
 </map>
 </div>
 
@@ -555,30 +387,26 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00123">123</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                 {</div>
-<div class="line"><span class="lineno">  124</span>  <span class="keywordtype">float</span> reference_pressure_mb = 600;</div>
-<div class="line"><span class="lineno">  125</span>  <span class="keywordtype">float</span> reference_altitude_m =</div>
-<div class="line"><span class="lineno">  126</span>      <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(reference_pressure_mb);</div>
-<div class="line"><span class="lineno">  127</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;sampling reference point&quot;</span>);</div>
-<div class="line"><span class="lineno">  130</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;is okay&quot;</span>, <span class="stringliteral">&quot;is not okay&quot;</span>,</div>
-<div class="line"><span class="lineno">  131</span>       <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, reference_pressure_mb, &amp;altitude_m));</div>
-<div class="line"><span class="lineno">  132</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08">test_equal</a>(<span class="stringliteral">&quot;altitude&quot;</span>, <span class="stringliteral">&quot;reference altitude&quot;</span>, altitude_m,</div>
-<div class="line"><span class="lineno">  133</span>             reference_altitude_m);</div>
-<div class="line"><span class="lineno">  134</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00087">87</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>                                                 {</div>
+<div class="line"><span class="lineno">   88</span>  <span class="keywordtype">float</span> reference_pressure_mb = 600;</div>
+<div class="line"><span class="lineno">   89</span>  <span class="keywordtype">float</span> reference_altitude_m = <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(reference_pressure_mb);</div>
+<div class="line"><span class="lineno">   90</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(sampling_reference_point, {</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_define" href="test_8h.html#a670718c4858d55445f863a90d2b48f44">ASSERT_OK</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, reference_pressure_mb, &amp;altitude_m), <span class="stringliteral">&quot;sample&quot;</span>);</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_define" href="test_8h.html#aaea78fd61dad1ef1c7be39cc0380f619">ASSERT_EQ</a>(altitude_m, reference_altitude_m, <span class="stringliteral">&quot;altitude&quot;</span>,</div>
+<div class="line"><span class="lineno">   95</span>              <span class="stringliteral">&quot;reference altitude&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>  })</div>
+<div class="line"><span class="lineno">   97</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_cgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_cgraph" id="aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,121,169,161"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="217,29,400,55"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="259,79,358,104"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="287,128,331,153"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a403f242223bba24d59895439202cab08" title=" " alt="" coords="267,177,350,203"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="270,227,347,252"/>
+<area shape="rect" title=" " alt="" coords="5,49,169,89"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="217,31,400,56"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="259,80,358,105"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="451,5,561,31"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="448,55,564,80"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="449,104,563,129"/>
@@ -592,8 +420,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_icgraph" id="aTests_2Utils_2LUT_8c_a4c90f3fd5c1acb5bccc48c952d3768cf_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,268,45"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,38"/>
+<area shape="rect" title=" " alt="" coords="124,5,288,45"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,13,76,38"/>
 </map>
 </div>
 
@@ -615,30 +443,29 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00138">138</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>                                               {</div>
-<div class="line"><span class="lineno">  139</span>  <span class="keywordtype">float</span> pressure_mb = 650;</div>
-<div class="line"><span class="lineno">  140</span>  <span class="keywordtype">float</span> expected_altitude_m = <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(pressure_mb);</div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;sampling reference point&quot;</span>);</div>
-<div class="line"><span class="lineno">  144</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;is okay&quot;</span>, <span class="stringliteral">&quot;is not okay&quot;</span>, <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, pressure_mb, &amp;altitude_m));</div>
-<div class="line"><span class="lineno">  145</span>  <span class="keywordtype">float</span> percent_error =</div>
-<div class="line"><span class="lineno">  146</span>      (altitude_m - expected_altitude_m) / expected_altitude_m * 100;</div>
-<div class="line"><span class="lineno">  147</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a6ce7ef1da4ae45bafd752f1ac6e116ea">test_within_error</a>(<span class="stringliteral">&quot;altitude&quot;</span>, <span class="stringliteral">&quot;expected altitude&quot;</span>, altitude_m, expected_altitude_m);</div>
-<div class="line"><span class="lineno">  148</span>}</div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a6ce7ef1da4ae45bafd752f1ac6e116ea"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a6ce7ef1da4ae45bafd752f1ac6e116ea">test_within_error</a></div><div class="ttdeci">void test_within_error(const char *actual_label, const char *expected_label, float actual, float expected)</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00042">LUT.c:42</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00101">101</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>                                               {</div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordtype">float</span> pressure_mb = 650;</div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordtype">float</span> expected_altitude_m = <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb">altitude_m_at_pressure_mb</a>(pressure_mb);</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordtype">float</span> altitude_m = 0.0;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(sampling_unknown_point, {</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_define" href="test_8h.html#a670718c4858d55445f863a90d2b48f44">ASSERT_OK</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, pressure_mb, &amp;altitude_m), <span class="stringliteral">&quot;sample&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordtype">float</span> percent_error =</div>
+<div class="line"><span class="lineno">  109</span>        (altitude_m - expected_altitude_m) / expected_altitude_m * 100;</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_define" href="test_8h.html#a97ba9d663975a9275074c133a916ada5">ASSERT_IN_ERROR</a>(altitude_m, expected_altitude_m, <span class="stringliteral">&quot;altitude&quot;</span>,</div>
+<div class="line"><span class="lineno">  111</span>                    <span class="stringliteral">&quot;expected altitude&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>  })</div>
+<div class="line"><span class="lineno">  113</span>}</div>
+<div class="ttc" id="atest_8h_html_a97ba9d663975a9275074c133a916ada5"><div class="ttname"><a href="test_8h.html#a97ba9d663975a9275074c133a916ada5">ASSERT_IN_ERROR</a></div><div class="ttdeci">#define ASSERT_IN_ERROR(GOT, WANT, GOT_LABEL, WANT_LABEL)</div><div class="ttdef"><b>Definition:</b> <a href="test_8h_source.html#l00035">test.h:35</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_cgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_cgraph" id="aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,121,168,161"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="216,29,399,55"/>
-<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="258,79,357,104"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="285,128,329,153"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="269,177,346,203"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a6ce7ef1da4ae45bafd752f1ac6e116ea" title=" " alt="" coords="248,227,367,252"/>
+<area shape="rect" title=" " alt="" coords="5,49,168,89"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a8f9937b7dd1d309d00b0b7964979feeb" title=" " alt="" coords="216,31,399,56"/>
+<area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="258,80,357,105"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="449,5,560,31"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="447,55,563,80"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="448,104,561,129"/>
@@ -652,43 +479,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_icgraph" id="aTests_2Utils_2LUT_8c_abeb470ebfdfdd04d4673d81db23bbb5f_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,267,45"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,38"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a78517adc9e2707f0da97e92ac0794971" name="a78517adc9e2707f0da97e92ac0794971"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78517adc9e2707f0da97e92ac0794971">&#9670;&#160;</a></span>test_start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void test_start </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>test_label</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00016">16</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>{ printf(<span class="stringliteral">&quot;START\t%s\n&quot;</span>, test_label); }</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Tests_2Utils_2LUT_8c_a78517adc9e2707f0da97e92ac0794971_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a78517adc9e2707f0da97e92ac0794971_icgraph" alt=""/></div>
-<map name="aTests_2Utils_2LUT_8c_a78517adc9e2707f0da97e92ac0794971_icgraph" id="aTests_2Utils_2LUT_8c_a78517adc9e2707f0da97e92ac0794971_icgraph">
-<area shape="rect" title=" " alt="" coords="319,112,396,137"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7c7a819614acd198a368ab5955f6e91a" title=" " alt="" coords="118,5,257,31"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a7ac025ddb85e3062888e98c4c9785421" title=" " alt="" coords="104,55,271,80"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4c90f3fd5c1acb5bccc48c952d3768cf" title=" " alt="" coords="105,105,269,145"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="106,169,269,209"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a4f19be401a60014f89cede4d7d67a135" title=" " alt="" coords="128,233,247,273"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,112,56,137"/>
+<area shape="rect" title=" " alt="" coords="124,5,287,45"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,13,76,38"/>
 </map>
 </div>
 
@@ -710,33 +502,36 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00067">67</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>                                            {</div>
-<div class="line"><span class="lineno">   68</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971">test_start</a>(<span class="stringliteral">&quot;uninitialized table&quot;</span>);</div>
-<div class="line"><span class="lineno">   69</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;table is uninitialized&quot;</span>, <span class="stringliteral">&quot;table is initialized&quot;</span>,</div>
-<div class="line"><span class="lineno">   70</span>       !<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e">table_is_initialized</a>(<a class="code hl_struct" href="structtable.html">table</a>));</div>
-<div class="line"><span class="lineno">   71</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;min is undefined&quot;</span>, <span class="stringliteral">&quot;min is defined&quot;</span>, <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == NULL);</div>
-<div class="line"><span class="lineno">   72</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;max is undefined&quot;</span>, <span class="stringliteral">&quot;max is defined&quot;</span>, <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == NULL);</div>
-<div class="line"><span class="lineno">   73</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;cannot sample 0 mb&quot;</span>, <span class="stringliteral">&quot;can sample 0 mb&quot;</span>, !<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 0));</div>
-<div class="line"><span class="lineno">   74</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;cannot sample 300 mb&quot;</span>, <span class="stringliteral">&quot;can sample 300 mb&quot;</span>,</div>
-<div class="line"><span class="lineno">   75</span>       !<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300));</div>
-<div class="line"><span class="lineno">   76</span>  <span class="keywordtype">float</span> altitude_m;</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordtype">bool</span> okay = <a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300, &amp;altitude_m);</div>
-<div class="line"><span class="lineno">   78</span>  <a class="code hl_function" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b">test</a>(<span class="stringliteral">&quot;is not okay&quot;</span>, <span class="stringliteral">&quot;is okay&quot;</span>, !okay);</div>
-<div class="line"><span class="lineno">   79</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00020">20</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>                                            {</div>
+<div class="line"><span class="lineno">   21</span>  <a class="code hl_define" href="test_8h.html#a6f7538d6cc803cc844985f51c27cef09">TEST</a>(uninitialized_table, {</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(!<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e">table_is_initialized</a>(<a class="code hl_struct" href="structtable.html">table</a>), <span class="stringliteral">&quot;table is uninitialized&quot;</span>,</div>
+<div class="line"><span class="lineno">   23</span>           <span class="stringliteral">&quot;table is initialized&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0">table_min_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == NULL, <span class="stringliteral">&quot;min is undefined&quot;</span>,</div>
+<div class="line"><span class="lineno">   25</span>           <span class="stringliteral">&quot;min is defined&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479">table_max_point</a>(<a class="code hl_struct" href="structtable.html">table</a>) == NULL, <span class="stringliteral">&quot;max is undefined&quot;</span>,</div>
+<div class="line"><span class="lineno">   27</span>           <span class="stringliteral">&quot;max is defined&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(!<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 0),</div>
+<div class="line"><span class="lineno">   29</span>           <span class="stringliteral">&quot;cannot sample outside of domain (0 mb)&quot;</span>,</div>
+<div class="line"><span class="lineno">   30</span>           <span class="stringliteral">&quot;can sample outside of domain (0 mb)&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(!<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0">table_can_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300), <span class="stringliteral">&quot;cannot sample in domain (300 mb)&quot;</span>,</div>
+<div class="line"><span class="lineno">   32</span>           <span class="stringliteral">&quot;can sample outside of domain (300 mb)&quot;</span>);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">float</span> altitude_m;</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_define" href="test_8h.html#ad6a3f2cc888ea044061bad8ed38882ee">ASSERT</a>(!<a class="code hl_function" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c">table_sample</a>(<a class="code hl_struct" href="structtable.html">table</a>, 300, &amp;altitude_m), <span class="stringliteral">&quot;sampling is not okay&quot;</span>,</div>
+<div class="line"><span class="lineno">   35</span>           <span class="stringliteral">&quot;sampling is okay&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>  })</div>
+<div class="line"><span class="lineno">   37</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_cgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_cgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_cgraph" id="aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_cgraph">
-<area shape="rect" title=" " alt="" coords="5,146,124,186"/>
+<area shape="rect" title=" " alt="" coords="5,95,124,135"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a76eea049e3d8e035933e5781485bcba0" title="Checks if the input input is valid for the table." alt="" coords="172,53,299,79"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a8bf9c799767a2fa37d517ca35bef4479" title="Retrieves the point in the table with the greatest input value." alt="" coords="347,153,463,179"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a337694c90b53070fed61988168a38f0e" title="Checks if the table has been fully initialized, with all reference points added." alt="" coords="511,153,637,179"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a695bcbcfca3112e2261bddf0cbdd84e0" title="Retrieves the point in the table with the least input value." alt="" coords="348,5,461,31"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a550d99f7bfdbf9a65111a8f33214cd9c" title="Samples a output value from the table for an input value." alt="" coords="186,103,285,128"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae7d43c6d3b94b201457ac4d539f6977b" title=" " alt="" coords="213,255,257,280"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#a78517adc9e2707f0da97e92ac0794971" title=" " alt="" coords="197,304,274,329"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a6ca6a247c1881993130b850a7347c251" title=" " alt="" coords="349,55,460,80"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a777856dc33d4b1a78b8590802413a5d0" title="Determines if the input value is between the input of two points." alt="" coords="513,55,635,80"/>
 <area shape="rect" href="Src_2Utils_2LUT_8c.html#a2abfe2e285578aec08a50cbeccb2fe60" title=" " alt="" coords="357,104,453,129"/>
@@ -747,72 +542,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Tests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_icgraph" alt=""/></div>
 <map name="aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_icgraph" id="aTests_2Utils_2LUT_8c_a4f19be401a60014f89cede4d7d67a135_icgraph">
-<area shape="rect" title=" " alt="" coords="104,5,223,45"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,38"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6ce7ef1da4ae45bafd752f1ac6e116ea" name="a6ce7ef1da4ae45bafd752f1ac6e116ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce7ef1da4ae45bafd752f1ac6e116ea">&#9670;&#160;</a></span>test_within_error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void test_within_error </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>actual_label</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>expected_label</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>actual</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>expected</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Tests_2Utils_2LUT_8c_source.html#l00042">42</a> of file <a class="el" href="Tests_2Utils_2LUT_8c_source.html">LUT.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                     {</div>
-<div class="line"><span class="lineno">   44</span>  <span class="keywordtype">float</span> percent_error = (actual - expected) / expected * 100;</div>
-<div class="line"><span class="lineno">   45</span>  <span class="keywordtype">bool</span> passes = fabs(percent_error) &lt; <a class="code hl_define" href="Tests_2Utils_2LUT_8c.html#a552127fe812284b4d56f5fe9dc6c3d33">TEST_ERROR_DELTA_PERCENT</a>;</div>
-<div class="line"><span class="lineno">   46</span>  <span class="keywordflow">if</span> (passes) {</div>
-<div class="line"><span class="lineno">   47</span>    printf(<span class="stringliteral">&quot;PASS\t%s ≈ %s (%f ≈ %f)\n&quot;</span>, actual_label, expected_label, actual,</div>
-<div class="line"><span class="lineno">   48</span>           expected);</div>
-<div class="line"><span class="lineno">   49</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   50</span>    printf(<span class="stringliteral">&quot;FAIL\t%s ≠ %s (%f ≠ %f)\n&quot;</span>, actual_label, expected_label, actual,</div>
-<div class="line"><span class="lineno">   51</span>           expected);</div>
-<div class="line"><span class="lineno">   52</span>  }</div>
-<div class="line"><span class="lineno">   53</span>}</div>
-<div class="ttc" id="aTests_2Utils_2LUT_8c_html_a552127fe812284b4d56f5fe9dc6c3d33"><div class="ttname"><a href="Tests_2Utils_2LUT_8c.html#a552127fe812284b4d56f5fe9dc6c3d33">TEST_ERROR_DELTA_PERCENT</a></div><div class="ttdeci">#define TEST_ERROR_DELTA_PERCENT</div><div class="ttdef"><b>Definition:</b> <a href="Tests_2Utils_2LUT_8c_source.html#l00012">LUT.c:12</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Tests_2Utils_2LUT_8c_a6ce7ef1da4ae45bafd752f1ac6e116ea_icgraph.png" border="0" usemap="#aTests_2Utils_2LUT_8c_a6ce7ef1da4ae45bafd752f1ac6e116ea_icgraph" alt=""/></div>
-<map name="aTests_2Utils_2LUT_8c_a6ce7ef1da4ae45bafd752f1ac6e116ea_icgraph" id="aTests_2Utils_2LUT_8c_a6ce7ef1da4ae45bafd752f1ac6e116ea_icgraph">
-<area shape="rect" title=" " alt="" coords="315,13,433,38"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#abeb470ebfdfdd04d4673d81db23bbb5f" title=" " alt="" coords="104,5,267,45"/>
-<area shape="rect" href="Tests_2Utils_2LUT_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,38"/>
+<area shape="rect" title=" " alt="" coords="124,5,243,45"/>
+<area shape="rect" href="Tests_2Utils_2LUT_8c.html#aff4c48e2956bf94173eb7715e8cafc20" title=" " alt="" coords="5,13,76,38"/>
 </map>
 </div>
 
