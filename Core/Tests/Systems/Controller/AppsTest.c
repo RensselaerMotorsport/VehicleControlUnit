@@ -1,101 +1,121 @@
 #include "../Inc/Systems/Controller/Apps.h"
+#include "test.h"
 
-#include <stdio.h>
-#include <assert.h>
+// NOTE Snippet common to almost all tests
+#define APPS_DO(pos1, pos2) \
+  Apps apps; \
+  initApps(&apps, 0, 0, 1); \
+  setAppPos(apps.app[0], pos1); \
+  setAppPos(apps.app[1], pos2); \
+  updateApps(&apps); \
+  float pos = getAppsPosition(&apps);
 
-int testAppsInit(const char* testName) {
-    Apps apps;
-    initApps(&apps, 0, 0, 1);
+void apps_main() {
+    TEST(apps_init, {
+      Apps apps;
+      initApps(&apps, 0, 0, 1);
+      ASSERT_OK(apps.status == APPS_OK, "intial status");
+    })
 
-    if (apps.status != APPS_OK) {
-        printf("%s Failed: Initial status is not OK.\n", testName);
-        return 0;
-    } else {
-        printf("%s Passed: Initial status is OK.\n", testName);
-        return 1;
-    }
-}
+    TEST(normal_operation_0, {
+      APPS_DO(0, 0)
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-int testAppsUpdate(float pos1, float pos2, AppsStatus desiredStatus,
-                   const char* testName) {
-    Apps apps;
-    initApps(&apps, 0, 0, 1);
+    TEST(normal_operation_50, {
+      APPS_DO(50, 50)
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 50, "position", "expected position");
+    })
+  
+    TEST(normal_operation_100, {
+      APPS_DO(100, 100)
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 100, "position", "expected position");
+    })
 
-    setAppPos(apps.app[0], pos1);
-    setAppPos(apps.app[1], pos2);
-    updateApps(&apps);
+    TEST(normal_operation_50_60, {
+      APPS_DO(50, 60);
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 55, "position", "expected position");
+    })
 
-    if (apps.status != desiredStatus) {
-        printf("%s Failed: Status is not desired.\n", testName);
-        return 0;
-    } else {
-        printf("%s Passed: Status is desired.\n", testName);
-        return 1;
-    }
-}
+    TEST(normal_operation_55_56, {
+      APPS_DO(55, 56);
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 55.5, "position", "expected position");
+    })
 
-int testGetAppsPosition(float pos1, float pos2, float desiredPos,
-                        const char* testName) {
-    Apps apps;
-    initApps(&apps, 0, 0, 1);
+    TEST(edge_difference_0_10, {
+      APPS_DO(0, 10);
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 5, "position", "expected position");
+    })
 
-    setAppPos(apps.app[0], pos1);
-    setAppPos(apps.app[1], pos2);
-    updateApps(&apps);
-    float outPos = getAppsPosition(&apps);
+    TEST(edge_difference_50_60, {
+      APPS_DO(50, 60);
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 55, "position", "expected position");
+    })
 
-    if (outPos != desiredPos) {
-        printf("%s Failed: Position is not desired.\n", testName);
-        return 0;
-    } else {
-        printf("%s Passed: Position is desired.\n", testName);
-        return 1;
-    }
-}
+    TEST(edge_difference_90_100, {
+      APPS_DO(90, 100);
+      ASSERT(apps.status == APPS_OK, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 95, "position", "expected position");
+    })
 
-int main() {
-    assert(testAppsInit("Initialization Test"));
+    TEST(edge_difference_0_1001, {
+      APPS_DO(0, 10.01);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Normal Operation
-    assert(testAppsUpdate(0, 0, APPS_OK, "Normal Operation at 0%."));
-    assert(testAppsUpdate(50, 50, APPS_OK, "Normal Operation at 50%."));
-    assert(testAppsUpdate(100, 100, APPS_OK, "Normal Operation at 100%."));
+    TEST(edge_difference_50_61, {
+      APPS_DO(50, 51);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Edge of Acceptable Difference (10%)
-    assert(testAppsUpdate(0, 10, APPS_OK, "Edge Difference at 0% - 10%."));
-    assert(testAppsUpdate(50, 60, APPS_OK, "Edge Difference at 50% - 60%."));
-    assert(testAppsUpdate(90, 100, APPS_OK, "Edge Difference at 90% - 100%."));
+    TEST(edge_difference_0_100, {
+      APPS_DO(0, 100);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Implausibility Due to Difference >10%
-    assert(testAppsUpdate(0, 10.01, APPS_FAULT, "Min Implausibility at 10.01%."));
-    assert(testAppsUpdate(50, 61, APPS_FAULT, "Implausibility at 11%."));
-    assert(testAppsUpdate(0, 100, APPS_FAULT, "Implausibility at 100%."));
+    TEST(sensor_1_under, {
+      APPS_DO(-1, 50);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Sensor Failure (Out of Range)
-    assert(testAppsUpdate(-1, 50, APPS_FAULT, "Sensor Failure: pos1 out of range -1%."));
-    assert(testAppsUpdate(50, -1, APPS_FAULT, "Sensor Failure: pos2 out of range -1%."));
-    assert(testAppsUpdate(101, 50, APPS_FAULT, "Sensor Failure: pos1 out of range 101%."));
-    assert(testAppsUpdate(50, 101, APPS_FAULT, "Sensor Failure: pos2 out of range 101%."));
+    TEST(sensor_1_over, {
+      APPS_DO(101, 50);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Both Sensors Failed
-    assert(testAppsUpdate(-1, -1, APPS_FAULT, "Both Sensors Failed -1%."));
-    assert(testAppsUpdate(101, 101, APPS_FAULT, "Both Sensors Failed 101%."));
+    TEST(sensor_2_under, {
+      APPS_DO(50, -1);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Normal Position
-    assert(testGetAppsPosition(0, 0, 0, "Average Position at 0%"));
-    assert(testGetAppsPosition(50, 60, 55, "Average Position at 55%"));
-    assert(testGetAppsPosition(55, 56, 55.5, "Average Position at 55.5%"));
+    TEST(sensor_2_over, {
+      APPS_DO(50, 101);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Position with fault
-    assert(testGetAppsPosition(0, 100, 0.0f, "Position Implausibility at 100%."));
-    assert(testGetAppsPosition(50, 60.01, 0.0f, "Position Implausibility at 100%."));
+    TEST(sensors_under, {
+      APPS_DO(-1, -1);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 
-    // Position from sensor failure
-    assert(testGetAppsPosition(-1, -1, 0.0f, "Position Both Sensors Failed: out of range -1%."));
-    assert(testGetAppsPosition(101, 101, 0.0f, "Position Both Sensors Failed: out of range 101%."));
-    assert(testGetAppsPosition(-1, 10, 0.0f, "Position Sensor Failure: out of range -1%."));
-
-
-    printf("All tests passed.\n");
-    return 0;
+    TEST(sensors_over, {
+      APPS_DO(101, 101);
+      ASSERT(apps.status == APPS_FAULT, "status is expected", "status is not expected");
+      ASSERT_EQ(pos, 0, "position", "expected position");
+    })
 }
