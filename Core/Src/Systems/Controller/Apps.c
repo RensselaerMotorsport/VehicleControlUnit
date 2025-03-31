@@ -35,8 +35,6 @@ int updateApps(ControllerSystem* controller) {
     #ifdef DEBUGn
     printf("Apps updated. #1: %f, #2: %f\r\n", getAppPosition(appsPtr->app[0]), getAppPosition(appsPtr->app[1]));
     #endif
-
-    return _SUCCESS;
 }
 
 float getAppsPosition(Apps* apps) {

@@ -21,7 +21,6 @@ void SensorTask(void *pvParameters) {
 		}
 
 		UPDATE(updateable);
-		printf("[DEBUG SCEDULER] %s is updating...\r\n", updateable->name);
 		osDelay(frequency);
 	}
 }
@@ -42,14 +41,13 @@ void SchedulerInit(Updateable* updatableArray[]) {
         // Create RTOS task
         osThreadAttr_t thread_attr = {
             .name = updateable->name,
-			.stack_size = 128 * 4,
-            .priority = osPriorityNormal
+			.stack_size = 1024 * 2, // 2 KB
+            .priority = (osPriority_t) osPriorityNormal
         };
 
         if (osThreadNew(SensorTask, (void*)updateable, &thread_attr) == NULL) {
 			fprintf(stderr, "Error: Failed to create thread for %s!\n", updateable->name);
 			return;
 		}
-		printf("[DEBUG SCHEDULER] Created thread for %s\r\n", updateable->name);
     }
 }
