@@ -3,18 +3,23 @@
 
 #include <string.h>
 
-void initUpdateable(Updateable* updateable, const char* name, int hz) {
-    strncpy(updateable->name, name, MAX_NAME_LENGTH);
+void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child) {
+
     updateable->hz = hz;
     updateable->update = defaultUpdate;
     updateable->status = defaultStatus;
     updateable->enable = defaultEnable;
     updateable->disable = defaultDisable;
     updateable->enabled = DISABLED;
+    strncpy(updateable->name, name, MAX_NAME_LENGTH);
+    updateable->type = utype;
+    // Have a pointer to the child struct
+    updateable->child = child;
 }
 
 void defaultUpdate(void* self) {
-    printf("Warning: Calling default Sensor Update Function.\n");
+    // Print in yellow color
+    printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, ((Updateable*)self)->name);
 }
 
 int defaultStatus(struct Updateable* self) {
@@ -23,23 +28,23 @@ int defaultStatus(struct Updateable* self) {
 
 int defaultEnable(struct Updateable* self) {
     self->enabled = ENABLED;
-    return SUCCESS;
+    return _SUCCESS;
 }
 
 int defaultDisable(struct Updateable* self) {
     self->enabled = DISABLED;
-    return SUCCESS;
+    return _SUCCESS;
 }
 
 int writeDataToFileImplementation(const char* filename, void* self) {
     FILE* file = fopen(filename, "w");
     if (!file) {
         perror("Failed to open file");
-        return FAILURE;
+        return _FAILURE;
     }
 
     printf("Writing data to file %s\n", filename);
 
     fclose(file);
-    return FAILURE;
+    return _FAILURE;
 }

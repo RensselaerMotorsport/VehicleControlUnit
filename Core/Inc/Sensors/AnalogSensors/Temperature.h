@@ -47,6 +47,6 @@ double getTemperatureFahrenheit(Temperature* temp);
  * @param rawVal The raw data from the temperature sensor.
  * @return       The converted temperature value.
  */
-double transferFunction(Temperature* temp, int rawValue);
+double transferFunction(Temperature* temp, float rawValue);
 
 #endif // RENSSELAERMOTORSPORT_TEMPERATURE_H

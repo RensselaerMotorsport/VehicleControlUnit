@@ -16,6 +16,7 @@
 typedef enum {
     APPS_OK,
     APPS_FAULT,
+    APPS_LOW
 } AppsStatus;
 
 typedef struct {
@@ -39,20 +40,13 @@ void initApps(Apps* apps, int hz, int channel1, int channel2);
  *
  * @param apps A pointer to the APPs structure.
  */
-void updateApps(void* apps);
+int updateApps(void* self);
 
 /**
  * @brief Averages app sensors to get pedal position.
  *
  * @param apps Pointer to the APPS controller.
  */
- float getAppsPosition(Apps* apps);
-
-/**
- * @brief Checks the safety of Apps.
- *
- * @param apps A pointer to the APPs controller.
- */
-int appsSafetyCheck(void* apps);
+float getAppsPosition(Apps* apps);
 
 #endif // RENSSELAERMOTORSPORT_APPS_H

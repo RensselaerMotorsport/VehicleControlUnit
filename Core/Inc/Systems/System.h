@@ -17,6 +17,7 @@ typedef enum {
 typedef struct {
     Updateable updateable;
     SystemType type;
+    void* child;
 } System;
 
 /**
@@ -27,6 +28,6 @@ typedef struct {
  * @param hz Frequency in Hertz.
  * @param type Type of the system.
  */
-void initSystem(System* system, const char* name, int hz, SystemType type);
+void initSystem(System* system, const char* name, int hz, SystemType type, void* child);
 
 #endif // RENSSELAERMOTORSPORT_SYSTEM_H

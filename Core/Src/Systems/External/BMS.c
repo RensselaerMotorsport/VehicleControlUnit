@@ -1,5 +1,5 @@
 #include "../../../Inc/Systems/External/BMS.h"
-#include "../../../Inc/Systems/PrintHelpers.h"
+#include "../../../Inc/Utils/Common.h"
 
 #include <stdio.h>
 #include "../../../Inc/Systems/Comms/Can/Can.h"
@@ -7,7 +7,7 @@
 void initBms(Bms* bms, int hz, const char* dbcFn) {
    if (bms == NULL) return;
 
-   initExternalSystem(&bms->extSystem, "Bms", hz, 0);
+   initExternalSystem(&bms->extSystem, "Bms", hz, 0, NULL, NULL);
 
    bms->packVoltage = 0.0f;
    bms->packCurrent = 0.0f;
