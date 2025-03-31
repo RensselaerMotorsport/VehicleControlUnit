@@ -32,6 +32,7 @@ typedef struct Updateable {
     void* child;
 } Updateable;
 
+
 /*
  * @brief Initializes the Updateable with initial settings.
  *

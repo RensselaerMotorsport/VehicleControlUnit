@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -38,6 +37,7 @@
 #include "../Inc/Utils/Constants.h"
 
 #include "stm32f7xx_hal_adc.h" 
+#include "cmsis_os.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -286,12 +286,12 @@ int main(void)
   initInverter(inverter, tc, 10, 200, 100, 400);
 
   // Add Updatables to static array
-  Updateable* updateables[3] = {
+  Updateable* updateables[6] = {
 	&apps->base.system.updateable,
 	&bsc->base.system.updateable,
-	//&rtd->base.system.updateable,
-	//&tc->base.system.updateable,
-	//&inverter->base.system.updateable,
+	&rtd->base.system.updateable,
+	&tc->base.system.updateable,
+	&inverter->base.system.updateable,
 	NULL
   };
   /* USER CODE END 2 */
@@ -301,6 +301,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
+  // Global mutex declaration
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
@@ -321,6 +322,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   SchedulerInit(updateables);
+
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 

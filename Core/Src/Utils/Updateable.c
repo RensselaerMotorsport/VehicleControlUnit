@@ -4,7 +4,6 @@
 #include <string.h>
 
 void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child) {
-
     updateable->hz = hz;
     updateable->update = defaultUpdate;
     updateable->status = defaultStatus;
