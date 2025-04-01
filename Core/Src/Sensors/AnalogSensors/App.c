@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 void initApp(App* app, int hz, int channel) {
-    initAnalogSensor(&app->base, "App", hz, channel);
+    initAnalogSensor(&app->base, "App", hz, channel, app);
     app->position = 0;
     app->base.sensor.updateable.update = updateApp;
 }

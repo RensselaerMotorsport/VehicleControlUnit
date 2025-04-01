@@ -1,5 +1,6 @@
 #include "../../../Inc/Systems/Monitor/AppsMonitor.h"
 #include "../../../Inc/Utils/Common.h"
+#include <math.h>
 
 // Make new Apps MonitorSystem
 void initAppsMonitor(AppsMonitor* am, Apps* apps, int hz) {

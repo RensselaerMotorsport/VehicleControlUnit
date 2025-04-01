@@ -39,9 +39,10 @@ static uint16_t adc_samples[ADC_CHANNELS];
  * This function initializes the base sensor properties, sets the ADC channel,
  * and configures the corresponding GPIO pin based on the channel number.
  */
-void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel) {
-    initSensor(&analogSensor->sensor, name, hz, s_ANALOG);
+void initAnalogSensor(AnalogSensor* analogSensor, const char* name, int hz, int channel, void* child) {
+    initSensor(&analogSensor->sensor, name, hz, s_ANALOG, analogSensor);
     analogSensor->channel = channel;
+    analogSensor->child = child;
 }
 
 /**

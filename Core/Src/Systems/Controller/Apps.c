@@ -1,4 +1,5 @@
 #include "../../../Inc/Systems/Controller/Apps.h"
+#include "../../../Inc/Systems/Monitor/AppsMonitor.h"
 #include "../../../Inc/Utils/Common.h"
 
 #include <math.h>
@@ -22,8 +23,8 @@ void initApps(Apps* apps, int hz, int channel1, int channel2) {
     ENABLE(apps->base.system);
 }
 
-int updateApps(void* self) {
-    Apps* appsPtr = (Apps*) self;
+int updateApps(ControllerSystem* controller) {
+    Apps* appsPtr = (Apps*)controller->child;
     updateApp(appsPtr->app[0]);
     updateApp(appsPtr->app[1]);
 

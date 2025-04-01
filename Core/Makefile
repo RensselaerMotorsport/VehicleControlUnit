@@ -16,7 +16,6 @@ SOURCES = ""
 ifdef TEST_MODE
 CFLAGS += -DTEST_MODE -IInc/fake_include
 SOURCES = $(shell find $(SRC_DIR) -type f -name '*.c' \
-          ! -name 'main.c' \
           ! -name 'stm32*.c' \
           ! -name '*hal*.c' \
           ! -name '*HAL*.c' \

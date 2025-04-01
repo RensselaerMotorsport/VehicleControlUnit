@@ -38,12 +38,12 @@ int startInverter(Inverter* inverter);
 /**
  * @brief Updates the Inverter.
  * 
- * @param self A pointer to the Inverter structure.
+ * @param external A pointer to the Inverter ExternalSystem.
  * @return int _SUCCESS or _FAILURE.
  */
-int updateInverter(void* self);
+int updateInverter(ExternalSystem* external);
 
-/**
+/** 
  * @brief Checks the heartbeat of the Inverter.
  * 
  * @param self A pointer to the Inverter structure.

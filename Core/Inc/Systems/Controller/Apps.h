@@ -38,9 +38,9 @@ void initApps(Apps* apps, int hz, int channel1, int channel2);
 /**
  * @brief Updates the APPS based on both sensor outputs.
  *
- * @param apps A pointer to the APPs structure.
+ * @param controller A pointer to the APPs ControllerSystem.
  */
-int updateApps(void* self);
+int updateApps(ControllerSystem* controller);
 
 /**
  * @brief Averages app sensors to get pedal position.

@@ -37,7 +37,7 @@ int startBrakeSystemControl(BrakeSystemControl *bsc) {
         printf("Safety system not set for Brake System Control\r\n");
         return _FAILURE;
     }
-    else if (bsc -> base.safety(bsc) == _FAILURE){
+    else if (bsc -> base.safety(&bsc->base) == _FAILURE){
         printf("Brake System Control Actuator is not in a safe state\r\n");
         return _FAILURE;
     }
@@ -46,8 +46,8 @@ int startBrakeSystemControl(BrakeSystemControl *bsc) {
     return _SUCCESS;
 }
 
-int updateBrakeSystemControl(void* self) {
-    BrakeSystemControl *bsc = (BrakeSystemControl *)self;
+int updateBrakeSystemControl(ControllerSystem* controller) {
+    BrakeSystemControl *bsc = (BrakeSystemControl*)controller->child;
     setSensorReadings(bsc);
     activateBrakeLight(bsc);
     inHeavyBreaking(bsc);

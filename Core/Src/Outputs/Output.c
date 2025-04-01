@@ -2,6 +2,6 @@
 #include "../../Inc/Utils/Updateable.h"
 
 void initOutput(Output* output, const char* name, int hz, OutputType type) {
-    initUpdateable(&output->updateable, name, hz, OUTPUT, output);
+    initUpdateable(output, name, hz, OUTPUT);
     output->type = type;
 }

@@ -6,7 +6,7 @@ const float kOffsetVolts = 2.5; // 2.5 V at 0 g
 const float kVoltsPerG = 0.440; // 440 mV/g
 
 void initAccelerometer(Accelerometer* accel, int channel, int hz, int muxChannel) {
-    initAnalogSensor(&accel->base, "Accelerometer", hz, channel);
+    initAnalogSensor(&accel->base, "Accelerometer", hz, channel, accel);
     accel->value = -1;
     accel->base.sensor.updateable.update = updateAccelerometer;
 }

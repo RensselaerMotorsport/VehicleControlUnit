@@ -25,7 +25,7 @@ int startRTD(RTD* rtd) {
     printf("Safety system not set for RTD\r\n");
     return _FAILURE;
   }
-  else if (rtd->base.safety(rtd) == _FAILURE) {
+  else if (rtd->base.safety(&rtd->base) == _FAILURE) {
     printf("RTD Actuator is not in a safe state\r\n");
     return _FAILURE;
   }
@@ -34,8 +34,8 @@ int startRTD(RTD* rtd) {
   return _SUCCESS;
 }
 
-int updateRTD(void* self) {
-  RTD* rtd = (RTD*)self;
+int updateRTD(ControllerSystem* controller) {
+  RTD* rtd = (RTD*)controller->child;
   if (rtd->apps->base.state != c_validated || rtd->bsc->base.state != c_validated) {
     printf("RTD: Apps or Brake System Control Actuator is not validated\r\n");
     return _FAILURE;

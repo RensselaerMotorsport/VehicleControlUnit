@@ -4,8 +4,7 @@
 
 #include "../../../../Inc/Systems/Comms/Can/Can.h"
 #include "../../../../Inc/Systems/Comms/Can/DBCParser.h"
-#include "../../../../Inc/Systems/Common.h"
-#include "../../../../Inc/stm32f7xx_it.h"
+#include "../../../../Inc/Utils/Common.h"
 
 #include <stdio.h>
 #include <string.h>

@@ -1,7 +1,7 @@
 #include "../../../Inc/Sensors/AnalogSensors/Temperature.h"
 
 void initTemperature(Temperature* temperature, int hz, int channel) {
-    initAnalogSensor(&temperature->base, "Temperature", hz, channel);
+    initAnalogSensor(&temperature->base, "Temperature", hz, channel, temperature);
     temperature->degrees = 0;
     temperature->base.sensor.updateable.update = updateTemperature;
 }

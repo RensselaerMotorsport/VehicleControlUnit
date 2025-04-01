@@ -37,9 +37,10 @@ float calculateSpeed(WheelSpeed* ws);
 /**
  * @brief Updated the speed var in this sensor.
  *
- * @param ws A pointer to the WheelSpeed structure.
+ * @param updateable A pointer to the updateable structure.
+ * @return _SUCCESS if the speed was updated, _FAILURE otherwise.
  */
-void updateWheelSpeed(void* ws);
+int updateWheelSpeed(Updateable* updateable);
 
 /**
  * @brief Set time interval.

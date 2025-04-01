@@ -54,7 +54,11 @@ void SchedulerRun(Scheduler* scheduler) {
         // if (timer_flag < 0) continue;
         // timer_flag--;
         // FIXME: Re-implement timer.
+        #ifndef TEST_MODE
         int currentTime = HAL_GetTick();
+        #else
+        int currentTime = clock() / (CLOCKS_PER_SEC / 1000);
+        #endif
         // int currentTime = 0;
 
         while (!PQIsEmpty(&scheduler->tasks) &&

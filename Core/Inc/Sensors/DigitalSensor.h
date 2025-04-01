@@ -9,6 +9,7 @@
 typedef struct {
     Sensor sensor;
     int port;
+    void* child; // Pointer to the child struct
 } DigitalSensor;
 
 extern uint8_t digital_in_buffer[NUM_DIGITAL_INPUTS];
@@ -20,9 +21,10 @@ extern uint8_t digital_in_buffer[NUM_DIGITAL_INPUTS];
  * @param name   Pointer to a string containing the name of the sensor.
  * @param hz     The frequency in Hertz at which the sensor operates.
  * @param port   Location of the digital sensor on board.
+ * @param child  Pointer to the child struct.
  */
 void initDigitalSensor(DigitalSensor* digitalsensor, const char* name, int hz,
-                       int port);
+                       int port, void* child);
 
 /**
  * @brief Gets the reading from the digital sensor.

@@ -43,10 +43,9 @@ int startTorqueControl(TorqueControl* tc);
 /**
  * @brief Sets the desired torque for the Torque Control Actuator.
  *
- * @param tc A pointer to the TorqueControl structure.
- * @param torque The desired torque to be set (in Nm).
+ * @param controller A pointer to the ControllerSystem structure.
  * @return _SUCCESS if the desired torque was set, _FAILURE otherwise.
  */
-int setDesiredTorque(void* self);
+int setDesiredTorque(ControllerSystem* controller);
 
 #endif // RENSSELAERMOTORSPORT_TORQUE_CONTROL_H

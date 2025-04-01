@@ -36,7 +36,9 @@
 #include "../Inc/Systems/Monitor/TorquePolice.h"
 #include "../Inc/Utils/Constants.h"
 
+#ifndef TEST_MODE
 #include "stm32f7xx_hal_adc.h" 
+#endif
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -166,8 +168,6 @@ int main(void)
   MX_SPI6_Init();
   /* USER CODE BEGIN 2 */
 
-  #endif
-
   // Clear the screen
   printf("\033[2J\033[1;1H");
   printf("Welcome to VCU!!!\r\n");
@@ -196,6 +196,7 @@ int main(void)
   uint32_t multi_mode = (ADC123_COMMON->CCR & ADC_CCR_MULTI);
   printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
 
+  #endif
 
   // Add a message to the CAN message list
   CAN_Signal_Template signals[8] = {
@@ -289,9 +290,6 @@ int main(void)
   updateables[3] = &tc.base.system.updateable;
   updateables[4] = &inverter.base.system.updateable;
   updateables[5] = NULL;
-
-
-
 
   SchedulerInit(&scheduler, updateables);
 

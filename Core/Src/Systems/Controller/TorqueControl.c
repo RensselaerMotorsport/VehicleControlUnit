@@ -15,7 +15,7 @@ int startTorqueControl(TorqueControl* tc) {
         printf("Safety system not set for Torque Control\n");
         return _FAILURE;
     }
-    else if (tc->base.safety(tc) == _FAILURE) {
+    else if (tc->base.safety(&tc->base) == _FAILURE) {
         printf("Torque Control Actuator is not in a safe state\n");
         return _FAILURE;
     }
@@ -24,8 +24,8 @@ int startTorqueControl(TorqueControl* tc) {
     return _SUCCESS;
 }
 
-int setDesiredTorque(void* self) {
-    TorqueControl* tc = (TorqueControl*)self;
+int setDesiredTorque(ControllerSystem* controller) {
+    TorqueControl* tc = (TorqueControl*)controller->child;
     float pedalposition = getAppsPosition(tc->apps);
     float torque = pedalposition * tc->maxAllowedTorque;
 

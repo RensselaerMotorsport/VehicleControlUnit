@@ -14,6 +14,7 @@ typedef enum {
 typedef struct {
     Updateable updateable;
     SensorType type;
+    void* child; // Pointer to the child struct
 } Sensor;
 
 /**
@@ -23,7 +24,8 @@ typedef struct {
  * @param name   Pointer to a string containing the name of the sensor.
  * @param hz     The frequency in Hertz at which the sensor operates.
  * @param type   The type of the sensor as defined by the SensorType enum.
+ * @param child  Pointer to the child struct.
  */
-void initSensor(Sensor* sensor, const char* name, int hz, SensorType type);
+void initSensor(Sensor* sensor, const char* name, int hz, SensorType type, void* child);
 
 #endif // RENSSELAERMOTORSPORT_SENSOR_H

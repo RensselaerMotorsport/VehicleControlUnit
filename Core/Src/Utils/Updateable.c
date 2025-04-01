@@ -3,8 +3,9 @@
 
 #include <string.h>
 
-void initUpdateable(Updateable* updateable, const char* name, int hz, UpdateableType utype, void* child) {
-
+void initUpdateable(void* child, const char* name, int hz, UpdateableType utype) {
+    Updateable* updateable = (Updateable*)child;
+    // Initialize the updateable struct
     updateable->hz = hz;
     updateable->update = defaultUpdate;
     updateable->status = defaultStatus;
@@ -17,9 +18,10 @@ void initUpdateable(Updateable* updateable, const char* name, int hz, Updateable
     updateable->child = child;
 }
 
-void defaultUpdate(void* self) {
+int defaultUpdate(Updateable* self) {
     // Print in yellow color
-    printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, ((Updateable*)self)->name);
+    printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, self->name);
+    return _FAILURE;
 }
 
 int defaultStatus(struct Updateable* self) {

@@ -8,6 +8,6 @@ void TaskInit(Task* task, Updateable* updateable, int hz) {
 
 void TaskExecute(Task* task) {
     if (task->updateable && task->updateable->update) {
-        UPDATE(task);
+        UPDATE(task->updateable);
     }
 }

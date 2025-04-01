@@ -7,7 +7,7 @@
 void initBms(Bms* bms, int hz, const char* dbcFn) {
    if (bms == NULL) return;
 
-   initExternalSystem(&bms->extSystem, "Bms", hz, 0, NULL, NULL);
+   initExternalSystem(&bms->extSystem, "Bms", hz, 0, NULL, NULL, bms);
 
    bms->packVoltage = 0.0f;
    bms->packCurrent = 0.0f;
@@ -80,7 +80,7 @@ int bmsTransferFunction(Bms* bms, CAN_Message* canData) {
 }
 
 // TODO: Implemented this
-void updateBms(void* bms) {
+int updateBms(Updateable* updateable) {
 //   Bms* myBms = (Bms*) bms;
    printf("BMS Update Not implemented\n");
    // CanMessage canData = fetchCanData(...);
@@ -90,6 +90,7 @@ void updateBms(void* bms) {
    // if (!bmsTransferFunction(myBms, &canData)) {
    //     printf("Error: Transfer function failed.\n");
    // }
+   return _FAILURE;
 }
 
 // @warning For testing and debugging purposes only

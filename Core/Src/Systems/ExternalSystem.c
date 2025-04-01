@@ -4,22 +4,20 @@
 #include "../../Inc/Scheduler/Task.h"
 
 void initExternalSystem(ExternalSystem* external, const char* name, int hz,
-                        ExternalType type, int (*updateExternal)(void* self), 
-                        int (*check_heartbeat)(void* self)) {
+                        ExternalType type, int (*updateExternal)(ExternalSystem* external), 
+                        int (*check_heartbeat)(void* self), void* child) {
     initSystem(&external->system, name, hz, EXTERNAL, external);
     external->type = type;
     external->comms = NULL;
     external->check_heartbeat = check_heartbeat;
     external->updateExternal = updateExternal;
+    external->child = 
 
     // Set the updateable function to generic external system update
     external->system.updateable.update = e_defaultUpdate;
 }
 
-int e_defaultUpdate(void* self) {
-    // Cast the void pointer to a Updateable pointer
-    Updateable* updateable = ((Task*)self)->updateable;
-
+int e_defaultUpdate(Updateable* updateable) {
     // Cast the child pointer to a external system
     System* system = (System*)updateable->child;
     ExternalSystem* external = (ExternalSystem*)system->child;

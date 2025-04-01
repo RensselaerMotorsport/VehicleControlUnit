@@ -4,7 +4,7 @@
 #include "../../Inc/Scheduler/Task.h"
 
 void initControllerSystem(ControllerSystem* controller, const char* name, int hz,
-                          ControllerType type, int (*updateController)(void* self),
+                          ControllerType type, int (*updateController)(ControllerSystem* controller),
                           void* child) {
     initSystem(&controller->system, name, hz, CONTROLLER, controller);
     controller->type = type;
@@ -21,8 +21,7 @@ void initControllerSystem(ControllerSystem* controller, const char* name, int hz
     
 }
 
-int c_defaultAddMonitor(void* self, MonitorSystem* monitor) {
-    ControllerSystem* controller = (ControllerSystem*)self;
+int c_defaultAddMonitor(ControllerSystem* controller, MonitorSystem* monitor) {
     if (controller->num_monitors >= MAX_MONITORS) {
         printf("Cannot add more monitors to the controller\n");
         return _FAILURE;
@@ -31,8 +30,7 @@ int c_defaultAddMonitor(void* self, MonitorSystem* monitor) {
     return _SUCCESS;
 }
 
-int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
-    ControllerSystem* controller = (ControllerSystem*)self;
+int c_defaultRemoveMonitor(ControllerSystem* controller, MonitorSystem* monitor) {
     for (int i = 0; i < controller->num_monitors; i++) {
         if (controller->monitors[i] == monitor) {
             for (int j = i; j < controller->num_monitors - 1; j++) {
@@ -46,17 +44,14 @@ int c_defaultRemoveMonitor(void* self, MonitorSystem* monitor) {
     return _FAILURE;
 }
 
-void c_defaultUpdate(void* self) {
-    // Cast the void pointer to a Updateable pointer
-    Updateable* updateable = ((Task*)self)->updateable;
-
-    // Cast the child pointer to a controller system
+int c_defaultUpdate(Updateable* updateable) {
+    // Cast the updateable pointer to a controller system
     System* system = (System*)updateable->child;
     ControllerSystem* controller = (ControllerSystem*)system->child;
 
     // Perform the controller update
     if (controller->updateController(controller) == _FAILURE) {
-        return;
+        return _FAILURE;
     }
 
     // Set the controller to computed
@@ -64,15 +59,14 @@ void c_defaultUpdate(void* self) {
 
     // Perform the safety check
     if (controller->safety(controller) == _FAILURE) {
-        return;
+        return _FAILURE;
     }
     
     // Return _SUCCESS
-    return;
+    return _SUCCESS;
 }
 
-int c_defaultSafety(void* self) {
-    ControllerSystem* controller = (ControllerSystem*)self;
+int c_defaultSafety(ControllerSystem* controller) {
 
     if (controller->state != c_computed) {
         printf("Controller not computed new value\n");

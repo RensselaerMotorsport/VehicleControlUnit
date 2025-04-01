@@ -4,15 +4,15 @@
 #include <stdio.h>  // For printf
 
 void initInverter(Inverter* inverter, TorqueControl* tc, int hz, int maxCurrent, int maxTemp, int maxVoltage) {
-    initExternalSystem(&inverter->base, "Inverter", hz, e_INVERTER, updateInverter, checkInverterHeartbeat);
+    initExternalSystem(&inverter->base, "Inverter", hz, e_INVERTER, updateInverter, checkInverterHeartbeat, inverter);
     inverter->tc = tc;
     inverter->maxCurrent = maxCurrent;
     inverter->maxTemp = maxTemp;
     inverter->maxVoltage = maxVoltage;
 }
 
-int updateInverter(void* self) {
-    Inverter* inverter = (Inverter*)self;
+int updateInverter(ExternalSystem* external) {
+    Inverter* inverter = (Inverter*)external->child;
     // Check if torque control is validated
     if (inverter->tc->base.state != c_validated) {
         printf("Inverter: Torque Control Actuator is not validated\r\n");

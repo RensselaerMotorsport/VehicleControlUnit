@@ -60,9 +60,9 @@ int startBrakeSystemControl(BrakeSystemControl *bsc);
 /**
  * @brief Updates the Brake System Controller.
  *
- * @param bsc A pointer to the BrakeControl structure.
+ * @param controller A pointer to the BrakeControl ControllerSystem.
  */
-int updateBrakeSystemControl(void* bsc);
+int updateBrakeSystemControl(ControllerSystem* controller);
 
 /**
  * @brief Updates BrakeSystemStatus with current sensor data.

@@ -38,10 +38,10 @@ int startRTD(RTD* rtd);
 /**
  * @brief Updates the RTD Actuator.
  *
- * @param self A pointer to the RTD structure.
+ * @param controller A pointer to the RTD ControllerSystem.
  * @return _SUCCESS if the actuator was updated, _FAILURE otherwise.
  */
-int updateRTD(void* self);
+int updateRTD(ControllerSystem* controller);
 
 /**
  * @brief Checks if RTD is in ready to drive state.
