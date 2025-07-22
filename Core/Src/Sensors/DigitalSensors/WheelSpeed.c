@@ -1,6 +1,7 @@
 #include "../../../Inc/Sensors/DigitalSensors/WheelSpeed.h"
 #include "../../../Inc/Utils/Conversions.h"
 #include "../../../Inc/Utils/TimeUtils.h"
+#include "../../../Inc/Utils/Common.h"
 
 #include <stdio.h>
 #include <math.h>
@@ -11,7 +12,7 @@
 
 void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth,
                     WHEEL_LOCATION location) {
-    initDigitalSensor(&ws->base, "Wheel Speed", hz, port);
+    initDigitalSensor(&ws->base, "Wheel Speed", hz, port, ws);
     ws->base.sensor.updateable.update = updateWheelSpeed;
     ws->radius = radius;
     ws->wheel_location = location;
@@ -54,9 +55,18 @@ float calculateSpeed(WheelSpeed* ws) {
     return speed;
 }
 
-void updateWheelSpeed(void* ws) {
-    WheelSpeed* wsPtr = (WheelSpeed*)ws;
-    wsPtr->speed = calculateSpeed(ws);
+int updateWheelSpeed(Updateable* updateable) {
+    // Cast the updateable pointer to a wheel speed sensor
+    Sensor* sensor = (Sensor*)updateable->child;
+    DigitalSensor* digitalSensor = (DigitalSensor*)sensor->child;
+    WheelSpeed* ws = (WheelSpeed*)digitalSensor->child;
+
+    ws->speed = calculateSpeed(ws);
+    if (ws->speed < 0) {
+        printf("Error: Speed calculation failed\n");
+        return _FAILURE;
+    }
+    return _SUCCESS;
 }
 
 void setTimeInterval(WheelSpeed* ws, float interval) {

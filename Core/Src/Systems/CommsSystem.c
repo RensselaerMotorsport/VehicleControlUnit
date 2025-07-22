@@ -1,7 +1,7 @@
 #include "../../Inc/Systems/CommsSystem.h"
 
 void initCommsSystem(CommsSystem* comms, const char* name, int hz, CommsType type) {
-    initSystem(&comms->system, name, hz, COMMS);
+    initSystem(&comms->system, name, hz, COMMS, comms);
     comms->type = type;
     comms->check_heartbeat = NULL;
 }

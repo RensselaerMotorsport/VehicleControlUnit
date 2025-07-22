@@ -30,9 +30,9 @@ void initIMD(IMDValues* IMD, int hz);
 /**
  * @brief Updates the IMD values.
  * 
- * @param IMDValues Pointer to the IMD values that need to be updated.
+ * @param updateable Pointer to the Updateable structure to update.
  */
-void updateIMD(void* IMDValues);
+int updateIMD(Updateable* updateable);
 
 /**
  * FIXME: Update this function to use Updateable ptr

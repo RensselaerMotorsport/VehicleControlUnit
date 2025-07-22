@@ -22,7 +22,7 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
             break;
         }
 
-        Updateable* updateable = updatableArray[i];
+        Updateable* updateable = (Updateable*)updatableArray[i];
         if (updateable->hz <= 0 || updateable->hz > MAX_HZ) {
             continue; // Skip invalid frequencies
         }
@@ -30,7 +30,13 @@ void SchedulerInit(Scheduler* scheduler, Updateable* updatableArray[]) {
         Task task;
         TaskInit(&task, updateable, updateable->hz);
         int hz = 1000 / updateable->hz;
+        // Setup for STM32
+        #ifndef TEST_MODE
+        printf("hal tick: %u\r\n", HAL_GetTick());
+        int initialPriority = HAL_GetTick() + hz;
+        #else
         int initialPriority = clock() / (CLOCKS_PER_SEC / 1000) + hz;
+        #endif
         PQPush(&scheduler->tasks, task, initialPriority);
     }
 }
@@ -48,8 +54,12 @@ void SchedulerRun(Scheduler* scheduler) {
         // if (timer_flag < 0) continue;
         // timer_flag--;
         // FIXME: Re-implement timer.
-        // int currentTime = HAL_GetTick();
-        int currentTime = 0;
+        #ifndef TEST_MODE
+        int currentTime = HAL_GetTick();
+        #else
+        int currentTime = clock() / (CLOCKS_PER_SEC / 1000);
+        #endif
+        // int currentTime = 0;
 
         while (!PQIsEmpty(&scheduler->tasks) &&
                PQPeek(&scheduler->tasks, &currentTask) &&

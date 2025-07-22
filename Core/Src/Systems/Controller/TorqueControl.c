@@ -1,87 +1,48 @@
 #include "../../../Inc/Systems/Controller/TorqueControl.h"
+#include "../../../Inc/Systems/ControllerSystem.h"
 #include "../../../Inc/Utils/Common.h"
+#include <math.h>
 
-void initTorqueControl(TorqueControl* tc, int hz, float maxTorque) {
-    initControllerSystem(&tc->base, "Torque Control", hz, c_TORQUE);
-    tc->base.system.updateable.update = updateTorqueControl;
-    tc->actualTorque = 0;
+void initTorqueControl(TorqueControl* tc, Apps* apps, int hz, float maxTorque) {
+    initControllerSystem(&tc->base, "Torque Control", hz, c_TORQUE, setDesiredTorque, tc);
     tc->desiredTorque = 0;
     tc->maxAllowedTorque = maxTorque;
-    tc->status = TORQUE_OK;
-    tc->base.safety = torqueSafetyCheck;
+    tc->apps = apps;
 }
 
 int startTorqueControl(TorqueControl* tc) {
     if (tc->base.safety == NULL) {
         printf("Safety system not set for Torque Control\n");
-        return FAILURE;
+        return _FAILURE;
     }
-    else if (tc->base.safety(tc) == FAILURE) {
+    else if (tc->base.safety(&tc->base) == _FAILURE) {
         printf("Torque Control Actuator is not in a safe state\n");
-        return FAILURE;
+        return _FAILURE;
     }
     ENABLE(tc->base.system);
-    return SUCCESS;
+    tc->base.state = c_idle;
+    return _SUCCESS;
 }
 
-void setDesiredTorque(TorqueControl* tc, float torque) {
-    if (tc->base.safety(tc) == FAILURE) {
-        printf("Torque Control Actuator is not in a safe state\n");
-        return;
-    }
+int setDesiredTorque(ControllerSystem* controller) {
+    TorqueControl* tc = (TorqueControl*)controller->child;
+    float pedalposition = getAppsPosition(tc->apps);
+    float torque = pedalposition * tc->maxAllowedTorque;
+
     if (torque > tc->maxAllowedTorque) {
-        printf("Desired torque exceeds the maximum allowed torque\n");
-        return;
-    }
-    tc->desiredTorque = torque;
-}
-
-void setActualTorque(TorqueControl* tc, float torque) {
-    tc->actualTorque = torque;
-}
-
-void updateTorqueControl(void* tc) {
-    TorqueControl* tcPtr = (TorqueControl*)tc;
-    if (tcPtr->base.safety(tc) == FAILURE) {
-        printf("Torque Control Actuator is not in a safe state\n");
-        return;
-    }
-    tcPtr->status = checkTorqueLimits(tc);
-    if (tcPtr->status != TORQUE_OK) {
-        printf("Torque Control Actuator is not in OK\n");
-        return;
-    }
-    // TODO: Implement some way to send the torque where it needs to go
-    // sendTorqueCommand(tc);
-}
-
-TorqueStatus checkTorqueLimits(TorqueControl* tc) {
-    if (tc->actualTorque > tc->maxAllowedTorque) {
-        return TORQUE_OVER_LIMIT;
-    }
-    else if (tc->actualTorque < 0) {
-        return TORQUE_UNDER_LIMIT;
+        printf("Desired torque exceeds the maximum allowed torque, stepping down to max\n");
+        torque = tc->maxAllowedTorque;
     }
 
-    float lowerBound = tc->desiredTorque * (1 - TORQUE_ERROR_MARGIN);
-    float upperBound = tc->desiredTorque * (1 + TORQUE_ERROR_MARGIN);
+    // Perform any desired mapping, i.e. fit to sigmoid function.
+    double normalized = torque / tc->maxAllowedTorque;  // Normalize to range [0, 1]
+    double s_curve = 1.0 / (1.0 + exp(-10 * (normalized - 0.5)));
+    tc->desiredTorque = s_curve * tc->maxAllowedTorque;
+    tc->base.state = c_computed;
+    
+    #ifdef DEBUGn
+    printf("Desired Torque: %f\r\n", tc->desiredTorque);
+    #endif
 
-    if (tc->actualTorque < lowerBound || tc->actualTorque > upperBound) {
-        return TORQUE_SENSOR_ERROR;
-    }
-
-    return TORQUE_OK;
-}
-
-int torqueSafetyCheck(void* tc) {
-    TorqueControl* tcPtr = (TorqueControl*)tc;
-    if(tcPtr->base.num_monitors == 0) {
-        printf("No monitors set for Torque Control\n");
-        return FAILURE;
-    }
-    else if (tcPtr->status != TORQUE_OK) {
-        printf("Torque Control Actuator is not in a safe state\n");
-        return FAILURE;
-    }
-    return SUCCESS;
+    return _SUCCESS;
 }

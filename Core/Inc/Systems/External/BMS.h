@@ -49,9 +49,10 @@ void initBms(Bms* bms, int hz, const char* dbcFn);
 /**
  * @brief Updates the BMS data.
  *
- * @param bms Pointer to the Bms structure to update.
+ * @param updateable Pointer to the Updateable structure to update.
+ * @return int _SUCCESS or _FAILURE.
  */
-void updateBms(void* bms);
+int updateBms(Updateable* updateable);
 
 /**
  * @brief Updates the BMS data.

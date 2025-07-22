@@ -1,8 +1,10 @@
 #include "../../../Inc/Systems/External/Imd.h"
 #include "../../../Inc/Systems/ExternalSystem.h"
+#include "../../../Inc/Utils/Updateable.h"
+#include "../../../Inc/Utils/Common.h"
 
 void initIMD(IMDValues* IMD, int hz) {
-    initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL);
+    initExternalSystem(&IMD->base, "IMD", hz, EXTERNAL, NULL, NULL, IMD);
     IMD->base.system.updateable.update = updateIMD;
     // IMD->base.system.updateable.status = getIMDStatus; // FIXME: Update getIMDStatus
     IMD->IMDStatus = IMD_OK;
@@ -11,7 +13,7 @@ void initIMD(IMDValues* IMD, int hz) {
     IMD->IsoResistanceCorrected = 0;
 }
 
-void updateIMD(void* IMDValues) {
+int updateIMD(Updateable* updateable) {
     //TODO: Implement logic to determine IMD status
     /*if (something){
     set IMD_ERROR;
@@ -19,8 +21,8 @@ void updateIMD(void* IMDValues) {
         set IMD_START;
     } else {*/
     //  set IMD_OK
-        return;
-    }
+    return _FAILURE;
+}
 
 int getIMDStatus(void* imdValues, IMDStatus status) {
     IMDValues* IMD = (IMDValues*) imdValues;

@@ -1,34 +1,83 @@
+#include "../../../Inc/Outputs/DigitalOutput.h"
 #include "../../../Inc/Systems/Controller/BrakeSystemControl.h"
 #include "../../../Inc/Utils/Common.h"
 #include "../../../Inc/Sensors/AnalogSensors/BrakePressure.h"
 #include "../../../Inc/Sensors/AnalogSensors/Temperature.h"
 
-void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel){
-    initControllerSystem(&bsc-> base, "Brake System Control", hz, c_BRAKES);
-    bsc -> maxTemperatureAllowed = maxTemp;
+void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int brakeLightActivationPoint, int heavyBrakingActivationPoint, int fbp_channel, int rbp_channel, int temp_channel, int light_port){
+    initControllerSystem(&bsc-> base, "Brake System Control", hz, c_BRAKES, updateBrakeSystemControl, bsc);
+    BrakePressure frontPressure, rearPressure;
+    Temperature temperature;
+    DigitalOutput brakeLight;
+
+    bsc->frontPressure = &frontPressure;
+    bsc->rearPressure = &rearPressure;
     initBrakePressure(bsc -> frontPressure, hz, fbp_channel);
     initBrakePressure(bsc -> rearPressure, hz, rbp_channel);
+    
+    bsc->temperature = &temperature;
+    initTemperature(bsc -> temperature, hz, temp_channel);
+
+    bsc->brakeLight = &brakeLight;
+    initDigitalOutput(bsc -> brakeLight, "Brake Light", hz, light_port);
+
+    bsc -> maxTemperatureAllowed = maxTemp;
     bsc -> minPressure = 0;
     bsc -> maxPressure = 2000;
-    initTemperature(bsc -> temperature, hz, temp_channel);
     bsc -> brakeLightActivationPoint = brakeLightActivationPoint;
     bsc -> brakeLightActive = 0;
+    bsc -> brakeLightBlink = 0;
     bsc -> heavyBrakingActivationPoint = heavyBrakingActivationPoint;
     bsc -> heavyBraking = 0;
     bsc -> status = BRAKES_OK;
-    bsc -> base.safety = brakeSafteyCheck;
 }
 
-void setSensorReadings(BrakeSystemControl *bsc, float frontPressure, float rearPressure, float temperature){
-    updateBrakePressure(bsc -> frontPressure);
-    updateBrakePressure(bsc -> rearPressure);
-    updateTemperature(bsc -> temperature);
+int startBrakeSystemControl(BrakeSystemControl *bsc) {
+    if (bsc -> base.safety == NULL){
+        printf("Safety system not set for Brake System Control\r\n");
+        return _FAILURE;
+    }
+    else if (bsc -> base.safety(&bsc->base) == _FAILURE){
+        printf("Brake System Control Actuator is not in a safe state\r\n");
+        return _FAILURE;
+    }
+    ENABLE(bsc -> base.system);
+    bsc -> base.state = c_idle;
+    return _SUCCESS;
+}
+
+int updateBrakeSystemControl(ControllerSystem* controller) {
+    BrakeSystemControl *bsc = (BrakeSystemControl*)controller->child;
+    setSensorReadings(bsc);
+    activateBrakeLight(bsc);
+    inHeavyBreaking(bsc);
+    bsc->base.state = c_computed;
+    writeDigitalOutputData(bsc->brakeLight, bsc->brakeLightActive);
+    
+    #ifdef DEBUGn
+    printf("Brake System Control updated. Front Pressure: %f, Rear Pressure: %f, Temperature: %f\r\n", getBrakePressure(bsc -> frontPressure), getBrakePressure(bsc -> rearPressure), getTemperatureFahrenheit(bsc -> temperature));
+    printf("Brake Light Active: %d, Heavy Braking: %d\r\n", bsc -> brakeLightActive, bsc -> heavyBraking);
+    #endif
+
+    return _SUCCESS;
+}
+
+void setSensorReadings(BrakeSystemControl *bsc){
+    updateBrakePressure(bsc->frontPressure);
+    updateBrakePressure(bsc->rearPressure);
+    updateTemperature(bsc->temperature);
 }
 
 void activateBrakeLight(BrakeSystemControl *bsc){
-    if (getBrakePressure(bsc -> frontPressure) > bsc -> brakeLightActivationPoint || getBrakePressure(bsc -> rearPressure) > bsc -> brakeLightActivationPoint){
-        bsc -> brakeLightActive = 1;
-        return;
+    if (getBrakePressure(bsc -> frontPressure) > bsc -> brakeLightActivationPoint 
+        || getBrakePressure(bsc -> rearPressure) > bsc -> brakeLightActivationPoint){
+        if (bsc->brakeLightBlink < 8) {bsc->brakeLightBlink++;}
+        if (bsc->brakeLightBlink%2 == 0) {
+            bsc -> brakeLightActive = 1;
+            return;
+        }
+    } else {
+        bsc -> brakeLightBlink = 0;
     }
     bsc -> brakeLightActive = 0;
     return;
@@ -51,7 +100,7 @@ BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc){
     if (front > bsc -> maxPressure || rear > bsc -> maxPressure){
         return PRESSURE_OVER_LIMIT;
     }
-    else if (front > bsc -> minPressure || rear > bsc -> minPressure){
+    else if (front < bsc -> minPressure || rear < bsc -> minPressure){
         return PRESSURE_UNDER_LIMIT;
     }
     else if (temp > bsc -> maxTemperatureAllowed){
@@ -59,32 +108,27 @@ BrakeSystemStatus checkSensorLimits(BrakeSystemControl *bsc){
     }
     else if (temp < 0){
         return TEMPERATURE_SENSOR_ERROR;
+    } else {
+        return BRAKES_OK;
     }
-}
-
-int brakeSafteyCheck(void* bsc){
-    BrakeSystemControl *bscPtr = (BrakeSystemControl*)bsc;
-    if (bscPtr->base.num_monitors == 0){
-        printf("No monitors set for Brake System Control\n");
-        return FAILURE;
-    }
-    else if (bscPtr->status != BRAKES_OK){
-        printf("Brake System is not in a safe state\n");
-        return FAILURE;
-    }
-    return SUCCESS;
 }
 
 //The following functions below are for testing functionality and should not be used elsewhere
 
 void setFrontPressure(BrakeSystemControl *bsc, float pressure){
     bsc -> frontPressure -> pressure = pressure;
+    inHeavyBreaking(bsc);
+    activateBrakeLight(bsc);
 }
 
 void setRearPressure(BrakeSystemControl *bsc, float pressure){
     bsc -> rearPressure -> pressure = pressure;
+    inHeavyBreaking(bsc);
+    activateBrakeLight(bsc);
 }
 
 void setTemperature(BrakeSystemControl *bsc, float temperature){
     bsc -> temperature -> degrees = temperature;
+    inHeavyBreaking(bsc);
+    activateBrakeLight(bsc);
 }

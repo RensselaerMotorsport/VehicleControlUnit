@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 void initShockPot(ShockPot* shockPot, int hz, int channel, WHEEL_LOCATION location) {
-    initAnalogSensor(&shockPot->base, "ShockPot", hz, channel);
+    initAnalogSensor(&shockPot->base, "ShockPot", hz, channel, shockPot);
     shockPot->distance = -1;
     shockPot->wheel_location = location;
     shockPot->base.sensor.updateable.update = updateShockPot;

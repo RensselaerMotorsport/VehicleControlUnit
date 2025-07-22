@@ -17,7 +17,7 @@ static const int MAX_LINE_LENGTH = 256;
  * @param[out] messages Pointer to the CAN_MessageList structure that will be 
  * populated with the parsed data.
  * @param[in] line Line of the DBC file to parse.
- * @return Returns 1 on success, or 0 on failure.
+ * @return Returns 1 on _SUCCESS, or 0 on failure.
  */
 int parseDbcLine(CAN_MessageList *messages, char *line);
 
@@ -30,7 +30,7 @@ int parseDbcLine(CAN_MessageList *messages, char *line);
  * @param[out] CAN_MessageList Pointer to the CAN_MessageList structure that will 
  * be populated with the parsed data.
  * @param[in] filename Path to the DBC file to parse.
- * @return Returns 1 on success, or o on failure.
+ * @return Returns 1 on _SUCCESS, or o on failure.
  * @note The CAN_MessageList structure should be properly initialized before calling this function.
  */
 int parseDbcFile(CAN_MessageList *messages, const unsigned char *dbc_contents);
