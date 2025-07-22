@@ -14,8 +14,12 @@ float getAppPosition(App* app) {
 
 void updateApp(void* app) {
     App *myApp = (App *)app;
-    // FIXME: Implement APP connection with stm
     float rawData = getAnalogSensorData(&myApp->base);
+
+    #ifdef DEBUGn
+    printf("App::update rawVal: %f\r\n", rawData);
+    #endif
+
     myApp->position = transferFunctionApp(rawData);
 }
 
