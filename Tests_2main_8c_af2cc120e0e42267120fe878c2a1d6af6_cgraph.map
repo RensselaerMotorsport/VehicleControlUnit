@@ -1,14 +1,19 @@
 <map id="torque_control_main" name="torque_control_main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,129,144,155"/>
-<area shape="rect" id="node2" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,129,312,155"/>
-<area shape="rect" id="node3" href="$ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="362,80,501,105"/>
-<area shape="rect" id="node10" href="$TorqueControl_8c.html#aeb14e63e836dcb3852ac13e89c82a800" title="Checks the safety of the torque with multiple monitors." alt="" coords="365,129,497,155"/>
-<area shape="rect" id="node11" href="$TorqueControl_8c.html#adb9354dc1d302c0c274370e5be35096f" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="360,179,503,204"/>
-<area shape="rect" id="node4" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="576,80,659,105"/>
-<area shape="rect" id="node5" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="732,80,837,105"/>
-<area shape="rect" id="node6" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="885,5,989,31"/>
-<area shape="rect" id="node7" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="887,55,987,80"/>
-<area shape="rect" id="node8" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="888,104,987,129"/>
-<area shape="rect" id="node9" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="886,153,989,179"/>
-<area shape="rect" id="node12" href="$TorqueControl_8c.html#a4ab6cddbad72392b7744b4e44102c5c2" title="Checks if the actual torque is within the defined limits and desired range." alt="" coords="551,179,684,204"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,179,144,204"/>
+<area shape="rect" id="node2" href="$TorqueControl_8c.html#ac675cea5e7d7d4953bb6f80715391601" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,179,312,204"/>
+<area shape="rect" id="node3" href="$ControllerSystem_8c.html#a4575814c80b0fcfc774c5b562531ca26" title="Initializes the Controller System with initial settings." alt="" coords="360,129,499,155"/>
+<area shape="rect" id="node14" href="$TorqueControl_8c.html#a511cb99df3e91fbfcd1b7d8261b7862c" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="367,203,491,228"/>
+<area shape="rect" id="node4" href="$ControllerSystem_8c.html#a5321a3a713351066f9e10b38cbb7d7cd" title="Adds a monitor to the controller." alt="" coords="559,5,701,31"/>
+<area shape="rect" id="node5" href="$ControllerSystem_8c.html#a1e9f06b41a4fe7aeee59bf01c71af718" title="Removes a monitor from the controller." alt="" coords="547,55,713,80"/>
+<area shape="rect" id="node6" href="$ControllerSystem_8c.html#acfc20e370792beaf80d37d1b6d2824ea" title="Default safety function for ControllerSystem objects." alt="" coords="574,104,686,129"/>
+<area shape="rect" id="node7" href="$ControllerSystem_8c.html#aaea852f9b9af4c35a13d60d6a9535725" title="Default update function for ControllerSystem objects." alt="" coords="571,153,689,179"/>
+<area shape="rect" id="node8" href="$System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="589,203,671,228"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="767,203,872,228"/>
+<area shape="rect" id="node10" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="929,105,1033,131"/>
+<area shape="rect" id="node11" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="931,155,1031,180"/>
+<area shape="rect" id="node12" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="931,204,1030,229"/>
+<area shape="rect" id="node13" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="929,253,1032,279"/>
+<area shape="rect" id="node15" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="571,252,689,277"/>
+<area shape="rect" id="node16" href="$AppsMonitor_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="761,252,877,277"/>
+<area shape="rect" id="node17" href="$App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="925,303,1036,328"/>
 </map>

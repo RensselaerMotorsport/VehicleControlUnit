@@ -1,4 +1,13 @@
 <map id="Core/Inc/Systems/Controller/BrakeSystemControl.h" name="Core/Inc/Systems/Controller/BrakeSystemControl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="6,5,191,45"/>
-<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html" title=" " alt="" coords="5,93,192,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="342,5,528,45"/>
+<area shape="rect" id="node2" href="$RTD_8h.html" title=" " alt="" coords="342,93,528,133"/>
+<area shape="rect" id="node5" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="214,277,328,302"/>
+<area shape="rect" id="node6" href="$TorquePolice_8h.html" title=" " alt="" coords="742,181,915,221"/>
+<area shape="rect" id="node9" href="$BrakePolice_8h.html" title=" " alt="" coords="144,93,318,133"/>
+<area shape="rect" id="node11" href="$BrakeSystemControl_8c.html" title=" " alt="" coords="603,93,790,133"/>
+<area shape="rect" id="node3" href="$RTDMonitor_8h.html" title=" " alt="" coords="334,181,507,221"/>
+<area shape="rect" id="node8" href="$RTD_8c.html" title=" " alt="" coords="531,181,718,221"/>
+<area shape="rect" id="node4" href="$RTDMonitor_8c.html" title=" " alt="" coords="353,269,536,309"/>
+<area shape="rect" id="node7" href="$TorquePolice_8c.html" title=" " alt="" coords="737,269,920,309"/>
+<area shape="rect" id="node10" href="$BrakePolice_8c.html" title=" " alt="" coords="25,181,208,221"/>
 </map>

@@ -1,12 +1,13 @@
 <map id="Core/Inc/Systems/External/BMS.h" name="Core/Inc/Systems/External/BMS.h">
-<area shape="rect" id="node1" title=" " alt="" coords="286,5,462,45"/>
-<area shape="rect" id="node2" title=" " alt="" coords="219,101,283,126"/>
-<area shape="rect" id="node3" href="$ExternalSystem_8h.html" title=" " alt="" coords="308,101,440,126"/>
-<area shape="rect" id="node10" title=" " alt="" coords="465,93,619,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="90,5,266,45"/>
+<area shape="rect" id="node2" title=" " alt="" coords="23,101,87,126"/>
+<area shape="rect" id="node3" href="$ExternalSystem_8h.html" title=" " alt="" coords="112,101,244,126"/>
+<area shape="rect" id="node11" title=" " alt="" coords="269,93,423,133"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,401,65,427"/>
-<area shape="rect" id="node5" title=" " alt="" coords="416,401,479,427"/>
-<area shape="rect" id="node6" title=" " alt="" coords="270,401,334,427"/>
-<area shape="rect" id="node7" href="$System_8h.html" title=" " alt="" coords="236,255,312,280"/>
-<area shape="rect" id="node9" href="$CommsSystem_8h.html" title=" " alt="" coords="313,181,435,207"/>
-<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="98,328,237,353"/>
+<area shape="rect" id="node5" title=" " alt="" coords="387,401,449,427"/>
+<area shape="rect" id="node6" title=" " alt="" coords="122,401,186,427"/>
+<area shape="rect" id="node7" href="$System_8h.html" title=" " alt="" coords="167,255,243,280"/>
+<area shape="rect" id="node9" href="$CommsSystem_8h.html" title=" " alt="" coords="68,181,189,207"/>
+<area shape="rect" id="node10" href="$Task_8h.html" title=" " alt="" coords="267,255,401,280"/>
+<area shape="rect" id="node8" href="$Updateable_8h.html" title=" " alt="" coords="217,328,355,353"/>
 </map>

@@ -1,9 +1,11 @@
 <map id="Core/Src/Sensors/DigitalSensors/ESCIndicator.c" name="Core/Src/Sensors/DigitalSensors/ESCIndicator.c">
-<area shape="rect" id="node1" title=" " alt="" coords="109,5,274,45"/>
-<area shape="rect" id="node2" href="$ESCIndicator_8h.html" title=" " alt="" coords="91,93,291,133"/>
-<area shape="rect" id="node3" href="$DigitalSensor_8h.html" title=" " alt="" coords="72,181,191,207"/>
-<area shape="rect" id="node9" title=" " alt="" coords="215,181,290,207"/>
+<area shape="rect" id="node1" title=" " alt="" coords="235,5,401,45"/>
+<area shape="rect" id="node2" href="$ESCIndicator_8h.html" title=" " alt="" coords="218,93,418,133"/>
+<area shape="rect" id="node3" href="$DigitalSensor_8h.html" title=" " alt="" coords="199,181,317,207"/>
+<area shape="rect" id="node11" title=" " alt="" coords="342,181,417,207"/>
 <area shape="rect" id="node4" href="$Sensor_8h.html" title=" " alt="" coords="95,255,168,280"/>
+<area shape="rect" id="node9" href="$Constants_8h.html" title=" " alt="" coords="192,255,324,280"/>
+<area shape="rect" id="node10" title=" " alt="" coords="349,255,413,280"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,401,65,427"/>
 <area shape="rect" id="node6" title=" " alt="" coords="197,401,260,427"/>
 <area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="62,328,201,353"/>

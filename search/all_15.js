@@ -8,5 +8,7 @@ var searchData=
   ['wheelspeed_2ec_5',['WheelSpeed.c',['../WheelSpeed_8c.html',1,'']]],
   ['wheelspeed_2eh_6',['WheelSpeed.h',['../WheelSpeed_8h.html',1,'']]],
   ['wheelspeedtest_2ec_7',['WheelSpeedTest.c',['../WheelSpeedTest_8c.html',1,'']]],
-  ['writedatatofileimplementation_8',['writeDataToFileImplementation',['../Updateable_8h.html#a55a1d9264c2493f28d006a3d22c53b44',1,'writeDataToFileImplementation(const char *filename, void *self):&#160;Updateable.c'],['../Updateable_8c.html#a55a1d9264c2493f28d006a3d22c53b44',1,'writeDataToFileImplementation(const char *filename, void *self):&#160;Updateable.c']]]
+  ['writeanalogoutputdata_8',['writeAnalogOutputData',['../AnalogOutput_8h.html#a221944f2e4c122ef93704d464358292e',1,'writeAnalogOutputData(AnalogOutput *output, float data):&#160;AnalogOutput.c'],['../AnalogOutput_8c.html#a221944f2e4c122ef93704d464358292e',1,'writeAnalogOutputData(AnalogOutput *output, float data):&#160;AnalogOutput.c']]],
+  ['writedatatofileimplementation_9',['writeDataToFileImplementation',['../Updateable_8h.html#a55a1d9264c2493f28d006a3d22c53b44',1,'writeDataToFileImplementation(const char *filename, void *self):&#160;Updateable.c'],['../Updateable_8c.html#a55a1d9264c2493f28d006a3d22c53b44',1,'writeDataToFileImplementation(const char *filename, void *self):&#160;Updateable.c']]],
+  ['writedigitaloutputdata_10',['writeDigitalOutputData',['../DigitalOutput_8h.html#a787f11889caf733df06f753c3ca81a15',1,'writeDigitalOutputData(DigitalOutput *output, int data):&#160;DigitalOutput.c'],['../DigitalOutput_8c.html#a787f11889caf733df06f753c3ca81a15',1,'writeDigitalOutputData(DigitalOutput *output, int data):&#160;DigitalOutput.c']]]
 ];

@@ -1,0 +1,16 @@
+<map id="Core/Inc/Outputs/DigitalOutput.h" name="Core/Inc/Outputs/DigitalOutput.h">
+<area shape="rect" id="node1" title=" " alt="" coords="729,5,891,45"/>
+<area shape="rect" id="node2" href="$BrakeSystemControl_8h.html" title=" " alt="" coords="587,93,772,133"/>
+<area shape="rect" id="node3" href="$RTD_8h.html" title=" " alt="" coords="356,181,541,221"/>
+<area shape="rect" id="node12" href="$BrakeSystemControl_8c.html" title=" " alt="" coords="914,181,1101,221"/>
+<area shape="rect" id="node13" href="$DigitalOutput_8c.html" title=" " alt="" coords="847,93,1010,133"/>
+<area shape="rect" id="node14" href="$stm32f7xx__it_8c.html" title="Interrupt Service Routines." alt="" coords="1034,101,1194,126"/>
+<area shape="rect" id="node6" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="435,365,550,390"/>
+<area shape="rect" id="node7" href="$TorquePolice_8h.html" title=" " alt="" coords="469,269,642,309"/>
+<area shape="rect" id="node10" href="$BrakePolice_8h.html" title=" " alt="" coords="717,181,890,221"/>
+<area shape="rect" id="node4" href="$RTDMonitor_8h.html" title=" " alt="" coords="10,269,183,309"/>
+<area shape="rect" id="node9" href="$RTD_8c.html" title=" " alt="" coords="207,269,394,309"/>
+<area shape="rect" id="node5" href="$RTDMonitor_8c.html" title=" " alt="" coords="5,357,188,397"/>
+<area shape="rect" id="node8" href="$TorquePolice_8c.html" title=" " alt="" coords="575,357,757,397"/>
+<area shape="rect" id="node11" href="$BrakePolice_8c.html" title=" " alt="" coords="768,269,951,309"/>
+</map>

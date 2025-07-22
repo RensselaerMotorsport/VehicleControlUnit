@@ -1,0 +1,8 @@
+<map id="initMonitorSystem" name="initMonitorSystem">
+<area shape="rect" id="node1" title="Initializes the Monitor System with initial settings." alt="" coords="267,80,393,105"/>
+<area shape="rect" id="node2" href="$AppsMonitor_8c.html#a40d2a2e0566f92dbac78411027e6a17b" title=" " alt="" coords="105,5,217,31"/>
+<area shape="rect" id="node4" href="$BrakePolice_8c.html#ac9d410c67dbf8021ae8381367325b76e" title=" " alt="" coords="107,55,216,80"/>
+<area shape="rect" id="node5" href="$RTDMonitor_8c.html#a618aef18496bc589566dfb8f381c249d" title="Initializes the RTD Monitor with initial settings." alt="" coords="107,104,215,129"/>
+<area shape="rect" id="node6" href="$TorquePolice_8c.html#adf6266d18b7950abbc23cb92f15f8709" title=" " alt="" coords="104,153,219,179"/>
+<area shape="rect" id="node3" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,80,56,105"/>
+</map>

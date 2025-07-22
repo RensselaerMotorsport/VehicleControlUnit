@@ -99,13 +99,13 @@ Include dependency graph for MonitorSystem.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a83cb9acbc4ccdf96dd0d76cd92c0fedc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc">initMonitorSystem</a> (<a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor, const char *name, int hz, <a class="el" href="MonitorSystem_8h.html#ac69ce5a28782fdc01f7ba5c236cd5f72">MonitorType</a> <a class="el" href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>, <a class="el" href="MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398">FaultType</a> fault)</td></tr>
-<tr class="memdesc:a83cb9acbc4ccdf96dd0d76cd92c0fedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Monitor <a class="el" href="structSystem.html">System</a> with initial settings.  <a href="MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc">More...</a><br /></td></tr>
-<tr class="separator:a83cb9acbc4ccdf96dd0d76cd92c0fedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8af9a14fa42b23069fc019bd0ec287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MonitorSystem_8c.html#a8d8af9a14fa42b23069fc019bd0ec287">initMonitorSystem</a> (<a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor, const char *name, int hz, <a class="el" href="MonitorSystem_8h.html#ac69ce5a28782fdc01f7ba5c236cd5f72">MonitorType</a> type, <a class="el" href="MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398">FaultType</a> fault, int(*runMonitor)(void *self))</td></tr>
+<tr class="memdesc:a8d8af9a14fa42b23069fc019bd0ec287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Monitor <a class="el" href="structSystem.html">System</a> with initial settings.  <a href="MonitorSystem_8c.html#a8d8af9a14fa42b23069fc019bd0ec287">More...</a><br /></td></tr>
+<tr class="separator:a8d8af9a14fa42b23069fc019bd0ec287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a83cb9acbc4ccdf96dd0d76cd92c0fedc" name="a83cb9acbc4ccdf96dd0d76cd92c0fedc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83cb9acbc4ccdf96dd0d76cd92c0fedc">&#9670;&#160;</a></span>initMonitorSystem()</h2>
+<a id="a8d8af9a14fa42b23069fc019bd0ec287" name="a8d8af9a14fa42b23069fc019bd0ec287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8af9a14fa42b23069fc019bd0ec287">&#9670;&#160;</a></span>initMonitorSystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +138,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398">FaultType</a>&#160;</td>
-          <td class="paramname"><em>fault</em>&#160;</td>
+          <td class="paramname"><em>fault</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *self)&#160;</td>
+          <td class="paramname"><em>runMonitor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -161,39 +167,43 @@ Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="MonitorSystem_8c_source.html#l00003">3</a> of file <a class="el" href="MonitorSystem_8c_source.html">MonitorSystem.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                                                          {</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="System_8h.html#a2c23656f84d9e596c05e362da5a70085">initSystem</a>(&amp;monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#ae797855340e1004bb2eaaf8447376597">system</a>, name, hz, <a class="code hl_enumvalue" href="System_8h.html#a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7">MONITOR</a>);</div>
-<div class="line"><span class="lineno">    6</span>    monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#a1c96960465270bcc95c0932902ed2be7">type</a> = <a class="code hl_enumeration" href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>;</div>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>                                                                                         {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="System_8h.html#afc8e18bd073921be7fc0f6d55a3bf89c">initSystem</a>(&amp;monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#ae797855340e1004bb2eaaf8447376597">system</a>, name, hz, <a class="code hl_enumvalue" href="System_8h.html#a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7">MONITOR</a>, monitor);</div>
+<div class="line"><span class="lineno">    6</span>    monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#a1c96960465270bcc95c0932902ed2be7">type</a> = type;</div>
 <div class="line"><span class="lineno">    7</span>    monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#a7a134da3e979bc47c26b4318b599a648">fault</a> = fault;</div>
-<div class="line"><span class="lineno">    8</span>}</div>
-<div class="ttc" id="aSystem_8h_html_a2c23656f84d9e596c05e362da5a70085"><div class="ttname"><a href="System_8h.html#a2c23656f84d9e596c05e362da5a70085">initSystem</a></div><div class="ttdeci">void initSystem(System *system, const char *name, int hz, SystemType type)</div><div class="ttdoc">Initializes a System object.</div><div class="ttdef"><b>Definition:</b> <a href="System_8c_source.html#l00003">System.c:3</a></div></div>
+<div class="line"><span class="lineno">    8</span>    monitor-&gt;<a class="code hl_variable" href="structMonitorSystem.html#aad95a0dad72b8feb0fe934b105d2b55f">runMonitor</a> = runMonitor;</div>
+<div class="line"><span class="lineno">    9</span>}</div>
 <div class="ttc" id="aSystem_8h_html_a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7"><div class="ttname"><a href="System_8h.html#a922f019f64e4183a18638787f6ba539ba92e8e1033650c9fd30199df2d6ec23e7">MONITOR</a></div><div class="ttdeci">@ MONITOR</div><div class="ttdef"><b>Definition:</b> <a href="System_8h_source.html#l00013">System.h:13</a></div></div>
-<div class="ttc" id="aUpdateable_8h_html_a7aead736a07eaf25623ad7bfa1f0ee2d"><div class="ttname"><a href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00017">Updateable.h:17</a></div></div>
-<div class="ttc" id="astructMonitorSystem_html_a1c96960465270bcc95c0932902ed2be7"><div class="ttname"><a href="structMonitorSystem.html#a1c96960465270bcc95c0932902ed2be7">MonitorSystem::type</a></div><div class="ttdeci">MonitorType type</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00026">MonitorSystem.h:26</a></div></div>
-<div class="ttc" id="astructMonitorSystem_html_a7a134da3e979bc47c26b4318b599a648"><div class="ttname"><a href="structMonitorSystem.html#a7a134da3e979bc47c26b4318b599a648">MonitorSystem::fault</a></div><div class="ttdeci">FaultType fault</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00027">MonitorSystem.h:27</a></div></div>
-<div class="ttc" id="astructMonitorSystem_html_ae797855340e1004bb2eaaf8447376597"><div class="ttname"><a href="structMonitorSystem.html#ae797855340e1004bb2eaaf8447376597">MonitorSystem::system</a></div><div class="ttdeci">System system</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00025">MonitorSystem.h:25</a></div></div>
+<div class="ttc" id="aSystem_8h_html_afc8e18bd073921be7fc0f6d55a3bf89c"><div class="ttname"><a href="System_8h.html#afc8e18bd073921be7fc0f6d55a3bf89c">initSystem</a></div><div class="ttdeci">void initSystem(System *system, const char *name, int hz, SystemType type, void *child)</div><div class="ttdoc">Initializes a System object.</div><div class="ttdef"><b>Definition:</b> <a href="System_8c_source.html#l00003">System.c:3</a></div></div>
+<div class="ttc" id="astructMonitorSystem_html_a1c96960465270bcc95c0932902ed2be7"><div class="ttname"><a href="structMonitorSystem.html#a1c96960465270bcc95c0932902ed2be7">MonitorSystem::type</a></div><div class="ttdeci">MonitorType type</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00028">MonitorSystem.h:28</a></div></div>
+<div class="ttc" id="astructMonitorSystem_html_a7a134da3e979bc47c26b4318b599a648"><div class="ttname"><a href="structMonitorSystem.html#a7a134da3e979bc47c26b4318b599a648">MonitorSystem::fault</a></div><div class="ttdeci">FaultType fault</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00029">MonitorSystem.h:29</a></div></div>
+<div class="ttc" id="astructMonitorSystem_html_aad95a0dad72b8feb0fe934b105d2b55f"><div class="ttname"><a href="structMonitorSystem.html#aad95a0dad72b8feb0fe934b105d2b55f">MonitorSystem::runMonitor</a></div><div class="ttdeci">int(* runMonitor)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00030">MonitorSystem.h:30</a></div></div>
+<div class="ttc" id="astructMonitorSystem_html_ae797855340e1004bb2eaaf8447376597"><div class="ttname"><a href="structMonitorSystem.html#ae797855340e1004bb2eaaf8447376597">MonitorSystem::system</a></div><div class="ttdeci">System system</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00027">MonitorSystem.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph.png" border="0" usemap="#aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph" alt=""/></div>
-<map name="aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph" id="aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_cgraph">
+<div class="center"><img src="MonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_cgraph.png" border="0" usemap="#aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_cgraph" alt=""/></div>
+<map name="aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_cgraph" id="aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_cgraph">
 <area shape="rect" title="Initializes the Monitor System with initial settings." alt="" coords="5,80,132,105"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="180,80,263,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="311,80,416,105"/>
+<area shape="rect" href="System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="180,80,263,105"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="311,80,416,105"/>
 <area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="464,5,568,31"/>
 <area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="466,55,566,80"/>
 <area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="467,104,565,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="465,153,567,179"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="465,153,567,179"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="MonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_icgraph.png" border="0" usemap="#aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_icgraph" alt=""/></div>
-<map name="aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_icgraph" id="aMonitorSystem_8c_a83cb9acbc4ccdf96dd0d76cd92c0fedc_icgraph">
-<area shape="rect" title="Initializes the Monitor System with initial settings." alt="" coords="256,5,383,31"/>
-<area shape="rect" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,5,208,31"/>
-<area shape="rect" href="AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,5,91,31"/>
+<div class="center"><img src="MonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_icgraph.png" border="0" usemap="#aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_icgraph" alt=""/></div>
+<map name="aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_icgraph" id="aMonitorSystem_8c_a8d8af9a14fa42b23069fc019bd0ec287_icgraph">
+<area shape="rect" title="Initializes the Monitor System with initial settings." alt="" coords="267,80,393,105"/>
+<area shape="rect" href="AppsMonitor_8c.html#a40d2a2e0566f92dbac78411027e6a17b" title=" " alt="" coords="105,5,217,31"/>
+<area shape="rect" href="BrakePolice_8c.html#ac9d410c67dbf8021ae8381367325b76e" title=" " alt="" coords="107,55,216,80"/>
+<area shape="rect" href="RTDMonitor_8c.html#a618aef18496bc589566dfb8f381c249d" title="Initializes the RTD Monitor with initial settings." alt="" coords="107,104,215,129"/>
+<area shape="rect" href="TorquePolice_8c.html#adf6266d18b7950abbc23cb92f15f8709" title=" " alt="" coords="104,153,219,179"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,80,56,105"/>
 </map>
 </div>
 

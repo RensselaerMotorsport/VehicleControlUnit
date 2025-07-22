@@ -1,11 +1,13 @@
 <map id="Core/Src/Systems/ControllerSystem.c" name="Core/Src/Systems/ControllerSystem.c">
-<area shape="rect" id="node1" title=" " alt="" coords="375,5,562,45"/>
-<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="287,93,461,133"/>
-<area shape="rect" id="node9" href="$Common_8h.html" title=" " alt="" coords="486,101,643,126"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,401,65,427"/>
-<area shape="rect" id="node4" title=" " alt="" coords="416,401,479,427"/>
-<area shape="rect" id="node5" title=" " alt="" coords="270,401,334,427"/>
-<area shape="rect" id="node6" href="$System_8h.html" title=" " alt="" coords="236,255,312,280"/>
-<area shape="rect" id="node8" href="$MonitorSystem_8h.html" title=" " alt="" coords="315,181,433,207"/>
-<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="98,328,237,353"/>
+<area shape="rect" id="node1" title=" " alt="" coords="558,5,745,45"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8h.html" title=" " alt="" coords="228,93,403,133"/>
+<area shape="rect" id="node7" href="$Updateable_8h.html" title=" " alt="" coords="358,328,497,353"/>
+<area shape="rect" id="node10" href="$Task_8h.html" title=" " alt="" coords="508,181,641,207"/>
+<area shape="rect" id="node11" href="$Common_8h.html" title=" " alt="" coords="716,101,873,126"/>
+<area shape="rect" id="node3" title=" " alt="" coords="174,401,234,427"/>
+<area shape="rect" id="node4" title=" " alt="" coords="343,401,406,427"/>
+<area shape="rect" id="node5" title=" " alt="" coords="53,401,117,427"/>
+<area shape="rect" id="node6" href="$System_8h.html" title=" " alt="" coords="178,255,254,280"/>
+<area shape="rect" id="node8" href="$MonitorSystem_8h.html" title=" " alt="" coords="55,181,174,207"/>
+<area shape="rect" id="node9" href="$Constants_8h.html" title=" " alt="" coords="250,181,382,207"/>
 </map>

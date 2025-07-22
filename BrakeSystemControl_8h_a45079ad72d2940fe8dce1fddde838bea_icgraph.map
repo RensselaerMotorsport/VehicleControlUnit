@@ -1,0 +1,9 @@
+<map id="initBrakeSystemControl" name="initBrakeSystemControl">
+<area shape="rect" id="node1" title="Initializes the Braking System with initial settings." alt="" coords="372,104,531,129"/>
+<area shape="rect" id="node2" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="208,5,259,31"/>
+<area shape="rect" id="node3" href="$BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,55,324,80"/>
+<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,104,297,129"/>
+<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,153,295,179"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,203,292,228"/>
+<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,129,95,155"/>
+</map>

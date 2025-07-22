@@ -1,0 +1,14 @@
+<map id="BrakePolice" name="BrakePolice">
+<area shape="rect" id="node1" title=" " alt="" coords="5,471,97,496"/>
+<area shape="rect" id="node2" href="$structMonitorSystem.html" title=" " alt="" coords="10,181,119,207"/>
+<area shape="rect" id="node6" href="$structControllerSystem.html" title=" " alt="" coords="68,280,189,305"/>
+<area shape="rect" id="node3" href="$structSystem.html" title=" " alt="" coords="134,93,201,119"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="273,5,361,31"/>
+<area shape="rect" id="node9" href="$structSensor.html" title=" " alt="" coords="285,93,348,119"/>
+<area shape="rect" id="node12" href="$structOutput.html" title=" " alt="" coords="413,93,474,119"/>
+<area shape="rect" id="node5" href="$structBrakeSystemControl.html" title=" " alt="" coords="197,383,338,408"/>
+<area shape="rect" id="node7" href="$structBrakePressure.html" title=" " alt="" coords="213,280,321,305"/>
+<area shape="rect" id="node8" href="$structAnalogSensor.html" title=" " alt="" coords="265,181,368,207"/>
+<area shape="rect" id="node10" href="$structTemperature.html" title=" " alt="" coords="345,280,440,305"/>
+<area shape="rect" id="node11" href="$structDigitalOutput.html" title=" " alt="" coords="429,231,527,256"/>
+</map>

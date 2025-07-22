@@ -1,0 +1,10 @@
+<map id="initButton" name="initButton">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,83,105"/>
+<area shape="rect" id="node2" href="$DigitalSensor_8c.html#ace328dbd7fead307e7141368901c0e1d" title="Initializes a digital sensor with the given parameters." alt="" coords="131,80,247,105"/>
+<area shape="rect" id="node3" href="$Sensor_8c.html#afaf02fb354c266fd34becaa91c007ce6" title="Initializes a sensor with the given parameters." alt="" coords="295,80,375,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="423,80,528,105"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="576,5,680,31"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="578,55,678,80"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="579,104,677,129"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="577,153,679,179"/>
+</map>

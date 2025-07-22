@@ -1,17 +1,16 @@
 <map id="Core/Inc/Systems/CommsSystem.h" name="Core/Inc/Systems/CommsSystem.h">
-<area shape="rect" id="node1" title=" " alt="" coords="496,5,725,31"/>
-<area shape="rect" id="node2" href="$ExternalSystem_8h.html" title=" " alt="" coords="409,79,585,119"/>
-<area shape="rect" id="node15" href="$CommsSystem_8c.html" title=" " alt="" coords="610,86,841,111"/>
-<area shape="rect" id="node3" href="$BMS_8h.html" title=" " alt="" coords="409,167,585,207"/>
-<area shape="rect" id="node8" href="$Esc_8h.html" title=" " alt="" coords="692,167,868,207"/>
-<area shape="rect" id="node12" href="$Imd_8h.html" title=" " alt="" coords="208,167,384,207"/>
-<area shape="rect" id="node13" href="$Imd_8c.html" title=" " alt="" coords="5,255,184,295"/>
-<area shape="rect" id="node14" href="$ExternalSystem_8c.html" title=" " alt="" coords="892,167,1071,207"/>
-<area shape="rect" id="node4" href="$Accumulator_8h.html" title=" " alt="" coords="208,255,384,295"/>
-<area shape="rect" id="node6" href="$BMS_8c.html" title=" " alt="" coords="408,255,587,295"/>
-<area shape="rect" id="node7" href="$BMSTest_8c.html" title=" " alt="" coords="611,255,752,295"/>
-<area shape="rect" id="node5" href="$Accumulator_8c.html" title=" " alt="" coords="207,343,385,383"/>
-<area shape="rect" id="node9" href="$MotorController_8h.html" title=" " alt="" coords="776,255,952,295"/>
-<area shape="rect" id="node11" href="$Esc_8c.html" title=" " alt="" coords="976,255,1155,295"/>
-<area shape="rect" id="node10" href="$MotorController_8c.html" title=" " alt="" coords="775,343,953,383"/>
+<area shape="rect" id="node1" title=" " alt="" coords="680,5,909,31"/>
+<area shape="rect" id="node2" href="$ExternalSystem_8h.html" title=" " alt="" coords="593,79,769,119"/>
+<area shape="rect" id="node14" href="$CommsSystem_8c.html" title=" " alt="" coords="794,86,1025,111"/>
+<area shape="rect" id="node3" href="$BMS_8h.html" title=" " alt="" coords="239,167,415,207"/>
+<area shape="rect" id="node8" href="$Imd_8h.html" title=" " alt="" coords="468,167,644,207"/>
+<area shape="rect" id="node9" href="$Imd_8c.html" title=" " alt="" coords="573,255,752,295"/>
+<area shape="rect" id="node10" href="$Inverter_8h.html" title=" " alt="" coords="757,167,933,207"/>
+<area shape="rect" id="node13" href="$ExternalSystem_8c.html" title=" " alt="" coords="957,167,1136,207"/>
+<area shape="rect" id="node4" href="$Accumulator_8h.html" title=" " alt="" coords="373,255,549,295"/>
+<area shape="rect" id="node6" href="$BMS_8c.html" title=" " alt="" coords="5,255,184,295"/>
+<area shape="rect" id="node7" href="$BMSTest_8c.html" title=" " alt="" coords="208,255,349,295"/>
+<area shape="rect" id="node5" href="$Accumulator_8c.html" title=" " alt="" coords="372,343,551,383"/>
+<area shape="rect" id="node11" href="$Inverter_8c.html" title=" " alt="" coords="776,255,955,295"/>
+<area shape="rect" id="node12" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="979,262,1093,287"/>
 </map>

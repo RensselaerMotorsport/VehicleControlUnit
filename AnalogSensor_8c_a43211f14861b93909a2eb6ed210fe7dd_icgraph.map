@@ -1,4 +1,0 @@
-<map id="getLatestSample" name="getLatestSample">
-<area shape="rect" id="node1" title="Retrieves the latest ADC sample from the buffer." alt="" coords="201,5,323,31"/>
-<area shape="rect" id="node2" href="$AnalogSensor_8c.html#a0582917ac27a10396b74a185c5b23f33" title="Retrieves analog sensor data for a specific channel." alt="" coords="5,5,153,31"/>
-</map>

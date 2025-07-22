@@ -1,4 +1,5 @@
 <map id="updateApp" name="updateApp">
-<area shape="rect" id="node1" title="Updates the APP data." alt="" coords="5,5,89,31"/>
-<area shape="rect" id="node2" href="$App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="137,5,276,31"/>
+<area shape="rect" id="node1" title="Updates the APP data." alt="" coords="5,31,89,56"/>
+<area shape="rect" id="node2" href="$AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="137,5,285,31"/>
+<area shape="rect" id="node3" href="$App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="142,55,281,80"/>
 </map>

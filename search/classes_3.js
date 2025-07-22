@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['digitalsensor_0',['DigitalSensor',['../structDigitalSensor.html',1,'']]]
+  ['digitaloutput_0',['DigitalOutput',['../structDigitalOutput.html',1,'']]],
+  ['digitalsensor_1',['DigitalSensor',['../structDigitalSensor.html',1,'']]]
 ];

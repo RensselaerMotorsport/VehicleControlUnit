@@ -80,6 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Apps_8h_source.html">../../../Inc/Systems/Controller/Apps.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="AppsMonitor_8h_source.html">../../../Inc/Systems/Monitor/AppsMonitor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Common_8h_source.html">../../../Inc/Utils/Common.h</a>&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -87,26 +88,29 @@ Include dependency graph for Apps.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Apps_8c__incl.png" border="0" usemap="#aCore_2Src_2Systems_2Controller_2Apps_8c" alt=""/></div>
 <map name="aCore_2Src_2Systems_2Controller_2Apps_8c" id="aCore_2Src_2Systems_2Controller_2Apps_8c">
-<area shape="rect" title=" " alt="" coords="288,5,475,45"/>
-<area shape="rect" href="Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="182,93,307,133"/>
-<area shape="rect" href="Common_8h.html" title=" " alt="" coords="331,93,432,133"/>
-<area shape="rect" title=" " alt="" coords="456,101,518,126"/>
-<area shape="rect" href="ControllerSystem_8h.html" title=" " alt="" coords="80,189,222,214"/>
-<area shape="rect" href="App_8h.html" title=" " alt="" coords="525,181,708,221"/>
-<area shape="rect" title=" " alt="" coords="460,489,520,515"/>
-<area shape="rect" title=" " alt="" coords="17,489,80,515"/>
-<area shape="rect" title=" " alt="" coords="168,489,232,515"/>
-<area shape="rect" href="System_8h.html" title=" " alt="" coords="162,343,238,368"/>
-<area shape="rect" href="MonitorSystem_8h.html" title=" " alt="" coords="44,269,162,295"/>
-<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="238,416,376,441"/>
-<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="890,269,1012,295"/>
-<area shape="rect" title=" " alt="" coords="1131,343,1222,368"/>
-<area shape="rect" href="stm32f7xx__hal_8h.html" title=" " alt="" coords="1246,343,1360,368"/>
-<area shape="rect" title=" " alt="" coords="1385,343,1528,368"/>
-<area shape="rect" title=" " alt="" coords="654,343,800,368"/>
-<area shape="rect" title=" " alt="" coords="824,343,968,368"/>
-<area shape="rect" title=" " alt="" coords="1043,343,1107,368"/>
-<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="337,343,410,368"/>
+<area shape="rect" title=" " alt="" coords="1347,5,1534,45"/>
+<area shape="rect" href="Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="1186,181,1311,221"/>
+<area shape="rect" href="AppsMonitor_8h.html" title=" " alt="" coords="1286,93,1442,133"/>
+<area shape="rect" href="Common_8h.html" title=" " alt="" coords="1467,93,1568,133"/>
+<area shape="rect" title=" " alt="" coords="1592,101,1654,126"/>
+<area shape="rect" href="ControllerSystem_8h.html" title=" " alt="" coords="1178,277,1319,302"/>
+<area shape="rect" href="App_8h.html" title=" " alt="" coords="810,269,993,309"/>
+<area shape="rect" title=" " alt="" coords="1037,577,1097,603"/>
+<area shape="rect" title=" " alt="" coords="1424,577,1486,603"/>
+<area shape="rect" title=" " alt="" coords="1322,577,1386,603"/>
+<area shape="rect" href="System_8h.html" title=" " alt="" coords="1253,431,1329,456"/>
+<area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="1076,504,1215,529"/>
+<area shape="rect" href="MonitorSystem_8h.html" title=" " alt="" coords="1442,357,1561,383"/>
+<area shape="rect" href="Constants_8h.html" title=" " alt="" coords="1234,357,1366,383"/>
+<area shape="rect" href="Task_8h.html" title=" " alt="" coords="975,357,1108,383"/>
+<area shape="rect" href="AnalogSensor_8h.html" title=" " alt="" coords="544,357,667,383"/>
+<area shape="rect" title=" " alt="" coords="26,431,116,456"/>
+<area shape="rect" href="stm32f7xx__hal_8h.html" title=" " alt="" coords="140,431,255,456"/>
+<area shape="rect" title=" " alt="" coords="280,431,422,456"/>
+<area shape="rect" title=" " alt="" coords="447,431,594,456"/>
+<area shape="rect" title=" " alt="" coords="618,431,762,456"/>
+<area shape="rect" title=" " alt="" coords="786,431,850,456"/>
+<area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="978,431,1052,456"/>
 </map>
 </div>
 </div>
@@ -114,149 +118,17 @@ Include dependency graph for Apps.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8f9817194a8c464d87f7fef64f33b573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a> (<a class="el" href="structApps.html">Apps</a> *apps)</td></tr>
-<tr class="memdesc:a8f9817194a8c464d87f7fef64f33b573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks <a class="el" href="structApp.html">App</a> limits for faults.  <a href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573">More...</a><br /></td></tr>
-<tr class="separator:a8f9817194a8c464d87f7fef64f33b573"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30bb39332a8f4e7c416d7d628fe02b3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d">initApps</a> (<a class="el" href="structApps.html">Apps</a> *apps, int hz, int channel1, int channel2)</td></tr>
 <tr class="memdesc:a30bb39332a8f4e7c416d7d628fe02b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the APPs with the given frequency and channel.  <a href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d">More...</a><br /></td></tr>
 <tr class="separator:a30bb39332a8f4e7c416d7d628fe02b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a460938c29f3827bd63dc0110394ed5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9">updateApps</a> (void *apps)</td></tr>
-<tr class="memdesc:a460938c29f3827bd63dc0110394ed5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the APPS based on both sensor outputs.  <a href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9">More...</a><br /></td></tr>
-<tr class="separator:a460938c29f3827bd63dc0110394ed5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780a35152c6aa6e99a8981e3a998331a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a">updateApps</a> (<a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller)</td></tr>
+<tr class="memdesc:a780a35152c6aa6e99a8981e3a998331a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the APPS based on both sensor outputs.  <a href="Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a">More...</a><br /></td></tr>
+<tr class="separator:a780a35152c6aa6e99a8981e3a998331a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a886824bab578359e9dbf926ece592ce2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a886824bab578359e9dbf926ece592ce2">getAppsPosition</a> (<a class="el" href="structApps.html">Apps</a> *apps)</td></tr>
 <tr class="memdesc:a886824bab578359e9dbf926ece592ce2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Averages app sensors to get pedal position.  <a href="Apps_8c.html#a886824bab578359e9dbf926ece592ce2">More...</a><br /></td></tr>
 <tr class="separator:a886824bab578359e9dbf926ece592ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2eafc5939416606a35239f803df40467"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Apps_8c.html#a2eafc5939416606a35239f803df40467">appsSafetyCheck</a> (void *apps)</td></tr>
-<tr class="memdesc:a2eafc5939416606a35239f803df40467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the safety of <a class="el" href="structApps.html">Apps</a>.  <a href="Apps_8c.html#a2eafc5939416606a35239f803df40467">More...</a><br /></td></tr>
-<tr class="separator:a2eafc5939416606a35239f803df40467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2eafc5939416606a35239f803df40467" name="a2eafc5939416606a35239f803df40467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2eafc5939416606a35239f803df40467">&#9670;&#160;</a></span>appsSafetyCheck()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int appsSafetyCheck </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>apps</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks the safety of <a class="el" href="structApps.html">Apps</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">apps</td><td>A pointer to the APPs controller. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00074">74</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                {</div>
-<div class="line"><span class="lineno">   75</span>    <a class="code hl_struct" href="structApps.html">Apps</a>* appsPtr = (<a class="code hl_struct" href="structApps.html">Apps</a>*)apps;</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span>(appsPtr-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#ae8e42023f45ffbf8d41916c8c4c77575">num_monitors</a> == 0) {</div>
-<div class="line"><span class="lineno">   77</span>        printf(<span class="stringliteral">&quot;No monitors set for Apps\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>;</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> != <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>) {</div>
-<div class="line"><span class="lineno">   81</span>        printf(<span class="stringliteral">&quot;Apps is not in a safe state\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>;</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>;</div>
-<div class="line"><span class="lineno">   85</span>}</div>
-<div class="ttc" id="aApps_8h_html_a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67"><div class="ttname"><a href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a></div><div class="ttdeci">@ APPS_OK</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00017">Apps.h:17</a></div></div>
-<div class="ttc" id="aCommon_8h_html_a6d58f9ac447476b4e084d7ca383f5183"><div class="ttname"><a href="Common_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a></div><div class="ttdeci">#define FAILURE</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00006">Common.h:6</a></div></div>
-<div class="ttc" id="aCommon_8h_html_aa90cac659d18e8ef6294c7ae337f6b58"><div class="ttname"><a href="Common_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a></div><div class="ttdeci">#define SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00005">Common.h:5</a></div></div>
-<div class="ttc" id="astructApps_html"><div class="ttname"><a href="structApps.html">Apps</a></div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00021">Apps.h:21</a></div></div>
-<div class="ttc" id="astructApps_html_a7e42f57cd75add816736036d463554a5"><div class="ttname"><a href="structApps.html#a7e42f57cd75add816736036d463554a5">Apps::status</a></div><div class="ttdeci">AppsStatus status</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00023">Apps.h:23</a></div></div>
-<div class="ttc" id="astructApps_html_ad9c1d9b8bfab71381ab156c1e4ad3007"><div class="ttname"><a href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">Apps::base</a></div><div class="ttdeci">ControllerSystem base</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00022">Apps.h:22</a></div></div>
-<div class="ttc" id="astructControllerSystem_html_ae8e42023f45ffbf8d41916c8c4c77575"><div class="ttname"><a href="structControllerSystem.html#ae8e42023f45ffbf8d41916c8c4c77575">ControllerSystem::num_monitors</a></div><div class="ttdeci">int num_monitors</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00023">ControllerSystem.h:23</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Apps_8c_a2eafc5939416606a35239f803df40467_icgraph.png" border="0" usemap="#aApps_8c_a2eafc5939416606a35239f803df40467_icgraph" alt=""/></div>
-<map name="aApps_8c_a2eafc5939416606a35239f803df40467_icgraph" id="aApps_8c_a2eafc5939416606a35239f803df40467_icgraph">
-<area shape="rect" title="Checks the safety of Apps." alt="" coords="256,5,380,31"/>
-<area shape="rect" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,5,208,31"/>
-<area shape="rect" href="AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,5,91,31"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a8f9817194a8c464d87f7fef64f33b573" name="a8f9817194a8c464d87f7fef64f33b573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f9817194a8c464d87f7fef64f33b573">&#9670;&#160;</a></span>checkAppsLimit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void checkAppsLimit </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structApps.html">Apps</a> *&#160;</td>
-          <td class="paramname"><em>apps</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks <a class="el" href="structApp.html">App</a> limits for faults. </p>
-<p >Checks if apps are more than 10% out of sync and if the values are reasonable. Position is in % of pedal travel.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">apps</td><td>A pointer to the APPs structure. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00014">14</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>                                {</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">float</span> pos1 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]);</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">float</span> pos2 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]);</div>
-<div class="line"><span class="lineno">   17</span> </div>
-<div class="line"><span class="lineno">   18</span>    <span class="comment">// Resonable Value check</span></div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (pos1 &gt; 100 || pos1 &lt; 0 || pos2 &gt; 100 || pos2 &lt; 0) {</div>
-<div class="line"><span class="lineno">   20</span>        apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> = <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877ac4a2fe1e50e42c65890557e97fd7ec36">APPS_FAULT</a>;</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>    <span class="comment">// In sync check</span></div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">float</span> difference = fabs(pos1 - pos2);</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (difference &gt; <a class="code hl_define" href="Apps_8h.html#acfcc13e568a153df733f1528d524e129">APPS_DIFFERENCE</a> * 100) {</div>
-<div class="line"><span class="lineno">   26</span>        apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> = <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877ac4a2fe1e50e42c65890557e97fd7ec36">APPS_FAULT</a>;</div>
-<div class="line"><span class="lineno">   27</span>    }</div>
-<div class="line"><span class="lineno">   28</span>}</div>
-<div class="ttc" id="aApp_8h_html_a01be170ac09e9dd35ba3f18c537ae409"><div class="ttname"><a href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a></div><div class="ttdeci">float getAppPosition(App *app)</div><div class="ttdoc">Gets the current position of the APP.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00011">App.c:11</a></div></div>
-<div class="ttc" id="aApps_8h_html_a13984efcd5f00ea66d691ca2d9e5c877ac4a2fe1e50e42c65890557e97fd7ec36"><div class="ttname"><a href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877ac4a2fe1e50e42c65890557e97fd7ec36">APPS_FAULT</a></div><div class="ttdeci">@ APPS_FAULT</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00018">Apps.h:18</a></div></div>
-<div class="ttc" id="aApps_8h_html_acfcc13e568a153df733f1528d524e129"><div class="ttname"><a href="Apps_8h.html#acfcc13e568a153df733f1528d524e129">APPS_DIFFERENCE</a></div><div class="ttdeci">#define APPS_DIFFERENCE</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00014">Apps.h:14</a></div></div>
-<div class="ttc" id="astructApps_html_a39f6d2d9bf8757108ad71dc247ae3f57"><div class="ttname"><a href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">Apps::app</a></div><div class="ttdeci">App * app[2]</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00024">Apps.h:24</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Apps_8c_a8f9817194a8c464d87f7fef64f33b573_cgraph.png" border="0" usemap="#aApps_8c_a8f9817194a8c464d87f7fef64f33b573_cgraph" alt=""/></div>
-<map name="aApps_8c_a8f9817194a8c464d87f7fef64f33b573_cgraph" id="aApps_8c_a8f9817194a8c464d87f7fef64f33b573_cgraph">
-<area shape="rect" title="Checks App limits for faults." alt="" coords="5,5,121,31"/>
-<area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="169,5,280,31"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Apps_8c_a8f9817194a8c464d87f7fef64f33b573_icgraph.png" border="0" usemap="#aApps_8c_a8f9817194a8c464d87f7fef64f33b573_icgraph" alt=""/></div>
-<map name="aApps_8c_a8f9817194a8c464d87f7fef64f33b573_icgraph" id="aApps_8c_a8f9817194a8c464d87f7fef64f33b573_icgraph">
-<area shape="rect" title="Checks App limits for faults." alt="" coords="421,31,537,56"/>
-<area shape="rect" href="Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="256,5,373,31"/>
-<area shape="rect" href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="269,55,360,80"/>
-<area shape="rect" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,55,208,80"/>
-<area shape="rect" href="AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,55,91,80"/>
-</map>
-</div>
-
-</div>
-</div>
 <a id="a886824bab578359e9dbf926ece592ce2" name="a886824bab578359e9dbf926ece592ce2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a886824bab578359e9dbf926ece592ce2">&#9670;&#160;</a></span>getAppsPosition()</h2>
 
@@ -281,23 +153,49 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00066">66</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                  {</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a>(apps);</div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> != <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>) <span class="keywordflow">return</span> 0.0f;</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">float</span> pos1 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]);</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">float</span> pos2 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]);</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> fabs(pos1 + pos2) / 2;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
-<div class="ttc" id="aApps_8c_html_a8f9817194a8c464d87f7fef64f33b573"><div class="ttname"><a href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a></div><div class="ttdeci">void checkAppsLimit(Apps *apps)</div><div class="ttdoc">Checks App limits for faults.</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8c_source.html#l00014">Apps.c:14</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00042">42</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                  {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#adbfc5da05b506b9e0dea738ee29fbbb6">state</a> != <a class="code hl_enumvalue" href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36ab891b19403de23fa5d76ee4025350799">c_validated</a>) {</div>
+<div class="line"><span class="lineno">   44</span>        </div>
+<div class="line"><span class="lineno">   45</span>        printf(<span class="stringliteral">&quot;Apps Controller value has not been validated\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="AppsMonitor_8h.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a>(apps);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> != <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>) <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordtype">float</span> pos1 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">float</span> pos2 = <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]);</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">return</span> fabs(pos1 + pos2) / 2;</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aApp_8h_html_a01be170ac09e9dd35ba3f18c537ae409"><div class="ttname"><a href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a></div><div class="ttdeci">float getAppPosition(App *app)</div><div class="ttdoc">Gets the current position of the APP.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00011">App.c:11</a></div></div>
+<div class="ttc" id="aAppsMonitor_8h_html_a8f9817194a8c464d87f7fef64f33b573"><div class="ttname"><a href="AppsMonitor_8h.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a></div><div class="ttdeci">void checkAppsLimit(Apps *apps)</div><div class="ttdoc">Checks App limits for faults.</div><div class="ttdef"><b>Definition:</b> <a href="AppsMonitor_8c_source.html#l00037">AppsMonitor.c:37</a></div></div>
+<div class="ttc" id="aApps_8h_html_a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67"><div class="ttname"><a href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a></div><div class="ttdeci">@ APPS_OK</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00017">Apps.h:17</a></div></div>
+<div class="ttc" id="aControllerSystem_8h_html_ac38090c7c72c6db6eacb377d6224ad36ab891b19403de23fa5d76ee4025350799"><div class="ttname"><a href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36ab891b19403de23fa5d76ee4025350799">c_validated</a></div><div class="ttdeci">@ c_validated</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00025">ControllerSystem.h:24</a></div></div>
+<div class="ttc" id="astructApps_html_a39f6d2d9bf8757108ad71dc247ae3f57"><div class="ttname"><a href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">Apps::app</a></div><div class="ttdeci">App * app[2]</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00025">Apps.h:25</a></div></div>
+<div class="ttc" id="astructApps_html_a7e42f57cd75add816736036d463554a5"><div class="ttname"><a href="structApps.html#a7e42f57cd75add816736036d463554a5">Apps::status</a></div><div class="ttdeci">AppsStatus status</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00024">Apps.h:24</a></div></div>
+<div class="ttc" id="astructApps_html_ad9c1d9b8bfab71381ab156c1e4ad3007"><div class="ttname"><a href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">Apps::base</a></div><div class="ttdeci">ControllerSystem base</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00023">Apps.h:23</a></div></div>
+<div class="ttc" id="astructControllerSystem_html_adbfc5da05b506b9e0dea738ee29fbbb6"><div class="ttname"><a href="structControllerSystem.html#adbfc5da05b506b9e0dea738ee29fbbb6">ControllerSystem::state</a></div><div class="ttdeci">ControllerState state</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00032">ControllerSystem.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Apps_8c_a886824bab578359e9dbf926ece592ce2_cgraph.png" border="0" usemap="#aApps_8c_a886824bab578359e9dbf926ece592ce2_cgraph" alt=""/></div>
 <map name="aApps_8c_a886824bab578359e9dbf926ece592ce2_cgraph" id="aApps_8c_a886824bab578359e9dbf926ece592ce2_cgraph">
 <area shape="rect" title="Averages app sensors to get pedal position." alt="" coords="5,31,123,56"/>
-<area shape="rect" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="171,5,287,31"/>
+<area shape="rect" href="AppsMonitor_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="171,5,287,31"/>
 <area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="335,31,445,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="Apps_8c_a886824bab578359e9dbf926ece592ce2_icgraph.png" border="0" usemap="#aApps_8c_a886824bab578359e9dbf926ece592ce2_icgraph" alt=""/></div>
+<map name="aApps_8c_a886824bab578359e9dbf926ece592ce2_icgraph" id="aApps_8c_a886824bab578359e9dbf926ece592ce2_icgraph">
+<area shape="rect" title="Averages app sensors to get pedal position." alt="" coords="532,31,649,56"/>
+<area shape="rect" href="TorqueControl_8c.html#a511cb99df3e91fbfcd1b7d8261b7862c" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="360,5,484,31"/>
+<area shape="rect" href="RTD_8c.html#ad4c8548aeb2be8f455c0922c6760e631" title="Updates the RTD Actuator." alt="" coords="379,55,465,80"/>
+<area shape="rect" href="TorqueControl_8c.html#ac675cea5e7d7d4953bb6f80715391601" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,5,312,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="49,55,100,80"/>
+<area shape="rect" href="TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" href="RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="219,55,285,80"/>
 </map>
 </div>
 
@@ -352,69 +250,57 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00030">30</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>                                                              {</div>
-<div class="line"><span class="lineno">   31</span>    <span class="comment">// Allocate memory for the app instances</span></div>
-<div class="line"><span class="lineno">   32</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0] = (<a class="code hl_struct" href="structApp.html">App</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structApp.html">App</a>));</div>
-<div class="line"><span class="lineno">   33</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1] = (<a class="code hl_struct" href="structApp.html">App</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structApp.html">App</a>));</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="comment">// Check if memory allocation was successful</span></div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">if</span> (apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0] == NULL || apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1] == NULL) {</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   38</span>    }</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>    <span class="comment">// System setup</span></div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_struct" href="structMonitorSystem.html">MonitorSystem</a> monitor;</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="MonitorSystem_8h.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc">initMonitorSystem</a>(&amp;monitor, <span class="stringliteral">&quot;APPs Monitor&quot;</span>, 200, <a class="code hl_enumvalue" href="MonitorSystem_8h.html#ac69ce5a28782fdc01f7ba5c236cd5f72a2dea6408dc5cb30fb4ad243124c90c42">m_APPS</a>, <a class="code hl_enumvalue" href="MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f">VEHICLE_SHUTDOWN</a>);</div>
-<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="ControllerSystem_8h.html#aa76143ff1ff31aa97bbb002a71d55ea5">initControllerSystem</a>(&amp;apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>, <span class="stringliteral">&quot;APPS&quot;</span>, hz, <a class="code hl_enumvalue" href="ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db">c_APPS</a>);</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="ControllerSystem_8h.html#a7efab79eba5395c9bb296b315ca1a82e">defaultAddMonitor</a>(&amp;apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>, &amp;monitor);</div>
-<div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>    <span class="comment">// Controller setup</span></div>
-<div class="line"><span class="lineno">   47</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#ac1698fbd11febb34001280cfc1326303">system</a>.<a class="code hl_variable" href="structSystem.html#a1cf99d7e5e26307dd291ebf635c41328">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a> = <a class="code hl_function" href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9">updateApps</a>;</div>
-<div class="line"><span class="lineno">   48</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#a05a77259f65e51a38ba5f1d79d1aa5e5">safety</a> = <a class="code hl_function" href="Apps_8c.html#a2eafc5939416606a35239f803df40467">appsSafetyCheck</a>;</div>
-<div class="line"><span class="lineno">   49</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> = <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>;</div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0], hz, channel1);</div>
-<div class="line"><span class="lineno">   51</span>    <a class="code hl_function" href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1], hz, channel2);</div>
-<div class="line"><span class="lineno">   52</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00007">7</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    7</span>                                                              {</div>
+<div class="line"><span class="lineno">    8</span>    <a class="code hl_function" href="ControllerSystem_8h.html#a4575814c80b0fcfc774c5b562531ca26">initControllerSystem</a>(&amp;apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>, <span class="stringliteral">&quot;Apps&quot;</span>, hz, <a class="code hl_enumvalue" href="ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db">c_APPS</a>, <a class="code hl_function" href="Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a">updateApps</a>, apps);</div>
+<div class="line"><span class="lineno">    9</span>    <span class="comment">// Allocate memory for the app instances</span></div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_struct" href="structApp.html">App</a> app1, app2;</div>
+<div class="line"><span class="lineno">   11</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0] = &amp;app1;</div>
+<div class="line"><span class="lineno">   12</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1] = &amp;app2;</div>
+<div class="line"><span class="lineno">   13</span> </div>
+<div class="line"><span class="lineno">   14</span>    <span class="comment">// Check if memory allocation was successful</span></div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0] == NULL || apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1] == NULL) {</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   17</span>    }</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="comment">// Controller setup</span></div>
+<div class="line"><span class="lineno">   20</span>    apps-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> = <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>;</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_function" href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0], hz, channel1);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1], hz, channel2);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_define" href="Updateable_8h.html#a95e75e1b0072990627fe850f0184b271">ENABLE</a>(apps-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#ac1698fbd11febb34001280cfc1326303">system</a>);</div>
+<div class="line"><span class="lineno">   24</span>}</div>
 <div class="ttc" id="aApp_8h_html_a70256ff87716960d0b2a216d48fd94ce"><div class="ttname"><a href="App_8h.html#a70256ff87716960d0b2a216d48fd94ce">initApp</a></div><div class="ttdeci">void initApp(App *app, int hz, int channel)</div><div class="ttdoc">Initializes the APP with the given frequency and channel.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00005">App.c:5</a></div></div>
-<div class="ttc" id="aApps_8c_html_a2eafc5939416606a35239f803df40467"><div class="ttname"><a href="Apps_8c.html#a2eafc5939416606a35239f803df40467">appsSafetyCheck</a></div><div class="ttdeci">int appsSafetyCheck(void *apps)</div><div class="ttdoc">Checks the safety of Apps.</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8c_source.html#l00074">Apps.c:74</a></div></div>
-<div class="ttc" id="aApps_8c_html_a460938c29f3827bd63dc0110394ed5f9"><div class="ttname"><a href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9">updateApps</a></div><div class="ttdeci">void updateApps(void *apps)</div><div class="ttdoc">Updates the APPS based on both sensor outputs.</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8c_source.html#l00054">Apps.c:54</a></div></div>
-<div class="ttc" id="aControllerSystem_8h_html_a7efab79eba5395c9bb296b315ca1a82e"><div class="ttname"><a href="ControllerSystem_8h.html#a7efab79eba5395c9bb296b315ca1a82e">defaultAddMonitor</a></div><div class="ttdeci">int defaultAddMonitor(void *self, MonitorSystem *monitor)</div><div class="ttdoc">Adds a monitor to the controller.</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8c_source.html#l00012">ControllerSystem.c:12</a></div></div>
-<div class="ttc" id="aControllerSystem_8h_html_a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db"><div class="ttname"><a href="ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db">c_APPS</a></div><div class="ttdeci">@ c_APPS</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00015">ControllerSystem.h:15</a></div></div>
-<div class="ttc" id="aControllerSystem_8h_html_aa76143ff1ff31aa97bbb002a71d55ea5"><div class="ttname"><a href="ControllerSystem_8h.html#aa76143ff1ff31aa97bbb002a71d55ea5">initControllerSystem</a></div><div class="ttdeci">void initControllerSystem(ControllerSystem *controller, const char *name, int hz, ControllerType type)</div><div class="ttdoc">Initializes the Controller System with initial settings.</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8c_source.html#l00004">ControllerSystem.c:4</a></div></div>
-<div class="ttc" id="aMonitorSystem_8h_html_a83cb9acbc4ccdf96dd0d76cd92c0fedc"><div class="ttname"><a href="MonitorSystem_8h.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc">initMonitorSystem</a></div><div class="ttdeci">void initMonitorSystem(MonitorSystem *monitor, const char *name, int hz, MonitorType type, FaultType fault)</div><div class="ttdoc">Initializes the Monitor System with initial settings.</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8c_source.html#l00003">MonitorSystem.c:3</a></div></div>
-<div class="ttc" id="aMonitorSystem_8h_html_ac69ce5a28782fdc01f7ba5c236cd5f72a2dea6408dc5cb30fb4ad243124c90c42"><div class="ttname"><a href="MonitorSystem_8h.html#ac69ce5a28782fdc01f7ba5c236cd5f72a2dea6408dc5cb30fb4ad243124c90c42">m_APPS</a></div><div class="ttdeci">@ m_APPS</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00012">MonitorSystem.h:12</a></div></div>
-<div class="ttc" id="aMonitorSystem_8h_html_af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f"><div class="ttname"><a href="MonitorSystem_8h.html#af689ff2b014590ff3dac04c7279f0398a40e75a3c747cc64f7c383f3ba8acbe8f">VEHICLE_SHUTDOWN</a></div><div class="ttdeci">@ VEHICLE_SHUTDOWN</div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00022">MonitorSystem.h:21</a></div></div>
+<div class="ttc" id="aApps_8c_html_a780a35152c6aa6e99a8981e3a998331a"><div class="ttname"><a href="Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a">updateApps</a></div><div class="ttdeci">int updateApps(ControllerSystem *controller)</div><div class="ttdoc">Updates the APPS based on both sensor outputs.</div><div class="ttdef"><b>Definition:</b> <a href="Apps_8c_source.html#l00026">Apps.c:26</a></div></div>
+<div class="ttc" id="aControllerSystem_8h_html_a4575814c80b0fcfc774c5b562531ca26"><div class="ttname"><a href="ControllerSystem_8h.html#a4575814c80b0fcfc774c5b562531ca26">initControllerSystem</a></div><div class="ttdeci">void initControllerSystem(ControllerSystem *controller, const char *name, int hz, ControllerType type, int(*updateController)(ControllerSystem *controller), void *child)</div><div class="ttdoc">Initializes the Controller System with initial settings.</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8c_source.html#l00006">ControllerSystem.c:6</a></div></div>
+<div class="ttc" id="aControllerSystem_8h_html_a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db"><div class="ttname"><a href="ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9abc148accf7ab9e5ab10aff4b5309b9db">c_APPS</a></div><div class="ttdeci">@ c_APPS</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00016">ControllerSystem.h:16</a></div></div>
+<div class="ttc" id="aUpdateable_8h_html_a95e75e1b0072990627fe850f0184b271"><div class="ttname"><a href="Updateable_8h.html#a95e75e1b0072990627fe850f0184b271">ENABLE</a></div><div class="ttdeci">#define ENABLE(item_)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00010">Updateable.h:10</a></div></div>
 <div class="ttc" id="astructApp_html"><div class="ttname"><a href="structApp.html">App</a></div><div class="ttdef"><b>Definition:</b> <a href="App_8h_source.html#l00006">App.h:6</a></div></div>
-<div class="ttc" id="astructControllerSystem_html_a05a77259f65e51a38ba5f1d79d1aa5e5"><div class="ttname"><a href="structControllerSystem.html#a05a77259f65e51a38ba5f1d79d1aa5e5">ControllerSystem::safety</a></div><div class="ttdeci">int(* safety)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00024">ControllerSystem.h:24</a></div></div>
-<div class="ttc" id="astructControllerSystem_html_ac1698fbd11febb34001280cfc1326303"><div class="ttname"><a href="structControllerSystem.html#ac1698fbd11febb34001280cfc1326303">ControllerSystem::system</a></div><div class="ttdeci">System system</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00020">ControllerSystem.h:20</a></div></div>
-<div class="ttc" id="astructMonitorSystem_html"><div class="ttname"><a href="structMonitorSystem.html">MonitorSystem</a></div><div class="ttdef"><b>Definition:</b> <a href="MonitorSystem_8h_source.html#l00024">MonitorSystem.h:24</a></div></div>
-<div class="ttc" id="astructSystem_html_a1cf99d7e5e26307dd291ebf635c41328"><div class="ttname"><a href="structSystem.html#a1cf99d7e5e26307dd291ebf635c41328">System::updateable</a></div><div class="ttdeci">Updateable updateable</div><div class="ttdef"><b>Definition:</b> <a href="System_8h_source.html#l00018">System.h:18</a></div></div>
-<div class="ttc" id="astructUpdateable_html_a16ae43b8576f63634cc825a7294c7a78"><div class="ttname"><a href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">Updateable::update</a></div><div class="ttdeci">void(* update)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00026">Updateable.h:26</a></div></div>
+<div class="ttc" id="astructControllerSystem_html_ac1698fbd11febb34001280cfc1326303"><div class="ttname"><a href="structControllerSystem.html#ac1698fbd11febb34001280cfc1326303">ControllerSystem::system</a></div><div class="ttdeci">System system</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00030">ControllerSystem.h:30</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Apps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_cgraph.png" border="0" usemap="#aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_cgraph" alt=""/></div>
 <map name="aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_cgraph" id="aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_cgraph">
-<area shape="rect" title="Initializes the APPs with the given frequency and channel." alt="" coords="5,129,75,155"/>
-<area shape="rect" href="Apps_8c.html#a2eafc5939416606a35239f803df40467" title="Checks the safety of Apps." alt="" coords="130,5,254,31"/>
-<area shape="rect" href="ControllerSystem_8c.html#a7efab79eba5395c9bb296b315ca1a82e" title="Adds a monitor to the controller." alt="" coords="129,55,255,80"/>
-<area shape="rect" href="App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="161,104,223,129"/>
-<area shape="rect" href="ControllerSystem_8c.html#aa76143ff1ff31aa97bbb002a71d55ea5" title="Initializes the Controller System with initial settings." alt="" coords="123,203,261,228"/>
-<area shape="rect" href="MonitorSystem_8c.html#a83cb9acbc4ccdf96dd0d76cd92c0fedc" title="Initializes the Monitor System with initial settings." alt="" coords="129,252,255,277"/>
-<area shape="rect" href="Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="147,153,237,179"/>
-<area shape="rect" href="AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="309,79,429,104"/>
-<area shape="rect" href="App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="327,128,411,153"/>
-<area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="507,79,587,104"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="664,153,769,179"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="817,79,921,104"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="819,128,919,153"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="820,177,919,203"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="818,227,921,252"/>
-<area shape="rect" href="App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="477,128,616,153"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="328,228,411,253"/>
-<area shape="rect" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="311,177,427,203"/>
-<area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="491,177,602,203"/>
+<area shape="rect" title="Initializes the APPs with the given frequency and channel." alt="" coords="5,104,75,129"/>
+<area shape="rect" href="App_8c.html#a70256ff87716960d0b2a216d48fd94ce" title="Initializes the APP with the given frequency and channel." alt="" coords="161,55,223,80"/>
+<area shape="rect" href="ControllerSystem_8c.html#a4575814c80b0fcfc774c5b562531ca26" title="Initializes the Controller System with initial settings." alt="" coords="123,229,261,255"/>
+<area shape="rect" href="Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a" title="Updates the APPS based on both sensor outputs." alt="" coords="147,104,237,129"/>
+<area shape="rect" href="AnalogSensor_8c.html#ac992e329ef2479c38747e193ce77500c" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="333,5,453,31"/>
+<area shape="rect" href="App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="351,55,435,80"/>
+<area shape="rect" href="Sensor_8c.html#afaf02fb354c266fd34becaa91c007ce6" title="Initializes a sensor with the given parameters." alt="" coords="558,5,638,31"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="720,105,825,131"/>
+<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="873,31,977,56"/>
+<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="875,80,975,105"/>
+<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="876,129,975,155"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="874,179,977,204"/>
+<area shape="rect" href="AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="524,55,672,80"/>
+<area shape="rect" href="App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="529,104,667,129"/>
+<area shape="rect" href="ControllerSystem_8c.html#a5321a3a713351066f9e10b38cbb7d7cd" title="Adds a monitor to the controller." alt="" coords="322,255,463,280"/>
+<area shape="rect" href="ControllerSystem_8c.html#a1e9f06b41a4fe7aeee59bf01c71af718" title="Removes a monitor from the controller." alt="" coords="309,304,476,329"/>
+<area shape="rect" href="ControllerSystem_8c.html#acfc20e370792beaf80d37d1b6d2824ea" title="Default safety function for ControllerSystem objects." alt="" coords="337,353,449,379"/>
+<area shape="rect" href="ControllerSystem_8c.html#aaea852f9b9af4c35a13d60d6a9535725" title="Default update function for ControllerSystem objects." alt="" coords="334,153,451,179"/>
+<area shape="rect" href="System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="557,179,639,204"/>
+<area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="337,104,448,129"/>
 </map>
 </div>
 <div class="dynheader">
@@ -422,24 +308,25 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Apps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_icgraph.png" border="0" usemap="#aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_icgraph" alt=""/></div>
 <map name="aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_icgraph" id="aApps_8c_a30bb39332a8f4e7c416d7d628fe02b3d_icgraph">
-<area shape="rect" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,5,208,31"/>
+<area shape="rect" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,31,208,56"/>
 <area shape="rect" href="AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,5,91,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="23,55,73,80"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a460938c29f3827bd63dc0110394ed5f9" name="a460938c29f3827bd63dc0110394ed5f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a460938c29f3827bd63dc0110394ed5f9">&#9670;&#160;</a></span>updateApps()</h2>
+<a id="a780a35152c6aa6e99a8981e3a998331a" name="a780a35152c6aa6e99a8981e3a998331a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780a35152c6aa6e99a8981e3a998331a">&#9670;&#160;</a></span>updateApps()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void updateApps </td>
+          <td class="memname">int updateApps </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>apps</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structControllerSystem.html">ControllerSystem</a> *&#160;</td>
+          <td class="paramname"><em>controller</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -448,44 +335,53 @@ Here is the caller graph for this function:</div>
 <p>Updates the APPS based on both sensor outputs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">apps</td><td>A pointer to the APPs structure. </td></tr>
+    <tr><td class="paramname">controller</td><td>A pointer to the APPs <a class="el" href="structControllerSystem.html">ControllerSystem</a>. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00054">54</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   54</span>                            {</div>
-<div class="line"><span class="lineno">   55</span>    <a class="code hl_struct" href="structApps.html">Apps</a>* appsPtr = (<a class="code hl_struct" href="structApps.html">Apps</a>*) apps;</div>
-<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="App_8h.html#af9c13c4c47f46fc56e488d635c0a4a73">updateApp</a>(&amp;appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]);</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_function" href="App_8h.html#af9c13c4c47f46fc56e488d635c0a4a73">updateApp</a>(&amp;appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]);</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (appsPtr-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#a05a77259f65e51a38ba5f1d79d1aa5e5">safety</a>(apps) == <a class="code hl_define" href="Common_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>) {</div>
-<div class="line"><span class="lineno">   59</span>        printf(<span class="stringliteral">&quot;APPs is not in a safe state\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573">checkAppsLimit</a>(appsPtr);</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a7e42f57cd75add816736036d463554a5">status</a> != <a class="code hl_enumvalue" href="Apps_8h.html#a13984efcd5f00ea66d691ca2d9e5c877a7d6a7068ad8c66306778972d2540af67">APPS_OK</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Apps_8c_source.html#l00026">26</a> of file <a class="el" href="Apps_8c_source.html">Apps.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                             {</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_struct" href="structApps.html">Apps</a>* appsPtr = (<a class="code hl_struct" href="structApps.html">Apps</a>*)controller-&gt;<a class="code hl_variable" href="structControllerSystem.html#af3510581d0c41e08c2e896f106852794">child</a>;</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="App_8h.html#af9c13c4c47f46fc56e488d635c0a4a73">updateApp</a>(appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]);</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_function" href="App_8h.html#af9c13c4c47f46fc56e488d635c0a4a73">updateApp</a>(appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]);</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">// Set to computed</span></div>
+<div class="line"><span class="lineno">   32</span>    appsPtr-&gt;<a class="code hl_variable" href="structApps.html#ad9c1d9b8bfab71381ab156c1e4ad3007">base</a>.<a class="code hl_variable" href="structControllerSystem.html#adbfc5da05b506b9e0dea738ee29fbbb6">state</a> = <a class="code hl_enumvalue" href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36a25da3d5754b166342277b1c9d01df61c">c_computed</a>;</div>
+<div class="line"><span class="lineno">   33</span>    </div>
+<div class="line"><span class="lineno">   34</span>    </div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">    #ifdef DEBUGn</span></div>
+<div class="line"><span class="lineno">   36</span>    printf(<span class="stringliteral">&quot;Apps updated. #1: %f, #2: %f\r\n&quot;</span>, <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[0]), <a class="code hl_function" href="App_8h.html#a01be170ac09e9dd35ba3f18c537ae409">getAppPosition</a>(appsPtr-&gt;<a class="code hl_variable" href="structApps.html#a39f6d2d9bf8757108ad71dc247ae3f57">app</a>[1]));</div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#acdf9ea17605dff8b810df8076b6496e2">_SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   40</span>}</div>
 <div class="ttc" id="aApp_8h_html_af9c13c4c47f46fc56e488d635c0a4a73"><div class="ttname"><a href="App_8h.html#af9c13c4c47f46fc56e488d635c0a4a73">updateApp</a></div><div class="ttdeci">void updateApp(void *app)</div><div class="ttdoc">Updates the APP data.</div><div class="ttdef"><b>Definition:</b> <a href="App_8c_source.html#l00015">App.c:15</a></div></div>
+<div class="ttc" id="aCommon_8h_html_acdf9ea17605dff8b810df8076b6496e2"><div class="ttname"><a href="Common_8h.html#acdf9ea17605dff8b810df8076b6496e2">_SUCCESS</a></div><div class="ttdeci">#define _SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00005">Common.h:5</a></div></div>
+<div class="ttc" id="aControllerSystem_8h_html_ac38090c7c72c6db6eacb377d6224ad36a25da3d5754b166342277b1c9d01df61c"><div class="ttname"><a href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36a25da3d5754b166342277b1c9d01df61c">c_computed</a></div><div class="ttdeci">@ c_computed</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00023">ControllerSystem.h:23</a></div></div>
+<div class="ttc" id="astructApps_html"><div class="ttname"><a href="structApps.html">Apps</a></div><div class="ttdef"><b>Definition:</b> <a href="Apps_8h_source.html#l00022">Apps.h:22</a></div></div>
+<div class="ttc" id="astructControllerSystem_html_af3510581d0c41e08c2e896f106852794"><div class="ttname"><a href="structControllerSystem.html#af3510581d0c41e08c2e896f106852794">ControllerSystem::child</a></div><div class="ttdeci">void * child</div><div class="ttdef"><b>Definition:</b> <a href="ControllerSystem_8h_source.html#l00039">ControllerSystem.h:39</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Apps_8c_a460938c29f3827bd63dc0110394ed5f9_cgraph.png" border="0" usemap="#aApps_8c_a460938c29f3827bd63dc0110394ed5f9_cgraph" alt=""/></div>
-<map name="aApps_8c_a460938c29f3827bd63dc0110394ed5f9_cgraph" id="aApps_8c_a460938c29f3827bd63dc0110394ed5f9_cgraph">
+<div class="center"><img src="Apps_8c_a780a35152c6aa6e99a8981e3a998331a_cgraph.png" border="0" usemap="#aApps_8c_a780a35152c6aa6e99a8981e3a998331a_cgraph" alt=""/></div>
+<map name="aApps_8c_a780a35152c6aa6e99a8981e3a998331a_cgraph" id="aApps_8c_a780a35152c6aa6e99a8981e3a998331a_cgraph">
 <area shape="rect" title="Updates the APPS based on both sensor outputs." alt="" coords="5,31,96,56"/>
-<area shape="rect" href="Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="144,5,260,31"/>
-<area shape="rect" href="App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="160,55,244,80"/>
-<area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="322,5,433,31"/>
-<area shape="rect" href="App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="308,55,447,80"/>
+<area shape="rect" href="App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="144,5,255,31"/>
+<area shape="rect" href="App_8c.html#af9c13c4c47f46fc56e488d635c0a4a73" title="Updates the APP data." alt="" coords="157,55,241,80"/>
+<area shape="rect" href="AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="303,29,451,55"/>
+<area shape="rect" href="App_8c.html#ac6a91028bac466dcd71f79aa06aa65ba" title="Converts raw APP data to a meaningful position value." alt="" coords="307,79,446,104"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Apps_8c_a460938c29f3827bd63dc0110394ed5f9_icgraph.png" border="0" usemap="#aApps_8c_a460938c29f3827bd63dc0110394ed5f9_icgraph" alt=""/></div>
-<map name="aApps_8c_a460938c29f3827bd63dc0110394ed5f9_icgraph" id="aApps_8c_a460938c29f3827bd63dc0110394ed5f9_icgraph">
-<area shape="rect" title="Updates the APPS based on both sensor outputs." alt="" coords="256,5,347,31"/>
-<area shape="rect" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,5,208,31"/>
+<div class="center"><img src="Apps_8c_a780a35152c6aa6e99a8981e3a998331a_icgraph.png" border="0" usemap="#aApps_8c_a780a35152c6aa6e99a8981e3a998331a_icgraph" alt=""/></div>
+<map name="aApps_8c_a780a35152c6aa6e99a8981e3a998331a_icgraph" id="aApps_8c_a780a35152c6aa6e99a8981e3a998331a_icgraph">
+<area shape="rect" title="Updates the APPS based on both sensor outputs." alt="" coords="256,31,347,56"/>
+<area shape="rect" href="Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,31,208,56"/>
 <area shape="rect" href="AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,5,91,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="23,55,73,80"/>
 </map>
 </div>
 

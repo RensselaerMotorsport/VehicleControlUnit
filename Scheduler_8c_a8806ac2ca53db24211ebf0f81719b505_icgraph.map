@@ -1,0 +1,4 @@
+<map id="SchedulerInit" name="SchedulerInit">
+<area shape="rect" id="node1" title="Initializes the scheduler with the given sensors." alt="" coords="104,5,203,31"/>
+<area shape="rect" id="node2" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
+</map>

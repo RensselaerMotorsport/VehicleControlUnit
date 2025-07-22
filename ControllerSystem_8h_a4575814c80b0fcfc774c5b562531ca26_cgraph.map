@@ -1,0 +1,13 @@
+<map id="initControllerSystem" name="initControllerSystem">
+<area shape="rect" id="node1" title="Initializes the Controller System with initial settings." alt="" coords="5,104,144,129"/>
+<area shape="rect" id="node2" href="$ControllerSystem_8c.html#a5321a3a713351066f9e10b38cbb7d7cd" title="Adds a monitor to the controller." alt="" coords="205,5,346,31"/>
+<area shape="rect" id="node3" href="$ControllerSystem_8c.html#a1e9f06b41a4fe7aeee59bf01c71af718" title="Removes a monitor from the controller." alt="" coords="192,55,359,80"/>
+<area shape="rect" id="node4" href="$ControllerSystem_8c.html#acfc20e370792beaf80d37d1b6d2824ea" title="Default safety function for ControllerSystem objects." alt="" coords="219,104,331,129"/>
+<area shape="rect" id="node5" href="$ControllerSystem_8c.html#aaea852f9b9af4c35a13d60d6a9535725" title="Default update function for ControllerSystem objects." alt="" coords="217,153,334,179"/>
+<area shape="rect" id="node6" href="$System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="234,203,317,228"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="407,203,512,228"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="560,128,664,153"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="562,177,662,203"/>
+<area shape="rect" id="node10" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="563,227,661,252"/>
+<area shape="rect" id="node11" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="561,276,663,301"/>
+</map>

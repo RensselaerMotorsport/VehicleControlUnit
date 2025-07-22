@@ -1,0 +1,14 @@
+<map id="updateBrakeSystemControl" name="updateBrakeSystemControl">
+<area shape="rect" id="node1" title="Updates the Brake System Controller." alt="" coords="5,132,185,157"/>
+<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html#a0b5f7ad2f9a7864534fec0f9e9ef26af" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="255,5,386,31"/>
+<area shape="rect" id="node3" href="$BrakePressure_8c.html#a60fc11e2ec7062cde216bb02ec3bcb2f" title="Gets the current brake pressure." alt="" coords="466,56,593,81"/>
+<area shape="rect" id="node4" href="$Temperature_8c.html#a51c5b9781122a780a512aa383ab64c84" title="Gets the current temperature in Fahrenheit." alt="" coords="233,107,408,132"/>
+<area shape="rect" id="node5" href="$BrakeSystemControl_8c.html#a7a7109d84a83c476d3f02bebfcd464ac" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="261,156,381,181"/>
+<area shape="rect" id="node6" href="$BrakeSystemControl_8c.html#a8ba4ffcecbf364519ca67eeb4a6a2450" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="253,205,388,231"/>
+<area shape="rect" id="node12" href="$DigitalOutput_8c.html#a787f11889caf733df06f753c3ca81a15" title="Writes data to the buffer of the digital output." alt="" coords="245,255,397,280"/>
+<area shape="rect" id="node7" href="$BrakePressure_8c.html#a900d41fab896ec94686ed339f7ddd48b" title="Updates the brake pressure data." alt="" coords="456,181,603,207"/>
+<area shape="rect" id="node10" href="$Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b" title="Updates the Temperature data." alt="" coords="462,231,597,256"/>
+<area shape="rect" id="node8" href="$AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="678,205,826,231"/>
+<area shape="rect" id="node9" href="$BrakePressure_8c.html#a263953f8a1c52229189a61a9af3670c9" title="Converts raw brake pressure data to a meaningful pressure value." alt="" coords="651,156,853,181"/>
+<area shape="rect" id="node11" href="$Temperature_8c.html#ab7e3b7fb537977e1dcb1a2a777f85e64" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="694,255,810,280"/>
+</map>

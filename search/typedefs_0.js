@@ -7,5 +7,6 @@ var searchData=
   ['can_5fsignal_5ftemplate_4',['CAN_Signal_Template',['../Can_8h.html#a4095867813a932e410ad924d5eadeba4',1,'Can.h']]],
   ['canbaudrate_5',['CANBaudrate',['../Can_8h.html#ae7f7f5bc03b6d8ae6ea1e9d0374fec9e',1,'Can.h']]],
   ['canbus_6',['CANBus',['../Can_8h.html#a1e2f68619477f1dc6af7c2ef156ace0d',1,'Can.h']]],
-  ['canprotocol_7',['CANProtocol',['../Can_8h.html#a2d64e1e2219bb327c9eda239cdd1a4f8',1,'Can.h']]]
+  ['canprotocol_7',['CANProtocol',['../Can_8h.html#a2d64e1e2219bb327c9eda239cdd1a4f8',1,'Can.h']]],
+  ['controllersystem_8',['ControllerSystem',['../ControllerSystem_8h.html#a3438044769aa718e100ebc9bb3673f4c',1,'ControllerSystem.h']]]
 ];

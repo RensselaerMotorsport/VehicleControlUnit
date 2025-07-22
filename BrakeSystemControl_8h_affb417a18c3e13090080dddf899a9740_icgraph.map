@@ -1,7 +1,10 @@
 <map id="checkSensorLimits" name="checkSensorLimits">
-<area shape="rect" id="node1" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="317,55,452,80"/>
-<area shape="rect" id="node2" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="143,5,269,31"/>
-<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="145,55,267,80"/>
-<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="147,104,265,129"/>
-<area shape="rect" id="node3" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,55,95,80"/>
+<area shape="rect" id="node1" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="436,80,571,105"/>
+<area shape="rect" id="node2" href="$BrakePolice_8c.html#ae44af22e7e471d42ed04139985a90033" title=" " alt="" coords="261,5,388,31"/>
+<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="261,55,388,80"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="263,104,386,129"/>
+<area shape="rect" id="node8" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="266,153,383,179"/>
+<area shape="rect" id="node3" href="$BrakePolice_8c.html#ac9d410c67dbf8021ae8381367325b76e" title=" " alt="" coords="104,5,213,31"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
+<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="114,104,203,129"/>
 </map>

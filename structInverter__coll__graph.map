@@ -1,0 +1,14 @@
+<map id="Inverter" name="Inverter">
+<area shape="rect" id="node1" title=" " alt="" coords="165,533,232,559"/>
+<area shape="rect" id="node2" href="$structExternalSystem.html" title=" " alt="" coords="69,269,181,295"/>
+<area shape="rect" id="node3" href="$structSystem.html" title=" " alt="" coords="196,93,263,119"/>
+<area shape="rect" id="node5" href="$structCommsSystem.html" title=" " alt="" coords="70,181,181,207"/>
+<area shape="rect" id="node7" href="$structControllerSystem.html" title=" " alt="" coords="237,269,358,295"/>
+<area shape="rect" id="node8" href="$structMonitorSystem.html" title=" " alt="" coords="299,181,408,207"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="244,5,332,31"/>
+<area shape="rect" id="node12" href="$structSensor.html" title=" " alt="" coords="358,93,421,119"/>
+<area shape="rect" id="node6" href="$structTorqueControl.html" title=" " alt="" coords="219,445,322,471"/>
+<area shape="rect" id="node9" href="$structApps.html" title=" " alt="" coords="327,357,379,383"/>
+<area shape="rect" id="node10" href="$structApp.html" title=" " alt="" coords="399,269,444,295"/>
+<area shape="rect" id="node11" href="$structAnalogSensor.html" title=" " alt="" coords="433,181,535,207"/>
+</map>

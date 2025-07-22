@@ -1,9 +1,11 @@
 <map id="Core/Inc/Systems/ControllerSystem.h" name="Core/Inc/Systems/ControllerSystem.h">
-<area shape="rect" id="node1" title=" " alt="" coords="281,5,467,45"/>
+<area shape="rect" id="node1" title=" " alt="" coords="267,5,452,45"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,313,65,339"/>
-<area shape="rect" id="node3" title=" " alt="" coords="416,313,479,339"/>
-<area shape="rect" id="node4" title=" " alt="" coords="270,313,334,339"/>
-<area shape="rect" id="node5" href="$System_8h.html" title=" " alt="" coords="236,167,312,192"/>
-<area shape="rect" id="node7" href="$MonitorSystem_8h.html" title=" " alt="" coords="315,93,433,119"/>
-<area shape="rect" id="node6" href="$Updateable_8h.html" title=" " alt="" coords="98,240,237,265"/>
+<area shape="rect" id="node3" title=" " alt="" coords="359,313,421,339"/>
+<area shape="rect" id="node4" title=" " alt="" coords="122,313,186,339"/>
+<area shape="rect" id="node5" href="$System_8h.html" title=" " alt="" coords="167,167,243,192"/>
+<area shape="rect" id="node6" href="$Updateable_8h.html" title=" " alt="" coords="267,240,406,265"/>
+<area shape="rect" id="node7" href="$MonitorSystem_8h.html" title=" " alt="" coords="145,93,264,119"/>
+<area shape="rect" id="node8" href="$Constants_8h.html" title=" " alt="" coords="577,93,709,119"/>
+<area shape="rect" id="node9" href="$Task_8h.html" title=" " alt="" coords="318,167,451,192"/>
 </map>

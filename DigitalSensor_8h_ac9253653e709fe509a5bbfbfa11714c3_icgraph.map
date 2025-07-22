@@ -1,0 +1,10 @@
+<map id="initDigitalSensor" name="initDigitalSensor">
+<area shape="rect" id="node1" title="Initializes a digital sensor with the given parameters." alt="" coords="540,55,656,80"/>
+<area shape="rect" id="node2" href="$Button_8c.html#a217a589851c58f9b9ffc502b3101389c" title=" " alt="" coords="396,5,473,31"/>
+<area shape="rect" id="node5" href="$ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="377,55,492,80"/>
+<area shape="rect" id="node6" href="$WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="379,104,491,129"/>
+<area shape="rect" id="node3" href="$RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="225,5,291,31"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="47,5,97,31"/>
+<area shape="rect" id="node7" href="$WheelSpeedTest_8c.html#a70a3b17298afce0d39290c9483e4f4ed" title=" " alt="" coords="187,104,329,129"/>
+<area shape="rect" id="node8" href="$WheelSpeedTest_8c.html#add23dc7c05d1e7696b9be2f52f894f56" title=" " alt="" coords="5,104,139,129"/>
+</map>

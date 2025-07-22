@@ -99,12 +99,42 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Task_8h__dep__incl.png" border="0" usemap="#aCore_2Inc_2Scheduler_2Task_8hdep" alt=""/></div>
 <map name="aCore_2Inc_2Scheduler_2Task_8hdep" id="aCore_2Inc_2Scheduler_2Task_8hdep">
-<area shape="rect" title=" " alt="" coords="163,5,297,45"/>
-<area shape="rect" href="PriorityQueue_8h.html" title=" " alt="" coords="85,93,218,133"/>
-<area shape="rect" href="Task_8c.html" title=" " alt="" coords="243,93,377,133"/>
-<area shape="rect" href="Scheduler_8h.html" title=" " alt="" coords="6,181,139,221"/>
-<area shape="rect" href="PriorityQueue_8c.html" title=" " alt="" coords="164,181,299,221"/>
-<area shape="rect" href="Scheduler_8c.html" title=" " alt="" coords="5,269,140,309"/>
+<area shape="rect" title=" " alt="" coords="2213,5,2346,45"/>
+<area shape="rect" href="PriorityQueue_8h.html" title=" " alt="" coords="165,93,298,133"/>
+<area shape="rect" href="ControllerSystem_8h.html" title=" " alt="" coords="1557,93,1743,133"/>
+<area shape="rect" href="ControllerSystem_8c.html" title=" " alt="" coords="1938,181,2125,221"/>
+<area shape="rect" href="ExternalSystem_8h.html" title=" " alt="" coords="2274,93,2450,133"/>
+<area shape="rect" href="ExternalSystem_8c.html" title=" " alt="" coords="2650,181,2829,221"/>
+<area shape="rect" href="Task_8c.html" title=" " alt="" coords="2525,93,2660,133"/>
+<area shape="rect" href="Scheduler_8h.html" title=" " alt="" coords="165,181,298,221"/>
+<area shape="rect" href="PriorityQueue_8c.html" title=" " alt="" coords="5,181,140,221"/>
+<area shape="rect" href="Scheduler_8c.html" title=" " alt="" coords="59,269,193,309"/>
+<area shape="rect" href="Src_2main_8c.html" title=": Main program body" alt="" coords="1203,453,1318,478"/>
+<area shape="rect" href="Apps_8h.html" title=": Contains the logic for the two app sensors." alt="" coords="975,181,1160,221"/>
+<area shape="rect" href="RTD_8h.html" title=" " alt="" coords="1000,269,1185,309"/>
+<area shape="rect" href="RTD_8c.html" title=" " alt="" coords="738,357,925,397"/>
+<area shape="rect" href="TorqueControl_8h.html" title=" " alt="" coords="1720,269,1905,309"/>
+<area shape="rect" href="TorqueControl_8c.html" title=" " alt="" coords="1805,357,1991,397"/>
+<area shape="rect" href="BrakeSystemControl_8h.html" title=" " alt="" coords="1403,181,1588,221"/>
+<area shape="rect" href="AppsMonitor_8h.html" title=" " alt="" coords="470,269,643,309"/>
+<area shape="rect" href="Apps_8c.html" title=" " alt="" coords="527,357,714,397"/>
+<area shape="rect" href="RTDMonitor_8h.html" title=" " alt="" coords="999,357,1173,397"/>
+<area shape="rect" href="TorquePolice_8h.html" title=" " alt="" coords="1557,357,1730,397"/>
+<area shape="rect" href="RTDMonitor_8c.html" title=" " alt="" coords="995,445,1177,485"/>
+<area shape="rect" href="TorquePolice_8c.html" title=" " alt="" coords="1552,445,1735,485"/>
+<area shape="rect" href="Inverter_8h.html" title=" " alt="" coords="2015,357,2191,397"/>
+<area shape="rect" href="Inverter_8c.html" title=" " alt="" coords="2014,445,2193,485"/>
+<area shape="rect" href="AppsMonitor_8c.html" title=" " alt="" coords="269,357,452,397"/>
+<area shape="rect" href="BrakePolice_8h.html" title=" " alt="" coords="1210,269,1383,309"/>
+<area shape="rect" href="BrakeSystemControl_8c.html" title=" " alt="" coords="1458,269,1645,309"/>
+<area shape="rect" href="BrakePolice_8c.html" title=" " alt="" coords="1299,357,1481,397"/>
+<area shape="rect" href="BMS_8h.html" title=" " alt="" coords="2149,181,2325,221"/>
+<area shape="rect" href="Imd_8h.html" title=" " alt="" coords="2399,181,2575,221"/>
+<area shape="rect" href="Imd_8c.html" title=" " alt="" coords="2599,269,2778,309"/>
+<area shape="rect" href="Accumulator_8h.html" title=" " alt="" coords="2399,269,2575,309"/>
+<area shape="rect" href="BMS_8c.html" title=" " alt="" coords="1981,269,2159,309"/>
+<area shape="rect" href="BMSTest_8c.html" title=" " alt="" coords="2183,269,2325,309"/>
+<area shape="rect" href="Accumulator_8c.html" title=" " alt="" coords="2398,357,2577,397"/>
 </map>
 </div>
 </div>
@@ -174,20 +204,21 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Task_8c_source.html#l00009">9</a> of file <a class="el" href="Task_8c_source.html">Task.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    9</span>                             {</div>
-<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (task-&gt;<a class="code hl_variable" href="structTask.html#ad4413bfcefbd6055c709971fafad942d">updateable</a> &amp;&amp; task-&gt;<a class="code hl_variable" href="structTask.html#ad4413bfcefbd6055c709971fafad942d">updateable</a>-&gt;<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a>) {</div>
-<div class="line"><span class="lineno">   11</span>        <a class="code hl_define" href="Updateable_8h.html#a74ea2f39378a41597820f5243678b379">UPDATE</a>(task);</div>
+<div class="line"><span class="lineno">   10</span>    <span class="keywordflow">if</span> (task-&gt;<a class="code hl_variable" href="structTask.html#ad4413bfcefbd6055c709971fafad942d">updateable</a> &amp;&amp; task-&gt;<a class="code hl_variable" href="structTask.html#ad4413bfcefbd6055c709971fafad942d">updateable</a>-&gt;<a class="code hl_variable" href="structUpdateable.html#a60aca944e97d4ba1f88a0f3095fca5dd">update</a>) {</div>
+<div class="line"><span class="lineno">   11</span>        <a class="code hl_define" href="Updateable_8h.html#a74ea2f39378a41597820f5243678b379">UPDATE</a>(task-&gt;<a class="code hl_variable" href="structTask.html#ad4413bfcefbd6055c709971fafad942d">updateable</a>);</div>
 <div class="line"><span class="lineno">   12</span>    }</div>
 <div class="line"><span class="lineno">   13</span>}</div>
 <div class="ttc" id="aUpdateable_8h_html_a74ea2f39378a41597820f5243678b379"><div class="ttname"><a href="Updateable_8h.html#a74ea2f39378a41597820f5243678b379">UPDATE</a></div><div class="ttdeci">#define UPDATE(item_)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00008">Updateable.h:8</a></div></div>
 <div class="ttc" id="astructTask_html_ad4413bfcefbd6055c709971fafad942d"><div class="ttname"><a href="structTask.html#ad4413bfcefbd6055c709971fafad942d">Task::updateable</a></div><div class="ttdeci">Updateable * updateable</div><div class="ttdef"><b>Definition:</b> <a href="Task_8h_source.html#l00011">Task.h:11</a></div></div>
-<div class="ttc" id="astructUpdateable_html_a16ae43b8576f63634cc825a7294c7a78"><div class="ttname"><a href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">Updateable::update</a></div><div class="ttdeci">void(* update)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00026">Updateable.h:26</a></div></div>
+<div class="ttc" id="astructUpdateable_html_a60aca944e97d4ba1f88a0f3095fca5dd"><div class="ttname"><a href="structUpdateable.html#a60aca944e97d4ba1f88a0f3095fca5dd">Updateable::update</a></div><div class="ttdeci">int(* update)(struct Updateable *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00027">Updateable.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Task_8h_af74a92b4c3acbd7beebe1c7e404f6b99_icgraph.png" border="0" usemap="#aTask_8h_af74a92b4c3acbd7beebe1c7e404f6b99_icgraph" alt=""/></div>
 <map name="aTask_8h_af74a92b4c3acbd7beebe1c7e404f6b99_icgraph" id="aTask_8h_af74a92b4c3acbd7beebe1c7e404f6b99_icgraph">
-<area shape="rect" title="Executes the task by calling the sensor&#39;s update function." alt="" coords="156,5,253,31"/>
-<area shape="rect" href="Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="5,5,108,31"/>
+<area shape="rect" title="Executes the task by calling the sensor&#39;s update function." alt="" coords="255,5,352,31"/>
+<area shape="rect" href="Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="104,5,207,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
 </map>
 </div>
 
@@ -249,8 +280,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Task_8h_aa1e920a3ada35f0a4d299e7a88f73df6_icgraph.png" border="0" usemap="#aTask_8h_aa1e920a3ada35f0a4d299e7a88f73df6_icgraph" alt=""/></div>
 <map name="aTask_8h_aa1e920a3ada35f0a4d299e7a88f73df6_icgraph" id="aTask_8h_aa1e920a3ada35f0a4d299e7a88f73df6_icgraph">
-<area shape="rect" title="Initializes a task with the given sensor and update frequency." alt="" coords="152,5,221,31"/>
-<area shape="rect" href="Scheduler_8c.html#a8806ac2ca53db24211ebf0f81719b505" title="Initializes the scheduler with the given sensors." alt="" coords="5,5,104,31"/>
+<area shape="rect" title="Initializes a task with the given sensor and update frequency." alt="" coords="251,5,320,31"/>
+<area shape="rect" href="Scheduler_8c.html#a8806ac2ca53db24211ebf0f81719b505" title="Initializes the scheduler with the given sensors." alt="" coords="104,5,203,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
 </map>
 </div>
 

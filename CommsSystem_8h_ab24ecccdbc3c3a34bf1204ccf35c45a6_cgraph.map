@@ -1,9 +1,9 @@
 <map id="initCommsSystem" name="initCommsSystem">
 <area shape="rect" id="node1" title="Initializes the Comms System with initial settings." alt="" coords="5,80,133,105"/>
-<area shape="rect" id="node2" href="$System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="181,80,264,105"/>
-<area shape="rect" id="node3" href="$Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="312,80,417,105"/>
+<area shape="rect" id="node2" href="$System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="181,80,264,105"/>
+<area shape="rect" id="node3" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="312,80,417,105"/>
 <area shape="rect" id="node4" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="465,5,569,31"/>
 <area shape="rect" id="node5" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="467,55,567,80"/>
 <area shape="rect" id="node6" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="468,104,567,129"/>
-<area shape="rect" id="node7" href="$Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="466,153,569,179"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="466,153,569,179"/>
 </map>

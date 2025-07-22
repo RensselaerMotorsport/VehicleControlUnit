@@ -1,0 +1,9 @@
+<map id="initDigitalOutput" name="initDigitalOutput">
+<area shape="rect" id="node1" title="Initializes a digital output with the given parameters." alt="" coords="5,80,120,105"/>
+<area shape="rect" id="node2" href="$Output_8c.html#a5baf375f8e0195ea69bc0e395b53cd1a" title="Initializes an output with the given parameters." alt="" coords="168,80,247,105"/>
+<area shape="rect" id="node3" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="295,80,400,105"/>
+<area shape="rect" id="node4" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="448,5,552,31"/>
+<area shape="rect" id="node5" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="450,55,550,80"/>
+<area shape="rect" id="node6" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="451,104,549,129"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="449,153,551,179"/>
+</map>

@@ -106,10 +106,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h__dep__incl.png" border="0" usemap="#aCore_2Inc_2Sensors_2AnalogSensors_2Temperature_8hdep" alt=""/></div>
 <map name="aCore_2Inc_2Sensors_2AnalogSensors_2Temperature_8hdep" id="aCore_2Inc_2Sensors_2AnalogSensors_2Temperature_8hdep">
-<area shape="rect" title=" " alt="" coords="121,5,336,45"/>
-<area shape="rect" href="BrakeSystemControl_8h.html" title=" " alt="" coords="5,93,191,133"/>
-<area shape="rect" href="BrakeSystemControl_8c.html" title=" " alt="" coords="70,181,257,221"/>
-<area shape="rect" href="Temperature_8c.html" title=" " alt="" coords="267,93,484,133"/>
+<area shape="rect" title=" " alt="" coords="548,5,763,45"/>
+<area shape="rect" href="BrakeSystemControl_8h.html" title=" " alt="" coords="400,93,586,133"/>
+<area shape="rect" href="BrakeSystemControl_8c.html" title=" " alt="" coords="596,181,782,221"/>
+<area shape="rect" href="Temperature_8c.html" title=" " alt="" coords="694,93,911,133"/>
+<area shape="rect" href="RTD_8h.html" title=" " alt="" coords="335,181,520,221"/>
+<area shape="rect" href="Src_2main_8c.html" title=": Main program body" alt="" coords="240,365,354,390"/>
+<area shape="rect" href="TorquePolice_8h.html" title=" " alt="" coords="742,269,916,309"/>
+<area shape="rect" href="BrakePolice_8h.html" title=" " alt="" coords="30,181,204,221"/>
+<area shape="rect" href="RTDMonitor_8h.html" title=" " alt="" coords="545,269,718,309"/>
+<area shape="rect" href="RTD_8c.html" title=" " alt="" coords="334,269,521,309"/>
+<area shape="rect" href="RTDMonitor_8c.html" title=" " alt="" coords="535,357,718,397"/>
+<area shape="rect" href="TorquePolice_8c.html" title=" " alt="" coords="742,357,924,397"/>
+<area shape="rect" href="BrakePolice_8c.html" title=" " alt="" coords="26,269,208,309"/>
 </map>
 </div>
 </div>
@@ -134,9 +143,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a1def015ce3a6f0ecbbce4e58e0d0e796"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Temperature_8h.html#a1def015ce3a6f0ecbbce4e58e0d0e796">getTemperatureFahrenheit</a> (<a class="el" href="structTemperature.html">Temperature</a> *temp)</td></tr>
 <tr class="memdesc:a1def015ce3a6f0ecbbce4e58e0d0e796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current temperature in Fahrenheit.  <a href="Temperature_8h.html#a1def015ce3a6f0ecbbce4e58e0d0e796">More...</a><br /></td></tr>
 <tr class="separator:a1def015ce3a6f0ecbbce4e58e0d0e796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa5d8aac6a30b6c1a8b713d7bd17ee7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Temperature_8h.html#a3fa5d8aac6a30b6c1a8b713d7bd17ee7">transferFunction</a> (<a class="el" href="structTemperature.html">Temperature</a> *temp, int rawValue)</td></tr>
-<tr class="memdesc:a3fa5d8aac6a30b6c1a8b713d7bd17ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts raw temperature data to a meaningful temperature value.  <a href="Temperature_8h.html#a3fa5d8aac6a30b6c1a8b713d7bd17ee7">More...</a><br /></td></tr>
-<tr class="separator:a3fa5d8aac6a30b6c1a8b713d7bd17ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a972053657e5b1d9675f55bbf54c578"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Temperature_8h.html#a1a972053657e5b1d9675f55bbf54c578">transferFunction</a> (<a class="el" href="structTemperature.html">Temperature</a> *temp, float rawValue)</td></tr>
+<tr class="memdesc:a1a972053657e5b1d9675f55bbf54c578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts raw temperature data to a meaningful temperature value.  <a href="Temperature_8h.html#a1a972053657e5b1d9675f55bbf54c578">More...</a><br /></td></tr>
+<tr class="separator:a1a972053657e5b1d9675f55bbf54c578"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ac1a90061e499a10136a5c74f96a998cc" name="ac1a90061e499a10136a5c74f96a998cc"></a>
@@ -165,10 +174,9 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current temperature in Celsius. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Temperature_8c_source.html#l00015">15</a> of file <a class="el" href="Temperature_8c_source.html">Temperature.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                {</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> temp-&gt;<a class="code hl_variable" href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">degrees</a>;</div>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>                                                       {</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">return</span> temperature-&gt;degrees;</div>
 <div class="line"><span class="lineno">   17</span>}</div>
-<div class="ttc" id="astructTemperature_html_a5267092fbb40289e5ae8f49bb2fc7fcd"><div class="ttname"><a href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">Temperature::degrees</a></div><div class="ttdeci">double degrees</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00008">Temperature.h:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -198,20 +206,26 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The current temperature in Fahrenheit. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Temperature_8c_source.html#l00019">19</a> of file <a class="el" href="Temperature_8c_source.html">Temperature.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                   {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> temp-&gt;<a class="code hl_variable" href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">degrees</a> * 9.0 / 5.0 + 32;</div>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                          {</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">return</span> temperature-&gt;degrees * 9.0 / 5.0 + 32;</div>
 <div class="line"><span class="lineno">   21</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h_a1def015ce3a6f0ecbbce4e58e0d0e796_icgraph.png" border="0" usemap="#aTemperature_8h_a1def015ce3a6f0ecbbce4e58e0d0e796_icgraph" alt=""/></div>
 <map name="aTemperature_8h_a1def015ce3a6f0ecbbce4e58e0d0e796_icgraph" id="aTemperature_8h_a1def015ce3a6f0ecbbce4e58e0d0e796_icgraph">
-<area shape="rect" title="Gets the current temperature in Fahrenheit." alt="" coords="500,55,675,80"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="317,55,452,80"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="143,5,269,31"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="145,55,267,80"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="147,104,265,129"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,55,95,80"/>
+<area shape="rect" title="Gets the current temperature in Fahrenheit." alt="" coords="925,105,1100,130"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="503,130,637,155"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#aa08ca6f4ef221e2f453a7fc27bcf322b" title="Updates the Brake System Controller." alt="" coords="697,79,877,105"/>
+<area shape="rect" href="BrakePolice_8c.html#ae44af22e7e471d42ed04139985a90033" title=" " alt="" coords="289,227,415,253"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="289,129,415,154"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="291,178,413,203"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="293,79,411,105"/>
+<area shape="rect" href="BrakePolice_8c.html#ac9d410c67dbf8021ae8381367325b76e" title=" " alt="" coords="104,178,213,203"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,79,56,105"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="114,105,203,130"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="491,79,649,105"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="261,30,443,55"/>
 </map>
 </div>
 
@@ -260,32 +274,29 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Temperature_8c_source.html#l00003">3</a> of file <a class="el" href="Temperature_8c_source.html">Temperature.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                             {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_function" href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a>(&amp;temp-&gt;<a class="code hl_variable" href="structTemperature.html#ad259538b8b3e0a45ec405cf3f6aec091">base</a>, <span class="stringliteral">&quot;Temperature&quot;</span>, hz, channel);</div>
-<div class="line"><span class="lineno">    5</span>    temp-&gt;<a class="code hl_variable" href="structTemperature.html#ad259538b8b3e0a45ec405cf3f6aec091">base</a>.<a class="code hl_variable" href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">sensor</a>.<a class="code hl_variable" href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a> = <a class="code hl_function" href="Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6">updateTemperature</a>;</div>
-<div class="line"><span class="lineno">    6</span>    temp-&gt;<a class="code hl_variable" href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">degrees</a> = 0;</div>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                    {</div>
+<div class="line"><span class="lineno">    4</span>    <a class="code hl_function" href="AnalogSensor_8h.html#ac992e329ef2479c38747e193ce77500c">initAnalogSensor</a>(&amp;temperature-&gt;base, <span class="stringliteral">&quot;Temperature&quot;</span>, hz, channel, temperature);</div>
+<div class="line"><span class="lineno">    5</span>    temperature-&gt;degrees = 0;</div>
+<div class="line"><span class="lineno">    6</span>    temperature-&gt;base.sensor.updateable.update = <a class="code hl_function" href="Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b">updateTemperature</a>;</div>
 <div class="line"><span class="lineno">    7</span>}</div>
-<div class="ttc" id="aAnalogSensor_8h_html_a1ca748e7158a6c8439c3b04313e769e6"><div class="ttname"><a href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogSensor, const char *name, int hz, int channel)</div><div class="ttdoc">Initializes an analog sensor and configures the corresponding GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00044">AnalogSensor.c:44</a></div></div>
-<div class="ttc" id="aTemperature_8c_html_ae415305492dd93722bfec35a26e4f4b6"><div class="ttname"><a href="Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6">updateTemperature</a></div><div class="ttdeci">void updateTemperature(void *temp)</div><div class="ttdoc">Updates the Temperature data.</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8c_source.html#l00009">Temperature.c:9</a></div></div>
-<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00028">AnalogSensor.h:28</a></div></div>
-<div class="ttc" id="astructSensor_html_a7e6cf7138f6d350fd2bf0a76fba7a2ad"><div class="ttname"><a href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">Sensor::updateable</a></div><div class="ttdeci">Updateable updateable</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00015">Sensor.h:15</a></div></div>
-<div class="ttc" id="astructTemperature_html_ad259538b8b3e0a45ec405cf3f6aec091"><div class="ttname"><a href="structTemperature.html#ad259538b8b3e0a45ec405cf3f6aec091">Temperature::base</a></div><div class="ttdeci">AnalogSensor base</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00007">Temperature.h:7</a></div></div>
-<div class="ttc" id="astructUpdateable_html_a16ae43b8576f63634cc825a7294c7a78"><div class="ttname"><a href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">Updateable::update</a></div><div class="ttdeci">void(* update)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00026">Updateable.h:26</a></div></div>
+<div class="ttc" id="aAnalogSensor_8h_html_ac992e329ef2479c38747e193ce77500c"><div class="ttname"><a href="AnalogSensor_8h.html#ac992e329ef2479c38747e193ce77500c">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogSensor, const char *name, int hz, int channel, void *child)</div><div class="ttdoc">Initializes an analog sensor and configures the corresponding GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00042">AnalogSensor.c:42</a></div></div>
+<div class="ttc" id="aTemperature_8c_html_ab0f1defe018e3ea1eac9696b5f40476b"><div class="ttname"><a href="Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b">updateTemperature</a></div><div class="ttdeci">void updateTemperature(void *temperature)</div><div class="ttdoc">Updates the Temperature data.</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8c_source.html#l00009">Temperature.c:9</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h_a72614117a34330f3d93ad6e0d763fad9_cgraph.png" border="0" usemap="#aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_cgraph" alt=""/></div>
 <map name="aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_cgraph" id="aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_cgraph">
 <area shape="rect" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="5,105,117,131"/>
-<area shape="rect" href="AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="173,80,293,105"/>
-<area shape="rect" href="Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="165,129,300,155"/>
-<area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="366,80,446,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="512,80,617,105"/>
-<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="665,5,769,31"/>
-<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="667,55,767,80"/>
-<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="668,104,767,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="666,153,769,179"/>
-<area shape="rect" href="Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="348,129,464,155"/>
+<area shape="rect" href="AnalogSensor_8c.html#ac992e329ef2479c38747e193ce77500c" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="173,80,293,105"/>
+<area shape="rect" href="Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b" title="Updates the Temperature data." alt="" coords="165,129,300,155"/>
+<area shape="rect" href="Sensor_8c.html#afaf02fb354c266fd34becaa91c007ce6" title="Initializes a sensor with the given parameters." alt="" coords="382,80,462,105"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="544,80,649,105"/>
+<area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="697,5,801,31"/>
+<area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="699,55,799,80"/>
+<area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="700,104,799,129"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="698,153,801,179"/>
+<area shape="rect" href="AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="348,129,496,155"/>
+<area shape="rect" href="Temperature_8c.html#ab7e3b7fb537977e1dcb1a2a777f85e64" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="364,179,480,204"/>
 </map>
 </div>
 <div class="dynheader">
@@ -293,20 +304,21 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h_a72614117a34330f3d93ad6e0d763fad9_icgraph.png" border="0" usemap="#aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_icgraph" alt=""/></div>
 <map name="aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_icgraph" id="aTemperature_8h_a72614117a34330f3d93ad6e0d763fad9_icgraph">
-<area shape="rect" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="579,80,691,105"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#a08566012ad9d058c3519af0767f6743a" title="Initializes the Braking System with initial settings." alt="" coords="372,80,531,105"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,5,324,31"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,55,297,80"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,104,295,129"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,153,292,179"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,80,95,105"/>
+<area shape="rect" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="579,104,691,129"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="372,104,531,129"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="208,5,259,31"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,55,324,80"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,104,297,129"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,153,295,179"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,203,292,228"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,129,95,155"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a3fa5d8aac6a30b6c1a8b713d7bd17ee7" name="a3fa5d8aac6a30b6c1a8b713d7bd17ee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fa5d8aac6a30b6c1a8b713d7bd17ee7">&#9670;&#160;</a></span>transferFunction()</h2>
+<a id="a1a972053657e5b1d9675f55bbf54c578" name="a1a972053657e5b1d9675f55bbf54c578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a972053657e5b1d9675f55bbf54c578">&#9670;&#160;</a></span>transferFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +332,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>rawValue</em>&#160;</td>
         </tr>
         <tr>
@@ -342,24 +354,31 @@ Here is the caller graph for this function:</div>
 <dl class="section return"><dt>Returns</dt><dd>The converted temperature value. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Temperature_8c_source.html#l00023">23</a> of file <a class="el" href="Temperature_8c_source.html">Temperature.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                       {</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><span class="lineno">   25</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                                {</div>
+<div class="line"><span class="lineno">   24</span>    </div>
+<div class="line"><span class="lineno">   25</span><span class="preprocessor">    #ifdef DEBUGn</span></div>
+<div class="line"><span class="lineno">   26</span>    printf(<span class="stringliteral">&quot;Implement Temperature::TF\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><span class="lineno">   30</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="Temperature_8h_a3fa5d8aac6a30b6c1a8b713d7bd17ee7_icgraph.png" border="0" usemap="#aTemperature_8h_a3fa5d8aac6a30b6c1a8b713d7bd17ee7_icgraph" alt=""/></div>
-<map name="aTemperature_8h_a3fa5d8aac6a30b6c1a8b713d7bd17ee7_icgraph" id="aTemperature_8h_a3fa5d8aac6a30b6c1a8b713d7bd17ee7_icgraph">
-<area shape="rect" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="944,105,1060,131"/>
-<area shape="rect" href="Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="761,105,896,131"/>
-<area shape="rect" href="Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="590,80,702,105"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#a4a2ccc089278da59b7df2e00d0e61243" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="579,129,713,155"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#a08566012ad9d058c3519af0767f6743a" title="Initializes the Braking System with initial settings." alt="" coords="372,80,531,105"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,5,324,31"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,55,297,80"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,104,295,129"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,153,292,179"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,80,95,105"/>
+<div class="center"><img src="Temperature_8h_a1a972053657e5b1d9675f55bbf54c578_icgraph.png" border="0" usemap="#aTemperature_8h_a1a972053657e5b1d9675f55bbf54c578_icgraph" alt=""/></div>
+<map name="aTemperature_8h_a1a972053657e5b1d9675f55bbf54c578_icgraph" id="aTemperature_8h_a1a972053657e5b1d9675f55bbf54c578_icgraph">
+<area shape="rect" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="1172,103,1288,128"/>
+<area shape="rect" href="Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b" title="Updates the Temperature data." alt="" coords="989,103,1124,128"/>
+<area shape="rect" href="Temperature_8c.html#ae867df29735777728c348fed4d9ebe1a" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="613,79,725,104"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a8ba4ffcecbf364519ca67eeb4a6a2450" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="807,128,941,153"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="372,104,531,129"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="208,5,259,31"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,55,324,80"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,104,297,129"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,153,295,179"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,203,292,228"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,129,95,155"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#aa08ca6f4ef221e2f453a7fc27bcf322b" title="Updates the Brake System Controller." alt="" coords="579,128,759,153"/>
 </map>
 </div>
 
@@ -390,20 +409,24 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Temperature_8c_source.html#l00009">9</a> of file <a class="el" href="Temperature_8c_source.html">Temperature.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>                                   {</div>
-<div class="line"><span class="lineno">   10</span>    printf(<span class="stringliteral">&quot;Implement Temperature::update\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_struct" href="structTemperature.html">Temperature</a> *myTemp = (<a class="code hl_struct" href="structTemperature.html">Temperature</a> *)temp;</div>
-<div class="line"><span class="lineno">   12</span>    myTemp-&gt;<a class="code hl_variable" href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">degrees</a> = <a class="code hl_function" href="Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1">transferFunction</a>(temp, 0);</div>
+<div class="fragment"><div class="line"><span class="lineno">    9</span>                                          {</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_struct" href="structTemperature.html">Temperature</a> *myTemp = (<a class="code hl_struct" href="structTemperature.html">Temperature</a> *)temperature;</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordtype">float</span> rawData = <a class="code hl_function" href="AnalogSensor_8h.html#a6b63008a770ff66fdd8a45aa640f39b8">getAnalogSensorData</a>(&amp;myTemp-&gt;<a class="code hl_variable" href="structTemperature.html#ad259538b8b3e0a45ec405cf3f6aec091">base</a>);</div>
+<div class="line"><span class="lineno">   12</span>    myTemp-&gt;<a class="code hl_variable" href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">degrees</a> = <a class="code hl_function" href="Temperature_8c.html#ab7e3b7fb537977e1dcb1a2a777f85e64">transferFunction</a>(temperature, rawData);</div>
 <div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="aTemperature_8c_html_abadc58fa84298a2d39aed3e1be4b20c1"><div class="ttname"><a href="Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1">transferFunction</a></div><div class="ttdeci">double transferFunction(Temperature *temp, int rawVal)</div><div class="ttdoc">Converts raw temperature data to a meaningful temperature value.</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8c_source.html#l00023">Temperature.c:23</a></div></div>
+<div class="ttc" id="aAnalogSensor_8h_html_a6b63008a770ff66fdd8a45aa640f39b8"><div class="ttname"><a href="AnalogSensor_8h.html#a6b63008a770ff66fdd8a45aa640f39b8">getAnalogSensorData</a></div><div class="ttdeci">float getAnalogSensorData(AnalogSensor *sensor)</div><div class="ttdoc">Retrieves analog sensor data for a specific channel.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00089">AnalogSensor.c:89</a></div></div>
+<div class="ttc" id="aTemperature_8c_html_ab7e3b7fb537977e1dcb1a2a777f85e64"><div class="ttname"><a href="Temperature_8c.html#ab7e3b7fb537977e1dcb1a2a777f85e64">transferFunction</a></div><div class="ttdeci">double transferFunction(Temperature *temperature, float rawVal)</div><div class="ttdoc">Converts raw temperature data to a meaningful temperature value.</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8c_source.html#l00023">Temperature.c:23</a></div></div>
 <div class="ttc" id="astructTemperature_html"><div class="ttname"><a href="structTemperature.html">Temperature</a></div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00006">Temperature.h:6</a></div></div>
+<div class="ttc" id="astructTemperature_html_a5267092fbb40289e5ae8f49bb2fc7fcd"><div class="ttname"><a href="structTemperature.html#a5267092fbb40289e5ae8f49bb2fc7fcd">Temperature::degrees</a></div><div class="ttdeci">double degrees</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00008">Temperature.h:8</a></div></div>
+<div class="ttc" id="astructTemperature_html_ad259538b8b3e0a45ec405cf3f6aec091"><div class="ttname"><a href="structTemperature.html#ad259538b8b3e0a45ec405cf3f6aec091">Temperature::base</a></div><div class="ttdeci">AnalogSensor base</div><div class="ttdef"><b>Definition:</b> <a href="Temperature_8h_source.html#l00007">Temperature.h:7</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h_ae415305492dd93722bfec35a26e4f4b6_cgraph.png" border="0" usemap="#aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_cgraph" alt=""/></div>
 <map name="aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_cgraph" id="aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_cgraph">
-<area shape="rect" title="Updates the Temperature data." alt="" coords="5,5,140,31"/>
-<area shape="rect" href="Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="188,5,304,31"/>
+<area shape="rect" title="Updates the Temperature data." alt="" coords="5,31,140,56"/>
+<area shape="rect" href="AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="188,5,336,31"/>
+<area shape="rect" href="Temperature_8c.html#ab7e3b7fb537977e1dcb1a2a777f85e64" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="204,55,320,80"/>
 </map>
 </div>
 <div class="dynheader">
@@ -411,15 +434,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="Temperature_8h_ae415305492dd93722bfec35a26e4f4b6_icgraph.png" border="0" usemap="#aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_icgraph" alt=""/></div>
 <map name="aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_icgraph" id="aTemperature_8h_ae415305492dd93722bfec35a26e4f4b6_icgraph">
-<area shape="rect" title="Updates the Temperature data." alt="" coords="761,105,896,131"/>
-<area shape="rect" href="Temperature_8c.html#a72614117a34330f3d93ad6e0d763fad9" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="590,80,702,105"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#a4a2ccc089278da59b7df2e00d0e61243" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="579,129,713,155"/>
-<area shape="rect" href="BrakeSystemControl_8c.html#a08566012ad9d058c3519af0767f6743a" title="Initializes the Braking System with initial settings." alt="" coords="372,80,531,105"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,5,324,31"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,55,297,80"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,104,295,129"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,153,292,179"/>
-<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,80,95,105"/>
+<area shape="rect" title="Updates the Temperature data." alt="" coords="989,103,1124,128"/>
+<area shape="rect" href="Temperature_8c.html#ae867df29735777728c348fed4d9ebe1a" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="613,79,725,104"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a8ba4ffcecbf364519ca67eeb4a6a2450" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="807,128,941,153"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="372,104,531,129"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="208,5,259,31"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,55,324,80"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,104,297,129"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,153,295,179"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,203,292,228"/>
+<area shape="rect" href="BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,129,95,155"/>
+<area shape="rect" href="BrakeSystemControl_8c.html#aa08ca6f4ef221e2f453a7fc27bcf322b" title="Updates the Brake System Controller." alt="" coords="579,128,759,153"/>
 </map>
 </div>
 

@@ -81,24 +81,33 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define RENSSELAERMOTORSPORT_COMMON_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Definition of common constants and macros used throughout the project</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="Common_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">    5</a></span><span class="preprocessor">#define SUCCESS 0</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="Common_8h.html#a6d58f9ac447476b4e084d7ca383f5183">    6</a></span><span class="preprocessor">#define FAILURE 1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="Common_8h.html#acdf9ea17605dff8b810df8076b6496e2">    5</a></span><span class="preprocessor">#define _SUCCESS 0</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="Common_8h.html#a295b784cba68a3b8793e3d3dc3e172ab">    6</a></span><span class="preprocessor">#define _FAILURE 1</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="Common_8h.html#a4af1b6159e447ba72652bb7fcdfa726e">    8</a></span><span class="preprocessor">#define ESC &quot;\x1b[&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="Common_8h.html#a58fbd79b54ca0b8ba71721a015c289ab">    9</a></span><span class="preprocessor">#define ESC_AQUA ESC &quot;36m&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="Common_8h.html#aa0d6b2906ea4e2b5179baa95a9ba7653">   10</a></span><span class="preprocessor">#define ESC_GREEN ESC &quot;32m&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="Common_8h.html#a5c053f01ace5aafade2bca8a1727b522">   11</a></span><span class="preprocessor">#define ESC_RED ESC &quot;31m&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="Common_8h.html#a7e1d760a68101231b8ebe6b63b72c437">   12</a></span><span class="preprocessor">#define ESC_RESET ESC &quot;0m&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="Common_8h.html#a3fe45d1fdb1ae94f327b2695eab1f976">   14</a></span><span class="preprocessor">#define TEST_DELIM &quot;\t&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="Common_8h.html#a06549ee78edde8ab8d888b504dc86728">   15</a></span><span class="preprocessor">#define TEST_START ESC_AQUA &quot;START&quot;</span> ESC_RESET TEST_DELIM</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="Common_8h.html#a513027e9e45c00888acb45f61b0d1a2d">   16</a></span><span class="preprocessor">#define TEST_PASS ESC_GREEN &quot;PASS&quot;</span> ESC_RESET TEST_DELIM</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="Common_8h.html#a81d97b2292c59c9c556bd9fbee21eb96">   17</a></span><span class="preprocessor">#define TEST_OK ESC_GREEN &quot;OK&quot;</span> ESC_RESET TEST_DELIM</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="Common_8h.html#aac5fb49959e4b7d34f778ab60b422728">   18</a></span><span class="preprocessor">#define TEST_ERR ESC_RED &quot;ERR&quot;</span> ESC_RESET TEST_DELIM</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="Common_8h.html#a1e224fb22d7d3a3e5e5529599a061810">   19</a></span><span class="preprocessor">#define TEST_FAIL ESC_RED &quot;FAIL&quot;</span> ESC_RESET TEST_DELIM</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">// RENSSELAERMOTORSPORT_COMMON_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// Print colors for terminal output</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="Common_8h.html#a34995b955465f6bbb37c359173d50477">    9</a></span><span class="preprocessor">#define ANSI_COLOR_RED     &quot;\x1b[31m&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="Common_8h.html#a966c72d8d733c7734c6c784753d894c7">   10</a></span><span class="preprocessor">#define ANSI_COLOR_GREEN   &quot;\x1b[32m&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="Common_8h.html#a5a123b382640b3aa65dd5db386002fbc">   11</a></span><span class="preprocessor">#define ANSI_COLOR_YELLOW  &quot;\x1b[33m&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="Common_8h.html#aca16e6a49eb51333c5fd3eee19487315">   12</a></span><span class="preprocessor">#define ANSI_COLOR_BLUE    &quot;\x1b[34m&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="Common_8h.html#acb30614ba1535da5b9d0c490b3c10515">   13</a></span><span class="preprocessor">#define ANSI_COLOR_MAGENTA &quot;\x1b[35m&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="Common_8h.html#a8d0b0043e152438bb39b918a1f98c65f">   14</a></span><span class="preprocessor">#define ANSI_COLOR_CYAN    &quot;\x1b[36m&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">   15</a></span><span class="preprocessor">#define ANSI_COLOR_RESET   &quot;\x1b[0m&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="Common_8h.html#a4af1b6159e447ba72652bb7fcdfa726e">   17</a></span><span class="preprocessor">#define ESC &quot;\x1b[&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="Common_8h.html#a58fbd79b54ca0b8ba71721a015c289ab">   18</a></span><span class="preprocessor">#define ESC_AQUA ESC &quot;36m&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="Common_8h.html#aa0d6b2906ea4e2b5179baa95a9ba7653">   19</a></span><span class="preprocessor">#define ESC_GREEN ESC &quot;32m&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="Common_8h.html#a5c053f01ace5aafade2bca8a1727b522">   20</a></span><span class="preprocessor">#define ESC_RED ESC &quot;31m&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="Common_8h.html#a7e1d760a68101231b8ebe6b63b72c437">   21</a></span><span class="preprocessor">#define ESC_RESET ESC &quot;0m&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="Common_8h.html#a3fe45d1fdb1ae94f327b2695eab1f976">   23</a></span><span class="preprocessor">#define TEST_DELIM &quot;\t&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="Common_8h.html#a06549ee78edde8ab8d888b504dc86728">   24</a></span><span class="preprocessor">#define TEST_START ESC_AQUA &quot;START&quot;</span> ESC_RESET TEST_DELIM</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="Common_8h.html#a513027e9e45c00888acb45f61b0d1a2d">   25</a></span><span class="preprocessor">#define TEST_PASS ESC_GREEN &quot;PASS&quot;</span> ESC_RESET TEST_DELIM</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="Common_8h.html#a81d97b2292c59c9c556bd9fbee21eb96">   26</a></span><span class="preprocessor">#define TEST_OK ESC_GREEN &quot;OK&quot;</span> ESC_RESET TEST_DELIM</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="Common_8h.html#aac5fb49959e4b7d34f778ab60b422728">   27</a></span><span class="preprocessor">#define TEST_ERR ESC_RED &quot;ERR&quot;</span> ESC_RESET TEST_DELIM</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="Common_8h.html#a1e224fb22d7d3a3e5e5529599a061810">   28</a></span><span class="preprocessor">#define TEST_FAIL ESC_RED &quot;FAIL&quot;</span> ESC_RESET TEST_DELIM</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// RENSSELAERMOTORSPORT_COMMON_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,0 +1,4 @@
+<map id="ProcessADCData" name="ProcessADCData">
+<area shape="rect" id="node1" title="Processes ADC data from all three ADCs and stores it in the circular buffer." alt="" coords="247,5,371,31"/>
+<area shape="rect" id="node2" href="$stm32f7xx__it_8c.html#af20a88180db1113be1e89266917d148b" title=" " alt="" coords="5,5,199,31"/>
+</map>

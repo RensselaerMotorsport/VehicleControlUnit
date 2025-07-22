@@ -113,9 +113,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a518c07c928cc8076ef03eb08d2bcbca6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SteeringColumn_8c.html#a518c07c928cc8076ef03eb08d2bcbca6">getSteeringColumnRotationAngle</a> (<a class="el" href="structSteeringColumn.html">SteeringColumn</a> *sc)</td></tr>
 <tr class="memdesc:a518c07c928cc8076ef03eb08d2bcbca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current rotation angle of the steering column.  <a href="SteeringColumn_8c.html#a518c07c928cc8076ef03eb08d2bcbca6">More...</a><br /></td></tr>
 <tr class="separator:a518c07c928cc8076ef03eb08d2bcbca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0c46d7082d6dbe42eaf17ec2d0f4a18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">updateSteeringColumn</a> (void *sc)</td></tr>
-<tr class="memdesc:ae0c46d7082d6dbe42eaf17ec2d0f4a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="structSteeringColumn.html">SteeringColumn</a> data.  <a href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">More...</a><br /></td></tr>
-<tr class="separator:ae0c46d7082d6dbe42eaf17ec2d0f4a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19da9dfbc41ad3d40826d7db581279c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SteeringColumn_8c.html#a19da9dfbc41ad3d40826d7db581279c0">updateSteeringColumn</a> (<a class="el" href="structUpdateable.html">Updateable</a> *updateable)</td></tr>
+<tr class="separator:a19da9dfbc41ad3d40826d7db581279c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addde23fa13ab83da9f43d4b3515a642e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">transferFunctionSteeringColumn</a> (float rawVal)</td></tr>
 <tr class="memdesc:addde23fa13ab83da9f43d4b3515a642e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts raw steering column data to a meaningful rotation angle.  <a href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">More...</a><br /></td></tr>
 <tr class="separator:addde23fa13ab83da9f43d4b3515a642e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,32 +204,32 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="SteeringColumn_8c_source.html#l00005">5</a> of file <a class="el" href="SteeringColumn_8c_source.html">SteeringColumn.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>                                                                                   {</div>
-<div class="line"><span class="lineno">    6</span>    <a class="code hl_function" href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a>(&amp;sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>, <span class="stringliteral">&quot;SteeringColumn&quot;</span>, hz, channel);</div>
+<div class="line"><span class="lineno">    6</span>    <a class="code hl_function" href="AnalogSensor_8h.html#ac992e329ef2479c38747e193ce77500c">initAnalogSensor</a>(&amp;sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>, <span class="stringliteral">&quot;SteeringColumn&quot;</span>, hz, channel, sc);</div>
 <div class="line"><span class="lineno">    7</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a0dd1e7baa84b2910114b55428a199f61">rotation_angle</a> = -1;</div>
 <div class="line"><span class="lineno">    8</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">zero_offset</a> = zeroOffset;</div>
-<div class="line"><span class="lineno">    9</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>.<a class="code hl_variable" href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">sensor</a>.<a class="code hl_variable" href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">update</a> = <a class="code hl_function" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">updateSteeringColumn</a>;</div>
+<div class="line"><span class="lineno">    9</span>    sc-&gt;<a class="code hl_variable" href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">base</a>.<a class="code hl_variable" href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">sensor</a>.<a class="code hl_variable" href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">updateable</a>.<a class="code hl_variable" href="structUpdateable.html#a60aca944e97d4ba1f88a0f3095fca5dd">update</a> = <a class="code hl_function" href="SteeringColumn_8c.html#a19da9dfbc41ad3d40826d7db581279c0">updateSteeringColumn</a>;</div>
 <div class="line"><span class="lineno">   10</span>}</div>
-<div class="ttc" id="aAnalogSensor_8h_html_a1ca748e7158a6c8439c3b04313e769e6"><div class="ttname"><a href="AnalogSensor_8h.html#a1ca748e7158a6c8439c3b04313e769e6">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogSensor, const char *name, int hz, int channel)</div><div class="ttdoc">Initializes an analog sensor and configures the corresponding GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00044">AnalogSensor.c:44</a></div></div>
-<div class="ttc" id="aSteeringColumn_8c_html_ae0c46d7082d6dbe42eaf17ec2d0f4a18"><div class="ttname"><a href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18">updateSteeringColumn</a></div><div class="ttdeci">void updateSteeringColumn(void *sc)</div><div class="ttdoc">Updates the SteeringColumn data.</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8c_source.html#l00016">SteeringColumn.c:16</a></div></div>
-<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00028">AnalogSensor.h:28</a></div></div>
+<div class="ttc" id="aAnalogSensor_8h_html_ac992e329ef2479c38747e193ce77500c"><div class="ttname"><a href="AnalogSensor_8h.html#ac992e329ef2479c38747e193ce77500c">initAnalogSensor</a></div><div class="ttdeci">void initAnalogSensor(AnalogSensor *analogSensor, const char *name, int hz, int channel, void *child)</div><div class="ttdoc">Initializes an analog sensor and configures the corresponding GPIO pin.</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8c_source.html#l00042">AnalogSensor.c:42</a></div></div>
+<div class="ttc" id="aSteeringColumn_8c_html_a19da9dfbc41ad3d40826d7db581279c0"><div class="ttname"><a href="SteeringColumn_8c.html#a19da9dfbc41ad3d40826d7db581279c0">updateSteeringColumn</a></div><div class="ttdeci">int updateSteeringColumn(Updateable *updateable)</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8c_source.html#l00016">SteeringColumn.c:16</a></div></div>
+<div class="ttc" id="astructAnalogSensor_html_ae5a490b3ae096b5c882bb1f3f23fdbcb"><div class="ttname"><a href="structAnalogSensor.html#ae5a490b3ae096b5c882bb1f3f23fdbcb">AnalogSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00023">AnalogSensor.h:23</a></div></div>
 <div class="ttc" id="astructSensor_html_a7e6cf7138f6d350fd2bf0a76fba7a2ad"><div class="ttname"><a href="structSensor.html#a7e6cf7138f6d350fd2bf0a76fba7a2ad">Sensor::updateable</a></div><div class="ttdeci">Updateable updateable</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00015">Sensor.h:15</a></div></div>
 <div class="ttc" id="astructSteeringColumn_html_a6054bb7b70dcb20f7d4b28e81029cba6"><div class="ttname"><a href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">SteeringColumn::zero_offset</a></div><div class="ttdeci">float zero_offset</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8h_source.html#l00009">SteeringColumn.h:9</a></div></div>
 <div class="ttc" id="astructSteeringColumn_html_ae45ecdecde2067ea466cd57006b24afc"><div class="ttname"><a href="structSteeringColumn.html#ae45ecdecde2067ea466cd57006b24afc">SteeringColumn::base</a></div><div class="ttdeci">AnalogSensor base</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8h_source.html#l00007">SteeringColumn.h:7</a></div></div>
-<div class="ttc" id="astructUpdateable_html_a16ae43b8576f63634cc825a7294c7a78"><div class="ttname"><a href="structUpdateable.html#a16ae43b8576f63634cc825a7294c7a78">Updateable::update</a></div><div class="ttdeci">void(* update)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00026">Updateable.h:26</a></div></div>
+<div class="ttc" id="astructUpdateable_html_a60aca944e97d4ba1f88a0f3095fca5dd"><div class="ttname"><a href="structUpdateable.html#a60aca944e97d4ba1f88a0f3095fca5dd">Updateable::update</a></div><div class="ttdeci">int(* update)(struct Updateable *self)</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00027">Updateable.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="SteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph.png" border="0" usemap="#aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph" alt=""/></div>
 <map name="aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph" id="aSteeringColumn_8c_ad4e64b53204532d834ba6aa5a2a965ab_cgraph">
 <area shape="rect" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,109,136,135"/>
-<area shape="rect" href="AnalogSensor_8c.html#a1ca748e7158a6c8439c3b04313e769e6" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="201,83,321,108"/>
-<area shape="rect" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title="Updates the SteeringColumn data." alt="" coords="184,133,337,159"/>
-<area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="427,80,507,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="597,80,703,105"/>
+<area shape="rect" href="AnalogSensor_8c.html#ac992e329ef2479c38747e193ce77500c" title="Initializes an analog sensor and configures the corresponding GPIO pin." alt="" coords="201,83,321,108"/>
+<area shape="rect" href="SteeringColumn_8c.html#a19da9dfbc41ad3d40826d7db581279c0" title=" " alt="" coords="184,133,337,159"/>
+<area shape="rect" href="Sensor_8c.html#afaf02fb354c266fd34becaa91c007ce6" title="Initializes a sensor with the given parameters." alt="" coords="427,80,507,105"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="597,80,703,105"/>
 <area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="751,5,855,31"/>
 <area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="753,55,853,80"/>
 <area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="753,104,852,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="751,153,854,179"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="751,153,854,179"/>
 <area shape="rect" href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e" title="Converts raw steering column data to a meaningful rotation angle." alt="" coords="385,130,549,170"/>
 </map>
 </div>
@@ -262,74 +261,84 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The converted rotation angle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SteeringColumn_8c_source.html#l00024">24</a> of file <a class="el" href="SteeringColumn_8c_source.html">SteeringColumn.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>                                                   {</div>
-<div class="line"><span class="lineno">   25</span>    <span class="comment">// Placeholder for actual transfer function</span></div>
-<div class="line"><span class="lineno">   26</span>    printf(<span class="stringliteral">&quot;Implement SteeringColumn::transfer_function\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> rawVal;</div>
-<div class="line"><span class="lineno">   28</span>}</div>
+<p class="definition">Definition at line <a class="el" href="SteeringColumn_8c_source.html#l00036">36</a> of file <a class="el" href="SteeringColumn_8c_source.html">SteeringColumn.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                   {</div>
+<div class="line"><span class="lineno">   37</span>    <span class="comment">// Placeholder for actual transfer function</span></div>
+<div class="line"><span class="lineno">   38</span>    printf(<span class="stringliteral">&quot;Implement SteeringColumn::transfer_function\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> rawVal;</div>
+<div class="line"><span class="lineno">   40</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="SteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e_icgraph.png" border="0" usemap="#aSteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e_icgraph" alt=""/></div>
 <map name="aSteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e_icgraph" id="aSteeringColumn_8c_addde23fa13ab83da9f43d4b3515a642e_icgraph">
 <area shape="rect" title="Converts raw steering column data to a meaningful rotation angle." alt="" coords="385,5,549,45"/>
-<area shape="rect" href="SteeringColumn_8c.html#ae0c46d7082d6dbe42eaf17ec2d0f4a18" title="Updates the SteeringColumn data." alt="" coords="184,13,337,38"/>
+<area shape="rect" href="SteeringColumn_8c.html#a19da9dfbc41ad3d40826d7db581279c0" title=" " alt="" coords="184,13,337,38"/>
 <area shape="rect" href="SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,13,136,38"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae0c46d7082d6dbe42eaf17ec2d0f4a18" name="ae0c46d7082d6dbe42eaf17ec2d0f4a18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c46d7082d6dbe42eaf17ec2d0f4a18">&#9670;&#160;</a></span>updateSteeringColumn()</h2>
+<a id="a19da9dfbc41ad3d40826d7db581279c0" name="a19da9dfbc41ad3d40826d7db581279c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19da9dfbc41ad3d40826d7db581279c0">&#9670;&#160;</a></span>updateSteeringColumn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void updateSteeringColumn </td>
+          <td class="memname">int updateSteeringColumn </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>sc</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structUpdateable.html">Updateable</a> *&#160;</td>
+          <td class="paramname"><em>updateable</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Updates the <a class="el" href="structSteeringColumn.html">SteeringColumn</a> data. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sc</td><td>Pointer to the <a class="el" href="structSteeringColumn.html">SteeringColumn</a> structure to update. </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p class="definition">Definition at line <a class="el" href="SteeringColumn_8c_source.html#l00016">16</a> of file <a class="el" href="SteeringColumn_8c_source.html">SteeringColumn.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>                                    {</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_struct" href="structSteeringColumn.html">SteeringColumn</a> *steeringColumn = (<a class="code hl_struct" href="structSteeringColumn.html">SteeringColumn</a> *)sc;</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">float</span> rawData = 0.0f; <span class="comment">// This should come from sensor read function or simulation</span></div>
-<div class="line"><span class="lineno">   19</span>    printf(<span class="stringliteral">&quot;Implement SteeringColumn Update.\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   20</span>    steeringColumn-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a0dd1e7baa84b2910114b55428a199f61">rotation_angle</a></div>
-<div class="line"><span class="lineno">   21</span>        = <a class="code hl_function" href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">transferFunctionSteeringColumn</a>(rawData + steeringColumn-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">zero_offset</a>);</div>
-<div class="line"><span class="lineno">   22</span>}</div>
-<div class="ttc" id="aSteeringColumn_8c_html_addde23fa13ab83da9f43d4b3515a642e"><div class="ttname"><a href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">transferFunctionSteeringColumn</a></div><div class="ttdeci">float transferFunctionSteeringColumn(float rawVal)</div><div class="ttdoc">Converts raw steering column data to a meaningful rotation angle.</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8c_source.html#l00024">SteeringColumn.c:24</a></div></div>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>                                                 {</div>
+<div class="line"><span class="lineno">   17</span>    <span class="comment">// Cast the updateable pointer to a steering column sensor</span></div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_struct" href="structSensor.html">Sensor</a>* sensor = (<a class="code hl_struct" href="structSensor.html">Sensor</a>*)updateable-&gt;<a class="code hl_variable" href="structUpdateable.html#a624a00d563cd6b8533e4686449959c04">child</a>;</div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_struct" href="structAnalogSensor.html">AnalogSensor</a>* analogSensor = (<a class="code hl_struct" href="structAnalogSensor.html">AnalogSensor</a>*)sensor-&gt;<a class="code hl_variable" href="structSensor.html#a57cec2a6cbff88c12ae7632633119526">child</a>;</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_struct" href="structSteeringColumn.html">SteeringColumn</a>* steeringColumn = (<a class="code hl_struct" href="structSteeringColumn.html">SteeringColumn</a>*)analogSensor-&gt;child;</div>
+<div class="line"><span class="lineno">   21</span> </div>
+<div class="line"><span class="lineno">   22</span>    <span class="comment">// Check if the pointer is null</span></div>
+<div class="line"><span class="lineno">   23</span>    if (steeringColumn == NULL) {</div>
+<div class="line"><span class="lineno">   24</span>        fprintf(stderr, <span class="stringliteral">&quot;Error: Null pointer passed to updateSteeringColumn\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#a295b784cba68a3b8793e3d3dc3e172ab">_FAILURE</a>;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">float</span> rawData = 0.0f; <span class="comment">// This should come from sensor read function or simulation</span></div>
+<div class="line"><span class="lineno">   29</span>    printf(<span class="stringliteral">&quot;Implement SteeringColumn Update.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   30</span>    steeringColumn-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a0dd1e7baa84b2910114b55428a199f61">rotation_angle</a></div>
+<div class="line"><span class="lineno">   31</span>        = <a class="code hl_function" href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">transferFunctionSteeringColumn</a>(rawData + steeringColumn-&gt;<a class="code hl_variable" href="structSteeringColumn.html#a6054bb7b70dcb20f7d4b28e81029cba6">zero_offset</a>);</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="Common_8h.html#acdf9ea17605dff8b810df8076b6496e2">_SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+<div class="ttc" id="aCommon_8h_html_a295b784cba68a3b8793e3d3dc3e172ab"><div class="ttname"><a href="Common_8h.html#a295b784cba68a3b8793e3d3dc3e172ab">_FAILURE</a></div><div class="ttdeci">#define _FAILURE</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00006">Common.h:6</a></div></div>
+<div class="ttc" id="aCommon_8h_html_acdf9ea17605dff8b810df8076b6496e2"><div class="ttname"><a href="Common_8h.html#acdf9ea17605dff8b810df8076b6496e2">_SUCCESS</a></div><div class="ttdeci">#define _SUCCESS</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00005">Common.h:5</a></div></div>
+<div class="ttc" id="aSteeringColumn_8c_html_addde23fa13ab83da9f43d4b3515a642e"><div class="ttname"><a href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e">transferFunctionSteeringColumn</a></div><div class="ttdeci">float transferFunctionSteeringColumn(float rawVal)</div><div class="ttdoc">Converts raw steering column data to a meaningful rotation angle.</div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8c_source.html#l00036">SteeringColumn.c:36</a></div></div>
+<div class="ttc" id="astructAnalogSensor_html"><div class="ttname"><a href="structAnalogSensor.html">AnalogSensor</a></div><div class="ttdef"><b>Definition:</b> <a href="AnalogSensor_8h_source.html#l00022">AnalogSensor.h:22</a></div></div>
+<div class="ttc" id="astructSensor_html"><div class="ttname"><a href="structSensor.html">Sensor</a></div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00014">Sensor.h:14</a></div></div>
+<div class="ttc" id="astructSensor_html_a57cec2a6cbff88c12ae7632633119526"><div class="ttname"><a href="structSensor.html#a57cec2a6cbff88c12ae7632633119526">Sensor::child</a></div><div class="ttdeci">void * child</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00017">Sensor.h:17</a></div></div>
 <div class="ttc" id="astructSteeringColumn_html"><div class="ttname"><a href="structSteeringColumn.html">SteeringColumn</a></div><div class="ttdef"><b>Definition:</b> <a href="SteeringColumn_8h_source.html#l00006">SteeringColumn.h:6</a></div></div>
+<div class="ttc" id="astructUpdateable_html_a624a00d563cd6b8533e4686449959c04"><div class="ttname"><a href="structUpdateable.html#a624a00d563cd6b8533e4686449959c04">Updateable::child</a></div><div class="ttdeci">void * child</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00032">Updateable.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="SteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_cgraph.png" border="0" usemap="#aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_cgraph" alt=""/></div>
-<map name="aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_cgraph" id="aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_cgraph">
-<area shape="rect" title="Updates the SteeringColumn data." alt="" coords="5,13,159,38"/>
+<div class="center"><img src="SteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_cgraph.png" border="0" usemap="#aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_cgraph" alt=""/></div>
+<map name="aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_cgraph" id="aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,159,38"/>
 <area shape="rect" href="SteeringColumn_8c.html#addde23fa13ab83da9f43d4b3515a642e" title="Converts raw steering column data to a meaningful rotation angle." alt="" coords="207,5,371,45"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="SteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_icgraph.png" border="0" usemap="#aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_icgraph" alt=""/></div>
-<map name="aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_icgraph" id="aSteeringColumn_8c_ae0c46d7082d6dbe42eaf17ec2d0f4a18_icgraph">
-<area shape="rect" title="Updates the SteeringColumn data." alt="" coords="184,5,337,31"/>
+<div class="center"><img src="SteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_icgraph.png" border="0" usemap="#aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_icgraph" alt=""/></div>
+<map name="aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_icgraph" id="aSteeringColumn_8c_a19da9dfbc41ad3d40826d7db581279c0_icgraph">
+<area shape="rect" title=" " alt="" coords="184,5,337,31"/>
 <area shape="rect" href="SteeringColumn_8c.html#ad4e64b53204532d834ba6aa5a2a965ab" title="Initializes the SteeringColumn sensor with the given frequency, channel, and zero offset." alt="" coords="5,5,136,31"/>
 </map>
 </div>

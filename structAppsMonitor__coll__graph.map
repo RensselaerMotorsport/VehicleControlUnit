@@ -1,0 +1,11 @@
+<map id="AppsMonitor" name="AppsMonitor">
+<area shape="rect" id="node1" title=" " alt="" coords="19,445,114,471"/>
+<area shape="rect" id="node2" href="$structMonitorSystem.html" title=" " alt="" coords="5,181,115,207"/>
+<area shape="rect" id="node6" href="$structControllerSystem.html" title=" " alt="" coords="93,269,214,295"/>
+<area shape="rect" id="node3" href="$structSystem.html" title=" " alt="" coords="129,93,196,119"/>
+<area shape="rect" id="node4" href="$structUpdateable.html" title=" " alt="" coords="172,5,260,31"/>
+<area shape="rect" id="node9" href="$structSensor.html" title=" " alt="" coords="238,93,301,119"/>
+<area shape="rect" id="node5" href="$structApps.html" title=" " alt="" coords="127,357,179,383"/>
+<area shape="rect" id="node7" href="$structApp.html" title=" " alt="" coords="249,269,295,295"/>
+<area shape="rect" id="node8" href="$structAnalogSensor.html" title=" " alt="" coords="233,181,335,207"/>
+</map>

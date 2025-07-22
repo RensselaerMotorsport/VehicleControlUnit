@@ -1,4 +1,9 @@
 <map id="Core/Inc/Systems/Controller/TorqueControl.h" name="Core/Inc/Systems/Controller/TorqueControl.h">
-<area shape="rect" id="node1" title=" " alt="" coords="6,5,191,45"/>
-<area shape="rect" id="node2" href="$TorqueControl_8c.html" title=" " alt="" coords="5,93,192,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="234,5,419,45"/>
+<area shape="rect" id="node2" href="$Inverter_8h.html" title=" " alt="" coords="52,93,228,133"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="208,189,323,214"/>
+<area shape="rect" id="node5" href="$TorquePolice_8h.html" title=" " alt="" coords="303,93,476,133"/>
+<area shape="rect" id="node7" href="$TorqueControl_8c.html" title=" " alt="" coords="500,93,687,133"/>
+<area shape="rect" id="node3" href="$Inverter_8c.html" title=" " alt="" coords="5,181,184,221"/>
+<area shape="rect" id="node6" href="$TorquePolice_8c.html" title=" " alt="" coords="347,181,530,221"/>
 </map>

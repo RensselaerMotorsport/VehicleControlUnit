@@ -1,5 +1,5 @@
 <map id="checkSensorLimits" name="checkSensorLimits">
 <area shape="rect" id="node1" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="5,31,140,56"/>
 <area shape="rect" id="node2" href="$BrakePressure_8c.html#a60fc11e2ec7062cde216bb02ec3bcb2f" title="Gets the current brake pressure." alt="" coords="212,5,339,31"/>
-<area shape="rect" id="node3" href="$Temperature_8c.html#a1def015ce3a6f0ecbbce4e58e0d0e796" title="Gets the current temperature in Fahrenheit." alt="" coords="188,55,363,80"/>
+<area shape="rect" id="node3" href="$Temperature_8c.html#a51c5b9781122a780a512aa383ab64c84" title="Gets the current temperature in Fahrenheit." alt="" coords="188,55,363,80"/>
 </map>

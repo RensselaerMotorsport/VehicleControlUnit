@@ -83,11 +83,15 @@ Collaboration diagram for TorqueControl:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTorqueControl__coll__graph.png" border="0" usemap="#aTorqueControl_coll__map" alt="Collaboration graph"/></div>
 <map name="aTorqueControl_coll__map" id="aTorqueControl_coll__map">
-<area shape="rect" title=" " alt="" coords="15,357,117,383"/>
-<area shape="rect" href="structControllerSystem.html" title=" " alt="" coords="5,269,127,295"/>
-<area shape="rect" href="structSystem.html" title=" " alt="" coords="33,93,99,119"/>
-<area shape="rect" href="structMonitorSystem.html" title=" " alt="" coords="114,181,223,207"/>
-<area shape="rect" href="structUpdateable.html" title=" " alt="" coords="22,5,110,31"/>
+<area shape="rect" title=" " alt="" coords="92,445,195,471"/>
+<area shape="rect" href="structControllerSystem.html" title=" " alt="" coords="61,269,183,295"/>
+<area shape="rect" href="structApps.html" title=" " alt="" coords="179,357,231,383"/>
+<area shape="rect" href="structSystem.html" title=" " alt="" coords="89,93,155,119"/>
+<area shape="rect" href="structMonitorSystem.html" title=" " alt="" coords="67,181,177,207"/>
+<area shape="rect" href="structUpdateable.html" title=" " alt="" coords="134,5,222,31"/>
+<area shape="rect" href="structSensor.html" title=" " alt="" coords="203,93,265,119"/>
+<area shape="rect" href="structApp.html" title=" " alt="" coords="213,269,258,295"/>
+<area shape="rect" href="structAnalogSensor.html" title=" " alt="" coords="201,181,304,207"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,32 +99,32 @@ Collaboration diagram for TorqueControl:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a104a6a5d2f60f52bda2061e5ac7654ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structControllerSystem.html">ControllerSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a104a6a5d2f60f52bda2061e5ac7654ac">base</a></td></tr>
 <tr class="separator:a104a6a5d2f60f52bda2061e5ac7654ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a634102988b8c84405728aa0a49cffb7a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a634102988b8c84405728aa0a49cffb7a">actualTorque</a></td></tr>
-<tr class="separator:a634102988b8c84405728aa0a49cffb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a211c84afb658e77741bc3904e6eb4811"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structApps.html">Apps</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a211c84afb658e77741bc3904e6eb4811">apps</a></td></tr>
+<tr class="separator:a211c84afb658e77741bc3904e6eb4811"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5d5675d79978cd1b60a1d9ee7c9e929"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#af5d5675d79978cd1b60a1d9ee7c9e929">desiredTorque</a></td></tr>
 <tr class="separator:af5d5675d79978cd1b60a1d9ee7c9e929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cdee1d1ee430b0dd25b4acf38eb74ef"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a2cdee1d1ee430b0dd25b4acf38eb74ef">maxAllowedTorque</a></td></tr>
 <tr class="separator:a2cdee1d1ee430b0dd25b4acf38eb74ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd59ad5b85adefa0003d489c4421a22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TorqueMonitor_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a9dd59ad5b85adefa0003d489c4421a22">status</a></td></tr>
+<tr class="memitem:a9dd59ad5b85adefa0003d489c4421a22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTorqueControl.html#a9dd59ad5b85adefa0003d489c4421a22">status</a></td></tr>
 <tr class="separator:a9dd59ad5b85adefa0003d489c4421a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00016">16</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00018">18</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a634102988b8c84405728aa0a49cffb7a" name="a634102988b8c84405728aa0a49cffb7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a634102988b8c84405728aa0a49cffb7a">&#9670;&#160;</a></span>actualTorque</h2>
+<a id="a211c84afb658e77741bc3904e6eb4811" name="a211c84afb658e77741bc3904e6eb4811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a211c84afb658e77741bc3904e6eb4811">&#9670;&#160;</a></span>apps</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float TorqueControl::actualTorque</td>
+          <td class="memname"><a class="el" href="structApps.html">Apps</a>* TorqueControl::apps</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00018">18</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00020">20</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 
 </div>
 </div>
@@ -136,7 +140,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00017">17</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00019">19</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 
 </div>
 </div>
@@ -152,7 +156,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00019">19</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00021">21</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 
 </div>
 </div>
@@ -168,7 +172,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00020">20</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00022">22</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 
 </div>
 </div>
@@ -179,18 +183,17 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="TorqueMonitor_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a> TorqueControl::status</td>
+          <td class="memname"><a class="el" href="TorqueControl_8h.html#a19941765cef874f044e38252d5a0f816">TorqueStatus</a> TorqueControl::status</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00021">21</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TorqueControl_8h_source.html#l00023">23</a> of file <a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Core/Inc/Systems/Controller/<a class="el" href="TorqueControl_8h_source.html">TorqueControl.h</a></li>
-<li>Core/Inc/Systems/Monitor/<a class="el" href="TorqueMonitor_8h_source.html">TorqueMonitor.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

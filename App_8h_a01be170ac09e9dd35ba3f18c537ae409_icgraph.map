@@ -1,9 +1,16 @@
 <map id="getAppPosition" name="getAppPosition">
-<area shape="rect" id="node1" title="Gets the current position of the APP." alt="" coords="589,55,700,80"/>
-<area shape="rect" id="node2" href="$Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="423,55,539,80"/>
-<area shape="rect" id="node3" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="256,5,373,31"/>
-<area shape="rect" id="node7" href="$MotorController_8c.html#a5e58b938d347017c6e51634f7faa08f9" title="Gets the pedal position from the MotorController." alt="" coords="421,104,541,129"/>
-<area shape="rect" id="node4" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="269,55,360,80"/>
-<area shape="rect" id="node5" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,55,208,80"/>
-<area shape="rect" id="node6" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,55,91,80"/>
+<area shape="rect" id="node1" title="Gets the current position of the APP." alt="" coords="875,74,985,99"/>
+<area shape="rect" id="node2" href="$AppsMonitor_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="711,74,827,99"/>
+<area shape="rect" id="node6" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="539,124,656,150"/>
+<area shape="rect" id="node12" href="$Apps_8c.html#a780a35152c6aa6e99a8981e3a998331a" title="Updates the APPS based on both sensor outputs." alt="" coords="723,23,814,48"/>
+<area shape="rect" id="node3" href="$AppsMonitor_8c.html#acd68c63bc5c3861b01f22aa3a76281b9" title=" " alt="" coords="532,74,663,99"/>
+<area shape="rect" id="node4" href="$AppsMonitor_8c.html#a40d2a2e0566f92dbac78411027e6a17b" title=" " alt="" coords="196,74,308,99"/>
+<area shape="rect" id="node5" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="49,99,100,124"/>
+<area shape="rect" id="node7" href="$TorqueControl_8c.html#a511cb99df3e91fbfcd1b7d8261b7862c" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="360,174,484,199"/>
+<area shape="rect" id="node10" href="$RTD_8c.html#ad4c8548aeb2be8f455c0922c6760e631" title="Updates the RTD Actuator." alt="" coords="379,124,465,150"/>
+<area shape="rect" id="node8" href="$TorqueControl_8c.html#ac675cea5e7d7d4953bb6f80715391601" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,172,312,198"/>
+<area shape="rect" id="node9" href="$TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6" title=" " alt="" coords="5,172,144,198"/>
+<area shape="rect" id="node11" href="$RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="219,123,285,148"/>
+<area shape="rect" id="node13" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="563,23,632,48"/>
+<area shape="rect" id="node14" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="379,23,465,48"/>
 </map>

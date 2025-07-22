@@ -1,5 +1,0 @@
-<map id="updateTorqueControl" name="updateTorqueControl">
-<area shape="rect" id="node1" title="Updates the Torque Control Actuator based on sensor inputs and calculations." alt="" coords="360,5,503,31"/>
-<area shape="rect" id="node2" href="$TorqueControl_8c.html#aeefa77a69d64da42889a3fb81c8fbe3b" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,5,312,31"/>
-<area shape="rect" id="node3" href="$TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6" title=" " alt="" coords="5,5,144,31"/>
-</map>

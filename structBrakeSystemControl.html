@@ -83,15 +83,17 @@ Collaboration diagram for BrakeSystemControl:</div>
 <div class="dyncontent">
 <div class="center"><img src="structBrakeSystemControl__coll__graph.png" border="0" usemap="#aBrakeSystemControl_coll__map" alt="Collaboration graph"/></div>
 <map name="aBrakeSystemControl_coll__map" id="aBrakeSystemControl_coll__map">
-<area shape="rect" title=" " alt="" coords="134,372,275,397"/>
-<area shape="rect" href="structControllerSystem.html" title=" " alt="" coords="5,269,127,295"/>
-<area shape="rect" href="structSystem.html" title=" " alt="" coords="113,93,179,119"/>
-<area shape="rect" href="structMonitorSystem.html" title=" " alt="" coords="91,181,201,207"/>
-<area shape="rect" href="structUpdateable.html" title=" " alt="" coords="158,5,246,31"/>
-<area shape="rect" href="structSensor.html" title=" " alt="" coords="227,93,289,119"/>
-<area shape="rect" href="structBrakePressure.html" title=" " alt="" coords="151,269,259,295"/>
-<area shape="rect" href="structAnalogSensor.html" title=" " alt="" coords="225,181,328,207"/>
-<area shape="rect" href="structTemperature.html" title=" " alt="" coords="283,269,377,295"/>
+<area shape="rect" title=" " alt="" coords="195,383,337,408"/>
+<area shape="rect" href="structControllerSystem.html" title=" " alt="" coords="5,280,127,305"/>
+<area shape="rect" href="structSystem.html" title=" " alt="" coords="157,93,223,119"/>
+<area shape="rect" href="structMonitorSystem.html" title=" " alt="" coords="135,181,245,207"/>
+<area shape="rect" href="structUpdateable.html" title=" " alt="" coords="278,5,366,31"/>
+<area shape="rect" href="structSensor.html" title=" " alt="" coords="291,93,353,119"/>
+<area shape="rect" href="structOutput.html" title=" " alt="" coords="390,93,451,119"/>
+<area shape="rect" href="structBrakePressure.html" title=" " alt="" coords="151,280,259,305"/>
+<area shape="rect" href="structAnalogSensor.html" title=" " alt="" coords="271,181,373,207"/>
+<area shape="rect" href="structTemperature.html" title=" " alt="" coords="283,280,377,305"/>
+<area shape="rect" href="structDigitalOutput.html" title=" " alt="" coords="376,231,473,256"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,6 +119,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9d3a37275001d7179368bd6207762538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05914076b8d090a90cc6a9b37e1927f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBrakeSystemControl.html#a05914076b8d090a90cc6a9b37e1927f4">brakeLightActive</a></td></tr>
 <tr class="separator:a05914076b8d090a90cc6a9b37e1927f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc888c117490b7df8d550682d5f4c975"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBrakeSystemControl.html#afc888c117490b7df8d550682d5f4c975">brakeLightBlink</a></td></tr>
+<tr class="separator:afc888c117490b7df8d550682d5f4c975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96bd2891e4b6d40080327a8f440d3aee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structDigitalOutput.html">DigitalOutput</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBrakeSystemControl.html#a96bd2891e4b6d40080327a8f440d3aee">brakeLight</a></td></tr>
+<tr class="separator:a96bd2891e4b6d40080327a8f440d3aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ccf96228828621453b56571c3ca73ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBrakeSystemControl.html#a8ccf96228828621453b56571c3ca73ae">heavyBrakingActivationPoint</a></td></tr>
 <tr class="separator:a8ccf96228828621453b56571c3ca73ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee92e2081939d5b591f4e3e3335b3288"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBrakeSystemControl.html#aee92e2081939d5b591f4e3e3335b3288">heavyBraking</a></td></tr>
@@ -124,7 +130,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00017">17</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00018">18</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ae18ce089285af62ead11bc99c63990e6" name="ae18ce089285af62ead11bc99c63990e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae18ce089285af62ead11bc99c63990e6">&#9670;&#160;</a></span>base</h2>
@@ -138,7 +144,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00018">18</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00019">19</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+
+</div>
+</div>
+<a id="a96bd2891e4b6d40080327a8f440d3aee" name="a96bd2891e4b6d40080327a8f440d3aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96bd2891e4b6d40080327a8f440d3aee">&#9670;&#160;</a></span>brakeLight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structDigitalOutput.html">DigitalOutput</a>* BrakeSystemControl::brakeLight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00030">30</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -154,7 +176,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00026">26</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00027">27</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +192,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00027">27</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00028">28</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+
+</div>
+</div>
+<a id="afc888c117490b7df8d550682d5f4c975" name="afc888c117490b7df8d550682d5f4c975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc888c117490b7df8d550682d5f4c975">&#9670;&#160;</a></span>brakeLightBlink</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BrakeSystemControl::brakeLightBlink</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00029">29</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -186,7 +224,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00021">21</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00022">22</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +240,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00029">29</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00032">32</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -218,7 +256,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00028">28</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00031">31</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -234,7 +272,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00020">20</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00021">21</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -250,7 +288,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00024">24</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00025">25</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -266,7 +304,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00019">19</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00020">20</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -282,7 +320,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00022">22</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00023">23</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -298,7 +336,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00025">25</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00026">26</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>
@@ -314,7 +352,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00023">23</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BrakeSystemControl_8h_source.html#l00024">24</a> of file <a class="el" href="BrakeSystemControl_8h_source.html">BrakeSystemControl.h</a>.</p>
 
 </div>
 </div>

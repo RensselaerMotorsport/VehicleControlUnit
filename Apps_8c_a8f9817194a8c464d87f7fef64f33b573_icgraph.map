@@ -1,7 +1,0 @@
-<map id="checkAppsLimit" name="checkAppsLimit">
-<area shape="rect" id="node1" title="Checks App limits for faults." alt="" coords="421,31,537,56"/>
-<area shape="rect" id="node2" href="$Apps_8c.html#a886824bab578359e9dbf926ece592ce2" title="Averages app sensors to get pedal position." alt="" coords="256,5,373,31"/>
-<area shape="rect" id="node3" href="$Apps_8c.html#a460938c29f3827bd63dc0110394ed5f9" title="Updates the APPS based on both sensor outputs." alt="" coords="269,55,360,80"/>
-<area shape="rect" id="node4" href="$Apps_8c.html#a30bb39332a8f4e7c416d7d628fe02b3d" title="Initializes the APPs with the given frequency and channel." alt="" coords="139,55,208,80"/>
-<area shape="rect" id="node5" href="$AppsTest_8c.html#a5fd4aa30b777f204d19257d4f24423c0" title=" " alt="" coords="5,55,91,80"/>
-</map>

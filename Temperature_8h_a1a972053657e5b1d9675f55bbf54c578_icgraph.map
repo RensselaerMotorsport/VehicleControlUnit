@@ -1,0 +1,14 @@
+<map id="transferFunction" name="transferFunction">
+<area shape="rect" id="node1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="1172,103,1288,128"/>
+<area shape="rect" id="node2" href="$Temperature_8c.html#ab0f1defe018e3ea1eac9696b5f40476b" title="Updates the Temperature data." alt="" coords="989,103,1124,128"/>
+<area shape="rect" id="node3" href="$Temperature_8c.html#ae867df29735777728c348fed4d9ebe1a" title="Initializes the Temperature sensor with the given frequency and channel." alt="" coords="613,79,725,104"/>
+<area shape="rect" id="node11" href="$BrakeSystemControl_8c.html#a8ba4ffcecbf364519ca67eeb4a6a2450" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="807,128,941,153"/>
+<area shape="rect" id="node4" href="$BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="372,104,531,129"/>
+<area shape="rect" id="node5" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="208,5,259,31"/>
+<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="143,55,324,80"/>
+<area shape="rect" id="node8" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="170,104,297,129"/>
+<area shape="rect" id="node9" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="172,153,295,179"/>
+<area shape="rect" id="node10" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="175,203,292,228"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,129,95,155"/>
+<area shape="rect" id="node12" href="$BrakeSystemControl_8c.html#aa08ca6f4ef221e2f453a7fc27bcf322b" title="Updates the Brake System Controller." alt="" coords="579,128,759,153"/>
+</map>

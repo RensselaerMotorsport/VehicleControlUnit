@@ -1,0 +1,4 @@
+<map id="checkAppsLimit" name="checkAppsLimit">
+<area shape="rect" id="node1" title="Checks App limits for faults." alt="" coords="5,5,121,31"/>
+<area shape="rect" id="node2" href="$App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="169,5,280,31"/>
+</map>

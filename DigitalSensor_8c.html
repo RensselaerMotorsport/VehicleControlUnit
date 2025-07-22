@@ -85,9 +85,11 @@ Include dependency graph for DigitalSensor.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="DigitalSensor_8c__incl.png" border="0" usemap="#aCore_2Src_2Sensors_2DigitalSensor_8c" alt=""/></div>
 <map name="aCore_2Src_2Sensors_2DigitalSensor_8c" id="aCore_2Src_2Sensors_2DigitalSensor_8c">
-<area shape="rect" title=" " alt="" coords="49,5,214,45"/>
-<area shape="rect" href="DigitalSensor_8h.html" title=" " alt="" coords="55,93,207,133"/>
+<area shape="rect" title=" " alt="" coords="175,5,341,45"/>
+<area shape="rect" href="DigitalSensor_8h.html" title=" " alt="" coords="182,93,334,133"/>
 <area shape="rect" href="Sensor_8h.html" title=" " alt="" coords="95,181,168,207"/>
+<area shape="rect" href="Constants_8h.html" title=" " alt="" coords="192,181,324,207"/>
+<area shape="rect" title=" " alt="" coords="349,181,413,207"/>
 <area shape="rect" title=" " alt="" coords="5,328,65,353"/>
 <area shape="rect" title=" " alt="" coords="197,328,260,353"/>
 <area shape="rect" href="Updateable_8h.html" title=" " alt="" coords="62,255,201,280"/>
@@ -99,13 +101,62 @@ Include dependency graph for DigitalSensor.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a485376e49d8618b1709c567de17663e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DigitalSensor_8c.html#a485376e49d8618b1709c567de17663e6">initDigitalSensor</a> (<a class="el" href="structDigitalSensor.html">DigitalSensor</a> *digitalSensor, const char *name, int hz, int port)</td></tr>
-<tr class="memdesc:a485376e49d8618b1709c567de17663e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a digital sensor with the given parameters.  <a href="DigitalSensor_8c.html#a485376e49d8618b1709c567de17663e6">More...</a><br /></td></tr>
-<tr class="separator:a485376e49d8618b1709c567de17663e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace328dbd7fead307e7141368901c0e1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DigitalSensor_8c.html#ace328dbd7fead307e7141368901c0e1d">initDigitalSensor</a> (<a class="el" href="structDigitalSensor.html">DigitalSensor</a> *digitalSensor, const char *name, int hz, int port, void *child)</td></tr>
+<tr class="memdesc:ace328dbd7fead307e7141368901c0e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a digital sensor with the given parameters.  <a href="DigitalSensor_8c.html#ace328dbd7fead307e7141368901c0e1d">More...</a><br /></td></tr>
+<tr class="separator:ace328dbd7fead307e7141368901c0e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae59684aa257b2cbc2c82bb1f0ddc5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="DigitalSensor_8c.html#adae59684aa257b2cbc2c82bb1f0ddc5a">getDigitalSensorReading</a> (<a class="el" href="structDigitalSensor.html">DigitalSensor</a> *digitalSensor)</td></tr>
+<tr class="memdesc:adae59684aa257b2cbc2c82bb1f0ddc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the reading from the digital sensor.  <a href="DigitalSensor_8c.html#adae59684aa257b2cbc2c82bb1f0ddc5a">More...</a><br /></td></tr>
+<tr class="separator:adae59684aa257b2cbc2c82bb1f0ddc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a485376e49d8618b1709c567de17663e6" name="a485376e49d8618b1709c567de17663e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a485376e49d8618b1709c567de17663e6">&#9670;&#160;</a></span>initDigitalSensor()</h2>
+<a id="adae59684aa257b2cbc2c82bb1f0ddc5a" name="adae59684aa257b2cbc2c82bb1f0ddc5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae59684aa257b2cbc2c82bb1f0ddc5a">&#9670;&#160;</a></span>getDigitalSensorReading()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getDigitalSensorReading </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structDigitalSensor.html">DigitalSensor</a> *&#160;</td>
+          <td class="paramname"><em>digitalsensor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the reading from the digital sensor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">digitalsensor</td><td>Pointer to the <a class="el" href="structSensor.html">Sensor</a> structure to get the reading from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int The reading from the digital sensor. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="DigitalSensor_8c_source.html#l00010">10</a> of file <a class="el" href="DigitalSensor_8c_source.html">DigitalSensor.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>                                                          {</div>
+<div class="line"><span class="lineno">   11</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="DigitalSensor_8h.html#a414058e41f2f169a8e5a7e211ae2d913">digital_in_buffer</a>[digitalSensor-&gt;<a class="code hl_variable" href="structDigitalSensor.html#a5d6d5b9d33670b7f2d8b745b175ce023">port</a>];</div>
+<div class="line"><span class="lineno">   12</span>}</div>
+<div class="ttc" id="aDigitalSensor_8h_html_a414058e41f2f169a8e5a7e211ae2d913"><div class="ttname"><a href="DigitalSensor_8h.html#a414058e41f2f169a8e5a7e211ae2d913">digital_in_buffer</a></div><div class="ttdeci">uint8_t digital_in_buffer[NUM_DIGITAL_INPUTS]</div><div class="ttdef"><b>Definition:</b> <a href="Src_2main_8c_source.html#l00119">main.c:119</a></div></div>
+<div class="ttc" id="astructDigitalSensor_html_a5d6d5b9d33670b7f2d8b745b175ce023"><div class="ttname"><a href="structDigitalSensor.html#a5d6d5b9d33670b7f2d8b745b175ce023">DigitalSensor::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="DigitalSensor_8h_source.html#l00011">DigitalSensor.h:11</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="DigitalSensor_8c_adae59684aa257b2cbc2c82bb1f0ddc5a_icgraph.png" border="0" usemap="#aDigitalSensor_8c_adae59684aa257b2cbc2c82bb1f0ddc5a_icgraph" alt=""/></div>
+<map name="aDigitalSensor_8c_adae59684aa257b2cbc2c82bb1f0ddc5a_icgraph" id="aDigitalSensor_8c_adae59684aa257b2cbc2c82bb1f0ddc5a_icgraph">
+<area shape="rect" title="Gets the reading from the digital sensor." alt="" coords="525,5,689,31"/>
+<area shape="rect" href="Button_8c.html#aa12e419c9e46fe834401bdd0743cbaba" title=" " alt="" coords="352,5,477,31"/>
+<area shape="rect" href="RTD_8c.html#ad4c8548aeb2be8f455c0922c6760e631" title="Updates the RTD Actuator." alt="" coords="217,5,304,31"/>
+<area shape="rect" href="RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="104,5,169,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ace328dbd7fead307e7141368901c0e1d" name="ace328dbd7fead307e7141368901c0e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace328dbd7fead307e7141368901c0e1d">&#9670;&#160;</a></span>initDigitalSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +183,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>child</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -149,43 +206,48 @@ Functions</h2></td></tr>
     <tr><td class="paramname">name</td><td>Pointer to a string containing the name of the sensor. </td></tr>
     <tr><td class="paramname">hz</td><td>The frequency in Hertz at which the sensor operates. </td></tr>
     <tr><td class="paramname">port</td><td>Location of the digital sensor on board. </td></tr>
+    <tr><td class="paramname">child</td><td>Pointer to the child struct. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="DigitalSensor_8c_source.html#l00003">3</a> of file <a class="el" href="DigitalSensor_8c_source.html">DigitalSensor.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    4</span>                                 {</div>
-<div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="Sensor_8h.html#afa23c62d6ac2176a3ab170f42bce0663">initSensor</a>(&amp;digitalSensor-&gt;<a class="code hl_variable" href="structDigitalSensor.html#aa5cfba5a7ccb124822fa1d8a2aac9ece">sensor</a>, name, hz, <a class="code hl_enumvalue" href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a">DIGITAL</a>);</div>
+<div class="fragment"><div class="line"><span class="lineno">    4</span>                                              {</div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_function" href="Sensor_8h.html#afaf02fb354c266fd34becaa91c007ce6">initSensor</a>(&amp;digitalSensor-&gt;<a class="code hl_variable" href="structDigitalSensor.html#aa5cfba5a7ccb124822fa1d8a2aac9ece">sensor</a>, name, hz, <a class="code hl_enumvalue" href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a47ca7a048becb0a6365a18f636df1a1f">s_DIGITAL</a>, digitalSensor);</div>
 <div class="line"><span class="lineno">    6</span>    digitalSensor-&gt;<a class="code hl_variable" href="structDigitalSensor.html#a5d6d5b9d33670b7f2d8b745b175ce023">port</a> = port;</div>
-<div class="line"><span class="lineno">    7</span>}</div>
-<div class="ttc" id="aSensor_8h_html_a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a"><div class="ttname"><a href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a0da6c680b2b129d86740b118d1f8307a">DIGITAL</a></div><div class="ttdeci">@ DIGITAL</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00011">Sensor.h:11</a></div></div>
-<div class="ttc" id="aSensor_8h_html_afa23c62d6ac2176a3ab170f42bce0663"><div class="ttname"><a href="Sensor_8h.html#afa23c62d6ac2176a3ab170f42bce0663">initSensor</a></div><div class="ttdeci">void initSensor(Sensor *sensor, const char *name, int hz, SensorType type)</div><div class="ttdoc">Initializes a sensor with the given parameters.</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8c_source.html#l00004">Sensor.c:4</a></div></div>
-<div class="ttc" id="astructDigitalSensor_html_a5d6d5b9d33670b7f2d8b745b175ce023"><div class="ttname"><a href="structDigitalSensor.html#a5d6d5b9d33670b7f2d8b745b175ce023">DigitalSensor::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="DigitalSensor_8h_source.html#l00008">DigitalSensor.h:8</a></div></div>
-<div class="ttc" id="astructDigitalSensor_html_aa5cfba5a7ccb124822fa1d8a2aac9ece"><div class="ttname"><a href="structDigitalSensor.html#aa5cfba5a7ccb124822fa1d8a2aac9ece">DigitalSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="DigitalSensor_8h_source.html#l00007">DigitalSensor.h:7</a></div></div>
+<div class="line"><span class="lineno">    7</span>    digitalSensor-&gt;<a class="code hl_variable" href="structDigitalSensor.html#af22bd51d38c70b32043e931cad3cde2e">child</a> = child;</div>
+<div class="line"><span class="lineno">    8</span>}</div>
+<div class="ttc" id="aSensor_8h_html_a213c434cb928c4ca22513e2302632435a47ca7a048becb0a6365a18f636df1a1f"><div class="ttname"><a href="Sensor_8h.html#a213c434cb928c4ca22513e2302632435a47ca7a048becb0a6365a18f636df1a1f">s_DIGITAL</a></div><div class="ttdeci">@ s_DIGITAL</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8h_source.html#l00011">Sensor.h:11</a></div></div>
+<div class="ttc" id="aSensor_8h_html_afaf02fb354c266fd34becaa91c007ce6"><div class="ttname"><a href="Sensor_8h.html#afaf02fb354c266fd34becaa91c007ce6">initSensor</a></div><div class="ttdeci">void initSensor(Sensor *sensor, const char *name, int hz, SensorType type, void *child)</div><div class="ttdoc">Initializes a sensor with the given parameters.</div><div class="ttdef"><b>Definition:</b> <a href="Sensor_8c_source.html#l00004">Sensor.c:4</a></div></div>
+<div class="ttc" id="astructDigitalSensor_html_aa5cfba5a7ccb124822fa1d8a2aac9ece"><div class="ttname"><a href="structDigitalSensor.html#aa5cfba5a7ccb124822fa1d8a2aac9ece">DigitalSensor::sensor</a></div><div class="ttdeci">Sensor sensor</div><div class="ttdef"><b>Definition:</b> <a href="DigitalSensor_8h_source.html#l00010">DigitalSensor.h:10</a></div></div>
+<div class="ttc" id="astructDigitalSensor_html_af22bd51d38c70b32043e931cad3cde2e"><div class="ttname"><a href="structDigitalSensor.html#af22bd51d38c70b32043e931cad3cde2e">DigitalSensor::child</a></div><div class="ttdeci">void * child</div><div class="ttdef"><b>Definition:</b> <a href="DigitalSensor_8h_source.html#l00012">DigitalSensor.h:12</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="DigitalSensor_8c_a485376e49d8618b1709c567de17663e6_cgraph.png" border="0" usemap="#aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_cgraph" alt=""/></div>
-<map name="aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_cgraph" id="aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_cgraph">
+<div class="center"><img src="DigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_cgraph.png" border="0" usemap="#aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_cgraph" alt=""/></div>
+<map name="aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_cgraph" id="aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_cgraph">
 <area shape="rect" title="Initializes a digital sensor with the given parameters." alt="" coords="5,80,121,105"/>
-<area shape="rect" href="Sensor_8c.html#afa23c62d6ac2176a3ab170f42bce0663" title="Initializes a sensor with the given parameters." alt="" coords="169,80,249,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="297,80,403,105"/>
+<area shape="rect" href="Sensor_8c.html#afaf02fb354c266fd34becaa91c007ce6" title="Initializes a sensor with the given parameters." alt="" coords="169,80,249,105"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="297,80,403,105"/>
 <area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="451,5,555,31"/>
 <area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="453,55,553,80"/>
 <area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="453,104,552,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="451,153,554,179"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="451,153,554,179"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="DigitalSensor_8c_a485376e49d8618b1709c567de17663e6_icgraph.png" border="0" usemap="#aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_icgraph" alt=""/></div>
-<map name="aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_icgraph" id="aDigitalSensor_8c_a485376e49d8618b1709c567de17663e6_icgraph">
-<area shape="rect" title="Initializes a digital sensor with the given parameters." alt="" coords="540,31,656,56"/>
-<area shape="rect" href="ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="377,5,492,31"/>
-<area shape="rect" href="WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="379,55,491,80"/>
-<area shape="rect" href="WheelSpeedTest_8c.html#a70a3b17298afce0d39290c9483e4f4ed" title=" " alt="" coords="187,55,329,80"/>
-<area shape="rect" href="WheelSpeedTest_8c.html#add23dc7c05d1e7696b9be2f52f894f56" title=" " alt="" coords="5,55,139,80"/>
+<div class="center"><img src="DigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_icgraph.png" border="0" usemap="#aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_icgraph" alt=""/></div>
+<map name="aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_icgraph" id="aDigitalSensor_8c_ace328dbd7fead307e7141368901c0e1d_icgraph">
+<area shape="rect" title="Initializes a digital sensor with the given parameters." alt="" coords="540,55,656,80"/>
+<area shape="rect" href="Button_8c.html#a217a589851c58f9b9ffc502b3101389c" title=" " alt="" coords="396,5,473,31"/>
+<area shape="rect" href="ESCIndicator_8c.html#a23268d6d75292be2165c72d48183abe8" title=" " alt="" coords="377,55,492,80"/>
+<area shape="rect" href="WheelSpeed_8c.html#ac49732714bcdc5c6bb1c4f94ddf497b3" title="Initialization function for a wheel speed sensor." alt="" coords="379,104,491,129"/>
+<area shape="rect" href="RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="225,5,291,31"/>
+<area shape="rect" href="Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="47,5,97,31"/>
+<area shape="rect" href="WheelSpeedTest_8c.html#a70a3b17298afce0d39290c9483e4f4ed" title=" " alt="" coords="187,104,329,129"/>
+<area shape="rect" href="WheelSpeedTest_8c.html#add23dc7c05d1e7696b9be2f52f894f56" title=" " alt="" coords="5,104,139,129"/>
 </map>
 </div>
 

@@ -1,0 +1,9 @@
+<map id="getAppsPosition" name="getAppsPosition">
+<area shape="rect" id="node1" title="Averages app sensors to get pedal position." alt="" coords="532,31,649,56"/>
+<area shape="rect" id="node2" href="$TorqueControl_8c.html#a511cb99df3e91fbfcd1b7d8261b7862c" title="Sets the desired torque for the Torque Control Actuator." alt="" coords="360,5,484,31"/>
+<area shape="rect" id="node6" href="$RTD_8c.html#ad4c8548aeb2be8f455c0922c6760e631" title="Updates the RTD Actuator." alt="" coords="379,55,465,80"/>
+<area shape="rect" id="node3" href="$TorqueControl_8c.html#ac675cea5e7d7d4953bb6f80715391601" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,5,312,31"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="49,55,100,80"/>
+<area shape="rect" id="node5" href="$TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" id="node7" href="$RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="219,55,285,80"/>
+</map>

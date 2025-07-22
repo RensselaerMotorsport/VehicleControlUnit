@@ -1,0 +1,7 @@
+<map id="getDigitalSensorReading" name="getDigitalSensorReading">
+<area shape="rect" id="node1" title="Gets the reading from the digital sensor." alt="" coords="525,5,689,31"/>
+<area shape="rect" id="node2" href="$Button_8c.html#aa12e419c9e46fe834401bdd0743cbaba" title=" " alt="" coords="352,5,477,31"/>
+<area shape="rect" id="node3" href="$RTD_8c.html#ad4c8548aeb2be8f455c0922c6760e631" title="Updates the RTD Actuator." alt="" coords="217,5,304,31"/>
+<area shape="rect" id="node4" href="$RTD_8c.html#aded74ff58f8eadce62124dc2acf68d64" title="Initializes the RTD Actuator with initial settings." alt="" coords="104,5,169,31"/>
+<area shape="rect" id="node5" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,31"/>
+</map>

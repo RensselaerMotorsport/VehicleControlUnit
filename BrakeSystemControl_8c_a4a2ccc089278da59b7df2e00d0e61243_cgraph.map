@@ -1,7 +1,0 @@
-<map id="setSensorReadings" name="setSensorReadings">
-<area shape="rect" id="node1" title="Updates BrakeSystemStatus with current sensor data." alt="" coords="5,31,140,56"/>
-<area shape="rect" id="node2" href="$BrakePressure_8c.html#a900d41fab896ec94686ed339f7ddd48b" title="Updates the brake pressure data." alt="" coords="188,5,335,31"/>
-<area shape="rect" id="node4" href="$Temperature_8c.html#ae415305492dd93722bfec35a26e4f4b6" title="Updates the Temperature data." alt="" coords="194,55,329,80"/>
-<area shape="rect" id="node3" href="$BrakePressure_8c.html#a263953f8a1c52229189a61a9af3670c9" title="Converts raw brake pressure data to a meaningful pressure value." alt="" coords="383,5,585,31"/>
-<area shape="rect" id="node5" href="$Temperature_8c.html#abadc58fa84298a2d39aed3e1be4b20c1" title="Converts raw temperature data to a meaningful temperature value." alt="" coords="426,55,542,80"/>
-</map>

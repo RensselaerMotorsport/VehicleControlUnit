@@ -75,7 +75,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Can.c File Reference</div></div>
@@ -84,7 +83,7 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="stm32f7xx__it_8h_source.html">stm32f7xx_it.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Can_8h_source.html">../../../../Inc/Systems/Comms/Can/Can.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="DBCParser_8h_source.html">../../../../Inc/Systems/Comms/Can/DBCParser.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PrintHelpers_8h_source.html">../../../../Inc/Systems/PrintHelpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Common_8h_source.html">../../../../Inc/Utils/Common.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -94,15 +93,15 @@ Include dependency graph for Can.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Can_8c__incl.png" border="0" usemap="#aCore_2Src_2Systems_2Comms_2CAN_2Can_8c" alt=""/></div>
 <map name="aCore_2Src_2Systems_2Comms_2CAN_2Can_8c" id="aCore_2Src_2Systems_2Comms_2CAN_2Can_8c">
-<area shape="rect" title=" " alt="" coords="427,5,604,45"/>
+<area shape="rect" title=" " alt="" coords="409,5,587,45"/>
 <area shape="rect" href="stm32f7xx__it_8h.html" title="This file contains the headers of the interrupt handlers." alt="" coords="5,101,111,126"/>
 <area shape="rect" href="Can_8h.html" title=" " alt="" coords="77,181,231,221"/>
 <area shape="rect" href="DBCParser_8h.html" title=" " alt="" coords="187,93,364,133"/>
-<area shape="rect" href="PrintHelpers_8h.html" title=" " alt="" coords="388,93,523,133"/>
-<area shape="rect" title=" " alt="" coords="547,101,607,126"/>
-<area shape="rect" title=" " alt="" coords="631,101,695,126"/>
-<area shape="rect" title=" " alt="" coords="720,101,783,126"/>
-<area shape="rect" title=" " alt="" coords="807,101,885,126"/>
+<area shape="rect" href="Common_8h.html" title=" " alt="" coords="388,93,499,133"/>
+<area shape="rect" title=" " alt="" coords="523,101,583,126"/>
+<area shape="rect" title=" " alt="" coords="607,101,671,126"/>
+<area shape="rect" title=" " alt="" coords="696,101,759,126"/>
+<area shape="rect" title=" " alt="" coords="783,101,861,126"/>
 <area shape="rect" href="stm32f7xx__hal_8h.html" title=" " alt="" coords="97,269,211,295"/>
 <area shape="rect" title=" " alt="" coords="235,269,299,295"/>
 </map>
@@ -110,11 +109,6 @@ Include dependency graph for Can.c:</div>
 </div>
 <p><a href="Can_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a92a364c2b863dde1a024a77eac2a5b3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a>&#160;&#160;&#160;&quot;\x1b[0m&quot;</td></tr>
-<tr class="separator:a92a364c2b863dde1a024a77eac2a5b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a285e1f1e8fb19554cc1da922de670853"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Can_8c.html#a285e1f1e8fb19554cc1da922de670853">init_CANBus</a> (<a class="el" href="Can_8h.html#a7ce7bcff1bc258b0704bef693c211757">CANBus</a> bus)</td></tr>
@@ -153,21 +147,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a4af7489ff69573f4410f051111cd2380"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCAN__MessageList.html">CAN_MessageList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a> [<a class="el" href="Can_8h.html#ae0cc24a8e1de84e4b6ae028df45171a7">MAX_BUS</a>]</td></tr>
 <tr class="separator:a4af7489ff69573f4410f051111cd2380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a92a364c2b863dde1a024a77eac2a5b3b" name="a92a364c2b863dde1a024a77eac2a5b3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92a364c2b863dde1a024a77eac2a5b3b">&#9670;&#160;</a></span>ANSI_COLOR_RESET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ANSI_COLOR_RESET&#160;&#160;&#160;&quot;\x1b[0m&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa574b218e25b65be9a3937ad37dd8c90" name="aa574b218e25b65be9a3937ad37dd8c90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa574b218e25b65be9a3937ad37dd8c90">&#9670;&#160;</a></span>add_message()</h2>
@@ -751,10 +730,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  192</span>        printf(<span class="stringliteral">&quot;Printing CAN Message List for bus %d with %d messages\r\n&quot;</span>, i, <a class="code hl_variable" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a>[i].num_messages);</div>
 <div class="line"><span class="lineno">  193</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a>[i].<a class="code hl_variable" href="structCAN__MessageList.html#aa969962f1e900d9b5bd6837f4e2f275d">num_messages</a>; j++) {</div>
 <div class="line"><span class="lineno">  194</span>            <span class="keyword">const</span> <a class="code hl_struct" href="structCAN__Message__Template.html">CAN_Message_Template</a>* msg = &amp;<a class="code hl_variable" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a>[i].<a class="code hl_variable" href="structCAN__MessageList.html#a30e505f34de1edbd510291265e832beb">messages</a>[j];</div>
-<div class="line"><span class="lineno">  195</span>            printf(<a class="code hl_define" href="PrintHelpers_8h.html#a966c72d8d733c7734c6c784753d894c7">ANSI_COLOR_GREEN</a> <span class="stringliteral">&quot;Message&quot;</span> <a class="code hl_define" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\r\n&quot;</span>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#ae738817328a3ef660815a717b6364855">name</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a2651453f3b2031870421c58a2a8963a9">id</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#adeb38e27b08089bd69844fb0c760c8eb">dlc</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a112b274fe488d08cc08c91685d40a2f0">sender</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a614b9ca1ebbabc3588c90bbbc3fa0811">signal_count</a>);</div>
+<div class="line"><span class="lineno">  195</span>            printf(<a class="code hl_define" href="Common_8h.html#a966c72d8d733c7734c6c784753d894c7">ANSI_COLOR_GREEN</a> <span class="stringliteral">&quot;Message&quot;</span> <a class="code hl_define" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\r\n&quot;</span>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#ae738817328a3ef660815a717b6364855">name</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a2651453f3b2031870421c58a2a8963a9">id</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#adeb38e27b08089bd69844fb0c760c8eb">dlc</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a112b274fe488d08cc08c91685d40a2f0">sender</a>, msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a614b9ca1ebbabc3588c90bbbc3fa0811">signal_count</a>);</div>
 <div class="line"><span class="lineno">  196</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a614b9ca1ebbabc3588c90bbbc3fa0811">signal_count</a>; k++) {</div>
 <div class="line"><span class="lineno">  197</span>                <span class="keyword">const</span> <a class="code hl_struct" href="structCAN__Signal__Template.html">CAN_Signal_Template</a>* sig = &amp;msg-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#ab13a0595cb29208a4e390f141db61b44">signals</a>[k];</div>
-<div class="line"><span class="lineno">  198</span>                printf(<span class="stringliteral">&quot;\t&quot;</span> <a class="code hl_define" href="PrintHelpers_8h.html#aca16e6a49eb51333c5fd3eee19487315">ANSI_COLOR_BLUE</a> <span class="stringliteral">&quot;Signal&quot;</span> <a class="code hl_define" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\r\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \r\n\t\tUnit: %s, Reciever: %s)\r\n&quot;</span>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#aa6613455e9feda1b9d7ffe570805e3bd">name</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a899c103b683717794c836fe0c5e85b2b">start_bit</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a8c0828679d1a0fe385c18a5b6c8f64bb">length</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#ae2b8092e207e4c059257ba65e634c3d5">endian</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a215f4a83aba109789c8b55fb6bf6e935">isSigned</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a9c178caf014f49e00a2b220bebf3c164">scale</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a4484da513ef48aaca7ee3616ca2ad3b2">offset</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a2e01433c42b001ae0d82e54db5a93cfa">min</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a73d8518723e02b60a8a7ffeb000ade20">max</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a00898fd07eed2d916c5a51c32d3002f9">unit</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a111aaba9c8d4684e1fa800de0f8dc10c">reciever</a>);</div>
+<div class="line"><span class="lineno">  198</span>                printf(<span class="stringliteral">&quot;\t&quot;</span> <a class="code hl_define" href="Common_8h.html#aca16e6a49eb51333c5fd3eee19487315">ANSI_COLOR_BLUE</a> <span class="stringliteral">&quot;Signal&quot;</span> <a class="code hl_define" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\r\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \r\n\t\tUnit: %s, Reciever: %s)\r\n&quot;</span>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#aa6613455e9feda1b9d7ffe570805e3bd">name</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a899c103b683717794c836fe0c5e85b2b">start_bit</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a8c0828679d1a0fe385c18a5b6c8f64bb">length</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#ae2b8092e207e4c059257ba65e634c3d5">endian</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a215f4a83aba109789c8b55fb6bf6e935">isSigned</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a9c178caf014f49e00a2b220bebf3c164">scale</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a4484da513ef48aaca7ee3616ca2ad3b2">offset</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a2e01433c42b001ae0d82e54db5a93cfa">min</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a73d8518723e02b60a8a7ffeb000ade20">max</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a00898fd07eed2d916c5a51c32d3002f9">unit</a>, sig-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a111aaba9c8d4684e1fa800de0f8dc10c">reciever</a>);</div>
 <div class="line"><span class="lineno">  199</span>            }</div>
 <div class="line"><span class="lineno">  200</span>            printf(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  201</span>        }</div>
@@ -763,10 +742,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  204</span>        }</div>
 <div class="line"><span class="lineno">  205</span>    }</div>
 <div class="line"><span class="lineno">  206</span>}</div>
-<div class="ttc" id="aCan_8c_html_a92a364c2b863dde1a024a77eac2a5b3b"><div class="ttname"><a href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a></div><div class="ttdeci">#define ANSI_COLOR_RESET</div></div>
 <div class="ttc" id="aCan_8h_html_ae0cc24a8e1de84e4b6ae028df45171a7"><div class="ttname"><a href="Can_8h.html#ae0cc24a8e1de84e4b6ae028df45171a7">MAX_BUS</a></div><div class="ttdeci">#define MAX_BUS</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00094">Can.h:94</a></div></div>
-<div class="ttc" id="aPrintHelpers_8h_html_a966c72d8d733c7734c6c784753d894c7"><div class="ttname"><a href="PrintHelpers_8h.html#a966c72d8d733c7734c6c784753d894c7">ANSI_COLOR_GREEN</a></div><div class="ttdeci">#define ANSI_COLOR_GREEN</div><div class="ttdef"><b>Definition:</b> <a href="PrintHelpers_8h_source.html#l00002">PrintHelpers.h:2</a></div></div>
-<div class="ttc" id="aPrintHelpers_8h_html_aca16e6a49eb51333c5fd3eee19487315"><div class="ttname"><a href="PrintHelpers_8h.html#aca16e6a49eb51333c5fd3eee19487315">ANSI_COLOR_BLUE</a></div><div class="ttdeci">#define ANSI_COLOR_BLUE</div><div class="ttdef"><b>Definition:</b> <a href="PrintHelpers_8h_source.html#l00004">PrintHelpers.h:4</a></div></div>
+<div class="ttc" id="aCommon_8h_html_a92a364c2b863dde1a024a77eac2a5b3b"><div class="ttname"><a href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a></div><div class="ttdeci">#define ANSI_COLOR_RESET</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00015">Common.h:15</a></div></div>
+<div class="ttc" id="aCommon_8h_html_a966c72d8d733c7734c6c784753d894c7"><div class="ttname"><a href="Common_8h.html#a966c72d8d733c7734c6c784753d894c7">ANSI_COLOR_GREEN</a></div><div class="ttdeci">#define ANSI_COLOR_GREEN</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00010">Common.h:10</a></div></div>
+<div class="ttc" id="aCommon_8h_html_aca16e6a49eb51333c5fd3eee19487315"><div class="ttname"><a href="Common_8h.html#aca16e6a49eb51333c5fd3eee19487315">ANSI_COLOR_BLUE</a></div><div class="ttdeci">#define ANSI_COLOR_BLUE</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00012">Common.h:12</a></div></div>
 <div class="ttc" id="astructCAN__Signal__Template_html_a00898fd07eed2d916c5a51c32d3002f9"><div class="ttname"><a href="structCAN__Signal__Template.html#a00898fd07eed2d916c5a51c32d3002f9">CAN_Signal_Template::unit</a></div><div class="ttdeci">char unit[MAX_UNIT_NAME_LENGTH]</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00029">Can.h:29</a></div></div>
 <div class="ttc" id="astructCAN__Signal__Template_html_a111aaba9c8d4684e1fa800de0f8dc10c"><div class="ttname"><a href="structCAN__Signal__Template.html#a111aaba9c8d4684e1fa800de0f8dc10c">CAN_Signal_Template::reciever</a></div><div class="ttdeci">char reciever[MAX_NODE_NAME_LENGTH]</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00030">Can.h:30</a></div></div>
 <div class="ttc" id="astructCAN__Signal__Template_html_a2e01433c42b001ae0d82e54db5a93cfa"><div class="ttname"><a href="structCAN__Signal__Template.html#a2e01433c42b001ae0d82e54db5a93cfa">CAN_Signal_Template::min</a></div><div class="ttdeci">float min</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00027">Can.h:27</a></div></div>
@@ -830,27 +809,27 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">  112</span>                                                                                     {</div>
 <div class="line"><span class="lineno">  113</span>    <a class="code hl_struct" href="structCAN__Message.html">CAN_Message</a>* can_message = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structCAN__Message.html">CAN_Message</a>) + <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structCAN__Signal.html">CAN_Signal</a>) * 8);</div>
 <div class="line"><span class="lineno">  114</span>    can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a7e6fdc97afb669d89a917ae3cbc84ee3">header</a> = *RxHeader;</div>
-<div class="line"><span class="lineno">  115</span>        memcpy(can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a11354c185537ca670ae41501b7e55d54">data</a>, RxData, 8);</div>
+<div class="line"><span class="lineno">  115</span>    memcpy(can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a11354c185537ca670ae41501b7e55d54">data</a>, RxData, 8);</div>
 <div class="line"><span class="lineno">  116</span> </div>
-<div class="line"><span class="lineno">  117</span>        <span class="comment">// Parse the message</span></div>
-<div class="line"><span class="lineno">  118</span>        <a class="code hl_function" href="Can_8c.html#a7b791ed820670f44703fc1bccd0b9424">parseMessage</a>(&amp;<a class="code hl_variable" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a>[bus], can_message);</div>
+<div class="line"><span class="lineno">  117</span>    <span class="comment">// Parse the message</span></div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_function" href="Can_8c.html#a7b791ed820670f44703fc1bccd0b9424">parseMessage</a>(&amp;<a class="code hl_variable" href="Can_8c.html#a4af7489ff69573f4410f051111cd2380">can_messages</a>[bus], can_message);</div>
 <div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>        <span class="comment">// Print out the contents of the message</span></div>
-<div class="line"><span class="lineno">  121</span>        printf(<a class="code hl_define" href="PrintHelpers_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a> <span class="stringliteral">&quot;Received CAN Message&quot;</span> <a class="code hl_define" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (ID: %d, DLC: %d, Sender: %s)\r\n&quot;</span>, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#ae738817328a3ef660815a717b6364855">name</a>, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a7e6fdc97afb669d89a917ae3cbc84ee3">header</a>.StdId, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a7e6fdc97afb669d89a917ae3cbc84ee3">header</a>.DLC, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a112b274fe488d08cc08c91685d40a2f0">sender</a>);</div>
+<div class="line"><span class="lineno">  120</span>    <span class="comment">// Print out the contents of the message</span></div>
+<div class="line"><span class="lineno">  121</span>    printf(<a class="code hl_define" href="Common_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a> <span class="stringliteral">&quot;Received CAN Message&quot;</span> <a class="code hl_define" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (ID: %d, DLC: %d, Sender: %s)\r\n&quot;</span>, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#ae738817328a3ef660815a717b6364855">name</a>, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a7e6fdc97afb669d89a917ae3cbc84ee3">header</a>.StdId, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a7e6fdc97afb669d89a917ae3cbc84ee3">header</a>.DLC, can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a112b274fe488d08cc08c91685d40a2f0">sender</a>);</div>
 <div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>        <span class="comment">// Print the signals</span></div>
-<div class="line"><span class="lineno">  124</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a614b9ca1ebbabc3588c90bbbc3fa0811">signal_count</a>; i++) {</div>
-<div class="line"><span class="lineno">  125</span>            <a class="code hl_struct" href="structCAN__Signal.html">CAN_Signal</a>* signal = &amp;can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a3cc107005c68ad93fcef901053030c05">signals</a>[i];</div>
-<div class="line"><span class="lineno">  126</span>            printf(<span class="stringliteral">&quot;\t&quot;</span> <a class="code hl_define" href="PrintHelpers_8h.html#acb30614ba1535da5b9d0c490b3c10515">ANSI_COLOR_MAGENTA</a> <span class="stringliteral">&quot;Signal&quot;</span> <a class="code hl_define" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (Value: %u, Unit: %s)\r\n&quot;</span>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#ab9e259b55004cbddedc287970360432e">template</a>-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#aa6613455e9feda1b9d7ffe570805e3bd">name</a>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#a8748a485f18aca60c2afc4623e52064d">value</a>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#ab9e259b55004cbddedc287970360432e">template</a>-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a00898fd07eed2d916c5a51c32d3002f9">unit</a>);</div>
-<div class="line"><span class="lineno">  127</span>        }</div>
-<div class="line"><span class="lineno">  128</span>        printf(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">// Print the signals</span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a734147815de9e8fc7461a3bb78e5f9cb">template</a>-&gt;<a class="code hl_variable" href="structCAN__Message__Template.html#a614b9ca1ebbabc3588c90bbbc3fa0811">signal_count</a>; i++) {</div>
+<div class="line"><span class="lineno">  125</span>        <a class="code hl_struct" href="structCAN__Signal.html">CAN_Signal</a>* signal = &amp;can_message-&gt;<a class="code hl_variable" href="structCAN__Message.html#a3cc107005c68ad93fcef901053030c05">signals</a>[i];</div>
+<div class="line"><span class="lineno">  126</span>        printf(<span class="stringliteral">&quot;\t&quot;</span> <a class="code hl_define" href="Common_8h.html#acb30614ba1535da5b9d0c490b3c10515">ANSI_COLOR_MAGENTA</a> <span class="stringliteral">&quot;Signal&quot;</span> <a class="code hl_define" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: %s (Value: %u, Unit: %s)\r\n&quot;</span>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#ab9e259b55004cbddedc287970360432e">template</a>-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#aa6613455e9feda1b9d7ffe570805e3bd">name</a>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#a8748a485f18aca60c2afc4623e52064d">value</a>, signal-&gt;<a class="code hl_variable" href="structCAN__Signal.html#ab9e259b55004cbddedc287970360432e">template</a>-&gt;<a class="code hl_variable" href="structCAN__Signal__Template.html#a00898fd07eed2d916c5a51c32d3002f9">unit</a>);</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>    printf(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
 <div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>        <span class="comment">// Free the message</span></div>
-<div class="line"><span class="lineno">  131</span>        free(can_message);</div>
+<div class="line"><span class="lineno">  130</span>    <span class="comment">// Free the message</span></div>
+<div class="line"><span class="lineno">  131</span>    free(can_message);</div>
 <div class="line"><span class="lineno">  132</span>}</div>
 <div class="ttc" id="aCan_8c_html_a7b791ed820670f44703fc1bccd0b9424"><div class="ttname"><a href="Can_8c.html#a7b791ed820670f44703fc1bccd0b9424">parseMessage</a></div><div class="ttdeci">void parseMessage(CAN_MessageList *messages, CAN_Message *can_message)</div><div class="ttdoc">Parses a CAN message.</div><div class="ttdef"><b>Definition:</b> <a href="Can_8c_source.html#l00135">Can.c:135</a></div></div>
-<div class="ttc" id="aPrintHelpers_8h_html_a5a123b382640b3aa65dd5db386002fbc"><div class="ttname"><a href="PrintHelpers_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a></div><div class="ttdeci">#define ANSI_COLOR_YELLOW</div><div class="ttdef"><b>Definition:</b> <a href="PrintHelpers_8h_source.html#l00003">PrintHelpers.h:3</a></div></div>
-<div class="ttc" id="aPrintHelpers_8h_html_acb30614ba1535da5b9d0c490b3c10515"><div class="ttname"><a href="PrintHelpers_8h.html#acb30614ba1535da5b9d0c490b3c10515">ANSI_COLOR_MAGENTA</a></div><div class="ttdeci">#define ANSI_COLOR_MAGENTA</div><div class="ttdef"><b>Definition:</b> <a href="PrintHelpers_8h_source.html#l00005">PrintHelpers.h:5</a></div></div>
+<div class="ttc" id="aCommon_8h_html_a5a123b382640b3aa65dd5db386002fbc"><div class="ttname"><a href="Common_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a></div><div class="ttdeci">#define ANSI_COLOR_YELLOW</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00011">Common.h:11</a></div></div>
+<div class="ttc" id="aCommon_8h_html_acb30614ba1535da5b9d0c490b3c10515"><div class="ttname"><a href="Common_8h.html#acb30614ba1535da5b9d0c490b3c10515">ANSI_COLOR_MAGENTA</a></div><div class="ttdeci">#define ANSI_COLOR_MAGENTA</div><div class="ttdef"><b>Definition:</b> <a href="Common_8h_source.html#l00013">Common.h:13</a></div></div>
 <div class="ttc" id="astructCAN__Message_html"><div class="ttname"><a href="structCAN__Message.html">CAN_Message</a></div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00084">Can.h:84</a></div></div>
 <div class="ttc" id="astructCAN__Signal_html"><div class="ttname"><a href="structCAN__Signal.html">CAN_Signal</a></div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00033">Can.h:33</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -951,7 +930,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   93</span>    TxHeader.DLC = len;</div>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>    <span class="comment">// Print the message</span></div>
-<div class="line"><span class="lineno">   96</span>    printf(<a class="code hl_define" href="PrintHelpers_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a> <span class="stringliteral">&quot;Sending CAN Message&quot;</span> <a class="code hl_define" href="Can_8c.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: ID: %d, DLC: %d, Data: &quot;</span>, <span class="keywordtype">id</span>, len);</div>
+<div class="line"><span class="lineno">   96</span>    printf(<a class="code hl_define" href="Common_8h.html#a5a123b382640b3aa65dd5db386002fbc">ANSI_COLOR_YELLOW</a> <span class="stringliteral">&quot;Sending CAN Message&quot;</span> <a class="code hl_define" href="Common_8h.html#a92a364c2b863dde1a024a77eac2a5b3b">ANSI_COLOR_RESET</a> <span class="stringliteral">&quot;: ID: %d, DLC: %d, Data: &quot;</span>, <span class="keywordtype">id</span>, len);</div>
 <div class="line"><span class="lineno">   97</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; len; i++) {</div>
 <div class="line"><span class="lineno">   98</span>        printf(<span class="stringliteral">&quot;%02X &quot;</span>, data[i]);</div>
 <div class="line"><span class="lineno">   99</span>    }</div>
@@ -967,7 +946,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  109</span>}</div>
 <div class="ttc" id="aCan_8h_html_af488c3d8208a6f7c2b93733441261175a1274100e89b60b4ee714761f0713ff67"><div class="ttname"><a href="Can_8h.html#af488c3d8208a6f7c2b93733441261175a1274100e89b60b4ee714761f0713ff67">CAN_2A</a></div><div class="ttdeci">@ CAN_2A</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00105">Can.h:105</a></div></div>
 <div class="ttc" id="aCan_8h_html_af488c3d8208a6f7c2b93733441261175a79d8267ca0083d6d73d8202c4f7348e9"><div class="ttname"><a href="Can_8h.html#af488c3d8208a6f7c2b93733441261175a79d8267ca0083d6d73d8202c4f7348e9">CAN_2B</a></div><div class="ttdeci">@ CAN_2B</div><div class="ttdef"><b>Definition:</b> <a href="Can_8h_source.html#l00106">Can.h:106</a></div></div>
-<div class="ttc" id="astm32f7xx__it_8h_html_a2669226967657bbddee51792f59293e2"><div class="ttname"><a href="stm32f7xx__it_8h.html#a2669226967657bbddee51792f59293e2">send_CAN_message_helper</a></div><div class="ttdeci">int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *data)</div><div class="ttdef"><b>Definition:</b> <a href="stm32f7xx__it_8c_source.html#l00292">stm32f7xx_it.c:292</a></div></div>
+<div class="ttc" id="astm32f7xx__it_8h_html_a2669226967657bbddee51792f59293e2"><div class="ttname"><a href="stm32f7xx__it_8h.html#a2669226967657bbddee51792f59293e2">send_CAN_message_helper</a></div><div class="ttdeci">int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *data)</div><div class="ttdef"><b>Definition:</b> <a href="stm32f7xx__it_8c_source.html#l00386">stm32f7xx_it.c:386</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

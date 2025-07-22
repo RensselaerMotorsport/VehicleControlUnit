@@ -1,0 +1,5 @@
+<map id="DigitalOutput" name="DigitalOutput">
+<area shape="rect" id="node1" title=" " alt="" coords="5,181,103,207"/>
+<area shape="rect" id="node2" href="$structOutput.html" title=" " alt="" coords="23,93,85,119"/>
+<area shape="rect" id="node3" href="$structUpdateable.html" title=" " alt="" coords="10,5,98,31"/>
+</map>

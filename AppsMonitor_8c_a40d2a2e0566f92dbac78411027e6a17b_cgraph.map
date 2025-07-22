@@ -1,0 +1,13 @@
+<map id="initAppsMonitor" name="initAppsMonitor">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,117,81"/>
+<area shape="rect" id="node2" href="$AppsMonitor_8c.html#acd68c63bc5c3861b01f22aa3a76281b9" title=" " alt="" coords="165,31,296,56"/>
+<area shape="rect" id="node5" href="$MonitorSystem_8c.html#a8d8af9a14fa42b23069fc019bd0ec287" title="Initializes the Monitor System with initial settings." alt="" coords="167,80,294,105"/>
+<area shape="rect" id="node3" href="$AppsMonitor_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="344,31,460,56"/>
+<area shape="rect" id="node4" href="$App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="508,31,619,56"/>
+<area shape="rect" id="node6" href="$System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="361,80,443,105"/>
+<area shape="rect" id="node7" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="511,80,616,105"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="667,5,771,31"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="669,55,769,80"/>
+<area shape="rect" id="node10" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="669,104,768,129"/>
+<area shape="rect" id="node11" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="667,153,770,179"/>
+</map>

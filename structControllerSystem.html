@@ -96,34 +96,56 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ac1698fbd11febb34001280cfc1326303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94a64d7b344640e6e3bf95b200daa77e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ControllerSystem_8h.html#a81059b4122c9dd4608d347eb117ae8c9">ControllerType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a94a64d7b344640e6e3bf95b200daa77e">type</a></td></tr>
 <tr class="separator:a94a64d7b344640e6e3bf95b200daa77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0164e78f6e48416560ca7d40e90e8f1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMonitorSystem.html">MonitorSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a0164e78f6e48416560ca7d40e90e8f1d">monitors</a> [<a class="el" href="ControllerSystem_8h.html#a0cd5fd43543b0e231650b1eaabc30dd2">MAX_MONITORS</a>]</td></tr>
+<tr class="memitem:adbfc5da05b506b9e0dea738ee29fbbb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36">ControllerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#adbfc5da05b506b9e0dea738ee29fbbb6">state</a></td></tr>
+<tr class="separator:adbfc5da05b506b9e0dea738ee29fbbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0164e78f6e48416560ca7d40e90e8f1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMonitorSystem.html">MonitorSystem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a0164e78f6e48416560ca7d40e90e8f1d">monitors</a> [<a class="el" href="Constants_8h.html#a0cd5fd43543b0e231650b1eaabc30dd2">MAX_MONITORS</a>]</td></tr>
 <tr class="separator:a0164e78f6e48416560ca7d40e90e8f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8e42023f45ffbf8d41916c8c4c77575"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#ae8e42023f45ffbf8d41916c8c4c77575">num_monitors</a></td></tr>
 <tr class="separator:ae8e42023f45ffbf8d41916c8c4c77575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05a77259f65e51a38ba5f1d79d1aa5e5"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a05a77259f65e51a38ba5f1d79d1aa5e5">safety</a> )(void *self)</td></tr>
-<tr class="separator:a05a77259f65e51a38ba5f1d79d1aa5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6db5508833de2040c944161ab9b402ec"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a6db5508833de2040c944161ab9b402ec">addMonitor</a> )(void *self, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td></tr>
-<tr class="separator:a6db5508833de2040c944161ab9b402ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a791da420dfe64137e8dfa076555656d1"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a791da420dfe64137e8dfa076555656d1">removeMonitor</a> )(void *self, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td></tr>
-<tr class="separator:a791da420dfe64137e8dfa076555656d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2312a13a1726cbf5bb36f461284610"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a1c2312a13a1726cbf5bb36f461284610">safety</a> )(struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller)</td></tr>
+<tr class="separator:a1c2312a13a1726cbf5bb36f461284610"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19345c5470b2642b02ee8399dd4284fb"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a19345c5470b2642b02ee8399dd4284fb">addMonitor</a> )(struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td></tr>
+<tr class="separator:a19345c5470b2642b02ee8399dd4284fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a131b7d6b5de9cca8188862aea7450"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a86a131b7d6b5de9cca8188862aea7450">removeMonitor</a> )(struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td></tr>
+<tr class="separator:a86a131b7d6b5de9cca8188862aea7450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7438eaaa88b462c5015bf8ce0ba27815"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#a7438eaaa88b462c5015bf8ce0ba27815">updateController</a> )(struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller)</td></tr>
+<tr class="separator:a7438eaaa88b462c5015bf8ce0ba27815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3510581d0c41e08c2e896f106852794"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structControllerSystem.html#af3510581d0c41e08c2e896f106852794">child</a></td></tr>
+<tr class="separator:af3510581d0c41e08c2e896f106852794"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00019">19</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00029">29</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6db5508833de2040c944161ab9b402ec" name="a6db5508833de2040c944161ab9b402ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6db5508833de2040c944161ab9b402ec">&#9670;&#160;</a></span>addMonitor</h2>
+<a id="a19345c5470b2642b02ee8399dd4284fb" name="a19345c5470b2642b02ee8399dd4284fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19345c5470b2642b02ee8399dd4284fb">&#9670;&#160;</a></span>addMonitor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* ControllerSystem::addMonitor) (void *self, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td>
+          <td class="memname">int(* ControllerSystem::addMonitor) (struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00025">25</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00036">36</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="af3510581d0c41e08c2e896f106852794" name="af3510581d0c41e08c2e896f106852794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3510581d0c41e08c2e896f106852794">&#9670;&#160;</a></span>child</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* ControllerSystem::child</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00039">39</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
@@ -134,12 +156,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structMonitorSystem.html">MonitorSystem</a>* ControllerSystem::monitors[<a class="el" href="ControllerSystem_8h.html#a0cd5fd43543b0e231650b1eaabc30dd2">MAX_MONITORS</a>]</td>
+          <td class="memname"><a class="el" href="structMonitorSystem.html">MonitorSystem</a>* ControllerSystem::monitors[<a class="el" href="Constants_8h.html#a0cd5fd43543b0e231650b1eaabc30dd2">MAX_MONITORS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00022">22</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00033">33</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
@@ -155,39 +177,55 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00023">23</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00034">34</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
-<a id="a791da420dfe64137e8dfa076555656d1" name="a791da420dfe64137e8dfa076555656d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a791da420dfe64137e8dfa076555656d1">&#9670;&#160;</a></span>removeMonitor</h2>
+<a id="a86a131b7d6b5de9cca8188862aea7450" name="a86a131b7d6b5de9cca8188862aea7450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a131b7d6b5de9cca8188862aea7450">&#9670;&#160;</a></span>removeMonitor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* ControllerSystem::removeMonitor) (void *self, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td>
+          <td class="memname">int(* ControllerSystem::removeMonitor) (struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller, <a class="el" href="structMonitorSystem.html">MonitorSystem</a> *monitor)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00026">26</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00037">37</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
-<a id="a05a77259f65e51a38ba5f1d79d1aa5e5" name="a05a77259f65e51a38ba5f1d79d1aa5e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05a77259f65e51a38ba5f1d79d1aa5e5">&#9670;&#160;</a></span>safety</h2>
+<a id="a1c2312a13a1726cbf5bb36f461284610" name="a1c2312a13a1726cbf5bb36f461284610"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2312a13a1726cbf5bb36f461284610">&#9670;&#160;</a></span>safety</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int(* ControllerSystem::safety) (void *self)</td>
+          <td class="memname">int(* ControllerSystem::safety) (struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00024">24</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00035">35</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="adbfc5da05b506b9e0dea738ee29fbbb6" name="adbfc5da05b506b9e0dea738ee29fbbb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfc5da05b506b9e0dea738ee29fbbb6">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ControllerSystem_8h.html#ac38090c7c72c6db6eacb377d6224ad36">ControllerState</a> ControllerSystem::state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00032">32</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
@@ -203,7 +241,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00020">20</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00030">30</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>
@@ -219,7 +257,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00021">21</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00031">31</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
+
+</div>
+</div>
+<a id="a7438eaaa88b462c5015bf8ce0ba27815" name="a7438eaaa88b462c5015bf8ce0ba27815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7438eaaa88b462c5015bf8ce0ba27815">&#9670;&#160;</a></span>updateController</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* ControllerSystem::updateController) (struct <a class="el" href="structControllerSystem.html">ControllerSystem</a> *controller)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ControllerSystem_8h_source.html#l00038">38</a> of file <a class="el" href="ControllerSystem_8h_source.html">ControllerSystem.h</a>.</p>
 
 </div>
 </div>

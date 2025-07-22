@@ -1,0 +1,14 @@
+<map id="initBrakePolice" name="initBrakePolice">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,115,105"/>
+<area shape="rect" id="node2" href="$BrakePolice_8c.html#ae44af22e7e471d42ed04139985a90033" title=" " alt="" coords="163,55,289,80"/>
+<area shape="rect" id="node6" href="$MonitorSystem_8c.html#a8d8af9a14fa42b23069fc019bd0ec287" title="Initializes the Monitor System with initial settings." alt="" coords="163,104,289,129"/>
+<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="337,55,472,80"/>
+<area shape="rect" id="node4" href="$BrakePressure_8c.html#a60fc11e2ec7062cde216bb02ec3bcb2f" title="Gets the current brake pressure." alt="" coords="544,5,671,31"/>
+<area shape="rect" id="node5" href="$Temperature_8c.html#a51c5b9781122a780a512aa383ab64c84" title="Gets the current temperature in Fahrenheit." alt="" coords="520,55,695,80"/>
+<area shape="rect" id="node7" href="$System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="363,104,446,129"/>
+<area shape="rect" id="node8" href="$Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="555,104,660,129"/>
+<area shape="rect" id="node9" href="$Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="743,29,847,55"/>
+<area shape="rect" id="node10" href="$Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="745,79,845,104"/>
+<area shape="rect" id="node11" href="$Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="745,128,844,153"/>
+<area shape="rect" id="node12" href="$Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="743,177,846,203"/>
+</map>

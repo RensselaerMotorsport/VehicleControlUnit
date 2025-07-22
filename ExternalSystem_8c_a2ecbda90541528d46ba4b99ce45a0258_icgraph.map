@@ -1,0 +1,8 @@
+<map id="initExternalSystem" name="initExternalSystem">
+<area shape="rect" id="node1" title=" " alt="" coords="267,55,396,80"/>
+<area shape="rect" id="node2" href="$BMS_8c.html#ae67746eb432e165342e6cbf3c1cefae6" title="Initializes the BMS with the given frequency." alt="" coords="144,5,211,31"/>
+<area shape="rect" id="node4" href="$Imd_8c.html#a5f75b2b0a3ee8220e821866d11c53c35" title="Initializes the IMD with the specified frequency." alt="" coords="146,55,209,80"/>
+<area shape="rect" id="node5" href="$Inverter_8c.html#ab6a36ba4de2b4402899634a5f82ada97" title="Initializes the Inverter with initial settings." alt="" coords="136,104,219,129"/>
+<area shape="rect" id="node3" href="$BMSTest_8c.html#a3872418f979fd10a9410a8a45b5e42ce" title=" " alt="" coords="5,5,88,31"/>
+<area shape="rect" id="node6" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="21,104,72,129"/>
+</map>

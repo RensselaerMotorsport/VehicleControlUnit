@@ -1,4 +1,5 @@
 <map id="updateBrakePressure" name="updateBrakePressure">
-<area shape="rect" id="node1" title="Updates the brake pressure data." alt="" coords="5,5,152,31"/>
-<area shape="rect" id="node2" href="$BrakePressure_8c.html#a263953f8a1c52229189a61a9af3670c9" title="Converts raw brake pressure data to a meaningful pressure value." alt="" coords="200,5,403,31"/>
+<area shape="rect" id="node1" title="Updates the brake pressure data." alt="" coords="5,31,152,56"/>
+<area shape="rect" id="node2" href="$AnalogSensor_8c.html#a6b63008a770ff66fdd8a45aa640f39b8" title="Retrieves analog sensor data for a specific channel." alt="" coords="227,5,375,31"/>
+<area shape="rect" id="node3" href="$BrakePressure_8c.html#a263953f8a1c52229189a61a9af3670c9" title="Converts raw brake pressure data to a meaningful pressure value." alt="" coords="200,55,403,80"/>
 </map>

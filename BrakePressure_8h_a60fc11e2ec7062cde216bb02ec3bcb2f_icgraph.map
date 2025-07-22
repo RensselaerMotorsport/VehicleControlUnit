@@ -1,10 +1,19 @@
 <map id="getBrakePressure" name="getBrakePressure">
-<area shape="rect" id="node1" title="Gets the current brake pressure." alt="" coords="500,55,627,80"/>
-<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html#a0b5f7ad2f9a7864534fec0f9e9ef26af" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="319,5,450,31"/>
-<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="317,55,452,80"/>
-<area shape="rect" id="node8" href="$BrakeSystemControl_8c.html#a7a7109d84a83c476d3f02bebfcd464ac" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="325,104,445,129"/>
-<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="143,5,269,31"/>
-<area shape="rect" id="node6" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="145,55,267,80"/>
-<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="147,104,265,129"/>
-<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="5,55,95,80"/>
+<area shape="rect" id="node1" title="Gets the current brake pressure." alt="" coords="1104,129,1231,155"/>
+<area shape="rect" id="node2" href="$BrakeSystemControl_8c.html#a0b5f7ad2f9a7864534fec0f9e9ef26af" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="925,104,1056,129"/>
+<area shape="rect" id="node10" href="$BrakeSystemControl_8c.html#aa08ca6f4ef221e2f453a7fc27bcf322b" title="Updates the Brake System Controller." alt="" coords="697,204,877,229"/>
+<area shape="rect" id="node14" href="$BrakeSystemControl_8c.html#affb417a18c3e13090080dddf899a9740" title="Checks if the brake system is within the defined limits and desired ranges." alt="" coords="503,53,637,79"/>
+<area shape="rect" id="node17" href="$BrakeSystemControl_8c.html#a7a7109d84a83c476d3f02bebfcd464ac" title="Checks whether the line pressure is higher than the activation point specified by the user." alt="" coords="931,153,1051,179"/>
+<area shape="rect" id="node3" href="$BrakeSystemControl_8c.html#a0da99eaf3efbafc0a7925bc86cd1cc70" title=" " alt="" coords="726,155,849,180"/>
+<area shape="rect" id="node6" href="$BrakeSystemControl_8c.html#a79fe3e15b94f9093bbf5fae6b6bac69b" title=" " alt="" coords="728,56,847,81"/>
+<area shape="rect" id="node8" href="$BrakeSystemControl_8c.html#a75f8575f65e75f70cd065012c70e21b2" title=" " alt="" coords="731,105,844,131"/>
+<area shape="rect" id="node4" href="$BrakeSystemControlTest_8c.html#abfd98a7c1fdfc9e06a8b3763bcf79eca" title=" " alt="" coords="289,153,415,179"/>
+<area shape="rect" id="node5" href="$BrakeSystemControlTest_8c.html#a35c81574c3f76c86b6697c88383d9bc6" title=" " alt="" coords="114,129,203,155"/>
+<area shape="rect" id="node7" href="$BrakeSystemControlTest_8c.html#a12bf61478092a24d4ebb4f71258166b1" title=" " alt="" coords="291,55,413,80"/>
+<area shape="rect" id="node9" href="$BrakeSystemControlTest_8c.html#ac2d64fa6c33aa02357cfb48de120b385" title=" " alt="" coords="293,104,411,129"/>
+<area shape="rect" id="node11" href="$BrakeSystemControl_8c.html#a45079ad72d2940fe8dce1fddde838bea" title="Initializes the Braking System with initial settings." alt="" coords="491,205,649,231"/>
+<area shape="rect" id="node12" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,179,56,204"/>
+<area shape="rect" id="node13" href="$BrakeSystemControlTest_8c.html#aa0c31f634f317dd26896227a5ca4043f" title=" " alt="" coords="261,203,443,228"/>
+<area shape="rect" id="node15" href="$BrakePolice_8c.html#ae44af22e7e471d42ed04139985a90033" title=" " alt="" coords="289,5,415,31"/>
+<area shape="rect" id="node16" href="$BrakePolice_8c.html#ac9d410c67dbf8021ae8381367325b76e" title=" " alt="" coords="104,31,213,56"/>
 </map>

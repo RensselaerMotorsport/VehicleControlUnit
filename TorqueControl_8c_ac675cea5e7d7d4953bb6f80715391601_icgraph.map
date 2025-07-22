@@ -1,0 +1,5 @@
+<map id="initTorqueControl" name="initTorqueControl">
+<area shape="rect" id="node1" title="Initializes the Torque Control Actuator with initial settings." alt="" coords="192,31,312,56"/>
+<area shape="rect" id="node2" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="49,5,100,31"/>
+<area shape="rect" id="node3" href="$TorqueControlActuatorTest_8c.html#af2cc120e0e42267120fe878c2a1d6af6" title=" " alt="" coords="5,55,144,80"/>
+</map>

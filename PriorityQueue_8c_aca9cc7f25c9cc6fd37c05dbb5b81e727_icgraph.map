@@ -1,6 +1,7 @@
 <map id="PQIsFull" name="PQIsFull">
-<area shape="rect" id="node1" title="Checks if the priority queue is full." alt="" coords="275,31,348,56"/>
-<area shape="rect" id="node2" href="$PriorityQueue_8c.html#ae841bdf0664368f8d4484b0e5dbd33d7" title="Pushes a task with a given priority onto the priority queue." alt="" coords="156,31,227,56"/>
-<area shape="rect" id="node3" href="$Scheduler_8c.html#a8806ac2ca53db24211ebf0f81719b505" title="Initializes the scheduler with the given sensors." alt="" coords="7,5,106,31"/>
-<area shape="rect" id="node4" href="$Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="5,55,108,80"/>
+<area shape="rect" id="node1" title="Checks if the priority queue is full." alt="" coords="373,31,447,56"/>
+<area shape="rect" id="node2" href="$PriorityQueue_8c.html#ae841bdf0664368f8d4484b0e5dbd33d7" title="Pushes a task with a given priority onto the priority queue." alt="" coords="255,31,325,56"/>
+<area shape="rect" id="node3" href="$Scheduler_8c.html#a8806ac2ca53db24211ebf0f81719b505" title="Initializes the scheduler with the given sensors." alt="" coords="106,5,205,31"/>
+<area shape="rect" id="node5" href="$Scheduler_8c.html#ab8065221debac476c547533f73504c20" title="Runs the scheduler, executing tasks based on their priority." alt="" coords="104,55,207,80"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,31,56,56"/>
 </map>

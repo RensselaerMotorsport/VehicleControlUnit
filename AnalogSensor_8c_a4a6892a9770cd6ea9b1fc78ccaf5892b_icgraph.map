@@ -1,4 +1,0 @@
-<map id="addSampleToBuffer" name="addSampleToBuffer">
-<area shape="rect" id="node1" title="Adds a sample to the circular buffer." alt="" coords="177,5,313,31"/>
-<area shape="rect" id="node2" href="$AnalogSensor_8c.html#a22c254271c3d89c9a6b4b73515fd9c3e" title="Processes ADC data from all three ADCs and stores it in the circular buffer." alt="" coords="5,5,129,31"/>
-</map>

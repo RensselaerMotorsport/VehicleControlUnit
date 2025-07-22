@@ -1,5 +1,5 @@
 <map id="getAppsPosition" name="getAppsPosition">
 <area shape="rect" id="node1" title="Averages app sensors to get pedal position." alt="" coords="5,31,123,56"/>
-<area shape="rect" id="node2" href="$Apps_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="171,5,287,31"/>
+<area shape="rect" id="node2" href="$AppsMonitor_8c.html#a8f9817194a8c464d87f7fef64f33b573" title="Checks App limits for faults." alt="" coords="171,5,287,31"/>
 <area shape="rect" id="node3" href="$App_8c.html#a01be170ac09e9dd35ba3f18c537ae409" title="Gets the current position of the APP." alt="" coords="335,31,445,56"/>
 </map>

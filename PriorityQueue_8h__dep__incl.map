@@ -1,6 +1,7 @@
 <map id="Core/Inc/Scheduler/PriorityQueue.h" name="Core/Inc/Scheduler/PriorityQueue.h">
-<area shape="rect" id="node1" title=" " alt="" coords="85,5,218,45"/>
-<area shape="rect" id="node2" href="$Scheduler_8h.html" title=" " alt="" coords="6,93,139,133"/>
-<area shape="rect" id="node4" href="$PriorityQueue_8c.html" title=" " alt="" coords="164,93,299,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="159,5,293,45"/>
+<area shape="rect" id="node2" href="$Scheduler_8h.html" title=" " alt="" coords="81,93,214,133"/>
+<area shape="rect" id="node5" href="$PriorityQueue_8c.html" title=" " alt="" coords="239,93,373,133"/>
 <area shape="rect" id="node3" href="$Scheduler_8c.html" title=" " alt="" coords="5,181,140,221"/>
+<area shape="rect" id="node4" href="$Src_2main_8c.html" title=": Main program body" alt="" coords="165,189,279,214"/>
 </map>

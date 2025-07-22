@@ -99,7 +99,7 @@ Include dependency graph for CommsSystem.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab24ecccdbc3c3a34bf1204ccf35c45a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CommsSystem_8c.html#ab24ecccdbc3c3a34bf1204ccf35c45a6">initCommsSystem</a> (<a class="el" href="structCommsSystem.html">CommsSystem</a> *comms, const char *name, int hz, <a class="el" href="CommsSystem_8h.html#aa47ccaaca64ec7d83344a262ea4ebba3">CommsType</a> <a class="el" href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>)</td></tr>
+<tr class="memitem:ab24ecccdbc3c3a34bf1204ccf35c45a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CommsSystem_8c.html#ab24ecccdbc3c3a34bf1204ccf35c45a6">initCommsSystem</a> (<a class="el" href="structCommsSystem.html">CommsSystem</a> *comms, const char *name, int hz, <a class="el" href="CommsSystem_8h.html#aa47ccaaca64ec7d83344a262ea4ebba3">CommsType</a> type)</td></tr>
 <tr class="memdesc:ab24ecccdbc3c3a34bf1204ccf35c45a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Comms <a class="el" href="structSystem.html">System</a> with initial settings.  <a href="CommsSystem_8c.html#ab24ecccdbc3c3a34bf1204ccf35c45a6">More...</a><br /></td></tr>
 <tr class="separator:ab24ecccdbc3c3a34bf1204ccf35c45a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -155,13 +155,12 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CommsSystem_8c_source.html#l00003">3</a> of file <a class="el" href="CommsSystem_8c_source.html">CommsSystem.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                                   {</div>
-<div class="line"><span class="lineno">    4</span>    <a class="code hl_function" href="System_8h.html#a2c23656f84d9e596c05e362da5a70085">initSystem</a>(&amp;comms-&gt;<a class="code hl_variable" href="structCommsSystem.html#a7f91fd957fb42d3cf4ca7cddde8d15ae">system</a>, name, hz, <a class="code hl_enumvalue" href="System_8h.html#a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5">COMMS</a>);</div>
-<div class="line"><span class="lineno">    5</span>    comms-&gt;<a class="code hl_variable" href="structCommsSystem.html#a037c7c48c7833d2018536e35a74fa696">type</a> = <a class="code hl_enumeration" href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a>;</div>
+<div class="line"><span class="lineno">    4</span>    <a class="code hl_function" href="System_8h.html#afc8e18bd073921be7fc0f6d55a3bf89c">initSystem</a>(&amp;comms-&gt;<a class="code hl_variable" href="structCommsSystem.html#a7f91fd957fb42d3cf4ca7cddde8d15ae">system</a>, name, hz, <a class="code hl_enumvalue" href="System_8h.html#a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5">COMMS</a>, comms);</div>
+<div class="line"><span class="lineno">    5</span>    comms-&gt;<a class="code hl_variable" href="structCommsSystem.html#a037c7c48c7833d2018536e35a74fa696">type</a> = type;</div>
 <div class="line"><span class="lineno">    6</span>    comms-&gt;<a class="code hl_variable" href="structCommsSystem.html#a041ccb955b25c56444e570f354b87b78">check_heartbeat</a> = NULL;</div>
 <div class="line"><span class="lineno">    7</span>}</div>
-<div class="ttc" id="aSystem_8h_html_a2c23656f84d9e596c05e362da5a70085"><div class="ttname"><a href="System_8h.html#a2c23656f84d9e596c05e362da5a70085">initSystem</a></div><div class="ttdeci">void initSystem(System *system, const char *name, int hz, SystemType type)</div><div class="ttdoc">Initializes a System object.</div><div class="ttdef"><b>Definition:</b> <a href="System_8c_source.html#l00003">System.c:3</a></div></div>
 <div class="ttc" id="aSystem_8h_html_a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5"><div class="ttname"><a href="System_8h.html#a922f019f64e4183a18638787f6ba539ba576ecfc33e74ec9e89b3b0f9bc5d49c5">COMMS</a></div><div class="ttdeci">@ COMMS</div><div class="ttdef"><b>Definition:</b> <a href="System_8h_source.html#l00011">System.h:11</a></div></div>
-<div class="ttc" id="aUpdateable_8h_html_a7aead736a07eaf25623ad7bfa1f0ee2d"><div class="ttname"><a href="Updateable_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="Updateable_8h_source.html#l00017">Updateable.h:17</a></div></div>
+<div class="ttc" id="aSystem_8h_html_afc8e18bd073921be7fc0f6d55a3bf89c"><div class="ttname"><a href="System_8h.html#afc8e18bd073921be7fc0f6d55a3bf89c">initSystem</a></div><div class="ttdeci">void initSystem(System *system, const char *name, int hz, SystemType type, void *child)</div><div class="ttdoc">Initializes a System object.</div><div class="ttdef"><b>Definition:</b> <a href="System_8c_source.html#l00003">System.c:3</a></div></div>
 <div class="ttc" id="astructCommsSystem_html_a037c7c48c7833d2018536e35a74fa696"><div class="ttname"><a href="structCommsSystem.html#a037c7c48c7833d2018536e35a74fa696">CommsSystem::type</a></div><div class="ttdeci">CommsType type</div><div class="ttdef"><b>Definition:</b> <a href="CommsSystem_8h_source.html#l00017">CommsSystem.h:17</a></div></div>
 <div class="ttc" id="astructCommsSystem_html_a041ccb955b25c56444e570f354b87b78"><div class="ttname"><a href="structCommsSystem.html#a041ccb955b25c56444e570f354b87b78">CommsSystem::check_heartbeat</a></div><div class="ttdeci">int(* check_heartbeat)(void *self)</div><div class="ttdef"><b>Definition:</b> <a href="CommsSystem_8h_source.html#l00018">CommsSystem.h:18</a></div></div>
 <div class="ttc" id="astructCommsSystem_html_a7f91fd957fb42d3cf4ca7cddde8d15ae"><div class="ttname"><a href="structCommsSystem.html#a7f91fd957fb42d3cf4ca7cddde8d15ae">CommsSystem::system</a></div><div class="ttdeci">System system</div><div class="ttdef"><b>Definition:</b> <a href="CommsSystem_8h_source.html#l00016">CommsSystem.h:16</a></div></div>
@@ -171,12 +170,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="CommsSystem_8c_ab24ecccdbc3c3a34bf1204ccf35c45a6_cgraph.png" border="0" usemap="#aCommsSystem_8c_ab24ecccdbc3c3a34bf1204ccf35c45a6_cgraph" alt=""/></div>
 <map name="aCommsSystem_8c_ab24ecccdbc3c3a34bf1204ccf35c45a6_cgraph" id="aCommsSystem_8c_ab24ecccdbc3c3a34bf1204ccf35c45a6_cgraph">
 <area shape="rect" title="Initializes the Comms System with initial settings." alt="" coords="5,80,133,105"/>
-<area shape="rect" href="System_8c.html#a2c23656f84d9e596c05e362da5a70085" title="Initializes a System object." alt="" coords="181,80,264,105"/>
-<area shape="rect" href="Updateable_8c.html#aaad6c964e32bb05093b5e551856837b4" title=" " alt="" coords="312,80,417,105"/>
+<area shape="rect" href="System_8c.html#afc8e18bd073921be7fc0f6d55a3bf89c" title="Initializes a System object." alt="" coords="181,80,264,105"/>
+<area shape="rect" href="Updateable_8c.html#ad7900519e5ee79b328292ae69f0b0fa1" title=" " alt="" coords="312,80,417,105"/>
 <area shape="rect" href="Updateable_8c.html#a1c9a6406589ec57eb31ce5f718926658" title="Default disable function for Updateable objects." alt="" coords="465,5,569,31"/>
 <area shape="rect" href="Updateable_8c.html#a1a19c1371c1aec5ea56ba51f17f25ca8" title="Default enable function for Updateable objects." alt="" coords="467,55,567,80"/>
 <area shape="rect" href="Updateable_8c.html#a943588fcfca4806e1db6bd9cd2399d23" title="Default status function for Updateable objects." alt="" coords="468,104,567,129"/>
-<area shape="rect" href="Updateable_8c.html#a6cf9090337753427d50057ee2984ec3e" title="Default update function for Updateable objects." alt="" coords="466,153,569,179"/>
+<area shape="rect" href="Updateable_8c.html#a2ce98de36bf9863555ab86f1e31bb6a3" title="Default update function for Updateable objects." alt="" coords="466,153,569,179"/>
 </map>
 </div>
 
