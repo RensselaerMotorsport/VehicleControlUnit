@@ -16,7 +16,7 @@ void initAnalogOutput(AnalogOutput* analogOutput, const char* name, int hz, int 
 
 int writeAnalogOutputData(AnalogOutput* output, float data) {
     #ifdef DEBUGn
-    printf("Writing data to analog output %s: %f\n", output->output.updateable.name, data);
+    //printf("Writing data to analog output %s: %f\n", output->output.updateable.name, data);
     #endif
 
     if (output->channel == 1) {
@@ -30,7 +30,7 @@ int writeAnalogOutputData(AnalogOutput* output, float data) {
     } else {
       
       #ifdef DEBUGn
-      printf("Invalid channel number for analog output %s\n", output->output.updateable.name);
+      //printf("Invalid channel number for analog output %s\n", output->output.updateable.name);
       #endif
 
       return _FAILURE;

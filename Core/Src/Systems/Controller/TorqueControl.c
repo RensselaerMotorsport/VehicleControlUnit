@@ -12,11 +12,11 @@ void initTorqueControl(TorqueControl* tc, Apps* apps, int hz, float maxTorque) {
 
 int startTorqueControl(TorqueControl* tc) {
     if (tc->base.safety == NULL) {
-        printf("Safety system not set for Torque Control\n");
+        //printf("Safety system not set for Torque Control\n");
         return _FAILURE;
     }
     else if (tc->base.safety(&tc->base) == _FAILURE) {
-        printf("Torque Control Actuator is not in a safe state\n");
+        //printf("Torque Control Actuator is not in a safe state\n");
         return _FAILURE;
     }
     ENABLE(tc->base.system);
@@ -30,7 +30,7 @@ int setDesiredTorque(ControllerSystem* controller) {
     float torque = pedalposition * tc->maxAllowedTorque;
 
     if (torque > tc->maxAllowedTorque) {
-        printf("Desired torque exceeds the maximum allowed torque, stepping down to max\n");
+        //printf("Desired torque exceeds the maximum allowed torque, stepping down to max\n");
         torque = tc->maxAllowedTorque;
     }
 
@@ -41,7 +41,7 @@ int setDesiredTorque(ControllerSystem* controller) {
     tc->base.state = c_computed;
     
     #ifdef DEBUGn
-    printf("Desired Torque: %f\r\n", tc->desiredTorque);
+    //printf("Desired Torque: %f\r\n", tc->desiredTorque);
     #endif
 
     return _SUCCESS;

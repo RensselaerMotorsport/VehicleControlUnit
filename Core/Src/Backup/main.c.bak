@@ -180,10 +180,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Clear the screen
-  printf("\033[2J\033[1;1H");
-  printf("Welcome to VCU!!!\r\n");
+  //printf("\033[2J\033[1;1H");
+  //printf("Welcome to VCU!!!\r\n");
   if (init_CANBus(CAN_1) != 0) {
-    printf("CAN1 init failed\r\n");
+    //printf("CAN1 init failed\r\n");
   }
 
   // Init Telemetry
@@ -208,7 +208,7 @@ int main(void)
   }
 
   uint32_t multi_mode = (ADC123_COMMON->CCR & ADC_CCR_MULTI);
-  printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
+  //printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
 
   #endif
 
@@ -307,7 +307,7 @@ int main(void)
 
   SchedulerInit(&scheduler, updateables);
 
-  printf("Starting Vehicle Control Unit with FreeRTOS scheduler...\n");
+  //printf("Starting Vehicle Control Unit with FreeRTOS scheduler...\n");
 
   // Start the Scheduler
   SchedulerRun(&scheduler);
@@ -353,7 +353,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    printf("ERROR: Scheduler returned unexpectedly!\n");
+    //printf("ERROR: Scheduler returned unexpectedly!\n");
     HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -788,12 +788,12 @@ static void MX_CAN1_Init(void)
   HAL_CAN_Stop(&hcan1);
   // Start CAN
   if (HAL_CAN_Start(&hcan1) != HAL_OK) {
-      printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
+      //printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
   }
 
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
-  	printf("interrupt CAN1 init failed\r\n");
+  	//printf("interrupt CAN1 init failed\r\n");
   }
   /* USER CODE END CAN1_Init 2 */
 
@@ -848,12 +848,12 @@ static void MX_CAN2_Init(void)
   HAL_CAN_Stop(&hcan2);
   // Start CAN
   if (HAL_CAN_Start(&hcan2) != HAL_OK) {
-      printf("CAN2 Start Error: ErrorCode = 0x%lX\r\n", hcan2.ErrorCode);
+      //printf("CAN2 Start Error: ErrorCode = 0x%lX\r\n", hcan2.ErrorCode);
   }
 
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
-  	printf("interrupt CAN2 init failed\r\n");
+  	//printf("interrupt CAN2 init failed\r\n");
   }
   /* USER CODE END CAN2_Init 2 */
 
@@ -1455,7 +1455,7 @@ int _write(int file, char *data, int len)
 
 /* FreeRTOS hooks */
 void vApplicationMallocFailedHook(void) {
-    printf("ERROR: FreeRTOS malloc failed!\n");
+    //printf("ERROR: FreeRTOS malloc failed!\n");
     for(;;);
 }
 
@@ -1465,7 +1465,7 @@ void vApplicationIdleHook(void) {
 }
 
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
-    printf("ERROR: Stack overflow in task: %s\n", pcTaskName);
+    //printf("ERROR: Stack overflow in task: %s\n", pcTaskName);
     for(;;);
 }
 
@@ -1508,7 +1508,7 @@ void Error_Handler(void)
 
   while (1)
   {
-    printf("Error_Handler\r\n");
+    //printf("Error_Handler\r\n");
   }
   /* USER CODE END Error_Handler_Debug */
 }
@@ -1525,7 +1525,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+     ex: //printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

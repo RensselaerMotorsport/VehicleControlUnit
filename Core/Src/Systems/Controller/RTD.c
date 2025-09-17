@@ -22,11 +22,11 @@ void initRTD(RTD* rtd, Apps* apps, BrakeSystemControl* bsc, int hz, int buttonPo
 
 int startRTD(RTD* rtd) {
   if (rtd->base.safety == NULL) {
-    printf("Safety system not set for RTD\r\n");
+    //printf("Safety system not set for RTD\r\n");
     return _FAILURE;
   }
   else if (rtd->base.safety(&rtd->base) == _FAILURE) {
-    printf("RTD Actuator is not in a safe state\r\n");
+    //printf("RTD Actuator is not in a safe state\r\n");
     return _FAILURE;
   }
   ENABLE(rtd->base.system);
@@ -40,18 +40,18 @@ int updateRTD(ControllerSystem* controller) {
   getButtonReading(rtd->button);
 
   if (rtd->apps->base.state != c_validated || rtd->bsc->base.state != c_validated) {
-    printf("RTD: Apps or Brake System Control Actuator is not validated\r\n");
+    //printf("RTD: Apps or Brake System Control Actuator is not validated\r\n");
     return _FAILURE;
   }
 
   if (getAppsPosition(rtd->apps) > MAX_A_PEDAL_POSITION) {
-    printf("RTD: APPS position is too high\r\n");
+    //printf("RTD: APPS position is too high\r\n");
     return _FAILURE;
   }
 
   if (rtd->bsc->rearPressure->pressure < MIN_BRAKE_PRESSURE 
       && rtd->bsc->frontPressure->pressure < MIN_BRAKE_PRESSURE) {
-    printf("RTD: Brake pressure is too low\r\n");
+    //printf("RTD: Brake pressure is too low\r\n");
     return _FAILURE;
   }
 
@@ -71,7 +71,7 @@ int updateRTD(ControllerSystem* controller) {
   rtd->base.state = c_computed;
   
   #ifdef DEBUGn
-  printf("RTD updated. Ready to Drive: %d\r\n", rtd->readyToDrive);
+  //printf("RTD updated. Ready to Drive: %d\r\n", rtd->readyToDrive);
   #endif
 
   return _SUCCESS;
@@ -80,7 +80,7 @@ int updateRTD(ControllerSystem* controller) {
 int checkRTD(void* rtd) {
   RTD* rtdPtr = (RTD*)rtd;
   if (rtdPtr->readyToDrive == 1) {
-      printf("RTD is ready to drive\r\n");
+      //printf("RTD is ready to drive\r\n");
       return _SUCCESS;
   }
   return _FAILURE;

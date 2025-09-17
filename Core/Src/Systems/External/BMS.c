@@ -82,13 +82,13 @@ int bmsTransferFunction(Bms* bms, CAN_Message* canData) {
 // TODO: Implemented this
 int updateBms(Updateable* updateable) {
 //   Bms* myBms = (Bms*) bms;
-   printf("BMS Update Not implemented\n");
+   //printf("BMS Update Not implemented\n");
    // CanMessage canData = fetchCanData(...);
    // parseCanData(&canData, canDataFn);
    //
    // // Call the transfer function to decode the message
    // if (!bmsTransferFunction(myBms, &canData)) {
-   //     printf("Error: Transfer function failed.\n");
+   //     //printf("Error: Transfer function failed.\n");
    // }
    return _FAILURE;
 }
@@ -101,6 +101,6 @@ void updateBmsTest(void* bms, const char* canDataFn) {
 //
 //   // Call the transfer function to decode the message
 //   if (!bmsTransferFunction(myBms, &canData)) {
-//       printf("Update Test Error: Transfer function failed.\n");
+//       //printf("Update Test Error: Transfer function failed.\n");
 //   }
 }

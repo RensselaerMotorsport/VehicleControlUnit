@@ -12,7 +12,7 @@ void initBrakePolice(BrakePolice* bp, BrakeSystemControl *bsc, int hz, int maxTe
 // Start the BrakePolice MonitorSystem
 int startBrakePolice(BrakePolice* bp) {
     if (bp->base.runMonitor == NULL) {
-        printf("Monitor function not set for BrakePolice\n");
+        //printf("Monitor function not set for BrakePolice\n");
         return _FAILURE;
     }
     ENABLE(bp->base.system);

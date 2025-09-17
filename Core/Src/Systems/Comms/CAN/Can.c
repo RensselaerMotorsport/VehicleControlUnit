@@ -5,6 +5,7 @@
 #include "../../../../Inc/Systems/Comms/Can/Can.h"
 #include "../../../../Inc/Systems/Comms/Can/DBCParser.h"
 #include "../../../../Inc/Utils/Common.h"
+#include "../../../../Inc/Utils/MessageFormat.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -30,7 +31,7 @@ int load_dbc_file(CANBus bus, const unsigned char* filename)
     #else
     unsigned char* dbc_contents = filename;
     #endif
-//    printf("Loading DBC file: %c\r\r\n", filename[0]);
+//    //printf("Loading DBC file: %c\r\r\n", filename[0]);
     
     #ifndef TEST_MODE
     // Parse the DBC file
@@ -85,7 +86,7 @@ int send_CAN_message(CANBus bus, CANProtocol protocol, uint32_t id, uint8_t* dat
         TxHeader.ExtId = id;
         TxHeader.IDE = CAN_ID_EXT;
     } else {
-        printf("Invalid CAN protocol\r\n");
+        //printf("Invalid CAN protocol\r\n");
         return -1;
     }
 
@@ -114,18 +115,29 @@ void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus 
 	can_message->header = *RxHeader;
     memcpy(can_message->data, RxData, 8);
 
+    // Send telemetry message for received CAN data
+    char data_hex[17]; // 8 bytes * 2 hex chars + null terminator
+    for (int i = 0; i < RxHeader->DLC && i < 8; i++) {
+        sprintf(&data_hex[i*2], "%02X", RxData[i]);
+    }
+    data_hex[RxHeader->DLC * 2] = '\0';
+    
+    // Send properly formatted CAN RX message
+    sendMessage("CAN", MSG_CAN_RX, "ID:0x%lX;DLC:%lu;Data:%s", 
+                RxHeader->StdId, RxHeader->DLC, data_hex);
+
     // Parse the message
     parseMessage(&can_messages[bus], can_message);
 
     // Print out the contents of the message
-    printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
+    //printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
 
     // Print the signals
     for (int i = 0; i < can_message->template->signal_count; i++) {
         CAN_Signal* signal = &can_message->signals[i];
-        printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
+        //printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
     }
-    printf("\r\n");
+    //printf("\r\n");
 
     // Free the message
     free(can_message);
@@ -189,18 +201,18 @@ void parseSignal(CAN_Signal_Template* signal, CAN_Signal* can_signal, CAN_Messag
 
 void print_CAN_Messages_Lists() {
     for (int i = 0; i < MAX_BUS; i++) {
-        printf("Printing CAN Message List for bus %d with %d messages\r\n", i, can_messages[i].num_messages);
+        //printf("Printing CAN Message List for bus %d with %d messages\r\n", i, can_messages[i].num_messages);
         for (int j = 0; j < can_messages[i].num_messages; j++) {
             const CAN_Message_Template* msg = &can_messages[i].messages[j];
-            printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\r\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
+            //printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\r\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
             for (int k = 0; k < msg->signal_count; k++) {
                 const CAN_Signal_Template* sig = &msg->signals[k];
-                printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\r\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \r\n\t\tUnit: %s, Reciever: %s)\r\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
+                //printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\r\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \r\n\t\tUnit: %s, Reciever: %s)\r\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
             }
-            printf("\r\n");
+            //printf("\r\n");
         }
         if (can_messages[i].num_messages == 0) {
-            printf("No messages on bus %d\r\n", i);
+            //printf("No messages on bus %d\r\n", i);
         }
     }
 }

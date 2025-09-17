@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
       all = true;
       break;
     default:
-      fprintf(stderr, "Usage: %s [-a] [tests]\n", argv[0]);
+      //printf(stderr, "Usage: %s [-a] [tests]\n", argv[0]);
       exit(EXIT_FAILURE);
     }
   }
@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
   }
 
   if (optind >= argc) {
-    fprintf(stderr, "Expected name of test\n");
+    //printf(stderr, "Expected name of test\n");
     exit(EXIT_FAILURE);
   }
 

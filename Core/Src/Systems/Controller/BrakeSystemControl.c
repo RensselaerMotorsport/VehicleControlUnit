@@ -34,11 +34,11 @@ void initBrakeSystemControl(BrakeSystemControl *bsc, int hz, int maxTemp, int br
 
 int startBrakeSystemControl(BrakeSystemControl *bsc) {
     if (bsc -> base.safety == NULL){
-        printf("Safety system not set for Brake System Control\r\n");
+        //printf("Safety system not set for Brake System Control\r\n");
         return _FAILURE;
     }
     else if (bsc -> base.safety(&bsc->base) == _FAILURE){
-        printf("Brake System Control Actuator is not in a safe state\r\n");
+        //printf("Brake System Control Actuator is not in a safe state\r\n");
         return _FAILURE;
     }
     ENABLE(bsc -> base.system);
@@ -55,8 +55,8 @@ int updateBrakeSystemControl(ControllerSystem* controller) {
     writeDigitalOutputData(bsc->brakeLight, bsc->brakeLightActive);
     
     #ifdef DEBUGn
-    printf("Brake System Control updated. Front Pressure: %f, Rear Pressure: %f, Temperature: %f\r\n", getBrakePressure(bsc -> frontPressure), getBrakePressure(bsc -> rearPressure), getTemperatureFahrenheit(bsc -> temperature));
-    printf("Brake Light Active: %d, Heavy Braking: %d\r\n", bsc -> brakeLightActive, bsc -> heavyBraking);
+    //printf("Brake System Control updated. Front Pressure: %f, Rear Pressure: %f, Temperature: %f\r\n", getBrakePressure(bsc -> frontPressure), getBrakePressure(bsc -> rearPressure), getTemperatureFahrenheit(bsc -> temperature));
+    //printf("Brake Light Active: %d, Heavy Braking: %d\r\n", bsc -> brakeLightActive, bsc -> heavyBraking);
     #endif
 
     return _SUCCESS;

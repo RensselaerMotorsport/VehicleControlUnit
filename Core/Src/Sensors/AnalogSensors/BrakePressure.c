@@ -16,8 +16,8 @@ void initBrakePressure(BrakePressure* bp, int hz, int channel, char* name) {
     bp->base.sensor.updateable.update = updateBrakePressure;
 
     // Setup telemetry signals
-    bp->telem_raw = registerTelemetrySignal(name, UNIT_VOLTS, 1000/hz, 0.4f, 4.7f);
-    bp->telem_psi = registerTelemetrySignal(name, UNIT_PSI, 1000/hz, 0.0f, 0.0f);
+    bp->telem_raw = registerTelemetrySignal(name, TELEMETRY_SENSOR, UNIT_VOLTS, 1000/hz, 0.4f, 4.7f);
+    bp->telem_psi = registerTelemetrySignal(name, TELEMETRY_SENSOR, UNIT_PSI, 1000/hz, 0.0f, 2000.0f);
 }
 
 float getBrakePressure(BrakePressure* bp) {

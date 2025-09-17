@@ -181,10 +181,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Clear the screen
-  printf("\033[2J\033[1;1H");
-  printf("Welcome to VCU!!!\r\n");
+  // //printf("\033[2J\033[1;1H");
+  // //printf("Welcome to VCU!!!\r\n");
   if (init_CANBus(CAN_1) != 0) {
-    printf("CAN1 init failed\r\n");
+    // //printf("CAN1 init failed\r\n");
   }
 
   // Init Telemetry
@@ -212,7 +212,7 @@ int main(void)
   initUartConfigListener();
 
   uint32_t multi_mode = (ADC123_COMMON->CCR & ADC_CCR_MULTI);
-  printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
+  //printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
 
   #endif
 
@@ -311,7 +311,7 @@ int main(void)
 
   SchedulerInit(&scheduler, updateables);
 
-  printf("Starting Vehicle Control Unit with FreeRTOS scheduler...\n");
+  //printf("Starting Vehicle Control Unit with FreeRTOS scheduler...\n");
 
   // Start the Scheduler
   SchedulerRun(&scheduler);
@@ -355,9 +355,25 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  static uint32_t test_can_counter = 0;
   while (1)
   {
-    printf("ERROR: Scheduler returned unexpectedly!\n");
+    //printf("ERROR: Scheduler returned unexpectedly!\n");
+    
+    // Send test CAN message every 5 seconds
+    test_can_counter++;
+    if (test_can_counter >= 5) {
+      test_can_counter = 0;
+      
+      // Send test CAN message with incrementing data
+      uint8_t test_data[8] = {0xAA, 0xBB, 0xCC, 0xDD, (uint8_t)(HAL_GetTick() & 0xFF), 0x55, 0x66, 0x77};
+      send_CAN_message(CAN_1, CAN_2A, 0x123, test_data, 8);
+      
+      // Send another test message with different ID
+      uint8_t test_data2[8] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, (uint8_t)((HAL_GetTick() >> 8) & 0xFF)};
+      send_CAN_message(CAN_1, CAN_2A, 0x456, test_data2, 8);
+    }
+    
     HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -792,12 +808,17 @@ static void MX_CAN1_Init(void)
   HAL_CAN_Stop(&hcan1);
   // Start CAN
   if (HAL_CAN_Start(&hcan1) != HAL_OK) {
-      printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
+      //printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
   }
 
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
-  	printf("interrupt CAN1 init failed\r\n");
+  	//printf("interrupt CAN1 init failed\r\n");
+  }
+  
+  // Enable TX completion interrupts for telemetry
+  if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) {
+  	//printf("CAN1 TX interrupt init failed\r\n");
   }
   /* USER CODE END CAN1_Init 2 */
 
@@ -852,12 +873,17 @@ static void MX_CAN2_Init(void)
   HAL_CAN_Stop(&hcan2);
   // Start CAN
   if (HAL_CAN_Start(&hcan2) != HAL_OK) {
-      printf("CAN2 Start Error: ErrorCode = 0x%lX\r\n", hcan2.ErrorCode);
+      //printf("CAN2 Start Error: ErrorCode = 0x%lX\r\n", hcan2.ErrorCode);
   }
 
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
-  	printf("interrupt CAN2 init failed\r\n");
+  	//printf("interrupt CAN2 init failed\r\n");
+  }
+  
+  // Enable TX completion interrupts for telemetry
+  if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) {
+  	//printf("CAN2 TX interrupt init failed\r\n");
   }
   /* USER CODE END CAN2_Init 2 */
 
@@ -1459,7 +1485,7 @@ int _write(int file, char *data, int len)
 
 /* FreeRTOS hooks */
 void vApplicationMallocFailedHook(void) {
-    printf("ERROR: FreeRTOS malloc failed!\n");
+    //printf("ERROR: FreeRTOS malloc failed!\n");
     for(;;);
 }
 
@@ -1469,7 +1495,7 @@ void vApplicationIdleHook(void) {
 }
 
 void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
-    printf("ERROR: Stack overflow in task: %s\n", pcTaskName);
+    //printf("ERROR: Stack overflow in task: %s\n", pcTaskName);
     for(;;);
 }
 
@@ -1512,7 +1538,7 @@ void Error_Handler(void)
 
   while (1)
   {
-    printf("Error_Handler\r\n");
+    //printf("Error_Handler\r\n");
   }
   /* USER CODE END Error_Handler_Debug */
 }
@@ -1529,7 +1555,7 @@ void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
-     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+     ex: //printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */

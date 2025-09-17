@@ -892,17 +892,17 @@ V8 if desired. */
 #endif
 
 #ifndef configPRINTF
-	/* configPRINTF() was not defined, so define it away to nothing.  To use
-	configPRINTF() then define it as follows (where MyPrintFunction() is
+	/* configprintf() was not defined, so define it away to nothing.  To use
+	configprintf() then define it as follows (where MyPrintFunction() is
 	provided by the application writer):
 
 	void MyPrintFunction(const char *pcFormat, ... );
-	#define configPRINTF( X )   MyPrintFunction X
+	#define configprintf( X )   MyPrintFunction X
 
 	Then call like a standard printf() function, but placing brackets around
 	all parameters so they are passed as a single parameter.  For example:
-	configPRINTF( ("Value = %d", MyVariable) ); */
-	#define configPRINTF( X )
+	configprintf( ("Value = %d", MyVariable) ); */
+	#define configprintf( X )
 #endif
 
 #ifndef configMAX

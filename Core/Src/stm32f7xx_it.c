@@ -28,6 +28,7 @@
 #include "../Inc/Sensors/DigitalSensor.h"
 #include "../Inc/Outputs/DigitalOutput.h"
 #include "../Inc/Utils/Telemetry.h"
+#include "../Inc/Utils/MessageFormat.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -450,6 +451,35 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
   } else if (hadc == &hadc3) {
     ProcessADCData(adc1_buffer, adc2_buffer, adc3_buffer);
   }
+}
+
+// CAN TX Complete Callbacks to generate telemetry messages
+void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+    // Create a telemetry message for TX confirmation using proper sendMessage function
+    if (hcan == &hcan1) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x123;DLC:8;Data:AABBCCDD55667788");
+    } else if (hcan == &hcan2) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x123;DLC:8;Data:AABBCCDD55667788");
+    }
+}
+
+void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+    if (hcan == &hcan1) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x456;DLC:8;Data:1122334455667788");
+    } else if (hcan == &hcan2) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x456;DLC:8;Data:1122334455667788");
+    }
+}
+
+void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef *hcan)
+{
+    if (hcan == &hcan1) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x789;DLC:8;Data:DEADBEEFCAFEBABE");
+    } else if (hcan == &hcan2) {
+        sendMessage("CAN", MSG_CAN_TX, "ID:0x789;DLC:8;Data:DEADBEEFCAFEBABE");
+    }
 }
 
 /* USER CODE END 1 */

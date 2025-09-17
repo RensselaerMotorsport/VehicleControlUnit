@@ -3,7 +3,7 @@
 
 void initButton(Button* button, const char* name, int hz, int port) {
   initDigitalSensor(&button->base, name, hz, port, button);
-  button->telem_state = registerTelemetrySignal(name, UNIT_BOOLEAN, 1000/hz, 0, 1);
+  button->telem_state = registerTelemetrySignal(name, TELEMETRY_SENSOR, UNIT_BOOLEAN, 1000/hz, 0, 1);
 }
 
 int getButtonReading(Button* button) {

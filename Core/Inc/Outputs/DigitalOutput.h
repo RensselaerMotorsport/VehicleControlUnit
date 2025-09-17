@@ -3,6 +3,7 @@
 
 #include "Output.h"
 #include "../Utils/Constants.h"
+#include "../Utils/Telemetry.h"
 
 #include <stdint.h>
 
@@ -11,6 +12,7 @@ extern uint8_t digital_out_buffer[NUM_DIGITAL_OUTPUTS];
 typedef struct {
   Output output;
   int port;
+	TelemetrySignal* telem_state;
 } DigitalOutput;
 
 /**

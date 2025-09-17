@@ -5,11 +5,11 @@ int testBrakeSystemControlInit(int maxTemp, int brakeLightActivationPoint, int h
     initBrakeSystemControl(&bsc, 0, maxTemp, brakeLightActivationPoint, heavyBrakingActivationPoint, 0, 1, 2);
 
     if (bsc.status != BRAKES_OK){
-        printf("%s Failed: Initial status is not OK.\n", testName);
+        //printf("%s Failed: Initial status is not OK.\n", testName);
         return 1;
     }
     else{
-        printf("%s Failed: Initial status is OK.\n", testName);
+        //printf("%s Failed: Initial status is OK.\n", testName);
         return 0;
     }
 }
@@ -21,11 +21,11 @@ int testFrontPressure(int maxTemp, int brakeLightActivationPoint, int heavyBraki
 
     BrakeSystemStatus status = checkSensorLimits(&bsc);
     if (status != desiredStatus){
-        printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
+        //printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
         return 1;
     }
     else{
-        printf("%s Passed: Status after update is correct.\n", testName);
+        //printf("%s Passed: Status after update is correct.\n", testName);
         return 0;
     }
 }
@@ -37,11 +37,11 @@ int testRearPressure(int maxTemp, int brakeLightActivationPoint, int heavyBrakin
 
     BrakeSystemStatus status = checkSensorLimits(&bsc);
     if (status != desiredStatus){
-        printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
+        //printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
         return 1;
     }
     else{
-        printf("%s Passed: Status after update is correct.\n", testName);
+        //printf("%s Passed: Status after update is correct.\n", testName);
         return 0;
     }
 }
@@ -53,11 +53,11 @@ int testTemperature(int maxTemp, int brakeLightActivationPoint, int heavyBraking
 
     BrakeSystemStatus status = checkSensorLimits(&bsc);
     if (status != desiredStatus){
-        printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
+        //printf("%s Failed: Status after update is incorrect, actual status: %d.\n", testName, status);
         return 1;
     }
     else{
-        printf("%s Passed: Status after update is correct.\n", testName);
+        //printf("%s Passed: Status after update is correct.\n", testName);
         return 0;
     }
 }
@@ -78,9 +78,9 @@ int brake_main(){
     tests_failed += testTemperature(1000, 0, 0, -1.0, TEMPERATURE_SENSOR_ERROR, "Temperature Negative Test");
 
     if (tests_failed == 0) {
-        printf("All tests passed.\n");
+        //printf("All tests passed.\n");
     } else {
-        printf("Some tests failed.\n");
+        //printf("Some tests failed.\n");
     }
 
     return tests_failed;

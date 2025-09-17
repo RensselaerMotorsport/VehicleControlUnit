@@ -17,12 +17,12 @@ float getSteeringColumnRotationAngle(SteeringColumn* steeringColumn) {
 int updateSteeringColumn(SteeringColumn* steeringColumn) {
     // Check if the pointer is null
     if (steeringColumn == NULL) {
-        fprintf(stderr, "Error: Null pointer passed to updateSteeringColumn\n");
+        //printf(stderr, "Error: Null pointer passed to updateSteeringColumn\n");
         return _FAILURE;
     }
 
     float rawData = 0.0f; // This should come from sensor read function or simulation
-    printf("Implement SteeringColumn Update.\n");
+    //printf("Implement SteeringColumn Update.\n");
     steeringColumn->rotation_angle
         = transferFunctionSteeringColumn(rawData + steeringColumn->zero_offset);
 
@@ -31,6 +31,6 @@ int updateSteeringColumn(SteeringColumn* steeringColumn) {
 
 float transferFunctionSteeringColumn(float rawVal) {
     // Placeholder for actual transfer function
-    printf("Implement SteeringColumn::transfer_function\n");
+    //printf("Implement SteeringColumn::transfer_function\n");
     return rawVal;
 }

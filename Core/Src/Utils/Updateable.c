@@ -19,7 +19,7 @@ void initUpdateable(Updateable* updateable, const char* name, int hz, Updateable
 
 int defaultUpdate(Updateable* self) {
     // Print in yellow color
-    printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, self->name);
+    //printf(ANSI_COLOR_YELLOW "Warning: Calling default Update Function for %s\n" ANSI_COLOR_RESET, self->name);
     return _FAILURE;
 }
 
@@ -44,7 +44,7 @@ int writeDataToFileImplementation(const char* filename, void* self) {
         return _FAILURE;
     }
 
-    printf("Writing data to file %s\n", filename);
+    //printf("Writing data to file %s\n", filename);
 
     fclose(file);
     return _FAILURE;

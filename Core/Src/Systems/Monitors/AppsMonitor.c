@@ -13,7 +13,7 @@ void initAppsMonitor(AppsMonitor* am, Apps* apps, int hz) {
 // Start the Apps MonitorSystem
 int startAppsMonitor(AppsMonitor* am) {
     if (am->base.runMonitor == NULL) {
-        printf("Monitor function not set for AppsMonitor\n");
+        //printf("Monitor function not set for AppsMonitor\n");
         return _FAILURE;
     }
     ENABLE(am->base.system);
@@ -39,7 +39,6 @@ void checkAppsLimit(Apps* apps) {
     // Resonable Value check upper bound
     if (pos1 > 1 || pos2 > 1) {
         apps->status = APPS_FAULT;
-        sendSystemStatus("Apps", "Out of bounds");
         return;
     }
 
@@ -47,17 +46,14 @@ void checkAppsLimit(Apps* apps) {
     float difference = fabs(pos1 - pos2);
     if (difference > APPS_DIFFERENCE) {
         apps->status = APPS_FAULT;
-        sendSystemStatus ("Apps","Greater than 10\% difference");
         return;
     } 
 
     // Resonable Value check lower bound
     if (pos1 < 0 || pos2 < 0) {
         apps->status = APPS_LOW;
-        sendSystemStatus ("Apps", "Below minimum");
         return;
     }
 
-    sendSystemStatus("Apps", "Valid");
     apps->status = APPS_OK;
 }

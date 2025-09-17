@@ -37,7 +37,6 @@ int updateApps(ControllerSystem* controller) {
 
 float getAppsPosition(Apps* apps) {
     if (apps->base.state != c_validated) {
-        sendSystemStatus("Apps", "Not validated");
         return 0.0f;
     }
     checkAppsLimit(apps);

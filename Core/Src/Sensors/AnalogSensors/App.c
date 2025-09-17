@@ -9,9 +9,9 @@ void initApp(App* app, int hz, int channel, char* name) {
     app->base.sensor.updateable.update = updateApp;
 
     // Register telemetry signal
-    app->telem_raw = registerTelemetrySignal(name, UNIT_VOLTS, 1000/hz, 0.4f, 4.7f);
-    app->telem_position = registerTelemetrySignal(name, UNIT_PERCENT, 1000/hz, 0.0f, 100.0f);
-    
+    app->telem_raw = registerTelemetrySignal(name, TELEMETRY_SENSOR, UNIT_VOLTS, 1000/hz, 0.4f, 4.7f);
+    app->telem_position = registerTelemetrySignal(name, TELEMETRY_SENSOR, UNIT_PERCENT, 1000/hz, 0.0f, 100.0f);
+
 }
 
 float getAppPosition(App* app) {

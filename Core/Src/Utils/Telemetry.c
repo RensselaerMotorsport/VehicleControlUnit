@@ -20,7 +20,7 @@ void initTelemetry(void) {
     sendMessage("Telemetry", MSG_DEBUG, "Telemetry utility initialized");
 }
 
-TelemetrySignal* registerTelemetrySignal(const char* name, UnitId unit_id, 
+TelemetrySignal* registerTelemetrySignal(const char* name, TelemetryType type, UnitId unit_id, 
                                         uint32_t expected_rate_ms, 
                                         float custom_min, float custom_max) {
     if (!telemetry_initialized || num_signals >= MAX_TELEMETRY_SIGNALS) {
@@ -32,13 +32,14 @@ TelemetrySignal* registerTelemetrySignal(const char* name, UnitId unit_id,
     
     strncpy(sig->name, name, sizeof(sig->name) - 1);
     sig->name[sizeof(sig->name) - 1] = '\0';
+    sig->type = type;
     sig->unit_id = unit_id;
     sig->expected_rate_ms = expected_rate_ms;
     sig->last_update = HAL_GetTick();
     sig->enabled = true;
     
     // Use custom limits if provided, otherwise use unit defaults
-    if (custom_min != custom_max) {  // Assuming equal values means "use defaults"
+    if (custom_min != custom_max) {
         sig->custom_min = custom_min;
         sig->custom_max = custom_max;
         sig->use_custom_limits = true;
@@ -50,8 +51,8 @@ TelemetrySignal* registerTelemetrySignal(const char* name, UnitId unit_id,
     
     num_signals++;
     
-    sendMessage("Telemetry", MSG_DEBUG, "Registered: %s (%s) - %dms", 
-               name, unit->symbol, expected_rate_ms);
+    sendMessage("Telemetry", MSG_DEBUG, "Registered: %s (%s) [%s] - %dms", 
+               name, unit->symbol, getTypeName(type), expected_rate_ms);
     return sig;
 }
 
@@ -65,62 +66,45 @@ void sendTelemetryValue(TelemetrySignal* signal, float value) {
     // Update timestamp
     signal->last_update = HAL_GetTick();
     
-    // Validate against absolute physical limits
-    if (!validateUnitValue(signal->unit_id, value)) {
-        sendMessage(signal->name, MSG_ERROR, "Value exceeds physical limits: %.3f %s", 
-                   value, unit->symbol);
-        return;  // Don't send invalid values
-    }
-    
-    // Check warning limits
-    float min_limit = signal->use_custom_limits ? signal->custom_min : unit->default_warning_min;
-    float max_limit = signal->use_custom_limits ? signal->custom_max : unit->default_warning_max;
-    
-    if (value < min_limit || value > max_limit) {
-        sendMessage(signal->name, MSG_WARNING, "Value out of range: %.3f %s (range: %.1f-%.1f)", 
-                   value, unit->symbol, min_limit, max_limit);
-    }
-    
-    // Send the sensor value with proper unit symbol
-    sendSensorValue(signal->name, value, unit->symbol);
-}
-
-void sendTelemetryFloat(TelemetrySignal* signal, float value) {
-    const UnitDefinition* unit = getUnitDefinition(signal->unit_id);
-    if (unit->data_type != UNIT_TYPE_FLOAT) {
-        sendMessage(signal->name, MSG_WARNING, "Type mismatch: expected float for %s", unit->symbol);
-    }
-    sendTelemetryValue(signal, value);
-}
-
-void sendTelemetryInt(TelemetrySignal* signal, int32_t value) {
-    const UnitDefinition* unit = getUnitDefinition(signal->unit_id);
-    if (unit->data_type != UNIT_TYPE_INT32 && unit->data_type != UNIT_TYPE_INT16) {
-        sendMessage(signal->name, MSG_WARNING, "Type mismatch: expected int for %s", unit->symbol);
-    }
-    sendTelemetryValue(signal, (float)value);
-}
-
-void sendTelemetryBool(TelemetrySignal* signal, bool value) {
-    const UnitDefinition* unit = getUnitDefinition(signal->unit_id);
-    if (unit->data_type != UNIT_TYPE_BOOL) {
-        sendMessage(signal->name, MSG_WARNING, "Type mismatch: expected bool for %s", unit->symbol);
-    }
-    sendTelemetryValue(signal, value ? 1.0f : 0.0f);
-}
-
-void sendTelemetryConfiguration(void) {
-    sendMessage("Telemetry", MSG_DEBUG, "Sending configuration for %d signals", num_signals);
-    
-    for (uint16_t i = 0; i < num_signals; i++) {
-        TelemetrySignal* sig = &signals[i];
-        const UnitDefinition* unit = getUnitDefinition(sig->unit_id);
-        
-        sendMessage("TelemetryConfig", MSG_DEBUG, 
-                   "Signal:%s;Unit:%s;Type:%d;Rate:%d;Min:%.2f;Max:%.2f;AbsMin:%.2f;AbsMax:%.2f;Decimals:%d",
-                   sig->name, unit->symbol, unit->data_type, sig->expected_rate_ms,
-                   sig->custom_min, sig->custom_max, unit->absolute_min, unit->absolute_max,
-                   unit->decimal_places);
+    // Handle different telemetry types using the generic sendMessage()
+    switch (signal->type) {
+        case TELEMETRY_SENSOR:
+            // Validate and send sensor data
+            if (!validateUnitValue(signal->unit_id, value)) {
+                sendMessage(signal->name, MSG_ERROR, "Value exceeds physical limits: %.3f %s", 
+                           value, unit->symbol);
+                return;
+            }
+            
+            // Check warning limits
+            float min_limit = signal->use_custom_limits ? signal->custom_min : unit->default_warning_min;
+            float max_limit = signal->use_custom_limits ? signal->custom_max : unit->default_warning_max;
+            
+            if (value < min_limit || value > max_limit) {
+                sendMessage(signal->name, MSG_WARNING, "Value out of range: %.3f %s (range: %.1f-%.1f)", 
+                           value, unit->symbol, min_limit, max_limit);
+            }
+            
+            // Send using generic sendMessage - no special sendSensorValue() needed!
+            sendMessage(signal->name, MSG_SENSOR_VALUE, "Value:%.3f;Unit:%s", value, unit->symbol);
+            break;
+            
+        case TELEMETRY_OUTPUT:
+            sendMessage(signal->name, MSG_OUTPUT_VALUE, "Value:%.0f;Unit:%s", value, unit->symbol);
+            break;
+            
+        case TELEMETRY_STATUS:
+            sendMessage(signal->name, MSG_SYSTEM_STATUS, "Value:%.3f;Unit:%s", value, unit->symbol);
+            break;
+            
+        case TELEMETRY_DEBUG:
+            sendMessage(signal->name, MSG_DEBUG, "Value:%.3f;Unit:%s", value, unit->symbol);
+            break;
+            
+        case TELEMETRY_CAN_TX:
+        case TELEMETRY_CAN_RX:
+            // CAN data handled separately through sendCANTelemetryData()
+            break;
     }
 }
 
@@ -155,7 +139,7 @@ void handleTelemetryConfigRequest(void) {
         const UnitDefinition* unit = getUnitDefinition(sig->unit_id);
         
         // Send comprehensive configuration
-        sendMessage("TelemetryConfig", MSG_DEBUG, 
+        sendMessage("TelemetryConfig", MSG_CONFIG, 
                    "Signal:%s;Unit:%s;Category:%s;Type:%d;Rate:%d;Min:%.2f;Max:%.2f;Decimals:%d;AbsMin:%.2f;AbsMax:%.2f",
                    sig->name, 
                    unit->symbol,
@@ -187,4 +171,37 @@ const char* getCategoryName(UnitCategory category) {
         case UNIT_CATEGORY_STATUS: return "Status";
         default: return "Other";
     }
+}
+
+// Helper function to get type names
+const char* getTypeName(TelemetryType type) {
+    switch (type) {
+        case TELEMETRY_SENSOR: return "SENSOR";
+        case TELEMETRY_OUTPUT: return "OUTPUT";
+        case TELEMETRY_CAN_TX: return "CAN_TX";
+        case TELEMETRY_CAN_RX: return "CAN_RX";
+        case TELEMETRY_STATUS: return "STATUS";
+        case TELEMETRY_DEBUG: return "DEBUG";
+        default: return "UNKNOWN";
+    }
+}
+
+// Enhanced CAN handling
+void sendCANTelemetryData(TelemetrySignal* signal, uint32_t can_id, uint8_t* data, uint8_t dlc) {
+    if (signal == NULL || !signal->enabled || 
+        (signal->type != TELEMETRY_CAN_TX && signal->type != TELEMETRY_CAN_RX)) {
+        return;
+    }
+    
+    // Update timestamp
+    signal->last_update = HAL_GetTick();
+    
+    // Format data as hex string
+    char hex_data[17] = {0}; // 8 bytes * 2 chars + null terminator
+    for (int i = 0; i < dlc && i < 8; i++) {
+        sprintf(&hex_data[i*2], "%02X", data[i]);
+    }
+    
+    MessageType msg_type = (signal->type == TELEMETRY_CAN_TX) ? MSG_CAN_TX : MSG_CAN_RX;
+    sendMessage("CAN", msg_type, "ID:0x%03X;DLC:%d;Data:%s", can_id, dlc, hex_data);
 }
