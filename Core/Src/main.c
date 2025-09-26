@@ -355,9 +355,25 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  static uint32_t test_can_counter = 0;
   while (1)
   {
     //printf("ERROR: Scheduler returned unexpectedly!\n");
+    
+    // Send test CAN message every 5 seconds
+    test_can_counter++;
+    if (test_can_counter >= 5) {
+      test_can_counter = 0;
+      
+      // Send test CAN message with incrementing data
+      uint8_t test_data[8] = {0xAA, 0xBB, 0xCC, 0xDD, (uint8_t)(HAL_GetTick() & 0xFF), 0x55, 0x66, 0x77};
+      send_CAN_message(CAN_1, CAN_2A, 0x123, test_data, 8);
+      
+      // Send another test message with different ID
+      uint8_t test_data2[8] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, (uint8_t)((HAL_GetTick() >> 8) & 0xFF)};
+      send_CAN_message(CAN_1, CAN_2A, 0x456, test_data2, 8);
+    }
+    
     HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -799,6 +815,11 @@ static void MX_CAN1_Init(void)
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
   	//printf("interrupt CAN1 init failed\r\n");
   }
+  
+  // Enable TX completion interrupts for telemetry
+  if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) {
+  	//printf("CAN1 TX interrupt init failed\r\n");
+  }
   /* USER CODE END CAN1_Init 2 */
 
 }
@@ -858,6 +879,11 @@ static void MX_CAN2_Init(void)
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
   	//printf("interrupt CAN2 init failed\r\n");
+  }
+  
+  // Enable TX completion interrupts for telemetry
+  if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) {
+  	//printf("CAN2 TX interrupt init failed\r\n");
   }
   /* USER CODE END CAN2_Init 2 */
 

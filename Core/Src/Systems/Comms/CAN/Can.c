@@ -5,6 +5,7 @@
 #include "../../../../Inc/Systems/Comms/Can/Can.h"
 #include "../../../../Inc/Systems/Comms/Can/DBCParser.h"
 #include "../../../../Inc/Utils/Common.h"
+#include "../../../../Inc/Utils/MessageFormat.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -113,6 +114,17 @@ void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus 
 	CAN_Message* can_message = malloc(sizeof(CAN_Message) + sizeof(CAN_Signal) * 8);
 	can_message->header = *RxHeader;
     memcpy(can_message->data, RxData, 8);
+
+    // Send telemetry message for received CAN data
+    char data_hex[17]; // 8 bytes * 2 hex chars + null terminator
+    for (int i = 0; i < RxHeader->DLC && i < 8; i++) {
+        sprintf(&data_hex[i*2], "%02X", RxData[i]);
+    }
+    data_hex[RxHeader->DLC * 2] = '\0';
+    
+    // Send properly formatted CAN RX message
+    sendMessage("CAN", MSG_CAN_RX, "ID:0x%lX;DLC:%lu;Data:%s", 
+                RxHeader->StdId, RxHeader->DLC, data_hex);
 
     // Parse the message
     parseMessage(&can_messages[bus], can_message);

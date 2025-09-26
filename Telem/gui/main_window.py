@@ -92,7 +92,7 @@ class MainWindow:
         self.sensor_view = SensorView(None, self.config)
         self.raw_view = RawView(self.notebook)
         self.output_view = OutputView(None, self.config)
-        self.can_view = CANView(None)
+        self.can_view = CANView(None, self.connection)  # Pass connection manager
         self.plot_view = PlotView(None, self.config)  # ADD THIS LINE
         
         # Create combined view: Sensors + Outputs vertical, CAN to the right
