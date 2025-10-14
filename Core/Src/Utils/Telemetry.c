@@ -65,7 +65,6 @@ void sendTelemetryValue(TelemetrySignal* signal, float value) {
     
     // Update timestamp
     signal->last_update = HAL_GetTick();
-    
     // Handle different telemetry types using the generic sendMessage()
     switch (signal->type) {
         case TELEMETRY_SENSOR:

@@ -90,6 +90,20 @@ typedef struct CAN_Message {
 
 /*******************************************************************/
 
+// Temp Channel Outlines
+
+typedef struct CAN_Channel {
+    int id;
+    char name[MAX_MESSAGE_NAME_LENGTH];
+    char unit[MAX_MESSAGE_NAME_LENGTH];
+} CAN_Channel;
+
+void call_func_from_message(CAN_Message*, int);
+
+//CAN_Message_Template chan1 = {123, 8, 0, 0, "AD3 CAN TEST", "AD3"};
+
+//
+
 // CAN
 #define MAX_BUS 2
 #define MAX_MESSAGES 128
@@ -215,6 +229,10 @@ void parseSignals(CAN_Message_Template* message, CAN_Message* can_message);
  */
 void parseSignal(CAN_Signal_Template* signal, CAN_Signal* can_signal, CAN_Message* can_message);
 
+/**
+ * @brief CAN task processing
+ */
+static void CAN_MessageProcessingTask(void *params);
 
 /**
  * @brief Prints the CAN message list
