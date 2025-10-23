@@ -62,6 +62,7 @@ void DMA2_Stream0_IRQHandler(void);
 void DMA2_Stream1_IRQHandler(void);
 void DMA2_Stream2_IRQHandler(void);
 void CAN2_RX0_IRQHandler(void);
+void OTG_FS_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *data);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);

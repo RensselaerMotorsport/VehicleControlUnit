@@ -29,6 +29,7 @@
 #include "../Inc/Outputs/DigitalOutput.h"
 #include "../Inc/Utils/Telemetry.h"
 #include "../Inc/Utils/MessageFormat.h"
+#include "../Inc/Systems/Comms/Can/CANCommsSystem.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,6 +72,7 @@ static uint8_t cmd_index = 0;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern PCD_HandleTypeDef hpcd_USB_OTG_FS;
 extern DMA_HandleTypeDef hdma_adc1;
 extern DMA_HandleTypeDef hdma_adc2;
 extern DMA_HandleTypeDef hdma_adc3;
@@ -78,6 +80,7 @@ extern CAN_HandleTypeDef hcan1;
 extern CAN_HandleTypeDef hcan2;
 extern DMA_HandleTypeDef hdma_dac1;
 extern DMA_HandleTypeDef hdma_dac2;
+extern DMA_HandleTypeDef hdma_usart3_tx;
 extern TIM_HandleTypeDef htim2;
 extern UART_HandleTypeDef huart3;
 /* USER CODE BEGIN EV */
@@ -108,7 +111,13 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-
+  // Send fault indication via telemetry if possible
+  static int fault_count = 0;
+  fault_count++;
+  
+  // Try to send a message - this might not work if UART is broken
+  sendMessage("FAULT", MSG_ERROR, "HardFault_Count=%d", fault_count);
+  
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -233,6 +242,20 @@ void DMA1_Stream6_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles DMA1 stream3 global interrupt.
+  */
+void DMA1_Stream3_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream3_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream3_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_usart3_tx);
+  /* USER CODE BEGIN DMA1_Stream3_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream3_IRQn 1 */
+}
+
+/**
   * @brief This function handles CAN1 RX0 interrupts.
   */
 void CAN1_RX0_IRQHandler(void)
@@ -330,6 +353,20 @@ void CAN2_RX0_IRQHandler(void)
   /* USER CODE END CAN2_RX0_IRQn 1 */
 }
 
+/**
+  * @brief This function handles USB On The Go FS global interrupt.
+  */
+void OTG_FS_IRQHandler(void)
+{
+  /* USER CODE BEGIN OTG_FS_IRQn 0 */
+
+  /* USER CODE END OTG_FS_IRQn 0 */
+  HAL_PCD_IRQHandler(&hpcd_USB_OTG_FS);
+  /* USER CODE BEGIN OTG_FS_IRQn 1 */
+
+  /* USER CODE END OTG_FS_IRQn 1 */
+}
+
 /* USER CODE BEGIN 1 */
 volatile uint32_t timer_flag = 0;
 
@@ -400,16 +437,25 @@ int send_CAN_message_helper(CANBus bus, CAN_TxHeaderTypeDef *TxHeader, uint8_t *
     return 0;
 }
 
+// Forward declaration for new CAN system callback
+void system_CAN_message_callback(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus bus);
+
 // Callback for receiving CAN messages
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-    if (hcan == &hcan1) {
-        HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader1, RxData1);
-        receive_CAN_message(&RxHeader1, RxData1, CAN_1);
-    } else if (hcan == &hcan2) {
-        HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader2, RxData2);
-        receive_CAN_message(&RxHeader2, RxData2, CAN_2);
-    }
+  if (hcan == &hcan1) {
+    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader1, RxData1);
+
+    // Queue message for deferred/scheduler processing. Do not printf or call
+    // legacy receive_CAN_message here to avoid printing from interrupt context.
+    system_CAN_message_callback(&RxHeader1, RxData1, CAN_1);
+  } else if (hcan == &hcan2) {
+    HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &RxHeader2, RxData2);
+
+    // Queue message for deferred/scheduler processing. Do not printf or call
+    // legacy receive_CAN_message here to avoid printing from interrupt context.
+    system_CAN_message_callback(&RxHeader2, RxData2, CAN_2);
+  }
 }
 
 // Callback for UART reception complete
@@ -420,7 +466,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             // Check if it's CONFIG_REQUEST
             uart_cmd[cmd_index] = '\0';
             if (strcmp(uart_cmd, "CONFIG_REQUEST") == 0) {
-                handleTelemetryConfigRequest();
+                notifyTelemetryConfigRequestFromISR();
             }
             cmd_index = 0;
         }
@@ -458,27 +504,34 @@ void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan)
 {
     // Create a telemetry message for TX confirmation using proper sendMessage function
     if (hcan == &hcan1) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x123;DLC:8;Data:AABBCCDD55667788");
+    // Defer telemetry to scheduler
+    uint8_t data[8] = {0xAA,0xBB,0xCC,0xDD,0x55,0x66,0x77,0x88};
+    notifyCANTxEvent(CAN_1, 0x123, 8, data);
     } else if (hcan == &hcan2) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x123;DLC:8;Data:AABBCCDD55667788");
+    uint8_t data[8] = {0xAA,0xBB,0xCC,0xDD,0x55,0x66,0x77,0x88};
+    notifyCANTxEvent(CAN_2, 0x123, 8, data);
     }
 }
 
 void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan)
 {
     if (hcan == &hcan1) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x456;DLC:8;Data:1122334455667788");
+    uint8_t data[8] = {0x11,0x22,0x33,0x44,0x55,0x66,0x77,0x88};
+    notifyCANTxEvent(CAN_1, 0x456, 8, data);
     } else if (hcan == &hcan2) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x456;DLC:8;Data:1122334455667788");
+    uint8_t data[8] = {0x11,0x22,0x33,0x44,0x55,0x66,0x77,0x88};
+    notifyCANTxEvent(CAN_2, 0x456, 8, data);
     }
 }
 
 void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef *hcan)
 {
     if (hcan == &hcan1) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x789;DLC:8;Data:DEADBEEFCAFEBABE");
+    uint8_t data[8] = {0xDE,0xAD,0xBE,0xEF,0xCA,0xFE,0xBA,0xBE};
+    notifyCANTxEvent(CAN_1, 0x789, 8, data);
     } else if (hcan == &hcan2) {
-        sendMessage("CAN", MSG_CAN_TX, "ID:0x789;DLC:8;Data:DEADBEEFCAFEBABE");
+    uint8_t data[8] = {0xDE,0xAD,0xBE,0xEF,0xCA,0xFE,0xBA,0xBE};
+    notifyCANTxEvent(CAN_2, 0x789, 8, data);
     }
 }
 

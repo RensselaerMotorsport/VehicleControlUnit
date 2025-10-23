@@ -1,7 +1,12 @@
 #include "../../Inc/Utils/Telemetry.h"
 #include "../../Inc/Utils/MessageFormat.h"
-#include "../../Inc/Utils/Common.h"
 #include <string.h>
+
+#ifndef TEST_MODE
+#include "stm32f7xx_hal.h"
+#endif
+
+extern uint32_t HAL_GetTick(void);
 
 #define MAX_TELEMETRY_SIGNALS 100
 
@@ -36,6 +41,9 @@ TelemetrySignal* registerTelemetrySignal(const char* name, TelemetryType type, U
     sig->unit_id = unit_id;
     sig->expected_rate_ms = expected_rate_ms;
     sig->last_update = HAL_GetTick();
+    sig->last_sent = 0;
+    sig->last_value = 0.0f;
+    sig->value_pending = false;
     sig->enabled = true;
     
     // Use custom limits if provided, otherwise use unit defaults
@@ -56,55 +64,95 @@ TelemetrySignal* registerTelemetrySignal(const char* name, TelemetryType type, U
     return sig;
 }
 
+static void flushTelemetrySignal(TelemetrySignal* signal, uint32_t now) {
+    if (signal == NULL || !signal->enabled || !signal->value_pending) {
+        return;
+    }
+
+    if (signal->type == TELEMETRY_CAN_TX || signal->type == TELEMETRY_CAN_RX) {
+        return;
+    }
+
+    if (signal->expected_rate_ms == 0 || (now - signal->last_sent) >= signal->expected_rate_ms) {
+        const UnitDefinition* unit = getUnitDefinition(signal->unit_id);
+        
+        switch (signal->type) {
+            case TELEMETRY_SENSOR: {
+                if (!validateUnitValue(signal->unit_id, signal->last_value)) {
+                    sendMessage(signal->name, MSG_ERROR, "Value exceeds physical limits: %.3f %s", 
+                               signal->last_value, unit->symbol);
+                } else {
+                    float min_limit = signal->use_custom_limits ? signal->custom_min : unit->default_warning_min;
+                    float max_limit = signal->use_custom_limits ? signal->custom_max : unit->default_warning_max;
+                    if (signal->last_value < min_limit || signal->last_value > max_limit) {
+                        sendMessage(signal->name, MSG_WARNING, "Value out of range: %.3f %s (range: %.1f-%.1f)", 
+                                   signal->last_value, unit->symbol, min_limit, max_limit);
+                    }
+                    sendMessage(signal->name, MSG_SENSOR_VALUE, "Value:%.3f;Unit:%s", signal->last_value, unit->symbol);
+                }
+                break;
+            }
+            case TELEMETRY_OUTPUT:
+                sendMessage(signal->name, MSG_OUTPUT_VALUE, "Value:%.0f;Unit:%s", signal->last_value, unit->symbol);
+                break;
+            case TELEMETRY_STATUS:
+                sendMessage(signal->name, MSG_SYSTEM_STATUS, "Value:%.3f;Unit:%s", signal->last_value, unit->symbol);
+                break;
+            case TELEMETRY_DEBUG:
+                sendMessage(signal->name, MSG_DEBUG, "Value:%.3f;Unit:%s", signal->last_value, unit->symbol);
+                break;
+            default:
+                break;
+        }
+        signal->last_sent = now;
+        signal->value_pending = false;
+    }
+}
+
 void sendTelemetryValue(TelemetrySignal* signal, float value) {
     if (signal == NULL || !signal->enabled) {
         return;
     }
-    
-    const UnitDefinition* unit = getUnitDefinition(signal->unit_id);
-    
-    // Update timestamp
-    signal->last_update = HAL_GetTick();
-    
-    // Handle different telemetry types using the generic sendMessage()
-    switch (signal->type) {
-        case TELEMETRY_SENSOR:
-            // Validate and send sensor data
-            if (!validateUnitValue(signal->unit_id, value)) {
-                sendMessage(signal->name, MSG_ERROR, "Value exceeds physical limits: %.3f %s", 
-                           value, unit->symbol);
-                return;
-            }
-            
-            // Check warning limits
-            float min_limit = signal->use_custom_limits ? signal->custom_min : unit->default_warning_min;
-            float max_limit = signal->use_custom_limits ? signal->custom_max : unit->default_warning_max;
-            
-            if (value < min_limit || value > max_limit) {
-                sendMessage(signal->name, MSG_WARNING, "Value out of range: %.3f %s (range: %.1f-%.1f)", 
-                           value, unit->symbol, min_limit, max_limit);
-            }
-            
-            // Send using generic sendMessage - no special sendSensorValue() needed!
-            sendMessage(signal->name, MSG_SENSOR_VALUE, "Value:%.3f;Unit:%s", value, unit->symbol);
-            break;
-            
-        case TELEMETRY_OUTPUT:
-            sendMessage(signal->name, MSG_OUTPUT_VALUE, "Value:%.0f;Unit:%s", value, unit->symbol);
-            break;
-            
-        case TELEMETRY_STATUS:
-            sendMessage(signal->name, MSG_SYSTEM_STATUS, "Value:%.3f;Unit:%s", value, unit->symbol);
-            break;
-            
-        case TELEMETRY_DEBUG:
-            sendMessage(signal->name, MSG_DEBUG, "Value:%.3f;Unit:%s", value, unit->symbol);
-            break;
-            
-        case TELEMETRY_CAN_TX:
-        case TELEMETRY_CAN_RX:
-            // CAN data handled separately through sendCANTelemetryData()
-            break;
+
+    uint32_t now = HAL_GetTick();
+    signal->last_update = now;
+    signal->last_value = value;
+    signal->value_pending = true;
+
+    flushTelemetrySignal(signal, now);
+}
+
+void sendTelemetryValueByName(const char* name, float value, TelemetryType type) {
+    if (name == NULL) {
+        return;
+    }
+
+    for (uint16_t i = 0; i < num_signals; i++) {
+        TelemetrySignal* sig = &signals[i];
+        if (sig->enabled && sig->type == type && strcmp(sig->name, name) == 0) {
+            sendTelemetryValue(sig, value);
+            return;
+        }
+    }
+}
+
+static volatile uint32_t telemetry_config_request_pending = 0;
+
+void processTelemetrySignals(void) {
+    uint32_t now = HAL_GetTick();
+    for (uint16_t i = 0; i < num_signals; i++) {
+        flushTelemetrySignal(&signals[i], now);
+    }
+}
+
+void notifyTelemetryConfigRequestFromISR(void) {
+    telemetry_config_request_pending = 1;
+}
+
+void processTelemetryConfigRequests(void) {
+    if (telemetry_config_request_pending) {
+        telemetry_config_request_pending = 0;
+        handleTelemetryConfigRequest();
     }
 }
 
@@ -128,18 +176,20 @@ void checkTelemetryHealth(void) {
 }
 
 void handleTelemetryConfigRequest(void) {
-    sendMessage("Telemetry", MSG_DEBUG, "Configuration requested by GUI");
+    sendMessageSync("Telemetry", MSG_DEBUG, "Configuration requested by GUI");
     
     // Send total count first
-    sendMessage("TelemetryConfig", MSG_DEBUG, "TotalSignals:%d", num_signals);
+    if (sendMessageSync("TelemetryConfig", MSG_DEBUG, "TotalSignals:%d", num_signals) <= 0) {
+        sendMessage("Telemetry", MSG_ERROR, "Telemetry config request failed before start");
+        return;
+    }
     
-    // Send each signal configuration
+    // Send each signal configuration synchronously to avoid queue overflow.
     for (uint16_t i = 0; i < num_signals; i++) {
         TelemetrySignal* sig = &signals[i];
         const UnitDefinition* unit = getUnitDefinition(sig->unit_id);
         
-        // Send comprehensive configuration
-        sendMessage("TelemetryConfig", MSG_CONFIG, 
+        int bytes_sent = sendMessageSync("TelemetryConfig", MSG_CONFIG, 
                    "Signal:%s;Unit:%s;Category:%s;Type:%d;Rate:%d;Min:%.2f;Max:%.2f;Decimals:%d;AbsMin:%.2f;AbsMax:%.2f",
                    sig->name, 
                    unit->symbol,
@@ -151,10 +201,17 @@ void handleTelemetryConfigRequest(void) {
                    unit->decimal_places,
                    unit->absolute_min,
                    unit->absolute_max);
+        
+        if (bytes_sent <= 0) {
+            sendMessage("Telemetry", MSG_ERROR, "Telemetry config send failed at signal %u", i);
+            return;
+        }
     }
     
     // Send end marker
-    sendMessage("TelemetryConfig", MSG_DEBUG, "ConfigComplete:1");
+    if (sendMessageSync("TelemetryConfig", MSG_DEBUG, "ConfigComplete:1") <= 0) {
+        sendMessage("Telemetry", MSG_ERROR, "Telemetry config completion marker failed");
+    }
 }
 
 // Helper function to get category names

@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 // Message types
 typedef enum {
@@ -20,5 +22,13 @@ typedef enum {
 
 // Structured message function
 void sendMessage(const char* sender, MessageType type, const char* format, ...);
+
+// Send a raw telemetry packet over the configured transport.
+// This is used by low-level output hooks such as _write().
+int sendMessageRaw(const char* buffer, int len);
+
+// Send a telemetry packet synchronously over the transport.
+int sendMessageRawSync(const char* buffer, int len, uint32_t timeout_ms);
+int sendMessageSync(const char* sender, MessageType type, const char* format, ...);
 
 #endif // RENNSSELAERMOTORSPORT_MESSAGE_FORMAT_H

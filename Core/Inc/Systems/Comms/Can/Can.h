@@ -124,6 +124,9 @@ typedef struct CAN_MessageList{
     int num_messages;
 } CAN_MessageList;
 
+// Global CAN message lists (defined in Can.c)
+extern CAN_MessageList can_messages[MAX_BUS];
+
 // function prototypes
 
 /**

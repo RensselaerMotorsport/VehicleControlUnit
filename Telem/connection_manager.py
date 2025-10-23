@@ -85,7 +85,7 @@ class ConnectionManager:
                     time.sleep(0.001)  # 1ms sleep when no data available
             except:
                 break
-    
+                
     def get_message(self):
         """Get next message"""
         try:

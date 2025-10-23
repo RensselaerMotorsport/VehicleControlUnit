@@ -47,7 +47,8 @@ static void workerTask(void* pvParameters) {
                 TickType_t maxTime = pdMS_TO_TICKS(1000 / workItem.updateable->hz) / 2; // 50% of period
                 
                 if (executionTime > maxTime) {
-                    //printf("WARNING: %s took %lu ticks (max recommended: %lu)\n", 
+                    // TEMPORARY: Disable timing warnings to reduce printf overhead
+                    // printf("WARNING: %s took %lu ticks (max recommended: %lu)\n", 
                     //       workItem.updateable->name, executionTime, maxTime);
                 }
             }
@@ -69,7 +70,8 @@ static void updateableTimerCallback(TimerHandle_t xTimer) {
         BaseType_t xHigherPriorityTaskWoken = pdFALSE;
         if (xQueueSendFromISR(workQueue, &workItem, &xHigherPriorityTaskWoken) != pdTRUE) {
             // Queue full - this indicates the worker task is overloaded
-            //printf("ERROR: Work queue full for %s - dropping task\n", updateable->name);
+            // TEMPORARY: Disable error messages to reduce printf overhead
+            // printf("ERROR: Work queue full for %s - dropping task\n", updateable->name);
         }
         
         // Yield if higher priority task was woken

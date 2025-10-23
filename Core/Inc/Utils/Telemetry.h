@@ -20,6 +20,9 @@ typedef struct {
     UnitId unit_id;               // Use unit ID instead of string
     uint32_t expected_rate_ms;
     uint32_t last_update;
+    uint32_t last_sent;
+    float last_value;
+    bool value_pending;
     float custom_min;             // Custom limits (overrides unit defaults)
     float custom_max;
     bool use_custom_limits;       // Whether to use custom or unit default limits
@@ -59,6 +62,9 @@ void sendTelemetryValueByName(const char* name, float value, TelemetryType type)
 // Send configuration and health functions
 void checkTelemetryHealth(void);
 void handleTelemetryConfigRequest(void);
+void notifyTelemetryConfigRequestFromISR(void);
+void processTelemetryConfigRequests(void);
+void processTelemetrySignals(void);
 const char* getCategoryName(UnitCategory category);
 const char* getTypeName(TelemetryType type);
 

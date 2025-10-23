@@ -1,0 +1,71 @@
+VERSION ""
+
+NS_ :
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VCU BMS ESC IMD DASH
+
+BO_ 0x100 BMS_Status: 8 BMS
+ SG_ BatteryVoltage : 0|16@1+ (0.1,0) [0|6553.5] "V" VCU,DASH
+ SG_ BatteryCurrent : 16|16@1- (0.1,-3276.8) [-3276.8|3276.7] "A" VCU,DASH
+ SG_ BatteryTemp : 32|8@1+ (1,-40) [-40|215] "C" VCU,DASH
+ SG_ SOC : 40|8@1+ (0.5,0) [0|100] "%" VCU,DASH
+ SG_ BMS_Fault : 48|8@1+ (1,0) [0|255] "" VCU,DASH
+ SG_ BMS_Heartbeat : 56|8@1+ (1,0) [0|255] "count" VCU
+
+BO_ 0x101 ESC_Status: 8 ESC  
+ SG_ WheelSpeed_FL : 0|16@1+ (0.1,0) [0|6553.5] "rpm" VCU
+ SG_ WheelSpeed_FR : 16|16@1+ (0.1,0) [0|6553.5] "rpm" VCU
+ SG_ WheelSpeed_RL : 32|16@1+ (0.1,0) [0|6553.5] "rpm" VCU
+ SG_ WheelSpeed_RR : 48|16@1+ (0.1,0) [0|6553.5] "rpm" VCU
+
+BO_ 0x102 VCU_Commands: 8 VCU
+ SG_ TorqueRequest : 0|16@1+ (0.1,0) [0|6553.5] "Nm" ESC
+ SG_ BrakeRequest : 16|8@1+ (1,0) [0|100] "%" ESC
+ SG_ VCU_Mode : 24|8@1+ (1,0) [0|255] "" BMS,ESC,DASH
+ SG_ RTD_Status : 32|1@1+ (1,0) [0|1] "" BMS,ESC,DASH
+ SG_ VCU_Heartbeat : 40|8@1+ (1,0) [0|255] "count" BMS,ESC
+
+BO_ 0x103 IMD_Status: 8 IMD
+ SG_ Isolation_Resistance : 0|16@1+ (1,0) [0|65535] "kOhm" VCU,DASH
+ SG_ IMD_Fault : 16|8@1+ (1,0) [0|255] "" VCU,DASH
+ SG_ IMD_Heartbeat : 24|8@1+ (1,0) [0|255] "count" VCU
+
+CM_ BO_ 0x100 "Battery Management System status message";
+CM_ BO_ 0x101 "Electronic Stability Control wheel speeds";
+CM_ BO_ 0x102 "Vehicle Control Unit commands to other systems";
+CM_ BO_ 0x103 "Insulation Monitoring Device status";
+
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_ SG_ "GenSigStartValue" FLOAT 0 0;
+
+BA_ "GenMsgCycleTime" BO_ 0x100 100;
+BA_ "GenMsgCycleTime" BO_ 0x101 20;
+BA_ "GenMsgCycleTime" BO_ 0x102 50;
+BA_ "GenMsgCycleTime" BO_ 0x103 500;

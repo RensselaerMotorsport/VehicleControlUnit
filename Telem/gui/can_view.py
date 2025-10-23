@@ -155,7 +155,7 @@ class CANView:
                                 value_str = f"{sig_data['value']:.2f}" if isinstance(sig_data['value'], float) else str(sig_data['value'])
                                 unit_str = f" {sig_data['unit']}" if sig_data['unit'] else ""
                                 signal_strs.append(f"{sig_name}={value_str}{unit_str}")
-                            decoded_signals = "; ".join(signal_strs)
+                            decoded_signals = "\n".join(signal_strs)
                     except Exception as e:
                         decoded_signals = f"Decode error: {e}"
         

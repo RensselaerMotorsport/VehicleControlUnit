@@ -29,13 +29,13 @@ int load_dbc_file(CANBus bus, const unsigned char* filename)
     #ifdef TEST_MODE
     // unsigned char* dbc_contents = fopen(filename, "w");
     #else
-    unsigned char* dbc_contents = filename;
+    const unsigned char* dbc_contents = filename;
     #endif
-//    //printf("Loading DBC file: %c\r\r\n", filename[0]);
     
     #ifndef TEST_MODE
     // Parse the DBC file
-    parseDbcFile(&can_messages[bus], dbc_contents);
+    int parse_result = parseDbcFile(&can_messages[bus], dbc_contents);
+    sendMessage("DBC_DEBUG", MSG_DEBUG, "ParseResult=%d;NumMessages=%d", parse_result, can_messages[bus].num_messages);
     #endif
 
 	#ifdef TEST_MODE
@@ -94,7 +94,7 @@ int send_CAN_message(CANBus bus, CANProtocol protocol, uint32_t id, uint8_t* dat
     TxHeader.DLC = len;
 
     // Print the message
-    printf(ANSI_COLOR_YELLOW "Sending CAN Message" ANSI_COLOR_RESET ": ID: %d, DLC: %d, Data: ", id, len);
+    printf(ANSI_COLOR_YELLOW "Sending CAN Message" ANSI_COLOR_RESET ": ID: %lu, DLC: %d, Data: ", (unsigned long)id, len);
     for (int i = 0; i < len; i++) {
         printf("%02X ", data[i]);
     }
@@ -114,6 +114,7 @@ void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus 
 	CAN_Message* can_message = malloc(sizeof(CAN_Message) + sizeof(CAN_Signal) * 8);
 	can_message->header = *RxHeader;
     memcpy(can_message->data, RxData, 8);
+    can_message->template = NULL; // Initialize to NULL - parseMessage may or may not set this
 
     // Send telemetry message for received CAN data
     char data_hex[17]; // 8 bytes * 2 hex chars + null terminator
@@ -129,15 +130,20 @@ void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus 
     // Parse the message
     parseMessage(&can_messages[bus], can_message);
 
-    // Print out the contents of the message
-    //printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
+    // Print out the contents of the message (only if template exists)
+    //if (can_message->template) {
+    //    printf(ANSI_COLOR_YELLOW "Received CAN Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s)\r\n", can_message->template->name, can_message->header.StdId, can_message->header.DLC, can_message->template->sender);
+    //}
 
-    // Print the signals
-    for (int i = 0; i < can_message->template->signal_count; i++) {
-        CAN_Signal* signal = &can_message->signals[i];
-        //printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
+    // Print the signals (only if template exists)
+    if (can_message->template) {
+        for (int i = 0; i < can_message->template->signal_count; i++) {
+            (void)i;  // Unused in commented debug code
+            //CAN_Signal* signal = &can_message->signals[i];
+            //printf("\t" ANSI_COLOR_MAGENTA "Signal" ANSI_COLOR_RESET ": %s (Value: %u, Unit: %s)\r\n", signal->template->name, signal->value, signal->template->unit);
+        }
     }
-    //printf("\r\n");
+    //printf("\r\n";
 
     // Free the message
     free(can_message);
@@ -147,15 +153,21 @@ void receive_CAN_message(CAN_RxHeaderTypeDef* RxHeader, uint8_t* RxData, CANBus 
 void parseMessage(CAN_MessageList* messages, CAN_Message* can_message) {
     // Find the message in the list
     // TODO: Implement a hash table or map for faster lookup
+    sendMessage("PARSE_DEBUG", MSG_DEBUG, "SearchingID=0x%lX;NumMessages=%d", can_message->header.StdId, messages->num_messages);
+    
     for (int i = 0; i < messages->num_messages; i++) {
         CAN_Message_Template* msg = &messages->messages[i];
+        sendMessage("PARSE_DEBUG", MSG_DEBUG, "CheckingMsg%d=0x%lX;Name=%s", i, msg->id, msg->name);
+        
         if (msg->id == can_message->header.StdId || msg->id == can_message->header.ExtId) {
             // Parse the signals of the message
             can_message->template = msg;
             parseSignals(msg, can_message);
+            sendMessage("PARSE_DEBUG", MSG_DEBUG, "FoundMatch=0x%lX;Name=%s", msg->id, msg->name);
             return;
         }
     }
+    sendMessage("PARSE_DEBUG", MSG_DEBUG, "NoMatchFound=0x%lX", can_message->header.StdId);
 }
 
 // Parse the signals of a CAN message
@@ -206,7 +218,8 @@ void print_CAN_Messages_Lists() {
             const CAN_Message_Template* msg = &can_messages[i].messages[j];
             //printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\r\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
             for (int k = 0; k < msg->signal_count; k++) {
-                const CAN_Signal_Template* sig = &msg->signals[k];
+                (void)k;  // Unused in commented debug code
+                //const CAN_Signal_Template* sig = &msg->signals[k];
                 //printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\r\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \r\n\t\tUnit: %s, Reciever: %s)\r\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
             }
             //printf("\r\n");
