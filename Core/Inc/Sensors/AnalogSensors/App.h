@@ -2,10 +2,13 @@
 #define RENSSELAERMOTORSPORT_APP_H
 
 #include "../AnalogSensor.h"
+#include "../../Utils/Telemetry.h"
 
 typedef struct {
     AnalogSensor base;
     float position;
+    TelemetrySignal* telem_raw;
+    TelemetrySignal* telem_position;
 } App;
 
 /**
@@ -14,8 +17,9 @@ typedef struct {
  * @param app     Pointer to the App structure to initialize.
  * @param hz      The frequency in Hertz at which the APP operates.
  * @param channel The analog channel the APP is connected to.
+ * @param name    The name of the sensor (default is "App").
  */
-void initApp(App* app, int hz, int channel);
+void initApp(App* app, int hz, int channel, char* name);
 
 /**
  * @brief Gets the current position of the APP.

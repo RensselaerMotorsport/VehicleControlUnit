@@ -9,27 +9,27 @@ int testParseCanData(const char* fileName, const int id, const int len,
 
     // Parse the CAN data
     if (!parseCanData(&canMsg, fileName)) {
-        printf("%s: parseCanData function failed.\n", testName);
+        //printf("%s: parseCanData function failed.\n", testName);
         return 1;
     }
 
     if (canMsg.messageId != id) {
-        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, id, canMsg.messageId);
+        //printf("%s failed.\nExpected: %d\nGot: %d\n", testName, id, canMsg.messageId);
         return 1;
     }
 
     if (canMsg.dataLength != len) {
-        printf("%s failed.\nExpected: %d\nGot: %d\n", testName, len, canMsg.dataLength);
+        //printf("%s failed.\nExpected: %d\nGot: %d\n", testName, len, canMsg.dataLength);
         return 1;
     }
 
     if (canMsg.dataLength * 2 != strlen(data)
         || strncmp((const char*)canMsg.data, data, canMsg.dataLength * 2) != 0) {
-        printf("%s failed.\nExpected: %s\nGot: %s\n", testName, data, canMsg.data);
+        //printf("%s failed.\nExpected: %s\nGot: %s\n", testName, data, canMsg.data);
         return 1;
     }
 
-    printf("%s passed.\n", testName);
+    //printf("%s passed.\n", testName);
     return 0;
 }
 
@@ -71,11 +71,11 @@ int testExtractSignalValue(Signal* sig, const unsigned char* canData,
     float result = extractSignalValue(sig, canData);
 
     if (result != expected) {
-        printf("%s failed. Expected %.2f, got %.2f.\n", testName, expected, result);
+        //printf("%s failed. Expected %.2f, got %.2f.\n", testName, expected, result);
         return 1;
     }
 
-    printf("%s passed.\n", testName);
+    //printf("%s passed.\n", testName);
     return 0;
 }
 
@@ -181,9 +181,9 @@ int main() {
 
     // Display overall test result
     if (result == 0) {
-        printf("All tests passed.\n");
+        //printf("All tests passed.\n");
     } else {
-        printf("Some tests failed.\n");
+        //printf("Some tests failed.\n");
     }
 
     return result;

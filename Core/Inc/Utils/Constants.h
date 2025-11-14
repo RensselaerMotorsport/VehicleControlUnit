@@ -14,7 +14,7 @@
 #define NUM_DIGITAL_INPUTS 3
 
 // RTD Constants
-#define MAX_A_PEDAL_POSITION 0.01
+#define MAX_A_PEDAL_POSITION 0.05
 #define MIN_BRAKE_PRESSURE 800
 
 // Controller Constants

@@ -14,7 +14,7 @@ void initTorquePolice(TorquePolice* tp, TorqueControl *tc, BrakeSystemControl *b
 // Start the TorquePolice MonitorSystem
 int startTorquePolice(TorquePolice* tp) {
     if (tp->base.runMonitor == NULL) {
-        printf("Monitor function not set for TorquePolice\n");
+        //printf("Monitor function not set for TorquePolice\n");
         return _FAILURE;
     }
     ENABLE(tp->base.system);
@@ -32,7 +32,7 @@ int checkTorquePolice(void* tp) {
         tpPtr->status = TORQUE_RTD;
         tc->desiredTorque = 0;
         #ifdef DEBUGn
-        printf("RTD is not ready to drive, reducing torque to zero\r\n");
+        //printf("RTD is not ready to drive, reducing torque to zero\r\n");
         #endif
         return _FAILURE;
     } 
@@ -46,7 +46,7 @@ int checkTorquePolice(void* tp) {
 
     if (bsc->base.state=c_validated && bsc->heavyBraking == 1) {
         tpPtr->status = TORQUE_BRAKE_FIGHT;
-        printf("Brake System is in heavy braking, reducing torque to zero\r\n");
+        //printf("Brake System is in heavy braking, reducing torque to zero\r\n");
         tc->desiredTorque = 0;
         // Brake fight, reduce torque to zero. Not a system failure, but a safety measure.
         // Thus, return _SUCCESS.s
@@ -55,14 +55,14 @@ int checkTorquePolice(void* tp) {
 
     if (tc->desiredTorque < TORQUE_LOW_MARGIN) {
         tpPtr->status = TORQUE_LOW;
-        printf("Desired torque (%f) is too low, reducing to zero\r\n", tc->desiredTorque);
+        //printf("Desired torque (%f) is too low, reducing to zero\r\n", tc->desiredTorque);
         tc->desiredTorque = 0;
     } else {
         tpPtr->status = TORQUE_OK;
     }
 
     #ifdef DEBUGn
-    printf("Actual Torque: %f\r\n", tc->desiredTorque);
+    //printf("Actual Torque: %f\r\n", tc->desiredTorque);
     #endif
     return _SUCCESS;
 }

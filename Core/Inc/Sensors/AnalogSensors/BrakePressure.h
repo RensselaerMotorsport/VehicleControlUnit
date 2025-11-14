@@ -2,10 +2,13 @@
 #define RENSSELAERMOTORSPORT_BRAKEPRESSURE_H
 
 #include "../AnalogSensor.h"
+#include "../../Utils/Telemetry.h"
 
 typedef struct {
     AnalogSensor base;
     float pressure;
+    TelemetrySignal* telem_raw;
+    TelemetrySignal* telem_psi;
 } BrakePressure;
 
 /**
@@ -14,8 +17,9 @@ typedef struct {
  * @param bp      Pointer to the BrakePressure structure to initialize.
  * @param hz      The frequency in Hertz at which the sensor operates.
  * @param channel The analog channel the sensor is connected to.
+ * @param name    The name of the sensor (default is "BrakePressure").
  */
-void initBrakePressure(BrakePressure* bp, int hz, int channel);
+void initBrakePressure(BrakePressure* bp, int hz, int channel, char* name);
 
 /**
  * @brief Gets the current brake pressure.

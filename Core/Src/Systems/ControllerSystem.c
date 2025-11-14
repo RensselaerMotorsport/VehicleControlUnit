@@ -23,7 +23,7 @@ void initControllerSystem(ControllerSystem* controller, const char* name, int hz
 
 int c_defaultAddMonitor(ControllerSystem* controller, MonitorSystem* monitor) {
     if (controller->num_monitors >= MAX_MONITORS) {
-        printf("Cannot add more monitors to the controller\n");
+        //printf("Cannot add more monitors to the controller\n");
         return _FAILURE;
     }
     controller->monitors[controller->num_monitors++] = monitor;
@@ -40,7 +40,7 @@ int c_defaultRemoveMonitor(ControllerSystem* controller, MonitorSystem* monitor)
             return _SUCCESS;
         }
     }
-    printf("Monitor not found in the controller\n");
+    //printf("Monitor not found in the controller\n");
     return _FAILURE;
 }
 
@@ -69,12 +69,12 @@ int c_defaultUpdate(Updateable* updateable) {
 int c_defaultSafety(ControllerSystem* controller) {
 
     if (controller->state != c_computed) {
-        printf("Controller not computed new value\n");
+        //printf("Controller not computed new value\n");
         return _FAILURE;
     }
 
     if (controller->num_monitors == 0) {
-        printf("No monitors set for Controller\n");
+        //printf("No monitors set for Controller\n");
         return _FAILURE;
     }
     

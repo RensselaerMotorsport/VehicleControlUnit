@@ -27,7 +27,7 @@ int main() {
 
     // Figure out stopping mechanism. For now ctrl-c
     // SchedulerStop(&scheduler);
-    // printf("Scheduler has stopped running.\n");
+    // //printf("Scheduler has stopped running.\n");
 
     return 0;
 }

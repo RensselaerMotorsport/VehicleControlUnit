@@ -16,18 +16,18 @@ float getShockPotDistance(ShockPot* shockPot) {
 
 void updateShockPot(void* shockPot) {
     ShockPot *myShockPot = (ShockPot *)shockPot;
-    printf("Implement ShockPot::update\n");
+    //printf("Implement ShockPot::update\n");
     float rawData = 50.0;
     myShockPot->distance = transferFunctionShockPot(rawData);
 }
 
 float transferFunctionShockPot(float rawVal) {
     if (rawVal < 15) {
-        printf("ShockPot::transfer_function rawValue is too low\n");
+        //printf("ShockPot::transfer_function rawValue is too low\n");
         return -1;
     }
     else if (rawVal > 135) {
-        printf("ShockPot::transfer_function rawValue is too high\n");
+        //printf("ShockPot::transfer_function rawValue is too high\n");
         return -1;
     }
     return 2.71965 * pow(rawVal, 0.837683) - 16.2622;

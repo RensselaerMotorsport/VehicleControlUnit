@@ -14,16 +14,16 @@ test_t *test_start(const char *name) {
   t->name = name;
   t->passes = true;
 
-  printf(TEST_START "%s\n", t->name);
+  //printf(TEST_START "%s\n", t->name);
 
   return t;
 }
 
 void test_end(test_t *t) {
   if (t->passes) {
-    printf(TEST_PASS "%s all passed\n\n", t->name);
+    //printf(TEST_PASS "%s all passed\n\n", t->name);
   } else {
-    printf(TEST_FAIL "%s failed\n\n", t->name);
+    //printf(TEST_FAIL "%s failed\n\n", t->name);
   }
 
   // NOTE If t->name is copied in test_start, it needs to be freed
@@ -33,9 +33,9 @@ void test_end(test_t *t) {
 void test_assert(test_t *t, const char *pass_message, const char *fail_message,
                  bool passes) {
   if (passes) {
-    printf(TEST_OK "%s %s\n", t->name, pass_message);
+    //printf(TEST_OK "%s %s\n", t->name, pass_message);
   } else {
-    printf(TEST_ERR "%s %s\n", t->name, fail_message);
+    //printf(TEST_ERR "%s %s\n", t->name, fail_message);
   }
 
   t->passes &= passes;
@@ -45,9 +45,9 @@ void test_assert_equal(test_t *t, const char *a_label, const char *b_label,
                        float a, float b) {
   bool passes = fabs(a - b) < TEST_EQUAL_EPSILON;
   if (passes) {
-    printf(TEST_OK "%s %s = %s (%f = %f)\n", t->name, a_label, b_label, a, b);
+    //printf(TEST_OK "%s %s = %s (%f = %f)\n", t->name, a_label, b_label, a, b);
   } else {
-    printf(TEST_ERR "%s %s ≠ %s (%f ≠ %f)\n", t->name, a_label, b_label, a, b);
+    //printf(TEST_ERR "%s %s ≠ %s (%f ≠ %f)\n", t->name, a_label, b_label, a, b);
   }
 
   t->passes &= passes;
@@ -59,10 +59,10 @@ void test_assert_within_error(test_t *t, const char *actual_label,
   float percent_error = (actual - expected) / expected * 100;
   bool passes = fabs(percent_error) < TEST_ERROR_DELTA_PERCENT;
   if (passes) {
-    printf(TEST_OK "%s %s ≈ %s (%f ≈ %f)\n", t->name, actual_label,
+    //printf(TEST_OK "%s %s ≈ %s (%f ≈ %f)\n", t->name, actual_label,
            expected_label, actual, expected);
   } else {
-    printf(TEST_ERR "%s %s ≠ %s (%f ≠ %f)\n", t->name, actual_label,
+    //printf(TEST_ERR "%s %s ≠ %s (%f ≠ %f)\n", t->name, actual_label,
            expected_label, actual, expected);
   }
 

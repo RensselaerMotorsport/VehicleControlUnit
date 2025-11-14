@@ -15,13 +15,13 @@ int updateInverter(ExternalSystem* external) {
     Inverter* inverter = (Inverter*)external->child;
     // Check if torque control is validated
     if (inverter->tc->base.state != c_validated) {
-        printf("Inverter: Torque Control Actuator is not validated\r\n");
+        //printf("Inverter: Torque Control Actuator is not validated\r\n");
         return _FAILURE;
     }
 
     
     #ifdef DEBUGn
-    printf("Inverter updated. Torque: %f, Current: %d, Temp: %d, Voltage: %d\r\n",
+    //printf("Inverter updated. Torque: %f, Current: %d, Temp: %d, Voltage: %d\r\n",
            inverter->tc->desiredTorque, inverter->maxCurrent, inverter->maxTemp, inverter->maxVoltage);
     #endif
     

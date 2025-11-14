@@ -18,7 +18,7 @@ float getAccelerometerValue(Accelerometer* accel) {
 void updateAccelerometer(void* accel) {
     Accelerometer *myAccel = (Accelerometer *)accel;
     float rawData = 0.0f; // Placeholder for sensor reading
-    printf("Updating Accelerometer\n");
+    //printf("Updating Accelerometer\n");
     myAccel->value = transferFunctionAccelerometer(rawData);
 }
 

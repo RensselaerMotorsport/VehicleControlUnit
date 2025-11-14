@@ -25,7 +25,7 @@ void initWheelSpeed(WheelSpeed* ws, int hz, int port, float radius, int numTeeth
 float calculateSpeed(WheelSpeed* ws) {
     // Check if the pointer is null
     if (ws == NULL) {
-        fprintf(stderr, "Error: Null pointer passed to calculateSpeed\n");
+        //printf(stderr, "Error: Null pointer passed to calculateSpeed\n");
         return -1; // Or handle the error as appropriate
     }
 
@@ -40,9 +40,9 @@ float calculateSpeed(WheelSpeed* ws) {
 
     // Verify inputs
     if (numTeeth <= 0 || radius <= 0.0f || pulses <= 0 || delta <= 0.0) {
-        printf("Error: Invalid argument. "
-               "NumTeeth = %d, Radius = %.2f, Pulses = %d, Time Delta = %.2f\n",
-               numTeeth, radius, pulses, delta);
+        //printf("Error: Invalid argument. "
+        //       "NumTeeth = %d, Radius = %.2f, Pulses = %d, Time Delta = %.2f\n",
+        //       numTeeth, radius, pulses, delta);
         return 0.0f;
     }
 
@@ -63,7 +63,7 @@ int updateWheelSpeed(Updateable* updateable) {
 
     ws->speed = calculateSpeed(ws);
     if (ws->speed < 0) {
-        printf("Error: Speed calculation failed\n");
+        //printf("Error: Speed calculation failed\n");
         return _FAILURE;
     }
     return _SUCCESS;

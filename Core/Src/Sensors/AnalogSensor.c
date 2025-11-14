@@ -72,7 +72,7 @@ void ProcessADCData(uint32_t* adc1_buffer, uint32_t* adc2_buffer, uint32_t* adc3
         adc_samples[i] = adc3_buffer[i-14];
     }
 
-//    printf("8: %10d, 4: %10d, 12: %10d, 19: %10d, 21: %10d, 18: %10d, 10: %10d\r\n, 5: %10d\r\n, 6: %10d\r\n",
+//    //printf("8: %10d, 4: %10d, 12: %10d, 19: %10d, 21: %10d, 18: %10d, 10: %10d\r\n, 5: %10d\r\n, 6: %10d\r\n",
 //           adc_samples[8], adc_samples[4], adc_samples[12], adc_samples[19], adc_samples[21], adc_samples[18], adc_samples[10], adc_samples[5], adc_samples[6]);
 
 }
@@ -90,6 +90,6 @@ float getAnalogSensorData(AnalogSensor* sensor) {
     if (sensor->channel >= 0 && sensor->channel < ADC_CHANNELS) {
         return ((float)adc_samples[sensor->channel]/4096)*ADC_VREF;
     }
-    printf("Invalid channel specified for AnalogSensor %s\r\n", sensor->sensor.updateable.name);
+    //printf("Invalid channel specified for AnalogSensor %s\r\n", sensor->sensor.updateable.name);
     return 0; // Default return for invalid channels
 }

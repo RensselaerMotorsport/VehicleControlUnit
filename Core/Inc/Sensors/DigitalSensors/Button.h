@@ -2,9 +2,11 @@
 #define __RENNSSELAERMOTORSPORT_BUTTON_H
 
 #include "../DigitalSensor.h"
+#include "../../Utils/Telemetry.h"
 
 typedef struct {
 	DigitalSensor base;
+	TelemetrySignal* telem_state;
 } Button;
 
 void initButton(Button* button, const char* name, int hz, int port);

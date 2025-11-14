@@ -8,7 +8,7 @@ void initRTDMonitor(RTDMonitor* rtdm, RTD* rtd, int hz) {
 
 int startRTDMonitor(RTDMonitor* rtdm) {
   if (rtdm->base.runMonitor == NULL) {
-    printf("Monitor function not set for RTD Monitor\n");
+    //printf("Monitor function not set for RTD Monitor\n");
     return _FAILURE;
   }
   ENABLE(rtdm->base.system);

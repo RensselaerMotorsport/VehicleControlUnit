@@ -23,7 +23,7 @@ double getTemperatureFahrenheit(Temperature* temperature) {
 double transferFunction(Temperature* temperature, float rawVal) {
     
     #ifdef DEBUGn
-    printf("Implement Temperature::TF\r\n");
+    //printf("Implement Temperature::TF\r\n");
     #endif
 
     return 0.0;

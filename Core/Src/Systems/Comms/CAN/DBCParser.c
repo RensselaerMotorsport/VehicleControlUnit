@@ -32,7 +32,7 @@ int parseDbcFile(CAN_MessageList *messages, const unsigned char *dbc_contents) {
     // dbc contents is a string of the file
     char* line = strtok(dbc_contents, "\n");
     while (line != NULL) {
-        printf("Parsing line: %s\n", line);
+        //printf("Parsing line: %s\n", line);
         if (!parseDbcLine(messages, line)) {
             return 0;
         }
@@ -42,14 +42,14 @@ int parseDbcFile(CAN_MessageList *messages, const unsigned char *dbc_contents) {
 }
 
 void print_CAN_MessageList(const CAN_MessageList *messages) {
-    printf("Printing CAN Message List with %d messages\n", messages->num_messages);
+    //printf("Printing CAN Message List with %d messages\n", messages->num_messages);
     for (int i = 0; i < messages->num_messages; i++) {
         const CAN_Message_Template *msg = &messages->messages[i];
-        printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
+        //printf(ANSI_COLOR_GREEN "Message" ANSI_COLOR_RESET ": %s (ID: %d, DLC: %d, Sender: %s, SIGs: %d)\n", msg->name, msg->id, msg->dlc, msg->sender, msg->signal_count);
         for (int j = 0; j < msg->signal_count; j++) {
             const CAN_Signal_Template *sig = &msg->signals[j];
-            printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \n\t\tUnit: %s, Reciever: %s)\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
+            //printf("\t" ANSI_COLOR_BLUE "Signal" ANSI_COLOR_RESET ": %s (Start bit: %d, Length: %d, Endain: %d, Signed: %c,\n\t\tScale: %f, Offset: %f, Min: %f, Max: %f, \n\t\tUnit: %s, Reciever: %s)\n", sig->name, sig->start_bit, sig->length, sig->endian, sig->isSigned, sig->scale, sig->offset, sig->min, sig->max, sig->unit, sig->reciever);
         }
-        printf("\n");
+        //printf("\n");
     }
 }

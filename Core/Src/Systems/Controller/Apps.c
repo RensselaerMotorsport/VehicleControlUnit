@@ -1,6 +1,7 @@
 #include "../../../Inc/Systems/Controller/Apps.h"
 #include "../../../Inc/Systems/Monitor/AppsMonitor.h"
 #include "../../../Inc/Utils/Common.h"
+#include "../../../Inc/Utils/MessageFormat.h"
 
 #include <math.h>
 
@@ -18,8 +19,8 @@ void initApps(Apps* apps, int hz, int channel1, int channel2) {
 
     // Controller setup
     apps->status = APPS_OK;
-    initApp(apps->app[0], hz, channel1);
-    initApp(apps->app[1], hz, channel2);
+    initApp(apps->app[0], hz, channel1, "App 1");
+    initApp(apps->app[1], hz, channel2, "App 2");
     ENABLE(apps->base.system);
 }
 
@@ -30,19 +31,12 @@ int updateApps(ControllerSystem* controller) {
 
     // Set to computed
     appsPtr->base.state = c_computed;
-    
-    
-    #ifdef DEBUGn
-    printf("Apps updated. #1: %f, #2: %f\r\n", getAppPosition(appsPtr->app[0]), getAppPosition(appsPtr->app[1]));
-    #endif
 
     return _SUCCESS;
 }
 
 float getAppsPosition(Apps* apps) {
     if (apps->base.state != c_validated) {
-        
-        printf("Apps Controller value has not been validated\r\n");
         return 0.0f;
     }
     checkAppsLimit(apps);

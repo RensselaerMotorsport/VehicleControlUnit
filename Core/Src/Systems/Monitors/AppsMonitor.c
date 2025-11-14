@@ -1,5 +1,6 @@
 #include "../../../Inc/Systems/Monitor/AppsMonitor.h"
 #include "../../../Inc/Utils/Common.h"
+#include "../../../Inc/Utils/MessageFormat.h"
 #include <math.h>
 
 // Make new Apps MonitorSystem
@@ -12,7 +13,7 @@ void initAppsMonitor(AppsMonitor* am, Apps* apps, int hz) {
 // Start the Apps MonitorSystem
 int startAppsMonitor(AppsMonitor* am) {
     if (am->base.runMonitor == NULL) {
-        printf("Monitor function not set for AppsMonitor\n");
+        //printf("Monitor function not set for AppsMonitor\n");
         return _FAILURE;
     }
     ENABLE(am->base.system);
@@ -27,9 +28,6 @@ int checkAppsMonitor(void* am) {
     if (apps->status != APPS_OK && apps->status != APPS_LOW) {
         return _FAILURE;
     }
-    if (apps->status == APPS_LOW) {
-        printf("AppsMonitor: APPS position is too low. Defaulting to 0 to pass\r\n");
-    }
     return _SUCCESS;
 }
 
@@ -39,14 +37,14 @@ void checkAppsLimit(Apps* apps) {
     float pos2 = getAppPosition(apps->app[1]);
 
     // Resonable Value check upper bound
-    if (pos1 > 100 || pos2 > 100) {
+    if (pos1 > 1 || pos2 > 1) {
         apps->status = APPS_FAULT;
         return;
     }
 
     // In sync check
     float difference = fabs(pos1 - pos2);
-    if (difference > APPS_DIFFERENCE * 100) {
+    if (difference > APPS_DIFFERENCE) {
         apps->status = APPS_FAULT;
         return;
     } 
