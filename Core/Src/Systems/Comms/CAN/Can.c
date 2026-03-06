@@ -184,31 +184,46 @@ void parseSignals(CAN_Message_Template* message, CAN_Message* can_message) {
 void parseSignal(CAN_Signal_Template* signal, CAN_Signal* can_signal, CAN_Message* can_message) {
     can_signal->template = signal;
 
-    // Extract the raw data from the message
     uint64_t raw_data = 0;
-    for (int i = signal->start_bit; i < signal->start_bit + signal->length; i++) {
-        raw_data |= ((can_message->data[i / 8] >> (i % 8)) & 1) << (i - signal->start_bit);
-    }
 
-    // Check if the signal is big endian
-    if (signal->endian == 1) {
-        // Reverse the bits
-        uint64_t reversed_data = 0;
-        for (int i = 0; i < signal->length; i++) {
-            reversed_data |= ((raw_data >> i) & 1) << (signal->length - i - 1);
+    if (signal->endian == 0) {
+        // Motorola (@0)
+        int bitpos = signal->start_bit;
+
+        for (int k = 0; k < signal->length; k++) {
+            int byte_index = bitpos / 8;
+            int bit_index  = bitpos % 8;
+
+            uint8_t byte_val = can_message->data[byte_index];
+
+            uint64_t extracted_bit = (byte_val >> bit_index) & 1ULL;
+
+            raw_data = (raw_data << 1) | extracted_bit;
+
+            // Motorola next-bit rule
+            if (bit_index == 0) bitpos += 15;
+            else                bitpos -= 1;
         }
-        raw_data = reversed_data;
+
+    } else {
+        // Intel (@1)
+        for (int i = 0; i < signal->length; i++) {
+            int bitpos = signal->start_bit + i;
+            int byte_index = bitpos / 8;
+            int bit_index  = bitpos % 8;
+
+            uint64_t bit = (can_message->data[byte_index] >> bit_index) & 1ULL;
+            raw_data |= (bit << i);
+        }
     }
 
-    // Check if the signal is signed
+    // Sign extend if needed
     if (signal->isSigned) {
-        // Sign extend the data
         raw_data = (raw_data << (64 - signal->length)) >> (64 - signal->length);
     }
 
-    // Scale and offset the data
+    // Scale and offset (physical value)
     can_signal->value = (raw_data * signal->scale) + signal->offset;
-
 }
 
 void print_CAN_Messages_Lists() {

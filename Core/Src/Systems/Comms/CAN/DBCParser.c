@@ -19,29 +19,41 @@ int parseDbcLine(CAN_MessageList *messages, char *line) {
         } else {
             sendMessage("DBC_DEBUG", MSG_DEBUG, "FailedMsgParse=%s", line);
         }
-    } else if (strstr(line, " SG_") != NULL) {
+    }  else if (strstr(line, " SG_") != NULL) {
         // Parse the signal: " SG_ Motor_Speed : 0|16@1+ (1,0) [0|65535] "RPM" VCU"
         CAN_Signal_Template sig;
         memset(&sig, 0, sizeof(sig));
         char sign_and_endian[10];
-        
-        if (sscanf(line, " SG_ %s : %d|%d@%s (%f,%f) [%f|%f] \"%[^\"]\" %s", 
-                   sig.name, &sig.start_bit, &sig.length, sign_and_endian, 
-                   &sig.scale, &sig.offset, &sig.min, &sig.max, sig.unit, sig.reciever) == 10) {
-            
+        char remainder[128];
+
+        if (sscanf(line, " SG_ %s : %d|%d@%s (%f,%f) [%f|%f] %[^\n]",
+                           sig.name, &sig.start_bit, &sig.length, sign_and_endian,
+                           &sig.scale, &sig.offset, &sig.min, &sig.max, remainder) == 9) {
+        	// Blank unit edge case
+			if (sscanf(remainder, "\"%[^\"]\" %s", sig.unit, sig.reciever) != 2) {
+				sig.unit[0] = '\0'; // Explicitly null out the unit
+				sscanf(remainder, "\"\" %s", sig.reciever);
+			}
+
             // Parse endian and sign from something like "1+" or "1-"
             sig.endian = sign_and_endian[0] - '0';  // Convert '1' to 1
             sig.isSigned = (sign_and_endian[1] == '-');
-            
+
             sendMessage("DBC_DEBUG", MSG_DEBUG, "ParsedSig=%s;StartBit:%d;Len:%d", sig.name, sig.start_bit, sig.length);
-            
+
             if (messages->num_messages > 0) {
-                CAN_Message_Template* current_msg = &messages->messages[messages->num_messages - 1];
-                current_msg->signals[current_msg->signal_count] = sig;
-                current_msg->signal_count++;
-            }
+				CAN_Message_Template* current_msg = &messages->messages[messages->num_messages - 1];
+
+				// Bound Check
+				if (current_msg->signal_count < MAX_SIGNALS) {
+					current_msg->signals[current_msg->signal_count] = sig;
+					current_msg->signal_count++;
+				} else {
+					sendMessage("DBC_DEBUG", MSG_DEBUG, "MaxSignalsExceeded=MsgID:%d;Sig:%s", current_msg->id, sig.name);
+				}
+			}
         } else {
-            sendMessage("DBC_DEBUG", MSG_DEBUG, "FailedSigParse=%s", line);
+			sendMessage("DBC_DEBUG", MSG_DEBUG, "FailedSigParse=%s", line);
         }
     }
     return 1;

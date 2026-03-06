@@ -10,9 +10,9 @@
 #include "../Scheduler/Task.h"
 
 typedef enum {
-    BMS,
+    e_BMS,
     e_INVERTER,
-    IMD
+    e_IMD
 } ExternalType;
 
 // Need to do this because of circular dependency

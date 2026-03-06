@@ -23,9 +23,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+// Define DBC data in this file only
 #include "../Inc/Files/can1_dbc.h"
-#define INVERTER_TEST_DBC_IMPLEMENTATION  // Define DBC data in this file only
+#define INVERTER_TEST_DBC_IMPLEMENTATION
 #include "../Inc/Files/inverter_test_dbc.h"
+#define BMS_DBC_IMPLEMENTATION
+#include "../Inc/Files/orion_canbus_dbc.h"
+
 #include "../Inc/Scheduler/Scheduler.h"
 #include "../Inc/Sensors/AnalogSensor.h"
 #include "../Inc/Systems/Comms/Can/Can.h"
@@ -35,6 +39,7 @@
 #include "../Inc/Systems/Controller/RTD.h"
 #include "../Inc/Systems/Controller/TorqueControl.h"
 #include "../Inc/Systems/External/Inverter.h"
+#include "../Inc/Systems/External/BMS.h"
 #include "../Inc/Systems/Monitor/AppsMonitor.h"
 #include "../Inc/Systems/Monitor/BrakePolice.h"
 #include "../Inc/Systems/Monitor/RTDMonitor.h"
@@ -211,20 +216,20 @@ int main(void)
     sendMessage("INIT", MSG_SYSTEM_STATUS, "CANCommsSystem CAN1 initialized successfully");
     
     // Load the enhanced DBC database
-    if (loadCANDatabase(&can1_comms, inverter_test_dbc) != 0) {
+    if (loadCANDatabase(&can1_comms, Orion_CANBUS_dbc) != 0) {
       sendMessage("INIT", MSG_ERROR, "CAN1 DBC database load failed");
     } else {
       sendMessage("INIT", MSG_SYSTEM_STATUS, "CAN1 DBC database loaded successfully");
     }
   }
 
-  // Initialize CAN2 system as well
+  // Initialize CAN2 syste
   if (initCANCommsSystem(&can2_comms, "CAN2_COMMS", 10, CAN_2) != 0) {
     sendMessage("INIT", MSG_ERROR, "CANCommsSystem CAN2 initialization failed");
   } else {
     sendMessage("INIT", MSG_SYSTEM_STATUS, "CANCommsSystem CAN2 initialized successfully");
     
-    // Load the same DBC database for CAN2 (can be different if needed)
+    // Load the same DBC database for CAN2
     if (loadCANDatabase(&can2_comms, inverter_test_dbc) != 0) {
       sendMessage("INIT", MSG_ERROR, "CAN2 DBC database load failed");
     } else {
@@ -346,6 +351,17 @@ int main(void)
     sendMessage("INIT", MSG_SYSTEM_STATUS, "Inverter registered for CAN messages on VCU receiver");
   } else {
     sendMessage("INIT", MSG_WARNING, "Failed to register Inverter for CAN messages");
+  }
+
+  // Make BMS
+  Bms bms;
+  initBms(&bms, 200);
+
+  // Register BMS for Orion messages
+  if (registerCANReceiver(&can1_comms, "Third_Party_Device", &bms, bmsCanHandler, EXTERNAL) == 0) {
+      sendMessage("INIT", MSG_SYSTEM_STATUS, "BMS registered for CAN messages on Third_Party_Device receiver");
+  } else {
+      sendMessage("INIT", MSG_WARNING, "Failed to register BMS for CAN messages");
   }
 
   // Make Scheduler from updateable array
