@@ -44,7 +44,7 @@ int checkTorquePolice(void* tp) {
         return _FAILURE;
     }
 
-    if (bsc->base.state=c_validated && bsc->heavyBraking == 1) {
+    if (bsc->base.state == c_validated && bsc->heavyBraking == 1) {
         tpPtr->status = TORQUE_BRAKE_FIGHT;
         //printf("Brake System is in heavy braking, reducing torque to zero\r\n");
         tc->desiredTorque = 0;

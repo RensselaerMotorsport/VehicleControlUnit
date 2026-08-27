@@ -1,0 +1,91 @@
+VERSION ""
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VCU ESC BMS DASH IMD
+
+BO_ 258 ESC_Motor_Status_1: 8 ESC
+ SG_ Motor_Speed : 0|16@1+ (1,0) [0|65535] "RPM" VCU
+ SG_ Motor_Torque : 16|16@1- (0.1,0) [-3276.8|3276.7] "Nm" VCU
+ SG_ Motor_Temperature : 32|8@1+ (1,-40) [-40|215] "degC" VCU
+ SG_ Motor_Fault_Status : 40|8@1+ (1,0) [0|255] "" VCU
+
+BO_ 259 ESC_Motor_Status_2: 8 ESC
+ SG_ Motor_Voltage : 0|16@1+ (0.1,0) [0|6553.5] "V" VCU
+ SG_ Motor_Current : 16|16@1- (0.1,0) [-3276.8|3276.7] "A" VCU
+ SG_ Motor_Power : 32|16@1+ (0.1,0) [0|6553.5] "kW" VCU
+ SG_ ESC_Temperature : 48|8@1+ (1,-40) [-40|215] "degC" VCU
+
+BO_ 260 ESC_Control_Status: 8 ESC
+ SG_ ESC_State : 0|8@1+ (1,0) [0|255] "" VCU
+ SG_ Inverter_Enable : 8|1@1+ (1,0) [0|1] "" VCU
+ SG_ Direction_Command : 9|2@1+ (1,0) [0|3] "" VCU
+ SG_ Torque_Limit : 16|16@1+ (0.1,0) [0|6553.5] "Nm" VCU
+ SG_ Speed_Limit : 32|16@1+ (1,0) [0|65535] "RPM" VCU
+
+BO_ 512 VCU_Torque_Command: 8 VCU
+ SG_ Requested_Torque : 0|16@1- (0.1,0) [-3276.8|3276.7] "Nm" ESC
+ SG_ Torque_Enable : 16|1@1+ (1,0) [0|1] "" ESC
+ SG_ Direction : 17|1@1+ (1,0) [0|1] "" ESC
+ SG_ Speed_Command : 24|16@1+ (1,0) [0|65535] "RPM" ESC
+ SG_ Emergency_Stop : 40|1@1+ (1,0) [0|1] "" ESC
+
+BO_ 513 VCU_System_Status: 8 VCU
+ SG_ VCU_State : 0|8@1+ (1,0) [0|255] "" ESC,BMS,DASH
+ SG_ Apps_1 : 8|16@1+ (0.1,0) [0|6553.5] "%" ESC,DASH
+ SG_ Apps_2 : 24|16@1+ (0.1,0) [0|6553.5] "%" ESC,DASH
+ SG_ Brake_Pressure : 40|16@1+ (0.1,0) [0|6553.5] "bar" ESC,DASH
+
+CM_ BO_ 258 "Motor status message 1 - Speed, torque, temperature";
+CM_ BO_ 259 "Motor status message 2 - Electrical parameters";
+CM_ BO_ 260 "ESC control and status information";
+CM_ BO_ 512 "VCU torque command to motor controller";
+CM_ BO_ 513 "VCU system status for all systems";
+
+CM_ SG_ 258 Motor_Speed "Current motor rotational speed";
+CM_ SG_ 258 Motor_Torque "Current motor output torque";
+CM_ SG_ 258 Motor_Temperature "Motor winding temperature";
+CM_ SG_ 258 Motor_Fault_Status "Motor fault status bitmap";
+
+CM_ SG_ 259 Motor_Voltage "Motor bus voltage";
+CM_ SG_ 259 Motor_Current "Motor phase current";
+CM_ SG_ 259 Motor_Power "Motor output power";
+CM_ SG_ 259 ESC_Temperature "ESC controller temperature";
+
+CM_ SG_ 260 ESC_State "ESC operating state";
+CM_ SG_ 260 Inverter_Enable "Inverter enable status";
+CM_ SG_ 260 Direction_Command "Motor direction command";
+CM_ SG_ 260 Torque_Limit "Maximum torque limit";
+CM_ SG_ 260 Speed_Limit "Maximum speed limit";
+
+VAL_ 258 Motor_Fault_Status 0 "No Fault" 1 "Overcurrent" 2 "Overvoltage" 4 "Overtemp" 8 "Encoder Fault" 16 "Controller Fault";
+VAL_ 260 ESC_State 0 "Disabled" 1 "Enabled" 2 "Fault" 3 "Calibration";
+VAL_ 260 Direction_Command 0 "Forward" 1 "Reverse" 2 "Neutral";
+VAL_ 513 VCU_State 0 "Init" 1 "Ready" 2 "Drive" 3 "Fault" 4 "Emergency";

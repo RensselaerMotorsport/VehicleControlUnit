@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import sys
 import os
+import time
 from datetime import datetime  # ADD THIS LINE
 
 # Add parent directory to path for imports
@@ -35,6 +36,8 @@ class MainWindow:
         
         self.connection = ConnectionManager()
         self.config = ConfigManager()
+        self.config_request_pending = False
+        self.config_request_deadline = 0
         
         # Create shared message parser for efficiency
         self.parse_message = create_common_message_parser()
@@ -96,7 +99,8 @@ class MainWindow:
         self.connect_btn.pack(side=tk.LEFT, padx=10)
         
         ttk.Button(top_frame, text="Refresh", command=self.refresh_ports).pack(side=tk.LEFT, padx=5)
-        ttk.Button(top_frame, text="Get Config", command=self.get_config).pack(side=tk.LEFT, padx=10)
+        self.get_config_btn = ttk.Button(top_frame, text="Get Config", command=self.get_config)
+        self.get_config_btn.pack(side=tk.LEFT, padx=10)
         
         # Status
         self.status_label = ttk.Label(top_frame, text="Disconnected", foreground="red")
@@ -200,9 +204,46 @@ class MainWindow:
     
     def get_config(self):
         """Request telemetry configuration"""
+        if not self.connection.is_connected:
+            messagebox.showerror("Error", "Not connected")
+            return
+
+        self.config.reset()
+        self.config_request_pending = True
+        self.config_request_deadline = time.time() + 15.0
+        self.get_config_btn.configure(state='disabled')
+
         success, message = self.connection.send_command("CONFIG_REQUEST")
         self.raw_view.add_message(f">> {message}")
-    
+        if not success:
+            self.config_request_pending = False
+            self.config_request_deadline = 0
+            self.get_config_btn.configure(state='normal')
+            return
+
+        self.raw_view.add_message(">> Waiting for telemetry configuration from VCU...\n")
+        self.root.after(100, self._poll_config_completion)
+
+    def _poll_config_completion(self):
+        if not self.config_request_pending:
+            return
+
+        if self.config.config_complete:
+            self.config_request_pending = False
+            self.config_request_deadline = 0
+            self.get_config_btn.configure(state='normal')
+            self.raw_view.add_message(">> Telemetry config loaded successfully.\n")
+            return
+
+        if time.time() > self.config_request_deadline:
+            self.config_request_pending = False
+            self.config_request_deadline = 0
+            self.get_config_btn.configure(state='normal')
+            self.raw_view.add_message(">> Telemetry config request timed out.\n")
+            return
+
+        self.root.after(100, self._poll_config_completion)
+
     def process_message(self, raw_message):
         """Process and route messages to appropriate views"""
         # Always log to raw view

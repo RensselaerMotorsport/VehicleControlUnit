@@ -4,6 +4,7 @@
 #include "../ControllerSystem.h"
 #include "../../Utils/Constants.h"
 #include "Apps.h"
+#include "../External/Inverter.h"
 
 typedef enum {
     TORQUE_OK,
@@ -27,6 +28,8 @@ typedef struct {
  * @brief Initializes the Torque Control Actuator with initial settings.
  *
  * @param tc A pointer to the TorqueControl structure.
+ * @param apps A pointer to the Apps structure.
+ * @param inverter A pointer to the Inverter structure.
  * @param hz Rate at which the sensor is called (in hz).
  * @param maxTorque The maximum torque limit set for the system (in Nm).
  */

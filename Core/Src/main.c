@@ -19,13 +19,20 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "../Inc/Files/can1_dbc.h"
+#define INVERTER_TEST_DBC_IMPLEMENTATION  // Define DBC data in this file only
+#include "../Inc/Files/inverter_test_dbc.h"
+
+#define CANBUS_1_DBC_IMPLEMENTATION  // Define DBC data in this file only
+#include "../Inc/Files/canbus_1_dbc.h"
 #include "../Inc/Scheduler/Scheduler.h"
 #include "../Inc/Sensors/AnalogSensor.h"
 #include "../Inc/Systems/Comms/Can/Can.h"
+#include "../Inc/Systems/Comms/Can/CANCommsSystem.h"
 #include "../Inc/Systems/Controller/Apps.h"
 #include "../Inc/Systems/Controller/BrakeSystemControl.h"
 #include "../Inc/Systems/Controller/RTD.h"
@@ -36,6 +43,7 @@
 #include "../Inc/Systems/Monitor/RTDMonitor.h"
 #include "../Inc/Systems/Monitor/TorquePolice.h"
 #include "../Inc/Utils/Constants.h"
+#include "../Inc/Utils/MessageFormat.h"
 #include "../Inc/Utils/Telemetry.h"
 
 #ifndef TEST_MODE
@@ -74,6 +82,7 @@ CAN_HandleTypeDef hcan3;
 DAC_HandleTypeDef hdac;
 DMA_HandleTypeDef hdma_dac1;
 DMA_HandleTypeDef hdma_dac2;
+DMA_HandleTypeDef hdma_usart3_tx;
 
 I2C_HandleTypeDef hi2c2;
 I2C_HandleTypeDef hi2c4;
@@ -94,6 +103,10 @@ const osThreadAttr_t defaultTask_attributes = {
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
+// New CAN Communications Systems (alongside existing CAN)
+CANCommsSystem can1_comms;
+CANCommsSystem can2_comms;
+Updateable telemetryUpdateable;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -117,6 +130,13 @@ static void MX_SPI6_Init(void);
 void StartDefaultTask(void *argument);
 
 /* USER CODE BEGIN PFP */
+// CAN message handler for Inverter system
+//void inverter_can_handler(void* system, CAN_Message* message);
+void send_test_inverter_messages(void);
+
+// UART configuration listener
+void initUartConfigListener(void);
+int telemetryUpdateableCallback(Updateable* self);
 #endif
 /* USER CODE END PFP */
 
@@ -190,6 +210,39 @@ int main(void)
   // Init Telemetry
   initTelemetry();
 
+  // Scheduler-based telemetry processor
+  initUpdateable(&telemetryUpdateable, "TelemetrySystem", 10, SYSTEM, NULL);
+  telemetryUpdateable.update = telemetryUpdateableCallback;
+  telemetryUpdateable.enable(&telemetryUpdateable);
+
+  // Initialize New CAN Communications Systems (alongside existing CAN)
+  if (initCANCommsSystem(&can1_comms, "CAN1_COMMS", 10, CAN_1) != 0) {
+    sendMessage("INIT", MSG_ERROR, "CANCommsSystem CAN1 initialization failed");
+  } else {
+    sendMessage("INIT", MSG_SYSTEM_STATUS, "CANCommsSystem CAN1 initialized successfully");
+    
+    // Load the enhanced DBC database
+    if (loadCANDatabase(&can1_comms, canbus_1_dbc) != 0) {
+      sendMessage("INIT", MSG_ERROR, "CAN1 DBC database load failed");
+    } else {
+      sendMessage("INIT", MSG_SYSTEM_STATUS, "CAN1 DBC database loaded successfully");
+    }
+  }
+
+  // Initialize CAN2 system as well
+  if (initCANCommsSystem(&can2_comms, "CAN2_COMMS", 10, CAN_2) != 0) {
+    sendMessage("INIT", MSG_ERROR, "CANCommsSystem CAN2 initialization failed");
+  } else {
+    sendMessage("INIT", MSG_SYSTEM_STATUS, "CANCommsSystem CAN2 initialized successfully");
+    
+    // Load the same DBC database for CAN2 (can be different if needed)
+    if (loadCANDatabase(&can2_comms, canbus_1_dbc) != 0) {
+      sendMessage("INIT", MSG_ERROR, "CAN2 DBC database load failed");
+    } else {
+      sendMessage("INIT", MSG_SYSTEM_STATUS, "CAN2 DBC database loaded successfully");
+    }
+  }
+
   // Begin ADC DMA
   if(HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc1_buffer, 7) != HAL_OK) {
 	  Error_Handler();
@@ -212,6 +265,7 @@ int main(void)
   initUartConfigListener();
 
   uint32_t multi_mode = (ADC123_COMMON->CCR & ADC_CCR_MULTI);
+  (void)multi_mode;  // Suppress unused variable warning
   //printf("ADC Multi-mode: 0x%08lX\r\n", multi_mode);
 
   #endif
@@ -247,7 +301,7 @@ int main(void)
   initAppsMonitor(&am, &apps, 10);
 
   // Bind Appsmonitor to Apps
-  apps.base.addMonitor(&apps, &am);
+  apps.base.addMonitor((ControllerSystem*)&apps, (MonitorSystem*)&am);
 
   // Start the Apps Monitor
   startAppsMonitor(&am);
@@ -260,7 +314,7 @@ int main(void)
   initBrakePolice(&bp, &bsc, 100, 200);
 
   // Bind BrakePolice to BrakeSystemControl
-  bsc.base.addMonitor(&bsc, &bp);
+  bsc.base.addMonitor((ControllerSystem*)&bsc, (MonitorSystem*)&bp);
 
   // Start the Brake Controller and Monitor
   startBrakeSystemControl(&bsc);
@@ -274,40 +328,40 @@ int main(void)
   initRTDMonitor(&rm, &rtd, 10);
 
   // Bind RTDMonitor to RTD
-  rtd.base.addMonitor(&rtd, &rm);
+  rtd.base.addMonitor((ControllerSystem*)&rtd, (MonitorSystem*)&rm);
 
   // Start the RTD Controller and Monitor
   startRTD(&rtd);
   startRTDMonitor(&rm);
 
+  // Make Inverter (Rinehart PM100DX)
+  Inverter inverter;
+  initInverter(&inverter, &can1_comms, 10, CAN_1, 500);  // 10Hz update, CAN1 system, CAN1 bus, 500ms heartbeat timeout
+
+  // Register Inverter for CAN messages (VCU receives inverter status messages)
+//  if (registerCANReceiver(&can1_comms, "VCU_Inverter_Ext", &inverter, inverterCANMessageHandler, EXTERNAL) == 0) {
+//    sendMessage("INIT", MSG_SYSTEM_STATUS, "Rinehart PM100DX Inverter registered for CAN messages");
+//  } else {
+//    sendMessage("INIT", MSG_WARNING, "Failed to register Inverter for CAN messages");
+//  }
+
   // Make Torque Controller and Monitor
   TorqueControl tc;
   initTorqueControl(&tc, &apps, 10, 240);
 
-  TorquePolice tp;
-  initTorquePolice(&tp, &tc, &bsc, &rtd, 100, 240);
-
-  // Bind TorquePolice to TorqueControl
-  tc.base.addMonitor(&tc, &tp);
-
-  // Start the Torque Controller and Monitor
-  startTorqueControl(&tc);
-  startTorquePolice(&tp);
-
-  // Make Inverter
-  Inverter inverter;
-  initInverter(&inverter, &tc, 10, 200, 100, 400);
-
   // Make Scheduler from updateable array
   Scheduler scheduler;
 
-  Updateable* updateables[6];
+  Updateable* updateables[9];  // Increased size to include CAN systems and telemetry
   updateables[0] = &apps.base.system.updateable;
   updateables[1] = &bsc.base.system.updateable;
   updateables[2] = &rtd.base.system.updateable;
   updateables[3] = &tc.base.system.updateable;
   updateables[4] = &inverter.base.system.updateable;
-  updateables[5] = NULL;
+  updateables[5] = &can1_comms.base.system.updateable;  // Add CAN1 system
+  updateables[6] = &can2_comms.base.system.updateable;  // Add CAN2 system
+  updateables[7] = &telemetryUpdateable;
+  updateables[8] = NULL;
 
   SchedulerInit(&scheduler, updateables);
 
@@ -368,6 +422,8 @@ int main(void)
       // Send test CAN message with incrementing data
       uint8_t test_data[8] = {0xAA, 0xBB, 0xCC, 0xDD, (uint8_t)(HAL_GetTick() & 0xFF), 0x55, 0x66, 0x77};
       send_CAN_message(CAN_1, CAN_2A, 0x123, test_data, 8);
+      
+      // NOTE: This code never runs because SchedulerRun() blocks the main loop!
       
       // Send another test message with different ID
       uint8_t test_data2[8] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, (uint8_t)((HAL_GetTick() >> 8) & 0xFF)};
@@ -808,17 +864,23 @@ static void MX_CAN1_Init(void)
   HAL_CAN_Stop(&hcan1);
   // Start CAN
   if (HAL_CAN_Start(&hcan1) != HAL_OK) {
-      //printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
+      printf("CAN1 Start Error: ErrorCode = 0x%lX\r\n", hcan1.ErrorCode);
+  } else {
+      printf("CAN1 Started Successfully\r\n");
   }
 
   // Start IRQ for CAN Rx
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) {
-  	//printf("interrupt CAN1 init failed\r\n");
+  	printf("interrupt CAN1 init failed\r\n");
+  } else {
+      printf("CAN1 RX Interrupt Activated\r\n");
   }
   
   // Enable TX completion interrupts for telemetry
   if (HAL_CAN_ActivateNotification(&hcan1, CAN_IT_TX_MAILBOX_EMPTY) != HAL_OK) {
-  	//printf("CAN1 TX interrupt init failed\r\n");
+  	printf("CAN1 TX interrupt init failed\r\n");
+  } else {
+      printf("CAN1 TX Interrupt Activated\r\n");
   }
   /* USER CODE END CAN1_Init 2 */
 
@@ -1288,6 +1350,23 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA2_CLK_ENABLE();
   __HAL_RCC_DMA1_CLK_ENABLE();
 
+  /* USART3 TX DMA configuration */
+  hdma_usart3_tx.Instance = DMA1_Stream3;
+  hdma_usart3_tx.Init.Channel = DMA_CHANNEL_4;
+  hdma_usart3_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+  hdma_usart3_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+  hdma_usart3_tx.Init.MemInc = DMA_MINC_ENABLE;
+  hdma_usart3_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+  hdma_usart3_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+  hdma_usart3_tx.Init.Mode = DMA_NORMAL;
+  hdma_usart3_tx.Init.Priority = DMA_PRIORITY_LOW;
+  hdma_usart3_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+  if (HAL_DMA_Init(&hdma_usart3_tx) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  __HAL_LINKDMA(&huart3, hdmatx, hdma_usart3_tx);
+
   /* DMA interrupt init */
   /* DMA1_Stream5_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
@@ -1295,6 +1374,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+  /* DMA1_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream3_IRQn);
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
@@ -1431,8 +1513,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Alternate = GPIO_AF12_SDMMC1;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA9 PA10 PA11 PA12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_12;
+  /*Configure GPIO pin : PA10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_10;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -1475,13 +1557,24 @@ static void MX_GPIO_Init(void)
 // Override the _write function to reroute printf to USART3
 int _write(int file, char *data, int len)
 {
-    // Transmit data using USART3
-    HAL_UART_Transmit(&huart3, (uint8_t *)data, len, HAL_MAX_DELAY);
-    return len;
+    // Transmit data using the non-blocking UART DMA queue.
+    // This keeps printf from blocking the scheduler.
+    if (sendMessageRaw(data, len) > 0) {
+        return len;
+    }
+
+    return 0;
+}
+
+int telemetryUpdateableCallback(Updateable* self)
+{
+    (void)self;
+    processTelemetryConfigRequests();
+    processTelemetrySignals();
+    return 0;
+}
 
 #endif // <--- DONT DELETE THIS, IT IS LINKED TO LAST LINE IN MAIN FUNCTION TO ALLOW SIL BUILDS
-
-}
 
 /* FreeRTOS hooks */
 void vApplicationMallocFailedHook(void) {
@@ -1503,6 +1596,133 @@ void vApplicationTickHook(void) {
     // Called on each FreeRTOS tick (optional)
     // Keep this very short and fast
 }
+
+/**
+ * @brief Enhanced CAN message handler for Inverter system
+ * @param system Pointer to the Inverter system
+ * @param message Received CAN message with parsed signals
+ */
+//void inverter_can_handler(void* system, CAN_Message* message) {
+//    Inverter* inverter = (Inverter*)system;
+//
+//    // Log the received message for debugging
+//    sendMessage("INVERTER_CAN", MSG_DEBUG, "ReceivedMsg=%s;ID=0x%lX;DLC=%lu",
+//               message->template->name, message->header.StdId, message->header.DLC);
+//
+//    // Store complete message data based on message ID using DBC structures
+//    if (message->header.StdId == ESC_MOTOR_STATUS_1_ID) {
+//        // Parse ESC Motor Status 1 message
+//        ESC_Motor_Status_1_t* status1 = &inverter->can_data.status1;
+//
+//        for (int i = 0; i < message->template->signal_count; i++) {
+//            CAN_Signal* signal = &message->signals[i];
+//
+//            if (strcmp(signal->template->name, "Motor_Speed") == 0) {
+//                status1->motor_speed = (uint16_t)signal->value;
+//                inverter->can_data.new_data_flags |= INVERTER_NEW_SPEED;
+//            } else if (strcmp(signal->template->name, "Motor_Torque") == 0) {
+//                status1->motor_torque = (int16_t)signal->value;
+//                inverter->can_data.new_data_flags |= INVERTER_NEW_TORQUE;
+//            } else if (strcmp(signal->template->name, "Motor_Temperature") == 0) {
+//                status1->motor_temperature = (uint8_t)signal->value;
+//                inverter->can_data.new_data_flags |= INVERTER_NEW_TEMP;
+//            } else if (strcmp(signal->template->name, "Motor_Fault_Status") == 0) {
+//                status1->motor_fault_status = (uint8_t)signal->value;
+//            }
+//        }
+//
+//    } else if (message->header.StdId == ESC_MOTOR_STATUS_2_ID) {
+//        // Parse ESC Motor Status 2 message
+//        ESC_Motor_Status_2_t* status2 = &inverter->can_data.status2;
+//
+//        for (int i = 0; i < message->template->signal_count; i++) {
+//            CAN_Signal* signal = &message->signals[i];
+//
+//            if (strcmp(signal->template->name, "Motor_Voltage") == 0) {
+//                status2->motor_voltage = (uint16_t)signal->value;
+//                inverter->can_data.new_data_flags |= INVERTER_NEW_VOLTAGE;
+//            } else if (strcmp(signal->template->name, "Motor_Current") == 0) {
+//                status2->motor_current = (int16_t)signal->value;
+//                inverter->can_data.new_data_flags |= INVERTER_NEW_CURRENT;
+//            } else if (strcmp(signal->template->name, "Motor_Power") == 0) {
+//                status2->motor_power = (uint16_t)signal->value;
+//            } else if (strcmp(signal->template->name, "ESC_Temperature") == 0) {
+//                status2->esc_temperature = (uint8_t)signal->value;
+//            }
+//        }
+//    }
+//
+//    // Send telemetry for all signals (with proper physical values)
+//    for (int i = 0; i < message->template->signal_count; i++) {
+//        CAN_Signal* signal = &message->signals[i];
+//
+//        // Calculate physical value using DBC scaling
+//        float physical_value = signal->value * signal->template->scale + signal->template->offset;
+//
+//        sendMessage("INVERTER_DATA", MSG_SENSOR_VALUE, "Signal=%s;Value=%f;Unit=%s",
+//                   signal->template->name, physical_value, signal->template->unit);
+//    }
+//
+//    // Update metadata
+//    inverter->can_data.last_update = HAL_GetTick();
+//    inverter->can_data.message_count++;
+//
+//    // Note: Data will be processed in updateInverter() which runs in main loop context
+//}
+
+/**
+ * @brief Test function to send inverter CAN messages for testing
+ * Call this function to simulate receiving inverter status messages
+ */
+void send_test_inverter_messages(void) {
+    static int test_counter = 0;
+    test_counter++;
+    
+    // Test Message 1: ESC Motor Status 1 (ID: 0x102)
+    // Speed: 2000 + test_counter RPM, Torque: 50.5 Nm, Temp: 60°C
+    uint8_t motor_status_1[8];
+    uint16_t speed = 2000 + (test_counter * 10); // Increasing speed
+    motor_status_1[0] = speed & 0xFF;
+    motor_status_1[1] = (speed >> 8) & 0xFF;
+    
+    int16_t torque = 505; // 50.5 Nm * 10
+    motor_status_1[2] = torque & 0xFF;
+    motor_status_1[3] = (torque >> 8) & 0xFF;
+    
+    motor_status_1[4] = 100; // 60°C + 40
+    motor_status_1[5] = 0;   // No fault
+    motor_status_1[6] = 0;
+    motor_status_1[7] = 0;
+    
+    // Send via CAN1
+    send_CAN_message(CAN_1, CAN_2A, 0x102, motor_status_1, 8);
+    
+    sendMessage("TEST", MSG_DEBUG, "SentTestMsg=ESC_Motor_Status_1;Speed=%d;Torque=50.5", speed);
+    
+    // Test Message 2: ESC Motor Status 2 (ID: 0x103)  
+    // Voltage: 48.0V, Current: 12.5A, Power: 2.5kW, ESC Temp: 45°C
+    uint8_t motor_status_2[8];
+    uint16_t voltage = 480; // 48.0V * 10
+    motor_status_2[0] = voltage & 0xFF;
+    motor_status_2[1] = (voltage >> 8) & 0xFF;
+    
+    int16_t current = 125; // 12.5A * 10
+    motor_status_2[2] = current & 0xFF;
+    motor_status_2[3] = (current >> 8) & 0xFF;
+    
+    uint16_t power = 25; // 2.5kW * 10
+    motor_status_2[4] = power & 0xFF;
+    motor_status_2[5] = (power >> 8) & 0xFF;
+    
+    motor_status_2[6] = 85; // 45°C + 40
+    motor_status_2[7] = 0;
+    
+    // Send via CAN1  
+    send_CAN_message(CAN_1, CAN_2A, 0x103, motor_status_2, 8);
+    
+    sendMessage("TEST", MSG_DEBUG, "SentTestMsg=ESC_Motor_Status_2;Voltage=48.0;Current=12.5");
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -1514,11 +1734,15 @@ void vApplicationTickHook(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    processTelemetryConfigRequests();
+    processTelemetrySignals();
+    osDelay(10);
   }
   /* USER CODE END 5 */
 }

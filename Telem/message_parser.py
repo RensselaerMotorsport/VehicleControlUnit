@@ -46,27 +46,32 @@ class ConfigManager:
         
         # Temporarily add some mock data for testing plot view (remove in production)
         # self.add_mock_signals()
+
+    def reset(self):
+        """Reset configuration state before a fresh config fetch."""
+        self.signals = {}
+        self.config_complete = False
     
     def process_config_message(self, content):
         """Process telemetry config message"""
-        print(f"Processing config content: '{content}'")  # Debug
+        #print(f"Processing config content: '{content}'")  # Debug
         
         try:
             # Parse TotalSignals:5
             if 'TotalSignals:' in content:
                 count = int(content.split('TotalSignals:')[1].split(';')[0])
-                print(f"Expecting {count} signals")
+                #print(f"Expecting {count} signals")
                 return
             
             # Parse ConfigComplete:1
             if 'ConfigComplete:' in content:
                 self.config_complete = True
-                print(f"Config complete! Got {len(self.signals)} signals")
+                #print(f"Config complete! Got {len(self.signals)} signals")
                 return
             
             # Parse signal config
             if 'Signal:' in content:
-                print(f"Processing signal config: {content}")
+                #print(f"Processing signal config: {content}")
                 parts = {}
                 for item in content.split(';'):
                     if ':' in item:
@@ -76,7 +81,7 @@ class ConfigManager:
                 signal_name = parts.get('Signal', '')
                 unit = parts.get('Unit', '')
                 
-                print(f"Extracted: Signal='{signal_name}', Unit='{unit}'")
+                #print(f"Extracted: Signal='{signal_name}', Unit='{unit}'")
                 
                 if signal_name and unit:
                     key = f"{signal_name}_{unit}"
@@ -88,7 +93,7 @@ class ConfigManager:
                         'category': parts.get('Category', ''),
                         'decimals': int(parts.get('Decimals', 2))
                     }
-                    print(f"Added signal: {signal_name} ({unit})")
+                    #print(f"Added signal: {signal_name} ({unit})")
         
         except Exception as e:
             print(f"Config parse error: {e}")
@@ -160,4 +165,4 @@ class ConfigManager:
         }
         
         self.signals.update(mock_signals)
-        print(f"Added {len(mock_signals)} mock signals for testing")
+        #print(f"Added {len(mock_signals)} mock signals for testing")
